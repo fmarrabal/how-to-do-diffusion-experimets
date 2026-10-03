@@ -6,6 +6,18 @@ Repositorio docente bilingüe sobre preparación, adquisición, procesado e inte
 
 Autores del workshop: **Ignacio Fernández** ([ORCID](https://orcid.org/0000-0001-8355-580X)) y **Francisco Manuel Arrabal-Campos** ([ORCID](https://orcid.org/0000-0002-5510-6297)), Universidad de Almería. La exposición principal dura 20 minutos y dispone de apéndices técnicos adicionales. El nombre del repositorio conserva la grafía solicitada por su mantenedor: `how-to-do-diffusion-experimets`.
 
+## GUI de calibración del espectrómetro — español e inglés
+
+<img src="assets/calibration-mascot.png" width="200" alt="Mascota de calibración DiffAtOnce: un compañero de laboratorio para el flujo de calibración P1 y DOSY">
+
+Una interfaz de escritorio para preparar el equipo, **calibrar el pulso de 90° con nutación e integrales con signo** y **calibrar la escala DOSY mediante una señal del patrón**. El recorrido incluye revisar el plan, preparar copias solo de parámetros, adquirir/procesar expresamente, ajustar e inspeccionar residuos. LOCK, ATMA, TopShim y temperatura son acciones opcionales que exigen una copia de trabajo y capacidades habilitadas por separado.
+
+[Descargar paquete público de la GUI](python/calibration_gui/output/DiffAtOnce_Calibration_GUI_ES_EN_v1_public.zip) · [Manual ilustrado en español](python/calibration_gui/output/pdf/Manual_Calibracion_Espectrometro_ES.pdf) · [English illustrated manual](python/calibration_gui/output/pdf/Spectrometer_Calibration_Manual_EN.pdf) · [Fuentes, inicio y demostración](python/calibration_gui/)
+
+Copie el archivo autónomo `spectrometer_calibration_gui.py` de la carpeta `dist` del paquete a `<TopSpin>/exp/stan/nmr/py/user` y ejecute `xpy spectrometer_calibration_gui.py`. Para practicar sin instrumento, use `run_demo.ps1` con un runtime Java/Jython instalado; `-TopSpinRoot` permite elegir su directorio. Las curvas de Demo proceden de archivos Bruker explícitamente sintéticos, no de muestras adquiridas.
+
+La edición pública supera **51 pruebas en Jython**; en CPython supera **41**, con **10 pruebas exclusivas de Java omitidas**. La GUI fuente también superó el arranque y la lectura de dataset mediante callback en **TopSpin 3.8.0, solo lectura**. Esto no valida adquisición instrumental, el bundle público reconstruido en hardware ni TopSpin 3.6.4. Los originales se conservan; EXPNO nuevos y recibos de procedencia permiten revisar preparación y resultados. [Validación y recibos nativos redactados](python/calibration_gui/RELEASE_VERIFICATION.json).
+
 ## Presentaciones y contenido completo
 
 | Material | Español | English |
@@ -24,6 +36,7 @@ El recorrido incluye preparación de muestra y equipo, calibración de pulsos y 
 
 | Herramienta | Entorno | Función |
 |---|---|---|
+| [GUI de calibración ES/EN](python/calibration_gui/) | Jython 2.7 integrado + Swing; demo sin equipo | Preparación guiada, ajuste P1 con signo y calibración DOSY del patrón con acciones separadas de preparar/adquirir/analizar |
 | [Generador de rampas](python/ramp_generator/) | Python 3 externo, CLI o GUI Tk | Planifica rampas 1D configurables, previsualiza EXPNO/GPZ/tiempos y exporta CSV/JSON y un programa TopSpin con comprobaciones |
 | [Asistente TopSpin v2](python/topspin_console/) | Jython 2.7 integrado en TopSpin | Prepara copias de parámetros, integra series 1D procesadas existentes y propone escala empírica b y actualización revisable de la constante de gradiente |
 | [Asistente TopSpin v3](python/topspin_console_v3/) | Jython 2.7 integrado en TopSpin | Añade nutación P1 y barrido de gradiente del patrón, con modos explícitos de preparar solamente o preparar/adquirir/procesar/analizar y registros de ejecución |
@@ -42,7 +55,7 @@ Bruker distingue Jython integrado de su API moderna externa de Python 3. Estos a
    cd how-to-do-diffusion-experimets
    ```
 
-2. Use Python 3 para las herramientas externas. El núcleo y las pruebas emplean la biblioteca estándar. La GUI requiere además Tkinter, que puede ser un paquete independiente del sistema operativo. Para ejecutar únicamente los asistentes Jython autocontenidos dentro de un TopSpin compatible no necesita instalar Python externo.
+2. Use Python 3 para las herramientas externas. El núcleo y las pruebas emplean la biblioteca estándar. La GUI del generador de rampas requiere además Tkinter, que puede ser un paquete independiente del sistema operativo. La GUI de calibración usa Java Swing y Jython del runtime de TopSpin instalado. Para ejecutar únicamente los asistentes Jython autocontenidos dentro de un TopSpin compatible no necesita instalar Python externo.
 
 3. Ejecute las pruebas y consulte la ayuda:
 
@@ -76,7 +89,7 @@ xpy dosy_workshop.py
 xpy dosy_workshop_v3.py
 ```
 
-Los diálogos nativos actuales están en español; la guía inglesa explica cada operación. **v2 no adquiere datos. v3 puede lanzar comandos reales ZG/EFP únicamente cuando el operador selecciona y confirma expresamente el modo de adquisición.** Revise plantilla, destinos, RF, tiempos y gradientes antes de usar ese modo. Ejecutar el bundle Jython con CPython ordinario no lo conecta a TopSpin.
+Los diálogos nativos v2/v3 están en español; la nueva GUI de calibración ofrece ambos idiomas; la guía inglesa explica cada operación. **v2 no adquiere datos. v3 puede lanzar comandos reales ZG/EFP únicamente cuando el operador selecciona y confirma expresamente el modo de adquisición.** Revise plantilla, destinos, RF, tiempos y gradientes antes de usar ese modo. Ejecutar el bundle Jython con CPython ordinario no lo conecta a TopSpin.
 
 ## Límites científicos y operativos
 

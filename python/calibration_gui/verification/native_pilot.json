@@ -1,0 +1,18 @@
+{
+  "worker_description": "Thread[Bruker_Cmd=_0_xpy_#=5498,5,Bruker Threads]",
+  "parameter_writes": false,
+  "worker_java_type": "<type 'de.bruker.nmr.mfw.base.CmdThreadImpl'>",
+  "GUI_launch_in_TopSpin": true,
+  "CURDATA_read_succeeded": true,
+  "EXEC_PYSCRIPT_argument_callback": true,
+  "hardware_commands_issued": false,
+  "acquisition_executed": false,
+  "dataset": "[REDACTED: private dataset identifier/path]",
+  "TopSpin_version": [
+    "TopSpin 3.8.0 (of 2025-03-26 15:44:57)",
+    "local",
+    null
+  ],
+  "status": "passed_read_only",
+  "public_edition_note": "Source-build read-only pilot before public repackaging. Private dataset identifiers and paths were redacted; outcome flags retained. Not a hardware test of the rebuilt public bundle."
+}

@@ -1,0 +1,21 @@
+{
+  "parameter_writes": false,
+  "GUI_callback_started": true,
+  "GUI_idle_after_read": true,
+  "scope": "GUI read-current-dataset action on TopSpin 3.8.0",
+  "context": {
+    "data_root": "[REDACTED: private dataset identifier/path]",
+    "p1_template_expno": 1000,
+    "current_expno": "10",
+    "gradient_template_expno": 10,
+    "available": true,
+    "dataset_name": "[REDACTED: private dataset identifier/path]",
+    "demo": false,
+    "current_procno": "1",
+    "current": "[REDACTED: private dataset identifier/path]"
+  },
+  "hardware_commands_issued": false,
+  "acquisition_executed": false,
+  "status": "passed_read_only",
+  "public_edition_note": "Source-build read-only pilot before public repackaging. Private dataset identifiers and paths were redacted; outcome flags retained. Not a hardware test of the rebuilt public bundle."
+}

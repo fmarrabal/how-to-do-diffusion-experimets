@@ -1,0 +1,60 @@
+{
+  "module": "calibration_workflow",
+  "python": "CPython 3 / Jython 2.7; standard library only",
+  "threading": "Real TopCmds calls, including context and preview when using CURDATA, must execute on a TopSpin CmdThread. No Swing or thread creation in the backend.",
+  "constructor": "WorkflowController(api=None, demo=False)",
+  "methods": {
+    "environment()": "dict: python_version,is_jython,api_available,demo,capabilities,limitations",
+    "context()": "dict: available,demo,current,dataset_name,data_root,current_expno,current_procno,p1_template_expno,gradient_template_expno",
+    "ensure_demo_inputs(config)": "Explicit demo setup action: seeds isolated synthetic files and returns context. Demo only. Use before instrument_setup.prepare_working_dataset; preview never creates files.",
+    "preview(config)": "dict: plan,rows,collisions,warnings,recognized_prepared,template_exists,ready,demo; no file writes",
+    "run(config, action='prepare', callback=None, stop_event=None)": "action prepare/acquire/analyze; returns status,plan,output_dir,result,events,demo,callback_errors. Errors raise WorkflowError and save diagnostics. Operator stops return status=stopped.",
+    "apply_p1(config, p90_us, target_expno, reviewed=False, callback=None)": "Requires latest P1 result in this controller and reviewed=True; copies only parameters to new EXPNO, verifies matching RF power/nucleus/probe, writes P1 locally only. Returns status=applied and source/target/provenance. Never acquires."
+  },
+  "config_flat": {
+    "mode": "p1 | gradient",
+    "dataset_name": "optional if real API CURDATA available; ignored for explicit demo",
+    "data_root": "directory containing dataset_name; optional with API; ignored for explicit demo",
+    "template_procno": 1,
+    "p1_template_expno": 1000,
+    "gradient_template_expno": 10,
+    "p1_start_expno": 1100,
+    "gradient_start_expno": 1200,
+    "p1_values_us": "list or comma-separated values; default 2.2..48.4 step2.2",
+    "gradient_values_percent": "list or comma-separated values; default8..96 step4",
+    "gradient_program": "stebpgp1s1d",
+    "ppm_low": "required numeric for acquire/analyze; demo default4.5",
+    "ppm_high": "required numeric for acquire/analyze; demo default4.9",
+    "p90_min_us": 5.5,
+    "p90_max_us": 33.0,
+    "dref_1e9": "required for gradient acquire/analyze; demo1.15",
+    "reference_temperature_K": "required for gradient acquire/analyze; demo298.15",
+    "reference_label": "required pattern/solvent/source; demo clearly labelled",
+    "max_temperature_span_K": 0.5,
+    "max_reference_temperature_difference_K": 0.5,
+    "gradient_b100_override_s_m2": "0 by default. If >0, treated solely as an explicitly supplied PREVIOUS b100 for Dmeasured and G-ratio comparison. Never replaces the empirically calibrated b100=slope/Dref.",
+    "report_dir": "base output directory; each operation gets a new UUID directory",
+    "analysis_expnos": "optional list or range expression10-32; must match sweep values count",
+    "apply_source_expno": "optional; default p1_template_expno, parameter-only source for reviewed application"
+  },
+  "callback_event": {
+    "stage": "started/preparing/prepared/acquiring/processing/point_finished/analyzing/result/stopped/failed/finished/p1_applied",
+    "message": "human-readable fallback; GUI should translate stage labels",
+    "current": "completed point count",
+    "total": "point count",
+    "expno": "optional point experiment number",
+    "data": "optional result or final{status,output_dir}",
+    "demo": "boolean"
+  },
+  "plot_result": {
+    "path": "response.result.plot",
+    "fields": "kind,x,observed,fitted,residuals,x_label,y_label",
+    "p1": "x=P1 us, y=signed integral; result also has P90_us/P180_us/R2",
+    "gradient": "x=(GPZ6/100)^2, y=ln(I/Imax); result retains fit,rows,calibration_profile,bruker_gradient_proposal",
+    "demo_label": "result.demo=true and result.evidence_type explicitly mark synthetic/noiseless demonstration"
+  },
+  "prepare_then_acquire": "Only plans prepared and recorded by the same controller instance may acquire existing parameter-only targets. Changed parameter files, collisions or prior FIDs block. Acquisition can auto-prepare when destinations are free.",
+  "stop": "Accept Python Event.is_set/isSet, Java AtomicBoolean.get, callable or boolean. Checked before each parameter copy and between acquired points; active ZG/EFP finishes before stopping.",
+  "demo": "Creates isolated report_dir/demo_inputs/session_UUID/DEMO_DOSY; seeds P1 template1000 P1=22us with trueP90=11us and gradient template10 with D=1.15e-9,b100=2e9. Uses real binary reader, integration and fitting. No TopCmds API is accepted in demo mode.",
+  "dependencies": "Reuse preloaded _dosy_autorun/_dosy_calibration/_dosy_console_ui/_dosy_ramp_engine; otherwise loads sibling topspin_console_v3/dist/dosy_workshop_v3.py. Root can embed v3 then this module without Swing dependency."
+}

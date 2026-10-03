@@ -14,3 +14,8 @@ venv/
 generated-plans/
 local-reports/
 private-inputs/
+
+# Generated calibration GUI demonstrations and visual-QA artifacts
+python/calibration_gui/demo_evidence/
+python/calibration_gui/qa/
+python/calibration_gui/calibration_demo_data/

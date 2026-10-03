@@ -1,0 +1,7 @@
+{
+  "calibration_gui/gui.py": "0542fa501a399d917ab667e3984dbb052b4568845a49fa9488c58b7c917d1536",
+  "calibration_gui/calibration_workflow.py": "1d6174b19898abcf0c9195fcd68254d6b0378f9a67a1b227e2666d617d4f926c",
+  "calibration_gui/instrument_setup.py": "36699b887041df85e727b7f947b30676a3a432755b79f617c5557132bb40c75a",
+  "topspin_console_v3/dist/dosy_workshop_v3.py": "5ca669c3ae7637877ce06cf794e7c468cbd071dfcdcdfa71f40c1f05f642d21a",
+  "calibration_gui/dist/spectrometer_calibration_gui.py": "5ef5ef6e3665062a7ff93c40270cd6d72f266850725d1d30c4d05c8220d935d3"
+}

@@ -1,0 +1,6 @@
+DiffAtOnce calibration mascot v1
+Mode: built-in image_gen, new image, transparent_background=true.
+The original alpha channel is preserved. No text or external brand marks.
+
+Final prompt:
+Use case: logo-brand. Asset type: friendly scientific mascot logo for the DiffAtOnce spectrometer-calibration Python GUI, for a GitHub README and bilingual website. Create one original compact charming mascot: a clean transparent NMR sample tube character with a warm small smile and two expressive eyes, holding a tiny calibration knob/checkmark. Integrate a simple three-level gradient ramp motif and a graceful NMR spectral curve with two peaks as small parts of the same cohesive emblem, conveying pulse calibration, gradient calibration, and fitting measured attenuation. Flat vector-like illustration, professional scientific software identity with gentle personality, strong smooth rounded shapes, clear silhouette readable at small sizes. Palette deep navy, cobalt blue and teal with a restrained amber accent, matching a modern DiffAtOnce calibration interface. Centre a single emblem with generous breathing room on a genuinely transparent background. No text, no lettering, no numbers, no labels, no watermark, no external brand logo, no photorealism, no busy laboratory backdrop. It should be likeable by researchers, welcoming and clever, not childish.

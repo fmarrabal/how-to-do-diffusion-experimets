@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "scope": "Public calibration GUI module. Source workspace preserved; no experimental data or calibration profile is distributed.",
+  "source_files": [
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/README.md",
+      "public_relative_path": "python/calibration_gui/README.md",
+      "source_sha256": "357629c55a2094b4fe13cd6e59fbf4446b861778d9f10cedecb13611b62436c8",
+      "public_sha256": "06d725b402810a8b9be728f7d04062eeb1df8c9c6bc588ee90bd481404fb7b46"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/run_demo.ps1",
+      "public_relative_path": "python/calibration_gui/run_demo.ps1",
+      "source_sha256": "31a9b7153cbb03e5306fa27e05bdf025fe24acbcdb847a47a0e111ca470246e0",
+      "public_sha256": "31a9b7153cbb03e5306fa27e05bdf025fe24acbcdb847a47a0e111ca470246e0"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/gui.py",
+      "public_relative_path": "python/calibration_gui/gui.py",
+      "source_sha256": "e7efa60f9597dfa08c5beac9c856fdf67cde7031aa8256a68ea1b4c3069fa96b",
+      "public_sha256": "0542fa501a399d917ab667e3984dbb052b4568845a49fa9488c58b7c917d1536"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/calibration_workflow.py",
+      "public_relative_path": "python/calibration_gui/calibration_workflow.py",
+      "source_sha256": "1d6174b19898abcf0c9195fcd68254d6b0378f9a67a1b227e2666d617d4f926c",
+      "public_sha256": "1d6174b19898abcf0c9195fcd68254d6b0378f9a67a1b227e2666d617d4f926c"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/instrument_setup.py",
+      "public_relative_path": "python/calibration_gui/instrument_setup.py",
+      "source_sha256": "36699b887041df85e727b7f947b30676a3a432755b79f617c5557132bb40c75a",
+      "public_sha256": "36699b887041df85e727b7f947b30676a3a432755b79f617c5557132bb40c75a"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/build_bundle.py",
+      "public_relative_path": "python/calibration_gui/build_bundle.py",
+      "source_sha256": "56ce06973ff779e8ebc84810e43e4c38db3c9b302e6d89668086a7f13ff4fb98",
+      "public_sha256": "7bfeed8dc3e39ecd32b009f0f4c25d7f9affba4490147904b73bbffe973118da"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/build_manuals.py",
+      "public_relative_path": "python/calibration_gui/build_manuals.py",
+      "source_sha256": "ce60db56e4707ccffefcfe4e33e59d8917c86eef870ceca01dee120c185a1b97",
+      "public_sha256": "6a4703e4831f297c59d6343c7ac463d30489fc162499f338a4895e38cc851552"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/build_release.py",
+      "public_relative_path": "python/calibration_gui/build_release.py",
+      "source_sha256": "93b932638b0065f2b28bc1a25af40df1c0561ce3b9229bd3e28b63a6527789dc",
+      "public_sha256": "5967414adf3251aec11c5c1799487334bdc846597ba1847fb14014d7e86bb920"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/gui_selftest.py",
+      "public_relative_path": "python/calibration_gui/gui_selftest.py",
+      "source_sha256": "d52ea9774ab123e071877adc3bafeb7654208e85ebc4f269fc5652bf6802206d",
+      "public_sha256": "d729b2316179521cf607e6bfad8be2792b845d151d10b2b1ad91868acdcccaa6"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/test_workflow.py",
+      "public_relative_path": "python/calibration_gui/test_workflow.py",
+      "source_sha256": "db6455b016a056e4f12ae95f173be74c95b242df62b4797ce975c2aa290f7996",
+      "public_sha256": "db6455b016a056e4f12ae95f173be74c95b242df62b4797ce975c2aa290f7996"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/test_instrument_setup.py",
+      "public_relative_path": "python/calibration_gui/test_instrument_setup.py",
+      "source_sha256": "84b2d2ec788358f8a9eecc3fefa646a2c095ea80e3b590d7afa680d9ff2e5a8d",
+      "public_sha256": "84b2d2ec788358f8a9eecc3fefa646a2c095ea80e3b590d7afa680d9ff2e5a8d"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/backend_contract.json",
+      "public_relative_path": "python/calibration_gui/backend_contract.json",
+      "source_sha256": "9ef835b6de68d6f69b2d2abcff9883d3be927ea445c138a5244c1bc78ab27625",
+      "public_sha256": "9ef835b6de68d6f69b2d2abcff9883d3be927ea445c138a5244c1bc78ab27625"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/manual_content.json",
+      "public_relative_path": "python/calibration_gui/manual_content.json",
+      "source_sha256": "890dbce5ca76022bd74f2eb916811f550967b452c56b4e6f35e550141af2dfb6",
+      "public_sha256": "aedbbe20a960fd7b3fdd29b86d9db79766d1d24652b36ac720d8b82da118cdc6"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/GUI_VERIFICATION.json",
+      "public_relative_path": "python/calibration_gui/GUI_VERIFICATION.json",
+      "source_sha256": "10842dbdd24c056bedf3642395608f8bb00636d479dc3f5aa6cd371ebeb422ab",
+      "public_sha256": "e414f15cd350dd921ab72b27c637bef76ce65f95993bbf7f454d233e9f5da2d9"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/RELEASE_VERIFICATION.json",
+      "public_relative_path": "python/calibration_gui/RELEASE_VERIFICATION.json",
+      "source_sha256": "2898dd181720906be41dcd97460c4a89ec05b6f4d21e895ade51e52b9ba6d269",
+      "public_sha256": "b842015acc2e30c3135cd6fd84f4268a7decb222f52de369568f5880351867e8"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/apply_p1_en.png",
+      "public_relative_path": "python/calibration_gui/screenshots/apply_p1_en.png",
+      "source_sha256": "d8a22bf317c13dcaad507bc5fb94e3dc8caa0e6e42979081fce9543561db65c1",
+      "public_sha256": "d8a22bf317c13dcaad507bc5fb94e3dc8caa0e6e42979081fce9543561db65c1"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/apply_p1_es.png",
+      "public_relative_path": "python/calibration_gui/screenshots/apply_p1_es.png",
+      "source_sha256": "453ec7eacc1b2374b8b0913306cd35a038a03daa5d17106400e3677bf16b46f1",
+      "public_sha256": "453ec7eacc1b2374b8b0913306cd35a038a03daa5d17106400e3677bf16b46f1"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/dosy_plan_en.png",
+      "public_relative_path": "python/calibration_gui/screenshots/dosy_plan_en.png",
+      "source_sha256": "a9f1ff33def859fb510f0d0e718d0a2e0475ad092d7a882fcb2ad990c688af45",
+      "public_sha256": "a9f1ff33def859fb510f0d0e718d0a2e0475ad092d7a882fcb2ad990c688af45"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/dosy_plan_es.png",
+      "public_relative_path": "python/calibration_gui/screenshots/dosy_plan_es.png",
+      "source_sha256": "7e52f5816347816a285a1dc08030f45fb84465ae1d6e1c92bd84a5761d6f687f",
+      "public_sha256": "7e52f5816347816a285a1dc08030f45fb84465ae1d6e1c92bd84a5761d6f687f"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/dosy_reference_en.png",
+      "public_relative_path": "python/calibration_gui/screenshots/dosy_reference_en.png",
+      "source_sha256": "0f7f305ee1943b1f13786bde4bf8bbc9bb332da8b8528bc55b77ebfeb4c09a0f",
+      "public_sha256": "0f7f305ee1943b1f13786bde4bf8bbc9bb332da8b8528bc55b77ebfeb4c09a0f"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/dosy_reference_es.png",
+      "public_relative_path": "python/calibration_gui/screenshots/dosy_reference_es.png",
+      "source_sha256": "23f5bda932685d1e4130428526356ae05dbfacf45d4ebc2b49d379b28b8ea141",
+      "public_sha256": "23f5bda932685d1e4130428526356ae05dbfacf45d4ebc2b49d379b28b8ea141"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/error_log_en.png",
+      "public_relative_path": "python/calibration_gui/screenshots/error_log_en.png",
+      "source_sha256": "c96bcc04491ed2a3e28fba416afe03d4a34ee7eae3d2a3189b0e8153d89417ab",
+      "public_sha256": "c96bcc04491ed2a3e28fba416afe03d4a34ee7eae3d2a3189b0e8153d89417ab"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/error_log_es.png",
+      "public_relative_path": "python/calibration_gui/screenshots/error_log_es.png",
+      "source_sha256": "c38978090a43c29740e1d388f419215ced97b2ca524a440499ca31ce5d818ecb",
+      "public_sha256": "c38978090a43c29740e1d388f419215ced97b2ca524a440499ca31ce5d818ecb"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/instrument_en.png",
+      "public_relative_path": "python/calibration_gui/screenshots/instrument_en.png",
+      "source_sha256": "7728b27fd977f346c1abacf06566a661488964ea883161ac4eef88101f960a45",
+      "public_sha256": "7728b27fd977f346c1abacf06566a661488964ea883161ac4eef88101f960a45"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/instrument_es.png",
+      "public_relative_path": "python/calibration_gui/screenshots/instrument_es.png",
+      "source_sha256": "c1bd260e21c3cbb8c4f6af7737b639dbb0c60d9c6229d67ce4cc2a18e3817b6d",
+      "public_sha256": "c1bd260e21c3cbb8c4f6af7737b639dbb0c60d9c6229d67ce4cc2a18e3817b6d"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/launch_en.png",
+      "public_relative_path": "python/calibration_gui/screenshots/launch_en.png",
+      "source_sha256": "f19454ac216a9fbff2dbf2a9c6ad6a473323de6d59640e92aa212c0c6da6e6ba",
+      "public_sha256": "f19454ac216a9fbff2dbf2a9c6ad6a473323de6d59640e92aa212c0c6da6e6ba"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/launch_es.png",
+      "public_relative_path": "python/calibration_gui/screenshots/launch_es.png",
+      "source_sha256": "768777e8d47cf7b4ef95912b384d5b2bd2f7183dd5556630129feeaa54e7467a",
+      "public_sha256": "768777e8d47cf7b4ef95912b384d5b2bd2f7183dd5556630129feeaa54e7467a"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/overview_en.png",
+      "public_relative_path": "python/calibration_gui/screenshots/overview_en.png",
+      "source_sha256": "f19454ac216a9fbff2dbf2a9c6ad6a473323de6d59640e92aa212c0c6da6e6ba",
+      "public_sha256": "f19454ac216a9fbff2dbf2a9c6ad6a473323de6d59640e92aa212c0c6da6e6ba"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/overview_es.png",
+      "public_relative_path": "python/calibration_gui/screenshots/overview_es.png",
+      "source_sha256": "768777e8d47cf7b4ef95912b384d5b2bd2f7183dd5556630129feeaa54e7467a",
+      "public_sha256": "768777e8d47cf7b4ef95912b384d5b2bd2f7183dd5556630129feeaa54e7467a"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/p1_plan_en.png",
+      "public_relative_path": "python/calibration_gui/screenshots/p1_plan_en.png",
+      "source_sha256": "f8e5f5919a7d58524e00df6f38914a6850e94d9ecb1b8b74225276f4328c8e6c",
+      "public_sha256": "b784e1f43b084980055d3d41efb53f0cde795c9d7d9a90a91ecb50e0361f0e21"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/p1_plan_es.png",
+      "public_relative_path": "python/calibration_gui/screenshots/p1_plan_es.png",
+      "source_sha256": "68dbe6887ca9913c14fb12cdd4af68ce3f7aefd9f99018e7e91d65ec8b5b4982",
+      "public_sha256": "30a79dbc21d9c65f91fb8160dadf4b241fa8e00bdf6e2160307df3de1349ee1f"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/p1_result_en.png",
+      "public_relative_path": "python/calibration_gui/screenshots/p1_result_en.png",
+      "source_sha256": "11bf5f507a3eb1a134959b0693a64ed1d8a0d1772d3ad82e0d5f220ea83cd93f",
+      "public_sha256": "11bf5f507a3eb1a134959b0693a64ed1d8a0d1772d3ad82e0d5f220ea83cd93f"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/p1_result_es.png",
+      "public_relative_path": "python/calibration_gui/screenshots/p1_result_es.png",
+      "source_sha256": "d7a752a7703211d878c76a1c2b7d973cb3c51bfe0458c75373b11593b7e8e8e6",
+      "public_sha256": "d7a752a7703211d878c76a1c2b7d973cb3c51bfe0458c75373b11593b7e8e8e6"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/reports_en.png",
+      "public_relative_path": "python/calibration_gui/screenshots/reports_en.png",
+      "source_sha256": "a9f1ff33def859fb510f0d0e718d0a2e0475ad092d7a882fcb2ad990c688af45",
+      "public_sha256": "a9f1ff33def859fb510f0d0e718d0a2e0475ad092d7a882fcb2ad990c688af45"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/reports_es.png",
+      "public_relative_path": "python/calibration_gui/screenshots/reports_es.png",
+      "source_sha256": "7e52f5816347816a285a1dc08030f45fb84465ae1d6e1c92bd84a5761d6f687f",
+      "public_sha256": "7e52f5816347816a285a1dc08030f45fb84465ae1d6e1c92bd84a5761d6f687f"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/run_stop_en.png",
+      "public_relative_path": "python/calibration_gui/screenshots/run_stop_en.png",
+      "source_sha256": "815ad1c6bf481bca7c473a6323c54efae090aef16a9fe174d988627238be82ce",
+      "public_sha256": "8d193a43fd235efb7a04c33c8a2164657812d32f2aab05a28f8ef4a333c647ce"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/run_stop_es.png",
+      "public_relative_path": "python/calibration_gui/screenshots/run_stop_es.png",
+      "source_sha256": "9493144a624e7eee0ce22c080f1730a871ef6300321f43c95675f1954dea218c",
+      "public_sha256": "d5984d950e05b77926bf1435f4bef29cf1d2a0669d252a72b10cecc6f21b2ad9"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/worked_example_en.png",
+      "public_relative_path": "python/calibration_gui/screenshots/worked_example_en.png",
+      "source_sha256": "a9f1ff33def859fb510f0d0e718d0a2e0475ad092d7a882fcb2ad990c688af45",
+      "public_sha256": "a9f1ff33def859fb510f0d0e718d0a2e0475ad092d7a882fcb2ad990c688af45"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/screenshots/worked_example_es.png",
+      "public_relative_path": "python/calibration_gui/screenshots/worked_example_es.png",
+      "source_sha256": "7e52f5816347816a285a1dc08030f45fb84465ae1d6e1c92bd84a5761d6f687f",
+      "public_sha256": "7e52f5816347816a285a1dc08030f45fb84465ae1d6e1c92bd84a5761d6f687f"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/output/pdf/Manual_Calibracion_Espectrometro_ES.pdf",
+      "public_relative_path": "python/calibration_gui/output/pdf/Manual_Calibracion_Espectrometro_ES.pdf",
+      "source_sha256": "5bbe1125f37398e28d63836bd61a7e5ac0351e8edac6ba51d5bcb42e4b05abb6",
+      "public_sha256": "26e2a98e2f978ac0f78596274b8533f2574ba58a24fa8adef3550df2ee2948d5"
+    },
+    {
+      "source_relative_path": "workshop_dosy/calibration_gui/output/pdf/Spectrometer_Calibration_Manual_EN.pdf",
+      "public_relative_path": "python/calibration_gui/output/pdf/Spectrometer_Calibration_Manual_EN.pdf",
+      "source_sha256": "e7a9d222709036a12170a4562f957247cd8787acf20fa02ce4c0e365921af8b6",
+      "public_sha256": "48d686781827c467fd57580a2bf6f781a29c4c985045f50ebfa10be1a72acddf"
+    }
+  ],
+  "public_adaptations": [
+    "Relative source-hash keys; public v3 dependency instead of private bundle.",
+    "Portable launch examples; redacted native dataset/path fields, outcome flags retained.",
+    "Public demo rendering uses display-only path redaction; original screenshots and data remain unchanged.",
+    "PDF manuals rebuilt from public sources and public application renders.",
+    "All public text and generated code/JSON use UTF-8/LF; hashes describe exact Git and ZIP source bytes."
+  ],
+  "native_pilot_scope": "Historical read-only source-build evidence only; rebuilt public bundle has no hardware validation.",
+  "verification": {
+    "public_Jython_passed": 51,
+    "public_CPython_passed": 41,
+    "public_CPython_java_only_skipped": 10,
+    "real_Swing_public_rerender": "passed; 24 ES/EN views; synthetic files only",
+    "manuals": "28 pages each; rebuilt from public renders; final pages visually checked",
+    "private_text_scan": "passed"
+  }
+}

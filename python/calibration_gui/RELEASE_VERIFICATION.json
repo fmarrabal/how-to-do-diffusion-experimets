@@ -1,0 +1,128 @@
+{
+  "date": "2026-10-03",
+  "Jython_2_7_2": {
+    "tests_passed": 51,
+    "workflow": 18,
+    "instrument_setup": 33,
+    "failed": 0
+  },
+  "CPython": {
+    "tests_passed": 41,
+    "tests_skipped_java_only": 10,
+    "failed": 0
+  },
+  "GUI": {
+    "loading_settings_requires_fresh_operator_review": true,
+    "languages": [
+      "en",
+      "es"
+    ],
+    "public_display_paths_redacted": true,
+    "TopSpin_3_6_4_live_validation": false,
+    "asynchronous_GUI_acquire_and_fit_demo_verified": true,
+    "P90_us": 10.999999999999996,
+    "actual_simulated_stop_after_points": 11,
+    "collision_preview_verified": true,
+    "screenshots_are_application_renders": true,
+    "screenshots": 24,
+    "b100_s_m2": 2000000000.0000002,
+    "real_swing_components_rendered": true,
+    "hardware_commands_issued": false,
+    "demo_only": true,
+    "public_screenshots_rerendered_from_synthetic_files": true
+  },
+  "native_TopSpin_3_8_0_read_only": {
+    "parameter_writes": false,
+    "GUI_callback_started": true,
+    "GUI_idle_after_read": true,
+    "scope": "GUI read-current-dataset action on TopSpin 3.8.0",
+    "context": {
+      "data_root": "[REDACTED: private dataset identifier/path]",
+      "p1_template_expno": 1000,
+      "current_expno": "10",
+      "gradient_template_expno": 10,
+      "available": true,
+      "dataset_name": "[REDACTED: private dataset identifier/path]",
+      "demo": false,
+      "current_procno": "1",
+      "current": "[REDACTED: private dataset identifier/path]"
+    },
+    "hardware_commands_issued": false,
+    "acquisition_executed": false,
+    "status": "passed_read_only"
+  },
+  "hardware_commands_issued": false,
+  "parameter_writes_to_instrument": false,
+  "acquisition_executed": false,
+  "TopSpin_3_6_4_instrument_validation": false,
+  "protected_source_sha256": {
+    "workshop_dosy/topspin_console_v3/dist/dosy_workshop_v3.py": "2c2b50bec1d84629015fbcbce6faa6df848bde93d38b948e3e49ef0d89a74bda",
+    "calibracion/TBO_HDO_20260904.json": "33cd7523715204b3d1bd6aaf5bc8aea69586950a14e92847178e67cc704bea18"
+  },
+  "package_unpacked_CPython_tests": {
+    "passed": 41,
+    "skipped_java_only": 10,
+    "failed": 0,
+    "dependency_layout_verified": true
+  },
+  "manual_visual_QA": {
+    "ES": "passed",
+    "EN": "passed",
+    "pages_each": 28,
+    "GUI_images_each": 12
+  },
+  "native_evidence_scope": "Read-only test of the source GUI before public repackaging; no live validation of the rebuilt public bundle.",
+  "historical_source_PDFs": {
+    "Manual_Calibracion_Espectrometro_ES.pdf": {
+      "pages": 28,
+      "sha256": "5bbe1125f37398e28d63836bd61a7e5ac0351e8edac6ba51d5bcb42e4b05abb6"
+    },
+    "Spectrometer_Calibration_Manual_EN.pdf": {
+      "pages": 28,
+      "sha256": "e7a9d222709036a12170a4562f957247cd8787acf20fa02ce4c0e365921af8b6"
+    }
+  },
+  "public_edition_redactions": [
+    "dataset_name",
+    "data_root",
+    "current",
+    "dataset"
+  ],
+  "PDFs": {
+    "Manual_Calibracion_Espectrometro_ES.pdf": {
+      "pages": 28,
+      "sha256": "26e2a98e2f978ac0f78596274b8533f2574ba58a24fa8adef3550df2ee2948d5",
+      "private_text_scan": "passed"
+    },
+    "Spectrometer_Calibration_Manual_EN.pdf": {
+      "pages": 28,
+      "sha256": "48d686781827c467fd57580a2bf6f781a29c4c985045f50ebfa10be1a72acddf",
+      "private_text_scan": "passed"
+    }
+  },
+  "public_rebuild_tests": {
+    "Jython_2_7_2_passed": 51,
+    "CPython_passed": 41,
+    "CPython_java_only_skipped": 10,
+    "failed": 0,
+    "real_Swing_demo_rerender_passed": true,
+    "hardware_commands_issued": false,
+    "public_v3_dependency": true
+  },
+  "public_manual_visual_QA": {
+    "languages": [
+      "es",
+      "en"
+    ],
+    "pages_each": 28,
+    "source_screenshots_rerendered": true,
+    "final_installation_and_sources_pages": "visually checked",
+    "PDF_text_private_path_scan": "passed"
+  },
+  "public_package_unpacked_CPython_tests": {
+    "passed": 41,
+    "skipped_java_only": 10,
+    "failed": 0,
+    "dependency_layout_verified": true
+  }
+}

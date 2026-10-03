@@ -1,0 +1,787 @@
+{
+  "schema_version": 1,
+  "metadata": {
+    "product": "DiffAtOnce | Spectrometer Calibration",
+    "title": {
+      "es": "Manual práctico de calibración del espectrómetro",
+      "en": "Practical spectrometer calibration manual"
+    },
+    "subtitle": {
+      "es": "Preparación del equipo, pulso de 90° y escala DOSY, paso a paso",
+      "en": "Instrument preparation, 90° pulse and DOSY scale, step by step"
+    },
+    "date": "2026-10-03",
+    "languages": [
+      "es",
+      "en"
+    ],
+    "launch_command": "xpy spectrometer_calibration_gui.py",
+    "demo_launcher": "run_demo.ps1",
+    "screenshot_policy": {
+      "es": "Las capturas muestran los componentes reales de la interfaz Java Swing, renderizados desde la aplicación en modo Demo; no son capturas del escritorio del espectrómetro. Los datos y el instrumento son simulados. No documentan adquisiciones ni calibraciones efectuadas en hardware.",
+      "en": "Screenshots show real Java Swing interface components rendered by the application in Demo mode; they are not captures of the spectrometer desktop. Data and instrument are simulated. They do not document acquisition or calibration performed on hardware."
+    },
+    "scope": {
+      "es": "Preparación guiada del instrumento, P1 del canal 1 y calibración DOSY con un patrón. El operador habilita capacidades presentes en su equipo y revisa cada acción. El software prepara copias nuevas, ejecuta una serie autorizada, procesa y calcula propuestas. No mide T1, no calibra otros canales ni sustituye la calibración de servicio o la medida independiente de temperatura real. P1 se aplica solo a una copia nueva revisada; no se escriben calibraciones globales.",
+      "en": "Guided instrument preparation, channel-1 P1 and DOSY calibration with a standard. The operator enables capabilities present on the instrument and reviews each action. Software prepares new copies, runs an authorised series, processes it and calculates proposals. It does not measure T1, calibrate other channels, replace service calibration or independently measure true sample temperature. P1 is applied only to a reviewed new copy; global calibrations are not written."
+    },
+    "public_edition_note": "Public demo views use redacted display paths; numerical synthetic data unchanged. Native pilot receipts refer to the source GUI before public packaging."
+  },
+  "sections": [
+    {
+      "id": "01_start",
+      "title": {
+        "es": "Empezar: qué se calibra y en qué orden",
+        "en": "Getting started: what to calibrate, and in which order"
+      },
+      "lead": {
+        "es": "La primera tarea es preparar el equipo y calibrar el pulso. Después se determina la escala de gradiente mediante un patrón de difusión. Son dos resultados diferentes: P90 describe la duración del pulso de radiofrecuencia a una potencia concreta; la calibración DOSY relaciona la atenuación con la difusión.",
+        "en": "Start by preparing the instrument and calibrating the pulse. Then establish the gradient scale using a diffusion standard. These are different results: P90 describes the radiofrequency pulse duration at a particular power; DOSY calibration relates signal attenuation to diffusion."
+      },
+      "steps": {
+        "es": [
+          "En Inicio, seleccione Español o English y compruebe el modo de conexión. Pulse Leer dataset actual en Equipo y revise los campos del dataset y la carpeta de informes en P1. El cambio de idioma no cambia unidades ni parámetros experimentales.",
+          "Recorra Instrument → P1 → DOSY → Run & results. Complete primero la preparación; un indicador de software no sustituye la observación de la muestra, la línea espectral y los controles del equipo.",
+          "Para aprender el recorrido, abra Demo. Practique la vista previa, los gráficos y los informes antes de conectar con TopSpin. Identifique siempre si un resultado procede de simulación o de datos adquiridos.",
+          "En el equipo real, trabaje desde una plantilla revisada. Elija EXPNO nuevos para conservar cada prueba y poder volver a los parámetros de partida."
+        ],
+        "en": [
+          "In Overview, select Español or English and check the connection mode. Use Read current dataset in Instrument and inspect dataset fields and the report folder in P1. Changing the language does not change units or experimental parameters.",
+          "Follow Instrument → P1 → DOSY → Run & results. Complete preparation first; a software indicator does not replace inspection of the sample, spectral line and instrument controls.",
+          "Use Demo to learn the workflow. Practise previewing plans, inspecting plots and opening reports before connecting to TopSpin. Always identify whether a result comes from simulation or acquired data.",
+          "On the real instrument, start from a reviewed template. Choose new EXPNOs to retain every trial and preserve the starting parameters."
+        ]
+      },
+      "notes": {
+        "es": [
+          "El número de experimento es un identificador, no una propiedad física: EXPNO 1000 corresponde al experimento de calibración utilizado en este laboratorio.",
+          "No hace falta modificar la constante de gradiente para comprobar P90. Calibre y documente cada operación por separado."
+        ],
+        "en": [
+          "An experiment number is an identifier, not a physical property: EXPNO 1000 is the calibration experiment used in this laboratory.",
+          "Checking P90 does not require changing the gradient constant. Calibrate and document each operation separately."
+        ]
+      },
+      "screenshot": {
+        "id": "overview",
+        "caption": {
+          "es": "Overview: idioma, contexto y estado de conexión. Captura en modo Demo.",
+          "en": "Overview: language, context and connection status. Screenshot in Demo mode."
+        },
+        "required_state": "Demo visible; current dataset and language selector legible"
+      },
+      "source_ids": [
+        "gui_contract",
+        "v3_readme"
+      ]
+    },
+    {
+      "id": "02_runtime",
+      "title": {
+        "es": "Instalación, apertura y entorno de ejecución",
+        "en": "Installation, launch and runtime"
+      },
+      "lead": {
+        "es": "La GUI utiliza Python compatible con Jython 2.7 y componentes gráficos Java Swing dentro de TopSpin 3. No necesita la API externa moderna de Python 3 para controlar TopSpin. La instalación local disponible es TopSpin 3.8.0; el funcionamiento real en 3.6.4 debe comprobarse allí.",
+        "en": "The GUI uses Jython 2.7-compatible Python and Java Swing graphical components inside TopSpin 3. It does not require the modern external Python 3 API to control TopSpin. The available local installation is TopSpin 3.8.0; live operation in 3.6.4 must be checked on that installation."
+      },
+      "steps": {
+        "es": [
+          "Copie el archivo autocontenido dist/spectrometer_calibration_gui.py del paquete a <TopSpin>/exp/stan/nmr/py/user/. Conserve una copia de la versión anterior si ya utiliza ese nombre.",
+          "Abra TopSpin, seleccione una plantilla 1D apropiada y escriba xpy spectrometer_calibration_gui.py. Pulse Leer dataset actual en Equipo y compruebe los campos en P1 antes de preparar destinos.",
+          "Para demostración independiente, utilice run_demo.ps1. El lanzador usa el JRE y Jython locales indicados por su configuración; no instala un entorno ni conecta por sí solo con un espectrómetro.",
+          "Si falta Java, Jython o el script, revise la ruta del mensaje de error. Usar python.exe externo no equivale a abrir la GUI dentro de TopSpin: las llamadas TopCmds necesitan ese contexto."
+        ],
+        "en": [
+          "Copy the self-contained dist/spectrometer_calibration_gui.py file from the package to <TopSpin>/exp/stan/nmr/py/user/. Retain the previous version if that name is already in use.",
+          "Open TopSpin, select a suitable 1D template and enter xpy spectrometer_calibration_gui.py. Use Read current dataset in Instrument and check the fields in P1 before preparing destinations.",
+          "For a standalone demonstration, use run_demo.ps1. The launcher uses the local JRE and Jython paths in its configuration; it does not install a runtime or connect to a spectrometer by itself.",
+          "If Java, Jython or the script cannot be found, inspect the path in the error message. Running an external python.exe is not equivalent to opening the GUI in TopSpin: TopCmds calls require that context."
+        ]
+      },
+      "notes": {
+        "es": [
+          "La compatibilidad de sintaxis y las pruebas con TopCmds simulado permiten comprobar el software, pero no certifican la comunicación con el equipo ni la calidad de una calibración experimental.",
+          "Cargar ajustes restaura los valores editables, pero borra el resultado activo y las comprobaciones de muestra, hardware y revisión. Repite esas comprobaciones para la sesión actual; un archivo guardado no acredita las condiciones del instrumento."
+        ],
+        "en": [
+          "Syntax compatibility and tests with simulated TopCmds check software behaviour, but do not establish instrument communication or the quality of an experimental calibration.",
+          "Loading settings restores editable values but clears the active result and sample, hardware and review checks. Repeat these checks for the current session; a saved file cannot establish current instrument conditions."
+        ]
+      },
+      "screenshot": {
+        "id": "launch",
+        "caption": {
+          "es": "Apertura de la GUI y modo seleccionado; el estado Demo permanece visible.",
+          "en": "GUI launch and selected mode; the Demo status remains visible."
+        },
+        "required_state": "Overview or launch state, no fabricated TopSpin console"
+      },
+      "source_ids": [
+        "gui_contract",
+        "bruker_python",
+        "v3_verification"
+      ]
+    },
+    {
+      "id": "03_instrument",
+      "title": {
+        "es": "Preparar muestra, temperatura y señal",
+        "en": "Preparing the sample, temperature and signal"
+      },
+      "lead": {
+        "es": "Instrument organiza acciones separadas de preparación. Antes de ejecutarlas, cree una copia de trabajo: los comandos de temperatura pueden actualizar parámetros del experimento. Se conserva la plantilla original y la vista de TopSpin se restaura después de cada acción; volver a esa vista no propaga los parámetros de la copia.",
+        "en": "Instrument organises separate preparation actions. Create a working copy before running them: temperature commands can update experiment parameters. The original template is retained and the TopSpin view is restored after each action; returning to that view does not propagate parameters from the copy."
+      },
+      "steps": {
+        "es": [
+          "Introduzca la muestra según el procedimiento del laboratorio, sin giro para DOSY. En «EXPNO de copia de preparación», indique un número libre, por ejemplo 1050, y pulse «Crear copia de preparación». Se copian solo parámetros de la plantilla P1, por ejemplo 1000; no se copia ni adquiere una señal.",
+          "Habilite únicamente funciones disponibles en ese equipo. Para LOCK, confirme hardware y disolvente configurados; el disolvente debe coincidir con SOLVENT de la copia. «Ejecutar LOCK» envía lock -acqu. Revise después la estabilidad; una respuesta de comando correcta no demuestra lock estable.",
+          "Para «Ejecutar ATMA», confirme que la sonda tiene hardware ATM compatible. ATMA ajusta sintonía y adaptación con los canales encaminados en el dataset; no calibra el pulso de 90°. Si no hay ATM, realice el ajuste manual desde los controles nativos del equipo.",
+          "Habilite «TopShim configurado para esta sonda» solo si hardware, sonda y configuración son compatibles. Revise el lock sobre el disolvente correcto y marque su comprobación antes de «Ejecutar TOPSHIM». Inspeccione el informe y la forma de línea, no solo el mensaje de finalización.",
+          "Para «Leer temperatura del controlador», habilite el controlador y su comando. teget se ejecuta en la copia 1050 y actualiza allí el estado guardado. La lectura fresca corresponde al controlador; no demuestra la temperatura real de la muestra ni equilibrio térmico. Leer TE almacenado sin teget tampoco es una lectura viva.",
+          "Para «Cambiar consigna de temperatura», introduzca una consigna numérica en kelvin y límites mínimo/máximo explícitos adecuados para sonda, muestra y controlador. teset recibe esa consigna solo si está dentro de los límites. Después consulte el controlador y espere el equilibrio según el procedimiento del laboratorio.",
+          "Antes del barrido P1, seleccione una señal aislada próxima a la frecuencia de observación, ajuste RG sin saturar el máximo y fije potencia, fase y D1 suficiente para recuperar la señal. Revise la plantilla que va a utilizar: seleccione 1050 como plantilla P1 si necesita sus parámetros actualizados, o actualice manualmente otras plantillas de trabajo conservando los originales."
+        ],
+        "en": [
+          "Insert the sample according to the laboratory procedure, without spinning for DOSY. In Preparation copy EXPNO, enter an unused number such as 1050 and select Create preparation copy. Only parameters are copied from the P1 template, for example 1000; no signal is copied or acquired.",
+          "Enable only functions available on that instrument. For LOCK, confirm hardware and configured solvent; the solvent must match SOLVENT in the copy. Run LOCK sends lock -acqu. Inspect stability afterwards: a successful command response does not establish stable lock.",
+          "For Run ATMA, confirm that the probe has compatible ATM hardware. ATMA adjusts tuning and matching using the channels routed in the dataset; it does not calibrate the 90° pulse. If ATM is unavailable, adjust manually using native instrument controls.",
+          "Enable TopShim configured for this probe only when hardware, probe and setup are compatible. Inspect lock on the correct solvent and confirm that check before Run TOPSHIM. Examine its report and the spectral line shape, not only completion status.",
+          "For Read controller temperature, enable the controller and command. teget runs in copy 1050 and updates its stored status. A fresh readback belongs to the controller; it establishes neither true sample temperature nor thermal equilibrium. Reading stored TE without teget is not a live sensor query.",
+          "For Set temperature demand, enter a numerical setpoint in kelvin and explicit minimum/maximum limits appropriate to the probe, sample and controller. teset receives that demand only within the limits. Afterwards query the controller and allow equilibration according to the laboratory procedure.",
+          "Before the P1 sweep, select an isolated signal near the observation frequency, set RG without clipping the maximum, and fix power, phase and sufficient recovery delay D1. Review the template to be used: select 1050 as the P1 template when its updated parameters are needed, or manually update other working templates while preserving originals."
+        ]
+      },
+      "notes": {
+        "es": [
+          "Los cambios de TE en 1050 no se transfieren automáticamente a 1000 ni a la plantilla DOSY 10. La consigna aplicada sí afecta al controlador del equipo, pero los parámetros guardados de cada experimento deben revisarse por separado.",
+          "El alcance es preparación guiada + P1 del canal 1 + DOSY del patrón. No se determina T1 ni se validan otros canales, calibraciones de servicio o temperatura real de la muestra.",
+          "La pestaña Equipo se desplaza verticalmente. Baja hasta el final para ver las cuatro comprobaciones y el botón Leer dataset actual."
+        ],
+        "en": [
+          "Changes to TE in 1050 are not automatically transferred to 1000 or DOSY template 10. The submitted demand affects the instrument controller, but each experiment's stored parameters must be reviewed separately.",
+          "Scope is guided preparation + channel-1 P1 + standard DOSY. T1 is not determined, nor are other channels, service calibrations or true sample temperature validated.",
+          "The Instrument tab scrolls vertically. Scroll to the bottom to see all four operator checks and the Read current dataset button."
+        ]
+      },
+      "screenshot": {
+        "id": "instrument",
+        "caption": {
+          "es": "Interfaz real: copia 1050, capacidades configurables y controles de temperatura. Componentes Swing renderizados en modo Demo.",
+          "en": "Real interface: copy 1050, configurable capabilities and temperature controls. Swing components rendered in Demo mode."
+        },
+        "required_state": "Instrument tab showing preparation EXPNO1050, individual capability gates, lock review, temperature demand and configured limits; Demo visible"
+      },
+      "source_ids": [
+        "gui_contract",
+        "gui_setup",
+        "pulse_guidance",
+        "bruker_dosy"
+      ]
+    },
+    {
+      "id": "04_p1_plan",
+      "title": {
+        "es": "P1: configurar una curva de nutación",
+        "en": "P1: configuring a nutation curve"
+      },
+      "lead": {
+        "es": "Abra la plantilla de calibración, por ejemplo EXPNO 1000, y confirme PULPROG = zg. Esta secuencia aplica directamente P1. La GUI no interpreta automáticamente el P1 almacenado como un pulso de 90°: podría ser el valor usado para buscar el nulo de 180°.",
+        "en": "Open the calibration template, for example EXPNO 1000, and confirm PULPROG = zg. This sequence applies P1 directly. The GUI does not automatically interpret stored P1 as a 90° pulse: it may be the value used to find the 180° null."
+      },
+      "steps": {
+        "es": [
+          "En P1, introduzca duraciones distintas y crecientes en microsegundos. Incluya la subida de señal, el máximo positivo y puntos después de la primera inversión. Se necesitan al menos nueve valores para el ajuste.",
+          "Defina un intervalo de búsqueda de P90 que incluya el valor físicamente esperado. Si P1 actual es 22 µs y representa 180°, P90 puede estar cerca de 11 µs; no centre obligatoriamente la búsqueda en 22.",
+          "Introduzca los límites inferior y superior de integración en ppm, leídos del espectro real. La ventana debe contener la misma señal completa, sin regiones ajenas ni bordes fuera del espectro.",
+          "Seleccione el primer EXPNO nuevo. La vista previa debe mostrar una fila por duración, el destino correspondiente y los parámetros heredados. Revise RF, RG, NS, D1 y PHC0/PHC1 antes de preparar."
+        ],
+        "en": [
+          "In P1, enter distinct, increasing durations in microseconds. Include the signal rise, positive maximum and points beyond the first inversion. At least nine values are required for fitting.",
+          "Define a P90 search interval containing the physically expected value. If current P1 is 22 µs and represents 180°, P90 may be near 11 µs; do not automatically centre the search on 22.",
+          "Enter lower and upper integration limits in ppm from the actual spectrum. The window must contain the same complete resonance, without unrelated regions or boundaries outside the spectrum.",
+          "Select the first new EXPNO. Preview should show one row per duration, its destination and inherited parameters. Review RF power, RG, NS, D1 and PHC0/PHC1 before preparation."
+        ]
+      },
+      "notes": {
+        "es": [
+          "El barrido inicial es editable. Revíselo frente a los límites RF de la sonda; el programa no decide una potencia o duración segura para cada hardware.",
+          "zg30 no equivale a zg: el ajuste de esta herramienta exige la secuencia sencilla zg."
+        ],
+        "en": [
+          "The initial sweep is editable. Review it against the probe's RF limits; the software does not determine suitable power or duration for every hardware configuration.",
+          "zg30 is not equivalent to zg: this tool's fit requires the simple zg sequence."
+        ]
+      },
+      "screenshot": {
+        "id": "p1_plan",
+        "caption": {
+          "es": "Plan P1: valores, intervalo de P90, región ppm y destinos nuevos. Ejemplo Demo 22/11 µs.",
+          "en": "P1 plan: values, P90 interval, ppm region and new destinations. Demo example 22/11 µs."
+        },
+        "required_state": "P1 tab or preview with editable bounds and fresh EXPNO range"
+      },
+      "source_ids": [
+        "autorun_source",
+        "pulse_guidance"
+      ]
+    },
+    {
+      "id": "05_p1_result",
+      "title": {
+        "es": "P1: conservar el signo y reconocer el primer nulo",
+        "en": "P1: retaining the sign and recognising the first null"
+      },
+      "lead": {
+        "es": "Con potencia fija, la señal primero aumenta, alcanza el máximo de 90°, disminuye y cruza por cero cerca de 180°. Ese primer cruce positivo→negativo permite calcular P90 = P180/2. El siguiente cruce, de 360°, requiere dividir entre cuatro.",
+        "en": "At fixed power, the signal first rises, reaches the 90° maximum, decreases and crosses zero near 180°. That first positive-to-negative crossing gives P90 = P180/2. The next crossing, at 360°, requires division by four."
+      },
+      "steps": {
+        "es": [
+          "Adquiera primero una señal claramente positiva y ajuste su fase. Durante el barrido conserve PHC0/PHC1: EFP utiliza esa fase. No aplique APK por punto ni cambie a magnitud.",
+          "En el resultado, compruebe integrales positivas y negativas. Si todos los puntos aparecen positivos, revise la fase, el intervalo de P1 y el procesado antes de aceptar una propuesta.",
+          "Compare los puntos con el seno ajustado y revise residuos. El modelo utiliza amplitud y desplazamiento de línea base; la inhomogeneidad RF, relajación y desviación de resonancia pueden apartar la curva del seno ideal.",
+          "Si el óptimo queda en un extremo del intervalo de búsqueda, amplíe o corrija el intervalo con criterio físico y revise el barrido. No acepte un valor simplemente porque su R² sea alto.",
+          "Después de revisar P90, compruebe experimentalmente una señal positiva intensa a ese pulso y la misma potencia. Registre el resultado y sus condiciones antes de trasladarlo a otra plantilla."
+        ],
+        "en": [
+          "First acquire a clearly positive signal and set its phase. Retain PHC0/PHC1 throughout the sweep: EFP uses that phase. Do not apply APK independently or switch to magnitude mode.",
+          "Check that the result includes positive and negative integrals. If all points appear positive, review phase, the P1 interval and processing before accepting a proposal.",
+          "Compare measured points with the fitted sine and inspect residuals. The model includes amplitude and a baseline offset; RF inhomogeneity, relaxation and off-resonance behaviour may depart from the ideal sine.",
+          "If the optimum is at a search boundary, widen or correct the interval using physical judgement and inspect the sweep. Do not accept a value solely because its R² is high.",
+          "After reviewing P90, experimentally check for a strong positive signal at that pulse and the same power. Record the result and its conditions before transferring it to another template."
+        ]
+      },
+      "notes": {
+        "es": [
+          "P90 = 11 µs y P180 = 22 µs son el ejemplo sintético de demostración. No son valores universales ni una nueva medida de la sonda."
+        ],
+        "en": [
+          "P90 = 11 µs and P180 = 22 µs are the synthetic demonstration example. They are neither universal values nor a new probe measurement."
+        ]
+      },
+      "screenshot": {
+        "id": "p1_result",
+        "caption": {
+          "es": "Curva firmada y propuesta de P90; datos sintéticos en modo Demo.",
+          "en": "Signed curve and P90 proposal; synthetic data in Demo mode."
+        },
+        "required_state": "Positive and negative points, model, P90/P180 and residuals legible"
+      },
+      "source_ids": [
+        "autorun_source",
+        "pulse_guidance"
+      ]
+    },
+    {
+      "id": "06_reference",
+      "title": {
+        "es": "DOSY: elegir patrón, temperatura y señal",
+        "en": "DOSY: choosing the standard, temperature and signal"
+      },
+      "lead": {
+        "es": "La calibración DOSY necesita un patrón cuya difusión se conozca para su composición, disolvente y temperatura. No basta escribir un valor de agua encontrado en una tabla. Identifique la fuente del D de referencia y manténgala asociada al informe.",
+        "en": "DOSY calibration requires a standard with known diffusion for its composition, solvent and temperature. Entering a water value from a table is insufficient. Identify the reference-D source and keep it associated with the report."
+      },
+      "steps": {
+        "es": [
+          "Abra una plantilla DOSY 1D ya preparada con P90 revisado, secuencia, forma de gradiente, P30, D20, D16, RG y fase correctos. La ruta de esta GUI varía GPZ6 dentro de una condición de tiempos.",
+          "En DOSY, indique identidad del patrón, disolvente y fuente. Introduzca Dref en 10⁻⁹ m²/s: escribir 1.9 significa 1.9 × 10⁻⁹ m²/s. Introduzca la temperatura de referencia en kelvin.",
+          "Fije tolerancias para la variación de TE y la diferencia frente a Tref. El lector compara los parámetros guardados de cada adquisición; no calcula automáticamente un Dref corregido a otra temperatura.",
+          "Seleccione una señal aislada del patrón y una ventana fija en ppm. Compruebe su fase y línea base en la serie, incluidos los puntos atenuados. La integral conserva el signo, pero el ajuste logarítmico DOSY necesita áreas positivas."
+        ],
+        "en": [
+          "Open a prepared 1D DOSY template with reviewed P90, sequence, gradient shape, P30, D20, D16, RG and phase. This GUI varies GPZ6 within one timing condition.",
+          "In DOSY, enter the standard identity, solvent and source. Enter Dref in 10⁻⁹ m²/s: typing 1.9 means 1.9 × 10⁻⁹ m²/s. Enter the reference temperature in kelvin.",
+          "Set tolerances for TE variation and departure from Tref. The reader compares stored parameters from each acquisition; it does not automatically calculate a temperature-corrected Dref.",
+          "Choose an isolated standard resonance and a fixed ppm window. Inspect phase and baseline throughout the series, including attenuated points. Integration retains the sign, but the logarithmic DOSY fit requires positive areas."
+        ]
+      },
+      "notes": {
+        "es": [
+          "El valor HDO/D₂O Dref = 1.902 corresponde a 298.15 K en la comparación conservada del proyecto. No debe asignarse a toda una rampa medida a otra temperatura.",
+          "Si cambia muestra, composición o temperatura, revise la referencia antes de reutilizarla."
+        ],
+        "en": [
+          "The retained project comparison uses HDO/D₂O Dref = 1.902 at 298.15 K. Do not assign it to an entire ramp acquired at another temperature.",
+          "If sample, composition or temperature changes, review the reference before reusing it."
+        ]
+      },
+      "screenshot": {
+        "id": "dosy_reference",
+        "caption": {
+          "es": "Referencia DOSY: identidad, Dref, temperatura y ventana ppm. Valores de demostración.",
+          "en": "DOSY reference: identity, Dref, temperature and ppm window. Demonstration values."
+        },
+        "required_state": "DOSY reference fields and units visible, Demo label"
+      },
+      "source_ids": [
+        "calibration_source",
+        "tbo_profile",
+        "v3_readme"
+      ]
+    },
+    {
+      "id": "07_ramp_and_scale",
+      "title": {
+        "es": "DOSY: diseñar la rampa e interpretar su escala",
+        "en": "DOSY: designing the ramp and interpreting its scale"
+      },
+      "lead": {
+        "es": "Antes de una serie completa, pruebe gradientes bajo, medio y alto. Busque una atenuación distribuida entre puntos útiles: una curva casi plana informa poco; una señal que desaparece demasiado pronto deja pocos puntos fiables. Ajuste la codificación y el número de acumulaciones a la señal disponible.",
+        "en": "Before a full series, test low, intermediate and high gradients. Aim for attenuation spread across useful points: an almost flat curve provides little information, while signal lost too early leaves few reliable points. Match encoding and scan count to the available signal."
+      },
+      "steps": {
+        "es": [
+          "Introduzca GPZ6 como porcentajes crecientes y distintos. El ejemplo 8–96 %, paso 4 %, produce 23 puntos. Es un ejemplo configurable; el 96 % no es una recomendación universal para todas las sondas.",
+          "Mantenga Δ, δ y forma dentro de la rampa. Para stebpgp1s1d, D20 se almacena en segundos y cada P30 en microsegundos; la pequeña δ es 2 × P30. Verifique el programa real antes de usar esta relación.",
+          "El ajuste representa ln(I/Imax) frente a (GPZ6/100)² con intercepto libre. El primer punto al 8 % no mide I a gradiente cero, por lo que no se fuerza a representar una ausencia de atenuación.",
+          "La magnitud de la pendiente dividida por Dref en unidades SI proporciona b100. La relación b(g) = b100 × (GPZ6/100)² pertenece a esas condiciones. Si cambia Δ o δ, recalcule b con un modelo verificado o calibre esa condición por separado."
+        ],
+        "en": [
+          "Enter GPZ6 as increasing, distinct percentages. The 8–96%, step-4% example gives 23 points. It is configurable; 96% is not a universal recommendation for every probe.",
+          "Keep Δ, δ and shape fixed within the ramp. For stebpgp1s1d, D20 is stored in seconds and each P30 in microseconds; small δ is 2 × P30. Check the actual pulse program before using that relationship.",
+          "The fit plots ln(I/Imax) against (GPZ6/100)² with a free intercept. The first 8% point does not measure zero-gradient intensity and is not forced to represent zero attenuation.",
+          "The slope magnitude divided by Dref in SI units gives b100. The relationship b(g) = b100 × (GPZ6/100)² belongs to those conditions. After changing Δ or δ, recalculate b with a verified model or calibrate that condition separately."
+        ]
+      },
+      "notes": {
+        "es": [
+          "Las tres rampas con Δ configurable se preparan en el generador separado. La GUI de calibración actual analiza una condición de tiempos por serie."
+        ],
+        "en": [
+          "Use the separate generator for three ramps with configurable Δ. The current calibration GUI analyses one timing condition per series."
+        ]
+      },
+      "screenshot": {
+        "id": "dosy_plan",
+        "caption": {
+          "es": "Plan y resultado de una rampa DOSY con tiempos constantes. Modo Demo.",
+          "en": "Plan and result of a DOSY gradient ramp with fixed timing. Demo mode."
+        },
+        "required_state": "GPZ6 sequence and destination table, one D20/P30 condition"
+      },
+      "source_ids": [
+        "calibration_source",
+        "v3_readme",
+        "bruker_dosy"
+      ]
+    },
+    {
+      "id": "08_execution",
+      "title": {
+        "es": "Vista previa, preparación, adquisición y parada",
+        "en": "Preview, preparation, acquisition and stopping"
+      },
+      "lead": {
+        "es": "Revise el plan antes de iniciar una acción. Exportar o mostrar un plan permite comprobarlo; preparar crea experimentos con parámetros; adquirir ejecuta mediciones en el equipo conectado. El modo Demo reproduce el flujo con datos simulados y debe permanecer identificado como tal.",
+        "en": "Review the plan before starting an action. Exporting or displaying a plan lets you inspect it; preparation creates parameter-only experiments; acquisition performs measurements on the connected instrument. Demo mode reproduces the workflow with simulated data and must remain identified as such."
+      },
+      "steps": {
+        "es": [
+          "En la preparación inicial, todos los destinos deben estar libres y excluir la plantilla. «Preparar experimentos nuevos» copia parámetros con wraparam y comprueba cada punto. Después, la misma sesión de la GUI puede adquirir esos destinos si reconoce el plan preparado y sus archivos siguen intactos, sin FID previo.",
+          "Cuando elija adquirir, revise y confirme el inicio. El ejecutor espera a que ZG termine, comprueba su estado, ejecuta EFP con la fase heredada y lee el espectro procesado antes de continuar.",
+          "Durante la serie, siga el EXPNO activo y el registro de Run & results. No cambie manualmente el dataset ni los parámetros que el barrido debe mantener fijos.",
+          "Stop solicita detenerse después del punto actual. No aborta inmediatamente la radiofrecuencia de una adquisición en curso. Si necesita interrumpir ese punto, use los controles nativos de TopSpin y el procedimiento del equipo.",
+          "Tras una parada de adquisición, conserve resultados y registro. No se reanuda ni sobrescribe una serie parcialmente adquirida: revise lo sucedido y elija EXPNO nuevos. «Analizar serie existente» permite revisar datos ya adquiridos sin lanzar ZG; indique el conjunto de EXPNO y valores de barrido que les corresponda."
+        ],
+        "en": [
+          "For initial preparation, destinations must be unused and exclude the template. Prepare new experiments copies parameters through wraparam and checks every point. Afterwards, the same GUI session can acquire those destinations if it recognises the prepared plan and its files remain unchanged, without a previous FID.",
+          "When choosing acquisition, review and confirm the start. The executor waits for ZG, checks its completion status, runs EFP with inherited phase and reads the processed spectrum before continuing.",
+          "During the series, follow the active EXPNO and Run & results log. Do not manually change the dataset or parameters that the sweep must retain.",
+          "Stop requests termination after the current point. It does not immediately abort radiofrequency activity in an acquisition already running. To interrupt that point, use native TopSpin controls and the instrument procedure.",
+          "After an acquisition stop, retain partial results and the log. A partially acquired series is neither resumed nor overwritten: inspect what happened and choose new EXPNOs. Analyze existing series reviews previously acquired data without running ZG; specify the matching EXPNOs and sweep values."
+        ]
+      },
+      "notes": {
+        "es": [
+          "Un FID existente no demuestra que la adquisición haya terminado correctamente. Un estado de comando ambiguo detiene el flujo, aunque se haya escrito un archivo."
+        ],
+        "en": [
+          "An existing FID does not establish successful acquisition completion. An ambiguous command status stops the workflow even when a file has been written."
+        ]
+      },
+      "screenshot": {
+        "id": "run_stop",
+        "caption": {
+          "es": "Ejecución y registro. Stop actúa después del punto actual; demostración sin hardware.",
+          "en": "Execution and log. Stop acts after the current point; demonstration without hardware."
+        },
+        "required_state": "Run & results with point progress and Stop semantics visible"
+      },
+      "source_ids": [
+        "gui_contract",
+        "gui_workflow"
+      ]
+    },
+    {
+      "id": "09_apply",
+      "title": {
+        "es": "Revisar propuestas y aplicar P1 a una copia nueva",
+        "en": "Reviewing proposals and applying P1 to a new copy"
+      },
+      "lead": {
+        "es": "Calcular una propuesta y aplicarla son operaciones distintas. Revise la curva, los residuos y las condiciones antes de copiar P90. La acción de aplicar P1 de esta GUI prepara un EXPNO nuevo con parámetros; conserva el original y no cambia una calibración global del instrumento.",
+        "en": "Calculating a proposal and applying it are different operations. Review the curve, residuals and conditions before copying P90. This GUI's apply-P1 action prepares a new parameter-only EXPNO; it preserves the original and does not change a global instrument calibration."
+      },
+      "steps": {
+        "es": [
+          "Compruebe identidad de muestra, sonda, núcleo y potencia RF. Una propuesta obtenida a una potencia no debe trasladarse a otra sin comprobar la relación de pulsos.",
+          "Seleccione la plantilla destino y un EXPNO nuevo, revise el P1 propuesto y confirme la copia. Después abra el destino y verifique P1 junto con la potencia heredada.",
+          "Revise los pulsos relacionados en el programa DOSY. No suponga que todos los pulsos de 180° son un parámetro independiente que pueda actualizarse automáticamente: algunas secuencias los definen a partir de P1.",
+          "Para el gradiente, el resultado habitual es b100. La conversión a G requiere un modelo de secuencia y forma verificado; si falta, conserve la escala empírica sin inventar un gradiente físico.",
+          "Una corrección independiente Gnuevo = Gprevio × raíz(Dmedido/Dref) exige que Dmedido se haya calculado precisamente con Gprevio. Revise unidades antes de registrar una constante en los controles Bruker."
+        ],
+        "en": [
+          "Check sample identity, probe, nucleus and RF power. A proposal obtained at one power must not be transferred to another without checking the pulse relationship.",
+          "Select the destination template and a new EXPNO, review proposed P1 and confirm the copy. Then open the destination and verify P1 together with inherited power.",
+          "Inspect related pulses in the DOSY program. Do not assume every 180° pulse is an independent parameter that can be updated automatically: some sequences define it from P1.",
+          "For the gradient, the usual result is b100. Conversion to G requires a verified sequence and shape model; if unavailable, retain the empirical scale without inventing a physical gradient.",
+          "The separate correction Gnew = Gprevious × sqrt(Dmeasured/Dref) requires Dmeasured to have been calculated using that exact Gprevious. Review units before recording a constant in Bruker controls."
+        ]
+      },
+      "notes": {
+        "es": [
+          "La GUI no escribe gradient_calib ni el perfil TBO compartido. La revisión de una propuesta no equivale a una verificación experimental independiente."
+        ],
+        "en": [
+          "The GUI does not write gradient_calib or the shared TBO profile. Reviewing a proposal is not independent experimental verification."
+        ]
+      },
+      "screenshot": {
+        "id": "apply_p1",
+        "caption": {
+          "es": "Revisión de P1 y destino nuevo antes de copiar parámetros. Modo Demo.",
+          "en": "P1 and new-destination review before copying parameters. Demo mode."
+        },
+        "required_state": "Proposal, RF context, new EXPNO and explicit apply action visible"
+      },
+      "source_ids": [
+        "gui_contract",
+        "calibration_source",
+        "console_readme"
+      ]
+    },
+    {
+      "id": "10_examples",
+      "title": {
+        "es": "Dos ejemplos completos para practicar",
+        "en": "Two complete examples to practise"
+      },
+      "lead": {
+        "es": "Los siguientes valores sirven para recorrer la interfaz con el modo Demo. Las duraciones y gradientes de una medida real se eligen a partir de la muestra y de los límites del equipo. Use los ejemplos para comprobar el razonamiento y las unidades.",
+        "en": "The following values are for walking through Demo mode. Pulse durations and gradients for a real measurement must be chosen for the sample and instrument limits. Use the examples to check the reasoning and units."
+      },
+      "steps": {
+        "es": [
+          "Ejemplo P1: una plantilla muestra P1 = 22 µs. Introduzca nueve o más valores que cubran la subida, el máximo próximo a 11 µs y la inversión próxima a 22 µs; añada puntos negativos posteriores. Configure una búsqueda que incluya 11 µs.",
+          "Revise el plan, ejecute Demo y observe el cambio de signo. La propuesta esperada del modelo sintético es P90 ≈ 11 µs y P180 ≈ 22 µs. Compruebe los residuos; después ensaye la copia a un destino nuevo.",
+          "Ejemplo DOSY del modo Demo: mantenga un solo D20 y P30, y utilice 8–96 % en pasos de 4 %. La referencia sintética utiliza Dref = 1.15 y Tref = 298.15 K. Su b100 conocido es 2 × 10⁹ s/m². Estos valores definen datos simulados; no son una nueva medida de agua ni del equipo.",
+          "La pendiente sintética esperada es −2.3 frente al gradiente relativo al cuadrado: b100 = 2.3/(1.15 × 10⁻⁹) = 2 × 10⁹ s/m². Al 50 %, b = 5 × 10⁸ s/m². Compruebe que el informe recupera esa escala y conserva la identidad Demo, la referencia y las condiciones."
+        ],
+        "en": [
+          "P1 example: a template displays P1 = 22 µs. Enter nine or more values covering the rise, the maximum near 11 µs and inversion near 22 µs; include later negative points. Set a search interval containing 11 µs.",
+          "Review the plan, run Demo and observe the sign change. The synthetic model should propose P90 ≈ 11 µs and P180 ≈ 22 µs. Inspect residuals, then practise copying parameters to a new destination.",
+          "DOSY Demo example: retain one D20 and P30 condition and use 8–96% in 4% steps. The synthetic reference uses Dref = 1.15 and Tref = 298.15 K. Its known b100 is 2 × 10⁹ s/m². These values define simulated data; they are not a new measurement of water or the instrument.",
+          "The expected synthetic slope is −2.3 against squared relative gradient: b100 = 2.3/(1.15 × 10⁻⁹) = 2 × 10⁹ s/m². At 50%, b = 5 × 10⁸ s/m². Check that the report recovers this scale and retains the Demo identity, reference and conditions."
+        ]
+      },
+      "notes": {
+        "es": [
+          "Estos resultados numéricos describen ejemplos matemáticos. Una captura Demo puede usar otros valores configurados: compare siempre con su plan e informe, no con una cifra esperada memorizada."
+        ],
+        "en": [
+          "These numerical results describe mathematical examples. A Demo screenshot may use other configured values: compare with its plan and report rather than a memorised expected number."
+        ]
+      },
+      "screenshot": {
+        "id": "worked_example",
+        "caption": {
+          "es": "Ejemplo didáctico: comprobar curva, unidades y condiciones del resultado.",
+          "en": "Teaching example: check the curve, units and result conditions."
+        },
+        "required_state": "An actual Demo result; caption must identify the values really shown"
+      },
+      "source_ids": [
+        "gui_workflow",
+        "calibration_source",
+        "gui_verification"
+      ]
+    },
+    {
+      "id": "11_troubleshooting",
+      "title": {
+        "es": "Resolver errores sin perder la trazabilidad",
+        "en": "Resolving errors while retaining traceability"
+      },
+      "lead": {
+        "es": "Lea el último evento del registro y el EXPNO afectado antes de repetir. Un error puede pertenecer a la preparación, a la comunicación, al procesado o al ajuste. Corregir la causa es más útil que cambiar umbrales hasta obtener un número.",
+        "en": "Read the last log event and affected EXPNO before repeating. An error may concern preparation, communication, processing or fitting. Correcting its cause is more useful than changing thresholds until a number appears."
+      },
+      "steps": {
+        "es": [
+          "Destino existente: elija nuevos EXPNO. No borre experimentos previos para que pase la comprobación; podrían contener datos completos o parciales que explican una ejecución interrumpida.",
+          "P1 sin señal negativa o ajuste en el límite: compruebe fase fija, rango de duraciones, ventana ppm y recuperación. Amplíe el barrido solo dentro de los límites revisados del equipo.",
+          "DOSY con integral nula o negativa: inspeccione fase, línea base, solapamiento y ruido. No sustituya áreas por su valor absoluto; esa transformación puede convertir un fallo de señal en una atenuación aparente.",
+          "Temperatura o parámetros incompatibles: identifique qué cambió. Estabilice la muestra, separe condiciones o suministre la referencia adecuada. Aumentar una tolerancia debe estar justificado y quedar registrado.",
+          "ZG/EFP ambiguo, FID vacío o 1r incompleto: detenga la secuencia, examine TopSpin y conserve execution.json. No interprete la existencia de archivos como confirmación de éxito.",
+          "Cambio de dataset, RG o fase durante la serie: revise la intervención o configuración responsable. Inicie después una nueva serie coherente con destinos nuevos."
+        ],
+        "en": [
+          "Existing destination: choose unused EXPNOs. Do not delete previous experiments to pass the check; they may contain complete or partial data explaining an interrupted run.",
+          "P1 lacks negative signal or the optimum lies at a boundary: check fixed phase, duration range, ppm window and recovery. Extend the sweep only within reviewed instrument limits.",
+          "DOSY has zero or negative area: inspect phase, baseline, overlap and noise. Do not replace areas by absolute values; that transformation can turn a signal problem into apparent attenuation.",
+          "Incompatible temperature or parameters: identify what changed. Stabilise the sample, separate conditions or supply the appropriate reference. Increasing a tolerance needs justification and must remain recorded.",
+          "Ambiguous ZG/EFP, empty FID or incomplete 1r: stop the sequence, inspect TopSpin and retain execution.json. File existence alone does not confirm success.",
+          "Dataset, RG or phase changed during the series: inspect the responsible intervention or configuration. Then start a new consistent series with unused destinations."
+        ]
+      },
+      "notes": {
+        "es": [
+          "La primera prueba con el espectrómetro debe comprobar también los estados devueltos por su versión concreta de TopSpin. El comportamiento de Demo no garantiza esos estados."
+        ],
+        "en": [
+          "The first on-instrument test must also check return states from that specific TopSpin version. Demo behaviour does not establish those states."
+        ]
+      },
+      "screenshot": {
+        "id": "error_log",
+        "caption": {
+          "es": "Ejemplo de parada controlada con causa y EXPNO registrados; modo Demo.",
+          "en": "Example of a controlled stop with cause and EXPNO recorded; Demo mode."
+        },
+        "required_state": "Actual deliberately triggered demo error, without fabricated acquisition success"
+      },
+      "source_ids": [
+        "autorun_source",
+        "calibration_source",
+        "v3_verification"
+      ]
+    },
+    {
+      "id": "12_reports_and_checks",
+      "title": {
+        "es": "Guardar, verificar y comunicar el resultado",
+        "en": "Saving, checking and communicating the result"
+      },
+      "lead": {
+        "es": "Conserve el plan, el registro y los resultados juntos. Así se puede reconstruir qué se intentó, qué puntos se completaron y qué datos entraron en el ajuste. Una gráfica atractiva o un R² alto no sustituyen esa información.",
+        "en": "Keep the plan, execution log and results together. They allow reconstruction of what was attempted, which points completed and which data entered the fit. An attractive plot or high R² does not replace this information."
+      },
+      "steps": {
+        "es": [
+          "Abra la carpeta desde «Abrir carpeta de informes». Revise plan.json, workflow.json y, cuando se prepara o adquiere, execution.json. Distinga preparado, adquirido, procesado, analizado y detenido. Una serie preparada todavía no es una medida.",
+          "La GUI guarda el resultado de P1 o DOSY en result.json y los puntos, predicción y residuos en curve.csv. Para DOSY añade informe.html. El asistente de consola anterior utiliza otros nombres: no los confunda al buscar los resultados de esta GUI.",
+          "Compruebe muestra, EXPNO/PROCNO, región ppm, potencia, secuencia, tiempos, gradiente, TE y fuente de Dref. Los hashes identifican los archivos leídos; no certifican por sí mismos su calidad científica.",
+          "Verifique P90 con una adquisición de comprobación. Verifique la escala DOSY con una nueva medida del patrón en condiciones documentadas. Reajustar los mismos datos al Dref elegido no es una prueba independiente.",
+          "Al compartir resultados, indique Demo o experimento, versión del software y alcance de la comprobación. Las pruebas del backend con TopCmds simulado no equivalen a una adquisición real ni validan TopSpin 3.6.4 en este equipo."
+        ],
+        "en": [
+          "Use Open report folder. Inspect plan.json, workflow.json and, for preparation or acquisition, execution.json. Distinguish prepared, acquired, processed, analysed and stopped. A prepared series is not yet a measurement.",
+          "The GUI saves P1 or DOSY results in result.json and points, predictions and residuals in curve.csv. DOSY also produces informe.html. The earlier console assistant uses different filenames; do not confuse them when locating this GUI's output.",
+          "Check sample, EXPNO/PROCNO, ppm region, power, sequence, timings, gradient, TE and Dref source. Hashes identify the files read; they do not independently establish scientific quality.",
+          "Verify P90 with a checking acquisition. Verify the DOSY scale with a new standard measurement under documented conditions. Refitting the same data to the chosen Dref is not an independent test.",
+          "When sharing results, state Demo or experiment, software version and verification scope. Backend tests with simulated TopCmds are not real acquisition and do not validate TopSpin 3.6.4 on this computer."
+        ]
+      },
+      "notes": {
+        "es": [
+          "El error estándar de la pendiente DOSY cubre el ajuste, no toda la incertidumbre del patrón, temperatura, procesado o modelo. La incertidumbre física de P90 tampoco queda cuantificada por el R² del seno."
+        ],
+        "en": [
+          "The DOSY slope standard error covers regression, not all uncertainty in the standard, temperature, processing or model. The sine-fit R² also does not quantify physical P90 uncertainty."
+        ]
+      },
+      "screenshot": {
+        "id": "reports",
+        "caption": {
+          "es": "Acceso a la carpeta de informes desde los resultados. La identidad Demo se conserva en los archivos.",
+          "en": "Access to the report folder from the results. Demo provenance is retained in the files."
+        },
+        "required_state": "Report view or actual report folder listing, Demo provenance retained"
+      },
+      "source_ids": [
+        "gui_workflow",
+        "calibration_source",
+        "gui_verification"
+      ]
+    }
+  ],
+  "screen_plan": [
+    {
+      "id": "overview",
+      "tab": "Overview",
+      "priority": "required",
+      "purpose": "Language selector, connection and current dataset"
+    },
+    {
+      "id": "launch",
+      "tab": "Overview",
+      "priority": "optional",
+      "purpose": "May reuse overview if launcher image adds no information"
+    },
+    {
+      "id": "instrument",
+      "tab": "Instrument",
+      "priority": "required",
+      "purpose": "Guided setup and operator checks"
+    },
+    {
+      "id": "p1_plan",
+      "tab": "P1",
+      "priority": "required",
+      "purpose": "P1 values, ppm window and search interval"
+    },
+    {
+      "id": "p1_result",
+      "tab": "Run & results",
+      "priority": "required",
+      "purpose": "Signed nutation, fit and residuals"
+    },
+    {
+      "id": "dosy_reference",
+      "tab": "DOSY",
+      "priority": "required",
+      "purpose": "Reference identity, Dref, T and integration window"
+    },
+    {
+      "id": "dosy_plan",
+      "tab": "DOSY",
+      "priority": "required",
+      "purpose": "One fixed-timing gradient ramp and destination preview"
+    },
+    {
+      "id": "run_stop",
+      "tab": "Run & results",
+      "priority": "required",
+      "purpose": "Current point, journal and stop-after-current-point semantics"
+    },
+    {
+      "id": "apply_p1",
+      "tab": "Run & results",
+      "priority": "required",
+      "purpose": "Reviewed P1 copy to fresh parameter-only EXPNO"
+    },
+    {
+      "id": "worked_example",
+      "tab": "Run & results",
+      "priority": "optional",
+      "purpose": "Can reuse accurately captioned synthetic result"
+    },
+    {
+      "id": "error_log",
+      "tab": "Run & results",
+      "priority": "required",
+      "purpose": "Controlled demo failure, preserving partial provenance"
+    },
+    {
+      "id": "reports",
+      "tab": "Run & results",
+      "priority": "required",
+      "purpose": "Open report and inspect generated artifacts"
+    }
+  ],
+  "sources": [
+    {
+      "id": "gui_contract",
+      "title": "Delivered calibration GUI and backend contract",
+      "path": "python/calibration_gui/gui.py",
+      "scope": "Exact ES/EN labels, Swing components, setup controls, launcher, stop-after-current-point and reviewed P1 copy; verified against current source."
+    },
+    {
+      "id": "autorun_source",
+      "title": "Acquisition, nutation and execution journal backend",
+      "path": "python/topspin_console_v3/dosy_autorun.py",
+      "scope": "Plan constraints, fixed parameters, sequential ZG/EFP, result checks, signed integration, sine model and output names.",
+      "title_es": "Núcleo de adquisición, nutación y registro de ejecución"
+    },
+    {
+      "id": "v3_readme",
+      "title": "TopSpin calibration v3 usage and limits",
+      "path": "docs/es/bruker-paso-a-paso.md",
+      "scope": "P1=22/P90=11 example, template requirements and one timing condition.",
+      "title_es": "Uso y límites del asistente de calibración v3 para TopSpin"
+    },
+    {
+      "id": "v3_verification",
+      "title": "Existing v3 backend verification record",
+      "path": "docs/es/verificacion.md",
+      "scope": "Eleven backend tests under CPython and bundled Jython with simulated TopCmds; no real acquisition; TopSpin 3.6.4 absent. This is not a verification report for the new GUI.",
+      "title_es": "Registro de verificación del núcleo v3 anterior"
+    },
+    {
+      "id": "calibration_source",
+      "title": "Processed Bruker reader and empirical DOSY calibration",
+      "path": "python/topspin_console/dosy_calibration.py",
+      "scope": "Signed integration, log fit with free intercept, thermal checks, empirical b scale and uncertainty scope.",
+      "title_es": "Lector de datos Bruker procesados y calibración DOSY empírica"
+    },
+    {
+      "id": "console_readme",
+      "title": "Native DOSY assistant documentation",
+      "path": "docs/es/bruker-paso-a-paso.md",
+      "scope": "Units, conditional physical gradient proposal, external three-ramp generator and protected TBO profile.",
+      "title_es": "Documentación del asistente DOSY para TopSpin"
+    },
+    {
+      "id": "pulse_guidance",
+      "title": "Manual P90 calibration guidance and original evidence",
+      "path": "docs/en/bruker-step-by-step.md",
+      "scope": "EXPNO1000, zg, first 180-degree null versus 360-degree null; fixed power and phase.",
+      "title_es": "Guía de calibración manual de P90 y evidencia original"
+    },
+    {
+      "id": "tbo_profile",
+      "title": "Shared TBO experimental calibration",
+      "scope": "Protected original calibration and temperature-reference distinction; not modified by the GUI. External historical source, not distributed and not embedded in the public bundle.",
+      "title_es": "Calibración experimental TBO compartida"
+    },
+    {
+      "id": "bruker_python",
+      "title": "Bruker TopSpin Python Interface",
+      "url": "https://www.bruker.com/en/products-and-solutions/mr/nmr-software/topspin/topspin-python-interface.html",
+      "local_path": "<TopSpin>/prog/docu/English/topspin/pdf/python.pdf",
+      "scope": "Historical integrated Jython and native TopCmds environment; later external Python API is a separate interface."
+    },
+    {
+      "id": "bruker_dosy",
+      "title": "R. Kerssebaum, Bruker DOSY and Diffusion by NMR",
+      "url": "https://2210pc.chem.uic.edu/nmr/downloads/dosy_ts13.pdf",
+      "local_path": "<TopSpin>/prog/docu/English/topspin/pdf/DOSY_and_Diffusion.pdf",
+      "scope": "Thermal stability, pilot attenuation, gradient calibration and the distinction between acquisition ramp and physical scale."
+    },
+    {
+      "id": "gui_setup",
+      "title": "Guided instrument setup and working-copy controls",
+      "path": "python/calibration_gui/instrument_setup.py",
+      "scope": "Explicit lock/ATM/TopShim/temperature gates, parameter-only preparation copy, teget status refresh, numerical teset within supplied limits and original-view restoration.",
+      "title_es": "Preparación instrumental guiada y controles de la copia de trabajo"
+    },
+    {
+      "id": "gui_workflow",
+      "title": "Calibration GUI workflow backend",
+      "path": "python/calibration_gui/calibration_workflow.py",
+      "scope": "Current prepare-then-acquire semantics, analysis-only route, result.json/curve.csv/workflow.json outputs, independent demo inputs and reviewed P1 application. Fourteen workflow test cases are defined in test_workflow.py; distinguish their software checks from hardware validation.",
+      "title_es": "Controlador del flujo de calibración de la GUI"
+    },
+    {
+      "id": "gui_verification",
+      "title": "GUI demonstration verification record",
+      "path": "python/calibration_gui/GUI_VERIFICATION.json",
+      "scope": "Real Swing component renders in both languages; synthetic P90=11 µs and b100=2e9 s/m². No hardware commands issued and no live TopSpin3.6.4 validation.",
+      "title_es": "Registro de verificación de la demostración de la GUI"
+    }
+  ],
+  "assembly_checks": [
+    "Render separate Spanish and English PDFs or clearly separated language parts; never interleave translations line by line.",
+    "Use actual renders of the delivered Java Swing components, described as screenshots of the real interface. These are application renders in Demo mode, not operating-system captures of an instrument session. Keep Demo identification visible.",
+    "Resolve exact final action labels and report filenames against the implemented GUI before delivery.",
+    "Describe optional setup command dispatch accurately: separately enabled hardware capabilities and a confirmed new working copy. Completion does not establish physical calibration, stable lock, good shim or sample-temperature equilibrium.",
+    "Do not describe Stop as immediate hardware abort. It requests stopping after the current point.",
+    "Do not describe the current GUI as acquiring three Delta blocks; that configurable generator is separate.",
+    "The mathematical worked example is conditional; verify the synthetic values actually shown in each screenshot.",
+    "Report current GUI workflow and setup verification separately from the earlier v3 tests. Fourteen workflow test cases exist; use the final verification report for actual run outcomes. No new on-instrument validation is claimed in the manual.",
+    "Preparation temperature updates stay in EXPNO1050. Explicitly select its reviewed parameters or update other working templates; do not imply automatic transfer to1000/10."
+  ]
+}
