@@ -1,0 +1,180 @@
+{
+  "reviewed_date": "2026-10-02",
+  "mode": "Read-only source inspection; no acquisition or validation performed",
+  "source_folder": "[local-source: final]",
+  "terminology": {
+    "es": "SPEN-DOSY es DOSY con codificación espacial, habitualmente llamado ultrafast DOSY. No presentarlos como técnicas rivales.",
+    "en": "SPEN-DOSY is spatially encoded DOSY, commonly called ultrafast DOSY. Do not present them as rival techniques."
+  },
+  "slides": [
+    {
+      "id": "spen_principle",
+      "seconds": 45,
+      "es": {
+        "title": "La siguiente frontera: medir en paralelo",
+        "subtitle": "SPEN-DOSY · ultrafast DOSY",
+        "takeaway": "Distintas posiciones z codifican distintas ponderaciones de difusión.",
+        "labels": [
+          "DOSY convencional: repetir gradientes",
+          "SPEN: repartir la codificación en z",
+          "Chirp + gradiente → lectura espacial"
+        ],
+        "spoken": "La dimensión de difusión se reparte a lo largo del tubo. Una lectura espacial recupera las regiones. Puede adquirirse en un scan cuando sensibilidad y diseño lo permiten. El modelo b correcto y el análisis estable siguen siendo esenciales."
+      },
+      "en": {
+        "title": "The next frontier: measure in parallel",
+        "subtitle": "SPEN-DOSY · ultrafast DOSY",
+        "takeaway": "Different z positions encode different diffusion weightings.",
+        "labels": [
+          "Conventional DOSY: repeat gradient steps",
+          "SPEN: distribute encoding along z",
+          "Chirp + gradient → spatial readout"
+        ],
+        "spoken": "The diffusion dimension is distributed along the tube. Spatial readout recovers the regions. One-scan acquisition is possible when sensitivity and sequence design permit. Correct b values and stable processing remain essential."
+      },
+      "sources": [
+        "shrot2008",
+        "guduff2017_spen"
+      ]
+    },
+    {
+      "id": "spen_uses",
+      "seconds": 40,
+      "es": {
+        "title": "¿Cuándo compensa la velocidad?",
+        "items": [
+          "Mezclas que cambian: reacciones y especies transitorias.",
+          "Polarización que desaparece: aprovechar una muestra hiperpolarizada.",
+          "Señales solapadas: separar componentes con procesamiento multivariante."
+        ],
+        "cost": "El precio: sensibilidad por región, banda/resolución espectral y calibración b(z).",
+        "spoken": "Hay demostraciones con mezclas de reacción y sustratos hiperpolarizados. El procesamiento multivariante aprovecha todo el espectro. La velocidad no elimina los solapamientos ni el mal condicionamiento; exige comprobar sensibilidad, banda y no uniformidad del gradiente."
+      },
+      "en": {
+        "title": "When is speed worth the trade-off?",
+        "items": [
+          "Changing mixtures: reactions and transient species.",
+          "Decaying polarisation: exploit a hyperpolarised sample.",
+          "Overlapping signals: unmix components with multivariate processing."
+        ],
+        "cost": "The price: regional sensitivity, spectral bandwidth/resolution and b(z) calibration.",
+        "spoken": "Published demonstrations include reaction mixtures and hyperpolarised substrates. Multivariate processing uses the entire spectrum. Speed does not remove overlap or ill-conditioning; sensitivity, bandwidth and gradient non-uniformity still require checking."
+      },
+      "sources": [
+        "hamdoun2018",
+        "guduff2017_dnp",
+        "mishra2021",
+        "lorandel2025",
+        "nonuniform2023"
+      ]
+    },
+    {
+      "id": "our_development",
+      "seconds": 50,
+      "es": {
+        "title": "Nuestro desarrollo: ultrafast con gradiente z",
+        "subtitle": "UF D–T₂–δ EPSI · implementación 9.4",
+        "stages": [
+          "Chirp + eco estimulado",
+          "CPMG",
+          "Lectura EPSI",
+          "Reconstrucción"
+        ],
+        "implemented": "Programas de pulsos + calculadora + reconstrucción diagnóstica",
+        "next": "Siguiente hito: validar adquisición, mapa b(z) y exactitud con patrones.",
+        "status": "EN DESARROLLO · validación experimental pendiente",
+        "spoken": "Estamos desarrollando una adquisición ultrafast para sondas convencionales con un único eje de gradiente z. Integra codificación espacial, eco estimulado, CPMG y EPSI para explorar difusión, relajación y desplazamiento químico. Ya existen programas, calculadora y reconstrucción diagnóstica. La revisión actual requiere un ciclo de 16 scans; aún no presentamos un mapa DOSY cuantitativo validado. El siguiente paso es verificar la adquisición real y la exactitud con patrones."
+      },
+      "en": {
+        "title": "Our development: ultrafast with a z gradient",
+        "subtitle": "UF D–T₂–δ EPSI · implementation 9.4",
+        "stages": [
+          "Chirp + stimulated echo",
+          "CPMG",
+          "EPSI readout",
+          "Reconstruction"
+        ],
+        "implemented": "Pulse programs + calculator + diagnostic reconstruction",
+        "next": "Next milestone: validate acquisition, b(z) and accuracy against standards.",
+        "status": "IN DEVELOPMENT · experimental validation pending",
+        "spoken": "We are developing ultrafast acquisition for conventional probes with one z-gradient axis. Spatial encoding, a stimulated echo, CPMG and EPSI explore diffusion, relaxation and chemical shift. Pulse programs, a calculator and diagnostic reconstruction are implemented. This revision requires a 16-scan phase cycle; a validated quantitative DOSY map is still pending. The next step is to verify real acquisition and accuracy against standards."
+      },
+      "sources": [
+        "local_readme",
+        "local_audit",
+        "local_pp",
+        "local_calc",
+        "local_recon",
+        "local_guide"
+      ]
+    }
+  ],
+  "appendix": {
+    "hardware": {
+      "es": [
+        "Sonda convencional con gradiente z, RF conformada/chirp y lectura sincronizada.",
+        "$DIM=1D indica organización de adquisición; no significa ausencia de gradientes.",
+        "Destino actual: Avance III 500, TopSpin 3.8.0, DIGMOD analógico, GRPDLY=0, L11=ANAVPT.",
+        "NS múltiplo de 16; REFSCAN para corrección de polaridades."
+      ],
+      "en": [
+        "Conventional probe with z gradient, shaped RF/chirps and synchronised readout.",
+        "$DIM=1D describes acquisition organization; it does not mean gradients are absent.",
+        "Current target: Avance III 500, TopSpin 3.8.0, analogue DIGMOD, GRPDLY=0, L11=ANAVPT.",
+        "NS must be a multiple of 16; REFSCAN corrects polarities."
+      ]
+    },
+    "implemented": {
+      "es": [
+        "Programas PABBO/TBI/TBO con cuerpo canónico común.",
+        "Calculadora: b(z), chirp, tiempos, señal, carga de gradiente.",
+        "Reconstructor: perfiles z, espectros, REFSCAN y T₂ efectivo diagnóstico."
+      ],
+      "en": [
+        "PABBO/TBI/TBO pulse programs share one canonical body.",
+        "Calculator: b(z), chirp, timing, signal and gradient load.",
+        "Reconstructor: z profiles, spectra, REFSCAN and diagnostic effective T₂."
+      ]
+    },
+    "pending": {
+      "es": [
+        "Compilación y funcionamiento de DWL_CLK/ANAVPT en consola.",
+        "Gradientes reales, inversión de chirp y mapa z→b.",
+        "Exactitud de D/T₂ frente a patrones y secuencias convencionales."
+      ],
+      "en": [
+        "Console compilation and actual DWL_CLK/ANAVPT behaviour.",
+        "Physical gradients, chirp inversion and z→b map.",
+        "D/T₂ accuracy against standards and conventional sequences."
+      ]
+    },
+    "model_example": {
+      "label": "Model only; not measured performance",
+      "probe": "PABBO nominal",
+      "ns": 16,
+      "ds": 8,
+      "scan_s": 5.19,
+      "experiment_min": 2.1,
+      "b_min_s_mm2": 264,
+      "b_max_s_mm2": 21189,
+      "distinct_b": 14,
+      "bandwidth_per_polarity_Hz": 2192,
+      "spectral_resolution_Hz": 137,
+      "T2_ms": 20,
+      "first_echo_fraction_M0": 0.163,
+      "last_echo_fraction_M0": 0.0059,
+      "source": "build_guia/salida_calculadora_v9_4.txt"
+    }
+  },
+  "critical_boundaries": [
+    "Local folder status is NO-GO quantitative until console checks. Never represent source-code consistency as experimental validation.",
+    "Reconstructor produces diagnostic z profiles, spectra and T2_eff; it does not establish a calibrated quantitative D map.",
+    "Current implementation uses NS multiple of 16. Single-scan potential of SPEN literature is not measured performance of local revision 9.4.",
+    "Use 'conventional probes with z gradient' or 'one gradient axis'; not 'any 1D probe' or 'without gradients'.",
+    "Local TBO nominal Gmax and gradient_verified=False do not override protected current DiffAtOnce TBO calibration. Probe identifiers in those folders differ.",
+    "Guide DOI 10.1016/j.jmr.2008.09.011 has wrong title. Correct title: Single-scan 2D DOSY NMR spectroscopy (Shrot and Frydman, 2008).",
+    "Marchand 2022 flow-compatible one-shot paper uses fast DSTE; do not present it as a SPEN single-scan demonstration.",
+    "Guide PDF is 340 pages and no embedded raster figures were found; use native editable conceptual diagrams.",
+    "Saved test report: four PASS groups and explicit NOT TESTED: TopSpin compile, DRU DWL_CLK/ANAVPT, ramps, RF inversion, phantom accuracy. Inspected, not rerun."
+  ]
+}

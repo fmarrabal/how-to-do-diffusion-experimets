@@ -1,0 +1,189 @@
+DOSY — TIEMPOS / TIMING · v8
+25 main + 20 hidden · 20:00 · manual advance
+
+01 · 00:00–00:20
+ES: DOSY en la práctica
+EN: DOSY in practice
+
+02 · 00:20–00:45
+ES: Medir, procesar y comprobar un DOSY
+EN: Measuring, processing and checking DOSY
+
+03 · 00:45–01:35
+ES: Primera dificultad: ¿es de verdad un pulso de 90°?
+EN: First difficulty: is this really a 90° pulse?
+
+04 · 01:35–02:25
+ES: Caso 1 · de 22 µs a P90 = 11 µs
+EN: Case 1 · from 22 µs to P90 = 11 µs
+
+05 · 02:25–03:45
+ES: El gradiente: calibrar una escala que entra al cuadrado
+EN: Gradients: calibrate a scale that enters quadratically
+
+06 · 03:45–04:30
+ES: La secuencia decide qué significa b
+EN: The sequence determines what b means
+
+07 · 04:30–05:30
+ES: Dos rampas que ajustan bien y miden mal
+EN: Two ramps that fit well but measure poorly
+Vídeo / Video: 18 s · incluido en el tiempo / included in timing
+
+08 · 05:30–06:40
+ES: Elegir P30 y D20 es un compromiso, no una receta
+EN: Choosing P30 and D20 is a trade-off, not a recipe
+Vídeo / Video: 18 s · incluido en el tiempo / included in timing
+
+09 · 06:40–07:35
+ES: LED y doble STE: recuperar señal sin copiar retardos
+EN: LED and double STE: recover signal without copying delays
+
+10 · 07:35–08:10
+ES: Cambiar Δ ayuda a descubrir que no estamos midiendo sólo difusión
+EN: Changing Δ helps reveal that diffusion is not the only process
+
+11 · 08:10–09:10
+ES: El segundo gran obstáculo: conservar la atenuación
+EN: The second major obstacle: preserving attenuation
+Vídeo / Video: 18 s · incluido en el tiempo / included in timing
+
+12 · 09:10–10:20
+ES: Una atenuación no determina una distribución única
+EN: One decay does not determine a unique distribution
+Vídeo / Video: 16 s · incluido en el tiempo / included in timing
+
+13 · 10:20–11:15
+ES: Cómo lo resolvemos: regularizar y comparar hipótesis
+EN: How we solve it: regularize and compare assumptions
+Vídeo / Video: 16 s · incluido en el tiempo / included in timing
+
+14 · 11:15–11:50
+ES: El espectro ofrece información compartida
+EN: The spectrum offers shared information
+Vídeo / Video: 14 s · incluido en el tiempo / included in timing
+
+15 · 11:50–12:10
+ES: El trabajo que nuestros programas ayudan a resolver
+EN: The work our programs help us handle
+
+16 · 12:10–12:45
+ES: Nuestros programas y sus funciones
+EN: Our programs and their functions
+
+17 · 12:45–13:50
+ES: TopSpin: un informe de calibración HDO
+EN: TopSpin: an HDO calibration report
+
+18 · 13:50–14:35
+ES: TopSpin: tres rampas con Δ configurable
+EN: TopSpin: three ramps with configurable Δ
+
+19 · 14:35–15:30
+ES: Prime: ajustar una señal real antes del mapa
+EN: Prime: fit a real signal before the map
+
+20 · 15:30–16:30
+ES: Prime y ResinAtOnce: coherencia entre señal y mapa
+EN: Prime and ResinAtOnce: consistency between signal and map
+
+21 · 16:30–17:25
+ES: DALTAIL: un lote KK2 reproducible
+EN: DALTAIL: a reproducible KK2 batch
+
+22 · 17:25–18:10
+ES: Caso TP194 · dejar visible lo que el modelo no explica
+EN: TP194 case · keep what the model cannot explain visible
+
+23 · 18:10–19:10
+ES: Cuando repetir gradientes tarda demasiado: ultrafast / SPEN-DOSY
+EN: When repeated gradients take too long: ultrafast / SPEN-DOSY
+Vídeo / Video: 18 s · incluido en el tiempo / included in timing
+
+24 · 19:10–19:50
+ES: Ultrafast: difusión y relajación en un mapa
+EN: Ultrafast: diffusion and relaxation in one map
+
+25 · 19:50–20:00
+ES: Un resultado que podemos repetir y comprobar
+EN: A result we can reproduce and check
+
+26 · APÉNDICE / APPENDIX
+ES: Prime · ILT local 1/4
+EN: Prime · local ILT 1/4
+
+27 · APÉNDICE / APPENDIX
+ES: Prime · ILT local 2/4
+EN: Prime · local ILT 2/4
+
+28 · APÉNDICE / APPENDIX
+ES: Prime · ILT local 3/4
+EN: Prime · local ILT 3/4
+
+29 · APÉNDICE / APPENDIX
+ES: Prime · estructura compartida
+EN: Prime · shared structure
+
+30 · APÉNDICE / APPENDIX
+ES: Prime · mapas conjuntos 1/2
+EN: Prime · joint maps 1/2
+
+31 · APÉNDICE / APPENDIX
+ES: Prime · mapas conjuntos y 2D
+EN: Prime · joint maps and 2D
+
+32 · APÉNDICE / APPENDIX
+ES: Biblioteca · componentes discretos 1/2
+EN: Library · discrete components 1/2
+
+33 · APÉNDICE / APPENDIX
+ES: Biblioteca · componentes discretos 2/2
+EN: Library · discrete components 2/2
+
+34 · APÉNDICE / APPENDIX
+ES: Biblioteca · descomposición y FID
+EN: Library · decomposition and FID
+
+35 · APÉNDICE / APPENDIX
+ES: Biblioteca · núcleos lineales
+EN: Library · linear cores
+
+36 · APÉNDICE / APPENDIX
+ES: Biblioteca · otros núcleos Laplace
+EN: Library · other Laplace cores
+
+37 · APÉNDICE / APPENDIX
+ES: Biblioteca · regularización y desmezcla
+EN: Library · regularization and unmixing
+
+38 · APÉNDICE / APPENDIX
+ES: Biblioteca · dominios específicos
+EN: Library · specific domains
+
+39 · APÉNDICE / APPENDIX
+ES: Contexto · modelos y motores
+EN: Context · models and engines
+
+40 · APÉNDICE / APPENDIX
+ES: Contexto · multidimensional y aprendizaje
+EN: Context · multidimensional and learning
+
+41 · APÉNDICE / APPENDIX
+ES: Contexto · discreto y selección
+EN: Context · discrete and selection
+
+42 · APÉNDICE / APPENDIX
+ES: Ecuaciones según secuencia
+EN: Sequence-dependent equations
+
+43 · APÉNDICE / APPENDIX
+ES: stebpgp1s1d + SMSQ10.100
+EN: stebpgp1s1d + SMSQ10.100
+
+44 · APÉNDICE / APPENDIX
+ES: El ruido se amplifica al invertir la atenuación
+EN: Noise is amplified when the decay is inverted
+
+45 · APÉNDICE / APPENDIX
+ES: Cada algoritmo favorece una solución distinta
+EN: Each algorithm favours a different solution

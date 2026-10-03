@@ -1,0 +1,154 @@
+DOSY — SPOKEN SCRIPT · 20 MINUTES
+v8 · 25 diapositivas principales / 25 main slides · 20:00
+
+Text from spoken_script_en; appendices are excluded.
+
+============================================================================
+01 · DOSY in practice
+00:00–00:20 · 20 s
+
+This is the story of turning a spectral series into a result we can explain and repeat. Before showing our software, we will examine the two obstacles that motivated its development: preparing the spectrometer properly and processing without changing diffusion information. We then use the tools in three concrete examples. Let us start with the whole route.
+
+============================================================================
+02 · Measuring, processing and checking DOSY
+00:20–00:45 · 25 s
+
+The workshop has four parts but tells one story. First, we need intensity that reflects diffusion and a correct b scale. We then need to preserve that intensity and understand why inversion has no unique answer. Only then will I show how our programs make the work more manageable, using saved examples that can be reviewed. The first operation is to calibrate the 90-degree pulse.
+
+============================================================================
+03 · First difficulty: is this really a 90° pulse?
+00:45–01:35 · 50 s
+
+Pulse length depends on the sample, tuning and power. Copying P1 from another preparation can lose signal and alter sequence behaviour. At fixed power, find the first positive-to-negative crossing after the maximum: the 180-degree null. Keep phase, gain and D1 fixed; separate automatic phasing would lose the sign. The sine curve is an ideal model explaining the procedure, not a new spectrometer measurement. Now we do this with your experiment 1000.
+
+============================================================================
+04 · Case 1 · from 22 µs to P90 = 11 µs
+01:35–02:25 · 50 s
+
+This is the actual PLA/CDCl3 example. In zg, experiment 1000, P1 is 22 microseconds at PLW1 of 22 watts; the user identifies this first null as 180 degrees. Halving it gives 11 microseconds. DOSY experiment 10 stores P1=11 and P2=22 at the same power. The practical result is a documented value transferable under the same conditions; verify the 90-degree maximum in zg before acquisition. Red and blue use different gain, scans and sequences, so this comparison is qualitative, not an absolute sensitivity-recovery measurement. We now have RF; next the diffusion axis needs a physical scale.
+
+============================================================================
+05 · Gradients: calibrate a scale that enters quadratically
+02:25–03:45 · 80 s
+
+Gradient scale enters b quadratically. In the hypothetical example, actual G ten percent above the value used gives apparent D twenty-one percent higher without spoiling the exponential. Calibrate using a reference ramp at actual temperature, uniform processing, a fixed region and a compatible sequence model. Inspect signed signal, residuals and drift rather than R squared alone. The retained experimental HDO/TBO example has slope 1.58627 at Delta=50 ms, delta=1.20 ms and SMSQ10.100. That historical profile uses point-height extraction, not the new helper integral. HDO value 1.902 times ten to the minus nine applies at 298.15 K; the actual ramp has a different temperature and uses a documented thermal approximation. With a compatible model, new G equals old G times the square root of measured D over reference D. We later replay the helper offline using integrals, retaining the two extractions separately without replacing protected calibration. A compatible equation is not a detail: it changes what b means.
+
+============================================================================
+06 · The sequence determines what b means
+03:45–04:30 · 45 s
+
+Diffusion equations are not interchangeable. This simulation uses SMSQ-shaped bipolar gradients and fixed physical G. Its proper model gives D=1; rectangular PGSE gives approximately 0.802 with the same decay and R squared equal to one. Check pulse program, shape, units, total delta and RF gaps. In stebpgp1s1d, delta equals twice P30. A reference can absorb a constant b factor in an empirical calibration, but this does not justify transferring it across sequences or timings. Full equations remain in the appendix. Even with correct b, the ramp may lack sufficient information.
+
+============================================================================
+07 · Two ramps that fit well but measure poorly
+04:30–05:30 · 60 s
+
+The three simulated ramps have the same true D of one times ten to the minus nine and one-percent absolute noise. The nearly flat ramp estimates 0.714 with a nominal interval from zero to 1.81. The extinguished ramp estimates 0.237 with an interval from 0.05 to an unidentifiable upper endpoint. The useful ramp estimates 1.007 with an interval from 0.986 to 1.029. Residuals are similar, around one sigma. Acquisition information, not fit appearance, has changed. These intervals are conditional on the simulation model and known noise, not universal limits. Repeat the pilot with different P30/D20 or sensitivity, rather than ask an algorithm for information absent from the data. That is why we choose P30 and D20 from a pilot.
+
+============================================================================
+08 · Choosing P30 and D20 is a trade-off, not a recipe
+05:30–06:40 · 70 s
+
+We do not enter P30 and D20 simply because they worked for a previous sample. Low-, medium- and high-gradient pilots show attenuation of fast and slow signals. Increasing delta or Delta adds diffusion weighting but costs relaxation and sensitivity; Delta also increases exposure to motion, exchange and other dynamics. The animation separates normalized attenuation from absolute signal and uses hypothetical relaxation times; it does not prescribe limits for the real probe. Keep power, temperature and treatment comparable and seek appreciable decay with points remaining above noise. Recovery delays need their own checks too.
+
+============================================================================
+09 · LED and double STE: recover signal without copying delays
+06:40–07:35 · 55 s
+
+The next problem is phase and line shape after gradients. LED permits recovery but also costs time and signal. LED is D21 and D5 is unused in ledbpgp2s and dstebpgp3s; in diffSteLED, LED is D19 and D5 is the remaining diffusion interval. For double STE, check two DELTA1 blocks, eight lobes, additional RF pulses and the sixteen-step phase cycle. Convection compensation covers a motion model, not every flow. Three comparable Delta values and temperature controls help investigate Delta-dependent D, but do not identify the cause alone. There is no universal optimizer for these delays. We also repeat different Delta values to look beyond one ramp fit.
+
+============================================================================
+10 · Changing Δ helps reveal that diffusion is not the only process
+07:35–08:10 · 35 s
+
+If D changes with Delta, diffusion may not be the only cause of attenuation. The simulation shows dispersed velocities: apparent D increases while true D is constant, and the fit remains excellent. This observation alone does not diagnose convection; inspect temperature, amplitudes and the reference, and consider exchange or restriction. Three Delta values help define the next check.
+
+============================================================================
+11 · The second major obstacle: preserving attenuation
+08:10–09:10 · 60 s
+
+A DOSY series is not a collection of independent spectra optimized for appearance. Phase, baseline, ppm axis, gain, scans and NC_PROC scaling must permit intensity comparison. In the simulation, a background of just four percent of the first point changes D from one to 0.922 without conspicuous residual failure. Removing the known background recovers 0.999. Normalizing each spectrum by its own signal destroys attenuation and gives artificial D=0. In experiments, background is not known by decree: inspect signal-free regions, overlays and peak shifts. If a signal moves outside the window, extraction is no longer measuring diffusion alone. Correct processing on a derived copy while retaining originals. With comparable intensities, we still need to decide what information can be reconstructed.
+
+============================================================================
+12 · One decay does not determine a unique distribution
+09:10–10:20 · 70 s
+
+This is the central difficulty of ILT. A narrow distribution and two nearby components produce curves differing by at most about 0.61 percent of the first point in this design; simulated noise has one-percent sigma. This is not a universal impossibility proof, but shows how easily requested resolution exceeds acquisition support. Inverting the Laplace kernel amplifies noise along weak directions. The useful question is not which algorithm draws two peaks, but whether data, repetition and controls support two diffusion behaviours. We need an explicit preference and a way to check its effect.
+
+============================================================================
+13 · How we solve it: regularize and compare assumptions
+10:20–11:15 · 55 s
+
+Regularization stabilizes inversion by imposing a preference. In this computed simulation, three lambda values give RMS residuals around 0.00833, 0.00834 and 0.00842 while producing spiky, moderate or excessively broad solutions. Do not choose using an isolated minimum residual. Start with a minimal model for a simple signal; compare smoothness or entropy for broad distributions, sparsity or model order for few components, and shared structure for overlap. NNLS, Tikhonov, MaxEnt/PALMA, L1/ITAMeD, VP/SCORE and MF/TRAIn-MF/SILT embody different assumptions. SVD, FISTA and ADMM are numerical engines, not evidence of species. The uses-and-limits catalogue remains reference material rather than interrupting the story. We do not always need to solve every frequency independently.
+
+============================================================================
+14 · The spectrum offers shared information
+11:15–11:50 · 35 s
+
+Several signals can share diffusion profiles with different amplitudes. A joint calculation uses that redundancy: a strong region can help a weak one. We do not impose one D on the whole spectrum. MF and TRAIn-MF share factors, while per-bin TRAIn provides an independent comparison. This movie is conceptual, without added noise. Correlation establishes neither interaction nor chemical identity, and rank is not a molecule count. We will keep the local decay visible while working with the map. We can now explain why we developed our tools.
+
+============================================================================
+15 · The work our programs help us handle
+11:50–12:10 · 20 s
+
+We now understand the obstacles and how to review them. This is why we developed the programs: prepare without transcription, preserve the measurement, analyse a signal or a spectrum, and check the result. Each case starts with an input, performs an operation and retains its output.
+
+============================================================================
+16 · Our programs and their functions
+12:10–12:45 · 35 s
+
+The TopSpin helper prepares ramps and records calibration. Prime lets us explore one signal, a map and diagnostics. ResinAtOnce guides resin/polymer analysis, separating references from conditional results. DALTAIL runs MATLAB/Python batches and reproduces tables from saved settings. These are workflow tools; TRAIn, MF and SILT are engines they use. Let us see the work they save and the output they retain.
+
+============================================================================
+17 · TopSpin: an HDO calibration report
+12:45–13:50 · 65 s
+
+Select HDO series 10 through 32 and a fixed 4.5–4.9 ppm window. The helper integrates, fits and reports. Offline replay gives R squared of 0.99977, but detects 0.77 K temperature drift above the 0.5 K limit and warns about varying phase and dummy scans. Success is preventing an attractive fit from being mistaken for accepted calibration. The illustrative integral candidate does not replace historical height-based calibration. Review, stabilize and repeat; the instrument remains unchanged.
+
+============================================================================
+18 · TopSpin: three ramps with configurable Δ
+13:50–14:35 · 45 s
+
+Start from a reviewed template and choose three configurable Delta values. The example uses 50, 100 and 150 ms, fixed P30 and 23 gradients from 8 to 96 percent. That is 69 destinations without transcription. Inspect the plan and collisions before creation; retain CSV and JSON. Prepare in the console or export a macro/Python plan. This demonstrates preparation, not a new acquisition.
+
+============================================================================
+19 · Prime: fit a real signal before the map
+14:35–15:30 · 55 s
+
+For TP194, select 4.4182 plus/minus 0.04 ppm. Prime displays signed extraction and all 23 points with no exclusions, giving final D around 0.327 times ten to the minus nine. This is a local monoexponential fit, different from the distribution peak we will see at another region. First inspect all points, tail and residuals; compare methods when information supports it. The panel signed point mean is not the calibrator trapezoidal integral. The saved result retains parameters and calibration: measured D=0.3723534, reference factor=0.8772583, temperature factor=1 and final D=0.3266501. Displayed OLS error=0.00249 is conditional rather than total uncertainty. Success is moving from a spectrum to a traceable, reviewable decay, not identifying a molecule from R squared or optimizing by excluding points. Another difficulty appears when two routes draw different distributions for the same point.
+
+============================================================================
+20 · Prime and ResinAtOnce: consistency between signal and map
+15:30–16:30 · 60 s
+
+At about 7.736 ppm in TP194, the old map and local curve appeared to have similar means but very different distributions. The solution was identical extraction, a 2048-point grid and TRAIn protocol rather than factor changes to force agreement. Peak positions and shapes now match between routes in all three ramps, as the table shows. This succeeds in analysis consistency on real data. Differences across ramps remain visible; numerical agreement neither identifies molecules nor establishes absolute accuracy.
+
+============================================================================
+21 · DALTAIL: a reproducible KK2 batch
+16:30–17:25 · 55 s
+
+DALTAIL retains settings, decays, factors and tables. This KK2 case is an archived report of 230 spectra and ten ramps. KK2-50 and KK2-51 are summarized by block; KK2-52 keeps an exploratory case rather than averaging artefactual ramps. Reference and temperature factors are applied together once and retained. Success is automating the batch while keeping failures visible. It is neither a current-processing replay nor absolute-mass validation; ResinAtOnce offers the complementary guided workflow.
+
+============================================================================
+22 · TP194 case · keep what the model cannot explain visible
+17:25–18:10 · 45 s
+
+The model describes two bands while retaining about six percent of signal unassigned. We neither erase it nor invent another species to complete the story. Prime lets us revisit signals, compare methods and open Scientific Workbench to explore stability and held-out gradient prediction. These are subsequent checks, not tests claimed to have run in this example. Success is retaining both explained and unresolved signal alongside the saved result.
+
+============================================================================
+23 · When repeated gradients take too long: ultrafast / SPEN-DOSY
+18:10–19:10 · 60 s
+
+Conventional acquisition repeats gradients and assumes the preparation remains comparable throughout the series. Time may be limiting for rapid processes, reactions and hyperpolarized signals. Ultrafast DOSY uses spatial encoding: different positions receive different weighting followed by spatial readout. SPEN is the spatial encoding used in these routes, not a wholly separate competitor. Faster acquisition shifts difficulties to phase, spatial sensitivity, bandwidth and b(z) calibration. Cited literature demonstrates applications; these are not attributed to our prototype. Prime’s guided route prompts echo-order, profile and kernel review against conventional controls. This is also the direction of our development for z-gradient probes.
+
+============================================================================
+24 · Ultrafast: diffusion and relaxation in one map
+19:10–19:50 · 40 s
+
+This experimental ultrafast example combines diffusion and T2 in one map, acquired in about 28 seconds using four scans and 32 echoes. Speed makes changing samples accessible. Our current development aims to apply this approach with z-gradient probes and EPSI readout. The map also reminds us that fast acquisition still needs calibration: we must check b(z), sensitivity and accuracy using standards.
+
+============================================================================
+25 · A result we can reproduce and check
+19:50–20:00 · 10 s
+
+DOSY calibration and processing are difficult. These examples show how to do the work and where our programs help. A defensible result retains the measurement, assumptions and checks.

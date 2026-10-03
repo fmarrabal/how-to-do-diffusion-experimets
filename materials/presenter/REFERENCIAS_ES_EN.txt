@@ -1,0 +1,475 @@
+REFERENCIAS / REFERENCES · v8
+
+R. Kerssebaum, DOSY and Diffusion by NMR (Bruker), pp. 9–12
+https://2210pc.chem.uic.edu/nmr/downloads/dosy_ts13.pdf
+
+Bruker Diffusion manual, 12 September 2016
+<TopSpin>/prog/docu/English/topspin/pdf/diff_man.pdf
+
+Calibración DOSY según la sonda, secuencia, gradiente, temperatura y referencia interna
+[local-source: CALIBRACION_SONDA_SECUENCIA_GRADIENTE.md]
+
+TBO HDO experimental calibration, 4 September 2026
+[local-source: TBO_HDO_20260904.json]
+
+prime guide
+[local-source: GUIA_PRIME.md]
+
+prime readme
+[local-source: README.md]
+
+Native signed TRAIn-MF and rank selection
+
+
+R. Mills, Self-Diffusion in Normal and Heavy Water in the Range 1–45°, J. Phys. Chem. 77 (1973) 685–688
+https://fenix.ciencias.ulisboa.pt/downloadFile/2533412229372806/Mills1973.pdf
+
+D. Sinnaeve, The Stejskal–Tanner equation generalized for any gradient shape—an overview of most pulse sequences measuring free diffusion
+https://doi.org/10.1002/cmr.a.21223
+
+E. O. Stejskal and J. E. Tanner, Spin Diffusion Measurements: Spin Echoes in the Presence of a Time-Dependent Field Gradient (1965)
+https://bayes.wustl.edu/Manual/SpinDiffusion.pdf
+
+Generador configurable de rampas DOSY para TopSpin
+[local-source: README.md]
+
+HDO TBO 20260904: acquired EXPNO 1000 and 10, read-only parameter comparison
+[local-source: 20260904_HDO_DIFF_TBO]
+
+Bruker TopSpin 3.6 Basic Experiments, pp.109-116; UCSB NMR pulse width calibration
+https://nmr.chem.ucsb.edu/protocols/pw90cal.html
+
+DiffAtOnce DOSY TopSpin console assistant
+[local-source: README_ES.md]
+
+D. Sinnaeve (2012), The Stejskal–Tanner Equation Generalized for Any Gradient Shape. Table 2, p.58; definitions pp.50–51
+https://doi.org/10.1002/cmr.a.21223
+
+Read-only comparison of the TBO software profile and acquired pulse program
+[local-source: local_equation_audit.json]
+
+PLA-D1 pulse calibration: user screenshots and saved experiments 1000 / 10
+[local-source: 20250321_PLA-D1_diff_CDCL3]
+
+Read-only audit of pulse calibration and sequence-dependent timing parameters
+[local-source: parameters_pulse_evidence.json]
+
+P30/D20 teaching simulation and fixed-noise model
+[local-source: parameter_simulation_model.json]
+
+Reproducible v5 ILT ambiguity and regularization simulations
+[local-source: ilt_simulations.json]
+
+Audited bilingual catalogue of local inversion methods and context families
+[local-source: ilt_algorithm_catalog_bilingual.json]
+
+ILT method-choice and appendix guidance
+[local-source: ilt_teaching_guidance.json]
+
+Single-scan 2D DOSY NMR spectroscopy
+https://pubmed.ncbi.nlm.nih.gov/18835796/
+
+Spatially encoded 2D and 3D diffusion-ordered NMR spectroscopy
+https://pubs.rsc.org/en/content/articlehtml/2017/cc/c6cc09028a
+
+Spatially encoded diffusion-ordered NMR spectroscopy of reaction mixtures in organic solvents
+https://pubs.rsc.org/en/content/articlelanding/2018/an/c8an00434j
+
+Single-Scan 13C Diffusion-Ordered NMR Spectroscopy of DNP-Hyperpolarised Substrates
+https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/chem.201703300
+
+Ultrafast diffusion-based unmixing of 1H NMR spectra
+https://pubs.rsc.org/en/content/articlehtml/2021/cc/d0cc07757g
+
+Speedy Component Resolution Using Spatially Encoded Diffusion NMR Data
+https://pmc.ncbi.nlm.nih.gov/articles/PMC11608938/
+
+Accounting for gradient non-uniformity in spatially-encoded diffusion-ordered NMR spectroscopy
+https://www.sciencedirect.com/science/article/pii/S1090780723001787
+
+Ultrafast multidimensional Laplace NMR for a rapid and sensitive chemical analysis
+https://pmc.ncbi.nlm.nih.gov/articles/PMC4595760/
+
+local_readme
+[local-source: README.md]
+
+local_audit
+[local-source: AUDITORIA_METODO_UF_DT2_CS_2026-09-19.md]
+
+local_pp
+[local-source: UF_DT2_CS_EPSI_v9_4_TBO]
+
+local_calc
+[local-source: UF_DT2_CS_calculator_v9_4.py]
+
+local_recon
+[local-source: reconstruct_uf_dt2_cs_v9_4.py]
+
+local_guide
+[local-source: Guia_Calibracion_UF_DT2_CS_v9_4_5kDa.pdf]
+
+local_saved_tests
+[local-source: salida_tests_v9_4.txt]
+
+local_saved_calc
+[local-source: salida_calculadora_v9_4.txt]
+
+Positive least squares
+[local-source: METHOD_REFERENCE.es.md#nnls]
+
+Positive Tikhonov
+[local-source: METHOD_REFERENCE.es.md#tikhonov]
+
+FLINT quadratic objective
+[local-source: METHOD_REFERENCE.es.md#flint]
+
+GNAT positive ILT branch
+[local-source: METHOD_REFERENCE.es.md#gnat_ilt_nnls]
+
+ITAMeD positive FISTA
+[local-source: METHOD_REFERENCE.es.md#itamed]
+
+Positive smooth sparse inversion
+[local-source: METHOD_REFERENCE.es.md#elastic_net]
+
+Positive row-group sparse inversion
+[local-source: METHOD_REFERENCE.es.md#group_sparse]
+
+TRAIn-style trust region
+[local-source: METHOD_REFERENCE.es.md#train]
+
+Positive maximum entropy
+[local-source: METHOD_REFERENCE.es.md#maxent]
+
+PALMA entropy/L1 PPXA+
+[local-source: METHOD_REFERENCE.es.md#palma]
+
+Local curvature reweighted Tikhonov
+[local-source: METHOD_REFERENCE.es.md#curvature_reweighted]
+
+Nonnegative sparse nuclear regularization
+[local-source: METHOD_REFERENCE.es.md#lowrank_sparse]
+
+Reweighted nuclear heuristic
+[local-source: METHOD_REFERENCE.es.md#reweighted_lowrank_sparse]
+
+Positive variable projection
+[local-source: METHOD_REFERENCE.es.md#vp]
+
+SCORE
+[local-source: METHOD_REFERENCE.es.md#score]
+
+OUTSCORE
+[local-source: METHOD_REFERENCE.es.md#outscore]
+
+HYSCORE
+[local-source: METHOD_REFERENCE.es.md#hyscore]
+
+AIC/BIC selection over VP
+[local-source: METHOD_REFERENCE.es.md#discrete_selection]
+
+DECRA
+[local-source: METHOD_REFERENCE.es.md#decra]
+
+MCR-ALS
+[local-source: METHOD_REFERENCE.es.md#mcr_als]
+
+Symmetric FastICA
+[local-source: METHOD_REFERENCE.es.md#fastica]
+
+Three-way CP-ALS
+[local-source: METHOD_REFERENCE.es.md#parafac]
+
+Explicit-region local SCORE
+[local-source: METHOD_REFERENCE.es.md#local_score]
+
+Automatic LOCODOSY local inversion
+[local-source: METHOD_REFERENCE.es.md#locodosy_auto]
+
+BRD dual positive L2
+[local-source: METHOD_REFERENCE.es.md#brd]
+
+Chambolle-Pock positive L1
+[local-source: METHOD_REFERENCE.es.md#pdhg_l1]
+
+Three/four-way CP-ALS
+[local-source: METHOD_REFERENCE.es.md#parafac_nd]
+
+Regularized block Kaczmarz
+[local-source: METHOD_REFERENCE.es.md#kaczmarz]
+
+Nonnegative L1 interior point
+[local-source: METHOD_REFERENCE.es.md#l1_ls_nonnegative]
+
+Signed L1 interior point
+[local-source: METHOD_REFERENCE.es.md#l1_ls]
+
+FLINT positive quadratic iterative core
+[local-source: METHOD_REFERENCE.es.md#flint_fista]
+
+PLSS residual recursive solver
+[local-source: METHOD_REFERENCE.es.md#plss_r]
+
+Orthogonal matching pursuit dictionary adapter
+[local-source: METHOD_REFERENCE.es.md#omp]
+
+Fixed-p smoothed IRLS dictionary adapter
+[local-source: METHOD_REFERENCE.es.md#irls]
+
+UPEN2D adaptive spatial penalties
+[local-source: METHOD_REFERENCE.es.md#upen2d]
+
+GNAT Fourier RRT
+[local-source: METHOD_REFERENCE.es.md#rrt]
+
+GNAT Fourier FDM
+[local-source: METHOD_REFERENCE.es.md#fdm]
+
+ADSpLRU archived reweighted ADMM
+[local-source: METHOD_REFERENCE.es.md#adsplru]
+
+IPSpLRU incremental proximal recurrence
+[local-source: METHOD_REFERENCE.es.md#ipsplru]
+
+LRSpILT archived ADMM recurrence
+[local-source: METHOD_REFERENCE.es.md#lrspilt]
+
+NMRInversions.jl PDHGM2 recurrence
+[local-source: METHOD_REFERENCE.es.md#pdhgm2]
+
+ILT.jl positive ridge with signed baseline
+[local-source: METHOD_REFERENCE.es.md#ilt_julia]
+
+TailoredNorm archived p sweep
+[local-source: METHOD_REFERENCE.es.md#tailored_norm]
+
+MUPEN2D spatial multi-penalty FISTA
+[local-source: METHOD_REFERENCE.es.md#mupen2d]
+
+ESPIRA-II AAA-selected Loewner pencil
+[local-source: METHOD_REFERENCE.es.md#espira2]
+
+SUnSAL unmixing ADMM
+[local-source: METHOD_REFERENCE.es.md#sunsal]
+
+CLSUnSAL collaborative unmixing
+[local-source: METHOD_REFERENCE.es.md#clsunsal]
+
+Fully constrained least squares
+[local-source: METHOD_REFERENCE.es.md#fcls]
+
+Weighted PLSS recursive core
+[local-source: METHOD_REFERENCE.es.md#plss_rw2]
+
+MRI mixture of Wisharts/tensors matrix core
+[local-source: METHOD_REFERENCE.es.md#mow]
+
+MRI Q-ball harmonic transform
+[local-source: METHOD_REFERENCE.es.md#qbi]
+
+MF-NNLS256
+[local-source: StudioWindows.Library.cs]
+
+TRAIn-MF (protocolo revisado)
+[local-source: StudioWindows.Library.cs]
+
+TRAIn por bin / per bin
+[local-source: StudioWindows.Library.cs]
+
+RAI-S
+[local-source: StudioWindows.Library.cs]
+
+DOME-S
+[local-source: StudioWindows.Library.cs]
+
+SILT revisado / revised
+[local-source: StudioWindows.Library.cs]
+
+SILT original / ADSpLRU
+[local-source: StudioWindows.Library.cs]
+
+TRAIn2D (adaptación C#)
+[local-source: UfNotebookWindow.cs]
+
+FISTA 2D (variante C# inspirada en ITAMeD)
+[local-source: UfNotebookWindow.cs]
+
+Mono / multi-exponential fitting
+https://nmr.chemistry.manchester.ac.uk/?q=node/430
+
+CONTIN
+https://doi.org/10.1016/0010-4655(82)90174-6
+
+SVD / TSVD / compression
+https://arxiv.org/abs/1609.00324
+
+FISTA / proximal acceleration
+https://doi.org/10.1137/080716542
+
+UPEN / 2DUPEN / MUPEN2D
+https://arxiv.org/abs/1609.00324
+
+EDMILT
+https://pmc.ncbi.nlm.nih.gov/articles/PMC8397344/
+
+DRECT
+https://github.com/WryBin/DRECT
+
+DREAM
+https://pmc.ncbi.nlm.nih.gov/articles/PMC12383262/
+
+CoMeF / DOSY-Net / DLEMLR / DILT
+https://github.com/chenbo-cyber/DLEMLR
+
+DISCRETE / SPLMOD / Prony / matrix pencil
+https://nmr.chemistry.manchester.ac.uk/?q=node/430
+
+Landweber / CG / LSQR / early stopping
+https://web.stanford.edu/group/SOL/software/lsqr/
+
+Discrepancy / L-curve / GCV / held-out / bootstrap
+https://nmr.chemistry.manchester.ac.uk/?q=node/430
+
+V6 controlled ramp and preprocessing simulations
+[local-source: problem_simulations.json]
+
+Idealised velocity-distribution attenuation and Delta dependence
+[local-source: convection_idealized_model.json]
+
+V6 audit of software actions, observable checks and limitations
+[local-source: solutions_mapping.json]
+
+University of Manchester NMR — Multivariate DOSY
+https://www.nmr.chemistry.manchester.ac.uk/?q=node%2F26
+
+Ghent University repository — Sinnaeve 2012
+https://biblio.ugent.be/publication/2109280
+
+Williamson et al. (2020), Limits to flow detection in phase contrast MRI
+https://pmc.ncbi.nlm.nih.gov/articles/PMC7745993/
+
+Gottwald et al. (2003), Separation of velocity distribution and diffusion using PFG NMR
+https://pubmed.ncbi.nlm.nih.gov/12810021/
+
+root readme
+[local-source: README.md]
+
+topspin readme
+[local-source: README_ES.md]
+
+topspin verification
+[local-source: VERIFICACION.txt]
+
+topspin calibration source
+[local-source: dosy_calibration.py]
+
+topspin console source
+[local-source: dosy_console_ui.py]
+
+topspin bundle
+[local-source: dosy_workshop.py]
+
+resin readme
+[local-source: README.md]
+
+shared workflows
+[local-source: WORKFLOWS_20261002.md]
+
+tbo calibration
+[local-source: TBO_HDO_20260904.json]
+
+tbo calculation
+[local-source: calibracion_tbo.py]
+
+p1 evidence
+[local-source: parameters_pulse_evidence.json]
+
+local coherence doc
+[local-source: DOSY_COHERENCIA_0.46.0.md]
+
+tp194 parity
+[local-source: real-tp194-parity.json]
+
+local signal screenshot
+[local-source: resin-local-signal.png]
+
+local signal ui check
+[local-source: local-signal-ui.json]
+
+tp194 projection doc
+[local-source: DOSY_PROJECTION_0.46.1.md]
+
+tp194 projection audit
+[local-source: audit.json]
+
+tp194 projection screenshot
+[local-source: prime-projection-map.png]
+
+tp194 projection ui check
+[local-source: projection-ui.json]
+
+resin reference doc
+[local-source: DOSY_REFERENCES_0.43.4.md]
+
+daltail launcher
+[local-source: ejecuta_profesional.m]
+
+daltail api
+[local-source: runDaltailAnalysis.m]
+
+daltail train
+[local-source: trainInvert.m]
+
+kk2 verification
+[local-source: validacion.json]
+
+kk2 results
+[local-source: resumen_principal.csv]
+
+kk2 factors
+[local-source: factores_TTMS_temperatura.csv]
+
+kk2 source manifest
+[local-source: fuentes_sha256.csv]
+
+kk2 fid check
+[local-source: verificacion_FID.csv]
+
+kk2 region fits
+[local-source: ajustes_todas_senales.csv]
+
+software problem audit
+[local-source: solutions_mapping.json]
+
+integral replay summary
+[local-source: summary.json]
+
+integral replay result
+[local-source: calibracion_integral_offline.json]
+
+integral replay csv
+[local-source: atenuacion_integral_residuos.csv]
+
+integral replay script
+[local-source: replay_integral_calibration.py]
+
+integral replay spectrum
+[local-source: HDO_spectral_inspection.png]
+
+tp194 saved project
+[local-source: DiffAtOnce] Prime Results\Calibracion_20260929_084154_43b4f1\calibrado.prime.json
+
+HDO signed-area offline calibration summary
+[local-source: summary.json]
+
+HDO signed-area candidate with thermal rejection
+[local-source: calibracion_integral_offline.json]
+
+HDO signed-area extracted attenuation
+[local-source: atenuacion_integral_residuos.csv]
+
+HDO offline calibration report
+[local-source: informe_integral_offline.html]
+
+Experimental UF D–T2 experiment 10 (2025), TRAIN2D reconstruction
+[local-source: DT2_map_10.png]

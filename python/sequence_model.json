@@ -1,0 +1,14 @@
+{
+  "id": "documented_stebpgp1s1d_SMSQ10_model_not_a_calibration",
+  "pulse_program": "stebpgp1s1d",
+  "gradient_shape": "SMSQ10.100",
+  "shape_squared": 0.81,
+  "equation": "b100 = (gamma*Gmax*delta)^2 * shape_squared * (D20 - 0.32525*delta - D16/2); delta=2*P30*1e-6; gamma=267.52218744e6 rad s^-1 T^-1",
+  "scope": "Local historical sequence model retained for comparison only. Physical-G proposal requires exact saved pulseprogram and gpnam6 SHA-256, 1H, matching names, valid timings, spectral/reference review. Otherwise empirical b only. Not universal Stejskal-Tanner and not transferred to other sequences or timings by name alone.",
+  "status": "documented model, not an experimental probe calibration or independent model validation",
+  "sources": [
+    {"path": "model_identity/pulseprogram", "sha256": "2219e346e7e422a68da6f4001857ddafc46c50b0e508f4c16d932c5870748dca"},
+    {"path": "model_identity/gpnam6", "sha256": "85b3e903dda475b283ac2575e55b69296c94725f946dd728c6965af98cf8e240"}
+  ],
+  "model_source_sha256": "54bf401e220a90d6030a08da7f65548992f8d505910f5d2ad31fb5832081fd86"
+}

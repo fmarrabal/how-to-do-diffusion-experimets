@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.jython_cache/
+cache/
+.venv/
+venv/
+*.log
+~$*
+.DS_Store
+.env
+.env.*
+generated-plans/
+local-reports/
+private-inputs/

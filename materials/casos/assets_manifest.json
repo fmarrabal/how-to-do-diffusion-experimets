@@ -1,0 +1,323 @@
+{
+  "scope": "Existing software screenshots and plots from stored real experimental outputs. No raw or source calculations modified.",
+  "assets": [
+    {
+      "file": "prime_real_local_linear.png",
+      "path": "[local-source: prime_real_local_linear.png]",
+      "source": "[local-source: prime-0101-linear.png]",
+      "sha256": "24238c51803798382aa4570df7ee0723057a1c4ad567dbcb0a4e484b9cdfda6e",
+      "dimensions": [
+        1200,
+        860
+      ],
+      "transform": "none; exact copy, original aspect ratio",
+      "caption_es": "TP194: misma región a 4,4182 ± 0,04 ppm en las 23 adquisiciones; ajuste de todos los puntos válidos.",
+      "caption_en": "TP194: the same 4.4182 ± 0.04 ppm region in all 23 acquisitions; fit of all valid points.",
+      "limits": "Real data, stored calibration. OLS ln(I/I0), conditional uncertainty; screenshot is not a new acquisition or species validation. TTMS identity and viscosity assumptions documented in source.",
+      "evidence_sources": [
+        "[local-source: provenance-private.json]"
+      ]
+    },
+    {
+      "file": "prime_real_local_distribution.png",
+      "path": "[local-source: prime_real_local_distribution.png]",
+      "source": "[local-source: prime-0101-distribution.png]",
+      "sha256": "cb074bca514d94f64a7d02b11bb6a32779b55642086116e772d33c1ef2bc8bb2",
+      "dimensions": [
+        1200,
+        860
+      ],
+      "transform": "none; exact copy, original aspect ratio",
+      "caption_es": "TP194: inversión TRAIn de la región experimental; comparar la distribución y el ajuste de atenuación.",
+      "caption_en": "TP194: TRAIn inversion of the experimental region; compare distribution and attenuation fit.",
+      "limits": "Real data and archived inversion. Descriptive components are not chemical identities; image alone does not establish resolution.",
+      "evidence_sources": [
+        "[local-source: provenance-private.json]"
+      ]
+    },
+    {
+      "file": "prime_real_projection_map.png",
+      "path": "[local-source: prime_real_projection_map.png]",
+      "source": "[local-source: prime-projection-map.png]",
+      "sha256": "b3540e3721892e08231f8cadbb1aa5865f7e58d1eb06374f36e4b49c426ca574",
+      "dimensions": [
+        2034,
+        828
+      ],
+      "transform": "none; exact copy, original aspect ratio",
+      "caption_es": "TP194: mapa DOSY y proyección con dos bandas respaldadas; ~6 % queda visible sin asignar.",
+      "caption_en": "TP194: DOSY map and projection with two supported bands; ~6% remains visibly unassigned.",
+      "limits": "Real archived map, projection recomputed as documented. Two bands are not proof of two species. TRAIn residual ~1.43% differs from descriptive projection error ~6.79%; no new inversion or validation.",
+      "evidence_sources": [
+        "[local-source: DOSY_PROJECTION_0.46.1.md]",
+        "[local-source: audit.json]",
+        "[local-source: projection-ui.json]"
+      ]
+    },
+    {
+      "file": "prime_real_projection_before.png",
+      "path": "[local-source: prime_real_projection_before.png]",
+      "source": "[local-source: prime-projection-before.png]",
+      "sha256": "a8a114a90b4c165d8a10b7f476c51c78cd1f8d5459c0a838137c771b86554cce",
+      "dimensions": [
+        1600,
+        1000
+      ],
+      "transform": "none; exact copy, original aspect ratio",
+      "caption_es": "TP194: captura documentada antes de la revisión de la proyección; mapa y calibración conservados.",
+      "caption_en": "TP194: documented before screenshot of the projection review; map and calibration preserved.",
+      "limits": "Exact archived screenshot. Before has three historical Gaussian bands and 2.0% descriptive fit error; after has two supported bands, 6.8% descriptive error and 6.0% unassigned area. These are descriptive projection statistics, not raw attenuation residual or species validation.",
+      "evidence_sources": [
+        "[local-source: DOSY_PROJECTION_0.46.1.md]",
+        "[local-source: audit.json]",
+        "[local-source: projection-ui.json]"
+      ]
+    },
+    {
+      "file": "prime_real_projection_after.png",
+      "path": "[local-source: prime_real_projection_after.png]",
+      "source": "[local-source: prime-projection-after.png]",
+      "sha256": "0d509607fcf5ebf141775830abd131aab7c8a0460f3bff48030add21fac47de6",
+      "dimensions": [
+        1600,
+        1000
+      ],
+      "transform": "none; exact copy, original aspect ratio",
+      "caption_es": "TP194: captura documentada después de la revisión de la proyección; mapa y calibración conservados.",
+      "caption_en": "TP194: documented after screenshot of the projection review; map and calibration preserved.",
+      "limits": "Exact archived screenshot. Before has three historical Gaussian bands and 2.0% descriptive fit error; after has two supported bands, 6.8% descriptive error and 6.0% unassigned area. These are descriptive projection statistics, not raw attenuation residual or species validation.",
+      "evidence_sources": [
+        "[local-source: DOSY_PROJECTION_0.46.1.md]",
+        "[local-source: audit.json]",
+        "[local-source: projection-ui.json]"
+      ]
+    },
+    {
+      "file": "resin_real_dosy_ES.png",
+      "path": "[local-source: resin_real_dosy_ES.png]",
+      "source": "[local-source: resinatonce-0481-real-dosy-es.png]",
+      "sha256": "fd5e2041f2f22988fc524c17f855819322f50f8540073fcd1e944e04a8279733",
+      "dimensions": [
+        1584,
+        1041
+      ],
+      "transform": "none; exact copy, original aspect ratio",
+      "caption_es": "ResinAtOnce: mapa experimental TP194 archivado; controles de región, referencia, método y exportación.",
+      "caption_en": "ResinAtOnce: archived experimental TP194 map; region, reference, method and export controls.",
+      "limits": "WPF render of actual UI v0.48.1. Archived inversion train-per-bin legacy-amplitude, 256 D bins, 16-point spectral grouping, termFac 1.05. Selector does not re-invert the shown map. Not a new experimental validation.",
+      "evidence_sources": [
+        "[local-source: resinatonce-0481-captures.json]"
+      ]
+    },
+    {
+      "file": "resin_real_dosy_EN.png",
+      "path": "[local-source: resin_real_dosy_EN.png]",
+      "source": "[local-source: resinatonce-0481-real-dosy-en.png]",
+      "sha256": "24e6444a89739731bd3250aea2c76ceb702b79fa57b3a2e1aa08e26b394cf69b",
+      "dimensions": [
+        1584,
+        1041
+      ],
+      "transform": "none; exact copy, original aspect ratio",
+      "caption_es": "ResinAtOnce: mapa experimental TP194 archivado; controles de región, referencia, método y exportación.",
+      "caption_en": "ResinAtOnce: archived experimental TP194 map; region, reference, method and export controls.",
+      "limits": "WPF render of actual UI v0.48.1. Archived inversion train-per-bin legacy-amplitude, 256 D bins, 16-point spectral grouping, termFac 1.05. Selector does not re-invert the shown map. Not a new experimental validation.",
+      "evidence_sources": [
+        "[local-source: resinatonce-0481-captures.json]"
+      ]
+    },
+    {
+      "file": "resin_real_local_comparison.png",
+      "path": "[local-source: resin_real_local_comparison.png]",
+      "source": "[local-source: resin-local-signal.png]",
+      "sha256": "614196450f7a82317e6dc2eb94935174897f1b290189acae8c34104f98810d03",
+      "dimensions": [
+        1120,
+        850
+      ],
+      "transform": "none; exact copy, original aspect ratio",
+      "caption_es": "ResinAtOnce: misma atenuación, rejilla y calibración; comprobación local de TRAIn frente al bin del mapa.",
+      "caption_en": "ResinAtOnce: the same attenuation, grid and calibration; local TRAIn check against the map bin.",
+      "limits": "Screenshot at 7.736 ppm, 256-bin grid, reports D peak 0.307432 and mean 0.308874 ×10^-9. It is a different grid from the 2048-bin numerical parity table; do not mix those figures.",
+      "evidence_sources": [
+        "[local-source: local-signal-ui.json]",
+        "[local-source: DOSY_COHERENCIA_0.46.0.md]"
+      ]
+    },
+    {
+      "file": "kk2_real_attenuation_ES.png",
+      "path": "[local-source: kk2_real_attenuation_ES.png]",
+      "sha256": "3379d3ea7b1dff6acac28e2a9f5dcacfa5b049d067fc277a756022369f85cf19",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "transform": "scientific plot from saved real integrations; stored D unchanged; amplitude analytically recovered at fixed stored D",
+      "caption_es": "KK2-50: resultados archivados. OCH₃, 3,45–3,70 ppm; 23 puntos por rampa y tres Δ. Puntos medidos y modelo guardado.",
+      "caption_en": "KK2-50: archived results. OCH₃, 3.45–3.70 ppm; 23 points per ramp and three Δ values. Measured points and stored model.",
+      "limits": "ARCHIVED outputs: current source procs has discrepancies identified by v7 audit; no claim of a fresh full reproduction. Plot is attenuation at acquisition conditions. Primary D uses shared TBO calibration then TTMS and temperature together. Main slide must disclose primary corrections; high R² alone does not validate species or molecular mass.",
+      "evidence_sources": [
+        "[local-source: atenuaciones_integradas.csv]",
+        "[local-source: ajustes_todas_senales.csv]",
+        "[local-source: factores_TTMS_temperatura.csv]",
+        "[local-source: conversiones_modelo.csv]"
+      ]
+    },
+    {
+      "file": "tp194_real_projection_ES.png",
+      "path": "[local-source: tp194_real_projection_ES.png]",
+      "sha256": "7839037ae5b2504cf66231f8edd7231e89226777f3f373ebb2a323a47fbc047b",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "transform": "scientific plot directly from saved real-map projection curves, normalized only for display",
+      "caption_es": "TP194: proyección de Modelo + señal conservada; las dos bandas asignadas y 5,96 % de área sin asignar conservan cada bin observado.",
+      "caption_en": "TP194: Model + preserved-signal projection; two assigned bands plus 5.96% unassigned area conserve every observed bin.",
+      "limits": "Descriptive projection of the archived map, not a new inversion or proof of two species. Display normalization preserves relative amplitudes. Original TRAIn attenuation residual ~1.43% differs from projection descriptive error ~6.79%.",
+      "evidence_sources": [
+        "[local-source: model-0.json]",
+        "[local-source: audit.json]",
+        "[local-source: DOSY_PROJECTION_0.46.1.md]"
+      ]
+    },
+    {
+      "file": "kk2_real_attenuation_EN.png",
+      "path": "[local-source: kk2_real_attenuation_EN.png]",
+      "sha256": "afda75d9f556403bd3e0a6216edc61eb3a22f65c60d3c90e793ebef25d0311f5",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "transform": "scientific plot from saved real integrations; stored D unchanged; amplitude analytically recovered at fixed stored D",
+      "caption_es": "KK2-50: resultados archivados. OCH₃, 3,45–3,70 ppm; 23 puntos por rampa y tres Δ. Puntos medidos y modelo guardado.",
+      "caption_en": "KK2-50: archived results. OCH₃, 3.45–3.70 ppm; 23 points per ramp and three Δ values. Measured points and stored model.",
+      "limits": "ARCHIVED outputs: current source procs has discrepancies identified by v7 audit; no claim of a fresh full reproduction. Plot is attenuation at acquisition conditions. Primary D uses shared TBO calibration then TTMS and temperature together. Main slide must disclose primary corrections; high R² alone does not validate species or molecular mass.",
+      "evidence_sources": [
+        "[local-source: atenuaciones_integradas.csv]",
+        "[local-source: ajustes_todas_senales.csv]",
+        "[local-source: factores_TTMS_temperatura.csv]",
+        "[local-source: conversiones_modelo.csv]"
+      ]
+    },
+    {
+      "file": "tp194_real_projection_EN.png",
+      "path": "[local-source: tp194_real_projection_EN.png]",
+      "sha256": "792779f5d69367600be1b51877b47ef8543456a58b2ee8b427547e5f6efb3015",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "transform": "scientific plot directly from saved real-map projection curves, normalized only for display",
+      "caption_es": "TP194: proyección de Modelo + señal conservada; las dos bandas asignadas y 5,96 % de área sin asignar conservan cada bin observado.",
+      "caption_en": "TP194: Model + preserved-signal projection; two assigned bands plus 5.96% unassigned area conserve every observed bin.",
+      "limits": "Descriptive projection of the archived map, not a new inversion or proof of two species. Display normalization preserves relative amplitudes. Original TRAIn attenuation residual ~1.43% differs from projection descriptive error ~6.79%.",
+      "evidence_sources": [
+        "[local-source: model-0.json]",
+        "[local-source: audit.json]",
+        "[local-source: DOSY_PROJECTION_0.46.1.md]"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "topspin_hdo",
+      "software": "TopSpin DOSY helper",
+      "entry": "xpy dosy_workshop.py",
+      "input_es": "Serie 1D del patrón, límites ppm, Dref y Tref, secuencia y forma.",
+      "input_en": "Reference 1D series, ppm bounds, Dref and Tref, sequence and shape.",
+      "output_es": "Escala experimental de b; JSON, CSV de atenuación/residuos e informe HTML.",
+      "output_en": "Experimental b scale; JSON, attenuation/residual CSV and HTML report.",
+      "success_es": "Caso HDO compartido: pendiente 1,58627 y R² = 0,999829, reproducidos desde 23 espectros.",
+      "success_en": "Shared HDO case: slope 1.58627 and R² = 0.999829, reproduced from 23 spectra.",
+      "limits": "Shared profile was measured by calibration_tbo.py using a fixed spectral point/window diagnostic, not newly produced by the helper integral pathway. Do not attribute identical slope to integral software. Thermal reference is approximate. TopSpin 3.6.4 live execution pending.",
+      "sources": [
+        "calibracion/TBO_HDO_20260904.json",
+        "calibracion_tbo.py",
+        "workshop_dosy/topspin_console/README_ES.md"
+      ]
+    },
+    {
+      "id": "matlab_kk2",
+      "software": "MATLAB +daltail / Python reconstruction",
+      "entry": "runDaltailAnalysis(config); KK2-specific reproduce_kk2.ps1",
+      "input_es": "FID/Bruker, región ppm elegida para la muestra, metadatos, perfil TBO y TTMS.",
+      "input_en": "FID/Bruker, sample-specific ppm region, metadata, TBO profile and TTMS.",
+      "output_es": "Atenuaciones, D, distribuciones TRAIn, residuos y factores por bloque.",
+      "output_en": "Attenuations, D, TRAIn distributions, residuals and per-block factors.",
+      "success_es": "Caso KK2 archivado: 230 espectros, 10 rampas. KK2-50/51: tres bloques cada una; trazabilidad del procesamiento.",
+      "success_en": "Archived KK2 case: 230 spectra, 10 ramps. KK2-50/51: three blocks each; processing provenance.",
+      "primary_D_summary": "KK2-50 0.143339 ± 0.008256; KK2-51 0.088614 ± 0.006584 ×10^-9 m²/s; mean and sample SD across three blocks, not confidence interval.",
+      "limits": "ARCHIVED outputs: current v7 audit identifies changed procs files. Do not claim full current reproduction or unchanged processing parameters. TTMS + temperature is the principal scenario, factors stored separately. KK2-52 exploratory, not a success headline. Linear-polymer mass calibrations do not establish absolute masses of stars/brushes; omit mass claims.",
+      "sources": [
+        "README.md",
+        "resultados_kk2/validacion.json",
+        "resultados_kk2/resumen_principal.csv",
+        "resultados_kk2/factores_TTMS_temperatura.csv"
+      ]
+    },
+    {
+      "id": "prime_local",
+      "software": "DiffAtOnce Prime",
+      "entry": "Select a fixed ppm region → attenuation/distribution → fit/invert → save result",
+      "input_es": "TP194, 4,4182 ± 0,04 ppm, los 23 puntos válidos; calibración guardada.",
+      "input_en": "TP194, 4.4182 ± 0.04 ppm, all 23 valid points; stored calibration.",
+      "output_es": "D antes/después, incertidumbre condicional, distribución y residuos.",
+      "output_en": "D before/after, conditional uncertainty, distribution and residuals.",
+      "screenshot_metrics": "D measured 0.3723534; D final 0.3266501 ±0.00249 ×10^-9 m²/s (conditional OLS); R² .998781039; no points excluded. fRef .8772583, fT=1.",
+      "limits": "These values are visible in real screenshot; snapshot is not a new fit. Conditional OLS error excludes calibration/reference/temperature/model uncertainty. TTMS identity and viscosity are conditional, not confirmed molecular identification.",
+      "sources": [
+        "desktop/prime/qa/website-0101-final/provenance-private.json"
+      ]
+    },
+    {
+      "id": "shared_train",
+      "software": "Prime / ResinAtOnce shared TRAIn",
+      "entry": "Local signal · TRAIn / compare; match extraction, grid, method and corrections",
+      "input_es": "TP194 cerca de 7,736 ppm; misma extracción y rejilla de 2048 bins en los dos caminos.",
+      "input_en": "TP194 near 7.736 ppm; identical extraction and 2048-bin grid in both pathways.",
+      "output_es": "Comparación señal local / bin DOSY: pico, media, forma y residuos.",
+      "output_en": "Local signal / DOSY-bin comparison: peak, mean, shape and residuals.",
+      "success_es": "Tres rampas reales: diferencias de forma normalizadas = 0 en estas ejecuciones; D pico y media idénticas.",
+      "success_en": "Three real ramps: normalized shape differences = 0 in these runs; identical D peak and mean.",
+      "limits": "Operational reproducibility on these data, not independent scientific validation, species count or universal parity across different grids. Resin screenshot uses 256 bins and different values.",
+      "sources": [
+        "desktop/DOSY_COHERENCIA_0.46.0.md",
+        "desktop/artifacts/shared-train-20260929/resin/real-tp194-parity.json"
+      ]
+    },
+    {
+      "id": "prime_map_controls",
+      "software": "DiffAtOnce Prime / ResinAtOnce map review",
+      "entry": "DOSY map → decomposition of active projection → inspect unassigned signal → export data",
+      "success_es": "En TP194 se evita una banda compensadora sin máximo propio y se conservan ~6 % sin asignar visibles.",
+      "success_en": "In TP194 an unsupported compensating band is avoided and ~6% remains visibly unassigned.",
+      "limits": "Two supported bands are descriptive, not two demonstrated chemical species. Archived map/inversion retained. Gaussian projection residual is not raw attenuation residual.",
+      "sources": [
+        "desktop/DOSY_PROJECTION_0.46.1.md",
+        "desktop/prime/qa/projection-real-final/audit.json"
+      ]
+    }
+  ],
+  "source_hashes": {
+    "[local-source: README.md]": "e476bc86c9de4770e41d72ed2ee5ccbf32bd4535f004ceb7dc2a15bee8e6ebef",
+    "[local-source: TBO_HDO_20260904.json]": "33cd7523715204b3d1bd6aaf5bc8aea69586950a14e92847178e67cc704bea18",
+    "[local-source: calibracion_tbo.py]": "54bf401e220a90d6030a08da7f65548992f8d505910f5d2ad31fb5832081fd86",
+    "[local-source: DOSY_COHERENCIA_0.46.0.md]": "7c3c205b7cb9182537f8438d9e48c7c5d149674aedb5c907c3985dfa6a9db854",
+    "[local-source: DOSY_PROJECTION_0.46.1.md]": "63482d3161b019f11dce3962068c2e8fdba09ee4f200230f02158aca5edd6615",
+    "[local-source: local-signal-ui.json]": "816f2a6c652841425931966d712001327a15d9a0b33fae330867e04706e8e5cc",
+    "[local-source: real-tp194-parity.json]": "8ae196eec3de4409d205550f3ef8c3a00e986293fce0e6657346dc151725cd3e",
+    "[local-source: audit.json]": "dee6304e3aa4e50e851d310901f361178bcd4da5a0f3d709cfcb8c1ce4e9a7df",
+    "[local-source: model-0.json]": "ab6764c44d39f4cfe348f66b56e72791c08023a6910eef1522c244121462602b",
+    "[local-source: projection-ui.json]": "750386f89d5355aae1d099d4e4fe9aa79b0f8ac28f7d4f8c24a8f1d350529422",
+    "[local-source: provenance-private.json]": "8cd04634c2b9dd6ce84d5105829bf5daef61bd1f58e4e18f2176768e257686f4",
+    "[local-source: ajustes_todas_senales.csv]": "1c2d49b4fa1c151e7729472193bcce25c714f974d68f70719bc3c2edbe05be6c",
+    "[local-source: atenuaciones_integradas.csv]": "adfbd7db5ed452b397cdb92d90924cf00ba0daae030488f91ac9a273e91001b0",
+    "[local-source: conversiones_modelo.csv]": "677b49af9b74e0f68fd2e2d097c16c8a7182b59fbd5b5fdfc4661f5822fb575f",
+    "[local-source: factores_TTMS_temperatura.csv]": "a9cdff6e70beff83112929d1b7f324b3533f03a4a8c3456833eebd4d823c7ced",
+    "[local-source: resumen_principal.csv]": "d65ec3ba4823995967be38da511e01b8b754523297e0d6da481f06415abb7791",
+    "[local-source: validacion.json]": "b87dbf89bc4d3e86a6cfb2037376242b058ac866a228c297cec5c618313e86f3",
+    "[local-source: resinatonce-0481-captures.json]": "e8efd8342ca2326e9c2907038598fa0566999bf00675bc977d5ae2a5d68eb7d2",
+    "[local-source: README_ES.md]": "9139cdc684c3f182a0c94e733417ad54c04081bf9ff020afdc75377c48c6ac5c"
+  }
+}

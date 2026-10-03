@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "builder": "python/build_bundles.py",
+  "scope": "Public sources only; no raw sample data, no experimental calibration, no instrument execution",
+  "sources": {
+    "python/ramp_generator/generate_ramps.py": "86d1ae9763f49df3f29d7f3dae4074d52b36f9d42ce9dbaccf97fff567381bda",
+    "python/ramp_generator/topspin_prepare_template.py": "cf5a0c48eef1ac6965569491dca1fa3c85cff27645f3b3372b7518fccb3bd406",
+    "python/sequence_model.json": "4fdf72eb734537c8fa0fb41e32660610f8296cc88005bd0e836692438941a8ac",
+    "python/topspin_console/dosy_calibration.py": "0e4e4a3ab8103153d4151b2a19fcf20e0bf269264c07e83b39392c7aa609a797",
+    "python/topspin_console/dosy_console_ui.py": "efd3dd0d24e7e115d7b4323684f0db715a2cc15ff67489164e42fb2520b59015",
+    "python/topspin_console_v3/dosy_autorun.py": "362e87674dc45c6835aad84be293957cbc070e4b3a48e501af0a9d3312e2ff08"
+  },
+  "outputs": {
+    "python/topspin_console/dosy_ramp_engine.py": "b8c91534264bf609490c6730608076df2b6e33dafb67b635aa020f039556e77f",
+    "python/topspin_console/dist/dosy_workshop.py": "0fcebefac7e18a9138d7ccc12d4cbdd6a12144d805b32fe65a219a9158c595ce",
+    "python/topspin_console_v3/dist/dosy_workshop_v3.py": "5ca669c3ae7637877ce06cf794e7c468cbd071dfcdcdfa71f40c1f05f642d21a"
+  }
+}

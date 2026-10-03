@@ -1,0 +1,2062 @@
+{
+  "audit_date": "2026-10-02",
+  "scope": {
+    "es": "Lectura de fuentes/capturas e integridad; no ejecución de instrumento, no cambios en originales ni motores.",
+    "en": "Read-only source/screenshot and integrity review; no instrument execution, original-data or engine changes."
+  },
+  "recommended_story": {
+    "es": "Primero explicar y mostrar la dificultad de preparar/calibrar y procesar/invertir. Después presentar tres productos con sus papeles: asistente TopSpin, Prime y ResinAtOnce. DALTAIL aparece como capa reproducible complementaria, no como cuarto algoritmo. Los casosHDO/TP194 son centrales; KK2 archivado amplía la aplicación.",
+    "en": "First explain and show preparation/calibration and processing/inversion difficulties. Then introduce three products with their roles: TopSpin helper, Prime and ResinAtOnce. DALTAIL is a complementary reproducible layer rather than a fourth algorithm. HDO/TP194 are central cases; archivedKK2 extends the application."
+  },
+  "product_algorithm_distinction": {
+    "es": "Prime/ResinAtOnce son aplicaciones. TRAIn/MF/RAI-S/DOME-S/SILT son motores/rutas, no cinco productos nuevos. iCOshift-Prime es una adaptación propia de un método ajeno; atribuir autores y límites. Beatrix es asistente documental integrado, no validación química.",
+    "en": "Prime/ResinAtOnce are applications. TRAIn/MF/RAI-S/DOME-S/SILT are engines/routes rather than five new products. iCOshift-Prime is an own adaptation of another authors' method; credit authors and limits. Beatrix is an integrated documentary assistant rather than chemical validation."
+  },
+  "tools": [
+    {
+      "id": "topspin_helper",
+      "name": "DOSY desde TopSpin · dosy_workshop.py",
+      "kind": {
+        "es": "Asistente propio integrado en la consola Bruker; Jython 2.7.",
+        "en": "Own helper integrated into the Bruker console; Jython 2.7."
+      },
+      "purpose": {
+        "es": "Preparar rampas configurables y convertir una atenuación del patrón en una escala experimental documentada.",
+        "en": "Prepare configurable ramps and convert a reference attenuation into a documented experimental scale."
+      },
+      "input": {
+        "es": "Plantilla 1 D revisada, rangos GPZ, EXPNO libres, Δ configurables; para calibrar, serie procesada y ventana ppm más D de referencia con T/disolvente/fuente.",
+        "en": "Reviewed 1 D template, GPZ range, free experiment numbers, configurable Δ; for calibration, processed series and ppm window plus reference D with temperature/solvent/source."
+      },
+      "output": {
+        "es": "Experimentos preparados o plan JSON/CSV; integral firmada, ajuste/intercepto/residuos e informe HTML; propuesta de G sólo bajo modelo protegido.",
+        "en": "Prepared experiments or JSON/CSV plan; signed integral, fit/intercept/residuals and HTML report; G proposal only under a protected model."
+      },
+      "demo_steps": [
+        {
+          "es": "Abrir plantilla y escribir xpy dosy_workshop.py.",
+          "en": "Open the template and enter xpy dosy_workshop.py."
+        },
+        {
+          "es": "Preparar rampas: elegir Δ y destinos libres; revisar plan y crear copias.",
+          "en": "Prepare ramps: choose Δ and free destinations; review plan and create copies."
+        },
+        {
+          "es": "Después de adquirir/procesar el patrón, seleccionar Calibrar con serie 1 D, EXPNO y ventana ppm.",
+          "en": "After acquiring/processing the reference, select Calibrate from 1 D series, experiment numbers and ppm window."
+        },
+        {
+          "es": "Leer residuos/TE/modelo, guardar informe y revisar la propuesta antes de editar gradpar.",
+          "en": "Read residuals/temperature/model, save the report and review the proposal before editing gradpar."
+        }
+      ],
+      "case_ids": [
+        "hdo_integral_offline",
+        "hdo_tbo",
+        "ramp_plan"
+      ],
+      "limits": {
+        "es": "No adquiere ni busca P1/LED automáticamente. TopSpin 3.6.4: compatibilidad de sintaxis/API prevista; no ejecución real verificada. Instalado en 3.8.0; pruebas de diálogo simuladas. Integración ilustrativa no sustituye la calibración TBO guardada por altura.",
+        "en": "It does not acquire data or automatically search P1/LED. TopSpin 3.6.4 syntax/API compatibility is intended but live execution is unverified. Installed in 3.8.0; dialogue tests were simulated. Illustrative integration does not replace the saved height-based TBO calibration."
+      },
+      "sources": [
+        "topspin_readme",
+        "topspin_verification",
+        "topspin_calibration_source",
+        "topspin_console_source",
+        "topspin_bundle"
+      ]
+    },
+    {
+      "id": "prime",
+      "name": "DiffAtOnce Prime",
+      "version_audited": "0.14.0",
+      "kind": {
+        "es": "Aplicación Windows de DOSY de propósito general; motores integrados y revisión científica.",
+        "en": "General-purpose Windows DOSY application with integrated engines and scientific review."
+      },
+      "purpose": {
+        "es": "De una rampa Bruker a una atenuación local y un mapa comprobable, conservando signo, factores, métodos y decisiones.",
+        "en": "From a Bruker ramp to a local attenuation and a checkable map, preserving signs, factors, methods and decisions."
+      },
+      "input": {
+        "es": "Serie Bruker pdata/N/1 r, metadatos y codificación b revisada; región ppm, calibración y método explícitos.",
+        "en": "Bruker pdata/N/1 r series, metadata and reviewed b encoding; explicit ppm region, calibration and method."
+      },
+      "output": {
+        "es": "D local, distribución/mapa, residuos y avisos; comparación de métodos/estabilidad; proyecto, curvas CSV e informes.",
+        "en": "Local D, distribution/map, residuals and warnings; method/stability comparison; project, CSV curves and reports."
+      },
+      "demo_steps": [
+        {
+          "es": "Abrir Bruker 10: 32, confirmar secuencia/sonda/TE y b.",
+          "en": "Open Bruker 10: 32; confirm sequence/probe/temperature and b."
+        },
+        {
+          "es": "Pulsar una señal y Calcular D de esta región; mirar atenuación firmada y residuos.",
+          "en": "Select a signal and Calculate D of this region; inspect signed attenuation and residuals."
+        },
+        {
+          "es": "Calcular mapa y abrir Señal local · TRAIn / comparar con extracción y rejilla compatibles.",
+          "en": "Calculate a map and open Local signal · TRAIn / compare using compatible extraction and grid."
+        },
+        {
+          "es": "En Laboratorio científico, comparar configuraciones; guardar revisión e informe con su procedencia.",
+          "en": "In Scientific workbench, compare configurations; save the review and report with provenance."
+        }
+      ],
+      "case_ids": [
+        "tp194_coherence",
+        "tp194_projection"
+      ],
+      "limits": {
+        "es": "No es procesador universal de FID/ser/2 rr ni ejecuta automáticamente GNAT. La comparación de métodos no establece identidad química ni exactitud absoluta. Beatrix aporta hipótesis documentadas, no modifica cálculos. No se han ejecutado todos los controles del Laboratorio sobre el TP194 mostrado.",
+        "en": "It is not a universal FID/ser/2 rr processor and does not automatically execute GNAT. Method comparison does not establish chemical identity or absolute accuracy. Beatrix supplies documented hypotheses rather than modifying calculations. Not every Workbench control was run on the displayed TP194."
+      },
+      "sources": [
+        "prime_readme",
+        "prime_guide",
+        "shared_workflows",
+        "local_coherence_doc",
+        "tp194_parity",
+        "tp194_projection_doc",
+        "tp194_projection_audit"
+      ]
+    },
+    {
+      "id": "resinatonce",
+      "name": "ResinAtOnce",
+      "version_audited": "0.50.0",
+      "kind": {
+        "es": "Aplicación Windows especializada en resinas/polímeros; comparte motores científicos con Prime.",
+        "en": "Windows application specialised in resins/polymers, sharing scientific engines with Prime."
+      },
+      "purpose": {
+        "es": "Organizar muestras y rampas, seguir señales de formulación, aplicar patrones/temperatura una vez y comunicar D, Rh y Mw aparente con límites.",
+        "en": "Organise samples and ramps, track formulation signals, apply reference/temperature factors once and communicate D, Rh and apparent Mw with limits."
+      },
+      "input": {
+        "es": "Muestra y rampas Bruker verificadas, regiones específicas, patrón/temperatura/viscosidad documentados y curva molecular aplicable.",
+        "en": "Verified sample and Bruker ramps, sample-specific regions, documented reference/temperature/viscosity and applicable molecular calibration."
+      },
+      "output": {
+        "es": "Resultados por señal/rampa, DOSY/MwOSY y diagnóstico; tabla molecular condicionada, informes y revisiones archivadas.",
+        "en": "Per-signal/ramp results, DOSY/MwOSY and diagnostics; conditional molecular table, reports and archived reviews."
+      },
+      "demo_steps": [
+        {
+          "es": "Abrir muestra y revisar título, secuencia, concentraciones y regiones ppm.",
+          "en": "Open the sample and review title, sequence, concentrations and ppm regions."
+        },
+        {
+          "es": "Revisar referencias internas, fReferencia y fTemperatura; separar referencias del modelo de muestra.",
+          "en": "Review internal references, reference and temperature factors; separate references from the sample model."
+        },
+        {
+          "es": "Comparar atenuación/distribución por rampa y revisar señales discordantes antes de resumir.",
+          "en": "Compare attenuation/distribution per ramp and review discordant signals before summarising."
+        },
+        {
+          "es": "Exportar D y resultados moleculares con dominio/hipótesis; conservar estados exploratorios.",
+          "en": "Export D and molecular results with domain/assumptions; retain exploratory statuses."
+        }
+      ],
+      "case_ids": [
+        "tp194_reference",
+        "tp194_coherence",
+        "kk2_archived"
+      ],
+      "limits": {
+        "es": "El radio recuperado del patrón que calibra el eje no es validación independiente. Curvas de polímero lineal no validan masas absolutas de estrellas/cepillos. No se deben reescalar muestras KK2 a tablas históricas. Un control de convección no corrige todo el mapa.",
+        "en": "Recovering the radius of the reference that calibrated the axis is not independent validation. Linear-polymer curves do not validate absolute masses of stars/brushes. KK2 samples must not be rescaled to historical tables. A convection control does not correct the entire map."
+      },
+      "sources": [
+        "resin_readme",
+        "shared_workflows",
+        "resin_reference_doc",
+        "root_readme",
+        "local_coherence_doc"
+      ]
+    },
+    {
+      "id": "daltail",
+      "name": "DALTAIL · MATLAB + Python reproducible workflow",
+      "kind": {
+        "es": "Marco de análisis/API, no otra interfaz equivalente a Prime. Python prepara y verifica; MATLAB aplica funciones compartidas.",
+        "en": "Analysis framework/API rather than another Prime-equivalent interface. Python prepares/verifies; MATLAB runs shared functions."
+      },
+      "purpose": {
+        "es": "Procesar y auditar lotes científicos con configuración explícita, resultados por bloque y figuras/informes reproducibles.",
+        "en": "Process and audit scientific batches with explicit configuration, per-block results and reproducible figures/reports."
+      },
+      "input": {
+        "es": "FID y/o espectros Bruker conservados, inventario, regiones de cada muestra, calibración compartida y protocolo TTMS/temperatura.",
+        "en": "Preserved Bruker FIDs and/or spectra, inventory, sample-specific regions, shared calibration and TTMS/temperature protocol."
+      },
+      "output": {
+        "es": "Matrices de espectros/atenuaciones, distribuciones TRAIn, factores individuales, tablas D/Rh/M aparentes, hashes y diagnóstico.",
+        "en": "Spectrum/attenuation matrices, TRAIn distributions, individual factors, D/Rh/apparent-M tables, hashes and diagnostics."
+      },
+      "demo_steps": [
+        {
+          "es": "Editar sólo la configuración del experimento en ejecuta_profesional.m, o construir daltail.defaultConfig().",
+          "en": "Edit only the experiment configuration in ejecuta_profesional.m, or build daltail.defaultConfig()."
+        },
+        {
+          "es": "Seleccionar regiones desde la muestra actual; invocar results = runDaltailAnalysis(config).",
+          "en": "Select regions from the current sample; call results = runDaltailAnalysis(config)."
+        },
+        {
+          "es": "Leer auditoría de sonda/TE/patrón y revisar ajustes/convergencia antes de interpretar momentos.",
+          "en": "Read probe/temperature/reference audit and inspect fits/convergence before interpreting moments."
+        },
+        {
+          "es": "Guardar MAT/CSV/figuras. Para KK2, usar el flujo reproducible documentado y conservar el protocolo principal.",
+          "en": "Save MAT/CSV/figures. For KK2, use the documented reproducible workflow and retain the primary protocol."
+        }
+      ],
+      "case_ids": [
+        "kk2_archived"
+      ],
+      "limits": {
+        "es": "Requiere MATLAB/Optimization Toolbox y dependencias Python. El informe KK2 es archivado: 213 archivos de procesado actuales difieren de su manifiesto, aunque los FID y metadatos de adquisición comprobados coinciden. No atribuir esa ejecución a ResinAtOnce/Prime sin replay equivalente.",
+        "en": "Requires MATLAB/Optimization Toolbox and Python dependencies. The KK2 report is archived: 213 current processed files differ from its manifest although checked FIDs and acquisition metadata match. Do not attribute that run to ResinAtOnce/Prime without an equivalent replay."
+      },
+      "sources": [
+        "root_readme",
+        "daltail_launcher",
+        "daltail_api",
+        "daltail_train",
+        "kk2_verification",
+        "kk2_results",
+        "kk2_factors",
+        "kk2_source_manifest"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "hdo_integral_offline",
+      "evidence_type": "new offline run of the unchanged helper core on real acquired spectra; not live TopSpin or a valid calibration update",
+      "title": {
+        "es": "HDO: el asistente detecta un problema aunque R² sea excelente",
+        "en": "HDO: the helper detects a problem despite excellent R²"
+      },
+      "problem": {
+        "es": "La temperatura registrada deriva 0,77 K y fase/DS no son idénticos; un ajuste casi perfecto no basta para aceptar la calibración.",
+        "en": "Recorded temperature drifts by 0.77 K and phase/dummy scans are not identical; an almost perfect fit is insufficient to accept calibration."
+      },
+      "result": {
+        "es": "Replay offline: mismo núcleo del asistente, ventana fija 4,5–4,9 ppm inspeccionada sobre la señal real≈4,70536 ppm. El límite térmico predeterminado 0,5 K rechaza la serie; el rechazo queda registrado.",
+        "en": "Offline replay: the same helper core, fixed 4.5–4.9 ppm window inspected around the actual line at≈4.70536 ppm. The default 0.5 K temperature limit rejects the series; the rejection is recorded."
+      },
+      "metrics": {
+        "dataset": "[local-source: 20260904_HDO_DIFF_TBO]",
+        "expnos": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32
+        ],
+        "window_ppm": [
+          4.5,
+          4.9
+        ],
+        "peak_ppm": 4.7053646454675455,
+        "slope_abs": 1.5570310539009165,
+        "slope_SE": 0.005102477326376608,
+        "R2": 0.9997745298874444,
+        "b100_s_m2": 922368762.2815733,
+        "Dref_at_mean_TE_1e9": 1.6880786921376665,
+        "Tmean_K": 293.5386826086957,
+        "thermal_default_rejection": "TE drift 0.77 K exceeds 0.5 K; stabilize temperature or explicitly reassess tolerance/reference",
+        "temperature_span_K": 0.7699999999999818,
+        "warnings": [
+          "Phase/baseline status varies: PHC0, PHC1. Inspect every spectrum before accepting.",
+          "DS differs across the ramp. Verify steady-state preparation; amplitudes were not normalized by dummy scans.",
+          "Recorded TE varies by 0.77 K. A single supplied Dref is used; no thermal correction was inferred.",
+          "Positive signed area and a good fit do not establish peak purity or signal-to-noise. Inspect spectra and residuals."
+        ],
+        "gradient_proposal": {
+          "G_max_T_m": 0.4743349114486202,
+          "G_max_G_cm": 47.433491144862025,
+          "G_max_G_mm": 4.743349114486202,
+          "G_relative_SE_regression_only": 0.0016385277973721489,
+          "model": "b100 = (gamma*Gmax*delta)^2 * shape_squared * (D20-0.32525*delta-D16/2)",
+          "delta_s": 0.0012,
+          "effective_time_s": 0.0491097,
+          "gamma_rad_s_T": 267522187.44,
+          "shape_squared": 0.81,
+          "source": "shared calibracion_tbo.py",
+          "model_source_sha256": "54bf401e220a90d6030a08da7f65548992f8d505910f5d2ad31fb5832081fd86",
+          "identity_check": "saved pulseprogram and gpnam6 SHA-256 equal the shared TBO originals",
+          "status": "derived proposal; spectral/reference review required; not applied to Bruker",
+          "uncertainty_scope": "regression only; excludes Dref, temperature and pulse-model uncertainty"
+        },
+        "source_hashes_verified_after": 115,
+        "protected_profile_unchanged": true,
+        "scope": "Derived candidate offline from real spectra; temperature drift detected, no physical validation or calibration update."
+      },
+      "explicit_example": {
+        "es": "Sólo para mostrar el resultado derivado se cambió la tolerancia explícitamente a 0,8 K: pendiente integral 1,5570311 y R²0,9997745. Estado candidato pendiente; recomendación práctica estabilizar/repetir y revisar fase/DS antes de aceptar.",
+        "en": "Only to show the derived output, the tolerance was explicitly changed to 0.8 K: integral slope 1.5570311 and R²0.9997745. Candidate status remains pending; practically stabilise/repeat and review phase/dummy scans before accepting."
+      },
+      "success_meaning": {
+        "es": "Éxito de diagnóstico/procedencia: explica por qué no aceptar un resultado atractivo. No se actualiza instrumento ni el perfil TBO protegido; no es validación TopSpin 3.6.4.115 fuentes coinciden después del cálculo.",
+        "en": "Success in diagnosis/provenance: explain why an attractive result should not be accepted. Instrument and protected TBO profile are unchanged; this is not TopSpin 3.6.4 validation.115 sources still match after calculation."
+      },
+      "height_integral_distinction": {
+        "es": "Pendiente integral nueva 1,557031 ≠ pendiente histórica por altura 1,586273. Dref nuevo usa la aproximación al TE medio 1,688079; el perfil protegido emplea una referencia térmica efectiva 1,673921 ponderada por gradiente. No intercambiar ambos resultados.",
+        "en": "New integral slope 1.557031 differs from historical height-based slope 1.586273. New Dref uses the mean-TE approximation 1.688079; the protected profile uses a gradient-weighted effective thermal reference 1.673921. Do not interchange the results."
+      },
+      "sources": [
+        "integral_replay_summary",
+        "integral_replay_result",
+        "integral_replay_csv",
+        "integral_replay_script",
+        "integral_replay_spectrum",
+        "topspin_calibration_source",
+        "topspin_console_source",
+        "tbo_calibration"
+      ]
+    },
+    {
+      "id": "ramp_plan",
+      "evidence_type": "implemented source and simulated console QA",
+      "title": {
+        "es": "De una macro repetitiva a un plan de rampas revisable",
+        "en": "From a repetitive macro to a reviewable ramp plan"
+      },
+      "problem": {
+        "es": "Copiar a mano cada gradiente/Δ facilita errores de destino, unidades o parámetros.",
+        "en": "Manually copying each gradient/Δ invites destination, unit or parameter errors."
+      },
+      "result": {
+        "es": "23 puntos de 8 a 96% en pasos de 4%, tres Δ configurables; ejemplo 100–122,200–222,300–322, con colisiones bloqueadas y sin adquirir.",
+        "en": "23 points from 8 to 96% in 4% steps, three configurable Δ values; example 100–122,200–222,300–322, with collisions blocked and no acquisition."
+      },
+      "metrics": {
+        "points_per_ramp": 23,
+        "ramp_count_example": 3,
+        "gradient_percent_start": 8,
+        "gradient_percent_end": 96,
+        "gradient_percent_step": 4
+      },
+      "success_meaning": {
+        "es": "Éxito operativo comprobado por pruebas de escritura/API simuladas, no una adquisición en TopSpin 3.6.4.",
+        "en": "Operational success checked with simulated write/API tests rather than acquisition on TopSpin 3.6.4."
+      },
+      "sources": [
+        "topspin_readme",
+        "topspin_verification",
+        "topspin_console_source"
+      ]
+    },
+    {
+      "id": "hdo_tbo",
+      "evidence_type": "experimental standard calibration; sources verified read-only now",
+      "title": {
+        "es": "Patrón HDO: establecer una escala con procedencia",
+        "en": "HDO reference: establish a scale with provenance"
+      },
+      "problem": {
+        "es": "Un gradiente nominal y un D de referencia a otra temperatura pueden desplazar todas las D.",
+        "en": "A nominal gradient and a reference D at another temperature can shift every diffusion coefficient."
+      },
+      "result": {
+        "es": "Perfil TBO experimental protegido, atenuación de 23 puntos, pendiente re-medida 1,5862733. Se conserva la calibración y se explicita la referencia térmica aproximada.",
+        "en": "Protected experimental TBO profile,23-point attenuation, remeasured slope 1.5862733. Preserve the calibration and explicitly document the approximate thermal reference."
+      },
+      "metrics": {
+        "slope_abs": 1.58627,
+        "slope_remeasured": 1.5862733348366729,
+        "slope_SE": 0.004526896865947749,
+        "R2": 0.9998290023358289,
+        "Delta_ms": 50.0,
+        "delta_ms": 1.2,
+        "Dref_1e9": 1.6739211844269763,
+        "reference_temperature_K": 298.15,
+        "temperature_min_K": 293.2292,
+        "temperature_max_K": 293.9992
+      },
+      "integral_distinction": {
+        "es": "El asistente nuevo integra áreas; el perfil compartido histórico usa altura con verificación de ventana. Mostrar la lógica y el perfil guardado, sin decir que su pendiente es el resultado exacto de la integral nueva.",
+        "en": "The new helper integrates areas; the historical shared profile uses height with a window check. Show the logic and saved profile without claiming its slope is the exact output of the new integral."
+      },
+      "success_meaning": {
+        "es": "Éxito de trazabilidad de la escala experimental; R² y error de ajuste no incluyen incertidumbre del patrón/modelo térmico ni prueban exactitud independiente.",
+        "en": "Success in traceability of the experimental scale; fit R²/error excludes reference/thermal-model uncertainty and does not prove independent accuracy."
+      },
+      "sources": [
+        "tbo_calibration",
+        "tbo_calculation",
+        "topspin_readme",
+        "topspin_verification"
+      ]
+    },
+    {
+      "id": "p1_real",
+      "evidence_type": "user experimental screenshots and saved acquisition parameters",
+      "title": {
+        "es": "Primer nulo de 180°: 22/2=11 µs",
+        "en": "First 180° null: 22/2=11 µs"
+      },
+      "problem": {
+        "es": "Un nulo aislado no distingue 180° de 360°; fase/RG/NS/secuencia diferentes invalidan comparación cuantitativa de amplitudes.",
+        "en": "An isolated null does not distinguish 180° from 360°; differing phase/gain/scans/sequence invalidate quantitative amplitude comparison."
+      },
+      "result": {
+        "es": "Ejemplo del usuario: EXPNO1000 zg P1=22 µs y experimento 10 DOSY P1=11 µs. Buscar primer cruce tras máximo 90°, dividir y comprobar máximo en zg.",
+        "en": "User example: EXPNO1000 zg P1=22 µs and DOSY experiment 10 P1=11 µs. Find the first crossing after the 90° maximum, halve and verify the maximum using zg."
+      },
+      "metrics": {
+        "P180_us": 22,
+        "P90_us": 11
+      },
+      "success_meaning": {
+        "es": "Ejemplo experimental de preparación manual; no es una función automática del asistente ni una curva de nutación experimental completa.",
+        "en": "Experimental example of manual preparation rather than an automatic helper function or a complete experimental nutation curve."
+      },
+      "sources": [
+        "p1_evidence"
+      ]
+    },
+    {
+      "id": "tp194_coherence",
+      "evidence_type": "read-only analysis of experimental acquisition; numerical consistency rather than independent physical validation",
+      "title": {
+        "es": "TP194: la señal y el mapa cuentan la misma historia",
+        "en": "TP194: signal and map tell the same story"
+      },
+      "problem": {
+        "es": "Dos rutas pueden compartir casi la misma D media y describir distribuciones muy distintas.",
+        "en": "Two routes can share almost the same mean D while describing very different distributions."
+      },
+      "old_map_comparison": {
+        "mapPeakD": 0.2982012296239397,
+        "mapMeanD": 0.36729644774602244,
+        "mapComponents": 3,
+        "mapUnresolved": 1,
+        "relativePeakDifference": -0.12644232221103124,
+        "relativeMeanDifference": 0.007140605825353141,
+        "requiresReview": true,
+        "notice": "Mapa mf-nnls256: D pico 0,298201; media 0,367296; 3 componentes locales descriptivos. Diferencia de forma normalizada: 84,87 %.\nDISCREPANCIA DE DISTRIBUCIÓN / DISTRIBUTION DISAGREEMENT: revisar máximo, forma y componentes, aunque el promedio o residuo sean similares.\nRevisión pendiente / review required: TRAIn residualTarget; mapa/map mf_regularization_requires_review; no resueltos/unresolved 0; bordes/boundaries 0.",
+        "normalizedShapeError": 0.8487040780796979
+      },
+      "result": {
+        "es": "Con la misma extracción, rejilla 2048 y protocolo TRAIn, señal y mapa coinciden en las 3 rampas documentadas. No se ajustan factores para forzar igualdad.",
+        "en": "Using the same extraction,2048-point grid and TRAIn protocol, signal and map agree in the 3 documented ramps. Factors are not adjusted to force agreement."
+      },
+      "metrics": {
+        "diffusion_unit": "1e-9 m2/s",
+        "ppm_approx": 7.736,
+        "grid_bins": 2048,
+        "ramps": [
+          {
+            "ramp": "10:32",
+            "peak": 7.735979806476171,
+            "normalizedShapeError": 0,
+            "singleSignal": {
+              "peak": 0.3270165671759342,
+              "mean": 0.36625445668362605,
+              "harmonicMean": 0.32112044225125386,
+              "retainedFraction": 0.9966112183930796,
+              "points": 140
+            },
+            "dosy": {
+              "peak": 0.3270165671759342,
+              "mean": 0.36625445668362605,
+              "harmonicMean": 0.32112044225125386,
+              "retainedFraction": 0.9966112183930796,
+              "points": 140
+            },
+            "components": 1,
+            "unresolved": 0,
+            "referenceFactor": 0.8567575388690748,
+            "temperatureFactor": 0.9990267827680376,
+            "scope": "same experimental point and grid; no forced matching or Gaussian visual field"
+          },
+          {
+            "ramp": "33:55",
+            "peak": 7.735552493994875,
+            "normalizedShapeError": 0,
+            "singleSignal": {
+              "peak": 0.342620632675982,
+              "mean": 0.358674067279219,
+              "harmonicMean": 0.3091021001693239,
+              "retainedFraction": 0.9957901304879633,
+              "points": 146
+            },
+            "dosy": {
+              "peak": 0.342620632675982,
+              "mean": 0.358674067279219,
+              "harmonicMean": 0.3091021001693239,
+              "retainedFraction": 0.9957901304879633,
+              "points": 146
+            },
+            "components": 1,
+            "unresolved": 0,
+            "referenceFactor": 0.8375180957584535,
+            "temperatureFactor": 0.9990377720037475,
+            "scope": "same experimental point and grid; no forced matching or Gaussian visual field"
+          },
+          {
+            "ramp": "56:78",
+            "peak": 7.735552493994875,
+            "normalizedShapeError": 0,
+            "singleSignal": {
+              "peak": 0.3805688375192141,
+              "mean": 0.4052972941515249,
+              "harmonicMean": 0.3532143848238412,
+              "retainedFraction": 0.9963737106636661,
+              "points": 139
+            },
+            "dosy": {
+              "peak": 0.3805688375192141,
+              "mean": 0.4052972941515249,
+              "harmonicMean": 0.3532143848238412,
+              "retainedFraction": 0.9963737106636661,
+              "points": 139
+            },
+            "components": 1,
+            "unresolved": 0,
+            "referenceFactor": 0.9483145608027015,
+            "temperatureFactor": 0.9991008981455997,
+            "scope": "same experimental point and grid; no forced matching or Gaussian visual field"
+          }
+        ]
+      },
+      "success_meaning": {
+        "es": "Éxito de coherencia y detección de discrepancia en datos experimentales. No determina identidad química, número de especies ni exactitud absoluta; las diferencias entre rampas siguen siendo visibles.",
+        "en": "Success in consistency and discrepancy detection on experimental data. It does not determine chemical identity, species count or absolute accuracy; differences between ramps remain visible."
+      },
+      "screenshot_warning": {
+        "es": "La captura resin-local-signal usa 256 bins y muestra D pico 0,307432/media 0,308874, distintas de la tabla 2048. Rotular configuración o usar tabla/figura nueva desde el JSON; no mezclar las cifras.",
+        "en": "The resin-local-signal screenshot uses 256 bins and shows peak D0.307432/mean 0.308874, different from the 2048-point table. Label the configuration or create a new table/figure from JSON; do not mix the numbers."
+      },
+      "sources": [
+        "local_coherence_doc",
+        "tp194_parity",
+        "local_signal_screenshot",
+        "local_signal_ui_check"
+      ]
+    },
+    {
+      "id": "tp194_projection",
+      "evidence_type": "descriptive re-analysis of a saved experimental map; actual UI screenshot",
+      "title": {
+        "es": "TP194: dejar visible lo que el modelo no resuelve",
+        "en": "TP194: keep what the model cannot resolve visible"
+      },
+      "problem": {
+        "es": "Reducir el error añadiendo gaussianas puede inventar una banda compensadora entre máximos.",
+        "en": "Reducing error by adding Gaussians can invent a compensating band between maxima."
+      },
+      "old_model": {
+        "unsupported_center_D_1e9": 0.646763,
+        "sigma_log10D": 0.41979,
+        "area_fraction": 0.2024,
+        "relative_descriptive_error": 0.0204,
+        "source": "tp194_projection_doc"
+      },
+      "result": {
+        "es": "Dos bandas con máximos respaldados y≈6% de señal positiva sin asignar, visible. El error descriptivo sube, pero no se oculta en una tercera banda.",
+        "en": "Two bands supported by maxima and about 6% of positive signal left visibly unassigned. Descriptive error rises, but it is not concealed in a third band."
+      },
+      "metrics": {
+        "model_auto": {
+          "representation": "model",
+          "count": 0,
+          "RelativeError": 0.06790205047815903,
+          "UnassignedAreaFraction": 0.059552025823069996,
+          "DetectedModes": 2,
+          "UnresolvedModes": 0,
+          "Rejected": [],
+          "Status": "review_residuals",
+          "Seconds": 0.0490245,
+          "bands": [
+            {
+              "Id": "G1",
+              "Center": 0.3751561914878962,
+              "SigmaLog": 0.17092999892632704,
+              "AreaFraction": 0.6389628119788154,
+              "Boundary": false,
+              "Overlap": false,
+              "peaks": 80
+            },
+            {
+              "Id": "G2",
+              "Center": 1.8474475642258397,
+              "SigmaLog": 0.05817660118929378,
+              "AreaFraction": 0.30148516219811367,
+              "Boundary": false,
+              "Overlap": false,
+              "peaks": 13
+            }
+          ]
+        },
+        "original_auto": {
+          "representation": "original",
+          "count": 0,
+          "RelativeError": 0.07026411188380674,
+          "UnassignedAreaFraction": 0.06421386827742509,
+          "DetectedModes": 2,
+          "UnresolvedModes": 0,
+          "Rejected": [],
+          "Status": "review_residuals",
+          "Seconds": 0.1036868,
+          "bands": [
+            {
+              "Id": "G1",
+              "Center": 0.3762123938930651,
+              "SigmaLog": 0.16674689202472265,
+              "AreaFraction": 0.6244667679070787,
+              "Boundary": false,
+              "Overlap": false,
+              "peaks": 76
+            },
+            {
+              "Id": "G2",
+              "Center": 1.847886188914395,
+              "SigmaLog": 0.057822928583672835,
+              "AreaFraction": 0.3113193638154962,
+              "Boundary": false,
+              "Overlap": false,
+              "peaks": 14
+            }
+          ]
+        }
+      },
+      "success_meaning": {
+        "es": "Éxito de representación conservadora: no transforma dos bandas en dos especies demostradas. Estado review_residuals; no cambia inversión/calibración/D cuantitativa.",
+        "en": "Success in conservative representation rather than proving two species from two bands. Status review_residuals; quantitative inversion/calibration/D is unchanged."
+      },
+      "sources": [
+        "tp194_projection_doc",
+        "tp194_projection_audit",
+        "tp194_projection_screenshot",
+        "tp194_projection_ui_check",
+        "tp194_saved_project"
+      ]
+    },
+    {
+      "id": "tp194_reference",
+      "evidence_type": "archived experimental map review, earlier calibration configuration",
+      "title": {
+        "es": "TP194: separar el patrón antes de interpretar polímero",
+        "en": "TP194: separate the reference before interpreting polymer"
+      },
+      "problem": {
+        "es": "Los flancos de una referencia podían entrar en el ajuste compartido y generar cruces engañosos.",
+        "en": "Reference flanks could enter the shared fit and produce misleading crossings."
+      },
+      "result": {
+        "es": "Referencia documentada separada antes de invertir; 17 bins en 0,192312–0,250427 ppm. D se obtiene de atenuación original, sin mover el eje por el radio esperado.",
+        "en": "Documented reference separated before inversion; 17 bins from 0.192312 to 0.250427 ppm. D comes from the original attenuation without moving the axis using expected radius."
+      },
+      "metrics": {
+        "ppm_point": 0.2272449,
+        "D_measured_1e9": 1.174677,
+        "f_reference": 0.8567575388690748,
+        "f_temperature": 0.9990267827680376,
+        "D_marker_293K_1e9": 1.005434,
+        "Rh_marker_A": 3.65,
+        "bins_separated": 17,
+        "continuous_relative_residual": 0.014374
+      },
+      "success_meaning": {
+        "es": "Evita atribuir el patrón a bandas de polímero; recuperar 3,65 Å es control interno porque ese radio calibró la escala, no validación independiente. El mapa aún requiere revisión.",
+        "en": "Prevents assigning the reference to polymer bands; recovering 3.65 Å is an internal check because that radius calibrated the scale, not independent validation. The map still requires review."
+      },
+      "screenshot_warning": {
+        "es": "El marcador de la captura actual de Prime usa otra configuración y D≈1,038; no colocar cifras históricas 1,005 sobre esa captura.",
+        "en": "The marker in the current Prime screenshot uses another configuration and D≈1.038; do not place historical 1.005 values on that screenshot."
+      },
+      "sources": [
+        "resin_reference_doc"
+      ]
+    },
+    {
+      "id": "kk2_archived",
+      "evidence_type": "archived scientific analysis of experimental data; raw acquisitions match but processed inputs drifted",
+      "title": {
+        "es": "KK2: analizar el lote y conservar los casos que fallan",
+        "en": "KK2: analyse the batch while retaining failed cases"
+      },
+      "problem": {
+        "es": "Promediar rampas de distinta calidad puede ocultar artefactos; convertir D en masa añade hipótesis de arquitectura/concentración.",
+        "en": "Averaging ramps of different quality can conceal artefacts; converting D to mass adds architecture/concentration assumptions."
+      },
+      "result": {
+        "es": "Informe archivado de 230 espectros/10 rampas. KK2-50 y 51: 3 bloques resumidos por muestra. KK2-52: se conserva como exploratorio un bloque, sin promediar bloques largos artefactados.",
+        "en": "Archived report of 230 spectra/10 ramps. KK2-50 and 51: 3 blocks summarised per sample. KK2-52: one block retained as exploratory rather than averaging long artefactual blocks."
+      },
+      "metrics": {
+        "diffusion_spectra": 230,
+        "blocks": 10,
+        "points_per_block": 23,
+        "KK2_50_D293_TTMS_1e9": 0.14333908730360131,
+        "KK2_50_block_SD_1e9": 0.008256246244583293,
+        "KK2_51_D293_TTMS_1e9": 0.08861415181484493,
+        "KK2_51_block_SD_1e9": 0.006584015232790288,
+        "KK2_52_exploratory_B2_D293_TTMS_1e9": 0.0203581144229246
+      },
+      "protocol": {
+        "es": "fTTMS=DTTMS_esperado(T)/DTTMS_medido; fT=293/T; aplicar ambos una vez al eje completo y guardar factores. Sin applyReferenceSummary ni reescalado a tablas previas.",
+        "en": "fTTMS=expected_TTMS_D(T)/measured_TTMS_D; fT=293/T; apply both once to the full axis and save factors. No applyReferenceSummary or rescaling to historical tables."
+      },
+      "success_meaning": {
+        "es": "Éxito de automatización trazable y diagnóstico honesto del lote archivado, no validación de masa absoluta ni nuevo replay de procesado actual. La DE entre bloques no es intervalo poblacional.",
+        "en": "Success in traceable automation and honest diagnosis of an archived batch, not absolute-mass validation or a new replay of current processing. Between-block SD is not a population confidence interval."
+      },
+      "current_provenance_warning": {
+        "es": "213 archivos procesados actuales no coinciden con el manifiesto archivado: 207 procs y 6 1 r. Todos los FID/ser, parámetros de adquisición y programas/formas comprobados coinciden. Citar snapshot archivado, no declarar los 1818 archivos actuales idénticos.",
+        "en": "213 current processed files differ from the archived manifest: 207 procs and 6 1 r. All checked FIDs/ser, acquisition parameters and pulse/shape files match. Cite the archived snapshot rather than claiming all 1818 current files are identical."
+      },
+      "sources": [
+        "root_readme",
+        "kk2_results",
+        "kk2_factors",
+        "kk2_verification",
+        "kk2_source_manifest",
+        "kk2_fid_check",
+        "kk2_region_fits"
+      ]
+    }
+  ],
+  "sources": {
+    "root_readme": {
+      "path": "[local-source: README.md]",
+      "exists": true,
+      "sha256": "e476bc86c9de4770e41d72ed2ee5ccbf32bd4535f004ceb7dc2a15bee8e6ebef",
+      "bytes": 10221
+    },
+    "topspin_readme": {
+      "path": "[local-source: README_ES.md]",
+      "exists": true,
+      "sha256": "9139cdc684c3f182a0c94e733417ad54c04081bf9ff020afdc75377c48c6ac5c",
+      "bytes": 9201
+    },
+    "topspin_verification": {
+      "path": "[local-source: VERIFICACION.txt]",
+      "exists": true,
+      "sha256": "d04b6ebfc82bb384599f0f1bc636e6933281d706f9e88ed261152ff2486d3841",
+      "bytes": 1371
+    },
+    "topspin_calibration_source": {
+      "path": "[local-source: dosy_calibration.py]",
+      "exists": true,
+      "sha256": "0e4e4a3ab8103153d4151b2a19fcf20e0bf269264c07e83b39392c7aa609a797",
+      "bytes": 24996
+    },
+    "topspin_console_source": {
+      "path": "[local-source: dosy_console_ui.py]",
+      "exists": true,
+      "sha256": "2c79d0cd48fb4cd866ec2d458681d25703e7dfd018c7910fe4175eec2c8da093",
+      "bytes": 18288
+    },
+    "topspin_bundle": {
+      "path": "[local-source: dosy_workshop.py]",
+      "exists": true,
+      "sha256": "6f4292c4f213d8322b4b39766ff44974975e78ec583a8bc40fb587914bdb0339",
+      "bytes": 82539
+    },
+    "prime_readme": {
+      "path": "[local-source: README.md]",
+      "exists": true,
+      "sha256": "1e58d4fe667a55e3ec1d366bedc4b159f5a5ad7a24525fd966d66994cdc70467",
+      "bytes": 23294
+    },
+    "prime_guide": {
+      "path": "[local-source: GUIA_PRIME.md]",
+      "exists": true,
+      "sha256": "f5549e6136f574323030f314a5f4f7fa9feeb0ac90782a7641d11e6f7b23a13c",
+      "bytes": 38237
+    },
+    "resin_readme": {
+      "path": "[local-source: README.md]",
+      "exists": true,
+      "sha256": "f08045c697fd7a180a07e8af3597f13f3233668556bf16b86e514ba92aa61035",
+      "bytes": 61489
+    },
+    "shared_workflows": {
+      "path": "[local-source: WORKFLOWS_20261002.md]",
+      "exists": true,
+      "sha256": "ab034571115cc53447483b10cd3950a901ad63cd5ae244dea8ce71e4babc8c2f",
+      "bytes": 10360
+    },
+    "tbo_calibration": {
+      "path": "[local-source: TBO_HDO_20260904.json]",
+      "exists": true,
+      "sha256": "33cd7523715204b3d1bd6aaf5bc8aea69586950a14e92847178e67cc704bea18",
+      "bytes": 22972
+    },
+    "tbo_calculation": {
+      "path": "[local-source: calibracion_tbo.py]",
+      "exists": true,
+      "sha256": "54bf401e220a90d6030a08da7f65548992f8d505910f5d2ad31fb5832081fd86",
+      "bytes": 5027
+    },
+    "p1_evidence": {
+      "path": "[local-source: parameters_pulse_evidence.json]",
+      "exists": true,
+      "sha256": "1c3993c3796203f118b73938b048bfc29e7570fdbfa2461be4e51b309c68c45a",
+      "bytes": 14661
+    },
+    "local_coherence_doc": {
+      "path": "[local-source: DOSY_COHERENCIA_0.46.0.md]",
+      "exists": true,
+      "sha256": "7c3c205b7cb9182537f8438d9e48c7c5d149674aedb5c907c3985dfa6a9db854",
+      "bytes": 5741
+    },
+    "tp194_parity": {
+      "path": "[local-source: real-tp194-parity.json]",
+      "exists": true,
+      "sha256": "8ae196eec3de4409d205550f3ef8c3a00e986293fce0e6657346dc151725cd3e",
+      "bytes": 44521
+    },
+    "local_signal_screenshot": {
+      "path": "[local-source: resin-local-signal.png]",
+      "exists": true,
+      "sha256": "614196450f7a82317e6dc2eb94935174897f1b290189acae8c34104f98810d03",
+      "bytes": 83138
+    },
+    "local_signal_ui_check": {
+      "path": "[local-source: local-signal-ui.json]",
+      "exists": true,
+      "sha256": "816f2a6c652841425931966d712001327a15d9a0b33fae330867e04706e8e5cc",
+      "bytes": 39
+    },
+    "tp194_projection_doc": {
+      "path": "[local-source: DOSY_PROJECTION_0.46.1.md]",
+      "exists": true,
+      "sha256": "63482d3161b019f11dce3962068c2e8fdba09ee4f200230f02158aca5edd6615",
+      "bytes": 6586
+    },
+    "tp194_projection_audit": {
+      "path": "[local-source: audit.json]",
+      "exists": true,
+      "sha256": "dee6304e3aa4e50e851d310901f361178bcd4da5a0f3d709cfcb8c1ce4e9a7df",
+      "bytes": 15583
+    },
+    "tp194_projection_screenshot": {
+      "path": "[local-source: prime-projection-map.png]",
+      "exists": true,
+      "sha256": "b3540e3721892e08231f8cadbb1aa5865f7e58d1eb06374f36e4b49c426ca574",
+      "bytes": 135154
+    },
+    "tp194_projection_ui_check": {
+      "path": "[local-source: projection-ui.json]",
+      "exists": true,
+      "sha256": "750386f89d5355aae1d099d4e4fe9aa79b0f8ac28f7d4f8c24a8f1d350529422",
+      "bytes": 327
+    },
+    "resin_reference_doc": {
+      "path": "[local-source: DOSY_REFERENCES_0.43.4.md]",
+      "exists": true,
+      "sha256": "5a87f9d2974b364ccc62d9dac1bb2e77e37212407a877ef3c99cd15c8c70792d",
+      "bytes": 6614
+    },
+    "daltail_launcher": {
+      "path": "[local-source: ejecuta_profesional.m]",
+      "exists": true,
+      "sha256": "703fafd5ed166febd802501c9fab1cc502defebef400f72d1a1bbbe286724f40",
+      "bytes": 9549
+    },
+    "daltail_api": {
+      "path": "[local-source: runDaltailAnalysis.m]",
+      "exists": true,
+      "sha256": "ba0708df5fa591bdf9f89e94812f17e7a07e9e4d84785603968b74d0ea554683",
+      "bytes": 14810
+    },
+    "daltail_train": {
+      "path": "[local-source: trainInvert.m]",
+      "exists": true,
+      "sha256": "302e7cd9d69fb2dd5e0caf533413c0e71e2d02fd29d48d962c7b557af17d0ea0",
+      "bytes": 7223
+    },
+    "kk2_verification": {
+      "path": "[local-source: validacion.json]",
+      "exists": true,
+      "sha256": "b87dbf89bc4d3e86a6cfb2037376242b058ac866a228c297cec5c618313e86f3",
+      "bytes": 527
+    },
+    "kk2_results": {
+      "path": "[local-source: resumen_principal.csv]",
+      "exists": true,
+      "sha256": "d65ec3ba4823995967be38da511e01b8b754523297e0d6da481f06415abb7791",
+      "bytes": 613
+    },
+    "kk2_factors": {
+      "path": "[local-source: factores_TTMS_temperatura.csv]",
+      "exists": true,
+      "sha256": "a9cdff6e70beff83112929d1b7f324b3533f03a4a8c3456833eebd4d823c7ced",
+      "bytes": 1528
+    },
+    "kk2_source_manifest": {
+      "path": "[local-source: fuentes_sha256.csv]",
+      "exists": true,
+      "sha256": "4f32398ccf48645dbc94c253d9a1a1a912157d444ede27d2ed9159eef4fca2e8",
+      "bytes": 235044
+    },
+    "kk2_fid_check": {
+      "path": "[local-source: verificacion_FID.csv]",
+      "exists": true,
+      "sha256": "5374738366d4224b4292fb752d816f476fcdceb9eac27a073d546e8663c38a79",
+      "bytes": 901
+    },
+    "kk2_region_fits": {
+      "path": "[local-source: ajustes_todas_senales.csv]",
+      "exists": true,
+      "sha256": "1c2d49b4fa1c151e7729472193bcce25c714f974d68f70719bc3c2edbe05be6c",
+      "bytes": 56578
+    },
+    "software_problem_audit": {
+      "path": "[local-source: solutions_mapping.json]",
+      "exists": true,
+      "sha256": "759e5f6c7542043853c29e15e907266870169716b8fca9d2e12ebf757f31d960",
+      "bytes": 34943
+    },
+    "integral_replay_summary": {
+      "path": "[local-source: summary.json]",
+      "exists": true,
+      "sha256": "9cbc8de4fbd5461dd2e99461e22ab58824404a4b5f53d81f8274376ef2bba00c",
+      "bytes": 2287
+    },
+    "integral_replay_result": {
+      "path": "[local-source: calibracion_integral_offline.json]",
+      "exists": true,
+      "sha256": "b82f5b82f89d9891bb1f4efcc091f62a5dc05de69034cd33d5a96a05e59fc805",
+      "bytes": 184667
+    },
+    "integral_replay_csv": {
+      "path": "[local-source: atenuacion_integral_residuos.csv]",
+      "exists": true,
+      "sha256": "4cfd917a6357a9af2a6bea0d478b007f601129ab4c45fd6ff922b2fff27e52b6",
+      "bytes": 2599
+    },
+    "integral_replay_script": {
+      "path": "[local-source: replay_integral_calibration.py]",
+      "exists": true,
+      "sha256": "94ed2114606590cf3437c1071b1030adb531ee8fcff1eba165d94a39e022fbd5",
+      "bytes": 7222
+    },
+    "integral_replay_spectrum": {
+      "path": "[local-source: HDO_spectral_inspection.png]",
+      "exists": true,
+      "sha256": "bd0e19ffe0ab1a792ade3db7b441e0b3b2c96ce6fb5b6067423b3555b5473ec3",
+      "bytes": 41107
+    },
+    "tp194_saved_project": {
+      "path": "[local-source: DiffAtOnce] Prime Results\\Calibracion_20260929_084154_43b4f1\\calibrado.prime.json",
+      "exists": true,
+      "sha256": "922b8bd5098c3cb78f277de135a43faba1104c37979550f3f53c757e6d2aef7e",
+      "bytes": 24044869
+    }
+  },
+  "integrity_checked_now": {
+    "tbo_sources": {
+      "checked": 115,
+      "matched": 115,
+      "missing_or_mismatched": []
+    },
+    "tp194_saved_project_matches_projection_audit": true,
+    "kk2_sources": {
+      "checked_or_missing": 1818,
+      "missing": [],
+      "matched": 1605,
+      "mismatched": 213,
+      "mismatch_names": {
+        "procs": 207,
+        "1r": 6
+      },
+      "raw_acquisition_files_mismatched": [],
+      "mismatch_details": [
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "109f56c04b4eed668544cbf3cbd8ed667c08da6df6ea253be52ca93ffb57084e",
+          "current_sha256": "6fe0fdcef4a741b526162e66e6e2d7bd5292ab8b25a8c3f8789a7156a0881581"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "04a455889b2c1452b4e85df4cedf4a7bcfcc1b12622bd8f61ff4d5bb090e35b6",
+          "current_sha256": "bba77db55b3d122497043411cfca2141e8fe50aa3232b7f514f3595f0b99dc37"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "b857ed465661b944f8c6a3beb54e848ed3b6c73c27e8499381671f0df2dfbca6",
+          "current_sha256": "83f53668b0b5bd6ab7b10b0a7ef83e9b411ff1e5c102be25dbdafc612ca09711"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "c3f1ad6b689f1cf92275459a1627138d2a730c6a531c40b3c96f18b07dea4c58",
+          "current_sha256": "641a4a575304f075f43b34f2b1c96324503b220556539ddca01c800f60e8f7c8"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "ba36be9d4d257e4e5bc02a5edd027ebf7e82f032c90c5a611f4be07b1943ab21",
+          "current_sha256": "3d7b455e0f7a70abe696e091ef0c09fc93d1674cd1fcf9ce99624d668f4f7133"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "0630e76d007dfeb5916fe832f1048db9082ac3d38d52eb030365401f13293453",
+          "current_sha256": "0693bab3427ab0e41c2ae47e2499d751b63e60058098d2dbcd81b9fe740dcdb7"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "78acb5454cb1825fcbfe92f3d2d58305f21150cb8eb35097b98ebf20faf2f931",
+          "current_sha256": "7aa453fa487b8b874edf7ba7223a23aedb753afa9117fcf550d97b629785d6b2"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "c570a4af232a6bf6a561db59043ce264c5194b8d1c149e24feeebbace44d85da",
+          "current_sha256": "484d7ee2d1df4d6be23469dc37d61e3ca62443390686eb0a077208ecd2cf8c62"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "60d3707ba0f04728c6830381d70c9f6d3c16dfd5fe3da74577a11a6438e3a307",
+          "current_sha256": "73d34bd062957b51427095d211598d3cbf6bf4bd7683c4aeacef06bc818134d1"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "878dfac414a0db52a23810cea4d9ac3a1a7d1978619ef1366445b79076b310e0",
+          "current_sha256": "cd7c70ebd952fe4061a3c1a5306d8b41a193e5aea331ddf3072083ebfe1cb059"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "6e8a97e2a187bd08403029a4995c385b27e923806da15978b41899a7109618ff",
+          "current_sha256": "0c2874c291f8b99800c03872d5f7411e547a0ea5686460a1dd0844355a9a21a9"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "601403c1895b8b069d3021be91f6dbbfef275771ee40571b7bb6f9d788c3690f",
+          "current_sha256": "78b51cd1f40e4f3ffe3962a50b5eb45f3bf0de97c17e3320f8469423b481cf3f"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "82205376a14228cad40cdefbd876821664b73371516070800098c6096e8ba55a",
+          "current_sha256": "3108b37462844326c0a437301a9a9cbb73bfc3d6c73ed6522460a9772ddd3aa2"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "3c49ec7aa91bc51078f81b34d18c7a63bdd66caf28f04f339ba9711e3b7fc5ad",
+          "current_sha256": "87ae5e5bd07883f35141d9e64fd462e92ef9f18805f2ea4fd667efd43d2fe31a"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "756ff21c7bcc4d375fdbb42b847e2a5dc6c8010126311806d4f1a04a890063b0",
+          "current_sha256": "4dda380bccda63b1373ab65b1cb0f2aec6d056d50e9243d4b5c9256e70c1850e"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "53861e42a812cbe6dd971186a6ae6beb8b46d05992c0a7033d655032d0fb40ff",
+          "current_sha256": "0871227698c72e97e6627000bd910f22d63b4bc50dcbc5f668456766391136f3"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "d65ee60296648a2f48135ca3975a88d76cea5b423f85ad5fdb27e12037d80536",
+          "current_sha256": "c23baf89ec11ec314210df80abb2117f9776ae23eaa5cd869e0b29bee99778d0"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "d00a9808507ce4f3652acab24c2fb3a5dc5e7be9ef9ebddfbadd5f8451d83ea2",
+          "current_sha256": "2913d1f3dc423d9b2203b02e90bc252cf331a51656c944181e6432dba39e2327"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "864a4e82ac803bb82e1b93b62e7ae349f861161a56a6ec06b41d70fbdb557600",
+          "current_sha256": "60b76189c605aed69349d3dd860ff929e848ab5ac33058472619d30c2f42df67"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "951e61ea4c61ac14cd94a5e1cf4770657ae472a350ce6b1655dff863d5385dce",
+          "current_sha256": "97390fd35f417545b62fc852f193dbacf3e1ede11cbc58968bcf6f0b7d8cdae2"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "dae290cdb794809cf46a9cef2fe5e419934c63cbd0b393baff9470c7a2b31a0f",
+          "current_sha256": "80e09877ccbdd050385cb8ef5a5b432186bb0e4a0c84e808583d5d0eacd77faa"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "e5108e80a1223d5e19ce39fcd46dcee117d424ca59112bb749d098c5da7fe5ac",
+          "current_sha256": "a1f51babf75131c38fed3da458d616ff69e863946d843b97f1a90281ad25ebd2"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "a10f2745a66edbcfa5299674a82f72e492d585008c8f504466f0e731fd3b05f8",
+          "current_sha256": "450c4162bdf3b090115904ed6ec2d8991290cd43caab694d2e93362a2f0258ac"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "ebc40fa10bc2e06041654b96d12d737a8dab8617a6374087748f686e70995914",
+          "current_sha256": "6a09f331a6067dad82ecbae53d77dfdc7c873ed86758b86ce06f80c8553a99cd"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "ad0df828b8243f5ac66e2e95b294e4ba5e8024d2dc062b6567ac1c2c27e4f615",
+          "current_sha256": "7ecce4e0d295a8d2c86dd3a08f63e931a688e78fc590c6a7a81faf3acb9b0122"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "3cdad5f55b5981fd649d862afa008f99fcdaac464b4480d518d91767ba8b3182",
+          "current_sha256": "16c25f03c498c70691a54ff56ee8201d41aff3fd154c378275932917d50f7bbf"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "e01ca5b9594f8201aab31ab36f68fd6f09fbe662babfbc6c31f1832aec0b3b55",
+          "current_sha256": "2144a47e5be3d2be9f78966a8a7eac6c616c7e96fa4c99ef2e761f54520fe4e9"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "b5a0ea688f30b6333217645defcfb8207cee9bd246c7ffe192bec8b81ba62e3a",
+          "current_sha256": "ac9fe48dd3a2d14c36023b4c34088bcec3673030546353a4cd52137d70937223"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "5cef3beb57e7e04007eae844cb5670a2150828ea1e08af0af48db6b6fb2b3fc9",
+          "current_sha256": "79d4c9588702aa7984714c9cdd99bcef17a1fd7bfda923fed640ed1df087ae26"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "bfab48a322d60ab3ed85e4dd76b4b34032851a76d3630204b56ad75f262990cf",
+          "current_sha256": "12af049b30a484a40f1a2dca026a8e0c6b816837d8e3e1a16a8c9704a9e19221"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "3c1264b97ac7419bc909ca5e2662a618053a55167a7ce4d8494ddad5d3b6f7b1",
+          "current_sha256": "506fda5322b95a2d438720319aa2fa9a40c980408c4433b0196f0bfbbdfd0243"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "1b2d87799aa4edf519cc38d595045bd5e51243ba1964ff5db1457dbaafd4a9fa",
+          "current_sha256": "e82cec343369d2e7f9a46a8d7a07bc5cf58a8913747983cb79596140c971f6f4"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "4d0b9eaf269604bc0c4b2b9e7731be4eeda8329e80f4399a0f6217c44eacf0e2",
+          "current_sha256": "da75b375307cf74c7c8bf3716ce0ee159a02424acd17714c30d617d25fe28af7"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "3372078225323f17eeb22b5770c14410e9deb115b8456ed733df5061b33246c1",
+          "current_sha256": "f28ed0da449d377de0f261d2ba1840385544bff2118db707a1c4731a656227e5"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "973ccd64be37fb35a2a11bee158dfa03dbb6490b24bae097222fc7ecf0ccb9d3",
+          "current_sha256": "b8aea5cedcf129befe7298f59c2c3516d565efd91181a3d9725ceae006a1eb0b"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "e90abd572e5d1dcf3e03b99e406379832f4520e6a7434bbe93d3f4603b0596e8",
+          "current_sha256": "af6609450498ceddaf0af79de35f9d018f76698d877305084d6f773701f446c7"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "e0a87742f1a4a3fb201336771adf293121de91d820e9fbf63db135ede5429d4b",
+          "current_sha256": "1c911c4efaa7129df72535fbe260da9c672e56943df465e46803457341d1c8f8"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "23fa9485bc0084e84620d98afb1d6ff59c325193ba99e7ad61bf4d0738016913",
+          "current_sha256": "2ba26bac9651050b030b32822bf837a0264b9b2d1bd4772f467e83bd393050c4"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "6a0ff8a9979ee796b838370a3b204ed0d14a534363861c2b5171b19a141e41bf",
+          "current_sha256": "18b623d7f02d8d569bfe89f667adda9fef213f7a4a59536b2096cd5ab4c4f151"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "ca359eff2443d91a6117a1387f4cddf807ccef25293e9a4efa921e37cff20b6a",
+          "current_sha256": "389cda0789d03631df0c046260bd2125833e785fea2101a34474bff94e6e1d72"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "311390ede0bffc8642455bc24fdeb902a77ec6c164240af82a5e76af54201ead",
+          "current_sha256": "cccc69ff5d4200c7e468ad669185937d96184bc1095d7a9ce29ecf0028ae04d1"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "79d89280abc0e24565d9d808ab11ad3d5e1ec4a6a6fdc694dd3e8bee41dfd428",
+          "current_sha256": "d0c383cb14ecec7b7ff8ef24bb81927fe70735fc06440beaf69f7aad3d466eb6"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "70bb2c3aacb28ac08fe5f096524f238ce0ce01401c0c9e5d7d9e33a66132d178",
+          "current_sha256": "03a695770ba9e864e0e7f70255a372515b0bcb9c85a5175e5ba53f1c1687ca92"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "0d2de7bacafd2c8c3ea3305c765973bce2475c8961e8bad3fb301d4834ade68b",
+          "current_sha256": "11f2be13f1294f47450838ddbdfa402bd11286924fb0afdba1ac8326d3c83fe3"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "7ae30f20aa1778cec226dc3046df0948e983470d870a37361b58c6ba7d714b2c",
+          "current_sha256": "128c10ddbe3d33a4e85a6e00ec8e31a1e544b5186b62f89b1c5f0d988e25bddf"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "4fa1ab3d58916e62e01add59388a39af2f3ced7c749ae2046b0033eaeab238b0",
+          "current_sha256": "fa8a6ee27e837298b5f6aca33fa0683bde030a4fdfc3b0f15f120d3d3ab75eeb"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "ba1fc6521ec8ea868f5261946833c5d6984c63d13854c78ba86d9abb4011ba73",
+          "current_sha256": "c820229444704e4d7c81b39b894cce6c61f287668f7e00bf67bd00f30456b367"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "f32b2c7c6921cde38b6c933faed2bea081ba79f534a8246215c1356ac4059eba",
+          "current_sha256": "9d44137147a679c8c49a5cbce1788ffb14d3d0cab63a95ae8336d735f2a29191"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "d073398d78fb738aa7b6d37bf96e89053642c67b031722729c604c2f126fed46",
+          "current_sha256": "54f9bd5f544d92b6c0c20e5b3807a5273ee3fd7809ecb60db62008b966fba76e"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "a0dcff52eaa1ddfc15d7667d693cdb6062416cc00a0abd3e1ff88eb9a5ccf717",
+          "current_sha256": "1e64b07b10a3a8d3be54a49e5f14ba982f19d35932c4d7da5344ead2ea72ea9f"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "0f3f0d47d973e4f8d42c150a1254a5fbe27cdef659880b94697449c9e76e81da",
+          "current_sha256": "d855867ed6d6af3cb22a9f87f6c241fc0ecc7e08816228bb0dcb113283ff4b13"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "3f61b9d4f4b48eac8048a5db1cb5595c47f514663c548ab6052d11683cbafe53",
+          "current_sha256": "93801d02db9d581c11d207006b0a124a745c87663367f41c6befc548b80ff702"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "70a64580f22131293c65c6175f7f7882ce55324a2378fea025c9054a68a01982",
+          "current_sha256": "414f651e5d0ce03b0d8f7474d38de9182d5de20bbac64d67bf67d7bf5fdb351f"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "dadfc0149447d61d44a487f6c7cf86368c9444318050d7bc635c71d2dc97116c",
+          "current_sha256": "2a5d47ad9fd98ee47524d0f6099105e0789bc2824cf2a69b030616d5af9bf008"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "da75281503d4a741c791b90b4fd92997a0fec1abfd16ef8ed231fec1124cb29b",
+          "current_sha256": "872a7064ebb9fb022e6cfb67c73115a1b929159f19e9c370dd3d70d97ee98d33"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "39ae6effe36a9089599e640ce4d5a8d3abffe6253040bf30a22f6d6911f3dae0",
+          "current_sha256": "3aea68117954b6cce2c73093fb0578930d953675d8778ba3b9f80b0ce049210f"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "2102aff9f230ffbe1c210025add935ecb6879c2d84f649afbf29ec4465c1b8cd",
+          "current_sha256": "5e8776eb113a512f78fa086b9b1112c4db07232318cce839eeb79d64d1d3d602"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "509ee7f260233b39ae4c5bd69b28f073711e0e273cc70f7293040af40161db1b",
+          "current_sha256": "90e732de5d70a3fe428cc468e41a7c46d3872aaee399ca408c800f7bfbc07d67"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "77be5abff9386e297a3a0a1caf2d59f4bb299779171e5443e63d46cac77a6428",
+          "current_sha256": "f6a8b1499d448af718610fd63dfef96918f9774856c908754f4396d1389a51ab"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "c525a5a1ebfadb83c15128a21e845531a5859f44fba39553dd53ed10b74f43eb",
+          "current_sha256": "caa97b6b1424fe5ae529240a643df9a181b5548d3de7e21abf7dea0d8a97797c"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "c9502877efce56578fb8cd1b43af42c19df6263eb41d727d20db891e39456d01",
+          "current_sha256": "189358f50d1782759a1f47753d11036de4ab268b4202ea06fa320784d130a954"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "a54a9a00007deef97aa29282cf431d5fbfca791d415ceee3f23eed7e92e636a7",
+          "current_sha256": "2d7d0f87ea72fbf74cbba0dd226b7de125efd570880a55b628753b52c4646192"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "97142f93413935669ee0467e30e4442ebbde144eded3c3b3fe21bb0c236d304b",
+          "current_sha256": "1fe061afd30cbce05c58e450aa6d0eab03782c730b0fd338c54cce59b9094dce"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "9507a6d4802d30f866706db279a8fcb4130b244b27faaa2ce88cfed5efb63359",
+          "current_sha256": "13c30aafb08b6ab94bdf637672291c6fd23c1e4ee85775a72941bddc9e53cbe2"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "bcc0d1ef099b6e28a51667da4bfecca9e48c7551bfe18a79a59b5d3fd7c135a7",
+          "current_sha256": "83b15299efc4cc81618cfe18c556a27919fd282b2621bafb596f55e93bc4aa4c"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "c00e3b694e4d85184287566d0031f312153e59b1afe0b73f224399dc274f548a",
+          "current_sha256": "bcb84f02d702d3d9487b70d4e783348724b628030b05641c070ef51a8a70ceb8"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "f1aacb68e9ccf17019c718eaf60b28443b2a8b8b0b0bc28819bee827d0e30017",
+          "current_sha256": "5af62f628ecb7d4871206ffb4b989855b84209997de4dbf0b7fffcae5d6970c0"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "cdcdc1a76948f5b2b5099bb76b304c38a5993c017de2b258df26a6ae17db0c54",
+          "current_sha256": "d1e8ee5c8f5923aaf31291baa00b98184b3d7c83fa11df2fbc3994fa78aa0422"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "99361508a6ba6e23b72e9121636963c5b54651ce47b2a3108aea8377ad6c585b",
+          "current_sha256": "defd4f8d7f9fa1c67f0093640310c5fda744822c67d48b8e6693bc5ea9428276"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "05a2ea0096b694f277dfdf56849c85b748c36a39c9474c12a68f2bc145ebb408",
+          "current_sha256": "4c88c9e379384a4c027e7f46374710115f50e76e8c5bc4a55c41087466ad2697"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "7b9f1453a85f4d7ef88e18c625805780687b88bd325f6279822fa31c535635b7",
+          "current_sha256": "144261a974e7d0e27c9f55b3ed1023dfdb67824136b469d99c137f7f112d3708"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "6cc68c40eec8d0d47d6397c75d48c08b15ebf290ab07f78523549e56a29faf4d",
+          "current_sha256": "97bcd7a8fc2b89af7d17ec03f6330d91c8e04f20bf5c7492e58e50689590de9c"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "730abe608d02fa83446e80d5c009c0a56b7fcbf2bd302b31fc21956f5258902a",
+          "current_sha256": "e9cea5f421c6e3a0aea690d987c889c9aa327b29ee07287a4e2c12f09a3363b0"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "155bbd7861d2901575a7a644c0fc7f2322606ea314e03517058232f3458d1436",
+          "current_sha256": "c555e8f2f01a34fa9574ff08df107fd581c960a139e85432ced7241370ba6fa0"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "36589c07462aee8d9521c92a2baee9639873fdc7bb30e2bb2d8a0ce9cf51fa04",
+          "current_sha256": "c34f218484530fa559799c3ad0169c9f75b64f8612166e013d73d51025afb7ac"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "18f679c4310f79d34215382eb9b34c7dc0b127b450babe91987add2315ce86f5",
+          "current_sha256": "1e1744b6eeb0899df3e8b3f5fca7eab122ff843432e411670c58e14c38d5b3ee"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "b77a9873abd6c010c4320a219bc4c85369954cadaf207b0ebe42ec92de7f64d3",
+          "current_sha256": "6e6a2443021b228e6e71bb64df297698a4c1c8eaa300e4e2b24026d459010064"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "8acfaf9025cc984898ade4df0965970d9a04aef17e4e787b9166086c8451697f",
+          "current_sha256": "1749a686b805ae4e05a55e0b540e6f59f0b88a4e6bf106d886ad983a47f2d2ce"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "ae57531add900e8f4190907cc5ef38cf3027557b837746b1942d5614a2eb1db4",
+          "current_sha256": "93b2866361f0ded77db2285c8f3b57ee3da4f95f4ca9495106c047b82830a797"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "7164300e1f2e157f6b96e5cbcd64ca98ef47bed6c8c5741932560b3859454fab",
+          "current_sha256": "8ed422804a6b6024e863bb288ad22001d81b10cc7cb36fd7d1d6ef2f5f5e99d5"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "8ecc523ee6f0ded8b8010dc1f0d79d31628afb3281f39450c75768a85e55eac9",
+          "current_sha256": "798c0fe6c5af428064ba7ed67fd8230cd5c91058daf81b13b6c507cda048404e"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "245c1fd7a2895c1ae7b2fd768080787cf80a6fb2dffe81902e57c5893c4f5a4a",
+          "current_sha256": "eb8c838e3188ebe167d4224cf2d7f83df1c6ba6122e93b1956af9f65e71db858"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "9ccdabf6efb5d7aa27e088934d4e1c105138142d92cce16a4a33e9d20196e914",
+          "current_sha256": "8f3487e08f98ab25fd6dff2c8027292fddb2def7b3e249799bbf61dd5581bc82"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "bd1c8db0f20f2a85ddf7637090b28d5f2f83148076dca9e2aee6ecaa613103c8",
+          "current_sha256": "1395cd4c64466c29d8483d8a93b1b16d48d58a6e641fc7ad19be0312290221aa"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "cdcbe8d17379d8f3adcb7f767e242977080305be37d3406656e728f8ef67e8bc",
+          "current_sha256": "de6794c040cb18863c35462cbd4c26092f40c08ef1edc12e321cc48995fc9a34"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "aab59ac88646f333f7541d50d414d59a32bb6438edddaa5aab69be18590e486f",
+          "current_sha256": "2590283e499f66d06a1f83bc4446e45b7706ae8fa8fcaacef2e72d18c154f153"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "e4deaab28a25802c16b1bcc7a1021bcd050aadd14cfcf98913cc199f22ae1127",
+          "current_sha256": "21ad9722379ce80a2dc289e33997c7e11d5c0ba79796f1939f1fa0bf0348d7be"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "4a4f30e6ccae5b791aa2965356f88dba05a25216aca584258f55a39c28220b21",
+          "current_sha256": "650cd9d25adf8904cf05b694f8db1bcfef8812d3c965e93e9f6e8c6e8a412b04"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "a0134d74817aa4b8d2879d73931975181361f02685ec351a2497b953b5eaec7b",
+          "current_sha256": "7956a09e3f43d1981182d5b3fa900c688e9c015f6d8fde9256ea2f1eaacc7df5"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "029c34caccc08e717b369f3c754d15bb565106434d7754127a3614903f0ac19f",
+          "current_sha256": "b87ec6aba49a5a7ecf60fa48b1b2903c7c304e3aa64e43d01063b45b31565b88"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "8ae72fa532c9f058e0f28d2379750dd174ffb94152d8186f7de970597683ad42",
+          "current_sha256": "19b1f951607decc4ad85e965eea8b7972124c5f04f2ae3f0cf29caff010e3eab"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "a875cbf3cc588c831516fd259d97e54273ab8126a7def147f312c0f2dcffdb45",
+          "current_sha256": "eb4ec3cbf0df59521e73636796750f31b2f8196645ef45abf2efe162accb0957"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "7facd8a9ac8e4f4ff4c0e70d2ecca3614f8b41c78824487d082f849292ad0402",
+          "current_sha256": "44cc679dfff624da7ebd544231334233e4dc8a390c2d68f243e676cbc6cfea4f"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "f4c3ffcd5cb24ed5755581deeb2052fe7cd65f5d56b46e66c43a9b614795070a",
+          "current_sha256": "5ebc92bbaaa3e2c9a37897bdf5e93d2fed5afd5a0c1990ad0d27d49a1f64f5d3"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "e1fe0fe5dfc852f3c19e6fb4b4038078999e87c855fee390acf01bc9cc15e7e5",
+          "current_sha256": "6a408b44057a1f70ec68380a2946b356d80d924917f28cd8d040954e2214cf9e"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "1357b5eca7f045495448f4a5278e3c4a6f75639388772d6fe33ea9dfc6fc1c0f",
+          "current_sha256": "82e901f562c1c42533df5b89d51fbffe7a3a64101b2ffe1b40c012f4c8d906fa"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "aeb4e3b7976e493949bfb89c18a1c6894db2b3a2be74fc99309ceeb7eb80a9e4",
+          "current_sha256": "02ee954f9fb784deaa7c7a7b44b962de6237582f429f838b713dbaafbc869c75"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "5d6ccc2e04635b5d4fafe94963b12aafe5652effa7d543b55c2df4b266dcb6bb",
+          "current_sha256": "1f78d991f6c81c4be06029fbc76f235731b411edf32856c584ad9fd7a18ea80f"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "f27797aedfe126732b7f866f78baf22d6b751ad4a723e4229d2decdafe1556bc",
+          "current_sha256": "be923a9ce11f554911ac37938980df36bac382ad64b637447b26e18d5ba1ec3c"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "3c5febf39d005f1642ab3041495e71830353b70e938690c5d0c158d61c384e25",
+          "current_sha256": "8c069eb97cfd73d434ac20e0b0c868c2e261b4e1d21ff5b9898f59a77149a813"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "29f27437cf6528d0dc7d7532ac67e5e065c67737e3a347f32c07787c93654c53",
+          "current_sha256": "efaff5f4b266cead284c68d7a2883e2d7a42d3836870d61c0972ead6654143f5"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "ec92c8ed92b508366e468775627568a6840cced0010811f9149d9135f2ad02b5",
+          "current_sha256": "f90cce8f0801796cc134c22ea05a4facdc6ac7ab57c25c3539f275e01441efe9"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "277c4f24a3c6ac034e449e9524b8190ced77fa3b802aa13270d8f5d0f6d2fd47",
+          "current_sha256": "7fd50d7b85efa1992a58d10bbcabe09cfa1cd544a1b93331c514cfe2735a14b9"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "ef6901482b701ea4841c8de6ae4d4e95bd619ab761ef40c44d329e132ac0518c",
+          "current_sha256": "5aeaee0570df3121c7a6735f274dbd8e814cf839723f7cd1a36e991f62ed86a6"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "3c3590558f14771b53a3c51523907335cd1f27b434f502eedd94e7fa643c7688",
+          "current_sha256": "e8a2fc43a905b0ded4c91381e8f7e88540668c846bccb241646ec9359025d3bd"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "ec2e1b54199713df6c7c88c45477d43a25ddc533d9f07e2e6d069195caa8ad1c",
+          "current_sha256": "9016af9160ac09ce65b455aee739f2985b35f23de2d3a9f38b970ca353536ccc"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "69640316fe6c31760071e41fdd62607f7f2c47760184ce57cad6a858f93841b8",
+          "current_sha256": "9adc6b2846958124809027a7a0df9b75b73a7cb0aa38b72afe38b36d523c36e6"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "38ff9979ca4bd1b0ef90ec3c8318b7d04e7c3e5681a79222587ff3908057d6d1",
+          "current_sha256": "4df1eda58da6e942e942579cae515dbd723fb99993cde84b24341f852b18381b"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "a999977a6b8f5a6b96ca11ee8a0c322db3d6fea821bf24df38b8187328dbf904",
+          "current_sha256": "8d71e3783d89536e0a1086770f4b2d2ed86af47b1a4e21d6294a7ae5ed4e87e4"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "acbfdd2030fbfb1aeadbb36c37b6f82b07f5b28bc6d54930001be0a374e0a1cc",
+          "current_sha256": "0dab73627ebbbc58e5f705ebd8a2af072fd9594d999e9fb30997e7c00bb9f4e4"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "fb65b3b4240ef75025123112e419913a3519ea8366f24942d4cc717b16f18ebc",
+          "current_sha256": "140165e0c8ff1671c6413ce5a1c29326558c9dd69792dfc8566de3c3dedd7f7e"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "24f69a29e4f92b380cc2423944e03a9ec52fc5f966e27b3883936618f3aca1f6",
+          "current_sha256": "41beefcf64003247213010c56b078c19f2c0b22cd620f40c61f26d4f73ad48ea"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "264edd607f52dcf63833a99fbb4e5bebe2ea55f736abf4ed7267b32760e4c21d",
+          "current_sha256": "567af3eee31fdf4b5f5f0c4605fd88ff15f832d98697030eae91bc4995d88e82"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "3948eb1e51af7c5108f22fc7eb0207882c59d2edb4eaa242e7c6ebe557aa37ba",
+          "current_sha256": "0c930794586a6ffbaa8478dbe28d6bc1be8941b9a0f2f6da17397058be8b00f5"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "7d90e41e94e48a0287c6b86c11eee2b60bc109d46894871872fa0c15c15b818c",
+          "current_sha256": "8257418d5777de92d1622a582abdd7bcde8a07ea1cdd8e578da71a2944dc7fd0"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "89184eebf756b055f9c0499e66a22f43a7e78723064fdab5ec58a761aa81dc47",
+          "current_sha256": "1fc6bc32a3dba49ac6f9dde292126420eec6daf8187b322ddf4addde9ef62bfb"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "a7811c9fdfd0074139ea6e718ae735a1a3a5bc2ea4b649430bf134d3d1f2f364",
+          "current_sha256": "b6fc842cc0c079682a81a8eef29537cc782b4c55cc4be4a29ffc08e3ad6aa356"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "9ea7ed572b8526f9736ac5c9feb9c65aee1459cf956429c4e066736fee31aba7",
+          "current_sha256": "a770404f6805922a2d2fc0d59cd3f98e5bde1bc136c2f86603452fc41ac79745"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "6d64236d56a59103ad77982bf8d1fce1448102868379d5de24c67a7a5f52ad97",
+          "current_sha256": "4c2751ebddeb3d25a51fc3be133bbee9acbcee24c7b86cf0702f1b381cc1fdb0"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "926468f88aec880fc7e5700af02fb53a00c293ec89400d8af9ca3f275aaef281",
+          "current_sha256": "4dce073292a49e3222e5002343f22e8aa04eb7904e0734f73154e2c6fdc90b45"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "84e7755a9bc213adfdd5b743ee3f082a6c80a1949284d45ddef97aafdb2f3128",
+          "current_sha256": "b99e800afdbfc2a5c81f04e8024c1120514bd2ee6a0956dcc3b68b4ea07bd2c2"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "146baf006b3dff5abd5d6100b6abd21d0917c90593e51e6500c55ce6823584e9",
+          "current_sha256": "8f51a59a95cf5d848e5022da538fd2b2cf26c7be9cc07fc1bb595c725cc0f425"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "22a5a694591c702e057f94a727af4e52589f059c53f64cf259ca040e0c34a741",
+          "current_sha256": "a0b0a6daa9a04371e7d7359b643267a99f889b4371f39ae106ac8f280324d564"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "e47fe0f02f18dd595ede4fb985999c3d1ec62fe532ef4d36ba8072fece2438b1",
+          "current_sha256": "9604efbced209e3f2cd4c76faeb0b044d85f81d39707836b7ec7c526425cfd96"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "f273f32a0325e9e41dd3385012eaab384eafb5f2c34c20328e15223e37b2a321",
+          "current_sha256": "edb4812a22545a3bd49eb4ac2f3f0563fcdb208b88a24232282c8614a1dfa9dd"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "54c5ca46adfd19c56d0cc27589a2bcf4ec7cabd8da9a815d95efc4026e905471",
+          "current_sha256": "75d75ecf493ad53c54208546b541d062fdd1c0d5f3fca62b36d6df8d89953c80"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "66794a481065beddade1164963cf85839316891417e78a194d933c6aea5bf7b5",
+          "current_sha256": "738e1e30fcc53237bdc2efb7c63f8dd61aa51c32376a5510b628f98355b21e56"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "987832d25cf1a8489ef1f8d415f377c5c56e4f5397f4e81fc94486c8616ec15e",
+          "current_sha256": "fe9ad99b4ab936eccf5aa542a829a796a45ba4bc8c63ab1254cb273c1dccc8ae"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "f2de20a1b34907185e3f0969827b9bc294e0d23edb2ece3ade8606fdfd2f19d4",
+          "current_sha256": "4c0311b1ff7735687a549e00f77ba440d0ebdc087054a3cae11350b22a05e693"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "0bd32c7def905750211c73467e9173a3935b8de15daffa69ed9f33298377b5e1",
+          "current_sha256": "a46121cb17574cf319940fe43fd1e899c49501dc3e521b8e2b97c362ea7fddc3"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "98743dbc1e686cba80cf822f62fb951f628e9e9e26f399d11cfb57964d9254ae",
+          "current_sha256": "0039b36c3d56e719be5abe72b0c49c786d8131b1ab61514dc44f72fdc37baae4"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "365aad53a2c3c32aabacfb6613fbdf126b86ecc49d6e07279babd83e746bdf22",
+          "current_sha256": "1f50dedac5cf6da0b4ce4a983c9830ae67f846d18aa70a8f44a17c644c5f2bc4"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "3506728448c9f586f1857c0fb88df61ffda1dd3733261170fea5ccec84502afa",
+          "current_sha256": "3694337b352d7f69781b2def4157eb60e1b725dd2843186958fb1196969a49d5"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "7081bf2eb3794a8654e8c32314012622c96158154ba5697e9f8fb90e36dcea88",
+          "current_sha256": "bbfa1c8c3f4533927dfbe6369dfa7bd0fd3d615bad93e8932fc80f19385247b2"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "323a3ec5236f89dd61f7f77cb94c9e03dd6fa215f506b7640633e04e85c737e2",
+          "current_sha256": "076e7c1606901686ae1bac76a1099453dd729a91ccc8e46cf957527c2ae8661d"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "ffcf4597499de3d3d948065438f7f2af451241c29b1e7e25ab26504c2549b302",
+          "current_sha256": "fd7585e5e0d0fe7ef032fdfc2a8ba926f914a93ffba9ed19e9941a1a18fce714"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "4ad8adf3c06c89d7096ea7e248125ca6f4dfd116c8ab5fda80ba8d9751f937c1",
+          "current_sha256": "22a9a025e4704f40b5dfff38cedd4a64508d029ef3fa35b01871f6abb42003f3"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "67fa7bd984ee319512aeef4b3a29a84688f43838c7f0d4f4bc62947723a4af19",
+          "current_sha256": "ca8c992ba7f1b40c7f67747cf5668c2d010ecdb1385c914091d307ab02241a85"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "883ded61934e0bf3fff207c7187754837a5fa830ca5bd07752a75dbcbb3ec67e",
+          "current_sha256": "bf6dcb567fc632b3851c35a5b010a252b5f0da5099022650ecf13c3641e1bc76"
+        },
+        {
+          "path": "[local-source: 1r]",
+          "recorded_sha256": "09360aedb705b36690c32350c7ce2ddc989b274fac603b93849d24f8114e9b6f",
+          "current_sha256": "7cd8b762d12ec528393b0105bc868db7b58397909198381900e0c9e17d809256"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "b5fd9469e83e998c0cac3ba1c5f4b8f28335af2b857ad26e43e7fde6ea6c60b7",
+          "current_sha256": "7a85e01462bbcbcb308f8d1cc0508d1f95158fef068e6c0210e6922a6551476a"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "732d8a48df4b4d8dc20a17dd7fa7fa6fd4862e589c22de5b9175fdabe98d3746",
+          "current_sha256": "438e728a7f6a5bcec0a816abfdba5ddb497258eb29b116eb5e1417b85b6ce072"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "d63d3e58db1415620f537613da60c2f77bd536c661b2998f8768450d182bbd86",
+          "current_sha256": "90fbc5c9d3954d6016b6abe2834089f0118a1c618a489ec913140a283ca7ee70"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "a15db64677e5833b11f8506811bfe2fc575e0369669e2ed3a491198ff4cbec16",
+          "current_sha256": "a021442b6bc3c2c2918b42ae3a222ff9d9dcd00f27238c34b1eee624d5e4a239"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "63eb42343cc4881a67928a076b0fd7000468dfacd302635ce643dd58d3b50e49",
+          "current_sha256": "3e2ee076d2186d5d9c49c5dda2cfd4990f47b0a32f36ce0ae86439910ba4e61f"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "33b68f5d9674c4eb020288424fa3881e829ac9b8f56bfcd38d4bfdc712b40440",
+          "current_sha256": "fddb950ffa72e678c7436f53c1df4fe971253ca32ddeaaabf64ad6060fc0e91e"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "c79488b9688e522e2dd148640f5929e9a843c52d1b3b1c3c6d026c9a6e97def9",
+          "current_sha256": "9e9987b16b720b3902d968f17ea4ba8fe673fbac353e73720ad4f8af98f88373"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "fc659b804a44f1d852be130e6a52ad6f5b9461892f1958a274f2c329e5d310a3",
+          "current_sha256": "07733dd385735116fe5a70ceb72f26a6490f1744810c3028a96b1f81e588577b"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "a645312737c0ee140fc7efb40e4088bb6b0c55efe1ff9dfed459b32a47c524ca",
+          "current_sha256": "43a3471470d6603b91fdd0771a485c8d77c3729bcf8770a31f79811b3a36bfce"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "6001cd3ac33f39117dbc538ca85250bba68868a8c5b293df144f8f7da075e50f",
+          "current_sha256": "56850ff7365f34537c8f5d23402536a9182ea0832c881500cb5017cb5e4861d6"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "00251b5e3d6be7da9797146326d1afa399f6d16fe5f0d2b44e4b3887e241a8e1",
+          "current_sha256": "f369ac14fcab241f19f5a0d03c979ff2cc3d540a199f9b2632a57c9a6940f287"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "b54bb19988b8fdcd3cad093e9c6bd814c4b950d7e395fab04d8023121bdb002e",
+          "current_sha256": "eeaa0e3f7dddc7eb75634a4e4196d2b7af84f08974698580c5c695562abee9ed"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "f593ff319d822f1797700f99b4e2ca60b34a9db8936fd44bb523e289b8191abb",
+          "current_sha256": "c06846603e84d2c54ad94f001ba07dfa0382f10e96d878fb1b0d442bd15c5af5"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "cdb6b6679dfb29b296992b8d94ce0a1de836acc69868823065bbc4d49b9ac0dc",
+          "current_sha256": "3d9d0566fcfb8be1cbc242a916604f8a57fcf1b2bebb4f2b76030987f96b591a"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "3b87a134f2acdff77c0677cb4e725d1b0c42d5e14640b89f3b5bd6746e14313d",
+          "current_sha256": "fccc74097028e45bf40c242656bf7202f1325ee9258af2f10bc2a854e9d87637"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "fbf022231180ce85459c066475db6e9af3cc3ae5437000596bb7286ca75c6617",
+          "current_sha256": "b0e4338b60c40a4812292412037db171b80cfd9e55746e044e5e7352ba121973"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "0893461f4da034954783e4a9a3336972e7de050a02afebc4d9f08338ce539ba9",
+          "current_sha256": "975124137f791914812f047296abbd98038645127db28f9eb39d283d1816e833"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "ff543d79712c111a76615742916c810a7ffeaec5325c25ec6e79efd93ba7e373",
+          "current_sha256": "a6594aa50e1d7478452fb2e5fbbc0be55f95d7d0c2e3d65a5d13c2cd54f1ef2f"
+        },
+        {
+          "path": "[local-source: 1r]",
+          "recorded_sha256": "f356c379aef738844c578a2e7cd7b6ab6430256337dd6061249439d3bc6334e0",
+          "current_sha256": "76e6494f67a812860a3108e63d2c07d28b4cf24c7a67a5912c5e61116815ca24"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "ad354b5e11e0a4b83f057a52450a5ab471a3921a35af9a1a243e0755ef142640",
+          "current_sha256": "9093022f1f389f107e11fdda58d5d4ee04bea9f47f2818183e534fe60e57a683"
+        },
+        {
+          "path": "[local-source: 1r]",
+          "recorded_sha256": "10fa6157b63692d6a5376e6b52642ada3b2af2cfa733147f11936a1052db0535",
+          "current_sha256": "1710c1ab32dc72b20b700fc982972caab7b7048c5447939d2549b42831e881d1"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "6f8ec514b1cbc87f3b0521c96a469acc15cbc01e95e75eb2287309ad7a7738a2",
+          "current_sha256": "f93370e4b0800fd1fa3263b46ab1e3f9392d0485de2b1f79e734c2fc74e24844"
+        },
+        {
+          "path": "[local-source: 1r]",
+          "recorded_sha256": "5405729c345d34ded1ed2b968fc9d5592bd9242ccf3dca5a151842b36d0fb9b1",
+          "current_sha256": "008b5f7e6bb546ceac8751178ad6228cb132a4718894dcc00785e793ca295450"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "cee851946c076ffc5f0d5307fd7f725718a0abd9b8dee4f14bc37d657f024130",
+          "current_sha256": "f1d64226710f4405570e78ce0b7161cc5717d10cede49754efe54b891583209b"
+        },
+        {
+          "path": "[local-source: 1r]",
+          "recorded_sha256": "106dd20a03ecb3f18e2734964c63f748f36cc7d90230c085bc21df8ce31c849b",
+          "current_sha256": "e4ad8802009556289c6355d948d174979aa2db1806cd254dca763346af61e3da"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "e969de32d6c5e2c1d3f547287a350c036ef8157acf03a8543ed203cdccac977d",
+          "current_sha256": "33a6c6a37bf4a8b740eda038feac29dcfd209071176c2fb92e1163672bb2adac"
+        },
+        {
+          "path": "[local-source: 1r]",
+          "recorded_sha256": "89e913257c760875dcefcd34d16e3262ffe8685d4957309ef099d5f3dab1ebef",
+          "current_sha256": "c529195c1fbdabc52b27a62e6c8b65921957840e215896c203d175fd6208ddfa"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "89d43161ea90108624f170079c8c2071d26238f08706048204822083ffe0425b",
+          "current_sha256": "0f692a0585e651d776529f7262d699d23ad7b92fde72fe2bfb985ec5d3b52399"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "3cb4d2496fb6495e73f7dcedf018ee19da2d8f4638be4c1de2d2a7a8ea431eb9",
+          "current_sha256": "264e0f37b19319db9746cf400d2464614ff60d0d929b54d66991f34f436e3681"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "c4ca18d9c7eb0fd374eedd137c28edb2f918a4b2731fa8f656ca04eb18aba0c7",
+          "current_sha256": "6d946ab8f9a56fe2d87f3bec64617a5b848a5527c09575964f2bb84f0a87917b"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "512b40d8d1cf096c069e4ee9a97f41484f421226a35263fea2a186c16e44d1fc",
+          "current_sha256": "da030048f349967156dcd9625c62d476d0a65d680bf023046263f29e18a7e189"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "65787c55074d5b4098437880585f160a8b64184a84b76a34a165b036420ff7a3",
+          "current_sha256": "ba5a13b4f86db7c35126e62988f24b5c9a34e60ddc717b65ce69d67e78d78cb9"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "e5e61dbefd1df59c515a110fd7c32cee75ca282b8e8ae33c8f3757872056a5e1",
+          "current_sha256": "e25b7f65495f6202db00f7452cdb8c8d8ea3d83bac9515f6220ab5582405909f"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "3fb6954d3dc3a0b32aed83e8833424a3155e5d90d19cf4fb6beadf28ad981f0a",
+          "current_sha256": "9940539e41b65e9c5e7abadabd8473c1cf33a2d8191bec8f606539b43d543703"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "aed88fc500d617592d88e480c6e25ce9992a0cc53ab421b61809374196ecb325",
+          "current_sha256": "9b94904f41fd54778f9bbccb61deac33dcb22a70c51a16baef34d9e460bd7213"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "7bd0b5f060ed3f3b7a021c39b4e1cbef56a74d968f18cb6a6d908b43e6a73c29",
+          "current_sha256": "e6cf092958453116c8b6a37a77f0828699cf1b85466ad6e9fa21ec048cbab385"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "5e8a130b17f23b27fff375242978ce23c32895a80a3b3d4ff03a7851aac98ecc",
+          "current_sha256": "1b22f7caa45fffcaedbaa299160a3b1a36773efea6625aa7eb1c1ae501c84699"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "f86c6464a0ac058eb7e62fbac9cc6b3960940db2323795d2951079e28db6448a",
+          "current_sha256": "ade5682423e3bfc2bbf1c78956ebc699884b0cf7a61162bd8a817d6c32dd22c8"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "978652fc793b8efc4e4803e566059cc9599e8b9a294d4b8e039c1a65825adc0f",
+          "current_sha256": "2f262c39873950779c939e98b2ed5f8a91910b2e0076408a6ba197a737c91ad1"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "e0a010c6567ebff8ddee352a55edf93988bf5089be551fa345eb903e124160d7",
+          "current_sha256": "067863e5d04b84bcd2bf1ae6c37275ba17fbe96113e0fe58617a1ee6c2409055"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "c78637aab87bf929a7191eda427d1eded1290f2e3ef52d00e746e33e4a38d027",
+          "current_sha256": "2ccf53443c04fab1af7e80552a4a187118c239ccd9db4bf906b357cb2d69c757"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "eb7d6e776098bcd0cc7b1d21ed479a9ece5f0ac9c9e0570d656ce2e6f78f5d7f",
+          "current_sha256": "1337732b72256746121767756bc11d25d08fc49ac85197ce260437edfac038da"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "d8a397d41cc8c2f639e3db15a0009bb6e922d265da47997ec57ae2625d63dcc3",
+          "current_sha256": "4d498e58ea16bc5a57108608e016630e004514a3064b0f80996e4276a3359d24"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "5f092bb2df5ca73b3195f73f58703a6ccfbcfc2274daceffd2dc77e9acaf99b6",
+          "current_sha256": "a365cb6161feceb2039826dc4d6cfaa13532345e48e7dc7f0ba2118d1a5db462"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "7ae3f72f0f4e75a28047fd9ccc1bdfbce6759ac7a8be5330cd478404a662c86a",
+          "current_sha256": "84655f06176fd0916483d1b08309a9a4e87434a218c8b5e5e5de3189422fcdc2"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "0ff6143baddc3b1d4e06fe95cf279e2e5b02853c97e6b1479cd128032e9e4d0f",
+          "current_sha256": "6bdf5ff1f33167f336f1324a3c037712919507a1aae8ffec9d8855144f7e9b52"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "e8189cdc5d1e7ad1a09a9ddaeb540ce9a113d8207d5b8aca9a27de0e3603c207",
+          "current_sha256": "184d2ad67a7cfda63e83e36c7ed6dbd1210cf972182b3c9dbdc04a12eb1f761d"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "f683e5995e2a7b8b271ea507b11867e6376d4d8b7fbd4ddd5c34f619581b98e4",
+          "current_sha256": "cc8928309433bee7a10d52c383534161fd224a6bca57ffeac1cd8c516de35746"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "e6198eee2f91ae0ac1d025fc156b40cfb68c8a83dfaca0255d9f66712a98891c",
+          "current_sha256": "7524511a6efb6b3d81832d7051ff7ec6cb2d8c95ae1831610e3612d116211229"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "065b3f11bde2dac26dfd93a45212f807e06224191161201e8439d567a4d36135",
+          "current_sha256": "600865e556830acc94b242879b5095c582b25da8c10cc8e174b4c500b0166a08"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "2893204f6769e71af9448963fc780833ef56e5b8f2c5b60690c403260d65913a",
+          "current_sha256": "59cd3a5438f4dc54679acd9ad288e92050b7ccb56582f9d3bd61191f99c51057"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "b6cf8bea15adb5cf35b6d77529b7919dfd9c55af00dfadee183dcbe8f467df3c",
+          "current_sha256": "6cde799e47daed7b128b74d95c8f80a2a60ee2c784261380ec4c1496eebe8069"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "117a7d548e792a156d7ed7547496d1707817f9f468bb44b4016ce08a015983b8",
+          "current_sha256": "9254c1e5776340053c0af425dfbe12defe8f8f3d221df59c654f33e01d502554"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "65e64db09f58dde60d9210445640a2e2a299c41118952b835f320493d37679eb",
+          "current_sha256": "14e32444f1b5604c73ea5bbf9e88f3bcfea19a2a5acec07c4e4735d5b0d1c235"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "9308ad7727820b7d9bcacd43d0c5b9b3e52068b41574aaf080391947ea654b33",
+          "current_sha256": "0d4e905b629370eb7594d2d4722f4d52ad51d05c2e03f1e60654b130e098af85"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "140fe5d0c5bbf87958dd1b2ba0d7ce046625a3ad9ad10eff59950d26d3e0586c",
+          "current_sha256": "e949fdc827c905e964a21080d09e5a823e0ff80d65159885a59a430865cdd7fd"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "02e36e73a85a16c80dbbcef87432bd6010b6c06ae5a8f3445ee9ecda870117b1",
+          "current_sha256": "fbb6527c76d37f265508f418448dd0ad6d1ec52a65eeec3013fa004c8f39df64"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "0f4467097e9450a18ecf45d73a1af4bbb0cc125ea401e8f689a640d61102d6f8",
+          "current_sha256": "0a007bc4a803d282aa280842c2e6376ff1af5126e37f92c42c1b527ca85092bb"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "a5b86c4f5a889b0d56ff087089a293c4a57201a240a2ad7a520f2b81c3c01fd9",
+          "current_sha256": "cf7cc92666a23c3261eec5365861636618b676f561599ccec74f3d1737edacc3"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "058f4b4dd68ff63733aa5473adbb8b33e7432bb5d9a24dd4c0e0aa69641305c2",
+          "current_sha256": "cf7925b64a67c8a53acaa72e34f9957780bc1cc3d1be6bb89febab546cdbf5c2"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "1cb429ab9b4da990d7db79f2600a1764dc3ea36aab47d5f7a0e892d05204e3cd",
+          "current_sha256": "8baecad56521c9860c836ec6a36a235b3db7d86f9dcdfa4738baca9759ed7fe2"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "20e26e3314362de0439b37c6ac091a67ebf3f08748f6a31270f4502758cb0ca4",
+          "current_sha256": "caf717bf67c92ef17d65bacf56cd4fa8e18c50a853b2d12a5963eb3d7429d226"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "1a44befe76b91743136a6d897dd4bc45a544e241ddb2a54290e701405d90b3d0",
+          "current_sha256": "e86872d0230f7666aa61c3f1fd6d2a951c0ea4ebced81463c96f9e49871613c5"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "236d0172f96f0f3d9ecfb6fc973f063344c9656ada911db24dac9a62cb0e7ed0",
+          "current_sha256": "7b8cbcf09ffe5933cde6a0d6ebef37455c4bd4cadae47fc30b1ee589f8aa4580"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "ed1e6e795b9a839fc8c3d0ba6e7598b184d69a5042b61e8afce21100bd9fb40b",
+          "current_sha256": "c80be7d1d6240e2bc5c4616d2e666e20a2676a348d1c18804601309566a7dc36"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "6d7819ad9939ef18fe8b46fb02865756594fc39e4bdb642b871e88a8e6b9c923",
+          "current_sha256": "3bddb505db9fda05fd2f014e38c68510eccb7578dbf00101ae8ebf8b95b1217a"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "e333bc2f9ad8741ea8886cb05c27c2c59665f686f38b471c47de552a1d11f89e",
+          "current_sha256": "6eb8d5c3ddf406b3cb5c48e1960f3df3d76c1a18ee58b91902fd9a4f644bdd45"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "890bdb9d93cf042da7dacca1e9157b9ca3b9347ecb39e8b5a833b192ca3482f3",
+          "current_sha256": "ebfd23da57faef1b62732f4d91741129b50ed8097547d28a52b6074e3fc6669a"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "f359adf0865acf09bb131603c199d7b4ea3dfa614781eed285f8db4475ef82bb",
+          "current_sha256": "98d1687827f4d6be93236311dd3a6a7072ba1b74f11233157464b785d56df257"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "31e4e83678ac8170cf825d82ef2ebf07eec1420e2766e6e3f50dfffc3b230749",
+          "current_sha256": "ad49ffc9ce95d8631bdbd567764e7c12f167877ecd635c0a06daee996399cc4c"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "44f61de5bb5909d6947800c9d0f6d318dcf90f9a8d20049ab14e9e3d1b0881e4",
+          "current_sha256": "629300d8eeb1a596750ed91e7e8d8daf8c26230cebe123d4592b79d7309a41f1"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "e3a029bfd406f2e77d714457a753fc2551498c6395c7f7e5568e0e5bb5727fb5",
+          "current_sha256": "0a067b3289f0a4d852ecb6ca6adfda8c1578a2052f7819c362338a427e521ba0"
+        },
+        {
+          "path": "[local-source: procs]",
+          "recorded_sha256": "ba586abce7e03cd7e9b41a99224eb7ec1fe0bd86107671b53a70582f9e45eb26",
+          "current_sha256": "5e95be887d7a283578fe171a81029de81b1f944b7bd3118c5e766ecdcc9284d8"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+# No pip dependencies are needed for the supplied offline generator,
+# read-only calibration CLI, builders or mock tests: Python >=3.8 standard library.
+# Tkinter is needed only for --gui; install it with your Python/OS distribution.
+# TopCmds is provided by TopSpin itself; do not install a look-alike pip package.
+# Native bundles target Jython 2.7. See docs/en/bruker-step-by-step.md
+# and docs/es/bruker-paso-a-paso.md.

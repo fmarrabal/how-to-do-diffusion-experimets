@@ -1,0 +1,318 @@
+{
+  "scope": "Bilingual practical teaching content and reproducible simulation design; no experimental validation claims.",
+  "main_slides": [
+    {
+      "id": "ilt_ambiguity",
+      "title_es": "Curvas casi iguales. Distribuciones distintas.",
+      "title_en": "Almost identical decays. Different distributions.",
+      "visual_es": "A la izquierda, una distribución a D=1 y otra 50:50 a D=0,9/1,1. A la derecha, sus atenuaciones superpuestas y una banda de ruido. Animar primero las distribuciones y después las curvas.",
+      "visual_en": "Left: one distribution at D=1 and a 50:50 distribution at D=0.9/1.1. Right: overlay their decays with a noise band. Animate distributions first, then decays.",
+      "callout_es": "Diferencia máxima: 0,27 % de I₀ | Ruido simulado: σ=0,5 % de I₀",
+      "callout_en": "Maximum difference: 0.27% of I₀ | Simulated noise: σ=0.5% of I₀",
+      "takeaway_es": "Un residuo pequeño no demuestra dos especies ni una anchura real.",
+      "takeaway_en": "A small residual proves neither two species nor a resolved width.",
+      "speaker_es": "La transformada directa mezcla y suaviza la información. En esta simulación concreta, dos D próximos producen una atenuación muy parecida a un solo D. Al invertir, ruido pequeño puede crear, desplazar o dividir máximos. La regularización aporta una preferencia: no recupera información que no medimos. Mostrar el ejemplo como simulación y no como límite universal de resolución.",
+      "speaker_en": "The forward transform mixes and smooths information. In this specific simulation, two nearby D values produce almost the same decay as one D. Inversion can turn small noise into created, shifted or split peaks. Regularization supplies a preference: it cannot restore information we did not measure. This is a simulation, not a universal resolution limit.",
+      "sources": [
+        "https://arxiv.org/abs/1608.07055",
+        "https://arxiv.org/abs/1609.00324"
+      ]
+    },
+    {
+      "id": "ilt_method_choice",
+      "title_es": "Elige la hipótesis antes que el algoritmo",
+      "title_en": "Choose the hypothesis before the algorithm",
+      "groups": [
+        {
+          "label_es": "Una señal aislada",
+          "label_en": "One isolated signal",
+          "methods": "Monoexponencial → NNLS / TRAIn",
+          "use_es": "Estimar D y revisar residuos; empezar con el modelo mínimo.",
+          "use_en": "Estimate D and inspect residuals; start with the simplest model."
+        },
+        {
+          "label_es": "Una distribución ancha",
+          "label_en": "A broad distribution",
+          "methods": "Tikhonov / CONTIN · MaxEnt · PALMA · UPEN",
+          "use_es": "Permitir polidispersidad; probar sensibilidad al suavizado.",
+          "use_en": "Allow polydispersity; test sensitivity to smoothing."
+        },
+        {
+          "label_es": "Pocos componentes",
+          "label_en": "Few components",
+          "methods": "ITAMeD / L1 · VP / SCORE · RAI-S / DOME-S",
+          "use_es": "Favorecer pocos D; justificar el orden y la separación.",
+          "use_en": "Favor few D values; justify order and separation."
+        },
+        {
+          "label_es": "Todo el espectro",
+          "label_en": "The whole spectrum",
+          "methods": "MF / TRAIn-MF · SILT / LRSpILT · group sparse",
+          "use_es": "Compartir información entre frecuencias; comprobar soporte conjunto.",
+          "use_en": "Share information across frequencies; test joint support."
+        }
+      ],
+      "takeaway_es": "FISTA, ADMM y SVD son herramientas numéricas; no equivalen a un modelo físico.",
+      "takeaway_en": "FISTA, ADMM and SVD are numerical tools; they are not physical models.",
+      "speaker_es": "No existe un ganador universal. Comparar métodos que responden a la misma pregunta y explicitar su preferencia: suavidad, pocos picos, factores compartidos o prior aprendido. Para un polímero ancho, forzar dos átomos puede dar un ajuste excelente y una interpretación equivocada. TRAIn por bin no impone correlación entre frecuencias; MF sí comparte factores. En Prime, termFac de TRAIn es un multiplicador del residuo NNLS, no λ.",
+      "speaker_en": "There is no universal winner. Compare methods addressing the same question and state their preference: smoothness, few peaks, shared factors or a learned prior. For a broad polymer distribution, forcing two atoms can fit very well and give a wrong interpretation. Per-bin TRAIn does not impose inter-frequency correlation; MF shares factors. In Prime, TRAIn termFac multiplies the NNLS residual; it is not lambda.",
+      "sources": [
+        "https://github.com/murbanczyk/ITAMeD_python",
+        "https://arxiv.org/abs/1608.07055",
+        "https://nmr.chemistry.manchester.ac.uk/?q=node/430",
+        "https://doi.org/10.1016/j.jmr.2017.03.004"
+      ]
+    },
+    {
+      "id": "ilt_evidence",
+      "title_es": "Aceptar una solución exige más que un mapa bonito",
+      "title_en": "Accepting a solution takes more than a good-looking map",
+      "steps_es": [
+        "Ruido: estimar σ y conservar el signo",
+        "Predicción: reconstruir atenuaciones y revisar residuos",
+        "Estabilidad: variar λ, rango D y puntos b",
+        "Soporte: comprobar otras señales y gradientes reservados"
+      ],
+      "steps_en": [
+        "Noise: estimate σ and retain signed data",
+        "Prediction: reconstruct decays and inspect residuals",
+        "Stability: vary lambda, D range and b points",
+        "Support: check other signals and held-out gradients"
+      ],
+      "takeaway_es": "Más puntos en la rejilla ≠ más resolución. Convergencia ≠ validación física.",
+      "takeaway_en": "More grid points ≠ more resolution. Convergence ≠ physical validation.",
+      "speaker_es": "Un máximo que sólo aparece con una regularización, o que cambia mucho al retirar dos gradientes, necesita revisión. El residuo debe ser compatible con ruido, sin estructura. Los gradientes reservados prueban predicción; la sensibilidad al preprocesado, a la secuencia y a b sigue siendo necesaria. Bootstrap o una red con incertidumbre dependen del modelo y del dominio: no son una garantía de identificación química. Comparar λ entre motores sin normalizar objetivos carece de sentido.",
+      "speaker_en": "A peak appearing only at one regularization value, or shifting strongly when two gradients are removed, needs review. Residuals should be noise-compatible and structure-free. Held-out gradients test prediction; sensitivity to preprocessing, sequence and b still matters. Bootstrap or a network with uncertainty depend on their model and domain: they do not guarantee chemical identification. Comparing lambda across differently scaled objectives is meaningless.",
+      "sources": [
+        "https://arxiv.org/abs/1608.07055",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12383262/"
+      ]
+    }
+  ],
+  "simulation": {
+    "label_es": "Simulación didáctica; no son datos experimentales",
+    "label_en": "Teaching simulation; not experimental data",
+    "D_unit": "1e-9 m^2/s",
+    "b_unit": "1e9 s/m^2",
+    "b": {
+      "linspace": [
+        0.02,
+        4.0,
+        32
+      ]
+    },
+    "single": {
+      "D": [
+        1.0
+      ],
+      "amplitudes": [
+        1.0
+      ]
+    },
+    "double": {
+      "D": [
+        0.9,
+        1.1
+      ],
+      "amplitudes": [
+        0.5,
+        0.5
+      ]
+    },
+    "equation": "I(b)/I0 = sum_j a_j exp(-b D_j)",
+    "noise_sigma_relative_I0": 0.005,
+    "seed": 20261002,
+    "computed_max_curve_difference_relative_I0": 0.002713226833390092,
+    "kernel_example": {
+      "shape": [
+        32,
+        160
+      ],
+      "D_geomspace": [
+        0.2,
+        3.0,
+        160
+      ],
+      "comment": "Underdetermined. Singular values below floating precision are not a precise physical condition number. Plot normalized singular values rather than claiming an exact condition number."
+    },
+    "additional_animation": "Reveal 3 reconstructions from one simulated noisy decay with weak, medium and strong regularization; annotate under-regularized spurious peaks, compromise, over-smoothed merging. Compute actual solves; never hand-draw a numerical outcome and label it a result.",
+    "uncertainty_caveat": "A pointwise noise band alone is not a hypothesis test: many points can accumulate evidence. The 0.27% versus 0.5% comparison illustrates difficulty, not a universal impossibility proof."
+  },
+  "appendix_groups": [
+    {
+      "title_es": "Prime · ILT local 1/4",
+      "title_en": "Prime · local ILT 1/4",
+      "ids": [
+        "nnls",
+        "tikhonov",
+        "flint",
+        "gnat_ilt_nnls",
+        "train"
+      ]
+    },
+    {
+      "title_es": "Prime · ILT local 2/4",
+      "title_en": "Prime · local ILT 2/4",
+      "ids": [
+        "itamed",
+        "elastic_net",
+        "maxent",
+        "palma",
+        "curvature_reweighted"
+      ]
+    },
+    {
+      "title_es": "Prime · ILT local 3/4",
+      "title_en": "Prime · local ILT 3/4",
+      "ids": [
+        "brd",
+        "pdhg_l1",
+        "kaczmarz",
+        "l1_ls_nonnegative",
+        "flint_fista"
+      ]
+    },
+    {
+      "title_es": "Prime · estructura compartida",
+      "title_en": "Prime · shared structure",
+      "ids": [
+        "group_sparse",
+        "lowrank_sparse",
+        "reweighted_lowrank_sparse",
+        "omp"
+      ]
+    },
+    {
+      "title_es": "Prime · mapas conjuntos 1/2",
+      "title_en": "Prime · joint maps 1/2",
+      "ids": [
+        "mf-nnls256",
+        "train-mf-historical",
+        "train-per-bin",
+        "rai-s",
+        "dome-s"
+      ]
+    },
+    {
+      "title_es": "Prime · mapas conjuntos y 2D",
+      "title_en": "Prime · joint maps and 2D",
+      "ids": [
+        "silt-dosy",
+        "silt-original",
+        "train2d_prime",
+        "fista2d_prime"
+      ]
+    },
+    {
+      "title_es": "Biblioteca · componentes discretos 1/2",
+      "title_en": "Library · discrete components 1/2",
+      "ids": [
+        "vp",
+        "score",
+        "outscore",
+        "hyscore",
+        "discrete_selection"
+      ]
+    },
+    {
+      "title_es": "Biblioteca · componentes discretos 2/2",
+      "title_en": "Library · discrete components 2/2",
+      "ids": [
+        "decra",
+        "local_score",
+        "locodosy_auto",
+        "espira2"
+      ]
+    },
+    {
+      "title_es": "Biblioteca · descomposición y FID",
+      "title_en": "Library · decomposition and FID",
+      "ids": [
+        "mcr_als",
+        "fastica",
+        "parafac",
+        "rrt",
+        "fdm"
+      ]
+    },
+    {
+      "title_es": "Biblioteca · núcleos lineales",
+      "title_en": "Library · linear cores",
+      "ids": [
+        "l1_ls",
+        "plss_r",
+        "irls",
+        "plss_rw2",
+        "parafac_nd"
+      ]
+    },
+    {
+      "title_es": "Biblioteca · otros núcleos Laplace",
+      "title_en": "Library · other Laplace cores",
+      "ids": [
+        "adsplru",
+        "ipsplru",
+        "lrspilt",
+        "pdhgm2",
+        "ilt_julia"
+      ]
+    },
+    {
+      "title_es": "Biblioteca · regularización y desmezcla",
+      "title_en": "Library · regularization and unmixing",
+      "ids": [
+        "tailored_norm",
+        "upen2d",
+        "mupen2d",
+        "sunsal",
+        "clsunsal"
+      ]
+    },
+    {
+      "title_es": "Biblioteca · dominios específicos",
+      "title_en": "Library · specific domains",
+      "ids": [
+        "fcls",
+        "mow",
+        "qbi"
+      ]
+    },
+    {
+      "title_es": "Contexto · modelos y motores",
+      "title_en": "Context · models and engines",
+      "ids": [
+        "mono_fit",
+        "contin_original",
+        "svd_tsvd",
+        "fista_general",
+        "upen_family"
+      ]
+    },
+    {
+      "title_es": "Contexto · multidimensional y aprendizaje",
+      "title_en": "Context · multidimensional and learning",
+      "ids": [
+        "edmilt",
+        "drect",
+        "dream",
+        "neural_other"
+      ]
+    },
+    {
+      "title_es": "Contexto · discreto y selección",
+      "title_en": "Context · discrete and selection",
+      "ids": [
+        "discrete_original",
+        "iterative_general",
+        "parameter_selection"
+      ]
+    }
+  ],
+  "attribution_notes": [
+    "TRAIn original: Xu and Zhang, Analytical Chemistry 2014, 10.1021/ac402698h. Prime adaptation is documented local implementation, not original-method authorship.",
+    "ITAMeD: Urbanczyk et al. 2013, 10.1021/ac3032004. FISTA: Beck and Teboulle 2009, 10.1137/080716542. Prime FISTA2D is a separate adaptation.",
+    "MF, SCORE, SILT and LRSpILT are not synonyms. Show the exact implementation and model.",
+    "DREAM/DRECT and archived neural checkpoints are literature context, not a claim of trained and validated Prime neural inference.",
+    "The catalogue has 72 records including families, components and overlapping routes; never market this as 72 independent DOSY algorithms."
+  ]
+}

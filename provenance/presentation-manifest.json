@@ -1,0 +1,632 @@
+{
+  "schema_version": 1,
+  "source_release": "bilingual workshop v8",
+  "source_archive_sha256": "cb3065df4fc80ce41ba4b1c0553c0dbcd486d8040ae9755604a7eb7da911fa3e",
+  "slides_each": 45,
+  "main_each": 25,
+  "hidden_each": 20,
+  "embedded_videos_each": 7,
+  "changes": "Local paths in notes/text and probe serial in metadata omitted. Public text line endings are normalized LF. Slide/media/chart bytes remain unchanged. Original PDF and raster labels remain unchanged.",
+  "slides_unchanged": true,
+  "source_files_modified": false,
+  "note_parts_modified": {
+    "presentations/es/workshop-es.pptx": [
+      "ppt/notesSlides/notesSlide3.xml",
+      "ppt/notesSlides/notesSlide4.xml",
+      "ppt/notesSlides/notesSlide5.xml",
+      "ppt/notesSlides/notesSlide30.xml",
+      "ppt/notesSlides/notesSlide6.xml",
+      "ppt/notesSlides/notesSlide7.xml",
+      "ppt/notesSlides/notesSlide8.xml",
+      "ppt/notesSlides/notesSlide9.xml",
+      "ppt/notesSlides/notesSlide10.xml",
+      "ppt/notesSlides/notesSlide11.xml",
+      "ppt/notesSlides/notesSlide12.xml",
+      "ppt/notesSlides/notesSlide13.xml",
+      "ppt/notesSlides/notesSlide14.xml",
+      "ppt/notesSlides/notesSlide16.xml",
+      "ppt/notesSlides/notesSlide17.xml",
+      "ppt/notesSlides/notesSlide18.xml",
+      "ppt/notesSlides/notesSlide19.xml",
+      "ppt/notesSlides/notesSlide20.xml",
+      "ppt/notesSlides/notesSlide21.xml",
+      "ppt/notesSlides/notesSlide22.xml",
+      "ppt/notesSlides/notesSlide24.xml",
+      "ppt/notesSlides/notesSlide26.xml",
+      "ppt/notesSlides/notesSlide27.xml",
+      "ppt/notesSlides/notesSlide34.xml",
+      "ppt/notesSlides/notesSlide35.xml",
+      "ppt/notesSlides/notesSlide36.xml",
+      "ppt/notesSlides/notesSlide37.xml",
+      "ppt/notesSlides/notesSlide38.xml",
+      "ppt/notesSlides/notesSlide39.xml",
+      "ppt/notesSlides/notesSlide40.xml",
+      "ppt/notesSlides/notesSlide41.xml",
+      "ppt/notesSlides/notesSlide42.xml",
+      "ppt/notesSlides/notesSlide43.xml",
+      "ppt/notesSlides/notesSlide44.xml",
+      "ppt/notesSlides/notesSlide45.xml",
+      "ppt/notesSlides/notesSlide29.xml",
+      "ppt/notesSlides/notesSlide28.xml",
+      "ppt/notesSlides/notesSlide31.xml",
+      "ppt/notesSlides/notesSlide32.xml",
+      "ppt/notesSlides/notesSlide33.xml"
+    ],
+    "presentations/en/workshop-en.pptx": [
+      "ppt/notesSlides/notesSlide3.xml",
+      "ppt/notesSlides/notesSlide4.xml",
+      "ppt/notesSlides/notesSlide5.xml",
+      "ppt/notesSlides/notesSlide30.xml",
+      "ppt/notesSlides/notesSlide6.xml",
+      "ppt/notesSlides/notesSlide7.xml",
+      "ppt/notesSlides/notesSlide8.xml",
+      "ppt/notesSlides/notesSlide9.xml",
+      "ppt/notesSlides/notesSlide10.xml",
+      "ppt/notesSlides/notesSlide11.xml",
+      "ppt/notesSlides/notesSlide12.xml",
+      "ppt/notesSlides/notesSlide13.xml",
+      "ppt/notesSlides/notesSlide14.xml",
+      "ppt/notesSlides/notesSlide16.xml",
+      "ppt/notesSlides/notesSlide17.xml",
+      "ppt/notesSlides/notesSlide18.xml",
+      "ppt/notesSlides/notesSlide19.xml",
+      "ppt/notesSlides/notesSlide20.xml",
+      "ppt/notesSlides/notesSlide21.xml",
+      "ppt/notesSlides/notesSlide22.xml",
+      "ppt/notesSlides/notesSlide24.xml",
+      "ppt/notesSlides/notesSlide26.xml",
+      "ppt/notesSlides/notesSlide27.xml",
+      "ppt/notesSlides/notesSlide34.xml",
+      "ppt/notesSlides/notesSlide35.xml",
+      "ppt/notesSlides/notesSlide36.xml",
+      "ppt/notesSlides/notesSlide37.xml",
+      "ppt/notesSlides/notesSlide38.xml",
+      "ppt/notesSlides/notesSlide39.xml",
+      "ppt/notesSlides/notesSlide40.xml",
+      "ppt/notesSlides/notesSlide41.xml",
+      "ppt/notesSlides/notesSlide42.xml",
+      "ppt/notesSlides/notesSlide43.xml",
+      "ppt/notesSlides/notesSlide44.xml",
+      "ppt/notesSlides/notesSlide45.xml",
+      "ppt/notesSlides/notesSlide29.xml",
+      "ppt/notesSlides/notesSlide28.xml",
+      "ppt/notesSlides/notesSlide31.xml",
+      "ppt/notesSlides/notesSlide32.xml",
+      "ppt/notesSlides/notesSlide33.xml"
+    ]
+  },
+  "excluded": [
+    "DOSY_Consola_Bruker_v2.zip",
+    "DOSY_Consola_Bruker_v3.zip",
+    "Fuentes/casos/HDO_integral_offline/replay_integral_calibration.py",
+    "Fuentes/casos/prepare_case_assets.py",
+    "Fuentes/simulaciones/v5/ilt_visuals.py",
+    "Fuentes/simulaciones/v5/make_parameter_visuals.py",
+    "Fuentes/simulaciones/v6/convection_toy_model.py",
+    "Fuentes/simulaciones/v6/problem_simulations.py",
+    "Generador_rampas_DOSY_TopSpin.zip",
+    "MANIFEST_SHA256.json"
+  ],
+  "files": [
+    {
+      "file": "presentations/media/acquisition_failures_ES.mp4",
+      "source_member": "media/acquisition_failures_ES.mp4",
+      "source_sha256": "6e25fd257f6d62aee84c4920ef34d1861fb9d826398f16cce3525ddd352c9237",
+      "public_sha256": "6e25fd257f6d62aee84c4920ef34d1861fb9d826398f16cce3525ddd352c9237",
+      "bytes": 182090,
+      "changed": false
+    },
+    {
+      "file": "presentations/media/p30_d20_tradeoffs_ES.mp4",
+      "source_member": "media/p30_d20_tradeoffs_ES.mp4",
+      "source_sha256": "6361c014dce6c889ce94882a1bda4b97801522f068b4235c0ab4dfa6783b9225",
+      "public_sha256": "6361c014dce6c889ce94882a1bda4b97801522f068b4235c0ab4dfa6783b9225",
+      "bytes": 677685,
+      "changed": false
+    },
+    {
+      "file": "presentations/media/preprocessing_failures_ES.mp4",
+      "source_member": "media/preprocessing_failures_ES.mp4",
+      "source_sha256": "d37dd0bce41d01048112e2d048c9f412695abbe2cb46ccb48c4e086e2d569d22",
+      "public_sha256": "d37dd0bce41d01048112e2d048c9f412695abbe2cb46ccb48c4e086e2d569d22",
+      "bytes": 290529,
+      "changed": false
+    },
+    {
+      "file": "presentations/media/ilt_ambiguity_ES.mp4",
+      "source_member": "media/ilt_ambiguity_ES.mp4",
+      "source_sha256": "cfb1c2ac0ae33f2a2d33c00ce6f46623bd3ad588634ef10a0945c9c80998a22c",
+      "public_sha256": "cfb1c2ac0ae33f2a2d33c00ce6f46623bd3ad588634ef10a0945c9c80998a22c",
+      "bytes": 153009,
+      "changed": false
+    },
+    {
+      "file": "presentations/media/ilt_regularization_ES.mp4",
+      "source_member": "media/ilt_regularization_ES.mp4",
+      "source_sha256": "c1f7921649e279402530737ced5d6d74bea00149a8cbaaf911ef874422e5b988",
+      "public_sha256": "c1f7921649e279402530737ced5d6d74bea00149a8cbaaf911ef874422e5b988",
+      "bytes": 146549,
+      "changed": false
+    },
+    {
+      "file": "presentations/media/joint_ES.mp4",
+      "source_member": "media/joint_ES.mp4",
+      "source_sha256": "b7a6ce44706ce0fe55667594d02838ffdec65579955ea0aec338da267df7b53d",
+      "public_sha256": "b7a6ce44706ce0fe55667594d02838ffdec65579955ea0aec338da267df7b53d",
+      "bytes": 349303,
+      "changed": false
+    },
+    {
+      "file": "presentations/media/dosy_04_spen_ES.mp4",
+      "source_member": "media/dosy_04_spen_ES.mp4",
+      "source_sha256": "d4be43f7405ec5c3cd49775e9ad917847e290b30fb80abebc66e45679482b76b",
+      "public_sha256": "d4be43f7405ec5c3cd49775e9ad917847e290b30fb80abebc66e45679482b76b",
+      "bytes": 202542,
+      "changed": false
+    },
+    {
+      "file": "presentations/es/workshop-es.pptx",
+      "source_member": "Presentaciones/DOSY_Workshop_ES_Ultrafast_v8.pptx",
+      "source_sha256": "402b82723fb95604191147560b2c21e764c3ba477fcbcaae60dd483e87afe0fa",
+      "public_sha256": "45489560ab1d170758f4d2689d62573dfac36d328d170ddae1f331c3e16c2cfe",
+      "bytes": 5579092,
+      "changed": true
+    },
+    {
+      "file": "presentations/es/workshop-es.pdf",
+      "source_member": "PDF/DOSY_Workshop_ES_Ultrafast_v8.pdf",
+      "source_sha256": "a3e91c83514abdadc7ca716db4f790a1e298142ccf0e3cbbd08707cd3ede7a0d",
+      "public_sha256": "a3e91c83514abdadc7ca716db4f790a1e298142ccf0e3cbbd08707cd3ede7a0d",
+      "bytes": 1688052,
+      "changed": false
+    },
+    {
+      "file": "presentations/media/acquisition_failures_EN.mp4",
+      "source_member": "media/acquisition_failures_EN.mp4",
+      "source_sha256": "2bb0166fde8dc794fb515b335f4495ad9308b42abf9671a27af8473650622386",
+      "public_sha256": "2bb0166fde8dc794fb515b335f4495ad9308b42abf9671a27af8473650622386",
+      "bytes": 183331,
+      "changed": false
+    },
+    {
+      "file": "presentations/media/p30_d20_tradeoffs_EN.mp4",
+      "source_member": "media/p30_d20_tradeoffs_EN.mp4",
+      "source_sha256": "92fc4ce1f3a2efe24ded8a5f33dd45500597830aa2e39719e170999a086ecd54",
+      "public_sha256": "92fc4ce1f3a2efe24ded8a5f33dd45500597830aa2e39719e170999a086ecd54",
+      "bytes": 684026,
+      "changed": false
+    },
+    {
+      "file": "presentations/media/preprocessing_failures_EN.mp4",
+      "source_member": "media/preprocessing_failures_EN.mp4",
+      "source_sha256": "b8f38f413c1517f3bccaed5e3b587ad39af7aa29f23d428cbe82f27348420767",
+      "public_sha256": "b8f38f413c1517f3bccaed5e3b587ad39af7aa29f23d428cbe82f27348420767",
+      "bytes": 283131,
+      "changed": false
+    },
+    {
+      "file": "presentations/media/ilt_ambiguity_EN.mp4",
+      "source_member": "media/ilt_ambiguity_EN.mp4",
+      "source_sha256": "b949e9e4400b033b210ce484ebd5983ed231bb8aea61b5bf58c915f17b94b07d",
+      "public_sha256": "b949e9e4400b033b210ce484ebd5983ed231bb8aea61b5bf58c915f17b94b07d",
+      "bytes": 150881,
+      "changed": false
+    },
+    {
+      "file": "presentations/media/ilt_regularization_EN.mp4",
+      "source_member": "media/ilt_regularization_EN.mp4",
+      "source_sha256": "3836d7b92890ba5f7246dc4b17a6703ca784fdd55ee41de055ac28b31b3d5547",
+      "public_sha256": "3836d7b92890ba5f7246dc4b17a6703ca784fdd55ee41de055ac28b31b3d5547",
+      "bytes": 142870,
+      "changed": false
+    },
+    {
+      "file": "presentations/media/joint_EN.mp4",
+      "source_member": "media/joint_EN.mp4",
+      "source_sha256": "144881c1092b935be21fab2511233d5f45e5e22a700de526ea70600b0d869012",
+      "public_sha256": "144881c1092b935be21fab2511233d5f45e5e22a700de526ea70600b0d869012",
+      "bytes": 345405,
+      "changed": false
+    },
+    {
+      "file": "presentations/media/dosy_04_spen_EN.mp4",
+      "source_member": "media/dosy_04_spen_EN.mp4",
+      "source_sha256": "2ac59c3020a7ac479b833b503719fbbbd984f59faee3b642f1a5167d4219997e",
+      "public_sha256": "2ac59c3020a7ac479b833b503719fbbbd984f59faee3b642f1a5167d4219997e",
+      "bytes": 194851,
+      "changed": false
+    },
+    {
+      "file": "presentations/en/workshop-en.pptx",
+      "source_member": "Presentaciones/DOSY_Workshop_EN_Ultrafast_v8.pptx",
+      "source_sha256": "8d359f45f0edc7f5688a10f10e83c64c78b75f8626a4d07cc184afecd60cf92d",
+      "public_sha256": "f08a2693abde598928f7d0c959669a05cd23d3e5ffa325144882429cc5a00b48",
+      "bytes": 5543534,
+      "changed": true
+    },
+    {
+      "file": "presentations/en/workshop-en.pdf",
+      "source_member": "PDF/DOSY_Workshop_EN_Ultrafast_v8.pdf",
+      "source_sha256": "16c3e180954f7bf706f6d9dc8b66d5d1ec26c182ed44f86966793f8b381f34ca",
+      "public_sha256": "16c3e180954f7bf706f6d9dc8b66d5d1ec26c182ed44f86966793f8b381f34ca",
+      "bytes": 1677625,
+      "changed": false
+    },
+    {
+      "file": "materials/story.json",
+      "source_member": "Fuentes/story.json",
+      "source_sha256": "a2dc4a3f0bdbf24f550b9e1abe267edbe7a7bcf31161c7479d4087c0171aab4e",
+      "public_sha256": "06578bbdcc1c466d41247697df2831f70f72e917226b008575daaddb9f8c2cdb",
+      "bytes": 402884,
+      "changed": true
+    },
+    {
+      "file": "materials/casos/software_cases.json",
+      "source_member": "Fuentes/casos/software_cases.json",
+      "source_sha256": "6ba451f13d2e69139c83f58e3980a4d32e6a7bf5ed4d5b017dd06fa496741558",
+      "public_sha256": "b7c4b336548781d8610dbfcad37d9d94e61bf95ca3e78ebc316805023324696f",
+      "bytes": 103182,
+      "changed": true
+    },
+    {
+      "file": "materials/casos/real_case_chart_data.json",
+      "source_member": "Fuentes/casos/real_case_chart_data.json",
+      "source_sha256": "94a96c9d7c3581c6d8684e2ea628370747023ba172d88c35a1928a0dfcc65d4f",
+      "public_sha256": "bc7c79c03022cd69d3c208dc0d5bc20b093de079e7d027c20da50d5798991b77",
+      "bytes": 60284,
+      "changed": true
+    },
+    {
+      "file": "materials/casos/assets_manifest.json",
+      "source_member": "Fuentes/casos/assets_manifest.json",
+      "source_sha256": "5c42414381a426a5e1cb684db5c212cfc09abefa243975f7dbb38e2c088b936e",
+      "public_sha256": "702136667483fddee8e4490f21c5c16d29b60dd654cdf6b144794c8f6866bdab",
+      "bytes": 20781,
+      "changed": true
+    },
+    {
+      "file": "materials/casos/HDO_integral_offline/summary.json",
+      "source_member": "Fuentes/casos/HDO_integral_offline/summary.json",
+      "source_sha256": "9cbc8de4fbd5461dd2e99461e22ab58824404a4b5f53d81f8274376ef2bba00c",
+      "public_sha256": "bc860af7a0d64e0cf3b823e89c5a7c14e04c086aa7b058a1a4a19f817387f3f7",
+      "bytes": 2215,
+      "changed": true
+    },
+    {
+      "file": "materials/casos/HDO_integral_offline/calibracion_integral_offline.json",
+      "source_member": "Fuentes/casos/HDO_integral_offline/calibracion_integral_offline.json",
+      "source_sha256": "b82f5b82f89d9891bb1f4efcc091f62a5dc05de69034cd33d5a96a05e59fc805",
+      "public_sha256": "6bdb1d5a87b5252a6eff53cc99b94009a8083376c51d42497a40f699ab759d30",
+      "bytes": 171643,
+      "changed": true
+    },
+    {
+      "file": "materials/casos/HDO_integral_offline/atenuacion_integral_residuos.csv",
+      "source_member": "Fuentes/casos/HDO_integral_offline/atenuacion_integral_residuos.csv",
+      "source_sha256": "4cfd917a6357a9af2a6bea0d478b007f601129ab4c45fd6ff922b2fff27e52b6",
+      "public_sha256": "5ae8ab6fd38a2ef18dfe8f92ceb2199dee19fd554d9bcfcb75aaa82d1eba707a",
+      "bytes": 2572,
+      "changed": true
+    },
+    {
+      "file": "materials/casos/HDO_integral_offline/informe_integral_offline.html",
+      "source_member": "Fuentes/casos/HDO_integral_offline/informe_integral_offline.html",
+      "source_sha256": "fda0008a5a646547d98ce8615feafb385011522feb128b935501ea2e15e41429",
+      "public_sha256": "7ed54d68494c329762b34514b287ff0a0ec34f371a78bf9d3b2c42a31ac476fc",
+      "bytes": 20672,
+      "changed": true
+    },
+    {
+      "file": "materials/casos/HDO_integral_offline/HDO_spectral_inspection.png",
+      "source_member": "Fuentes/casos/HDO_integral_offline/HDO_spectral_inspection.png",
+      "source_sha256": "bd0e19ffe0ab1a792ade3db7b441e0b3b2c96ce6fb5b6067423b3555b5473ec3",
+      "public_sha256": "bd0e19ffe0ab1a792ade3db7b441e0b3b2c96ce6fb5b6067423b3555b5473ec3",
+      "bytes": 41107,
+      "changed": false
+    },
+    {
+      "file": "materials/catalogo/ILT_Algorithm_Catalog_ES_EN.csv",
+      "source_member": "Fuentes/catalogo/ILT_Algorithm_Catalog_ES_EN.csv",
+      "source_sha256": "be221c06edeb889c07b6d8da47379a7b468548a3cf3498a92498b4d9558c2608",
+      "public_sha256": "6044d96637ff8573a0af8f8164e4bc267f7b5da995bde371e145d121de90c717",
+      "bytes": 47744,
+      "changed": true
+    },
+    {
+      "file": "materials/catalogo/ILT_Algorithm_Catalog_ES.txt",
+      "source_member": "Fuentes/catalogo/ILT_Algorithm_Catalog_ES.txt",
+      "source_sha256": "2981a8f48463c22c30f473a32803efbd4f8c53acba005e16c80e4a467101fb57",
+      "public_sha256": "38bd1eef42f6e4ef0656d2d8c980bd7d8d6510aa3662a45eba8976c913c382e9",
+      "bytes": 21553,
+      "changed": true
+    },
+    {
+      "file": "materials/catalogo/ILT_Algorithm_Catalog_EN.txt",
+      "source_member": "Fuentes/catalogo/ILT_Algorithm_Catalog_EN.txt",
+      "source_sha256": "caf556aea92226f070c39fae98952f866bd25d2d0f3ca4f87c4b2ec062a2b48c",
+      "public_sha256": "4e7f58381df01669e9fe10500c5eb0ead834eb5a458e3c0625067813728db061",
+      "bytes": 20497,
+      "changed": true
+    },
+    {
+      "file": "materials/catalogo/ilt_algorithm_catalog_bilingual.json",
+      "source_member": "Fuentes/catalogo/ilt_algorithm_catalog_bilingual.json",
+      "source_sha256": "b243347526a511547d32c673a4d040c8d480ae24b8dfef9a52f93f2477831d23",
+      "public_sha256": "10692ef4286a4e7eeb6b8d7682ac75415354a2dbdb493285a525cabf333e388d",
+      "bytes": 83157,
+      "changed": true
+    },
+    {
+      "file": "materials/simulaciones/v5/parameter_simulation_model.json",
+      "source_member": "Fuentes/simulaciones/v5/parameter_simulation_model.json",
+      "source_sha256": "324a0680db3ccb215fb85b2fe1386619b11712610545573fef8ae4f1d622b9cf",
+      "public_sha256": "3773498a0958ca7f8c13e65038f508a95dd3d2174a30d2f875fb391fea082234",
+      "bytes": 1922,
+      "changed": true
+    },
+    {
+      "file": "materials/simulaciones/v5/parameter_scenarios.csv",
+      "source_member": "Fuentes/simulaciones/v5/parameter_scenarios.csv",
+      "source_sha256": "23f04214a90db45daec48f904a93ad96e1f9b39ba1f584b0f3e925f31e0febd9",
+      "public_sha256": "d40f3fa7f8e5c5c6fefcc428401453858b6cf8d2aa7960310b7db6c127e011e9",
+      "bytes": 8768,
+      "changed": true
+    },
+    {
+      "file": "materials/simulaciones/v5/ilt_simulations.json",
+      "source_member": "Fuentes/simulaciones/v5/ilt_simulations.json",
+      "source_sha256": "a334ee89ebc82ad0084dabe27c8d14fdf65475c2b97012d554dfab928f592640",
+      "public_sha256": "fd8347b6875b9df4d1442aaa4d764210094c48a9ef744f021e5dab983e2cca92",
+      "bytes": 15799,
+      "changed": true
+    },
+    {
+      "file": "materials/simulaciones/v5/ilt_teaching_guidance.json",
+      "source_member": "Fuentes/simulaciones/v5/ilt_teaching_guidance.json",
+      "source_sha256": "99c0cceabb263e49324eda4ef1269ba49e0d6172e46b20661d6559332143ce10",
+      "public_sha256": "7fa35ea26d0ead0600ab5c8ef86bb6bda7be6c1d8132364b3a1489ed304d25ba",
+      "bytes": 13003,
+      "changed": true
+    },
+    {
+      "file": "materials/simulaciones/v5/advanced_uf.sources.json",
+      "source_member": "Fuentes/simulaciones/v5/advanced_uf.sources.json",
+      "source_sha256": "da0658130475e364b0eb018474346d73e521b3788c3ea6b891f58a6125a2a2d4",
+      "public_sha256": "88c11a0eecc8dbfe3e52c20f08fdb70628fbdce898bb962f12529fb0c6a2e54e",
+      "bytes": 6791,
+      "changed": true
+    },
+    {
+      "file": "materials/simulaciones/v5/advanced_uf.content.json",
+      "source_member": "Fuentes/simulaciones/v5/advanced_uf.content.json",
+      "source_sha256": "338eb434da954a536500eb774a749ed09f7acc3b4718c927f39291714bb9d67d",
+      "public_sha256": "4940f6699a0fb2ea6265cc35f988b3ad3662703f049c1af3f43f7c76ecd45f9a",
+      "bytes": 9430,
+      "changed": true
+    },
+    {
+      "file": "materials/simulaciones/v6/problem_simulations.json",
+      "source_member": "Fuentes/simulaciones/v6/problem_simulations.json",
+      "source_sha256": "27cc23ccee895bcf66d0e23b456967b4f4402bdbbf702fef59f15d96247a3ab3",
+      "public_sha256": "b2907d495f31cf89572b677f2769815211e5aea5eca55fe1404d4a0162bbbc4a",
+      "bytes": 482896,
+      "changed": true
+    },
+    {
+      "file": "materials/simulaciones/v6/problem_native_chart_data.json",
+      "source_member": "Fuentes/simulaciones/v6/problem_native_chart_data.json",
+      "source_sha256": "9604de47220e16156e9213bc298a4b7d7c900c9cab3fdfabde800e1f8602b541",
+      "public_sha256": "c69a6069102696c273b5bac5d03a861dff93b896570dda0eb5116707a1794614",
+      "bytes": 15244,
+      "changed": true
+    },
+    {
+      "file": "materials/simulaciones/v6/acquisition_failures_data.csv",
+      "source_member": "Fuentes/simulaciones/v6/acquisition_failures_data.csv",
+      "source_sha256": "f4e7afc929e1179a3b3d742868dbc3cd9e578625c310c81a03973279383243bf",
+      "public_sha256": "015099d5a8df9d087745cbae3ab10e964cd89744650fbf190b1d90217c4bbaf6",
+      "bytes": 9605,
+      "changed": true
+    },
+    {
+      "file": "materials/simulaciones/v6/acquisition_likelihood_profiles.csv",
+      "source_member": "Fuentes/simulaciones/v6/acquisition_likelihood_profiles.csv",
+      "source_sha256": "c3ba579e413503e3a9b9f325a64bf5c6a3b1e127ed20b0bf8aa993140ab2b068",
+      "public_sha256": "381351c98eecac58e188ec12f1714cfefff025e3fadeffaaa500c3bc818a1ef6",
+      "bytes": 294505,
+      "changed": true
+    },
+    {
+      "file": "materials/simulaciones/v6/preprocessing_failures_data.csv",
+      "source_member": "Fuentes/simulaciones/v6/preprocessing_failures_data.csv",
+      "source_sha256": "0c5ff9d55011bb9851d3601742b9fe144163aad1d58d927f3146fbeb97094ab6",
+      "public_sha256": "2646e4ba5166b78d71ec957d3d14e9b5c4b2a3084c7b67e364954a6cd81a7f7b",
+      "bytes": 3646,
+      "changed": true
+    },
+    {
+      "file": "materials/simulaciones/v6/convection_idealized_model.json",
+      "source_member": "Fuentes/simulaciones/v6/convection_idealized_model.json",
+      "source_sha256": "dd4f725d08f3e302d34754b972d875d5700a560f14e03a2ee0a4fe4b72243cbd",
+      "public_sha256": "e4fa7c82b004f087eb1121d66a67e6b7c938bf290def735059a68c35641fe7a0",
+      "bytes": 20935,
+      "changed": true
+    },
+    {
+      "file": "materials/simulaciones/v6/convection_idealized_data.csv",
+      "source_member": "Fuentes/simulaciones/v6/convection_idealized_data.csv",
+      "source_sha256": "41f2aafd0acd64ff7b5a7d6d14fdbe012d874136a0b1a08ee5cae39573eabbf1",
+      "public_sha256": "44bca6053fe50de4d38c464e931d84eae870c89c24c4b9e94dc68b052ddfdc17",
+      "bytes": 8588,
+      "changed": true
+    },
+    {
+      "file": "materials/casos/figuras/prime_real_local_linear.png",
+      "source_member": "Fuentes/casos/figuras/prime_real_local_linear.png",
+      "source_sha256": "24238c51803798382aa4570df7ee0723057a1c4ad567dbcb0a4e484b9cdfda6e",
+      "public_sha256": "24238c51803798382aa4570df7ee0723057a1c4ad567dbcb0a4e484b9cdfda6e",
+      "bytes": 130746,
+      "changed": false
+    },
+    {
+      "file": "materials/casos/figuras/prime_real_local_distribution.png",
+      "source_member": "Fuentes/casos/figuras/prime_real_local_distribution.png",
+      "source_sha256": "cb074bca514d94f64a7d02b11bb6a32779b55642086116e772d33c1ef2bc8bb2",
+      "public_sha256": "cb074bca514d94f64a7d02b11bb6a32779b55642086116e772d33c1ef2bc8bb2",
+      "bytes": 122765,
+      "changed": false
+    },
+    {
+      "file": "materials/casos/figuras/prime_real_projection_map.png",
+      "source_member": "Fuentes/casos/figuras/prime_real_projection_map.png",
+      "source_sha256": "b3540e3721892e08231f8cadbb1aa5865f7e58d1eb06374f36e4b49c426ca574",
+      "public_sha256": "b3540e3721892e08231f8cadbb1aa5865f7e58d1eb06374f36e4b49c426ca574",
+      "bytes": 135154,
+      "changed": false
+    },
+    {
+      "file": "materials/casos/figuras/prime_real_projection_before.png",
+      "source_member": "Fuentes/casos/figuras/prime_real_projection_before.png",
+      "source_sha256": "a8a114a90b4c165d8a10b7f476c51c78cd1f8d5459c0a838137c771b86554cce",
+      "public_sha256": "a8a114a90b4c165d8a10b7f476c51c78cd1f8d5459c0a838137c771b86554cce",
+      "bytes": 201317,
+      "changed": false
+    },
+    {
+      "file": "materials/casos/figuras/prime_real_projection_after.png",
+      "source_member": "Fuentes/casos/figuras/prime_real_projection_after.png",
+      "source_sha256": "0d509607fcf5ebf141775830abd131aab7c8a0460f3bff48030add21fac47de6",
+      "public_sha256": "0d509607fcf5ebf141775830abd131aab7c8a0460f3bff48030add21fac47de6",
+      "bytes": 203857,
+      "changed": false
+    },
+    {
+      "file": "materials/casos/figuras/resin_real_dosy_ES.png",
+      "source_member": "Fuentes/casos/figuras/resin_real_dosy_ES.png",
+      "source_sha256": "fd5e2041f2f22988fc524c17f855819322f50f8540073fcd1e944e04a8279733",
+      "public_sha256": "fd5e2041f2f22988fc524c17f855819322f50f8540073fcd1e944e04a8279733",
+      "bytes": 204250,
+      "changed": false
+    },
+    {
+      "file": "materials/casos/figuras/resin_real_dosy_EN.png",
+      "source_member": "Fuentes/casos/figuras/resin_real_dosy_EN.png",
+      "source_sha256": "24e6444a89739731bd3250aea2c76ceb702b79fa57b3a2e1aa08e26b394cf69b",
+      "public_sha256": "24e6444a89739731bd3250aea2c76ceb702b79fa57b3a2e1aa08e26b394cf69b",
+      "bytes": 199214,
+      "changed": false
+    },
+    {
+      "file": "materials/casos/figuras/resin_real_local_comparison.png",
+      "source_member": "Fuentes/casos/figuras/resin_real_local_comparison.png",
+      "source_sha256": "614196450f7a82317e6dc2eb94935174897f1b290189acae8c34104f98810d03",
+      "public_sha256": "614196450f7a82317e6dc2eb94935174897f1b290189acae8c34104f98810d03",
+      "bytes": 83138,
+      "changed": false
+    },
+    {
+      "file": "materials/casos/figuras/kk2_real_attenuation_ES.png",
+      "source_member": "Fuentes/casos/figuras/kk2_real_attenuation_ES.png",
+      "source_sha256": "3379d3ea7b1dff6acac28e2a9f5dcacfa5b049d067fc277a756022369f85cf19",
+      "public_sha256": "3379d3ea7b1dff6acac28e2a9f5dcacfa5b049d067fc277a756022369f85cf19",
+      "bytes": 77823,
+      "changed": false
+    },
+    {
+      "file": "materials/casos/figuras/tp194_real_projection_ES.png",
+      "source_member": "Fuentes/casos/figuras/tp194_real_projection_ES.png",
+      "source_sha256": "7839037ae5b2504cf66231f8edd7231e89226777f3f373ebb2a323a47fbc047b",
+      "public_sha256": "7839037ae5b2504cf66231f8edd7231e89226777f3f373ebb2a323a47fbc047b",
+      "bytes": 95930,
+      "changed": false
+    },
+    {
+      "file": "materials/casos/figuras/kk2_real_attenuation_EN.png",
+      "source_member": "Fuentes/casos/figuras/kk2_real_attenuation_EN.png",
+      "source_sha256": "afda75d9f556403bd3e0a6216edc61eb3a22f65c60d3c90e793ebef25d0311f5",
+      "public_sha256": "afda75d9f556403bd3e0a6216edc61eb3a22f65c60d3c90e793ebef25d0311f5",
+      "bytes": 76301,
+      "changed": false
+    },
+    {
+      "file": "materials/casos/figuras/tp194_real_projection_EN.png",
+      "source_member": "Fuentes/casos/figuras/tp194_real_projection_EN.png",
+      "source_sha256": "792779f5d69367600be1b51877b47ef8543456a58b2ee8b427547e5f6efb3015",
+      "public_sha256": "792779f5d69367600be1b51877b47ef8543456a58b2ee8b427547e5f6efb3015",
+      "bytes": 95502,
+      "changed": false
+    },
+    {
+      "file": "materials/ultrafast/ultrafast_image_provenance.json",
+      "source_member": "Fuentes/ultrafast/ultrafast_image_provenance.json",
+      "source_sha256": "3ee9f8cef636e8e14e90f4bdb4840207cf2bc4423e73ce41cffd90be032ab222",
+      "public_sha256": "e2950b00bc76942e9376a61a144a5d0130e135e5c2c9b54de0e0df629d66081f",
+      "bytes": 5774,
+      "changed": true
+    },
+    {
+      "file": "materials/ultrafast/DT2_map_10.png",
+      "source_member": "Fuentes/ultrafast/DT2_map_10.png",
+      "source_sha256": "fc1aaf6de8e1c9187b2d25e9b8e16227b24bb006ffa4b8b559f7373f3c8da0cd",
+      "public_sha256": "fc1aaf6de8e1c9187b2d25e9b8e16227b24bb006ffa4b8b559f7373f3c8da0cd",
+      "bytes": 264993,
+      "changed": false
+    },
+    {
+      "file": "materials/presenter/NOTAS_PONENTE_ES.txt",
+      "source_member": "NOTAS_PONENTE_ES.txt",
+      "source_sha256": "e11bfb38caa0a036be2de71436bf0bb5aa9ae4fd42cc8f91e9bd932878d45813",
+      "public_sha256": "5c2370325c0e91301d5b9bf62014195263fa565aa4e49f5b7089b3e498722dc7",
+      "bytes": 118730,
+      "changed": true
+    },
+    {
+      "file": "materials/presenter/GUION_HABLADO_20MIN_ES.txt",
+      "source_member": "GUION_HABLADO_20MIN_ES.txt",
+      "source_sha256": "f059e99e035eeb13398b5c8336ae4bea581dbe3285658395b3afe66d97194f14",
+      "public_sha256": "1b71f569785a49972a506c05459b84300b39bb1896a99b1791f2590d1e5c747f",
+      "bytes": 19151,
+      "changed": true
+    },
+    {
+      "file": "materials/presenter/SPEAKER_NOTES_EN.txt",
+      "source_member": "SPEAKER_NOTES_EN.txt",
+      "source_sha256": "4ff911bbc7ffac32a79c0bdb5dbaf3529836f7879757672816f6091c3fa2a343",
+      "public_sha256": "1e1d44768d81098fae4e9289a4d5a82bffb8f5a1a4641b66d45f9640921d7339",
+      "bytes": 114323,
+      "changed": true
+    },
+    {
+      "file": "materials/presenter/SPOKEN_SCRIPT_20MIN_EN.txt",
+      "source_member": "SPOKEN_SCRIPT_20MIN_EN.txt",
+      "source_sha256": "c3a5ad478bc70e0106153932f19b4ccabccb6d513dc4d5054af2c9fc8fab51c0",
+      "public_sha256": "ab9693b58ec2d4b1b4c15ec3afe6f071649f24d8a33cc01b493de6d4beaaf98b",
+      "bytes": 17748,
+      "changed": true
+    },
+    {
+      "file": "materials/presenter/TIEMPOS_ES_EN.txt",
+      "source_member": "TIEMPOS_ES_EN.txt",
+      "source_sha256": "b7a28d518ccc87e3d98625f9bf4bd99c62fb1454cab78d9067d9fa5ff22a78d9",
+      "public_sha256": "f49a0b07408bc2e249e8525fe59996e5f2fe1be3ed0a136a257e2845e35b2896",
+      "bytes": 5579,
+      "changed": true
+    },
+    {
+      "file": "materials/presenter/LEEME_README_ES_EN.txt",
+      "source_member": "LEEME_README_ES_EN.txt",
+      "source_sha256": "fb14a32ba14b276a551aa5144a52194cd741a261986ce8033ad7e601a84db21c",
+      "public_sha256": "186c4d65bfbf836ca0d1e92935b737c61426d10f3270dfac56b486fad8c12ba9",
+      "bytes": 10643,
+      "changed": true
+    },
+    {
+      "file": "materials/presenter/REFERENCIAS_ES_EN.txt",
+      "source_member": "REFERENCIAS_ES_EN.txt",
+      "source_sha256": "84b98e369b3d09c07d6b9f2174c5f85ebf0575837181b468716c3b81d722a812",
+      "public_sha256": "e7215581fa176edce32c87a2293b0511b07a9162ee0d844fff08908a3f5fa6f8",
+      "bytes": 12656,
+      "changed": true
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+DOSY — GUION HABLADO · 20 MINUTOS
+v8 · 25 diapositivas principales / 25 main slides · 20:00
+
+Texto de spoken_script_es; no incluye apéndices.
+
+============================================================================
+01 · DOSY en la práctica
+00:00–00:20 · 20 s
+
+Quiero contar cómo pasamos de una serie de espectros a un resultado que podamos explicar y repetir. Antes de enseñar nuestros programas, veremos los dos obstáculos que motivaron su desarrollo: preparar bien el espectrómetro y procesar sin alterar la información de difusión. Después recorreremos las herramientas y tres ejemplos concretos. Empecemos por el recorrido completo.
+
+============================================================================
+02 · Medir, procesar y comprobar un DOSY
+00:20–00:45 · 25 s
+
+El taller tiene cuatro partes, pero una sola historia. Primero necesitamos una intensidad que dependa de la difusión y una escala de b correcta. Después necesitamos conservar esa intensidad y comprender por qué la inversión no tiene una respuesta única. Sólo entonces presentaré cómo nuestros programas hacen este trabajo más manejable, con ejemplos guardados que se pueden revisar. La primera operación es calibrar el pulso de 90 grados.
+
+============================================================================
+03 · Primera dificultad: ¿es de verdad un pulso de 90°?
+00:45–01:35 · 50 s
+
+La duración del pulso depende de la muestra, sintonía y potencia. Copiar P1 de otra preparación puede disminuir la señal y alterar la secuencia. A potencia fija buscamos el primer cruce de señal positiva a negativa después del máximo: es el nulo de 180 grados. Mantengo fase, RG y D1; no hago autophase independiente en cada punto porque perdería el signo. La curva seno es un modelo ideal para explicar el procedimiento, no una nueva medida del espectrómetro. Ahora lo hacemos con tu experimento 1000.
+
+============================================================================
+04 · Caso 1 · de 22 µs a P90 = 11 µs
+01:35–02:25 · 50 s
+
+Éste es el ejemplo real PLA/CDCl3. En zg, experimento 1000, P1 está en 22 microsegundos a PLW1 de 22 vatios; el usuario identifica ese primer nulo como 180 grados. Dividimos entre dos y obtenemos 11 microsegundos. El DOSY 10 guarda P1 de 11 y P2 de 22 a la misma potencia. El resultado práctico es un valor documentado y transferible bajo las mismas condiciones; verificamos el máximo de 90 grados en zg antes de adquirir. Rojo y azul usan RG, NS y secuencias distintos: la comparación es cualitativa, no una medida absoluta de recuperación de sensibilidad. Ya tenemos RF; ahora necesitamos que el eje de difusión tenga escala física.
+
+============================================================================
+05 · El gradiente: calibrar una escala que entra al cuadrado
+02:25–03:45 · 80 s
+
+La escala del gradiente entra al cuadrado en b. En el ejemplo hipotético, G real un diez por ciento mayor que G usado produce D aparente un veintiuno por ciento mayor sin empeorar la exponencial. Calibramos con una rampa del patrón a la temperatura real, tratamiento uniforme, una región fija y un modelo de secuencia compatible. Miramos señal firmada, residuos y deriva, no sólo R cuadrado. El ejemplo experimental HDO/TBO conservado tiene pendiente 1.58627 para Delta de 50 ms, delta de 1.20 ms y SMSQ10.100. Ese perfil histórico usa extracción puntual de altura, no la integral del nuevo asistente. El valor HDO de 1.902 por diez elevado a menos nueve corresponde a 298.15 K; la rampa real tiene otra temperatura y usa una aproximación térmica documentada. Si el modelo es compatible, G nueva es G previa por la raíz de D medida sobre D de referencia. Más adelante haremos una reproducción offline por integrales con el asistente, conservando ambas extracciones separadas y sin sustituir la calibración protegida. La ecuación compatible no es un detalle: cambia el significado de b.
+
+============================================================================
+06 · La secuencia decide qué significa b
+03:45–04:30 · 45 s
+
+No todas las ecuaciones de difusión son intercambiables. El ejemplo simulado usa gradientes bipolares con forma SMSQ y un G físico fijo. Ajustarlo con su modelo da D de 1; con PGSE rectangular da aproximadamente 0.802, con la misma curva y R cuadrado igual a uno. Revisamos pulseprogram, forma, unidades, duración total delta e intervalos RF. En stebpgp1s1d, delta es dos veces P30. Un patrón puede absorber un factor constante de b en una calibración empírica, pero eso no demuestra que se pueda transferir a otra secuencia o a otros tiempos. Las ecuaciones completas quedan en el apéndice. Incluso con b correcto, la rampa puede no tener información suficiente.
+
+============================================================================
+07 · Dos rampas que ajustan bien y miden mal
+04:30–05:30 · 60 s
+
+Las tres rampas simuladas tienen la misma D verdadera de uno por diez elevado a menos nueve y ruido absoluto de uno por ciento. La casi plana estima 0.714, con intervalo nominal de cero a 1.81. La extinguida estima 0.237, con intervalo de 0.05 hasta un extremo no identificable. La útil estima 1.007, con intervalo de 0.986 a 1.029. Los residuos son similares, alrededor de una sigma. Es el contenido informativo de la adquisición, no el aspecto del ajuste, lo que cambia. Estos intervalos son condicionales al modelo y al ruido conocido de la simulación, no límites universales. La decisión práctica es repetir el piloto modificando P30/D20 o sensibilidad, no pedir al algoritmo una separación que no está en el dato. Por eso elegimos P30 y D20 a partir de un piloto.
+
+============================================================================
+08 · Elegir P30 y D20 es un compromiso, no una receta
+05:30–06:40 · 70 s
+
+No introducimos P30 y D20 sólo porque funcionaron en la muestra anterior. Un piloto con gradientes bajo, medio y alto muestra cuánto atenúan las señales rápidas y lentas. Si necesito más ponderación puedo aumentar delta o Delta, pero pago relajación y sensibilidad; Delta también aumenta la exposición a movimiento, intercambio u otras dinámicas. La animación separa atenuación normalizada de señal absoluta y usa tiempos de relajación hipotéticos: no prescribe límites de la sonda real. Mantengo potencia, temperatura y tratamiento comparables y busco una curva que decaiga apreciablemente conservando puntos por encima del ruido. Los retardos de recuperación también necesitan su comprobación.
+
+============================================================================
+09 · LED y doble STE: recuperar señal sin copiar retardos
+06:40–07:35 · 55 s
+
+El siguiente problema es la fase y la forma después de los gradientes. LED permite recuperación, pero también cuesta tiempo y señal. En ledbpgp2s y dstebpgp3s, LED es D21 y D5 no se usa; en diffSteLED, LED es D19 y D5 es el resto del intervalo de difusión. En doble STE revisamos dos bloques DELTA1, ocho lóbulos, más pulsos RF y el ciclo de fases de dieciséis. La compensación de convección cubre un modelo de movimiento, no cualquier flujo. Tres Delta comparables y controles de temperatura ayudan a investigar D dependiente de Delta; por sí solos no identifican la causa. No hay un optimizador universal de estos tiempos. Y repetimos diferentes Delta para mirar más allá del ajuste de una sola rampa.
+
+============================================================================
+10 · Cambiar Δ ayuda a descubrir que no estamos midiendo sólo difusión
+07:35–08:10 · 35 s
+
+Si D cambia al cambiar Delta, la difusión puede no ser la única causa de atenuación. La simulación muestra velocidades dispersas: D aparente aumenta aunque D verdadera sea constante, y el ajuste sigue siendo excelente. No diagnostico convección sólo con esa observación; reviso temperatura, amplitudes y patrón, y considero intercambio o restricción. Tres Delta sirven para plantear la siguiente comprobación.
+
+============================================================================
+11 · El segundo gran obstáculo: conservar la atenuación
+08:10–09:10 · 60 s
+
+Una serie DOSY no se procesa como espectros independientes a los que buscamos la mejor apariencia. Fase, línea base, eje ppm, RG, NS y escala NC_PROC deben permitir comparar intensidades. En la simulación, un fondo aditivo de sólo cuatro por ciento del primer punto hace que D pase de uno a 0.922; los residuos no gritan error. Quitando el fondo conocido recuperamos 0.999. Normalizar cada espectro por su propia señal destruye la atenuación y produce una D cero artificial. En el experimento el fondo no es conocido por decreto: se inspeccionan regiones sin señal, superposición y desplazamiento de picos. Si una señal se mueve fuera de la ventana, tampoco estamos midiendo sólo difusión. La primera intervención es corregir el procesado de una copia, conservando los originales. Con intensidades comparables todavía debemos decidir qué información podemos reconstruir.
+
+============================================================================
+12 · Una atenuación no determina una distribución única
+09:10–10:20 · 70 s
+
+Ésta es la dificultad central de la ILT. Una distribución estrecha y dos componentes cercanas producen curvas que difieren como máximo aproximadamente 0.61 por ciento del primer punto en este diseño; el ruido simulado tiene sigma de uno por ciento. Esto no es una prueba universal de imposibilidad, pero muestra lo fácil que es pedir más resolución de la que la adquisición soporta. Al invertir el kernel de Laplace, las direcciones débiles amplifican el ruido. La pregunta útil no es qué algoritmo dibuja dos picos, sino si los datos, la repetición y los controles sostienen dos comportamientos difusivos. Necesitamos una preferencia explícita y una forma de comprobar su efecto.
+
+============================================================================
+13 · Cómo lo resolvemos: regularizar y comparar hipótesis
+10:20–11:15 · 55 s
+
+La regularización estabiliza la inversión imponiendo una preferencia. En este ejemplo real del cálculo simulado, tres lambda dan residuos RMS de aproximadamente 0.00833, 0.00834 y 0.00842, pero soluciones con picos, moderadas o excesivamente anchas. No elegimos por un residuo mínimo aislado. Para una señal sencilla empezamos por un modelo mínimo; para una distribución ancha comparamos suavidad o entropía; para pocas componentes, esparsidad u orden; para solapamientos, estructura compartida. NNLS, Tikhonov, MaxEnt/PALMA, métodos L1/ITAMeD, VP/SCORE y MF/TRAIn-MF/SILT responden a hipótesis distintas. SVD, FISTA y ADMM son motores numéricos, no pruebas de especies. El catálogo de uso y límites permanece como material de consulta, no ocupa el relato. Y no siempre necesitamos resolver cada frecuencia por separado.
+
+============================================================================
+14 · El espectro ofrece información compartida
+11:15–11:50 · 35 s
+
+Varias señales pueden compartir perfiles de difusión con amplitudes distintas. Un cálculo conjunto aprovecha esa redundancia: una región fuerte ayuda a otra débil. No impongo una única D a todo el espectro. MF y TRAIn-MF comparten factores; TRAIn por bin mantiene una comparación independiente. Este vídeo es conceptual, sin ruido añadido. La correlación no demuestra interacción ni identidad química; el rango tampoco cuenta moléculas. Veremos cómo mantener la curva local a la vista cuando trabajemos con el mapa. Ya podemos explicar para qué desarrollamos nuestras herramientas.
+
+============================================================================
+15 · El trabajo que nuestros programas ayudan a resolver
+11:50–12:10 · 20 s
+
+Ya conocemos los obstáculos y cómo se revisan. Ahora mostramos para qué hemos desarrollado los programas: preparar sin transcribir, conservar la medida, analizar una señal o el espectro y comprobar el resultado. Cada caso parte de una entrada, realiza una operación y conserva su salida.
+
+============================================================================
+16 · Nuestros programas y sus funciones
+12:10–12:45 · 35 s
+
+El asistente TopSpin prepara rampas y registra una calibración. Prime permite explorar una señal, un mapa y sus diagnósticos. ResinAtOnce guía el análisis de resinas y polímeros, separando patrones y resultados condicionados. DALTAIL permite ejecutar por lotes con MATLAB y Python y reproducir tablas desde una configuración guardada. Son herramientas del flujo; TRAIn, MF o SILT son motores que utilizan. Veamos qué trabajo nos evitan y qué resultado dejan.
+
+============================================================================
+17 · TopSpin: un informe de calibración HDO
+12:45–13:50 · 65 s
+
+Seleccionamos la serie HDO 10 a 32 y una ventana fija de 4.5 a 4.9 ppm. El asistente integra, ajusta y genera el informe. El replay offline da R cuadrado de 0.99977, pero detecta deriva térmica de 0.77 K, por encima del límite de 0.5 K, y avisa de fase y DS variables. El éxito es impedir que un ajuste atractivo se confunda con calibración aceptada. La propuesta ilustrativa por integral no sustituye la calibración histórica por altura. Revisamos, estabilizamos y repetimos; el instrumento permanece intacto.
+
+============================================================================
+18 · TopSpin: tres rampas con Δ configurable
+13:50–14:35 · 45 s
+
+Partimos de una plantilla revisada y elegimos tres Delta configurables. En el ejemplo: 50, 100 y 150 ms, P30 fijo y 23 gradientes de 8 a 96 por ciento. Son 69 destinos que no necesitamos transcribir. Revisamos el plan y las colisiones antes de crear; guardamos CSV y JSON. El generador puede preparar desde consola o exportar macro y Python. Esta demostración es preparación del plan, no una adquisición nueva.
+
+============================================================================
+19 · Prime: ajustar una señal real antes del mapa
+14:35–15:30 · 55 s
+
+En TP194 seleccionamos 4.4182 más/menos 0.04 ppm. Prime muestra la extracción firmada, los 23 puntos y un ajuste sin exclusiones: D final aproximada de 0.327 por diez elevado a menos nueve. Esa D procede de un ajuste local monoexponencial, distinto del máximo de distribución que veremos en otra región. Primero miro todos los puntos, cola y residuos, y después comparo métodos cuando la información lo justifique. El promedio firmado de puntos del panel no es la integral trapezoidal del calibrador. El resultado guardado conserva parámetros y calibración: D medida 0.3723534, factor de referencia 0.8772583, factor térmico uno y D final 0.3266501. El error OLS mostrado de 0.00249 es condicional y no incertidumbre total. El éxito práctico es pasar del espectro a una atenuación trazable y revisable, no identificar una molécula por R cuadrado ni optimizar eliminando puntos. Una nueva dificultad aparece cuando dos rutas dibujan distribuciones diferentes para el mismo punto.
+
+============================================================================
+20 · Prime y ResinAtOnce: coherencia entre señal y mapa
+15:30–16:30 · 60 s
+
+En TP194, a unos 7.736 ppm, el mapa antiguo y la curva local parecían tener medias parecidas, pero diferían mucho en la distribución. La solución fue usar la misma extracción, rejilla de 2048 y protocolo TRAIn, no cambiar factores para forzar igualdad. Ahora los picos y formas de ambas rutas coinciden en las tres rampas, como muestra la tabla. Es un éxito de coherencia del análisis sobre datos reales. Las diferencias entre rampas permanecen visibles; esta igualdad numérica no identifica moléculas ni demuestra exactitud absoluta.
+
+============================================================================
+21 · DALTAIL: un lote KK2 reproducible
+16:30–17:25 · 55 s
+
+El flujo DALTAIL conserva configuración, atenuaciones, factores y tablas. Este caso KK2 es un informe archivado de 230 espectros y diez rampas. KK2-50 y KK2-51 se resumen por bloques; KK2-52 conserva un caso exploratorio y no se promedian rampas artefactadas. TTMS y temperatura se aplican juntos una sola vez, con sus factores guardados. El éxito es automatizar el lote conservando también lo que falla. No es un replay del procesado actual ni una validación de masa absoluta; ResinAtOnce ofrece el recorrido guiado complementario.
+
+============================================================================
+22 · Caso TP194 · dejar visible lo que el modelo no explica
+17:25–18:10 · 45 s
+
+El modelo describe dos bandas, pero conserva aproximadamente un seis por ciento de señal sin asignar. No la borramos ni la convertimos en otra especie para completar la historia. Prime permite volver a las señales, comparar métodos y abrir el Laboratorio científico para explorar estabilidad y predicción de gradientes reservados. Esos controles son un paso posterior, no pruebas ya ejecutadas en este ejemplo. El éxito es conservar lo explicado y lo pendiente junto al resultado guardado.
+
+============================================================================
+23 · Cuando repetir gradientes tarda demasiado: ultrafast / SPEN-DOSY
+18:10–19:10 · 60 s
+
+La adquisición convencional repite gradientes y supone que la preparación sigue siendo comparable durante la serie. Para procesos rápidos, reacciones y señales hiperpolarizadas, ese tiempo puede ser el cuello de botella. Ultrafast DOSY utiliza codificación espacial: distintas posiciones reciben distintas ponderaciones, seguidas de una lectura espacial. SPEN es la codificación espacial usada en estas rutas, no un competidor completamente separado. La ventaja temporal desplaza las dificultades a fase, sensibilidad espacial, ancho de banda y calibración b de z. La literatura citada demuestra aplicaciones; no atribuyo esas demostraciones a nuestro prototipo. El recorrido guiado de Prime obliga a revisar orden de ecos, perfil y kernel y comparar con controles convencionales. Esa es también la dirección de nuestro desarrollo para sondas con gradiente z.
+
+============================================================================
+24 · Ultrafast: difusión y relajación en un mapa
+19:10–19:50 · 40 s
+
+Aquí tenéis un ejemplo experimental de ultrafast: difusión y T2 en el mismo mapa, adquirido en unos 28 segundos, con cuatro transitorios y 32 ecos. La rapidez permite estudiar muestras que cambian. Nuestro desarrollo actual busca llevar este enfoque a sondas con gradiente z y lectura EPSI. El mapa también recuerda que adquirir rápido no elimina la necesidad de calibrar: debemos comprobar b(z), sensibilidad y exactitud con patrones.
+
+============================================================================
+25 · Un resultado que podemos repetir y comprobar
+19:50–20:00 · 10 s
+
+Calibrar y procesar DOSY es difícil. Los ejemplos muestran cómo hacerlo y dónde ayudan nuestros programas. El resultado defendible conserva la medida, la hipótesis y la comprobación.

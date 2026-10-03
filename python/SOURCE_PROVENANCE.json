@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "source_workspace_project": "DiffAtOnce",
+  "source_paths_are_relative": true,
+  "safety": "Original source workspace is preserved. No vendor code, experimental raw data, private experiment path, or sample calibration profile is distributed.",
+  "entries": [
+    {
+      "source_relative_path": "workshop_dosy/ramp_generator/generate_ramps.py",
+      "original_sha256": "86d1ae9763f49df3f29d7f3dae4074d52b36f9d42ce9dbaccf97fff567381bda",
+      "public_relative_path": "python/ramp_generator/generate_ramps.py",
+      "adaptation": "Copied author source content unchanged; line-ending normalization only",
+      "original_content_sha256_lf": "86d1ae9763f49df3f29d7f3dae4074d52b36f9d42ce9dbaccf97fff567381bda",
+      "public_content_sha256_lf": "86d1ae9763f49df3f29d7f3dae4074d52b36f9d42ce9dbaccf97fff567381bda"
+    },
+    {
+      "source_relative_path": "workshop_dosy/ramp_generator/topspin_prepare_template.py",
+      "original_sha256": "cf5a0c48eef1ac6965569491dca1fa3c85cff27645f3b3372b7518fccb3bd406",
+      "public_relative_path": "python/ramp_generator/topspin_prepare_template.py",
+      "adaptation": "Copied author source content unchanged; line-ending normalization only",
+      "original_content_sha256_lf": "cf5a0c48eef1ac6965569491dca1fa3c85cff27645f3b3372b7518fccb3bd406",
+      "public_content_sha256_lf": "cf5a0c48eef1ac6965569491dca1fa3c85cff27645f3b3372b7518fccb3bd406"
+    },
+    {
+      "source_relative_path": "workshop_dosy/ramp_generator/abrir_generador.pyw",
+      "original_sha256": "69edbc9249fba45918b22ff2434cfd7f1c989252bfe32a8c95b7b32475c50512",
+      "public_relative_path": "python/ramp_generator/abrir_generador.pyw",
+      "adaptation": "Copied author source content unchanged; line-ending normalization only",
+      "original_content_sha256_lf": "69edbc9249fba45918b22ff2434cfd7f1c989252bfe32a8c95b7b32475c50512",
+      "public_content_sha256_lf": "69edbc9249fba45918b22ff2434cfd7f1c989252bfe32a8c95b7b32475c50512"
+    },
+    {
+      "source_relative_path": "workshop_dosy/ramp_generator/config_ejemplo_tres_Delta.json",
+      "original_sha256": "5c6efcbe95d8ddcd9a3641421368522c709c657d15cdc4e44eeded4482d3da98",
+      "public_relative_path": "python/ramp_generator/config_ejemplo_tres_Delta.json",
+      "adaptation": "Copied author source content unchanged; line-ending normalization only",
+      "original_content_sha256_lf": "5c6efcbe95d8ddcd9a3641421368522c709c657d15cdc4e44eeded4482d3da98",
+      "public_content_sha256_lf": "5c6efcbe95d8ddcd9a3641421368522c709c657d15cdc4e44eeded4482d3da98"
+    },
+    {
+      "source_relative_path": "workshop_dosy/ramp_generator/config_tres_repeticiones.json",
+      "original_sha256": "8196c7a45c0f7bc732d664d1eb27df8c029fa30c4595aaca9e2ddcf34be32e5f",
+      "public_relative_path": "python/ramp_generator/config_tres_repeticiones.json",
+      "adaptation": "Public example_only=true; original operational configuration preserved in source workspace",
+      "original_content_sha256_lf": "8196c7a45c0f7bc732d664d1eb27df8c029fa30c4595aaca9e2ddcf34be32e5f",
+      "public_content_sha256_lf": "4a52240e12d068b9d21fc72a57e2c5792e1068590537fe54690ef6596f9cbc62"
+    },
+    {
+      "source_relative_path": "workshop_dosy/topspin_console/dosy_calibration.py",
+      "original_sha256": "0e4e4a3ab8103153d4151b2a19fcf20e0bf269264c07e83b39392c7aa609a797",
+      "public_relative_path": "python/topspin_console/dosy_calibration.py",
+      "adaptation": "Copied author source content unchanged; line-ending normalization only",
+      "original_content_sha256_lf": "0e4e4a3ab8103153d4151b2a19fcf20e0bf269264c07e83b39392c7aa609a797",
+      "public_content_sha256_lf": "0e4e4a3ab8103153d4151b2a19fcf20e0bf269264c07e83b39392c7aa609a797"
+    },
+    {
+      "source_relative_path": "workshop_dosy/topspin_console/dosy_console_ui.py",
+      "original_sha256": "2c79d0cd48fb4cd866ec2d458681d25703e7dfd018c7910fe4175eec2c8da093",
+      "public_relative_path": "python/topspin_console/dosy_console_ui.py",
+      "adaptation": "Removed experimental TBO profile presentation; documented sequence-model conditions instead. No calibration algorithm change",
+      "original_content_sha256_lf": "2c79d0cd48fb4cd866ec2d458681d25703e7dfd018c7910fe4175eec2c8da093",
+      "public_content_sha256_lf": "efd3dd0d24e7e115d7b4323684f0db715a2cc15ff67489164e42fb2520b59015"
+    },
+    {
+      "source_relative_path": "workshop_dosy/topspin_console/install_topspin_console.ps1",
+      "original_sha256": "2172d3e9a224636ab22771090c23555caf06bcc2b6e5226d9aa105d2c9f24b73",
+      "public_relative_path": "python/topspin_console/install_topspin_console.ps1",
+      "adaptation": "Copied author source content unchanged; line-ending normalization only",
+      "original_content_sha256_lf": "2172d3e9a224636ab22771090c23555caf06bcc2b6e5226d9aa105d2c9f24b73",
+      "public_content_sha256_lf": "2172d3e9a224636ab22771090c23555caf06bcc2b6e5226d9aa105d2c9f24b73"
+    },
+    {
+      "source_relative_path": "workshop_dosy/topspin_console_v3/dosy_autorun.py",
+      "original_sha256": "362e87674dc45c6835aad84be293957cbc070e4b3a48e501af0a9d3312e2ff08",
+      "public_relative_path": "python/topspin_console_v3/dosy_autorun.py",
+      "adaptation": "Copied author source content unchanged; line-ending normalization only",
+      "original_content_sha256_lf": "362e87674dc45c6835aad84be293957cbc070e4b3a48e501af0a9d3312e2ff08",
+      "public_content_sha256_lf": "362e87674dc45c6835aad84be293957cbc070e4b3a48e501af0a9d3312e2ff08"
+    },
+    {
+      "source_relative_path": "workshop_dosy/ramp_generator/test_ramp_generator.py",
+      "original_sha256": "cecf1e059c4d2e90cda91e8fbb10ef2aa25272261057a5fbac18c14d242b0e23",
+      "public_relative_path": "tests/ramp_generator/test_ramp_generator.py",
+      "adaptation": "Portable test imports and temporary-only synthetic reports; same original safeguards, plus public packaging and finite P90 checks",
+      "original_content_sha256_lf": "cecf1e059c4d2e90cda91e8fbb10ef2aa25272261057a5fbac18c14d242b0e23",
+      "public_content_sha256_lf": "86dd1d0e339b169d638f5ce2be1993c1d4c57d5a3f18c43eedfe05175d5251aa"
+    },
+    {
+      "source_relative_path": "workshop_dosy/topspin_console/test_calibration.py",
+      "original_sha256": "8620762cf31f66811cbd2c222d185f574ea975afdb40d56f67e15563ed25b761",
+      "public_relative_path": "tests/topspin_console/test_calibration.py",
+      "adaptation": "Portable test imports and temporary-only synthetic reports; same original safeguards, plus public packaging and finite P90 checks",
+      "original_content_sha256_lf": "8620762cf31f66811cbd2c222d185f574ea975afdb40d56f67e15563ed25b761",
+      "public_content_sha256_lf": "39015977d70739e02a110312d70573e23532bab6c73f58f4e9112b57f6fea224"
+    },
+    {
+      "source_relative_path": "workshop_dosy/topspin_console/test_console.py",
+      "original_sha256": "35fb2376b99c0530a7386039a35db77ccde70f3d3a7f4b7800481d235f9a7610",
+      "public_relative_path": "tests/topspin_console/test_console.py",
+      "adaptation": "Portable test imports and temporary-only synthetic reports; same original safeguards, plus public packaging and finite P90 checks",
+      "original_content_sha256_lf": "35fb2376b99c0530a7386039a35db77ccde70f3d3a7f4b7800481d235f9a7610",
+      "public_content_sha256_lf": "d987fb03d025115e39fbf01be169742a99b0f4762d32d4a2b0a400f69e476c7e"
+    },
+    {
+      "source_relative_path": "workshop_dosy/topspin_console/test_jython_bundle.py",
+      "original_sha256": "77b24c9efbbb6c61a34a96d02265f5dee3cb666737f585c17b10b55aa287987e",
+      "public_relative_path": "tests/topspin_console/test_jython_bundle.py",
+      "adaptation": "Portable test imports and temporary-only synthetic reports; same original safeguards, plus public packaging and finite P90 checks",
+      "original_content_sha256_lf": "77b24c9efbbb6c61a34a96d02265f5dee3cb666737f585c17b10b55aa287987e",
+      "public_content_sha256_lf": "c6e67a88225c14e1aa048ae5097eab44a2d4a226441810729d00836ef846e8f1"
+    },
+    {
+      "source_relative_path": "workshop_dosy/topspin_console_v3/test_autorun.py",
+      "original_sha256": "e7434320e34ff7270ca7c4789e43a87f443ebbd8b0c3d17e21d179d03203903a",
+      "public_relative_path": "tests/topspin_console_v3/test_autorun.py",
+      "adaptation": "Portable test imports and temporary-only synthetic reports; same original safeguards, plus public packaging and finite P90 checks",
+      "original_content_sha256_lf": "e7434320e34ff7270ca7c4789e43a87f443ebbd8b0c3d17e21d179d03203903a",
+      "public_content_sha256_lf": "08ad7ab2bab3050e70417f1775d5b535e9d43292f66fb4ef4ac2fb30c7a35fd7"
+    }
+  ],
+  "public_additions": [
+    "python/build_bundles.py (portable rebuild, no experimental profile)",
+    "python/calibrate_series.py (read-only wrapper of original calibration core)",
+    "python/run_tests.py (offline mock test launcher)",
+    "python/sequence_model.json (documented local model conditions and identity hashes, not calibration)",
+    "tests/test_public_package.py (portability and read-only safeguards)"
+  ],
+  "line_ending_policy": "Author source content is compared after UTF-8/LF normalization. Public text files, including PowerShell, use LF for Git .gitattributes reproducibility. This is a formatting-only change; original byte hashes are retained."
+}

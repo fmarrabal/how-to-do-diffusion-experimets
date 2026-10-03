@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-03",
+  "review_mode": "Read-only inspection of supplied image, associated notebook and original Bruker acquisition metadata. No processing rerun; no original data modified or copied.",
+  "classification": {
+    "type": "Experimental ultrafast diffusion-relaxation D-T2 map, historical TRAIN2D reconstruction",
+    "evidence_level": "Original acquisition and associated export code located; exact image-to-current-notebook numerical reproduction was not rerun.",
+    "distinct_from_current_development": "This 2025 acquisition is a historical example preceding UF D-T2-delta EPSI 9.4. It does not validate the current 9.4 prototype.",
+    "axes": [
+      "T2 (s)",
+      "D (m2/s)"
+    ],
+    "single_scan_claim_supported": false
+  },
+  "files": {
+    "image": {
+      "path": "[local-source: DT2_map_10.png]",
+      "sha256": "FC1AAF6DE8E1C9187B2D25E9B8E16227B24BB006FFA4B8B559F7373F3C8DA0CD",
+      "pixels": [
+        3751,
+        2456
+      ],
+      "bytes": 264993
+    },
+    "notebook": {
+      "path": "[local-source: UF_DT2_analysis.ipynb]",
+      "sha256": "9955800A8A5F04954A30C23423DAE488AC29E267A70B8696B3698C93CFF0B2C9",
+      "cell_index_basis": "zero-based",
+      "reconstruction_cell": 4,
+      "export_cell": 5,
+      "export_statement": "plt.savefig(f'DT2_map_{numerwidma}.png', dpi=300, bbox_inches='tight', facecolor='white')",
+      "stored_input_path": "[local-source: 10]",
+      "stored_input_path_exists": false,
+      "resolved_original_data_path": "[local-source: 10]"
+    },
+    "reconstruction_code": {
+      "path": "[local-source: train2d.py]",
+      "sha256": "F52796D3ADA434DC6635E16F5DAB957AF5227D8A7EACD0D48D5F053029E2C44D"
+    },
+    "ser": {
+      "path": "[local-source: ser]",
+      "sha256": "E559FDBD2555B5997E5A98A74958B237FCB6A540BFA54F51AD62FC38952D3CA7",
+      "copied": false
+    },
+    "acqus": {
+      "path": "[local-source: acqus]",
+      "sha256": "2E0E62065B50BE0577ABCC83F6D73528691069583AAB2E65C808404FFCC6E35C"
+    },
+    "pulseprogram": {
+      "path": "[local-source: pulseprogram]",
+      "sha256": "A368130BBAA9A332059BE7AAE8FE7C4E85E1BCE4C169B097D2FFC42C4D4367A6"
+    },
+    "audit": {
+      "path": "[local-source: audita.txt]"
+    },
+    "sample_title": {
+      "path": "[local-source: title]"
+    }
+  },
+  "acquisition": {
+    "experiment_number": 10,
+    "sample_title_verbatim": "P3 400k with additional D2O\nUF test",
+    "instrument": "av500",
+    "topspin_version": "3.6.4",
+    "pulse_program": "2D_DOSY_CPMG.om",
+    "probe": "[probe serial omitted] (PA BBO 500S2 BBF-H-D-05 Z SP)",
+    "NS": 4,
+    "DS": 0,
+    "NBL_echoes": 32,
+    "TD": 256,
+    "SW_h_Hz": 50000,
+    "TE_K": 296.486,
+    "P1_us": 11.6,
+    "P2_chirp_us": 2500,
+    "P3_us": 23.2,
+    "D7_echo_time_s": 0.0775,
+    "D9_big_delta_s": 0.15,
+    "CNST20_read_gradient_percent": 3.5,
+    "CNST23_encoding_gradient_percent": 70,
+    "audit_started": "2025-06-03T13:26:28.092+02:00",
+    "audit_completed": "2025-06-03T13:26:55.860+02:00",
+    "total_acquisition_elapsed_s": 27.768,
+    "elapsed_time_scope": "Elapsed time from acquisition start to completion recorded by audita.txt, covering the complete acquisition with NS=4. It is not the time of one scan and not a single-scan claim.",
+    "method_evidence": "Saved pulse program contains frequency-swept inversion pulses under spatial-encoding gradients, stimulated-echo storage and gradient readout of a CPMG echo train."
+  },
+  "reconstruction": {
+    "algorithm": "TRAIN2D, D and T2 exponential kernels",
+    "notebook_Gmax_T_per_m": 0.535,
+    "gradient_basis": "Nominal Gmax in historical notebook; quantitative gradient calibration not independently validated by this review.",
+    "b_values_count_saved_output": 16,
+    "b_min_s_per_m2_saved_output": 1860000000.0,
+    "b_max_s_per_m2_saved_output": 22800000000.0,
+    "D_grid_m2_per_s": [
+      1e-12,
+      1e-08,
+      1024
+    ],
+    "T2_grid_s": [
+      0.01,
+      200,
+      512
+    ],
+    "display_threshold_fraction_of_max": 0.01,
+    "saved_convergence": true,
+    "saved_iterations": 431,
+    "saved_dominant_peak_D_m2_per_s": 1e-12,
+    "saved_dominant_peak_T2_s": 0.198
+  },
+  "captions": {
+    "es": {
+      "title": "Ultrafast: difusión y relajación en un mapa",
+      "subtitle": "Ejemplo experimental UF D–T₂ · 4 transitorios · 32 ecos · ≈28 s en total",
+      "caption": "Reconstrucción TRAIN2D de un experimento de 2025. Ejemplo previo al desarrollo EPSI 9.4; cuantificación pendiente de validación."
+    },
+    "en": {
+      "title": "Ultrafast: diffusion and relaxation in one map",
+      "subtitle": "Experimental UF D–T₂ example · 4 scans · 32 echoes · ≈28 s total",
+      "caption": "TRAIN2D reconstruction of a 2025 experiment. An example preceding EPSI 9.4 development; quantitative validation remains pending."
+    }
+  },
+  "interpretation_limits": [
+    "This is a D-T2 diffusion-relaxation map, not a D-chemical-shift DOSY map.",
+    "NS=4: do not describe this acquisition as single-scan, and do not label 27.768 s as the duration of one scan.",
+    "The dominant reconstructed D peak lies at the lower grid boundary, 1e-12 m2/s. Treat this as a reconstruction limitation requiring investigation, not a validated component.",
+    "The notebook clips negative values and applies a 1% display threshold. Component counts, marginal amplitudes and apparent peak areas are not independently validated.",
+    "Saved numerical convergence does not establish chemical assignment, absolute D/T2 accuracy, quantitative gradient calibration or prototype validation.",
+    "Notebook modification postdates the supplied PNG; export code and saved outputs are consistent with the image, but exact reproducibility was not rerun."
+  ]
+}

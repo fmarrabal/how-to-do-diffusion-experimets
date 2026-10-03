@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-03 00:36:55 UTC",
+  "scope": "Public Bruker Python packaging, isolated runtime/mock and synthetic-fixture QA only",
+  "scientific_validation": false,
+  "hardware_acquisition_performed": false,
+  "topspin_started": false,
+  "network_connections_performed": false,
+  "experimental_input_modified": false,
+  "public_source_line_endings": "Python/JSON build inputs normalized LF for portable Git checkout. Original byte hashes retained; original/public LF-normalized content hashes distinguish formatting from scientific changes. Scientific core, generator and autorun source content equality is tested after LF normalization.",
+  "cp_python": {
+    "version": "3.13.13",
+    "command": "python python/run_tests.py",
+    "status": "PASS",
+    "tests": 63,
+    "groups": [
+      {
+        "suite": "ramp_generator",
+        "tests": 16
+      },
+      {
+        "suite": "calibration_core",
+        "tests": 14
+      },
+      {
+        "suite": "topspin_v2_mock_console",
+        "tests": 10
+      },
+      {
+        "suite": "jython_compatible_mock_bundle_under_cpython",
+        "tests": 4
+      },
+      {
+        "suite": "topspin_v3_mock_acquisition_and_nonfinite_guards",
+        "tests": 12
+      },
+      {
+        "suite": "public_package_portability_read_only_cli",
+        "tests": 7
+      }
+    ]
+  },
+  "jython": {
+    "version": "2.7.2",
+    "execution": "Isolated Java/Jython runtime from the locally installed TopSpin distribution; TopCmds simulated, spectrometer/application not started",
+    "status": "PASS",
+    "suites": [
+      {
+        "path": "tests/topspin_console/test_jython_bundle.py",
+        "tests": 4
+      },
+      {
+        "path": "tests/topspin_console_v3/test_autorun.py",
+        "tests": 12
+      }
+    ],
+    "vendor_libraries_distributed": false
+  },
+  "powershell_installer": {
+    "status": "PASS",
+    "check": "Static Parser.ParseFile syntax check",
+    "executed": false
+  },
+  "bundle_rebuild": {
+    "status": "PASS",
+    "check": "Source-only rebuild byte-identical for generated engine, v2, v3 and relative SHA-256 build manifest",
+    "external_workspace_required": false
+  },
+  "fresh_git_checkout": {
+    "status": "PASS",
+    "tests": 63,
+    "method": "Local temporary source-only Git snapshot and fresh clone with core.autocrlf=true; repository .gitattributes applied, all six offline groups rerun, Git status clean afterwards. No GitHub/network push or external workspace dependency.",
+    "instrument_execution": false
+  },
+  "safety_checks": [
+    "All 69-ramp destinations explicit, collisions rejected before write",
+    "Raw/processed data not copied when preparing parameters; template restoration and unexpected-copy checks",
+    "Both shipped JSON examples are blocked (example_only=true)",
+    "CLI output must be new and outside the experimental dataset; original synthetic-file SHA-256 unchanged",
+    "Reference identity, source, solvent, Dref(T) and pulse-program mapping explicitly required; no default experimental calibration",
+    "Jython v3 hardware path opt-in after UI confirmation; synchronous completion status verified; unknown/failed status stops",
+    "P90/nutation finite, positive-time, signed-signal, bounded-optimum and sweep-span guards checked",
+    "No raw data or private calibration profile/paths in distributed bundle; public model identity hashes only"
+  ],
+  "limitations": [
+    "No real acquisition or native TopSpin application execution in this repository QA",
+    "TopSpin 3.6.4 compatibility remains unverified on that application/instrument",
+    "Other Python/Jython/TopSpin versions are not claimed tested",
+    "GUI is supplied but native visual/manual usability QA was not performed in this packaging turn",
+    "Physical gradient proposal is conditional on exact saved pulse/shape identity and the documented local sequence model; not universal or independent physical validation",
+    "High R2 does not establish purity, SNR, absence of convection or correct thermometry",
+    "No RF tuning, shimming, relaxation-time determination, hardware limits selection or automatic global calibration updates"
+  ]
+}

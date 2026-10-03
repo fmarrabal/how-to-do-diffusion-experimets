@@ -1,0 +1,434 @@
+Practical catalogue of Laplace inversion and DOSY analysis
+Complete catalogue of the pinned library’s 51 entries, 9 native Prime routes and 12 context families/components. Not an exhaustive list of all literature or 72 distinct algorithms.
+
+Positive least squares [nnls]
+Prime ILT selector
+Positive baseline without smoothing; diagnose minimum residual.
+SciPy NNLS / active-set NNLS; explicit dictionary
+[local-source: METHOD_REFERENCE.es.md#nnls]
+
+Positive Tikhonov [tikhonov]
+Prime ILT selector
+Continuous distributions with controlled smoothness; polymers/polydispersity.
+Fixed user lambda and order 0/1/2; no automatic CONTIN selection
+[local-source: METHOD_REFERENCE.es.md#tikhonov]
+
+FLINT quadratic objective [flint]
+Prime ILT selector
+Positive L2 objective for stable inversion; this library uses NNLS.
+Same positive L2 objective; NNLS engine, not FLINT original iteration
+[local-source: METHOD_REFERENCE.es.md#flint]
+
+GNAT positive ILT branch [gnat_ilt_nnls]
+Prime ILT selector
+Compare GNAT positive ILT branch at a manual lambda.
+Manual lambda squared; excludes GNAT GCV/L-curve/UI peak picking
+[local-source: METHOD_REFERENCE.es.md#gnat_ilt_nnls]
+
+ITAMeD positive FISTA [itamed]
+Prime ILT selector
+Sparse distributions with few peaks through L1 and FISTA.
+Pure diffusion kernel, lambda L1, scaled step and Nesterov; no original GUI
+[local-source: METHOD_REFERENCE.es.md#itamed]
+
+Positive smooth sparse inversion [elastic_net]
+Prime ILT selector
+Compromise between few peaks and smoothness.
+L1 plus finite-difference quadratic
+[local-source: METHOD_REFERENCE.es.md#elastic_net]
+
+Positive row-group sparse inversion [group_sparse]
+Prime ILT selector
+Shared D support across multiple frequencies.
+Shared row L2 sparsity; not chemical identity
+[local-source: METHOD_REFERENCE.es.md#group_sparse]
+
+TRAIn-style trust region [train]
+Prime ILT selector
+Iterative positive trust-region inversion; control its stopping criterion.
+Prime TRAIn uses the shared original engine: termFac × NNLS residual. The library record describes a separate explicit-noise-radius variant; do not interchange parameters.
+[local-source: METHOD_REFERENCE.es.md#train]
+
+Positive maximum entropy [maxent]
+Prime ILT selector
+Positive distributions regularized by entropy relative to a reference.
+Fixed reference; Python L-BFGS and MATLAB/C# projected line search differ
+[local-source: METHOD_REFERENCE.es.md#maxent]
+
+PALMA entropy/L1 PPXA+ [palma]
+Prime ILT selector
+Combine peaks and broad distributions with entropy/L1 and a noise radius.
+Positive entropy weight 0<lambda<=1; per-curve ball; lambda=0 signed variant excluded
+[local-source: METHOD_REFERENCE.es.md#palma]
+
+Local curvature reweighted Tikhonov [curvature_reweighted]
+Prime ILT selector
+Adapt local smoothing to curvature; compare sensitivity.
+Not authentic UPEN2D/MUPEN2D
+[local-source: METHOD_REFERENCE.es.md#curvature_reweighted]
+
+Nonnegative sparse nuclear regularization [lowrank_sparse]
+Prime ILT selector
+Joint map with few profiles and sparse significant coefficients.
+ADMM; not branded ADSpLRU/LRSpILT
+[local-source: METHOD_REFERENCE.es.md#lowrank_sparse]
+
+Reweighted nuclear heuristic [reweighted_lowrank_sparse]
+Prime ILT selector
+Strengthen rank/support selection through adaptive weights.
+Changing weights; no fixed convex objective certificate
+[local-source: METHOD_REFERENCE.es.md#reweighted_lowrank_sparse]
+
+Positive variable projection [vp]
+Specialized API; not in Prime ILT selector
+Fit a fixed number of exponential components without a D grid.
+Fixed rank; independent local engines and deterministic starts
+[local-source: METHOD_REFERENCE.es.md#vp]
+
+SCORE [score]
+Specialized API; not in Prime ILT selector
+Separate component spectra by sharing D across frequencies.
+VP with unconstrained amplitudes for GNAT SCORE; fixed-D and explicit NUG supported
+[local-source: METHOD_REFERENCE.es.md#score]
+
+OUTSCORE [outscore]
+Specialized API; not in Prime ILT selector
+Unmixing that penalizes overlap between component spectra.
+GNAT absolute spectral cross-talk objective; fixed rank
+[local-source: METHOD_REFERENCE.es.md#outscore]
+
+HYSCORE [hyscore]
+Specialized API; not in Prime ILT selector
+Balance reconstruction and spectral separation in a discrete model.
+GNAT hybrid residual/cross-talk objective; explicit relative weight
+[local-source: METHOD_REFERENCE.es.md#hyscore]
+
+AIC/BIC selection over VP [discrete_selection]
+Specialized API; not in Prime ILT selector
+Choose model order among variable-projection models using AIC/BIC.
+Not original Provencher DISCRETE or SPLMOD
+[local-source: METHOD_REFERENCE.es.md#discrete_selection]
+
+DECRA [decra]
+Specialized API; not in Prime ILT selector
+Algebraic decomposition of exponential components with uniform b.
+Original GNAT algebra; uniform b, isotropic noise, full rank; nonphysical eigenvalues fail
+[local-source: METHOD_REFERENCE.es.md#decra]
+
+MCR-ALS [mcr_als]
+Specialized API; not in Prime ILT selector
+Multivariate decomposition with constraints and optional exponential profiles.
+Positivity options and optional exponential decays; no GNAT GUI/rotational guarantee
+[local-source: METHOD_REFERENCE.es.md#mcr_als]
+
+Symmetric FastICA [fastica]
+Specialized API; not in Prime ILT selector
+Explore statistically independent factors; fit D afterwards if appropriate.
+Algebraic factors, no automatic diffusion identification
+[local-source: METHOD_REFERENCE.es.md#fastica]
+
+Three-way CP-ALS [parafac]
+Specialized API; not in Prime ILT selector
+Three-dimensional data with factors shared across modes.
+Three-way API; use parafac_nd for four-way tensors; full N-way constraints/uncertainty not ported
+[local-source: METHOD_REFERENCE.es.md#parafac]
+
+Explicit-region local SCORE [local_score]
+Specialized API; not in Prime ILT selector
+Apply SCORE to explicitly selected ppm regions.
+Use disjoint regions for portable use: MATLAB does not check overlap across regions. Explicit local SCORE does not segment automatically.
+[local-source: METHOD_REFERENCE.es.md#local_score]
+
+Automatic LOCODOSY local inversion [locodosy_auto]
+Specialized API; not in Prime ILT selector
+Segment regions, estimate local order and reduce components.
+Native automatic inversion; C# legacy error refit (LM), display and fuzzy clustering now separate APIs. Original GUI segmentation adapted; no calibrated confidence intervals.
+[local-source: METHOD_REFERENCE.es.md#locodosy_auto]
+
+BRD dual positive L2 [brd]
+Prime ILT selector
+Solve positive L2 via a dual formulation; explicit lambda.
+Fixed positive alpha and identity regularizer; damped semismooth Newton differs from Julia trust region. No OSILAP automatic alpha/compression pipeline.
+[local-source: METHOD_REFERENCE.es.md#brd]
+
+Chambolle-Pock positive L1 [pdhg_l1]
+Prime ILT selector
+Solve sparse L1 inversion by primal-dual splitting.
+Least-squares dual and positive L1 primal prox; not the archived PDHGM/PDHGM2 update.
+[local-source: METHOD_REFERENCE.es.md#pdhg_l1]
+
+Three/four-way CP-ALS [parafac_nd]
+Specialized API; not in Prime ILT selector
+Factorize three/four-way tensors; multi-experiment studies.
+Positive/unconstrained factors, deterministic initialization; local solution, objective-stagnation stop, no N-way constraint/uncertainty suite.
+[local-source: METHOD_REFERENCE.es.md#parafac_nd]
+
+Regularized block Kaczmarz [kaczmarz]
+Prime ILT selector
+Solve regularized inversion using row/block updates.
+The grid adapter uses the engine defaults. Use linear_fit / linearFit / LinearEngines.Fit for seed, block size, inner iterations and explicit row orders. Ordering is a portable generator, not the original NumPy generator; line-search failures are retained.
+[local-source: METHOD_REFERENCE.es.md#kaczmarz]
+
+Nonnegative L1 interior point [l1_ls_nonnegative]
+Prime ILT selector
+Positive L1 solution by interior point; optimization reference.
+Boyd barrier/primal-dual formulation; dense Newton, not original PCG. Fixed lambda; absolute-scaled gap near zero.
+[local-source: METHOD_REFERENCE.es.md#l1_ls_nonnegative]
+
+Signed L1 interior point [l1_ls]
+Specialized API; not in Prime ILT selector
+Signed sparse linear fits; not automatically a positive distribution.
+Same signed L1 barrier objective; dense Newton. Negative coefficients are not physical masses.
+[local-source: METHOD_REFERENCE.es.md#l1_ls]
+
+FLINT positive quadratic iterative core [flint_fista]
+Prime ILT selector
+Iteratively solve the positive FLINT quadratic objective.
+FISTA for FLINT objective; exact spectral step and projected-gradient stop differ from upstream power iteration/stagnation.
+[local-source: METHOD_REFERENCE.es.md#flint_fista]
+
+PLSS residual recursive solver [plss_r]
+Specialized API; not in Prime ILT selector
+Consistent linear systems; auxiliary unregularized core.
+Consistent linear systems; signed, unregularized; breakdown retained. No claims for other PLSS variants.
+[local-source: METHOD_REFERENCE.es.md#plss_r]
+
+Orthogonal matching pursuit dictionary adapter [omp]
+Prime ILT selector
+Select few D atoms from a dictionary; explicit support limit.
+Explicit dictionary, positive or signed refits; differs from original CS Fourier mapping. No automatic noise estimate.
+[local-source: METHOD_REFERENCE.es.md#omp]
+
+Fixed-p smoothed IRLS dictionary adapter [irls]
+Specialized API; not in Prime ILT selector
+Explore sparse solutions through reweighted least squares.
+Signed; explicit epsilon; no original Fourier sampling or automatic epsilon heuristic. Iterate stability not an optimality certificate.
+[local-source: METHOD_REFERENCE.es.md#irls]
+
+UPEN2D adaptive spatial penalties [upen2d]
+Specialized API; not in Prime ILT selector
+2D distributions with adaptive local smoothing; two physical operators.
+Native NNLS inner rather than original projected Newton CG; no SVD/B compression. Pure diffusion requires caller diffusion kernel, e.g. Kr=I for window coupling.
+[local-source: METHOD_REFERENCE.es.md#upen2d]
+
+GNAT Fourier RRT [rrt]
+Specialized API; not in Prime ILT selector
+Fourier-Laplace reconstruction from complex FID and uniform b.
+Uniform b and direct-time FID; explicit/overlapping Fourier windows. Complex map, not masses; no GUI/phase/calibration.
+[local-source: METHOD_REFERENCE.es.md#rrt]
+
+GNAT Fourier FDM [fdm]
+Specialized API; not in Prime ILT selector
+Resolve poles/frequencies from FIDs through filter diagonalization.
+Legacy eigen policy failed cross-language agreement. Portable policy fixes bilinear normalization, eigenvector signs and near-real-pole broadening. Neither is calibrated physical density.
+[local-source: METHOD_REFERENCE.es.md#fdm]
+
+ADSpLRU archived reweighted ADMM [adsplru]
+Specialized API; not in Prime ILT selector
+Joint sparse/low-rank unmixing with reweighted ADMM.
+RMS scales dictionary and data; adaptive singular and entry thresholds; legacy residual stop is not a fixed convex certificate
+[local-source: METHOD_REFERENCE.es.md#adsplru]
+
+IPSpLRU incremental proximal recurrence [ipsplru]
+Specialized API; not in Prime ILT selector
+Joint unmixing with an incremental proximal recurrence.
+999 default updates; explicit initial matrix; all columns; no fixed-objective convergence certificate
+[local-source: METHOD_REFERENCE.es.md#ipsplru]
+
+LRSpILT archived ADMM recurrence [lrspilt]
+Specialized API; not in Prime ILT selector
+Joint DOSY reconstruction using low-rank and sparse structure.
+Adaptive singular thresholds and fixed entry threshold; no original GUI/truth diagnostics; legacy relative stop
+[local-source: METHOD_REFERENCE.es.md#lrspilt]
+
+NMRInversions.jl PDHGM2 recurrence [pdhgm2]
+Specialized API; not in Prime ILT selector
+Replay the NMRInversions.jl recurrence and check KKT separately.
+Keeps extrapolated primal and projection after quadratic inverse; reports actual positive-L1 KKT separately; fixed alpha; bounded iterations
+[local-source: METHOD_REFERENCE.es.md#pdhgm2]
+
+ILT.jl positive ridge with signed baseline [ilt_julia]
+Specialized API; not in Prime ILT selector
+Positive inversion with a signed baseline term.
+Exact baseline elimination plus NNLS replaces Ipopt; alpha squared also penalizes baseline; caller supplies whitened baseline column; no automatic alpha selection
+[local-source: METHOD_REFERENCE.es.md#ilt_julia]
+
+TailoredNorm archived p sweep [tailored_norm]
+Specialized API; not in Prime ILT selector
+Explore a p-norm sweep; replay the archived numerical policy.
+Retains machine eps and absolute pinv cutoff 2e8, often annihilating output; no silently repaired result. Explicit cutoff alternatives change numerical policy
+[local-source: METHOD_REFERENCE.es.md#tailored_norm]
+
+MUPEN2D spatial multi-penalty FISTA [mupen2d]
+Specialized API; not in Prime ILT selector
+2D inversion with adaptive multiple penalties; signed output.
+SIGNED coefficients. Explicit legacy AT/monitor or corrected-adjoint policy. No SVD, T1/T2 filter, GUI or forced DOSY border mask. Zero-iterate undefined weight reported
+[local-source: METHOD_REFERENCE.es.md#mupen2d]
+
+ESPIRA-II AAA-selected Loewner pencil [espira2]
+Specialized API; not in Prime ILT selector
+Identify exponential sums through poles and a fixed rank.
+Uniform sample spacing; fixed rank; complex/nonphysical poles retained; optional uniform-b diffusion validation; no ESPIRA-I or general AAA package
+[local-source: METHOD_REFERENCE.es.md#espira2]
+
+SUnSAL unmixing ADMM [sunsal]
+Specialized API; not in Prime ILT selector
+Sparse unmixing with an explicit dictionary and optional constraints.
+Explicit positivity and sum-one. Dictionary RMS scaling and archived mu policy. Signed rank-deficient equality LS uses nullspace elimination rather than invalid inverse shortcut
+[local-source: METHOD_REFERENCE.es.md#sunsal]
+
+CLSUnSAL collaborative unmixing [clsunsal]
+Specialized API; not in Prime ILT selector
+Collaborative unmixing with support shared across columns.
+Preserves original nonzero scaled-dual initialization and mu update without dual rescaling; legacy stop not optimality certificate; no S2WSU/MUA pipeline
+[local-source: METHOD_REFERENCE.es.md#clsunsal]
+
+Fully constrained least squares [fcls]
+Specialized API; not in Prime ILT selector
+Positive sum-to-one unmixing only when normalization justifies it.
+Same nonnegative simplex quadratic objective; simplex FISTA with KKT replaces cvxopt QP. Sum-one must be physically justified for DOSY
+[local-source: METHOD_REFERENCE.es.md#fcls]
+
+Weighted PLSS recursive core [plss_rw2]
+Specialized API; not in Prime ILT selector
+Weighted consistent linear systems; auxiliary core.
+Exact diagonal-variable implementation of RW2 via guarded residual recurrence; signed, consistent systems; zero/dependent-direction guards differ from upstream failures; no KZ/RW1
+[local-source: METHOD_REFERENCE.es.md#plss_rw2]
+
+MRI mixture of Wisharts/tensors matrix core [mow]
+Specialized API; not in Prime ILT selector
+Directional MRI diffusion using Wishart/tensor mixtures.
+Requires directional b encoding and unit directions; NNLS or signed damped SVD; optional unnormalized shell profile. No image I/O, baseline estimation, DOT, GUI or spherical basis generation
+[local-source: METHOD_REFERENCE.es.md#mow]
+
+MRI Q-ball harmonic transform [qbi]
+Specialized API; not in Prime ILT selector
+Angular Q-ball MRI reconstruction in a supplied harmonic basis.
+Caller-supplied real even-harmonic basis; archived P_l(0) convention without 2pi; no scalar ILT claim or normalized probability
+[local-source: METHOD_REFERENCE.es.md#qbi]
+
+MF-NNLS256 [mf-nnls256]
+Native Prime route
+Joint distribution map with shared factors.
+Predictive rank ≠ molecules; inspect lambdaS, lambdaA, bounds and residuals.
+[local-source: StudioWindows.Library.cs]
+
+TRAIn-MF (protocolo revisado) [train-mf-historical]
+Native Prime route
+Joint model with signed attenuations; explicit legacy replay.
+Historical identifier label does not describe the revised route. Not per-bin TRAIn.
+[local-source: StudioWindows.Library.cs]
+
+TRAIn por bin / per bin [train-per-bin]
+Native Prime route
+Same local fit for every frequency in a region.
+Does not impose inter-frequency correlations or shared factors.
+[local-source: StudioWindows.Library.cs]
+
+RAI-S [rai-s]
+Native Prime route
+Few discrete D values with spectral support selection.
+Not RAI-Net or a trained network; a broad distribution may violate the discrete model.
+[local-source: StudioWindows.Library.cs]
+
+DOME-S [dome-s]
+Native Prime route
+Shared discrete rates with coverage and support review.
+Check boundaries, held-out prediction and component count.
+[local-source: StudioWindows.Library.cs]
+
+SILT revisado / revised [silt-dosy]
+Native Prime route
+Joint map with sparse and low-rank penalties.
+Nonconvex reweighting; operational stop ≠ global optimum.
+[local-source: StudioWindows.Library.cs]
+
+SILT original / ADSpLRU [silt-original]
+Native Prime route
+Replay the supplied original core with diagnostics.
+Historical stop ≠ KKT certificate; separate from revised SILT.
+[local-source: StudioWindows.Library.cs]
+
+TRAIn2D (adaptación C#) [train2d_prime]
+Native Prime route
+Separable D–T2 inversion or other two-operator problems.
+No lambda; termFac and NNLS residual. Physical kernel/profile must be reviewed.
+[local-source: UfNotebookWindow.cs]
+
+FISTA 2D (variante C# inspirada en ITAMeD) [fista2d_prime]
+Native Prime route
+Positive L1 2D inversion using a separable operator.
+Not a verbatim ITAMeD copy; KKT does not validate the physical model.
+[local-source: UfNotebookWindow.cs]
+
+Mono / multi-exponential fitting [mono_fit]
+Literature context; check implementation
+Few expected components; start with monoexponential fitting on an isolated signal.
+A k-exponential fit assumes k; nearby D values are hard to resolve.
+https://nmr.chemistry.manchester.ac.uk/?q=node/430
+
+CONTIN [contin_original]
+Literature context; check implementation
+Positive continuous distribution with regularization and its own parameter selection.
+Fixed-lambda Tikhonov is not the full CONTIN program.
+https://doi.org/10.1016/0010-4655(82)90174-6
+
+SVD / TSVD / compression [svd_tsvd]
+Literature context; check implementation
+Diagnose informative rank; compress the problem or truncate weak modes.
+SVD alone does not guarantee positivity; more bins do not create resolution.
+https://arxiv.org/abs/1609.00324
+
+FISTA / proximal acceleration [fista_general]
+Literature context; check implementation
+Numerical engine for L1 or L2 objectives with projection/proximal operators.
+The engine alone defines neither the prior nor the experiment.
+https://doi.org/10.1137/080716542
+
+UPEN / 2DUPEN / MUPEN2D [upen_family]
+Literature context; check implementation
+Adaptive local smoothing for sharp peaks and broad regions.
+Specify version, positivity and operators; not generic curvature_reweighted.
+https://arxiv.org/abs/1609.00324
+
+EDMILT [edmilt]
+Literature context; check implementation
+Multidimensional ILT with tailored regularization; D–T2/T1–T2 correlations.
+Requires multidimensional data/operators; not assumed implemented in Prime selector.
+https://pmc.ncbi.nlm.nih.gov/articles/PMC8397344/
+
+DRECT [drect]
+Literature context; check implementation
+Learned Laplace-map reconstruction from synthetic training.
+Check kernel, range, SNR and distribution shift; archived checkpoint is not local validation.
+https://github.com/WryBin/DRECT
+
+DREAM [dream]
+Literature context; check implementation
+Learned reconstruction with aleatoric uncertainty estimation.
+Network uncertainty certifies neither identity nor coverage outside training.
+https://pmc.ncbi.nlm.nih.gov/articles/PMC12383262/
+
+CoMeF / DOSY-Net / DLEMLR / DILT [neural_other]
+Literature context; check implementation
+Other learned architectures for ILT/DOSY/multidimensional data.
+Heterogeneous family: inspect each paper, weights and domain. Archived code ≠ available in Prime.
+https://github.com/chenbo-cyber/DLEMLR
+
+DISCRETE / SPLMOD / Prony / matrix pencil [discrete_original]
+Literature context; check implementation
+Finite exponential sums; poles and amplitudes.
+Discrete assumption, order and sampling matter; not a continuous distribution.
+https://nmr.chemistry.manchester.ac.uk/?q=node/430
+
+Landweber / CG / LSQR / early stopping [iterative_general]
+Literature context; check implementation
+Iterative engines; early stopping as regularization.
+Residual convergence does not prove component resolution.
+https://web.stanford.edu/group/SOL/software/lsqr/
+
+Discrepancy / L-curve / GCV / held-out / bootstrap [parameter_selection]
+Literature context; check implementation
+Choose regularization or rank and study stability/uncertainty.
+Selection/diagnostic strategies; not new solvers or experimental truth.
+https://nmr.chemistry.manchester.ac.uk/?q=node/430

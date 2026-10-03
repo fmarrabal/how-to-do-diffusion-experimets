@@ -1,0 +1,153 @@
+{
+  "reviewed_date": "2026-10-02",
+  "sources": [
+    {
+      "id": "shrot2008",
+      "title": "Single-scan 2D DOSY NMR spectroscopy",
+      "authors": "Y. Shrot; L. Frydman",
+      "year": 2008,
+      "journal": "Journal of Magnetic Resonance 195, 226–231",
+      "doi": "10.1016/j.jmr.2008.09.011",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18835796/",
+      "primary_fulltext": "https://www.weizmann.ac.il/chemphys/Frydman_group/sites/chemphys.Frydman_group/files/publications/paper82.pdf",
+      "supports": "Spatial encoding for single-scan 2D DOSY; sequence/sample demonstrations and limitations."
+    },
+    {
+      "id": "guduff2017_spen",
+      "title": "Spatially encoded 2D and 3D diffusion-ordered NMR spectroscopy",
+      "authors": "L. Guduff; I. Kuprov; C. van Heijenoort; J.-N. Dumez",
+      "year": 2017,
+      "journal": "Chemical Communications 53, 701–704",
+      "doi": "10.1039/C6CC09028A",
+      "url": "https://pubs.rsc.org/en/content/articlehtml/2017/cc/c6cc09028a",
+      "primary_fulltext": "https://spindynamics.org/publications/060_kuprov_2016.pdf",
+      "supports": "Spatial parallelisation and acceleration of 2D/3D DOSY; mixture example."
+    },
+    {
+      "id": "hamdoun2018",
+      "title": "Spatially encoded diffusion-ordered NMR spectroscopy of reaction mixtures in organic solvents",
+      "authors": "G. Hamdoun et al.",
+      "year": 2018,
+      "journal": "Analyst 143, 3458–3464",
+      "doi": "10.1039/C8AN00434J",
+      "url": "https://pubs.rsc.org/en/content/articlelanding/2018/an/c8an00434j",
+      "supports": "Reaction mixture in organic solvent; subsecond SPEN experiment with convection compensation and spectral selection."
+    },
+    {
+      "id": "guduff2017_dnp",
+      "title": "Single-Scan 13C Diffusion-Ordered NMR Spectroscopy of DNP-Hyperpolarised Substrates",
+      "authors": "L. Guduff; D. Kurzbach; C. van Heijenoort; D. Abergel; J.-N. Dumez",
+      "year": 2017,
+      "journal": "Chemistry—A European Journal 23, 16722–16727",
+      "doi": "10.1002/chem.201703300",
+      "url": "https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/chem.201703300",
+      "index": "https://pubmed.ncbi.nlm.nih.gov/28857281/",
+      "supports": "Single-scan DOSY on DNP-hyperpolarised substrates."
+    },
+    {
+      "id": "mishra2021",
+      "title": "Ultrafast diffusion-based unmixing of 1H NMR spectra",
+      "authors": "R. Mishra; A. Marchand; C. Jacquemmoz; J.-N. Dumez",
+      "year": 2021,
+      "journal": "Chemical Communications 57, 2384–2387",
+      "doi": "10.1039/D0CC07757G",
+      "url": "https://pubs.rsc.org/en/content/articlehtml/2021/cc/d0cc07757g",
+      "supports": "Multivariate unmixing (DECRA) with spatially encoded data; subsecond acquisition. DECRA spacing is specifically engineered."
+    },
+    {
+      "id": "lorandel2025",
+      "title": "Speedy Component Resolution Using Spatially Encoded Diffusion NMR Data",
+      "authors": "B. Lorandel et al.",
+      "year": 2025,
+      "online_year": 2024,
+      "journal": "Magnetic Resonance in Chemistry 63, 49–61",
+      "doi": "10.1002/mrc.5488",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11608938/",
+      "supports": "SCORE versus OUTSCORE on SPEN data. Possible single-axis implementation under appropriate spoiler/coherence selection conditions."
+    },
+    {
+      "id": "nonuniform2023",
+      "title": "Accounting for gradient non-uniformity in spatially-encoded diffusion-ordered NMR spectroscopy",
+      "year": 2023,
+      "journal": "Journal of Magnetic Resonance 355, 107543",
+      "doi": "10.1016/j.jmr.2023.107543",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1090780723001787",
+      "index": "https://pubmed.ncbi.nlm.nih.gov/37708612/",
+      "supports": "SPEN DOSY also called UF DOSY; non-uniform gradient model and calibration improve accuracy."
+    },
+    {
+      "id": "ahola2015",
+      "title": "Ultrafast multidimensional Laplace NMR for a rapid and sensitive chemical analysis",
+      "authors": "S. Ahola et al.",
+      "year": 2015,
+      "journal": "Nature Communications 6, 8363",
+      "doi": "10.1038/ncomms9363",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4595760/",
+      "primary_fulltext": "https://oulurepo.oulu.fi/bitstream/10024/27316/1/nbnfi-fe2020061844893.pdf",
+      "supports": "Spatially encoded D–T2 Laplace NMR with ultrafast acquisition; conceptual precursor to local D/T2 development, not proof of local prototype."
+    },
+    {
+      "id": "local_readme",
+      "path": "[local-source: README.md]",
+      "supports": "Current revision, hardware target, explicit NO-GO quantitative status."
+    },
+    {
+      "id": "local_audit",
+      "path": "[local-source: AUDITORIA_METODO_UF_DT2_CS_2026-09-19.md]",
+      "supports": "Revision 2 corrections and console-only verification list."
+    },
+    {
+      "id": "local_pp",
+      "path": "[local-source: UF_DT2_CS_EPSI_v9_4_TBO]",
+      "md5": "41f4b0b5e62bfd94fa8cd820bc45e7f4",
+      "verified_current_hash": true,
+      "lines": {
+        "encoding": "370–397",
+        "readout": "408–466",
+        "parameter_meanings": "518–547"
+      },
+      "supports": "Actual $DIM=1D, gradient-z vector, chirps, CPMG, EPSI, NS cycle and analogue AV III requirements."
+    },
+    {
+      "id": "local_calc",
+      "path": "[local-source: UF_DT2_CS_calculator_v9_4.py]",
+      "md5": "b6812c3dccb03a3922b8a2dd288db801",
+      "verified_current_hash": true,
+      "lines": {
+        "probe_flags": "93–136",
+        "signal_budget": 300,
+        "b_profile": 412,
+        "NS_guard": 740
+      },
+      "supports": "Implemented b(z), signal, RF, thermal, timing models; not measurements."
+    },
+    {
+      "id": "local_recon",
+      "path": "[local-source: reconstruct_uf_dt2_cs_v9_4.py]",
+      "md5": "5cbbd090c4a6e690bdbfa75e0633a716",
+      "verified_current_hash": true,
+      "lines": {
+        "diagnostic_status": "1–10",
+        "outputs": "637–693"
+      },
+      "supports": "Diagnostic reconstruction scope; spectra, z profiles, T2_eff, polarity correction; quantitative calibration remains required."
+    },
+    {
+      "id": "local_guide",
+      "path": "[local-source: Guia_Calibracion_UF_DT2_CS_v9_4_5kDa.pdf]",
+      "pages": 340,
+      "inspected_pdf": true,
+      "supports": "Guide release status page 1 and design workflow."
+    },
+    {
+      "id": "local_saved_tests",
+      "path": "[local-source: salida_tests_v9_4.txt]",
+      "supports": "Four saved PASS categories and explicit NOT TESTED items. This research task did not rerun tests."
+    },
+    {
+      "id": "local_saved_calc",
+      "path": "[local-source: salida_calculadora_v9_4.txt]",
+      "supports": "Illustrative nominal PABBO timing/b(z)/signal outputs, not validated performance."
+    }
+  ]
+}

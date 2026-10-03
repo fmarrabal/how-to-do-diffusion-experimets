@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "template_expno": 10,
+  "template_procno": 1,
+  "expected_dataset_name": "",
+  "expected_pulse_program": "stebpgp1s1d",
+  "ramp_count": 3,
+  "start_expno": 100,
+  "experiment_stride": 100,
+  "gradient_index": 6,
+  "gradient_start_percent": 8,
+  "gradient_stop_percent": 96,
+  "gradient_step_percent": 4,
+  "delay_parameter": "D20",
+  "delay_values_s": [0.05, 0.10, 0.15],
+  "delay_mapping_confirmed": false,
+  "pulse_parameter": null,
+  "pulse_value_us": null,
+  "pulse_mapping_confirmed": false,
+  "dummy_scans": 16,
+  "example_only": true
+}
