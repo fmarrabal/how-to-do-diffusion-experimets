@@ -1,0 +1,51 @@
+DiffAtOnce Academy 1.3 — Beatrix
+
+ES
+Ajuste LoRA local REAL de Qwen3-1.7B, licencia Apache-2.0, revisión fija
+70d244cc86ccca08cf5af4e1e306ecf908b1ad5e. Entrenamiento R4: 382 ejemplos
+propios/sintéticos ES/EN, 40 de desarrollo y 36 de prueba. Semilla 261030;
+rango 16, alpha 32, dropout 0.05, q_proj/v_proj; tres épocas.
+
+Generación libre GPU: 35/36, frente a 14/36 de la base. Pasaron 16/16 casos
+numéricos, 6/6 límites, 8/8 regresiones y 5/6 preguntas de temas reservados;
+controles causales: 16/16. Las salidas fallidas anteriores siguen fallidas.
+La inferencia CPU cuantizada, los nuevos casos de 360 grados y las guardas
+finales se documentan por separado con hashes. El replay de las guardas usa
+texto real ya capturado: no constituye una nueva generación del modelo.
+
+Fuentes literales y prosa generada se identifican por separado. No se
+entrenaron textos completos de artículos, espectros privados, calibraciones
+experimentales ni datos de estudiantes. Las veinte derivaciones permanecen
+como consulta documental literal revisada, sin LLM ni inclusión en LoRA:
+40 entregas ES/EN preservan ecuaciones, supuestos y referencias exactos.
+
+Estas comprobaciones son QA de software/modelo y revisión científica interna
+de ejemplos. No son validación experimental ni eficacia educativa medida.
+No hay control de equipos, red ni modificación de datos originales.
+
+EN
+Actual local LoRA of Qwen3-1.7B, Apache-2.0 license, pinned revision
+70d244cc86ccca08cf5af4e1e306ecf908b1ad5e. R4 uses 382 original/synthetic
+ES/EN training examples, 40 development and 36 test examples. Seed 261030;
+rank 16, alpha 32, dropout 0.05, q_proj/v_proj; three epochs.
+
+Unconstrained GPU generation: 35/36, versus 14/36 for the base. Passed:
+16/16 numerical, 6/6 behavior limits, 8/8 original regression and 5/6
+held-topic cases; causal checks: 16/16. Earlier failed outputs remain failed.
+Actual quantized CPU inference, new 360-degree cases and final guards are
+separately hash-bound. Guard replay uses captured real text; it is not new
+model generation.
+
+Literal sources and generated prose are separately identified. No full
+article text, private spectra, experimental calibrations or student data
+were trained. The twenty paper derivations remain reviewed literal
+documentary guidance, without LLM generation or LoRA inclusion: 40 ES/EN
+deliveries preserve exact equations, assumptions and references.
+
+These are developer-authored software/model QA and internal scientific
+example review, not experimental validation or measured teaching
+effectiveness. No instrument control, network or original-data changes.
+
+See RESEARCH_TRAINING_V3_ES_EN.md for the reproducible recipe, frozen splits
+and limitations. manifest.json binds the model and current reports.
+QWEN_LICENSE.txt retains the upstream license.

@@ -105,6 +105,24 @@ public sealed class TutorService : IAsyncDisposable
                     first.Sources, false, ModelStatus, null, null, timer.Elapsed.TotalSeconds,
                     true, first.ReviewedQuote, null, first.Sources, Array.Empty<TutorSource>(), true, first.SupplementalSha256);
             }
+            if (IsTemperatureFlowBoundaryQuestion(moduleId, question))
+            {
+                // The short model anchor did not answer the flow subquestion.
+                // Supply the complete reviewed temperature and convection
+                // modules without invoking or claiming an LLM explanation.
+                var convection = Retrieve(language, question, "convection");
+                var reviewed = evidence.Concat(convection).DistinctBy(e => e.Id).ToArray();
+                var reviewedSources = reviewed.SelectMany(e => e.Sources).DistinctBy(s => s.Id).ToArray();
+                var quote = string.Join("\n\n", reviewed.Select(e => e.Title + "\n" + e.Body));
+                ModelStatus = "temperature_flow_documentary_only";
+                var lead = language == "es"
+                    ? "Esta pregunta combina escala de difusión y flujo. Se muestran las explicaciones revisadas de ambos módulos; no se genera una respuesta con el LLM. La escala TTMS/temperatura no elimina la convección: revise fase, varios Δ y controles térmicos o una secuencia compensada.\n\n"
+                    : "This question combines diffusion scaling and flow. Reviewed explanations from both modules are shown; no LLM answer is generated. TTMS/temperature scaling does not remove convection: inspect phase, several Δ values, and thermal controls or a compensated sequence.\n\n";
+                return new TutorAnswer(lead + quote,
+                    language == "es" ? "Guía de temperatura y convección · sin LLM" : "Temperature and convection guide · no LLM",
+                    reviewedSources, false, ModelStatus, null, null, timer.Elapsed.TotalSeconds,
+                    true, quote, null, reviewedSources, Array.Empty<TutorSource>());
+            }
             if (!IsModelInstalled) { ModelStatus = "model_not_installed"; return Documentary(language, evidence, sources, timer.Elapsed.TotalSeconds, "model_not_installed"); }
             try
             {
@@ -195,6 +213,19 @@ public sealed class TutorService : IAsyncDisposable
                     if (calculationContext is not null)
                     {
                         var calculated = JsonSerializer.SerializeToElement(calculationContext); var expected = calculated.GetProperty("result").GetDouble();
+                        var unsupportedMeasurement = ResearchTutorService.HasUnsupportedSyntheticGradientClaim(text, calculated);
+                        var contradictoryScaling = ResearchTutorService.HasContradictorySyntheticGradientScaling(text, calculated);
+                        if (unsupportedMeasurement || contradictoryScaling)
+                        {
+                            ModelStatus = unsupportedMeasurement ? "synthetic_provenance_rejected" : "synthetic_scaling_rejected";
+                            var reason = unsupportedMeasurement ? "Synthetic gradient-scaling context does not support a performed gradient measurement or calibration." : "The answer attributes quadratic scaling to the gradient itself rather than to b.";
+                            if (_captureEvaluationDiagnostics) LastEvaluationDiagnostics = JsonSerializer.SerializeToElement(new { generation=LastEvaluationDiagnostics, rejection_reason=reason, diagnostic_only=true, student_ui_exposed=false });
+                            var doc = Documentary(language, evidence, sources, timer.Elapsed.TotalSeconds, ModelStatus);
+                            var lead = unsupportedMeasurement
+                                ? language == "es" ? "Se rechazó la respuesta generada porque introducía una medición o calibración no aportada en el ejemplo sintético. Se muestra únicamente la guía revisada:\n\n" : "The generated answer was rejected because it introduced a measurement or calibration not supplied in the synthetic example. Only reviewed guidance is shown:\n\n"
+                                : language == "es" ? "Se rechazó la respuesta generada porque atribuía al gradiente la dependencia cuadrática que corresponde a b. Se muestra únicamente la guía revisada:\n\n" : "The generated answer was rejected because it attributed the quadratic dependence of b to the gradient itself. Only reviewed guidance is shown:\n\n";
+                            return doc with { Text = lead + string.Join("\n\n", evidence.Select(e => e.Title + "\n" + e.Body)) };
+                        }
                         var mentioned = Regex.Matches(text, @"(?<![A-Za-z])[0-9]+(?:[.,][0-9]+)?").Select(v => double.TryParse(v.Value.Replace(',', '.'), NumberStyles.Float, CultureInfo.InvariantCulture, out var n) ? n : double.NaN);
                         var pulseContradiction = calculated.GetProperty("calculation").GetString() == "P90 = P180 / 2" && Regex.IsMatch(text, @"(?:p90|90\s*(?:°|degrees?|grados?)).{0,50}(?:double|twice|doble|dos\s+veces).{0,50}(?:p180|180)", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
                         var consistentTypedResult = !_manifest.ResearchQualityPassed || ResearchTutorService.HasConsistentLabeledResult(text, calculated);
@@ -303,6 +334,15 @@ public sealed class TutorService : IAsyncDisposable
         }
         var ratio = trace.GetProperty("inputs").GetProperty("gradient_scale").GetDouble().ToString("G8", CultureInfo.InvariantCulture);
         return language == "es" ? $"Ejemplo sintético: g se multiplica por {ratio}. δ y Δ no cambian. ¿Por qué factor cambia b?" : $"Synthetic example: g is multiplied by {ratio}. δ and Δ do not change. By what factor does b change?";
+    }
+    /// <summary>Scoped documentary routing for combined temperature-scaling
+    /// and flow questions. Ordinary lesson questions retain their model path.</summary>
+    public static bool IsTemperatureFlowBoundaryQuestion(string moduleId, string question)
+    {
+        if (moduleId != "temperature-standard") return false;
+        var text = Regex.Replace(question.Normalize(NormalizationForm.FormD), @"\p{Mn}", "").ToLowerInvariant();
+        return Regex.IsMatch(text, @"\b(?:flow|flujo|convection|conveccion)\b", RegexOptions.CultureInvariant)
+            && Regex.IsMatch(text, @"\b(?:fttms|ft|temperature|temperatura|scal\w*|escala|correc\w*)\b|293\s*/", RegexOptions.CultureInvariant);
     }
     private sealed record Evidence(string Id, string Title, string Body, IReadOnlyList<TutorSource> Sources, string? ReviewedQuote = null, bool IsSupplemental = false, string? SupplementalSha256 = null);
     private object? TeachingFocus(string language, string moduleId)

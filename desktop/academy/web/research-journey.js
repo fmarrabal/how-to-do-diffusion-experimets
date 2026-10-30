@@ -123,7 +123,7 @@
       keptAcquisition.rows.forEach((row, i) => { row.b = keptAcquisition.bs[i]; });
     }
     return step(x, 'calibration', p, { calibration: { ...p, referenceFit, recommendation, usable, acquisitionRetained: keepSynthetic || x.kind === 'experimental', appliedToImportedB: x.kind === 'experimental' && opts.applyScale === true,
-      status: x.kind === 'synthetic' ? 'synthetic-calibration-decision' : 'user-supplied-calibration-evidence', warning: text('Una calibración sólo es transferible a la misma forma de onda y condiciones verificadas.', 'A calibration is transferable only to the same verified waveform and conditions.') }, design: keptDesign, acquisition: keptAcquisition, processing: null, analysis: null, uncertainty: null, measurement: null });
+      status: x.kind === 'synthetic' ? 'synthetic-calibration-decision' : opts.applyScale === true ? 'user-supplied-calibration-evidence' : 'independent-calibration-not-established', warning: text('Una calibración sólo es transferible a la misma forma de onda y condiciones verificadas.', 'A calibration is transferable only to the same verified waveform and conditions.') }, design: keptDesign, acquisition: keptAcquisition, processing: null, analysis: null, uncertainty: null, measurement: null });
   }
   function design(s, opts = {}) {
     const x = state(s); if (!x.calibration) throw new RangeError('Record the calibration decision first.');
@@ -215,7 +215,8 @@
     let distribution = null;
     if (p.method !== 'mono') { const f = I.regularizedFit(kernel, y, { smooth: p.method === 'tikhonov' ? p.regularization * bs.length : 0, l1: p.method === 'l1' ? p.regularization * bs.length : 0 }); const total = sum(f.weights); distribution = { grid, ...f, centroid: total > 0 ? dot(grid, f.weights) / total : null, identity: 'nonnegative-distribution-on-declared-log-grid' }; }
     const chosenD = distribution ? distribution.centroid : mono.D;
-    const perPeak = x.processing.perPeak.filter(v => v.normalized && Math.abs(v.integrals[0]) > Math.max(...x.processing.integrals.map(Math.abs)) * .02).map(v => ({ id: v.id, fit: fit(bs, v.normalized), windowPpm: v.windowPpm }));
+    const referenceIndex = bs.indexOf(Math.min(...bs));
+    const perPeak = x.processing.perPeak.filter(v => v.normalized && Math.abs(v.integrals[referenceIndex]) > Math.max(...x.processing.integrals.map(Math.abs)) * .02).map(v => ({ id: v.id, fit: fit(bs, v.normalized), windowPpm: v.windowPpm }));
     return step(x, 'inference', p, { analysis: { method: p.method, parameters: p, D_m2_s: chosenD, mono, distribution, perPeak, residualRms: distribution ? distribution.rms : mono.rms,
       reportedQuantity: distribution ? 'conditional grid-weighted D centroid' : 'conditional monoexponential D', absoluteCalibrationValidated: false,
       warning: text('Un residuo pequeño o un máximo estrecho no identifican una especie ni prueban una distribución única. Comprueba controles y datos reservados.', 'A small residual or narrow peak does not identify a species or prove a unique distribution. Check controls and held-out observations.') }, uncertainty: null, measurement: null });
@@ -229,7 +230,8 @@
     const temperatureUnquantified = !synthetic && p.temperatureSdK > 0 && (alpha === undefined || alpha === null);
     const unquantifiedSources = temperatureUnquantified ? ['temperature: supply a sample/reference-specific dlnD/dT; no universal thermal correction is assumed'] : [];
     if (!synthetic && x.calibration?.status === 'independent-calibration-not-established') unquantifiedSources.push('absolute scale: independent reference calibration is not established; supplied Monte Carlo SDs are assumed sensitivities, not measured calibration uncertainty');
-    const usefulPeaks = x.processing.perPeak.filter(v => v.normalized && Math.abs(v.integrals[0]) > Math.max(...x.processing.integrals.map(Math.abs)) * .02);
+    const referenceIndex = x.processing.bs.indexOf(Math.min(...x.processing.bs));
+    const usefulPeaks = x.processing.perPeak.filter(v => v.normalized && Math.abs(v.integrals[referenceIndex]) > Math.max(...x.processing.integrals.map(Math.abs)) * .02);
     const curves = [x.processing.normalized, ...usefulPeaks.map(v => v.normalized)], bs = x.processing.bs;
     // Shared noise in overlapping integration windows is a Gram construction:
     // each window sums the same independent spectral-bin noise. This gives a
@@ -262,11 +264,15 @@
     const labels = { gradient: text('Escala de gradiente compartida', 'Shared gradient scale'), temperature: text('Temperatura compartida', 'Shared temperature'), processing: text('Línea de base correlacionada', 'Correlated baseline'), noise: text('Ruido de cada observación', 'Observation noise'), sequence: text('Escala b del modelo de secuencia', 'Sequence-model b scale') };
     const sourceContributions = Object.keys(labels).map(id => { const draws = run([id]).map(v => v.D[0]), sd = Math.sqrt(covariance(draws, draws)); return { id, label: labels[id], Dsd_m2_s: sd, relativeSd: sd / centre, interval95: [quantile(draws, .025), quantile(draws, .975)], quantified: !(id === 'temperature' && temperatureUnquantified), distributionSource: 'user-supplied conditional sensitivity distribution; not independently calibrated uncertainty' }; });
     const matrix = curves.map((_, i) => curves.map((__, j) => correlation(full.map(v => v.D[i]), full.map(v => v.D[j]))));
-    return step(x, 'uncertainty', p, { uncertainty: { parameters: p, samples: p.samples, interval95: [quantile(ds, .025), quantile(ds, .975)], medianD: quantile(ds, .5), sourceContributions, correlation: matrix, unquantifiedSources,
+    const estimator = { method: 'mono', pointEstimateD_m2_s: centre, selectedMethod: x.analysis.method,
+      selectedPointEstimateD_m2_s: x.analysis.D_m2_s, selectedEstimatorCovered: x.analysis.method === 'mono', distributionUncertaintyComputed: false,
+      label: text('Sensibilidad condicional del ajuste monoexponencial', 'Conditional sensitivity of the monoexponential fit'),
+      warning: x.analysis.method === 'mono' ? null : text('Este intervalo se calcula para D monoexponencial; no es un intervalo del centroide ni de los máximos de la distribución seleccionada.', 'This interval is computed for monoexponential D; it is not an interval for the selected distribution centroid or peaks.') };
+    return step(x, 'uncertainty', p, { uncertainty: { parameters: p, estimator, samples: p.samples, interval95: [quantile(ds, .025), quantile(ds, .975)], medianD: quantile(ds, .5), sourceContributions, correlation: matrix, unquantifiedSources,
       sharedDraws: full.slice(0, 12), noiseCorrelation, boundaryDraws: full.filter(v => v.atBoundary[0]).length,
       intervalReliability: full.some(v => v.atBoundary[0]) ? 'conditional-and-fit-boundary-limited' : 'conditional-model-sensitivity-only',
       perCurveIntervals: curves.map((_, i) => [quantile(full.map(v => v.D[i]), .025), quantile(full.map(v => v.D[i]), .975)]), coverageValidated: false,
-      scope: text('Monte Carlo condicional. Cada réplica comparte la misma escala de gradiente, temperatura y sesgo de procesado en todas las filas y ventanas. No incluye todas las posibles fuentes experimentales ni corrige un sesgo desconocido.', 'Conditional Monte Carlo. Each replicate shares one gradient scale, temperature and processing bias across every row and window. It neither includes every possible experimental source nor corrects unknown bias.'),
+      scope: text('Monte Carlo condicional del ajuste monoexponencial, no de la distribución ILT. Cada réplica comparte la misma escala de gradiente, temperatura y sesgo de procesado en todas las filas y ventanas. No incluye todas las posibles fuentes experimentales ni corrige un sesgo desconocido.', 'Conditional Monte Carlo of the monoexponential fit, not of the ILT distribution. Each replicate shares one gradient scale, temperature and processing bias across every row and window. It neither includes every possible experimental source nor corrects unknown bias.'),
       noiseModel: 'A shared white-spectral-noise-bin Gram model correlates overlapping window integrals. Relative SD and scan averaging are supplied assumptions, not calibrated experimental noise or bootstrap coverage.',
       distributions: { gradient: 'positive lognormal, mean 1, coefficient of variation gradientRelativeSd; shared across all rows/windows', sequence: 'positive lognormal, mean 1, coefficient of variation sequenceRelativeSd; shared b scale', temperature: 'zero-mean Gaussian with supplied SD K, shared across all rows/windows', processing: 'zero-mean Gaussian common normalized baseline offset', noise: 'zero-mean Gaussian spectral-bin noise; overlapping-window covariance and sqrt(NS) averaging are explicit' },
       thermalModel: alpha === undefined || alpha === null ? null : { coefficientPerK: alpha, convention: 'b_eff = b × g_factor² × exp(alpha ΔT) × sequence_factor; reported D is referred to the declared reference temperature' } } });
@@ -284,8 +290,10 @@
     const candidate = choice(opts.candidate || 'higher-b', ['higher-b', 'replicate', 'reverse', 'delta', 'flow-compensated'], 'next measurement'), points = integer(opts.points ?? 12, 'control points', 6, 64);
     const seed = integer(opts.seed ?? ((x.seed ^ 0x27d4eb2f) >>> 0), 'reserved control seed', 0, 4294967295);
     if (seed === x.acquisition.seed) throw new RangeError('Reserved observations require a seed independent of the original acquisition.');
-    const noise = finite(opts.noise ?? .01, 'control normalized noise SD', 0, .2), maxB = finite(opts.maxB ?? Math.min(2e10, Math.max(...x.processing.bs) * 2), 'proposed b maximum', 1e7, 2e10), { bs, normalized: y } = x.processing;
-    const mono = x.analysis.mono, distributions = [{ id: 'mono', Ds: [mono.D], amplitudes: [mono.amplitude], predicted: mono.prediction, residualRms: mono.rms, sse: sum(mono.residual.map(v => v * v)) }];
+    const noise = finite(opts.noise ?? .01, 'control normalized noise SD', 0, .2), maxB = finite(opts.maxB ?? Math.min(2e10, Math.max(1e7, Math.max(...x.processing.bs) * 2)), 'proposed b maximum', 1e7, 2e10), { bs, normalized: y } = x.processing;
+    const mono = x.analysis.mono;
+    if (mono.amplitude === null || !Number.isFinite(mono.amplitude)) throw new RangeError('The b=0 reference amplitude cannot be represented by this extrapolation. Supply an independently measured reference before planning a zero-b control.');
+    const distributions = [{ id: 'mono', Ds: [mono.D], amplitudes: [mono.amplitude], predicted: mono.prediction, residualRms: mono.rms, sse: sum(mono.residual.map(v => v * v)) }];
     const alternatives = [];
     for (const low of [.25, .5, .7, .85]) for (const high of [1.2, 1.5, 2, 3, 5, 8]) { const f = twoFit(bs, y, mono.D * low, mono.D * high); if (f) alternatives.push(f); }
     alternatives.sort((a, b) => a.sse - b.sse);
@@ -314,7 +322,9 @@
           // are not silently substituted for the original processed FID data.
           v.push({ b, timeSeconds: time, signal: calc.common * sum(calc.components.map(c => c.amplitude)), gradientTm: g });
         }
-        const ref = v[0].signal; observations = v.map(row => ({ ...row, signal: row.signal / Math.max(Math.abs(ref), 1e-12) + r.normal() * noise }));
+        const ref = v[0].signal;
+        if (Math.abs(ref) < 1e-12) throw new RangeError('The signed reserved-control reference is zero; inspect RF excitation before normalizing.');
+        observations = v.map(row => ({ ...row, signal: row.signal / ref + r.normal() * noise }));
         heldoutRanking = selected.predictions.map(model => ({ id: model.id, residualRms: rms(observations.map((row, i) => row.signal - model.signal[i])) })).sort((a, b) => a.residualRms - b.residualRms);
       }
     }

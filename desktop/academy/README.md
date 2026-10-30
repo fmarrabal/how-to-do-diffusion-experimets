@@ -1,6 +1,8 @@
-# DiffAtOnce Academy 1.3
+# DiffAtOnce Academy 1.3.1
 
 Formación práctica y doctoral en RMN de difusión, en español e inglés, con el mismo motor de investigación en WPF y en el navegador. / Practical and doctoral diffusion NMR training in Spanish and English, using the same research engine in WPF and the browser.
+
+[Auditoría 1.3.1 ES/EN](docs/AUDIT_1_3_1_ES_EN.md): correcciones numéricas, procedencia de calibración, intervalos del estimador monoexponencial y límites de Beatrix. / Numerical corrections, calibration provenance, monoexponential-estimator intervals and Beatrix limitations.
 
 ## Empieza aquí / Start here
 
@@ -10,8 +12,8 @@ In Windows open **Research studio**; in the browser select **Research**. Follow 
 
 | Documento / Document | Español | English |
 | --- | --- | --- |
-| Manual completo / Complete manual · 68 páginas/pages | [ACADEMY_MANUAL_ES.pdf](docs/ACADEMY_MANUAL_ES.pdf) | [ACADEMY_MANUAL_EN.pdf](docs/ACADEMY_MANUAL_EN.pdf) |
-| Investigación 1.3 / Research 1.3 · 22 páginas/pages | [RESEARCH_MANUAL_ES.pdf](docs/RESEARCH_MANUAL_ES.pdf) | [RESEARCH_MANUAL_EN.pdf](docs/RESEARCH_MANUAL_EN.pdf) |
+| Manual completo / Complete manual · 72 páginas/pages | [ACADEMY_MANUAL_ES.pdf](docs/ACADEMY_MANUAL_ES.pdf) | [ACADEMY_MANUAL_EN.pdf](docs/ACADEMY_MANUAL_EN.pdf) |
+| Investigación 1.3 / Research 1.3 · 26 páginas/pages | [RESEARCH_MANUAL_ES.pdf](docs/RESEARCH_MANUAL_ES.pdf) | [RESEARCH_MANUAL_EN.pdf](docs/RESEARCH_MANUAL_EN.pdf) |
 | Inicio rápido bilingüe / Bilingual quick start | [START_HERE_ES_EN.txt](START_HERE_ES_EN.txt) | ES + EN |
 | Reconstrucción desde fuentes / Build from source | [SOURCE_BUILD_V13.md](SOURCE_BUILD_V13.md) | ES + EN |
 

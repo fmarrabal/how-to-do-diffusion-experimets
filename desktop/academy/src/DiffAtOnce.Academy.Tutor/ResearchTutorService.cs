@@ -160,6 +160,15 @@ public sealed class ResearchTutorService : IAsyncDisposable
                     var allowed = sources.Select(s => s.Id).ToHashSet(StringComparer.Ordinal);
                     if (used.Length == 0 || used.Any(i => !allowed.Contains(i))) throw new InvalidDataException("Research answer contains an unsupported source.");
                     if (!SupportedNumbers(answer, body + "\n" + AsciiJson(causalAnchor) + "\n" + (contextJson ?? ""), calculationContext)) throw new InvalidDataException("Research answer changed or invented a numerical result.");
+                    var unsupportedMeasurement = HasUnsupportedSyntheticGradientClaim(answer, calculationContext);
+                    var contradictoryScaling = HasContradictorySyntheticGradientScaling(answer, calculationContext);
+                    if (unsupportedMeasurement || contradictoryScaling)
+                    {
+                        var reason = unsupportedMeasurement ? "Synthetic gradient-scaling context does not support a performed gradient measurement or calibration." : "The answer attributes quadratic scaling to the gradient itself rather than to b.";
+                        if (_captureEvaluationDiagnostics) LastEvaluationDiagnostics = JsonSerializer.SerializeToElement(new { generation=LastEvaluationDiagnostics, rejection_reason=reason, diagnostic_only=true, student_ui_exposed=false });
+                        ModelStatus = unsupportedMeasurement ? "research_synthetic_provenance_rejected" : "research_synthetic_scaling_rejected";
+                        return Documentary(language, chunk, sources, hintLevel, timer.Elapsed.TotalSeconds, ModelStatus);
+                    }
                     var generatedSources = sources.Where(s => used.Contains(s.Id, StringComparer.Ordinal)).ToArray();
                     var quote = Local(chunk, "why", language) + "\n\n" + Local(chunk, "body", language);
                     ModelStatus = _allowPendingNativeEvaluation ? "research_candidate_native_evaluation" : "research_local_llm_with_reviewed_guidance";
@@ -233,7 +242,11 @@ public sealed class ResearchTutorService : IAsyncDisposable
     {
         var field = hintLevel == 0 ? "question" : hintLevel == 1 ? "why" : "body";
         var quote = Local(chunk, field, language);
-        var lead = hintLevel < 2
+        var lead = status == "research_synthetic_scaling_rejected"
+            ? language == "es" ? "Se rechazó la respuesta generada porque atribuía al gradiente la dependencia cuadrática que corresponde a b. Se muestra únicamente la guía revisada:\n\n" : "The generated answer was rejected because it attributed the quadratic dependence of b to the gradient itself. Only reviewed guidance is shown:\n\n"
+            : status == "research_synthetic_provenance_rejected"
+            ? language == "es" ? "Se rechazó la respuesta generada porque introducía una medición o calibración no aportada en el ejemplo sintético. Se muestra únicamente la guía revisada:\n\n" : "The generated answer was rejected because it introduced a measurement or calibration not supplied in the synthetic example. Only reviewed guidance is shown:\n\n"
+            : hintLevel < 2
             ? language == "es" ? "Pista progresiva revisada:\n" : "Reviewed progressive hint:\n"
             : language == "es" ? "Guía documental revisada. No se ha generado una respuesta con el LLM.\n\n" : "Reviewed documentary guidance. No LLM answer was generated.\n\n";
         return new TutorAnswer(lead + quote, language == "es" ? "Guía de investigación · sin LLM" : "Research guide · no LLM",
@@ -426,6 +439,52 @@ public sealed class ResearchTutorService : IAsyncDisposable
 
     private static bool NumericClose(double actual, double expected) => double.IsFinite(actual) && double.IsFinite(expected) &&
         Math.Abs(actual - expected) <= Math.Max(double.Epsilon * 8, Math.Max(Math.Abs(actual), Math.Abs(expected)) * 1e-6);
+
+    /// <summary>A conservative provenance guard for the explicitly synthetic,
+    /// typed whole-waveform scaling example. It does not certify unrestricted
+    /// prose. Affirmative measured/calibrated claims are unsupported by this
+    /// context; explicit negation and hypothetical prerequisites remain valid.</summary>
+    public static bool HasUnsupportedSyntheticGradientClaim(string answer, JsonElement? calculation)
+    {
+        if (!IsSyntheticGradientCalculation(calculation)) return false;
+        var text = Regex.Replace(answer.Normalize(NormalizationForm.FormD), @"\p{Mn}", "").ToLowerInvariant();
+        foreach (var clause in Regex.Split(text, @"[.!?;\n]|\bbut\b|\bpero\b", RegexOptions.CultureInvariant))
+        {
+            foreach (Match claim in Regex.Matches(clause, @"\b(?:measured|calibrated|medid[oa]s?|calibrad[oa]s?)\b|\b(?:calibration|calibracion)\s+(?:(?:has\s+been|is|was|ha\s+sido|esta)\s+)?(?:performed|completed|realizada|completada)\b", RegexOptions.CultureInvariant))
+            {
+                var before = clause[..claim.Index];
+                // A negation must apply to this claim, rather than to an earlier
+                // unrelated statement. Splitting semicolons/but prevents the
+                // observed 'not the original; the measured one is' escape.
+                var negated = Regex.IsMatch(before, @"\b(?:not|never|no|nunca|sin)\s+(?:(?:been|yet|actually|experimentally|independently|a|an|ha|se|es|sido|esta|un|una|gradiente|gradient)\s+){0,5}$", RegexOptions.CultureInvariant)
+                    || Regex.IsMatch(before, @"\b(?:does\s+not|do\s+not|cannot|doesn't|no)\s+(?:prove|show|establish|demonstrate|imply|demuestra|prueba|implica)\s+(?:(?:that|a|the|el|que|un|esta|is|was|gradient|gradiente|has|been)\s+){0,7}$", RegexOptions.CultureInvariant);
+                var hypothetical = Regex.IsMatch(before, @"\b(?:if|would|could|should|must|require[sd]?|needed|si|deberia|debe|podria|requiere|necesita)\b[^;.!?]{0,65}$", RegexOptions.CultureInvariant);
+                if (!negated && !hypothetical) return true;
+            }
+        }
+        return false;
+    }
+
+    /// <summary>Reject the observed subject reversal in this typed teaching
+    /// example: b scales quadratically with a whole-waveform amplitude factor;
+    /// the gradient amplitude itself does not scale quadratically.</summary>
+    public static bool HasContradictorySyntheticGradientScaling(string answer, JsonElement? calculation)
+    {
+        if (!IsSyntheticGradientCalculation(calculation)) return false;
+        var text = Regex.Replace(answer.Normalize(NormalizationForm.FormD), @"\p{Mn}", "").ToLowerInvariant();
+        return Regex.IsMatch(text, @"\bgradient(?:\s+itself)?\s+(?:scales?|is\s+scal(?:ing|ed))\s+(?:quadratic\w*|with\s+the\s+square)\b|\bgradiente\s+(?:se\s+)?(?:escala|varia)\s+(?:cuadra\w*|quadra\w*|al\s+cuadrado)\b", RegexOptions.CultureInvariant);
+    }
+
+    private static bool IsSyntheticGradientCalculation(JsonElement? calculation) =>
+        calculation is { ValueKind: JsonValueKind.Object }
+            && calculation.Value.TryGetProperty("kind", out var kind)
+            && kind.ValueKind == JsonValueKind.String
+            && kind.GetString() is "synthetic-worked-example" or "synthetic_worked_example"
+            && calculation.Value.TryGetProperty("calculation", out var formula)
+            && formula.ValueKind == JsonValueKind.String
+            && formula.GetString()?.Replace(" ", "", StringComparison.Ordinal) == "b_scale=gradient_scale^2"
+            && calculation.Value.TryGetProperty("experimental_calibration", out var experimental)
+            && experimental.ValueKind == JsonValueKind.False;
 
     /// <summary>Check every explicit result assignment, with a tolerance that
     /// scales to small physical quantities. A number mentioned elsewhere does

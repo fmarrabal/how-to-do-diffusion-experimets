@@ -35,6 +35,7 @@ DOCS = ACADEMY / "docs"
 QA = ACADEMY / "qa/research-1.3/manuals"
 CAPTURES = ACADEMY / "qa/research-1.3/ui"
 NODE = os.environ.get("ACADEMY_NODE") or shutil.which("node") or "node"
+
 FIGURES = ["brief", "calibration", "uncertainty", "spatial", "competencies", "defence", "library", "pilot"]
 NAV = {
     "es": ["La pregunta", "Calibrar", "Diseñar", "Adquirir", "Procesar", "Interpretar", "Incertidumbre", "Próxima medida", "RF + espacio", "Competencias", "Defensa y revisión", "Datos públicos"],

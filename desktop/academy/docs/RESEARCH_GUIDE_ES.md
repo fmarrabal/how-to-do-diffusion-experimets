@@ -1,4 +1,6 @@
-# DiffAtOnce Academy 1.3 - Guía de investigación
+# DiffAtOnce Academy 1.3.1 - Guía de investigación
+
+Actualizada tras la auditoría de 1.3. Consulta [AUDIT_1_3_1_ES_EN.md](AUDIT_1_3_1_ES_EN.md) para las correcciones y sus controles. El PDF comienza con cuatro páginas vigentes de correcciones; después conserva el manual 1.3 y sus capturas como fuente histórica identificada.
 
 Ediciones WPF y web. Esta guía complementa el curso original y el manual doctoral.
 
@@ -122,7 +124,7 @@ Comparar modelos sobre exactamente las mismas observaciones.
 3. Mantén el mismo procesado para atribuir cambios al método. Después estudia por separado la sensibilidad al procesado.
 4. Vuelve al laboratorio Doctorado para profundizar en el núcleo ILT, correlaciones y análisis conjunto.
 
-Una curva bien ajustada no determina una distribución única. La penalización introduce una preferencia y puede fusionar o crear máximos aparentes.
+Una curva bien ajustada no determina una distribución única. La penalización introduce una preferencia y puede fusionar o crear máximos aparentes. Un núcleo con más columnas D que observaciones tiene un espacio nulo derecho no resuelto aunque todos los valores singulares mostrados sean no nulos: la lista contiene sólo min(filas, columnas) valores. Positividad y regularización no convierten esa advertencia algebraica de rango en una asignación química.
 
 **Comprobación:** Puedes distinguir ajuste numérico, resolución, distribución y asignación química.
 
@@ -135,15 +137,15 @@ Separar dispersión aleatoria de sesgos y dependencias comunes.
 [Ver la captura real en el manual PDF](RESEARCH_MANUAL_ES.pdf)
 
 1. Introduce Muestras Monte Carlo y las desviaciones de escala g, temperatura, procesado, ruido y modelo b.
-2. Pulsa Propagar errores compartidos y compara contribuciones e intervalo condicional.
+2. Pulsa Propagar errores compartidos y compara contribuciones e intervalo condicional del estimador monoexponencial de referencia.
 3. Repite reduciendo sólo ruido; después reduce la incertidumbre de calibración. Compara la diferencia.
 4. Describe qué fuentes comparten una misma realización entre gradientes y señales, y cuáles varían por observación.
 
-La misma calibración puede desplazar juntas varias D. Tratar ese error como ruido independiente fabricaría información que no se adquirió.
+La misma calibración puede desplazar juntas varias D. Tratar ese error como ruido independiente fabricaría información que no se adquirió. El Monte Carlo vuelve a ajustar un modelo monoexponencial de referencia. Si el análisis seleccionado es NNLS, Tikhonov o L1, su centroide es otro estimador: el intervalo mono no cuantifica ese centroide ni la incertidumbre de la forma, los máximos o el número de componentes de la distribución. La interfaz separa D e intervalo mono de referencia y avisa cuando el estimador ILT seleccionado no está cubierto.
 
 **Comprobación:** Justifica un control que reduzca la fuente dominante y enumera errores que tu intervalo no cuantifica.
 
-**Límite:** El intervalo es condicional a los modelos y distribuciones introducidos. No es cobertura experimental validada ni corrige automáticamente un modelo erróneo.
+**Límite:** El intervalo es condicional al estimador mono, a los modelos y a las distribuciones introducidas. Aquí no se calcula incertidumbre de la distribución. No es cobertura experimental validada ni corrige automáticamente un modelo erróneo.
 
 ## 08 - Elegir la próxima medida
 
@@ -151,7 +153,7 @@ Usar la ambigüedad para diseñar un control discriminante.
 
 1. Compara Mayor rango b, Repetir el diseño, Invertir el orden, Cambiar Δ y Compensación de flujo.
 2. Escribe una predicción antes de pulsar Comparar diseños.
-3. Elige una adquisición y pulsa Observar control reservado. Las observaciones reservadas usan una realización independiente.
+3. Elige una adquisición y pulsa Observar control reservado. Las observaciones reservadas usan una realización independiente y conservan la referencia con signo y el procesado declarado; tomar valores absolutos cambiaría la comparación.
 4. Contrasta tu predicción con los resultados y explica qué alternativas sobreviven.
 
 Dos distribuciones pueden predecir casi igual los datos disponibles y divergir en otra región b. La adquisición propuesta explora esa diferencia.

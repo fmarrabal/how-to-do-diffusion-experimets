@@ -1,4 +1,6 @@
 """Structural, provenance and exercise-contract checks for Academy content."""
+import argparse
+from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
@@ -6,6 +8,11 @@ from pathlib import Path
 BASE = Path(__file__).resolve().parents[1]
 ROOT = BASE.parents[1]
 CONTENT = BASE / "content"
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--output", type=Path, default=CONTENT / "curriculum-verification.json", help="Use a fresh audit path to preserve the frozen report")
+parser.add_argument("--source-pptx", type=Path, help="Optional original presentation for a fresh byte/content comparison")
+parser.add_argument("--require-source", action="store_true", help="Fail if the original presentation is not available")
+args = parser.parse_args()
 checks = []
 def check(name, condition):
     checks.append({"name": name, "passed": bool(condition)})
@@ -14,13 +21,26 @@ def pair(value):
 
 course = json.loads((CONTENT / "course.json").read_text(encoding="utf-8"))
 source = json.loads((CONTENT / "source-index.json").read_text(encoding="utf-8"))
-physics = json.loads((ROOT / "entregables/diffusion-motion-lab/physics-catalog.json").read_text(encoding="utf-8"))
+physics = json.loads((BASE / "lab/physics-catalog.json").read_text(encoding="utf-8"))
 scenes = {s["id"]: s for s in physics["scenes"]}
 check("course title bilingual", pair(course["title"]))
 check("24 modules", len(course["modules"]) == 24)
 check("module ids unique", len({m["id"] for m in course["modules"]}) == 24)
 check("module ordering", [m["order"] for m in course["modules"]] == list(range(1, 25)))
-check("source original SHA unchanged", hashlib.sha256(Path(source["input"]["path"]).read_bytes()).hexdigest() == source["input"]["sha256"] == course["sourceSha256"])
+check("course retains original extraction identity", source["input"]["sha256"] == course["sourceSha256"])
+source_path = args.source_pptx or Path(source["input"].get("path", ""))
+source_verification = {"available": source_path.is_file(), "packageByteIdentity": None, "teachingContentCompared": False}
+if source_path.is_file():
+    from manual_source_reaudit import compare_source
+    fresh = compare_source(source_path, source)
+    source_verification.update(packageByteIdentity=fresh["packageByteIdentity"], teachingContentCompared=True,
+        allTeachingContentChecksPassed=fresh["allTeachingContentChecksPassed"],
+        currentInput={k:v for k,v in fresh["currentInput"].items() if k != "path"},
+        snapshotInputSha256=source["input"]["sha256"], comparedSlides=len(fresh["slides"]))
+    check("available PPTX teaching content equals frozen extraction", fresh["allTeachingContentChecksPassed"])
+else:
+    source_verification["scope"] = "Original PPTX unavailable; only included frozen teaching snapshot/provenance are checked. No package byte identity or fresh external-source comparison is claimed."
+    if args.require_source: check("required original PPTX is available", False)
 check("all 81 source slides mapped", source["coverage"]["mappedSlides"] == 81 and not source["coverage"]["unmappedSlides"])
 all_mapped = set()
 for slide in source["slides"]:
@@ -54,11 +74,13 @@ for module in course["modules"]:
 catalog = json.loads((CONTENT / "algorithm-catalog.json").read_text(encoding="utf-8"))
 check("catalog 72 source records", len(catalog["records"]) == catalog["counts"]["records"] == 72)
 check("catalog scopes/limits", all(r.get("use_es") and r.get("use_en") and r.get("limits_es") and r.get("limits_en") for r in catalog["records"]))
-result = {"version": "1.0.0", "checkedDate": "2026-10-05", "checks": checks,
+result = {"version": "1.0.0", "checkedDate": datetime.now(timezone.utc).date().isoformat(), "checks": checks,
           "passed": sum(c["passed"] for c in checks), "failed": sum(not c["passed"] for c in checks),
           "evidenceBoundary": "Source/provenance, bilingual content and scene contracts only. Not scientific peer review, student usability, LLM evaluation or hardware validation.",
+          "sourceVerification": source_verification,
           "contentHashes": {name: hashlib.sha256((CONTENT / name).read_bytes()).hexdigest() for name in ("course.json", "source-index.json", "algorithm-catalog.json")}}
-(CONTENT / "curriculum-verification.json").write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+args.output.parent.mkdir(parents=True,exist_ok=True)
+args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
 print(json.dumps({k: result[k] for k in ("passed", "failed", "contentHashes")}, indent=2))
 if result["failed"]:
     print(json.dumps([c for c in checks if not c["passed"]], indent=2))

@@ -2,8 +2,9 @@
   <Grid>
     <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="32"/></Grid.RowDefinitions>
     <Border Background="White" BorderBrush="{StaticResource Line}" BorderThickness="0,0,0,1" Padding="24,10">
-      <DockPanel>
-        <WrapPanel DockPanel.Dock="Right" VerticalAlignment="Center">
+      <Grid x:Name="HeaderRoot">
+        <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+        <WrapPanel x:Name="HeaderActions" Grid.Row="1" VerticalAlignment="Center" Margin="0,5,0,0">
           <Button x:Name="LanguageButton" Content="EN" Click="Language_Click" AutomationProperties.Name="Change language"/>
           <Button x:Name="ResearchButton" Content="Investigación continua" Click="Research_Click"/>
           <Button x:Name="WorkshopButton" Content="Taller de calibración" Click="Workshop_Click"/>
@@ -14,8 +15,8 @@
           <Button x:Name="ExportButton" Content="Exportar progreso" Click="Export_Click"/>
           <Button x:Name="HelpButton" Content="Manual" Click="Help_Click"/>
         </WrapPanel>
-        <StackPanel Margin="0,6,18,8"><TextBlock Text="DiffAtOnce Academy" FontSize="27" FontWeight="SemiBold" LineHeight="38"/><TextBlock x:Name="Subtitle" Text="Aprender a medir. Entender antes de interpretar." Foreground="{StaticResource Muted}"/></StackPanel>
-      </DockPanel>
+        <StackPanel x:Name="HeaderBrand" Grid.Row="0" Margin="0,6,0,3"><TextBlock x:Name="HeaderTitle" Text="DiffAtOnce Academy" FontSize="27" FontWeight="SemiBold" LineHeight="38"/><TextBlock x:Name="Subtitle" Text="Aprender a medir. Entender antes de interpretar." Foreground="{StaticResource Muted}"/></StackPanel>
+      </Grid>
     </Border>
     <Grid Grid.Row="1">
       <Grid.ColumnDefinitions><ColumnDefinition Width="248"/><ColumnDefinition Width="*"/><ColumnDefinition Width="326"/></Grid.ColumnDefinitions>
@@ -44,9 +45,9 @@
         </TabControl>
       </Grid>
       <Border Grid.Column="2" Background="#EAF2F4" BorderBrush="{StaticResource Line}" BorderThickness="1,0,0,0" Padding="18,22,18,18">
-        <Grid><Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+        <ScrollViewer x:Name="TutorPaneScroll" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"><Grid MinHeight="620" Height="{Binding ViewportHeight, ElementName=TutorPaneScroll}"><Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
           <StackPanel Margin="0,0,0,14"><TextBlock Text="Beatrix" FontSize="26" FontWeight="SemiBold"/><TextBlock x:Name="TutorSubtitle" Text="Tu tutor de RMN de difusión" Foreground="{StaticResource Muted}"/><TextBlock x:Name="TutorMode" Text="Fuentes locales" Foreground="{StaticResource Accent}" FontSize="11" Margin="0,8,0,0"/><WrapPanel Margin="0,10,0,0"><Button x:Name="WhyButton" Content="¿Por qué sucede?" Click="Why_Click"/><Button x:Name="NextButton" Content="¿Qué compruebo?" Click="Next_Click"/></WrapPanel></StackPanel>
-          <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto"><StackPanel>
+          <ScrollViewer x:Name="TutorResponseScroll" Grid.Row="1" VerticalScrollBarVisibility="Auto"><StackPanel>
             <TextBlock x:Name="TutorGeneratedHeading" FontSize="12" FontWeight="SemiBold" Foreground="{StaticResource Accent}" Margin="0,0,0,8" Visibility="Collapsed"/>
             <TextBlock x:Name="TutorAnswer" Text="Selecciona una lección y pregunta. Puedo usar las explicaciones del curso y los parámetros de tu simulación." FontSize="14" LineHeight="22"/>
             <Border x:Name="TutorCourseQuoteCard" Background="White" Padding="12" CornerRadius="7" Margin="0,16,0,0" Visibility="Collapsed"><StackPanel>
@@ -56,9 +57,9 @@
             <StackPanel x:Name="TutorSources" Margin="0,15,0,0"/>
           </StackPanel></ScrollViewer>
           <StackPanel Grid.Row="2" Margin="0,15,0,0"><TextBlock x:Name="TutorContext" Foreground="{StaticResource Muted}" FontSize="11" Margin="0,0,0,7"/><TextBox x:Name="QuestionBox" AcceptsReturn="True" TextWrapping="Wrap" Height="92" VerticalScrollBarVisibility="Auto" AutomationProperties.Name="Question for Beatrix"/><WrapPanel Margin="0,10,0,0"><Button x:Name="AskButton" Content="Preguntar" Click="Ask_Click" Background="#086C69" Foreground="White"/><Button x:Name="CancelButton" Content="Cancelar" Click="Cancel_Click" IsEnabled="False"/></WrapPanel><TextBlock x:Name="TutorStatus" Foreground="{StaticResource Muted}" FontSize="11"/></StackPanel>
-        </Grid>
+        </Grid></ScrollViewer>
       </Border>
     </Grid>
-    <Border Grid.Row="2" Background="White" BorderBrush="{StaticResource Line}" BorderThickness="0,1,0,0" Padding="18,5"><DockPanel><TextBlock DockPanel.Dock="Right" Text="ACADEMY 1.3 · ES / EN" FontSize="10" Foreground="{StaticResource Muted}"/><TextBlock x:Name="StatusText" Text="Simulaciones de formación · los datos experimentales originales se conservan" FontSize="11" Foreground="{StaticResource Muted}"/></DockPanel></Border>
+    <Border Grid.Row="2" Background="White" BorderBrush="{StaticResource Line}" BorderThickness="0,1,0,0" Padding="18,5"><DockPanel><TextBlock DockPanel.Dock="Right" Text="ACADEMY 1.3.1 · ES / EN" FontSize="10" Foreground="{StaticResource Muted}"/><TextBlock x:Name="StatusText" Text="Simulaciones de formación · los datos experimentales originales se conservan" FontSize="11" Foreground="{StaticResource Muted}"/></DockPanel></Border>
   </Grid>
 </Window>

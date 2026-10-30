@@ -1,0 +1,183 @@
+{
+  "version": "1.3.1",
+  "scope": "Bounded post-change runtime evaluation. Correct generated explanations and explicit reviewed fallbacks are distinct outcomes. Replays are not new model generation.",
+  "recordedUtc": "2026-10-30T21:06:11.681418+00:00",
+  "automaticSourcedBehaviorChecksPassed": true,
+  "automaticChecks": 82,
+  "releaseApprovalPending": true,
+  "newTrainingPerformed": false,
+  "modelSha256": "24bcf29032b1d4e19c08d69fa71bf562276b6999d22887b1f6aa344dfd58481a",
+  "courseSha256": "acf7755db563e592af97de0a6a269243342e8e430beec0267da277e794445f18",
+  "supplementalSha256": "7e49f5963739ec9e7c2678194b746526a254d573fc3d6eaab5cb8ae27be375b5",
+  "researchKnowledgeSha256": "a04ae8bcfa523c4f49981d562ec67baae7b4ab74cb452d6fc59a4cd4c6356717",
+  "researchTutorSourceSha256": "e90db70abee916558536962f44dcddfdf77f971ba8e6594486a094897f704763",
+  "legacyTutorSourceSha256": "2dc6dd211aa4894d709a27e7caf9b579539127927613acd62c1a6b4663358c86",
+  "evaluatorSourceSha256": "6fbf1b5134b7424ebd2d8bf0bc95859297dddffb9e721ce36ca3ef342dd761a0",
+  "systemInstructionsSha256": "efc8cde435fd6cf396426ac4f63e07c41df3c55199c53ef7b81fd7475a4d0b64",
+  "systemInstructionsChanged": false,
+  "preservedFullReports": {
+    "preGuard": {
+      "file": "native-beatrix-compatibility-1.3.1.json",
+      "sha256": "aed7b05db9c523f7c88024c4c5fb83cc05edd1392cfab0ad2cb475bf3e5a8c53",
+      "checks": 103,
+      "scope": "Full workspace QA evidence; automatic pass does not replace the manual semantic review."
+    },
+    "round1": {
+      "file": "postchange-semantic-native.json",
+      "sha256": "a1e7bb6058817eaf71821514e94fce62fa20c3ddbc3d0e381d63d0c484ac7070",
+      "checks": 71,
+      "scope": "Full workspace QA evidence; automatic pass does not replace the manual semantic review."
+    },
+    "round2": {
+      "file": "postchange-semantic-native-round2.json",
+      "sha256": "a49f4a3e3047da9e4def2b4ffa529cf48efbe979c696f055b9ec260800091d29",
+      "checks": 82,
+      "scope": "Full workspace QA evidence; automatic pass does not replace the manual semantic review."
+    },
+    "replayRound2": {
+      "file": "postchange-semantic-replay-round2.json",
+      "sha256": "6f18b6f90f24a85cf7b13474f00d12928b81180603ae6d70456022971936f315",
+      "checks": 78,
+      "scope": "Full workspace QA evidence; automatic pass does not replace the manual semantic review."
+    }
+  },
+  "capturedOriginalAnswersReplayed": 14,
+  "capturedRound1AnswersReplayed": 4,
+  "actualNativeGenerationsAttempted": 4,
+  "actualNativeGenerationsAccepted": 2,
+  "actualNativeGenerationsRejectedToDocumentary": 2,
+  "actualDocumentaryTemperatureFlowRequests": 2,
+  "actualGenerationResults": [
+    {
+      "id": "postchange_actual_b_scale_en_0.62",
+      "question": "The entire effective gradient waveform scales by 0.62, with unchanged timings. Explain b_scale and the physical reason.",
+      "passedSourcedBehavior": true,
+      "modelGenerationAttempted": true,
+      "acceptedGeneration": false,
+      "honestDocumentaryFallback": true,
+      "studentStatus": "research_synthetic_provenance_rejected",
+      "studentIsModelAnswer": false,
+      "studentGeneratedText": null,
+      "studentLead": "The generated answer was rejected because it introduced a measurement or calibration not supplied in the synthetic example. Only reviewed guidance is shown:",
+      "sourceIds": [
+        "academy-pulse",
+        "Sinnaeve2012"
+      ],
+      "rawGeneratedOutput": "{\"answer\":\"b_scale=0.3844 factor. q scales linearly with gradient and b=integral(q squared dt), so b scales quadratically. This requires scaling the entire effective waveform while preserving its shape and all timings, including delta and Delta. The original gradient is not used; the measured one is.\",\"source_ids\":[\"academy-pulse\",\"Sinnaeve2012\"],\"status\":\"answer\"}",
+      "rawGeneratedOutputSha256": "4f6df9306445e82532ac7b8c77042647023234e29a4208dfaf0aee5c91261f73",
+      "rejectionReason": "Synthetic gradient-scaling context does not support a performed gradient measurement or calibration.",
+      "rejectedRawShownToStudent": false
+    },
+    {
+      "id": "postchange_actual_b_scale_es_0.62",
+      "question": "Toda la forma efectiva de gradiente se multiplica por 0.62, conservando forma y tiempos delta y Delta. Explica b_scale y su causa física; es un ejemplo sintético, no una medición.",
+      "passedSourcedBehavior": true,
+      "modelGenerationAttempted": true,
+      "acceptedGeneration": true,
+      "honestDocumentaryFallback": false,
+      "studentStatus": "research_candidate_native_evaluation",
+      "studentIsModelAnswer": true,
+      "studentGeneratedText": "b_scale=0.3844 factor. q escala linealmente con el gradiente y b=integral(q² dt), por eso b escala al cuadrado. Esto exige escalar toda la forma efectiva y mantener la forma y todos los tiempos, incluidos delta y Delta. El factor sintético no calibra un gradiente experimental.",
+      "studentLead": "Explicación generada localmente:\nb_scale=0.3844 factor. q escala linealmente con el gradiente y b=integral(q² dt), por eso b escala al cuadrado. Esto exige escalar toda la forma efectiva y mantener la forma y todos los tiempos, incluidos delta y Delta. El factor sintético no calibra un gradiente experimental.",
+      "sourceIds": [
+        "academy-pulse",
+        "Sinnaeve2012"
+      ],
+      "rawGeneratedOutput": "{\"answer\":\"b_scale=0.3844 factor. q escala linealmente con el gradiente y b=integral(q² dt), por eso b escala al cuadrado. Esto exige escalar toda la forma efectiva y mantener la forma y todos los tiempos, incluidos delta y Delta. El factor sintético no calibra un gradiente experimental.\",\"source_ids\":[\"academy-pulse\",\"Sinnaeve2012\"],\"status\":\"answer\"}",
+      "rawGeneratedOutputSha256": "a6ece13b866f8d16ee5c4370a9a87645d676a0e81426fae941e72475342c6c4b",
+      "rejectionReason": null,
+      "rejectedRawShownToStudent": false
+    },
+    {
+      "id": "postchange_actual_b_scale_en_0.71",
+      "question": "The entire effective gradient waveform scales by 0.71, with unchanged shape and delta and Delta timings. Explain b_scale and the physical reason; this is a synthetic example, not a measurement.",
+      "passedSourcedBehavior": true,
+      "modelGenerationAttempted": true,
+      "acceptedGeneration": true,
+      "honestDocumentaryFallback": false,
+      "studentStatus": "research_candidate_native_evaluation",
+      "studentIsModelAnswer": true,
+      "studentGeneratedText": "b_scale=0.5041 factor. q scales linearly with gradient and b=integral(q squared dt), so b scales quadratically. This requires scaling the entire effective waveform while preserving its shape and all timings, including delta and Delta. The synthetic example does not calibrate an experimental gradient.",
+      "studentLead": "Locally generated explanation:\nb_scale=0.5041 factor. q scales linearly with gradient and b=integral(q squared dt), so b scales quadratically. This requires scaling the entire effective waveform while preserving its shape and all timings, including delta and Delta. The synthetic example does not calibrate an experimental gradient.",
+      "sourceIds": [
+        "academy-pulse",
+        "Sinnaeve2012"
+      ],
+      "rawGeneratedOutput": "{\"answer\":\"b_scale=0.5041 factor. q scales linearly with gradient and b=integral(q squared dt), so b scales quadratically. This requires scaling the entire effective waveform while preserving its shape and all timings, including delta and Delta. The synthetic example does not calibrate an experimental gradient.\",\"source_ids\":[\"academy-pulse\",\"Sinnaeve2012\"],\"status\":\"answer\"}",
+      "rawGeneratedOutputSha256": "6f32e7d7b4d6e98db919e253d1543f25a1faf96e638bbc8b1affd20b0f65bb1d",
+      "rejectionReason": null,
+      "rejectedRawShownToStudent": false
+    },
+    {
+      "id": "postchange_actual_b_scale_es_0.83",
+      "question": "Toda la forma efectiva de gradiente se multiplica por 0.83, conservando forma y tiempos delta y Delta. Explica b_scale y su causa física; es un ejemplo sintético, no una medición.",
+      "passedSourcedBehavior": true,
+      "modelGenerationAttempted": true,
+      "acceptedGeneration": false,
+      "honestDocumentaryFallback": true,
+      "studentStatus": "research_synthetic_scaling_rejected",
+      "studentIsModelAnswer": false,
+      "studentGeneratedText": null,
+      "studentLead": "Se rechazó la respuesta generada porque atribuía al gradiente la dependencia cuadrática que corresponde a b. Se muestra únicamente la guía revisada:",
+      "sourceIds": [
+        "academy-pulse",
+        "Sinnaeve2012"
+      ],
+      "rawGeneratedOutput": "{\"answer\":\"b_scale=0.6889 factor. El gradiente escala quadráticamente, por q es lineal en el gradiente y b=integral(q² dt). Esto exige escalar toda la forma efectiva y mantener la forma, los deltas y los tiempos. El factor sintético no calibra un gradiente experimental.\",\"source_ids\":[\"academy-pulse\",\"Sinnaeve2012\"],\"status\":\"answer\"}",
+      "rawGeneratedOutputSha256": "ed76ff46c423e036220b30aa1b33e4a2308a5750e95d6a7ece9b6a3dee87b128",
+      "rejectionReason": "The answer attributes quadratic scaling to the gradient itself rather than to b.",
+      "rejectedRawShownToStudent": false
+    }
+  ],
+  "actualDocumentaryResults": [
+    {
+      "id": "actual_documentary_route_es",
+      "question": "Con T=311 K y fTTMS=0.83, ¿por qué fTTMS*(293/T) se aplica una vez y no elimina la convección?",
+      "modelInvoked": false,
+      "studentStatus": "temperature_flow_documentary_only",
+      "studentIsModelAnswer": false,
+      "studentGeneratedText": null,
+      "studentLead": "Esta pregunta combina escala de difusión y flujo. Se muestran las explicaciones revisadas de ambos módulos; no se genera una respuesta con el LLM. La escala TTMS/temperatura no elimina la convección: revise fase, varios Δ y controles térmicos o una secuencia compensada.",
+      "sourceIds": [
+        "deck-slide-022",
+        "deck-slide-023",
+        "lab-attenuation-mixture",
+        "jerschow-muller-1997",
+        "deck-slide-019",
+        "deck-slide-020",
+        "deck-slide-021",
+        "deck-slide-048",
+        "lab-convection"
+      ],
+      "literalCourseQuoteSha256": "6da519c632c9a64c445265e404c60617419e4933f1edd1bb02225e0e48d094cb"
+    },
+    {
+      "id": "actual_documentary_route_en",
+      "question": "With T=311 K and fTTMS=0.83, why is fTTMS*(293/T) applied once and why does it not remove flow?",
+      "modelInvoked": false,
+      "studentStatus": "temperature_flow_documentary_only",
+      "studentIsModelAnswer": false,
+      "studentGeneratedText": null,
+      "studentLead": "This question combines diffusion scaling and flow. Reviewed explanations from both modules are shown; no LLM answer is generated. TTMS/temperature scaling does not remove convection: inspect phase, several Δ values, and thermal controls or a compensated sequence.",
+      "sourceIds": [
+        "deck-slide-022",
+        "deck-slide-023",
+        "lab-attenuation-mixture",
+        "jerschow-muller-1997",
+        "deck-slide-019",
+        "deck-slide-020",
+        "deck-slide-021",
+        "deck-slide-048",
+        "lab-convection"
+      ],
+      "literalCourseQuoteSha256": "bb7520294a3038342843c6d898fdc66ae64a70248d70caa2a7d62f525a173f9e"
+    }
+  ],
+  "notClaimed": [
+    "Retraining",
+    "Unrestricted semantic certification",
+    "Instrument operation",
+    "Experimental calibration",
+    "Measured educational effectiveness"
+  ]
+}

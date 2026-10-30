@@ -1,0 +1,78 @@
+{
+  "assets": [
+    {
+      "bytes": 2094896943,
+      "kind": "windows-with-local-beatrix",
+      "name": "DiffAtOnce-Academy-1.3.1-win-x64.zip",
+      "sha256": "5628eaae3db7f8443b6f08e3c673347c0e7608cfde0b937dd4333d5c662aa713",
+      "url": "https://diffatonce.com/downloads/diffatonce-academy-1.3.1-win-x64"
+    },
+    {
+      "bytes": 151138394,
+      "kind": "source",
+      "name": "DiffAtOnce-Academy-1.3.1-source.zip",
+      "sha256": "b696b9e67edb237a2d0ff32cf1d6514f4a292939181da1180a4ce00d2c518662",
+      "url": "https://diffatonce.com/downloads/diffatonce-academy-1.3.1-source"
+    },
+    {
+      "bytes": 3478383,
+      "kind": "complete-manual",
+      "language": "es",
+      "name": "ACADEMY_MANUAL_ES.pdf",
+      "pages": 72,
+      "sha256": "b8d2345f0c65fb521cabc383b60cbb35644fa7a900704c0aa8cd95098d7c8da2",
+      "url": "https://diffatonce.com/assets/academy/v1.3.1/docs/ACADEMY_MANUAL_ES.pdf"
+    },
+    {
+      "bytes": 3430886,
+      "kind": "complete-manual",
+      "language": "en",
+      "name": "ACADEMY_MANUAL_EN.pdf",
+      "pages": 72,
+      "sha256": "ff193f2ce0fe32cf2c26fb9e3d7774cd1dfc7a1e02fc7c50362012ba5fee3629",
+      "url": "https://diffatonce.com/assets/academy/v1.3.1/docs/ACADEMY_MANUAL_EN.pdf"
+    },
+    {
+      "bytes": 1191196,
+      "kind": "research-manual",
+      "language": "es",
+      "name": "RESEARCH_MANUAL_ES.pdf",
+      "pages": 26,
+      "sha256": "81557b922dc5a6de0be2b180b9b69b5264748e5fed229ca78aba1fa8950f6934",
+      "url": "https://diffatonce.com/assets/academy/v1.3.1/docs/RESEARCH_MANUAL_ES.pdf"
+    },
+    {
+      "bytes": 1168229,
+      "kind": "research-manual",
+      "language": "en",
+      "name": "RESEARCH_MANUAL_EN.pdf",
+      "pages": 26,
+      "sha256": "3b841dfe1d572af8c2ad2e08ed2e17cd97fb2632e61496d2027d233e23e233db",
+      "url": "https://diffatonce.com/assets/academy/v1.3.1/docs/RESEARCH_MANUAL_EN.pdf"
+    }
+  ],
+  "browserLLM": false,
+  "checksumFile": {
+    "bytes": 559,
+    "name": "SHA256SUMS.txt",
+    "sha256": "1d51bb1dc0489e5471a57b7935ff525fa62b021c51fc64755887fa14cf3932bd",
+    "url": "https://diffatonce.com/assets/academy/releases/1.3.1/SHA256SUMS.txt"
+  },
+  "educationalEffectivenessMeasured": false,
+  "experimentalValidation": false,
+  "modelWeightsIncludedInSource": false,
+  "newFineTuningPerformed": false,
+  "previousReleaseTagPreserved": true,
+  "releaseNotes": {
+    "bytes": 6405,
+    "name": "RELEASE_NOTES_ES_EN.md",
+    "sha256": "055eef9a9e7e9ed8e29ea46eae5ac085e7b357ca09ab44c51ec40d3d8ebc3585",
+    "url": "https://diffatonce.com/assets/academy/releases/1.3.1/RELEASE_NOTES_ES_EN.md"
+  },
+  "schema": "academy.release-assets.v1",
+  "scope": "Static artifact integrity identities; deployment/native UI/model evidence is separate. SHA256SUMS excludes itself and metadata to avoid self-reference.",
+  "sourceMembers": 740,
+  "tag": "academy-v1.3.1",
+  "version": "1.3.1",
+  "windowsArchiveFiles": 1196
+}

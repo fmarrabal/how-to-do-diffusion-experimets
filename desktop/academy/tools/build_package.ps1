@@ -1,10 +1,10 @@
-param([string]$Version = '1.3.0', [switch]$AllowDocumentaryMode)
+param([string]$Version = '1.3.1', [switch]$AllowDocumentaryMode)
 $ErrorActionPreference = 'Stop'
 $academyRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $workspaceRoot = [IO.Path]::GetFullPath((Join-Path $academyRoot '../..'))
 $releaseRoot = [IO.Path]::GetFullPath((Join-Path $workspaceRoot ('desktop/publish/DiffAtOnce-Academy-' + $Version + '-win-x64')))
 if ($Version -notmatch '^\d+\.\d+\.\d+$' -or -not $releaseRoot.StartsWith($workspaceRoot + '\', [StringComparison]::OrdinalIgnoreCase)) { throw 'Invalid release target' }
-$modelDirectory = if ($Version -eq '1.3.0') { Join-Path $academyRoot 'ai/release-v1.3' } else { Join-Path $academyRoot 'ai/release-v1.1' }
+$modelDirectory = if ($Version -eq '1.3.1') { Join-Path $academyRoot 'ai/release-v1.3.1' } elseif ($Version -eq '1.3.0') { Join-Path $academyRoot 'ai/release-v1.3' } else { Join-Path $academyRoot 'ai/release-v1.1' }
 $manifestPath = Join-Path $modelDirectory 'manifest.json'
 if ((Get-PSDrive -Name ([IO.Path]::GetPathRoot($releaseRoot).TrimEnd(':','\'))).Free -lt 8GB) { throw 'At least 8 GB free space is required for this package and verification.' }
 if (-not $AllowDocumentaryMode) {
@@ -30,11 +30,21 @@ if (-not $AllowDocumentaryMode) {
             if (-not $source.StartsWith($academyRoot + '\', [StringComparison]::OrdinalIgnoreCase) -or (Get-FileHash -LiteralPath $source -Algorithm SHA256).Hash.ToLowerInvariant() -ne $record.sha256) { throw 'Doctoral source identity mismatch.' }
         }
     }
-    if ($Version -eq '1.3.0') {
+    if ($Version -in @('1.3.0','1.3.1')) {
         if (-not $manifest.ResearchQualityPassed -or -not $manifest.NativeResearchEvaluationPassed -or -not $manifest.NativeEvaluationPassed) { throw 'Research tutor GPU and native CPU gates must pass.' }
         $knowledgeSha = (Get-FileHash -LiteralPath (Join-Path $academyRoot 'content/research-tutor-knowledge.json') -Algorithm SHA256).Hash.ToLowerInvariant()
         if ($manifest.ResearchKnowledgeSha256 -ne $knowledgeSha) { throw 'Research knowledge/model version mismatch.' }
         if ($bundle.version -ne $Version -or $bundle.releaseStatus -ne 'reviewed-teaching-software' -or $bundle.researchReleaseStatus -ne 'reviewed-teaching-software') { throw 'Research web bundle must be frozen after root review.' }
+        if ($Version -eq '1.3.1') {
+            $doctoralPath = Join-Path $academyRoot 'content/doctoral-manifest.json'
+            $doctoral = Get-Content -LiteralPath $doctoralPath -Raw | ConvertFrom-Json
+            $doctoralSha = (Get-FileHash -LiteralPath $doctoralPath -Algorithm SHA256).Hash.ToLowerInvariant()
+            if ($doctoral.version -ne $Version -or $doctoral.schema -ne 'academy-doctoral-content-identity/2' -or $doctoral.releaseStatus -ne 'identity-only' -or $doctoral.includedInLLMTraining -ne $false -or $doctoral.newTrainingPerformed -ne $false -or $bundle.doctoralContentSha256 -ne $doctoralSha -or $bundle.doctoralReleaseStatus -ne 'reviewed-teaching-software' -or -not $bundle.rootReview.passed -or $bundle.rootReview.sha256 -notmatch '^[a-f0-9]{64}$') { throw 'Current doctoral identity requires the separately hash-bound root software freeze.' }
+            foreach ($record in $doctoral.files) {
+                $source = [IO.Path]::GetFullPath((Join-Path $academyRoot $record.path))
+                if (-not $source.StartsWith($academyRoot + '\', [StringComparison]::OrdinalIgnoreCase) -or (Get-Item -LiteralPath $source).Length -ne $record.bytes -or (Get-FileHash -LiteralPath $source -Algorithm SHA256).Hash.ToLowerInvariant() -ne $record.sha256) { throw 'Current doctoral source identity mismatch.' }
+            }
+        }
         $modelPath = Join-Path $modelDirectory $manifest.File
         if ((Get-FileHash -LiteralPath $modelPath -Algorithm SHA256).Hash.ToLowerInvariant() -ne $manifest.Sha256) { throw 'Qualified model hash mismatch.' }
     }

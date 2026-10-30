@@ -1,0 +1,68 @@
+{
+  "adapter_sha256": "12eb8601424cd893a35f7d6726328f8b7a1e2a48b125ba3bc030bba622739de3",
+  "alpha": 32,
+  "base_dev_completion_loss": 3.228052581846714,
+  "base_model": "Qwen/Qwen3-1.7B",
+  "base_path_read_only": "[local-authoring-path-omitted]",
+  "base_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "base_tokenizer_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+  "base_weight_sha256": {
+    "model-00001-of-00002.safetensors": "169ad53ec313c3a34b06c0809216e4fc072cce444a5d4ff2b59690d064130ed5",
+    "model-00002-of-00002.safetensors": "912becff8d60672aa8628ef08c05898d9adf17c2ad4ae3caf99b065622fdeff9"
+  },
+  "batch_size": 2,
+  "best_dev_epoch": 3,
+  "candidate_round": "r4-evidence-boundaries",
+  "completion_only_loss": true,
+  "course_sha256": "f9a17df9645b541abc70907e5d04cd38c213293443ce1d37c2c0d94f8aea0cb9",
+  "dataset_hashes": {
+    "dev": "2cc11ce3fc9b9e9467182b184f2dc087e2e28bb1525a27e2cb08e85fa213d084",
+    "test": "64ec8a91b27f6cf34c12824f74263f9256fe88f772fd55a7da16cc568c71ae03",
+    "train": "443e2ad5f43ee4481283e132d961d838dea02586b10df1e23841f3b8567ca06e"
+  },
+  "delegated_read_only_pipeline_sha256": "dd6d237aac4efbb679591c4a9293740c64e92aa61efe4ddf43dbe95315918da7",
+  "dev_examples": 40,
+  "elapsed_seconds": 192.6220943927765,
+  "epochs": 3,
+  "experimental_validation": false,
+  "gpu": "NVIDIA RTX PRO 5000 Blackwell",
+  "gradient_checkpointing": true,
+  "history": [
+    {
+      "dev_completion_loss": 0.4448965533549199,
+      "epoch": 1,
+      "train_completion_loss": 0.5157302698292355
+    },
+    {
+      "dev_completion_loss": 0.12372254664587672,
+      "epoch": 2,
+      "train_completion_loss": 0.14209657073432655
+    },
+    {
+      "dev_completion_loss": 0.07544880193927384,
+      "epoch": 3,
+      "train_completion_loss": 0.0400296206211713
+    }
+  ],
+  "limitations": "Actual mixed original-course/research-summary LoRA. Paper text, private spectra and experimental references are not supervised. Prompt/padding labels are masked. Checkpoint selected only by development completion loss; generation quality and native CPU inference remain separate gates.",
+  "max_allocated_bytes": 5421129728,
+  "merged_sha256": {
+    "model.safetensors": "e3fed40853ff9f10c127d942a7bb1cbbc6ce8667d6a15727d567ba406badaf95"
+  },
+  "method": "Actual local LoRA",
+  "mixed_original_and_research": true,
+  "pipeline_sha256": "d09bbb8b7ff3e913f29fc503dfe800a20076f043b76efd2b4146fb02a7265f9d",
+  "prompt_and_padding_labels": -100,
+  "rank": 16,
+  "research_knowledge_sha256": "a04ae8bcfa523c4f49981d562ec67baae7b4ab74cb452d6fc59a4cd4c6356717",
+  "seed": 261030,
+  "split_plan_sha256": "12d40e0ed5b82aa0932c8966e055713fbda101b3646c3e9a93648889d0386dbf",
+  "system_sha256": "efc8cde435fd6cf396426ac4f63e07c41df3c55199c53ef7b81fd7475a4d0b64",
+  "target_modules": [
+    "q_proj",
+    "v_proj"
+  ],
+  "torch": "2.8.0+cu128",
+  "train_examples": 382,
+  "version": "1.3.0"
+}

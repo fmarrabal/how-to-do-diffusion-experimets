@@ -1,4 +1,6 @@
-# DiffAtOnce Academy 1.3 - Research guide
+# DiffAtOnce Academy 1.3.1 - Research guide
+
+Updated after the 1.3 audit. Read [AUDIT_1_3_1_ES_EN.md](AUDIT_1_3_1_ES_EN.md) for the corrected interpretation and controls. The PDF starts with four current correction pages; the retained 1.3 manual and its screenshots follow as a clearly identified historical source.
 
 WPF and web editions. This guide supplements the original course and doctoral manual.
 
@@ -122,7 +124,7 @@ Compare models on exactly the same observations.
 3. Keep processing fixed to attribute differences to the method. Then examine processing sensitivity separately.
 4. Return to the Doctoral laboratory for the ILT kernel, correlations and joint analysis.
 
-A well-fitted curve does not determine a unique distribution. A penalty imposes a preference and may merge or create apparent peaks.
+A well-fitted curve does not determine a unique distribution. A penalty imposes a preference and may merge or create apparent peaks. A kernel with more D columns than observations has an unresolved right nullspace even when every reported singular value is nonzero; the displayed singular list contains only min(rows, columns) values. Positivity and regularization do not turn that algebraic rank warning into a chemical assignment.
 
 **Check:** You can distinguish numerical fit, resolution, distribution and chemical assignment.
 
@@ -135,15 +137,15 @@ Separate random variation from biases and common dependencies.
 [View the actual capture in the PDF manual](RESEARCH_MANUAL_EN.pdf)
 
 1. Enter Monte Carlo draws and SDs for g scale, temperature, processing, noise and model b.
-2. Press Propagate shared errors and compare contributions and the conditional interval.
+2. Press Propagate shared errors and compare contributions and the conditional interval of the reference monoexponential estimator.
 3. Repeat after reducing only noise, then after reducing calibration uncertainty. Compare the effects.
 4. Describe which sources share a draw across gradients/signals and which vary by observation.
 
-One calibration can shift several D values together. Treating it as independent noise would manufacture information that was not acquired.
+One calibration can shift several D values together. Treating it as independent noise would manufacture information that was not acquired. The Monte Carlo refits a reference monoexponential model. If the selected analysis is NNLS, Tikhonov or L1, its distribution centroid is a different estimator: the mono interval does not quantify that centroid or uncertainty in the distribution's shape, peaks or component count. The interface labels the reference mono D and interval separately and warns when the selected ILT estimator is not covered.
 
 **Check:** Justify a control that reduces a dominant source and list errors your interval does not quantify.
 
-**Limit:** The interval is conditional on the supplied models and distributions. It is not validated experimental coverage and does not automatically correct a wrong model.
+**Limit:** The interval is conditional on the mono estimator, supplied models and input distributions. Distribution uncertainty is not computed here. It is not validated experimental coverage and does not automatically correct a wrong model.
 
 ## 08 - Choose the next measurement
 
@@ -151,7 +153,7 @@ Use ambiguity to design a discriminating control.
 
 1. Compare Higher b range, Repeat the design, Reverse order, Change Δ and Flow compensation.
 2. Write a prediction before pressing Compare designs.
-3. Choose an acquisition and press Observe held-out control. Held-out observations use an independent realization.
+3. Choose an acquisition and press Observe held-out control. Held-out observations use an independent realization and retain the signed reference and declared processing; taking absolute values would change the comparison.
 4. Compare the prediction with results and explain which alternatives remain.
 
 Two distributions may predict the available data similarly and differ over another b region. The proposed acquisition explores that difference.

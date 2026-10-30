@@ -422,6 +422,7 @@ public partial class MainWindow : Window
     {
         Directory.CreateDirectory(selfTestDirectory!);
         var checks = new List<object>();
+        var selfTestPassed = false;
         try
         {
             for (var i = 0; i < 120 && !labReady; i++) await Task.Delay(250);
@@ -440,27 +441,61 @@ public partial class MainWindow : Window
             LearningTabs.SelectedItem = LessonTab;
             UpdateProgress(); RefreshNavigation(selected?.Id);
             await Dispatcher.InvokeAsync(() => { }, System.Windows.Threading.DispatcherPriority.ApplicationIdle);
-            AcademyWindow.CaptureWindow(this, Path.Combine(selfTestDirectory!, "academy-lesson.png"));
+            AcademyWindow.CaptureWindow(this, Path.Combine(selfTestDirectory!, "academy-lesson.png"));
+            Width = 1080; Height = 720; LearningTabs.SelectedItem = LessonTab; SelectModule(repository.Course.Modules.First());
+            foreach (var compactLanguage in new[] { "es", "en" })
+            {
+                if (language != compactLanguage) Language_Click(this, new RoutedEventArgs());
+                await Dispatcher.InvokeAsync(() => { }, System.Windows.Threading.DispatcherPriority.ApplicationIdle); await Task.Delay(350);
+                var actionBounds = HeaderActions.Children.OfType<Button>().Select(button => new Rect(button.TransformToAncestor(HeaderRoot).Transform(new Point()), button.RenderSize)).ToArray();
+                checks.Add(new { check = "compact_header_and_content_" + compactLanguage,
+                    passed = HeaderTitle.ActualHeight < 60 && HeaderBrand.ActualWidth > 300 && HeaderRoot.ActualHeight < 220 && LearningTabs.ActualHeight >= 200 && TutorResponseScroll.ActualHeight >= 150 && actionBounds.All(bounds => bounds.Left >= -1 && bounds.Right <= HeaderRoot.ActualWidth + 1 && bounds.Top >= -1 && bounds.Bottom <= HeaderRoot.ActualHeight + 1),
+                    headerHeight = HeaderRoot.ActualHeight, titleHeight = HeaderTitle.ActualHeight, contentHeight = LearningTabs.ActualHeight, tutorResponseHeight = TutorResponseScroll.ActualHeight, actionBounds });
+                TutorPaneScroll.ScrollToTop(); await Task.Delay(150);
+                AcademyWindow.CaptureWindow(this, Path.Combine(selfTestDirectory!, "academy-compact-" + compactLanguage + ".png"));
+                TutorPaneScroll.ScrollToEnd(); await Dispatcher.InvokeAsync(() => { }, System.Windows.Threading.DispatcherPriority.ApplicationIdle); await Task.Delay(150);
+                var inputBounds = new Rect(QuestionBox.TransformToAncestor(TutorPaneScroll).Transform(new Point()), QuestionBox.RenderSize);
+                var askBounds = new Rect(AskButton.TransformToAncestor(TutorPaneScroll).Transform(new Point()), AskButton.RenderSize);
+                var cancelBounds = new Rect(CancelButton.TransformToAncestor(TutorPaneScroll).Transform(new Point()), CancelButton.RenderSize);
+                checks.Add(new { check = "compact_tutor_input_reachable_" + compactLanguage,
+                    passed = new[] { inputBounds, askBounds, cancelBounds }.All(bounds => bounds.Top >= -1 && bounds.Bottom <= TutorPaneScroll.ViewportHeight + 1),
+                    viewport = TutorPaneScroll.ViewportHeight, inputBounds, askBounds, cancelBounds });
+                AcademyWindow.CaptureWindow(this, Path.Combine(selfTestDirectory!, "academy-compact-input-" + compactLanguage + ".png"));
+                TutorPaneScroll.ScrollToTop();
+            }
+            if (language != "es") Language_Click(this, new RoutedEventArgs());
+            Width = 1560; Height = 990;
+
             if (labReady)
             {
                 LearningTabs.SelectedItem = SimulationTab; await Task.Delay(800);
-                foreach (var module in repository.Course.Modules)
+                foreach (var exampleLanguage in new[] { "es", "en" })
                 {
-                    SelectModule(module);
-                    foreach (var example in module.Examples)
+                    if (language != exampleLanguage) Language_Click(this, new RoutedEventArgs());
+                    foreach (var module in repository.Course.Modules)
                     {
-                        var input = JsonSerializer.Serialize(new { scene = module.Scene, lang = language, moduleId = module.Id, revision = ++bridgeRevision, parameters = example.Params, preset = example.Preset });
-                        var actual = await LabView.ExecuteScriptAsync($"window.AcademyBridge.apply({input})");
-                        using var json = JsonDocument.Parse(actual); var root = json.RootElement;
-                        checks.Add(new { check = "example_" + module.Id + "_" + example.Id, passed = root.GetProperty("ok").GetBoolean() && root.GetProperty("rejected").GetArrayLength() == 0, actual });
+                        SelectModule(module);
+                        checks.Add(new { check = "lesson_" + exampleLanguage + "_" + module.Id, passed = ModuleTitle.Text == module.Title.In(exampleLanguage) });
+                        foreach (var example in module.Examples)
+                        {
+                            var input = JsonSerializer.Serialize(new { scene = module.Scene, lang = language, moduleId = module.Id, revision = ++bridgeRevision, parameters = example.Params, preset = example.Preset });
+                            var actual = await LabView.ExecuteScriptAsync($"window.AcademyBridge.apply({input})");
+                            using var json = JsonDocument.Parse(actual); var root = json.RootElement;
+                            checks.Add(new { check = "example_" + exampleLanguage + "_" + module.Id + "_" + example.Id, passed = root.GetProperty("ok").GetBoolean() && root.GetProperty("rejected").GetArrayLength() == 0, actual });
+                        }
                     }
                 }
-                foreach (var scene in new[] { "pulse-90", "convection", "ilt", "spen", "time-resolved", "ultrafast" })
-                {
-                    var script = $"JSON.stringify(window.AcademyBridge.apply({JsonSerializer.Serialize(new { scene, lang = "en", parameters = new { } })}))";
-                    var state = await LabView.ExecuteScriptAsync(script); checks.Add(new { check = "scene_" + scene, passed = state.Contains(scene), state });
-                    if (scene == "spen") { var context = await LabView.ExecuteScriptAsync("window.AcademyBridge.context()"); File.WriteAllText(Path.Combine(selfTestDirectory!, "spen-context.json"), context); }
-                }
+                if (language != "es") Language_Click(this, new RoutedEventArgs());
+                foreach (var sceneLanguage in new[] { "es", "en" })
+                foreach (var scene in new[] { "brownian", "spin-echo", "gradients-b", "attenuation-mixture", "pulse-90", "acquisition-window", "convection", "overlap-joint", "ilt", "dt2", "spen", "time-resolved", "restricted", "exchange", "anisotropy", "prototype-1d", "ultrafast" })
+                {
+                    var input = JsonSerializer.Serialize(new { scene, lang = sceneLanguage, parameters = new { } });
+                    var state = await LabView.ExecuteScriptAsync($"window.AcademyBridge.apply({input})");
+                    using var parsedScene = JsonDocument.Parse(state);
+                    checks.Add(new { check = "scene_" + scene + "_" + sceneLanguage,
+                        passed = parsedScene.RootElement.GetProperty("ok").GetBoolean() && parsedScene.RootElement.GetProperty("rejected").GetArrayLength() == 0, state });
+                    if (scene == "spen") { var context = await LabView.ExecuteScriptAsync("window.AcademyBridge.context()"); File.WriteAllText(Path.Combine(selfTestDirectory!, "spen-context-" + sceneLanguage + ".json"), context); }
+                }
                 await LabView.ExecuteScriptAsync("window.DiffusionMotion.setTime(8)");
                 using (var image = File.Create(Path.Combine(selfTestDirectory!, "academy-ultrafast.png"))) await LabView.CoreWebView2.CapturePreviewAsync(CoreWebView2CapturePreviewImageFormat.Png, image);
                 ExpandLab_Click(this, new RoutedEventArgs()); await Task.Delay(500);
@@ -496,6 +531,18 @@ public partial class MainWindow : Window
                     var last = await reader.Snapshot();
                     checks.Add(new { check = "mathematical_reader_english", passed = last.GetProperty("language").GetString() == "en" && last.GetProperty("chapterId").GetString() == derivations.Chapters.Last().Id, state = last });
                     await reader.CaptureReader(Path.Combine(selfTestDirectory!, "academy-derivations-en.png"));
+                    foreach (var readerLanguage in new[] { "es", "en" })
+                    {
+                        await reader.SetLanguage(readerLanguage);
+                        foreach (var chapter in derivations.Chapters)
+                        {
+                            await reader.SelectChapter(chapter.Id);
+                            var chapterState = await reader.Snapshot();
+                            checks.Add(new { check = "mathematical_chapter_" + chapter.Id + "_" + readerLanguage,
+                                passed = chapterState.GetProperty("ready").GetBoolean() && chapterState.GetProperty("language").GetString() == readerLanguage && chapterState.GetProperty("chapterId").GetString() == chapter.Id,
+                                state = chapterState });
+                        }
+                    }
                     // Restore the parent language before checking the trusted bridge.
                     var tutorChapter = derivations.Find("arbitrary-waveform") ?? derivations.Chapters.First();
                     await reader.SetLanguage(language); await reader.SelectChapter(tutorChapter.Id); await Task.Delay(150);
@@ -596,7 +643,9 @@ public partial class MainWindow : Window
                             await Task.Delay(150);
                         }
                         var caseAfterTutor = await research.EvaluateForQa("AcademyLearningPath.sha256(AcademyWeb.researchEvidence().case)");
-                        checks.Add(new { check = "research_beatrix_native_bridge_" + tutorLanguage, passed = modelReply && caseBeforeTutor == caseAfterTutor, nativeState = tutorStudio, unchangedCase = caseBeforeTutor == caseAfterTutor });
+                        var retainedTutorAnswer = await research.EvaluateForQa("JSON.stringify({text:document.querySelector('[data-tutor-answer]')?.innerText||'',sources:[...document.querySelectorAll('[data-tutor-answer] a')].map(a=>({text:a.innerText,href:a.getAttribute('href')}))})");
+                        checks.Add(new { check = "research_beatrix_native_bridge_" + tutorLanguage, passed = modelReply && caseBeforeTutor == caseAfterTutor, nativeState = tutorStudio, unchangedCase = caseBeforeTutor == caseAfterTutor, retainedTutorAnswer });
+                        await research.EvaluateForQa("document.querySelector('[data-tutor-answer]').scrollIntoView({block:'center'})");
                         await research.Capture(Path.Combine(selfTestDirectory!, "academy-research-beatrix-" + tutorLanguage + ".png"));
                     }
                 }
@@ -604,8 +653,6 @@ public partial class MainWindow : Window
                 checks.Add(new { check = "research_stage_allowlist", passed = invalidStageRejected });
             }
             research.Close();
-            Width = 1080; Height = 720; LearningTabs.SelectedItem = LessonTab; SelectModule(repository.Course.Modules.First()); await Task.Delay(500);
-            AcademyWindow.CaptureWindow(this, Path.Combine(selfTestDirectory!, "academy-compact.png"));
             if (selfTestTutor)
             {
                 Width = 1560; Height = 990;
@@ -617,9 +664,10 @@ public partial class MainWindow : Window
                 await Task.Delay(350);
                 AcademyWindow.CaptureWindow(this, Path.Combine(selfTestDirectory!, "academy-beatrix.png"));
             }
-            File.WriteAllText(Path.Combine(selfTestDirectory!, "ui-self-test.json"), JsonSerializer.Serialize(new { applicationVersion = "1.3.0", softwareQaOnly = true, courseSha256 = repository.Sha256, supplementalSha256 = derivations?.Sha256, checks }, CourseRepository.Json));
+            File.WriteAllText(Path.Combine(selfTestDirectory!, "ui-self-test.json"), JsonSerializer.Serialize(new { applicationVersion = typeof(MainWindow).Assembly.GetName().Version!.ToString(3), softwareQaOnly = true, courseSha256 = repository.Sha256, supplementalSha256 = derivations?.Sha256, checks }, CourseRepository.Json));
+            selfTestPassed = checks.All(item => JsonSerializer.SerializeToElement(item).GetProperty("passed").GetBoolean());
         }
         catch (Exception e) { File.WriteAllText(Path.Combine(selfTestDirectory!, "ui-self-test-error.txt"), e.ToString()); }
-        finally { System.Windows.Application.Current.Shutdown(); }
+        finally { System.Windows.Application.Current.Shutdown(selfTestPassed ? 0 : 1); }
     }
 }

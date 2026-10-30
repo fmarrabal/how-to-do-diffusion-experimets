@@ -1,0 +1,86 @@
+{
+  "version": "1.3.1",
+  "passed": true,
+  "approval": "bounded-software-teaching-compatibility",
+  "reviewer": "root integrated review",
+  "newTrainingPerformed": false,
+  "experimentalValidation": false,
+  "educationalEffectivenessMeasured": false,
+  "checks": [
+    {
+      "id": "corrected-runtime-content-identity",
+      "passed": true
+    },
+    {
+      "id": "original-trained-weights-and-training-provenance-preserved",
+      "passed": true
+    },
+    {
+      "id": "pre-guard103-report-kept-with-original-source-scope",
+      "passed": true
+    },
+    {
+      "id": "post-guard82-source-bound-behavior-and-manual-review",
+      "passed": true
+    },
+    {
+      "id": "two-native-accepted-two-honest-documentary-fallbacks",
+      "passed": true
+    },
+    {
+      "id": "temperature-flow-bilingual-documentary-routing",
+      "passed": true
+    },
+    {
+      "id": "no-unrestricted-semantic-qualification-asserted",
+      "passed": true
+    }
+  ],
+  "currentSourceHashes": {
+    "src/DiffAtOnce.Academy.Tutor/ResearchTutorService.cs": "e90db70abee916558536962f44dcddfdf77f971ba8e6594486a094897f704763",
+    "src/DiffAtOnce.Academy.Tutor/TutorService.cs": "2dc6dd211aa4894d709a27e7caf9b579539127927613acd62c1a6b4663358c86"
+  },
+  "evidence": [
+    {
+      "file": "native_evaluation_report.json",
+      "bytes": 607995,
+      "sha256": "aed7b05db9c523f7c88024c4c5fb83cc05edd1392cfab0ad2cb475bf3e5a8c53"
+    },
+    {
+      "file": "compatibility_semantic_review.json",
+      "bytes": 5442,
+      "sha256": "829808f8e4a7e948f023c4ffade8a7a009563f6586ab16cab4f498d2616cf20f"
+    },
+    {
+      "file": "compatibility_guard_evaluation.json",
+      "bytes": 11697,
+      "sha256": "4905143889a21887f411aa0f9053836e5a7989518fc5cbec974cedc2816b76ec"
+    },
+    {
+      "file": "compatibility_guard_review.json",
+      "bytes": 2562,
+      "sha256": "5cb1343c56dc32af195dc62cce100b11837b4f5f10e8b1751c8707a88fe67209"
+    },
+    {
+      "file": "compatibility_guard_closure.json",
+      "bytes": 6544,
+      "sha256": "b3a9dd5213024866a11e4f18c9d57afcf73c5816a3294b00134aa558e2bb64f5"
+    }
+  ],
+  "evidenceInterpretation": {
+    "preGuardChecks": 103,
+    "preGuardRerunOnChangedSources": false,
+    "postGuardChecks": 82,
+    "actualPostGuardGenerations": 4,
+    "acceptedPostGuardGenerations": 2,
+    "rejectedToReviewedGuidance": 2,
+    "replayIsGeneration": false,
+    "fallbackIsSuccessfulGeneration": false
+  },
+  "limits": [
+    "Release flags approve bounded hybrid teaching behavior, not arbitrary generated prose.",
+    "Historical103 checks were not relabelled as rerun against current guard sources.",
+    "A final published-package WPF selftest with actual generic model queries is still required before distribution.",
+    "Conservative lexical guards address observed failure classes; ambiguous or rejected output uses labelled documentary guidance."
+  ]
+}

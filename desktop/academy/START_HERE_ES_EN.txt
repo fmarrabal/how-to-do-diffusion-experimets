@@ -1,4 +1,4 @@
-DIFFATONCE ACADEMY 1.3.0
+DIFFATONCE ACADEMY 1.3.1
 English + Español · Windows x64 / Web
 
 ESPAÑOL — EMPIEZA AQUÍ
@@ -24,7 +24,8 @@ ESPAÑOL — EMPIEZA AQUÍ
 
 4. En Incertidumbre, el gradiente y la temperatura incluyen errores comunes:
    repetir puntos no elimina esos sesgos. Se separan ruido, procesado y modelo.
-   El intervalo es condicional a los supuestos; no acredita cobertura real.
+   El intervalo corresponde al ajuste monoexponencial de referencia, no a los
+   picos o centroides ILT. Es condicional a los supuestos; no acredita cobertura real.
    Compare explicaciones alternativas y diseñe una medida que las discrimine.
 
 5. Datos públicos añade ocho series Monash/Figshare CC BY 4.0, con 72 archivos
@@ -56,9 +57,9 @@ ESPAÑOL — EMPIEZA AQUÍ
    una respuesta tardía de otro contexto se descarta sin modificar resultados.
 
 9. Manual abre el manual completo actualizado:
-   Docs/ACADEMY_MANUAL_ES.pdf (68 páginas)
-   Docs/ACADEMY_MANUAL_EN.pdf (68 páginas)
-   Guía específica: Docs/RESEARCH_MANUAL_ES.pdf / EN.pdf (22 páginas cada una).
+   Docs/ACADEMY_MANUAL_ES.pdf (72 páginas)
+   Docs/ACADEMY_MANUAL_EN.pdf (72 páginas)
+   Guía específica: Docs/RESEARCH_MANUAL_ES.pdf / EN.pdf (26 páginas cada una).
    En el árbol fuente esas mismas rutas empiezan por docs/, en minúsculas.
    El manual completo etiqueta los capítulos históricos de las ediciones previas.
 
@@ -85,7 +86,8 @@ ENGLISH — START HERE
 
 4. Uncertainty includes shared gradient and temperature errors: repeated points
    do not remove those biases. Noise, processing and model assumptions remain
-   separate. Intervals are conditional and do not establish real coverage.
+   separate. Intervals cover the reference monoexponential estimator, not ILT peaks or
+   centroids. They are conditional and do not establish real coverage.
    Compare alternative explanations and design a discriminating measurement.
 
 5. Public data adds eight Monash/Figshare CC BY 4.0 series, with 72 original
@@ -116,9 +118,9 @@ ENGLISH — START HERE
    another context is discarded without changing numerical results.
 
 9. Manual opens the updated complete manual:
-   Docs/ACADEMY_MANUAL_EN.pdf (68 pages)
-   Docs/ACADEMY_MANUAL_ES.pdf (68 pages)
-   Focused guide: Docs/RESEARCH_MANUAL_EN.pdf / ES.pdf (22 pages each).
+   Docs/ACADEMY_MANUAL_EN.pdf (72 pages)
+   Docs/ACADEMY_MANUAL_ES.pdf (72 pages)
+   Focused guide: Docs/RESEARCH_MANUAL_EN.pdf / ES.pdf (26 pages each).
    In this source tree the same paths begin with lowercase docs/.
    The complete manual labels historical chapters from earlier editions.
 

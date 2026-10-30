@@ -11,9 +11,14 @@
   function quantile(a,q){const b=a.slice().sort((x,y)=>x-y),p=(b.length-1)*q,i=Math.floor(p);return b[i]+(b[Math.min(i+1,b.length-1)]-b[i])*(p-i);}
   function fitMono(b,y){if(!Array.isArray(b)||!Array.isArray(y)||b.length!==y.length||b.length<3)throw new RangeError('At least three paired points are required.');if(b.some(v=>!Number.isFinite(v)||v<0)||y.some(v=>!Number.isFinite(v)))throw new RangeError('Signal and nonnegative b must be finite.');if(Math.max(...b)===Math.min(...b))throw new RangeError('Distinct b values are required to identify D.');
     // Direct least squares in signal space; no log transform/noise clipping.
-    let lo=1e-13,hi=1e-8;const objective=D=>{const k=b.map(x=>Math.exp(-x*D)),amplitude=Math.max(0,dot(k,y)/dot(k,k));return {D,amplitude,residual:y.map((v,i)=>v-amplitude*k[i]),prediction:k.map(x=>x*amplitude)};};
+    // Reference the kernel to the first measured b, so a valid series with no
+    // b=0 row cannot underflow every kernel entry during the D search.
+    const referenceB=Math.min(...b),shifted=referenceB===0?b:b.map(x=>x-referenceB);
+    let lo=1e-13,hi=1e-8;const objective=D=>{const k=shifted.map(x=>Math.exp(-x*D)),amplitude=Math.max(0,dot(k,y)/dot(k,k));return {D,amplitude,residual:y.map((v,i)=>v-amplitude*k[i]),prediction:k.map(x=>x*amplitude)};};
     for(let i=0;i<100;i++){const a=lo+(hi-lo)/3,c=hi-(hi-lo)/3;if(dot(objective(a).residual,objective(a).residual)<dot(objective(c).residual,objective(c).residual))hi=c;else lo=a;}
-    const f=objective((lo+hi)/2);f.rms=Math.sqrt(mean(f.residual.map(x=>x*x)));f.atBoundary=f.D<1.1e-13||f.D>9.99e-9;return f;
+    const f=objective((lo+hi)/2);f.referenceAmplitude=f.amplitude;f.referenceB=referenceB;
+    const extrapolated=f.amplitude*Math.exp(referenceB*f.D);f.extrapolatedAmplitudeFinite=Number.isFinite(extrapolated);f.amplitude=f.extrapolatedAmplitudeFinite?extrapolated:null;
+    f.rms=Math.sqrt(mean(f.residual.map(x=>x*x)));f.atBoundary=f.D<1.1e-13||f.D>9.99e-9;return f;
   }
   function pgse(g,d,Delta){finite(g,'gradient T/m',0,1);finite(d,'delta s',1e-5,.03);finite(Delta,'Delta s',d,2);return {b:(gamma*g*d)**2*(Delta-d/3),moment:gamma*g*d*Delta};}
   const defaultsByView={campaign:{seed:731,nullPulseUs:18,nullOrder:180,pulse90Us:9,gradientScale:1,sequence:'ste',deltaMs:2,bigDeltaMs:80,ledMs:5,gradientMax:.3,points:20,repeats:1,scans:8,recycleSeconds:2,acquisitionSeconds:.5,budgetMinutes:12,T1Seconds:1.2,T2Seconds:.2,noise:.008,referenceD:1.9e-9,calibrationTemperatureK:298.15,referenceTemperatureK:298.15,reveal:false},inverse:{seed:41,points:32,maxB:4e9,snr:120,contrast:3,overlap:.7,regularization:.025,sparsity:.001,bootstrap:40,reveal:false},advanced:{seed:22,points:24,durationSeconds:120,ratePerSecond:.012,timeSeconds:40,maxB:4e9,snr:150,chirpBlurBins:1.4,profileVariation:.2,readoutLoss:.15,reveal:false}};

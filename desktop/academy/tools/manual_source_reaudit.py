@@ -4,6 +4,8 @@ Never rewrites the PPTX, extracted slides, source-index or course. The additive
 report distinguishes package byte identity from observed teaching-content
 identity. An appended empty ZIP footer can be tested without changing input.
 """
+import argparse
+from datetime import datetime, timezone
 import hashlib
 import io
 import json
@@ -25,8 +27,10 @@ def rels(z,part):
     name=posixpath.join(posixpath.dirname(part),"_rels",posixpath.basename(part)+".rels")
     return {} if name not in z.namelist() else {r.attrib["Id"]:r.attrib for r in ET.fromstring(z.read(name))}
 
-def main():
-    snapshot=json.loads(INDEX.read_text(encoding="utf-8"));path=Path(snapshot["input"]["path"])
+def compare_source(path=None, snapshot=None):
+    """Return a fresh, read-only comparison; calling this function writes no report."""
+    snapshot = snapshot if snapshot is not None else json.loads(INDEX.read_text(encoding="utf-8"))
+    path = Path(path) if path is not None else Path(snapshot["input"]["path"])
     data=path.read_bytes();rows=[];checks=[];archive=[]
     with zipfile.ZipFile(io.BytesIO(data)) as z:
         pr=rels(z,"ppt/presentation.xml")
@@ -69,14 +73,23 @@ def main():
                      "zipEndOfCentralDirectorySignature":footer.startswith(b"PK\x05\x06")}
     if footer.startswith(b"PK\x05\x06") and len(footer)>=22:
         values=struct.unpack("<4s4H2LH",footer[:22]);footer_analysis["record"]={"disk":values[1],"centralDirectoryDisk":values[2],"entriesOnDisk":values[3],"totalEntries":values[4],"centralDirectoryBytes":values[5],"centralDirectoryOffset":values[6],"commentBytes":values[7]}
-    report={"date":"2026-10-05","policy":"Read-only input and frozen artifacts. Only this additive report is written.",
+    report={"date":datetime.now(timezone.utc).date().isoformat(),"policy":"Read-only input and frozen artifacts. The caller chooses whether and where to write this additive report.",
             "snapshotInput":snapshot["input"],"currentInput":{"path":str(path),"bytes":len(data),"sha256":sha(data)},
             "sourceIndexSha256":sha(INDEX.read_bytes()),"courseSha256":sha((BASE/"content/course.json").read_bytes()),
             "packageByteIdentity":sha(data)==snapshot["input"]["sha256"],"prefixInvestigation":footer_analysis,
             "checks":checks,"slides":rows,"allTeachingContentChecksPassed":all(r["passed"] for r in rows) and all(c["passed"] for c in checks),
             "currentArchiveEntries":archive,
             "limits":"Without byte-for-byte package identity, do not state that the current PPTX container is unchanged. All recorded slide ordering, extracted image bytes, text/accessibility descriptions, speaker notes, hidden flags and image/video relationships are compared against the frozen extraction. Unrecorded package properties are not compared to a historical archive unless the exact prefix is recovered."}
-    output=BASE/"docs/source-input-reaudit.json";output.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
+    return report
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--source-pptx",type=Path,help="Optional explicit source; frozen extraction metadata is not rewritten")
+    parser.add_argument("--output",type=Path,default=BASE/"docs/source-input-reaudit.json",help="Use a fresh audit path to preserve the historical report")
+    args=parser.parse_args()
+    report=compare_source(args.source_pptx)
+    args.output.parent.mkdir(parents=True,exist_ok=True)
+    args.output.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
     print(json.dumps({k:report[k] for k in ["snapshotInput","currentInput","packageByteIdentity","prefixInvestigation","allTeachingContentChecksPassed"]},indent=2))
     print("Slides compared:",len(rows),"failed:",[r["slide"] for r in rows if not r["passed"]])
 if __name__=="__main__":main()

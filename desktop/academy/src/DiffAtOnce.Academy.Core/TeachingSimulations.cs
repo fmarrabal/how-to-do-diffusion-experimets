@@ -24,18 +24,20 @@ public static class TeachingSimulations
         Positive(p180Microseconds, nameof(p180Microseconds));
         Positive(trueP90Microseconds, nameof(trueP90Microseconds));
         Noise(noisePercent);
+        var selectedP90 = p180Microseconds / 2;
+        Positive(selectedP90, "Selected P90");
         var max = Computed(4 * trueP90Microseconds, "Pulse display range");
         var random = new SeededNormal(seed);
         var curve = Enumerable.Range(0, 201).Select(i =>
         {
-            var pulse = max * i / 200;
-            var signal = Math.Sin(Math.PI * pulse / (2 * trueP90Microseconds));
+            var pulse = max * (i / 200.0);
+            var signal = Math.Sin((pulse / trueP90Microseconds) * (Math.PI / 2));
             return new CurvePoint(pulse, signal + noisePercent / 100 * random.Next());
         });
         var firstNull = 2 * trueP90Microseconds;
         return new PulseCalibrationResult(
             new(p180Microseconds, trueP90Microseconds, noisePercent, seed),
-            p180Microseconds / 2, trueP90Microseconds, firstNull, max,
+            selectedP90, trueP90Microseconds, firstNull, max,
             Math.Abs(p180Microseconds - firstNull) <= trueP90Microseconds * 0.01,
             ReadOnly(curve), new(
                 "Synthetic signed nutation: the manually selected first non-zero null is assumed to be 180°. At unchanged RF power/offset/phase, P90=P180/2. The next 360° null is not P180. Experiment 1000 is the user's example label, not an acquisition command. No RF inhomogeneity, relaxation or power calibration is modelled.",
@@ -188,6 +190,7 @@ public static class TeachingSimulations
         Nonnegative(maxB1E9, nameof(maxB1E9)); Noise(noisePercent);
         if (pointCount is < 4 or > 128) throw new ArgumentOutOfRangeException(nameof(pointCount), "Use 4-128 observations.");
         if (diffusionBins is < 4 or > 128) throw new ArgumentOutOfRangeException(nameof(diffusionBins), "Use 4-128 diffusion bins.");
+        Computed(maxB1E9 * 1e9, "Maximum b in SI");
         var b = Enumerable.Range(0, pointCount).Select(i => maxB1E9 * i / (pointCount - 1)).ToArray();
         var d = Enumerable.Range(0, diffusionBins).Select(j => .1 * Math.Pow(30, j / (double)(diffusionBins - 1))).ToArray();
         var kernel = new double[pointCount, diffusionBins];
@@ -210,10 +213,10 @@ public static class TeachingSimulations
         var difference = curves.Max(p => Math.Abs(p.TwoComponentSignal - p.SingleComponentSignal));
         return new(new(maxB1E9, pointCount, diffusionBins, noisePercent), ReadOnly(singular), ReadOnly(relative),
             effectiveRank, diffusionBins - effectiveRank, numericalFloor,
-            1 / reliable[^1], relative.Any(s => s <= numericalFloor), difference,
+            1 / reliable[^1], diffusionBins > pointCount || relative.Any(s => s <= numericalFloor), difference,
             noisePercent > 0 ? difference / (noisePercent / 100) : null, ReadOnly(curves), new(
-                "Discrete point-mass kernel Kij=exp(-b_i*D_j)/sqrt(N), with 0.1-3 x10^-9 m2/s log grid. Singular values are estimated from a Jacobi eigensolve of K^T K. The tail below relative 1e-7 is unresolved: no exact full condition number is claimed. Effective rank uses max(noise fraction,1e-7) as an illustrative cutoff, not a noise-model-based resolution guarantee. Candidate decays compare two equal peaks at D=0.8/0.9 with one at 0.85. No inverse Laplace solver or regularization is performed.",
-                "Núcleo discreto de masas puntuales Kij=exp(-b_i*D_j)/sqrt(N), malla logarítmica 0.1-3 x10^-9 m2/s. Valores singulares estimados con autovalores de K^T K mediante Jacobi. La cola relativa inferior a 1e-7 no está resuelta: no se afirma un número de condición completo exacto. El rango efectivo usa max(fracción de ruido,1e-7) como umbral ilustrativo, no como garantía de resolución. Se comparan dos picos iguales D=0.8/0.9 con uno en 0.85. No se ejecuta una ILT ni regularización."));
+                "Discrete point-mass kernel Kij=exp(-b_i*D_j)/sqrt(N), with 0.1-3 x10^-9 m2/s log grid. Singular values are estimated from a Jacobi eigensolve of K^T K. Only min(N, diffusion bins) values are plotted; more bins than observations also create an exact right nullspace, included in unresolved directions. The tail below relative 1e-7 is unresolved: no exact full condition number is claimed. Effective rank uses max(noise fraction,1e-7) as an illustrative cutoff, not a noise-model-based resolution guarantee. Candidate decays compare two equal peaks at D=0.8/0.9 with one at 0.85. No inverse Laplace solver or regularization is performed.",
+                "Núcleo discreto de masas puntuales Kij=exp(-b_i*D_j)/sqrt(N), malla logarítmica 0.1-3 x10^-9 m2/s. Valores singulares estimados con autovalores de K^T K mediante Jacobi. Sólo se representan min(N, bins de difusión) valores; más bins que observaciones también crean un espacio nulo derecho exacto, incluido en las direcciones no resueltas. La cola relativa inferior a 1e-7 no está resuelta: no se afirma un número de condición completo exacto. El rango efectivo usa max(fracción de ruido,1e-7) como umbral ilustrativo, no como garantía de resolución. Se comparan dos picos iguales D=0.8/0.9 con uno en 0.85. No se ejecuta una ILT ni regularización."));
     }
 
     public static ExponentialFitResult FitExponential(IReadOnlyList<double> bSi, IReadOnlyList<double> signal)

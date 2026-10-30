@@ -1,5 +1,13 @@
 # DiffAtOnce Academy
 
+## Current audit patch / Corrección vigente 1.3.1
+
+Read [the bilingual audit notes](AUDIT_1_3_1_ES_EN.md) and the updated research guides [EN](RESEARCH_GUIDE_EN.md) / [ES](RESEARCH_GUIDE_ES.md). The complete and research PDFs now begin with four 1.3.1 correction pages, followed by the unchanged, clearly labelled 1.3 source manuals and historical screenshots. The reference mono Monte Carlo interval does not cover a selected ILT distribution centroid or its shape.
+
+Lee [las notas bilingües](AUDIT_1_3_1_ES_EN.md) y las guías de investigación [ES](RESEARCH_GUIDE_ES.md) / [EN](RESEARCH_GUIDE_EN.md). Los PDF completos y de investigación comienzan con cuatro páginas de correcciones 1.3.1 y conservan después los manuales 1.3 y sus capturas históricas sin cambios. El intervalo Monte Carlo mono de referencia no cubre el centroide ni la forma de una distribución ILT seleccionada.
+
+The remainder of this document retains earlier course/package history; its historical training counts are not a new 1.3.1 model evaluation. / El resto conserva la historia del curso y paquetes anteriores; sus recuentos de entrenamiento no son una nueva evaluación del modelo 1.3.1.
+
 **ES.** Una aplicación WPF para aprender DOSY haciendo preguntas, provocando
 errores y comparando resultados conocidos con los recuperados. La historia
 empieza en la calibración del espectrómetro y continúa hasta la interpretación

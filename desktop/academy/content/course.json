@@ -1602,8 +1602,8 @@
             "en": "Exercise: two explicit factors"
           },
           "instruction": {
-            "es": "Con T=301 K, fTTMS=0.89 y D medido=0.33×10⁻⁹, calcule fT=293/301≈0.9734, ftotal≈0.8664 y D corregido≈0.2859×10⁻⁹. Son valores educativos, no la medición de una nueva muestra.",
-            "en": "With T=301 K, fTTMS=0.89 and measured D=0.33×10⁻⁹, calculate fT=293/301≈0.9734, ftotal≈0.8664 and corrected D≈0.2859×10⁻⁹. These are educational values, not a new sample measurement."
+            "es": "Con T=301 K, fTTMS=0.89 y D medido=0.33×10⁻⁹, calcule fT=293/301≈0.9734, ftotal≈0.8663 y D corregido≈0.2859×10⁻⁹. Son valores educativos, no la medición de una nueva muestra.",
+            "en": "With T=301 K, fTTMS=0.89 and measured D=0.33×10⁻⁹, calculate fT=293/301≈0.9734, ftotal≈0.8663 and corrected D≈0.2859×10⁻⁹. These are educational values, not a new sample measurement."
           }
         },
         {

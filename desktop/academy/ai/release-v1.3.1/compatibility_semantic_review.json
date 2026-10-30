@@ -1,0 +1,99 @@
+{
+  "scope": "Source-bound review of the 14 actual generated answers, plus exact documentary mathematical delivery. This is not retraining, a new learner study or unrestricted semantic qualification.",
+  "automaticNativeChecksPassed": true,
+  "automaticNativeChecks": 103,
+  "generatedAnswersInspected": 14,
+  "sourceReportFile": "native_evaluation_report.json",
+  "sourceReportSha256": "aed7b05db9c523f7c88024c4c5fb83cc05edd1392cfab0ad2cb475bf3e5a8c53",
+  "evaluatorSourceSha256": "f3ac44cb28d52cd316ec99faccdf103ee42cba46423d73ceba8781195b240a82",
+  "semanticReleaseApproval": false,
+  "parentReviewRequired": true,
+  "numericAndPhysicalReview": [
+    "Identified 180-degree and 360-degree examples return the correct divisors and microsecond units, with fixed-power and synthetic-example qualifications.",
+    "Whole-waveform b scaling, apparent-D scale and independent-noise averaging return their supplied numerical results and expected assumptions.",
+    "SPEN explains reordering, phase and Fourier reconstruction, and explicitly bounds the echo-centre surrogate. Time-resolved examples explain changing fractions and common snapshot windows.",
+    "Fresh temperature queries retain fTTMS times 293/T, one application to the full axis, and the non-universal-viscosity boundary. They do not perform new decimal arithmetic, as requested.",
+    "All 40 mathematical chapter/language responses preserve literal corrected equations, assumptions and source IDs with no generated mathematical prose."
+  ],
+  "openSemanticLimits": [
+    {
+      "id": "TEMP-CONVECTION-SUBQUESTION",
+      "severity": "P2 completeness",
+      "cases": [
+        "original_native_regression_es_temperature-standard",
+        "original_native_regression_en_temperature-standard"
+      ],
+      "finding": "The question also asks why scale correction does not correct flow. Both actual outputs repeat the course anchor and do not explicitly answer that subquestion. The automatic gate tests once/full-axis and at least the viscosity boundary; it is not proof that every requested subquestion was answered.",
+      "requiredReview": "Do not describe these answers as complete convection guidance. Parent reviewer should retain documentary limitations or require an explicit flow-boundary answer before any broader claim."
+    },
+    {
+      "id": "GRADIENT-UNSUPPLIED-MEASUREMENT",
+      "severity": "P2 provenance wording",
+      "cases": [
+        "research_native_en_calibration_b_scale"
+      ],
+      "finding": "After correctly deriving b_scale=0.3844, the model adds: The original gradient is not used; the measured one is. No measured gradient was supplied in this synthetic question.",
+      "requiredReview": "This sentence must not be treated as evidence of an experimental measurement or calibration. Parent reviewer should decide whether runtime guarding or documentary fallback is required."
+    }
+  ],
+  "answerHashes": [
+    {
+      "id": "research_native_es_calibration_P90",
+      "generatedTextSha256": "7ec3b681dc11281793a6899ddb026b91dd4baab85cd2439d0f699f7aa2264158"
+    },
+    {
+      "id": "research_native_en_calibration_b_scale",
+      "generatedTextSha256": "2e8cacf78e9dee7ae244c29c37ae2b3def960b6d2ebccfb1cfb198ec6a17a1f2"
+    },
+    {
+      "id": "research_native_es_uncertainty_D_ratio",
+      "generatedTextSha256": "b1524f52430dccd043f2c19a8bd412c5bdec5f92eb1ea6d96286ef48b48fe628"
+    },
+    {
+      "id": "research_native_en_uncertainty_noise_ratio",
+      "generatedTextSha256": "a41fb82a86317281debe5a50ef073ed2009e334d6f55cdf88668dbebc99b7392"
+    },
+    {
+      "id": "research_native_en_calibration_P90_p360",
+      "generatedTextSha256": "d0f05ec05fd209fd836143de1c60f7941fc500dc0596f8bfae918b165dfeb35d"
+    },
+    {
+      "id": "research_native_es_calibration_P90_p360",
+      "generatedTextSha256": "6ae0b03c3a5df0d7778f88ce22da247d6590d62d1593f3b11c5868c78d1d35ee"
+    },
+    {
+      "id": "research_native_es_measure-next_qualitative",
+      "generatedTextSha256": "cb22f9c213ab63cfc412c3e1c83710861f1ccfe866af17db7378f8163e1631f0"
+    },
+    {
+      "id": "research_native_en_spatial-diffusion_qualitative",
+      "generatedTextSha256": "c8e5330f0c5d09847407130550aa82f7d419ac06ab237dcf4fee69b196e6d0b9"
+    },
+    {
+      "id": "original_native_regression_es_pulse-calibration",
+      "generatedTextSha256": "d03f60c0fc1d511ce045c655c41925032a65065ded6170c4469915aab2d973c8"
+    },
+    {
+      "id": "original_native_regression_en_sequence-b",
+      "generatedTextSha256": "194ab225135fe12d0b123c3cc5b018fc34af86ed4c935221be3cf0e01f3f460d"
+    },
+    {
+      "id": "original_native_regression_es_spen",
+      "generatedTextSha256": "defe8e32583cb0f6d3c6a5056c3cc14a20c3ffbffbcb9af711d5ebeee6f48894"
+    },
+    {
+      "id": "original_native_regression_en_time-resolved",
+      "generatedTextSha256": "72d2f84fa176375827f2391424eb0e154d005489f35e7f9219b0432814dc6efc"
+    },
+    {
+      "id": "original_native_regression_es_temperature-standard",
+      "generatedTextSha256": "034767d940f452fd5312cf2cd8e530725ceed6086da16faf0efd42da6c4e5186"
+    },
+    {
+      "id": "original_native_regression_en_temperature-standard",
+      "generatedTextSha256": "020010a4f8a6daf9f35eae7641b4ab79a00cc457a7b2e8624f6be791ab662fe3"
+    }
+  ],
+  "noExperimentalOrEducationalValidationClaimed": true,
+  "newTrainingPerformed": false
+}

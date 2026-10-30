@@ -1,0 +1,164 @@
+{
+  "Id": "beatrix-academy-qwen3-1.7b-mixed-research-v3-q8-compatibility-1.3.1",
+  "File": "model.gguf",
+  "Bytes": 1834425984,
+  "Sha256": "24bcf29032b1d4e19c08d69fa71bf562276b6999d22887b1f6aa344dfd58481a",
+  "CourseSha256": "acf7755db563e592af97de0a6a269243342e8e430beec0267da277e794445f18",
+  "ResearchKnowledgeSha256": "a04ae8bcfa523c4f49981d562ec67baae7b4ab74cb452d6fc59a4cd4c6356717",
+  "ResearchTopicsIncludedInTraining": [
+    "calibration",
+    "competencies",
+    "evidence",
+    "ilt",
+    "journey",
+    "spatial-bloch",
+    "uncertainty"
+  ],
+  "ResearchTopicsHeldOut": [
+    "defence",
+    "measure-next",
+    "spatial-diffusion"
+  ],
+  "FineTuned": true,
+  "QualityPassed": true,
+  "ResearchQualityPassed": true,
+  "ExperimentalValidation": false,
+  "EducationalEffectivenessMeasured": false,
+  "TrainingReportSha256": "9230e13e8e8799f4eeadc4c9305e7ed87f51cca3e6574af6dcc2bfb950500726",
+  "EvaluationReportSha256": "378034b7e050d186138d42cb6a9a5d58af08168e9652215263709294ab2db3fa",
+  "CorrectiveEvaluationUsed": false,
+  "BaseModel": "Qwen/Qwen3-1.7B",
+  "BaseRevision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "Quantization": "Q8_0",
+  "LocalOnly": true,
+  "License": "Apache-2.0",
+  "NativeEvaluationPending": false,
+  "NativeResearchEvaluationPassed": true,
+  "AnswerMode": "hybrid-reviewed-course-and-local-llm",
+  "SystemInstructionsSha256": "efc8cde435fd6cf396426ac4f63e07c41df3c55199c53ef7b81fd7475a4d0b64",
+  "OriginalCourseRegressionPassed": true,
+  "Reproducibility": {
+    "TrainingSourceSnapshotSha256": "d09bbb8b7ff3e913f29fc503dfe800a20076f043b76efd2b4146fb02a7265f9d",
+    "EvaluationSourceSha256": "d09bbb8b7ff3e913f29fc503dfe800a20076f043b76efd2b4146fb02a7265f9d",
+    "SplitPlanSha256": "12d40e0ed5b82aa0932c8966e055713fbda101b3646c3e9a93648889d0386dbf"
+  },
+  "QuantizationTools": {
+    "ConverterSha256": "b17cde5cd38df5d26fc938408105a9d225f0645dcd98bbce25f240734a198ad0",
+    "QuantizerSha256": "d68420f283e17c4ed3dc58137dd48b265946206f5313544912e9f02f1c2bf8ad"
+  },
+  "SupplementalContentFile": "derivations.json",
+  "SupplementalContentSha256": "7e49f5963739ec9e7c2678194b746526a254d573fc3d6eaab5cb8ae27be375b5",
+  "SupplementalIncludedInTraining": false,
+  "SupplementalAnswerMode": "reviewed-documentary-guide",
+  "SupplementalLLMApproved": false,
+  "NativeEvaluationPassed": true,
+  "ResearchAnswerMode": "local-mixed-fine-tuned-model-plus-reviewed-causal-guidance",
+  "IncludesLiteralCourseText": true,
+  "ResearchTutorSourceSha256": "e90db70abee916558536962f44dcddfdf77f971ba8e6594486a094897f704763",
+  "SupplementalNativeEvaluationPending": false,
+  "SupplementalNativeEvaluationPassed": true,
+  "SupplementalSemanticEvaluationPending": false,
+  "SupplementalSemanticEvaluationPassed": true,
+  "LegacyTutorSourceSha256": "2dc6dd211aa4894d709a27e7caf9b579539127927613acd62c1a6b4663358c86",
+  "ResearchNativeEvaluationPassed": true,
+  "NativeOriginalCourseRegressionPassed": true,
+  "TrainingModelId": "beatrix-academy-qwen3-1.7b-mixed-research-v3-q8",
+  "CompatibilityRelease": "1.3.1",
+  "TrainingCourseSha256": "f9a17df9645b541abc70907e5d04cd38c213293443ce1d37c2c0d94f8aea0cb9",
+  "OriginalSupplementalSha256": "e07920a25ae8642ffa55a83a75a4db7eb8a6ead09a5c8195ae23ef91d6c9b02e",
+  "CompatibilityCreatedUtc": "2026-10-30T20:40:37.558373+00:00",
+  "OriginalManifestFile": "original_manifest_v1.3.json",
+  "OriginalManifestSha256": "50df9af5d8aa3d8b3af42fa9dfeeab02e7be404324aae9c495813166bf02997b",
+  "CompatibilityEvaluationPending": false,
+  "CompatibilityEvaluationPassed": true,
+  "CompatibilityNewTrainingPerformed": false,
+  "CompatibilityScope": "Bounded hybrid teaching compatibility approved by explicit composite review. Original trained weights and training identity retained. The preserved103 pre-guard checks and82 post-guard behavior checks bind different source states; two of four final generations are rejected into reviewed guidance. No unrestricted semantic qualification or new training is claimed.",
+  "OriginalTrainingQualification": {
+    "FineTuned": true,
+    "QualityPassed": true,
+    "ResearchQualityPassed": true,
+    "TrainingReportSha256": "9230e13e8e8799f4eeadc4c9305e7ed87f51cca3e6574af6dcc2bfb950500726",
+    "EvaluationReportSha256": "378034b7e050d186138d42cb6a9a5d58af08168e9652215263709294ab2db3fa",
+    "NativeEvaluationReportSha256": "e67ec46530b98c4d7cf4eb1a608509cc0f5d079dfcfc7fe471f30505424b9ec5",
+    "CourseSha256": "f9a17df9645b541abc70907e5d04cd38c213293443ce1d37c2c0d94f8aea0cb9",
+    "ResearchKnowledgeSha256": "a04ae8bcfa523c4f49981d562ec67baae7b4ab74cb452d6fc59a4cd4c6356717"
+  },
+  "OriginalSupplementalReports": {
+    "NativeReportFile": "supplemental_native_v3.json",
+    "NativeReportSha256": "9a9668cc50e1d236ce645bd643f65ef8af6f2e5eb1f91d83c17fc75ae46cc985",
+    "SemanticReportFile": "supplemental_literal_semantic_preservation_v3.json",
+    "SemanticReportSha256": "f45e231f159266b611f3324672538076ac680b370e55f33d30e0be9a5462aafa",
+    "Scope": "Original unchanged 1.3 evidence only, not current 1.3.1 qualification."
+  },
+  "ModelStorage": {
+    "mode": "NTFS hardlink; read-only usage",
+    "separateDiskCopyCreated": false,
+    "modelContentModified": false
+  },
+  "OriginalQualificationMetadata": {
+    "ResearchSupplementalCausalReportSha256": "48d1d33eba58e493a088f031aa736be743264aaa4d456b0cfd8c07b2f6758547",
+    "QualificationProtocolSha256": "b6ec7ce0d688360084593f348a5430f103745145ef55913f0771ae8d68158f4f",
+    "FinalClosureProtocolSha256": "39da66c3cd3ccb6c55cf1cd59c6d84e1f33bb0a64246c724bcfc651f93b7ff1d",
+    "FinalGuardReplayReportFile": "final-guard-replay-closed-v3.json",
+    "FinalGuardReplayReportSha256": "4501ce89ae2640b42e7fcc47a641bc9e65ca1724abf603b907c2a1a80fecaefc",
+    "CandidateRound": "r4-evidence-boundaries",
+    "CreatedUtc": "2026-10-30T00:42:20.085151+00:00",
+    "Scope": "Historical 1.3 training/qualification provenance only; these fields do not approve current 1.3.1 content."
+  },
+  "NativeEvaluationReportFile": "native_evaluation_report.json",
+  "NativeEvaluationReportSha256": "aed7b05db9c523f7c88024c4c5fb83cc05edd1392cfab0ad2cb475bf3e5a8c53",
+  "CompatibilityEvidenceRecordedUtc": "2026-10-30T20:54:04.157033+00:00",
+  "CompatibilityEvidence": {
+    "ReportFile": "native_evaluation_report.json",
+    "ReportSha256": "aed7b05db9c523f7c88024c4c5fb83cc05edd1392cfab0ad2cb475bf3e5a8c53",
+    "EvaluatorSourceSha256": "f3ac44cb28d52cd316ec99faccdf103ee42cba46423d73ceba8781195b240a82",
+    "ActualRunPassed": true,
+    "NativeResearchPassed": true,
+    "NativeOriginalRegressionPassed": true,
+    "TotalChecks": 103,
+    "Categories": {
+      "researchNative": {
+        "checks": 8,
+        "passed": 8
+      },
+      "originalCourseNative": {
+        "checks": 6,
+        "passed": 6
+      },
+      "mathematicalLiteralDelivery": {
+        "checks": 40,
+        "passed": 40
+      },
+      "generationCancellation": {
+        "checks": 1,
+        "passed": 1
+      },
+      "freshTemperatureFactors": {
+        "checks": 2,
+        "passed": 2
+      }
+    },
+    "NewTrainingPerformed": false,
+    "ApprovalStatus": "Root accepts bounded compatibility through compatibility_approval.json. Pre-guard report retains original scope; final package native selftest remains required before distribution."
+  },
+  "CompatibilitySemanticReview": {
+    "ReportFile": "compatibility_semantic_review.json",
+    "ReportSha256": "829808f8e4a7e948f023c4ffade8a7a009563f6586ab16cab4f498d2616cf20f",
+    "SemanticReleaseApproval": false,
+    "ParentReviewRequired": true,
+    "OpenLimits": [
+      "TEMP-CONVECTION-SUBQUESTION",
+      "GRADIENT-UNSUPPLIED-MEASUREMENT"
+    ],
+    "CurrentClosureFile": "compatibility_guard_closure.json",
+    "CurrentApprovalFile": "compatibility_approval.json",
+    "ObservedRuntimeDefectsClosed": true
+  },
+  "CompatibilityApprovalReportFile": "compatibility_approval.json",
+  "CompatibilityApprovalReportSha256": "335e8e1b6bbda35f7e7195e4170ae422e52ae9b25a39dfd541bff487986ef151",
+  "SupplementalSemanticEvaluationReportFile": "compatibility_approval.json",
+  "SupplementalSemanticEvaluationReportSha256": "335e8e1b6bbda35f7e7195e4170ae422e52ae9b25a39dfd541bff487986ef151",
+  "SupplementalNativeEvaluationReportFile": "native_evaluation_report.json",
+  "SupplementalNativeEvaluationReportSha256": "aed7b05db9c523f7c88024c4c5fb83cc05edd1392cfab0ad2cb475bf3e5a8c53",
+  "NativeEvaluationReportScope": "Preserved pre-guard103 run. Current guard/source review is compatibility_approval.json; this file is not relabelled as a current full rerun."
+}

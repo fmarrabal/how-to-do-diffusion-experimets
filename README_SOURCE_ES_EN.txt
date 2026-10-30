@@ -1,65 +1,65 @@
-DiffAtOnce Academy 1.3 - source / codigo fuente
+# Academy 1.3.1 source / codigo fuente
 
-ES: este ZIP preserva desktop/academy con el codigo WPF, el runtime web compartido,
-el recorrido de investigacion, el piloto local voluntario, manuales ES/EN y casos
-publicos con licencia CC BY 4.0, atribucion y SHA256. No incluye pesos de modelos,
-adaptadores, entornos, articulos privados, datos de estudiantes, QA ni compilados.
-Las series publicas son datos reales; una agrupacion del deposito no demuestra
-controles de conveccion/temperatura ni replicas identicas. Sin b documentados no
-se obtiene D. Los datos originales estan intactos; no se incluye el deposito completo.
+ES: parche auditado del curso y los motores WPF/web. Consulte los manuales ES/EN
+en desktop/academy/docs y las notas de auditoria incluidas. Las fuentes originales
+de entrenamiento y sus identidades se conservan: este paquete no realiza un nuevo
+ajuste fino ni acredita inferencia por si solo. Los pesos se excluyen; una
+compilacion sin pesos compatibles usa guia documental. La web no ejecuta un LLM.
 
-EN: this archive preserves desktop/academy with WPF source, the shared browser
-runtime, research pathway, voluntary local pilot, ES/EN manuals and licensed
-CC BY 4.0 public cases with attribution and SHA256. It excludes model weights,
-adapters, environments, private papers, learner data, QA outputs and binaries.
-Repository grouping does not establish paired convection/temperature controls.
-Undocumented b values cannot produce a validated D. Original files remain intact.
+EN: audited curriculum and WPF/browser-engine patch. Read the ES/EN manuals in
+desktop/academy/docs and the included audit notes. Original training sources
+and identities are retained: source packaging neither retrains a model nor
+establishes inference. Weights are excluded; a build without compatible weights
+uses documentary guidance. The browser does not run an LLM.
 
-From this extracted folder / Desde esta carpeta:
+From the extracted root / Desde la raiz extraida:
     cd desktop/academy
-    python tools/build_research_release_v13.py --prepare
+    python tools/build_audit_release_v131.py --prepare
     python -m http.server 8918 --bind 127.0.0.1 --directory web
 
-Browser / Navegador:
+Open / Abrir:
     http://127.0.0.1:8918/index.html?view=research&lang=es
     http://127.0.0.1:8918/index.html?view=research&lang=en
 
-Windows x64 + .NET SDK 8 or newer + Microsoft Edge WebView2 Runtime:
+Windows x64, .NET SDK 8 or newer, Microsoft Edge WebView2 Runtime:
     dotnet restore src/DiffAtOnce.Academy.App/DiffAtOnce.Academy.App.csproj --configfile NuGet.Config
     dotnet build src/DiffAtOnce.Academy.App/DiffAtOnce.Academy.App.csproj -c Release --no-restore
     dotnet run --project src/DiffAtOnce.Academy.App -c Release --no-build
 
-ES: sin pesos compatibles, Beatrix identifica honestamente la guia documental.
-El paquete fuente no acredita inferencia LLM ni un nuevo ajuste fino. Los metadatos
-historicos del tutor conservan sus identidades originales; no son nuevos resultados.
-El navegador no ejecuta un LLM. El piloto empieza con cero participantes y requiere
-consentimiento explicito; no se incluyen alumnos ni resultados. La retencion exige
-siete dias reales. Los argumentos se revisan por separado mediante rubrica humana.
+Read SOURCE_BUILD_V13.md as the base build guide together with the 1.3.1 audit
+notes. --prepare creates pending local metadata only. It is not a public freeze,
+model qualification or deployment. Final packaging requires a separate reviewed
+web freeze and current root-review hash. Original 1.3.0 artifacts are preserved.
+The original public 1.3.0 WEB_RELEASE_SHA256.json is retained verbatim at its
+workspace-relative path so the 1.3.1 builder can check its immutability guard.
+It is provenance metadata; the former runtime and private QA are not included.
 
-EN: without compatible weights, Beatrix identifies documentary guidance honestly.
-Source packaging does not establish LLM inference or a new fine-tune. Historical
-tutor metadata remain historical. The browser has no LLM. The pilot starts with
-zero participants, requires explicit consent and includes no learners/outcomes.
-Delayed retention requires seven real days; prose uses a separate human rubric.
-
-Numerical checks / Pruebas numericas (Node.js 18+):
+Numerical regression / Regresion numerica (Node.js 18+):
+    node web/tests/research-audit-regressions.test.cjs
     node web/tests/research-journey.test.cjs
     node web/tests/spatial-encoding.test.cjs
-    node web/tests/learning-path.test.cjs
-    node web/tests/research-pilot-panel.test.cjs
     node web/tests/research-independent-review.cjs
 
-Optional browser harnesses require Playwright and Edge/Chromium. Where an original
-development harness referenced the author's local Playwright module, this archive
-uses require('playwright'); configure/install your own official testing dependency.
-No Node/Python/training environment is required to use the released WPF application.
+Optional browser tests require your own Playwright and Edge/Chromium. Manual
+authors may set ACADEMY_NODE and ACADEMY_PDFTOPPM, or place node/pdftoppm on PATH.
+manual_verify.py also accepts --pdftoppm. Regenerating a manual requires reviewed
+captures and a new complete visual review; the final PDFs are supplied directly.
 
---prepare creates local pending-review metadata only. Public freeze additionally
-requires an explicit root review JSON with current engine, QA and final-manual
-hashes. Previous final releases are not replaced. Software integrity and analytic
-checks are not hardware calibration, chemical identity or educational efficacy.
+Three authoring-only path transformations are recorded in SOURCE_SHA256.json:
+manual provenance commands, research manual Node discovery and Poppler discovery.
+The teaching engines, original experimental values and final PDF bytes are not
+changed by those transformations. Public data retain their deposition attribution,
+license metadata and upstream third-party rights. No blanket reuse license is
+created by this archive.
 
-Read Docs/ACADEMY_MANUAL_ES.pdf and Docs/RESEARCH_MANUAL_ES.pdf in the portable
-application, or docs/ACADEMY_MANUAL_EN.pdf and docs/RESEARCH_MANUAL_EN.pdf here.
-SOURCE_SHA256.json records exact selected members, transformations and provenance.
-The adjacent ZIP .sha256.json verifies the final archive and full member readback.
+No GGUF/base model, adapters/checkpoints, runtime environments, private papers,
+learner records, raw local exports, private QA or compiled binaries are included.
+Public-series D fitting remains blocked without documented b. Monte Carlo
+intervals identify the monoexponential estimator; they do not quantify ILT peaks
+or centroids. Written arguments require human review. The voluntary local pilot
+starts without participants and does not establish educational effectiveness.
+
+SOURCE_SHA256.json records exact members and publication transformations. Its
+self-hash is excluded; the outer ZIP SHA256 binds it. Every ZIP member is read
+back for CRC, size and SHA256. Software/reference checks are not physical
+calibration, molecular identity or measured learning outcomes.

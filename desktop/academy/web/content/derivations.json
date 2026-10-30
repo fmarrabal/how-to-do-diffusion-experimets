@@ -8300,7 +8300,7 @@
       ],
       "rewrittenEquationLatex": "b/\\gamma^2=\\sum_{j=I}^{V}\\int_jF_j^2dt-4f\\sum_{j=III}^{V}\\int_{j\\cap[\\tau,2\\tau]}F_jdt+4f^2\\tau",
       "notes": {
-        "es": "Evaluar las cinco integrales y cruzados con límites correctos, luego fijar g00.",
+        "es": "Evaluar las cinco integrales y cruzados con límites correctos, luego fijar g0=0.",
         "en": "Evaluate five integrals and cross terms with correct bounds, then setg0=0."
       }
     },

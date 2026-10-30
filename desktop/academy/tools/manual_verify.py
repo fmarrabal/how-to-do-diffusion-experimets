@@ -12,9 +12,8 @@ from pypdf import PdfReader
 from PIL import Image,ImageDraw
 
 BASE = Path(__file__).resolve().parents[1]
-parser=argparse.ArgumentParser();parser.add_argument("--render-dir",type=Path,default=BASE/"docs/qa/manual-pages")
-parser.add_argument("--pdftoppm", default=os.environ.get("ACADEMY_PDFTOPPM") or shutil.which("pdftoppm") or "pdftoppm", help="Poppler pdftoppm executable; also accepts ACADEMY_PDFTOPPM or PATH")
-args=parser.parse_args();POPLER=Path(args.pdftoppm)
+
+parser=argparse.ArgumentParser();parser.add_argument("--render-dir",type=Path,default=BASE/"docs/qa/manual-pages");parser.add_argument("--pdftoppm",default=os.environ.get("ACADEMY_PDFTOPPM") or shutil.which("pdftoppm") or "pdftoppm");args=parser.parse_args();POPLER=Path(args.pdftoppm)
 args.render_dir.mkdir(parents=True,exist_ok=True)
 report={"checks":[],"manuals":[],"evidenceBoundary":"Structural and text bounds checks plus complete Poppler rendering. Visual review of page PNGs is recorded separately; not hardware/student/LLM validation."}
 def check(name,value):report["checks"].append({"name":name,"passed":bool(value)})

@@ -16,6 +16,8 @@ import shutil
 import stat
 
 VERSION = "1.3.0"
+# The licensed collection has its own immutable identity across software patches.
+LIBRARY_VERSION = "1.3.0"
 ACADEMY = Path(__file__).resolve().parents[1]
 WORKSPACE = ACADEMY.parents[1]
 WEB = ACADEMY / "web"
@@ -151,7 +153,7 @@ def public_metadata(name):
 
 def licensed_data_sources():
     catalog = read_json(ACADEMY / "content/research-library.json")
-    if catalog.get("version") != VERSION or catalog.get("sourceDOI") != DATA_DOI or catalog.get("license", {}).get("name") != "CC BY 4.0" or len(catalog.get("cases", [])) != 8:
+    if catalog.get("version") != LIBRARY_VERSION or catalog.get("sourceDOI") != DATA_DOI or catalog.get("license", {}).get("name") != "CC BY 4.0" or len(catalog.get("cases", [])) != 8:
         raise ValueError("The eight licensed public research cases and source are required")
     selected, originals = {}, 0
     for case in catalog["cases"]:
@@ -241,6 +243,10 @@ def scope_files():
     paths = [WEB / n for n in TOP_FILES if n.startswith(("research-", "spatial-", "learning-"))]
     paths += [WEB / "content" / n for n in ("course.json", "derivations.json", "doctoral-cases.json", "research-library.json", "research-tutor-knowledge.json")]
     paths += [WEB / name for name in licensed_data_sources()]
+    if VERSION == "1.3.1":
+        # This source identity already binds all doctoral engines; it does not
+        # include this research identity or the bundle, so no hash cycle exists.
+        paths += [WEB / "content/doctoral-manifest.json"]
     return sorted(set(paths))
 
 
@@ -250,6 +256,9 @@ def prepare():
         if sha(ACADEMY / name) != digest: raise ValueError("Frozen original curriculum identity changed: " + name)
     data_files = licensed_data_sources()
     enough_space(WEB, sum(p.stat().st_size for p in data_files.values()) + sum((ACADEMY / "docs" / n).stat().st_size for n in MANUALS if (ACADEMY / "docs" / n).is_file()))
+    if VERSION == "1.3.1":
+        from build_doctoral_identity_v131 import build_manifest
+        write_changed(ACADEMY / "content/doctoral-manifest.json", encoded(build_manifest(ACADEMY)))
     for name in CONTENT_FILES:
         safe_file(ACADEMY, ACADEMY / "content" / name)
         write_changed(WEB / "content" / name, public_metadata(name))
@@ -276,6 +285,15 @@ def prepare():
         "scientificScope": "Teaching models and attributed public data. b/D remain conditional; no instrument operation, absolute calibration, chemical identity or measured student efficacy is established.",
         "manuals": ["docs/" + n for n in MANUALS], "excluded": ["GGUF/model weights", "private article PDFs", "student records", "QA artifacts", "credentials", "instrument access"]}
     bundle.pop("rootReview", None)
+    if VERSION == "1.3.1":
+        doctoral = read_json(WEB / "content/doctoral-manifest.json")
+        bundle.update(doctoralContentSha256=sha(WEB / "content/doctoral-manifest.json"),
+            doctoralCasesSha256=sha(WEB / "content/doctoral-cases.json"),
+            doctoralReleaseStatus="pending-root-review", doctoralActivities=len(doctoral["activities"]),
+            doctoralIncludedInLLMTraining=False, doctoralHintMode="reviewed-documentary-only",
+            doctoralIdentitySchema=doctoral["schema"],
+            doctoralOriginalVersion=doctoral["historicalQualification"]["version"],
+            doctoralOriginalManifestSha256=doctoral["historicalQualification"]["manifestSha256"])
     write_changed(WEB / "bundle-manifest.json", encoded(bundle))
     return {"version": VERSION, "prepared": True, "published": False, "releaseStatus": bundle["releaseStatus"], "researchContentSha256": research_sha,
             "publicResearchSeries": 8, "unchangedResearchOriginalFiles": 72, "finalManualsPresent": sum((WEB / "docs" / n).is_file() for n in MANUALS)}
@@ -311,14 +329,21 @@ def verify_frozen(folder):
         if path.stat().st_size != r["bytes"] or sha(path) != r["sha256"]: raise ValueError("Final public bytes differ: " + name)
     if sha(folder / "content/research-manifest.json") != manifest["researchContentSha256"]: raise ValueError("Final research identity differs")
     if read_json(folder / "bundle-manifest.json")["researchContentSha256"] != manifest["researchContentSha256"]: raise ValueError("Learning scope and public identity differ")
+    if VERSION == "1.3.1":
+        bundle = read_json(folder / "bundle-manifest.json")
+        if bundle.get("doctoralReleaseStatus") != "reviewed-teaching-software" or bundle.get("doctoralContentSha256") != sha(folder / "content/doctoral-manifest.json"):
+            raise ValueError("Frozen doctoral approval and identity differ")
+        if bundle.get("rootReview", {}).get("sha256") != manifest.get("rootReview", {}).get("sha256"):
+            raise ValueError("Doctoral approval is not bound to the same root review")
     return manifest
 
 
-def freeze(review_path, review_sha256, output=DEFAULT_RELEASE):
+def freeze(review_path, review_sha256, output=None):
+    output = DEFAULT_RELEASE if output is None else output
     review = check_review(review_path, review_sha256)
     safe_write_parents(Path(output).absolute() / "placeholder")
     output = Path(output).resolve()
-    if output.name != "v1.3.0" or not output.is_relative_to(WORKSPACE.resolve()) or output.is_relative_to(ACADEMY.resolve()): raise ValueError("Choose a new workspace versioned public folder named v1.3.0 outside Academy sources")
+    if output.name != "v" + VERSION or not output.is_relative_to(WORKSPACE.resolve()) or output.is_relative_to(ACADEMY.resolve()): raise ValueError("Choose a new workspace versioned public folder named v" + VERSION + " outside Academy sources")
     if output.exists():
         existing = verify_frozen(output)
         if existing.get("rootReview", {}).get("sha256") != review["sha256"]: raise FileExistsError("Existing final version belongs to another review; it is never overwritten")
@@ -338,6 +363,7 @@ def freeze(review_path, review_sha256, output=DEFAULT_RELEASE):
     check_review(review_path, review_sha256)
     bundle = read_json(WEB / "bundle-manifest.json")
     bundle.update(releaseStatus="reviewed-teaching-software", researchReleaseStatus="reviewed-teaching-software", rootReview=review)
+    if VERSION == "1.3.1": bundle["doctoralReleaseStatus"] = "reviewed-teaching-software"
     write_changed(WEB / "bundle-manifest.json", encoded(bundle))
     selected = public_files(); records = [record(p, WEB) for p in selected.values()]
     enough_space(output, sum(r["bytes"] for r in records))
@@ -348,7 +374,7 @@ def freeze(review_path, review_sha256, output=DEFAULT_RELEASE):
         source, target = selected[r["path"]], pending / r["path"]
         copy_changed(source, target)
         if sha(target) != r["sha256"]: raise ValueError("Input changed during freeze: " + r["path"])
-    manifest = {**bundle, "publicRoot": "https://diffatonce.com/assets/academy/v1.3.0/", "files": records, "manifestSelfHash": "Excluded from its own file list; outer deployment/package digest covers this file.", "published": False}
+    manifest = {**bundle, "publicRoot": "https://diffatonce.com/assets/academy/v" + VERSION + "/", "files": records, "manifestSelfHash": "Excluded from its own file list; outer deployment/package digest covers this file.", "published": False}
     (pending / "WEB_RELEASE_SHA256.json").write_bytes(encoded(manifest))
     verify_frozen(pending)
     check_review(review_path, review_sha256)

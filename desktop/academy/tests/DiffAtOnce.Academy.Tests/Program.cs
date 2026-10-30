@@ -24,6 +24,10 @@ Check("pulse_noise_reproducible", Json(TeachingSimulations.PulseCalibration(nois
 Check("pulse_noise_seed_changes_data", Json(TeachingSimulations.PulseCalibration(noisePercent: 2, seed: 101).Curve) != Json(TeachingSimulations.PulseCalibration(noisePercent: 2, seed: 102).Curve));
 Reject("pulse_reject_zero", () => TeachingSimulations.PulseCalibration(p180Microseconds: 0));
 Reject("pulse_reject_nan", () => TeachingSimulations.PulseCalibration(trueP90Microseconds: double.NaN));
+Reject("pulse_reject_selected_P90_underflow", () => TeachingSimulations.PulseCalibration(p180Microseconds: double.Epsilon));
+Reject("pulse_reject_display_range_overflow", () => TeachingSimulations.PulseCalibration(trueP90Microseconds: double.MaxValue));
+var largePulse = TeachingSimulations.PulseCalibration(p180Microseconds: 8e307, trueP90Microseconds: 4e307);
+Check("pulse_finite_large_range_avoids_intermediate_overflow", largePulse.Curve.All(point => double.IsFinite(point.X) && double.IsFinite(point.Y)) && Near(largePulse.Curve[50].Y, 1) && Near(largePulse.Curve[150].Y, -1));
 Reject("noise_reject_outside_percent", () => TeachingSimulations.PulseCalibration(noisePercent: 101));
 
 double NumericPgseB(double g, double delta, double bigDelta)
@@ -143,6 +147,11 @@ using (var fixture = JsonDocument.Parse(File.ReadAllText(Path.Combine(AppContext
 }
 Check("ILT_two_distinct_distributions_can_hide_below_noise", ilt.MaxCandidateSignalDifference > 0 && ilt.CandidateDifferenceToNoiseRatio < 1 && ilt.CandidateCurves.All(p => p.TwoComponentSignal >= p.SingleComponentSignal - 1e-15), new { ilt.MaxCandidateSignalDifference, ilt.CandidateDifferenceToNoiseRatio });
 Reject("ILT_reject_nonfinite_range", () => TeachingSimulations.InverseLaplaceConditioning(maxB1E9: double.PositiveInfinity));
+Reject("ILT_reject_finite_range_overflow_in_SI", () => TeachingSimulations.InverseLaplaceConditioning(maxB1E9: double.MaxValue));
+var wideKernel = TeachingSimulations.InverseLaplaceConditioning(pointCount: 4, diffusionBins: 128, noisePercent: 0);
+Check("ILT_wide_kernel_exact_nullspace_not_hidden_by_truncated_SVD", wideKernel.SingularValues.Count == 4 && wideKernel.RelativeSingularValues.All(x => x > wideKernel.NumericalRelativeFloor) && wideKernel.UnresolvedDirections >= 124 && wideKernel.HasUnresolvedSingularTail,
+    new { wideKernel.EffectiveRank, wideKernel.UnresolvedDirections, wideKernel.HasUnresolvedSingularTail });
+Check("ILT_bilingual_assumptions_explain_exact_nullspace", wideKernel.Assumptions.English.Contains("exact right nullspace") && wideKernel.Assumptions.Spanish.Contains("espacio nulo derecho exacto"));
 Reject("ILT_reject_unbounded_grid", () => TeachingSimulations.InverseLaplaceConditioning(diffusionBins: 100_000));
 Check("all_synthetic_outputs_serialize_without_nonfinite_values", new object[] { p, calibration, design, spreadFlow, ilt }.All(value => !Json(value).Contains("NaN")));
 

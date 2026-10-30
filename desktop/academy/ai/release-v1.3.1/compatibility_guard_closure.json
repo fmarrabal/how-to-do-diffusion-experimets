@@ -1,0 +1,120 @@
+{
+  "version": "1.3.1",
+  "scope": "Bounded runtime guard and documentary-routing closure. This record contains no raw prompts, raw generated prose or user filesystem paths.",
+  "boundedRuntimeBehaviorPassed": true,
+  "releaseApprovalIssuedByThisRecord": false,
+  "compositeReleaseApprovalRequired": true,
+  "acceptanceMetric": "Correct cited generation or an explicitly labelled reviewed documentary fallback. Rejected generation is never counted as a successful generated answer.",
+  "sourceHashes": {
+    "ResearchTutorService.cs": "e90db70abee916558536962f44dcddfdf77f971ba8e6594486a094897f704763",
+    "TutorService.cs": "2dc6dd211aa4894d709a27e7caf9b579539127927613acd62c1a6b4663358c86",
+    "NativeSemanticCheck.Program.cs": "6fbf1b5134b7424ebd2d8bf0bc95859297dddffb9e721ce36ca3ef342dd761a0",
+    "ResearchTutorSystemInstructions": "efc8cde435fd6cf396426ac4f63e07c41df3c55199c53ef7b81fd7475a4d0b64"
+  },
+  "contentHashes": {
+    "model.gguf": "24bcf29032b1d4e19c08d69fa71bf562276b6999d22887b1f6aa344dfd58481a",
+    "course.json": "acf7755db563e592af97de0a6a269243342e8e430beec0267da277e794445f18",
+    "derivations.json": "7e49f5963739ec9e7c2678194b746526a254d573fc3d6eaab5cb8ae27be375b5",
+    "research-tutor-knowledge.json": "a04ae8bcfa523c4f49981d562ec67baae7b4ab74cb452d6fc59a4cd4c6356717"
+  },
+  "evidenceHashChain": [
+    {
+      "id": "pre-guard-native",
+      "file": "native_evaluation_report.json",
+      "sha256": "aed7b05db9c523f7c88024c4c5fb83cc05edd1392cfab0ad2cb475bf3e5a8c53",
+      "scope": "103 automatic checks against pre-guard sources; actual outputs and their manual limitations remain preserved."
+    },
+    {
+      "id": "pre-guard-semantic-review",
+      "file": "compatibility_semantic_review.json",
+      "sha256": "829808f8e4a7e948f023c4ffade8a7a009563f6586ab16cab4f498d2616cf20f",
+      "scope": "Original manual completeness and measurement-provenance findings; not silently replaced by the correction."
+    },
+    {
+      "id": "first-post-change-native",
+      "file": "postchange-semantic-native.json",
+      "sha256": "a1e7bb6058817eaf71821514e94fce62fa20c3ddbc3d0e381d63d0c484ac7070",
+      "scope": "71 automatic checks; manual review subsequently detected a causal subject error in one actual answer."
+    },
+    {
+      "id": "first-post-change-manual-failure",
+      "file": "postchange-semantic-round1-manual-failure.json",
+      "sha256": "c8fc194686a08d96bd567b731b42596b09b9d416cb692ebd3831ec8c3a7c0ecb",
+      "scope": "Explicit retained semantic failure; automatic pass was not semantic approval."
+    },
+    {
+      "id": "current-guard-replay",
+      "file": "postchange-semantic-replay-round2.json",
+      "sha256": "6f18b6f90f24a85cf7b13474f00d12928b81180603ae6d70456022971936f315",
+      "scope": "78 fixture, captured replay and documentary checks; replay is not model generation."
+    },
+    {
+      "id": "current-guard-native",
+      "file": "postchange-semantic-native-round2.json",
+      "sha256": "a49f4a3e3047da9e4def2b4ffa529cf48efbe979c696f055b9ec260800091d29",
+      "scope": "82 scoped behavior checks; four actual generations produce two accepted answers and two honest reviewed fallbacks."
+    },
+    {
+      "id": "compact-guard-evaluation",
+      "file": "compatibility_guard_evaluation.json",
+      "sha256": "4905143889a21887f411aa0f9053836e5a7989518fc5cbec974cedc2816b76ec",
+      "scope": "Current source-bound actual behavior and preserved raw evaluation evidence."
+    },
+    {
+      "id": "compact-guard-review",
+      "file": "compatibility_guard_review.json",
+      "sha256": "5cb1343c56dc32af195dc62cce100b11837b4f5f10e8b1751c8707a88fe67209",
+      "scope": "Manual assessment of the bounded runtime correction and remaining scope limits."
+    }
+  ],
+  "checks": [
+    {
+      "id": "synthetic-measurement-provenance",
+      "passed": true,
+      "result": "The exact original English factor-0.62 question reproduces its unsupported measured-gradient claim. The runtime rejects the generated text and exposes only labelled reviewed guidance; IsModelAnswer=false and GeneratedText=null."
+    },
+    {
+      "id": "quadratic-scaling-subject",
+      "passed": true,
+      "result": "The identical Spanish factor-0.83 request reproduces the causal error that attributes quadratic scaling to the gradient. The runtime rejects it and exposes only labelled reviewed guidance."
+    },
+    {
+      "id": "supported-generation-retained",
+      "passed": true,
+      "result": "Spanish factor 0.62 and English factor 0.71 remain accepted with correct b factors, whole-waveform conditions, linear q and quadratic b, citations and non-calibration boundaries."
+    },
+    {
+      "id": "temperature-flow-bilingual-routing",
+      "passed": true,
+      "result": "English and Spanish combined scaling/flow questions receive complete reviewed temperature and convection modules with both source sets before model loading. No missing generated explanation is claimed."
+    },
+    {
+      "id": "captured-regression-separated",
+      "passed": true,
+      "result": "All 14 original and four first-round captured outputs are replayed through the new guards. Replays are labelled and are not new generation."
+    },
+    {
+      "id": "no-model-or-prompt-change",
+      "passed": true,
+      "result": "Weights, system instructions, original training provenance, course, mathematics and research knowledge remain unchanged by the guard corrections."
+    }
+  ],
+  "currentAutomaticChecks": 82,
+  "actualGenerationsAttempted": 4,
+  "actualGenerationsAccepted": 2,
+  "actualGenerationsRejectedToDocumentary": 2,
+  "actualDocumentaryTemperatureFlowRequests": 2,
+  "capturedOriginalOutputsReplayed": 14,
+  "capturedFirstRoundOutputsReplayed": 4,
+  "knownRawFailuresPreserved": true,
+  "rawEvidenceEmbedded": false,
+  "newTrainingPerformed": false,
+  "systemInstructionsChanged": false,
+  "experimentalValidation": false,
+  "educationalEffectivenessMeasured": false,
+  "limits": [
+    "The scoped lexical guards address observed typed synthetic scaling failures and may conservatively choose documentary guidance. They do not certify arbitrary prose.",
+    "The pre-guard 103-check report and post-guard 82-check report bind different sources and remain distinct. Historical checks are not relabelled as rerun.",
+    "This closure establishes bounded software teaching behavior, not instrument operation, experimental calibration or measured learner outcomes."
+  ]
+}

@@ -480,7 +480,7 @@ K:r'''
 35|b/\gamma^2=\int_0^{2\tau}F^2dt-4f\int_\tau^{2\tau}Fdt+4f^2\tau|Recombinar términos en una expresión evaluable por intervalos.|Recombine terms into an interval-evaluable expression.
 36|g(t)=g_0+g\,\mathbf1_{[t_1,t_1+\delta]}+g\,\mathbf1_{[t_1+\Delta,t_1+\Delta+\delta]}|Definir cinco dominios del gradiente físico, incluido fondo.|Define five physical-gradient domains, including background.
 37|F_j(t)=F_j(t_j)+\int_{t_j}^{t}g_j(s)ds|Integrar dominio a dominio manteniendo continuidad deF; RF no reiniciaF físico.|Integrate each domain keepingF continuous; RF does not reset physicalF.
-38|b/\gamma^2=\sum_{j=I}^{V}\int_jF_j^2dt-4f\sum_{j=III}^{V}\int_{j\cap[\tau,2\tau]}F_jdt+4f^2\tau|Evaluar las cinco integrales y cruzados con límites correctos, luego fijar g00.|Evaluate five integrals and cross terms with correct bounds, then setg0=0.
+38|b/\gamma^2=\sum_{j=I}^{V}\int_jF_j^2dt-4f\sum_{j=III}^{V}\int_{j\cap[\tau,2\tau]}F_jdt+4f^2\tau|Evaluar las cinco integrales y cruzados con límites correctos, luego fijar g0=0.|Evaluate five integrals and cross terms with correct bounds, then setg0=0.
 A1|q(t)=\gamma\int_0^tp(s)g(s)ds\quad\text{Academy global-clock form}|Comparar p externo del literal con historia ponderada; requiere interpretación de saltosRF.|Compare literal externalp with weighted history; requires RF-jump interpretation.
 A2|p(t)=+1\ (t<\tau),\ -1\ (t>\tau)|Especificar trayectoria de coherencia para el pulso180.|Specify coherence pathway for the180pulse.
 A3|\partial_t(Ae^{-izq})=(A'-izq'A)e^{-izq}|Versión docente consistente de la derivada temporal entreRF.|Consistent teaching version of the temporal derivative between RF.

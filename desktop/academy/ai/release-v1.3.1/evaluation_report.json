@@ -1,0 +1,1384 @@
+{
+  "version": "1.3.0",
+  "test_sha256": "64ec8a91b27f6cf34c12824f74263f9256fe88f772fd55a7da16cc568c71ae03",
+  "training_report_sha256": "9230e13e8e8799f4eeadc4c9305e7ed87f51cca3e6574af6dcc2bfb950500726",
+  "split_plan_sha256": "12d40e0ed5b82aa0932c8966e055713fbda101b3646c3e9a93648889d0386dbf",
+  "corrective_round": false,
+  "corrective_freeze_sha256": null,
+  "evaluator_source_sha256": "d09bbb8b7ff3e913f29fc503dfe800a20076f043b76efd2b4146fb02a7265f9d",
+  "engines": {
+    "base": {
+      "passed": 14,
+      "total": 36,
+      "pass_rate": 0.3888888888888889,
+      "elapsed_seconds": 383.59111285209656,
+      "results": [
+        {
+          "module": "uncertainty",
+          "scenario": "r4-test-bias-0.93",
+          "category": "numeric",
+          "language": "es",
+          "raw": "{\n  \"answer\": \"El valor de D_ratio es 0.8649, que representa el cociente entre D_nominal y D_reference. Este valor se calcula como el cuadrado de la escala de gradiente (gradient_scale). Repetir la adquisición puede reducir el ruido, pero no elimina el sesgo compartido debido a la calibración y la forma de los datos.\",\n  \"source_ids\": [\"academy-uncertainty\", \"Sinnaeve2012\"],\n  \"status\": \"answer\"\n}",
+          "passed": false,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": false,
+          "numeric_supported": false,
+          "numeric_extracted": null,
+          "answer": "El valor de D_ratio es 0.8649, que representa el cociente entre D_nominal y D_reference. Este valor se calcula como el cuadrado de la escala de gradiente (gradient_scale). Repetir la adquisición puede reducir el ruido, pero no elimina el sesgo compartido debido a la calibración y la forma de los datos.",
+          "status": "answer",
+          "source_ids": [
+            "academy-uncertainty",
+            "Sinnaeve2012"
+          ]
+        },
+        {
+          "module": "defence",
+          "scenario": "r4-r3-topic-0",
+          "category": "research",
+          "language": "es",
+          "raw": "{\n  \"answer\": \"La revisi\\u00f3n razonada justifica el mecanismo y el control mediante evidencia experimental y observaciones, asegurando que la conclusi\\u00f3n sea defendible. La alternativa compatible incluye mantener el mismo mecanismo y control, pero ajustar los par\\u00e1metros de los mismos. Tras la revisi\\u00f3n, se cambiar\\u00edan los par\\u00e1metros de los controladores para mejorar la precisi\\u00f3n, manteniendo la integridad de los hashes y el razonamiento.\",\n  \"source_ids\": [\"academy-review-cycle\", \"academy-rubric\"],\n  \"status\": \"answer\"\n}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "La revisión razonada justifica el mecanismo y el control mediante evidencia experimental y observaciones, asegurando que la conclusión sea defendible. La alternativa compatible incluye mantener el mismo mecanismo y control, pero ajustar los parámetros de los mismos. Tras la revisión, se cambiarían los parámetros de los controladores para mejorar la precisión, manteniendo la integridad de los hashes y el razonamiento.",
+          "status": "answer",
+          "source_ids": [
+            "academy-review-cycle",
+            "academy-rubric"
+          ]
+        },
+        {
+          "module": "uncertainty",
+          "scenario": "r4-test-bias-1.11",
+          "category": "numeric",
+          "language": "es",
+          "raw": "{\n  \"answer\": \"D_ratio es el cociente entre D_nominal y D_reference, no un valor absoluto. Si la forma y los tiempos se escalan por s, entonces b y el cociente g_real/g_nominal escalan por s². Repetir adquisiciones reduce el ruido, pero no elimina el sesgo compartido.\",\n  \"source_ids\": [\"academy-uncertainty\", \"Sinnaeve2012\"],\n  \"status\": \"answer\"\n}",
+          "passed": false,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": false,
+          "numeric_supported": false,
+          "numeric_extracted": null,
+          "answer": "D_ratio es el cociente entre D_nominal y D_reference, no un valor absoluto. Si la forma y los tiempos se escalan por s, entonces b y el cociente g_real/g_nominal escalan por s². Repetir adquisiciones reduce el ruido, pero no elimina el sesgo compartido.",
+          "status": "answer",
+          "source_ids": [
+            "academy-uncertainty",
+            "Sinnaeve2012"
+          ]
+        },
+        {
+          "module": "measure-next",
+          "scenario": "r4-r3-topic-0",
+          "category": "research",
+          "language": "es",
+          "raw": "{\n  \"answer\": \"La hipótesis que predice un mayor contraste (E_A(b_new) - E_B(b_new))/σ_new es la que se basa en un mecanismo más eficiente, mientras que la otra hipótesis predice un contraste menor. La diferencia esperada entre los dos mecanismos es mayor que el ruido esperado, lo que se verifica mediante la evaluación de la predicción con la observación reservada. Este enfoque garantiza que el control sea discriminante y que se evalúe la hipótesis seleccionada antes de ajustar.\",\n  \"source_ids\": [\"academy-next-measurement\"],\n  \"status\": \"answer\"\n}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "La hipótesis que predice un mayor contraste (E_A(b_new) - E_B(b_new))/σ_new es la que se basa en un mecanismo más eficiente, mientras que la otra hipótesis predice un contraste menor. La diferencia esperada entre los dos mecanismos es mayor que el ruido esperado, lo que se verifica mediante la evaluación de la predicción con la observación reservada. Este enfoque garantiza que el control sea discriminante y que se evalúe la hipótesis seleccionada antes de ajustar.",
+          "status": "answer",
+          "source_ids": [
+            "academy-next-measurement"
+          ]
+        },
+        {
+          "module": "guard",
+          "scenario": "r4-guard-test-identity",
+          "category": "guard",
+          "language": "es",
+          "raw": "{\"answer\":\"No puedo asumir que la persona que asignó la nota es la misma que tiene el mismo SHA, ya que el SHA no proporciona información sobre la identidad de la persona. El SHA es un algoritmo de hash que no puede ser utilizado para identificar a una persona. Es necesario obtener más información para confirmar la identidad de la persona que asignó la nota.\",\"source_ids\":[],\"status\":\"insufficient_evidence\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "No puedo asumir que la persona que asignó la nota es la misma que tiene el mismo SHA, ya que el SHA no proporciona información sobre la identidad de la persona. El SHA es un algoritmo de hash que no puede ser utilizado para identificar a una persona. Es necesario obtener más información para confirmar la identidad de la persona que asignó la nota.",
+          "status": "insufficient_evidence",
+          "source_ids": []
+        },
+        {
+          "module": "uncertainty",
+          "scenario": "r4-test-noise-169",
+          "category": "numeric",
+          "language": "en",
+          "raw": "{\n  \"answer\": \"The noise_ratio is the standard deviation of the average across 169 replicates, which scales as 1/sqrt(169) = 1/13 ≈ 0.0769. This assumes independent noise and identical calibration, which are the conditions of the synthetic example. However, the shared calibration bias remains, and the noise_ratio does not account for it. The calculation is based on the principle that for independent noise, the standard deviation of the average scales as 1/sqrt(N).\",\n  \"source_ids\": [\"academy-uncertainty\", \"Sinnaeve2012\"],\n  \"status\": \"answer\"\n}",
+          "passed": false,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": false,
+          "numeric_extracted": null,
+          "answer": "The noise_ratio is the standard deviation of the average across 169 replicates, which scales as 1/sqrt(169) = 1/13 ≈ 0.0769. This assumes independent noise and identical calibration, which are the conditions of the synthetic example. However, the shared calibration bias remains, and the noise_ratio does not account for it. The calculation is based on the principle that for independent noise, the standard deviation of the average scales as 1/sqrt(N).",
+          "status": "answer",
+          "source_ids": [
+            "academy-uncertainty",
+            "Sinnaeve2012"
+          ]
+        },
+        {
+          "module": "uncertainty",
+          "scenario": "r4-test-noise-169",
+          "category": "numeric",
+          "language": "es",
+          "raw": "{\n  \"answer\": \"El ratio de ruido (noise_ratio) es 0.0769, que se calcula como 1/sqrt(169) = 1/13 ≈ 0.0769. Supuestos del ejemplo incluyen que las replicas son independientes del mismo estado de muestra y que la calibración compartida es idéntica. El sesgo de calibración permanece, lo que es un supuesto del ejemplo sintético.\",\n  \"source_ids\": [\"academy-uncertainty\"],\n  \"status\": \"answer\"\n}",
+          "passed": false,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": false,
+          "numeric_extracted": null,
+          "answer": "El ratio de ruido (noise_ratio) es 0.0769, que se calcula como 1/sqrt(169) = 1/13 ≈ 0.0769. Supuestos del ejemplo incluyen que las replicas son independientes del mismo estado de muestra y que la calibración compartida es idéntica. El sesgo de calibración permanece, lo que es un supuesto del ejemplo sintético.",
+          "status": "answer",
+          "source_ids": [
+            "academy-uncertainty"
+          ]
+        },
+        {
+          "module": "defence",
+          "scenario": "r4-r3-topic-0",
+          "category": "research",
+          "language": "en",
+          "raw": "{\n  \"answer\": \"The evidence supporting the conclusion includes the original claim, observations, and reasoning. Alternative compatible mechanisms include alternative pathways or different control variables. After instructor review, potential changes could involve refining the mechanism or adjusting control variables based on feedback.\",\n  \"source_ids\": [\"academy-review-cycle\", \"academy-rubric\"],\n  \"status\": \"answer\"\n}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "The evidence supporting the conclusion includes the original claim, observations, and reasoning. Alternative compatible mechanisms include alternative pathways or different control variables. After instructor review, potential changes could involve refining the mechanism or adjusting control variables based on feedback.",
+          "status": "answer",
+          "source_ids": [
+            "academy-review-cycle",
+            "academy-rubric"
+          ]
+        },
+        {
+          "module": "uncertainty",
+          "scenario": "r4-test-noise-225",
+          "category": "numeric",
+          "language": "en",
+          "raw": "{\n  \"answer\": \"The noise_ratio is 1/sqrt(225) = 0.0667, representing the standard deviation of the average across 225 independent replicates. Assumptions include independent noise and identical calibration, which ensures the standard deviation scales as 1/sqrt(N). However, common calibration bias remains, as the synthetic example does not account for it. This bias is a limitation of the synthetic example, as it does not address shared calibration effects.\",\n  \"source_ids\": [\"academy-uncertainty\", \"academy-bootstrap-scope\", \"Sinnaeve2012\"],\n  \"status\": \"answer\"\n}",
+          "passed": false,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": false,
+          "numeric_extracted": null,
+          "answer": "The noise_ratio is 1/sqrt(225) = 0.0667, representing the standard deviation of the average across 225 independent replicates. Assumptions include independent noise and identical calibration, which ensures the standard deviation scales as 1/sqrt(N). However, common calibration bias remains, as the synthetic example does not account for it. This bias is a limitation of the synthetic example, as it does not address shared calibration effects.",
+          "status": "answer",
+          "source_ids": [
+            "academy-uncertainty",
+            "academy-bootstrap-scope",
+            "Sinnaeve2012"
+          ]
+        },
+        {
+          "module": "calibration",
+          "scenario": "r4-test-scale-0.72",
+          "category": "numeric",
+          "language": "es",
+          "raw": "{\n  \"answer\": \"El factor de escala $ b_{\\text{scale}} $ se calcula como $ b_{\\text{scale}} = \\text{gradient\\_scale}^2 $, donde el gradiente efectivo se escala por 0.72. Este mecanismo implica que la intensidad $ b $ escala cuadráticamente con el gradiente, ya que $ b_{\\text{actual}} = s^2 b_{\\text{nominal}} $, con $ s = \\sqrt{\\frac{D_{\\text{nominal}}}{D_{\\text{reference}}}} $. El cálculo no calibra un gradiente experimental, ya que el factor de escala no identifica el ángulo de gradiente.\",\n  \"source_ids\": [\"academy-pulse\", \"Sinnaeve2012\"],\n  \"status\": \"answer\"\n}",
+          "passed": false,
+          "schema_valid": false,
+          "sources_supported": false,
+          "content_fixture_supported": false,
+          "numeric_supported": false
+        },
+        {
+          "module": "guard",
+          "scenario": "r4-guard-test-calibration",
+          "category": "guard",
+          "language": "es",
+          "raw": "{\n  \"answer\": \"No se proporciona evidencia para validar la calibración del gradiente. Se requiere un análisis de los datos de difusión para confirmar la calibración correcta.\",\n  \"source_ids\": [],\n  \"status\": \"insufficient_evidence\"\n}",
+          "passed": false,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": false,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "No se proporciona evidencia para validar la calibración del gradiente. Se requiere un análisis de los datos de difusión para confirmar la calibración correcta.",
+          "status": "insufficient_evidence",
+          "source_ids": []
+        },
+        {
+          "module": "measure-next",
+          "scenario": "r4-r3-topic-0",
+          "category": "research",
+          "language": "en",
+          "raw": "{\n  \"answer\": \"Each hypothesis predicts a different predicted separation, which would exceed expected noise if the difference is significant. The reserved observation tests the new prediction, ensuring it is evaluated independently of fitting. The predicted separation is calculated as (E_A(b_new) - E_B(b_new))/sigma_new, and a discriminating result is expected if the difference exceeds the noise level.\",\n  \"source_ids\": [\"academy-next-measurement\", \"academy-blind-controls\"],\n  \"status\": \"answer\"\n}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "Each hypothesis predicts a different predicted separation, which would exceed expected noise if the difference is significant. The reserved observation tests the new prediction, ensuring it is evaluated independently of fitting. The predicted separation is calculated as (E_A(b_new) - E_B(b_new))/sigma_new, and a discriminating result is expected if the difference exceeds the noise level.",
+          "status": "answer",
+          "source_ids": [
+            "academy-next-measurement",
+            "academy-blind-controls"
+          ]
+        },
+        {
+          "module": "calibration",
+          "scenario": "r4-test-scale-0.72",
+          "category": "numeric",
+          "language": "en",
+          "raw": "{\n  \"answer\": \"The b_scale factor is computed as the square of the gradient scale (b_scale = gradient_scale^2). This quadratic relationship arises because b is the integral of q squared over time, and q scales linearly with the gradient. The mechanism involves scaling the entire effective gradient waveform by the gradient scale factor, preserving delta and Delta while adjusting the timing. A computed factor does not calibrate an experimental gradient.\",\n  \"source_ids\": [\"academy-pulse\", \"Sinnaeve2012\"],\n  \"status\": \"answer\"\n}",
+          "passed": false,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": false,
+          "numeric_extracted": null,
+          "answer": "The b_scale factor is computed as the square of the gradient scale (b_scale = gradient_scale^2). This quadratic relationship arises because b is the integral of q squared over time, and q scales linearly with the gradient. The mechanism involves scaling the entire effective gradient waveform by the gradient scale factor, preserving delta and Delta while adjusting the timing. A computed factor does not calibrate an experimental gradient.",
+          "status": "answer",
+          "source_ids": [
+            "academy-pulse",
+            "Sinnaeve2012"
+          ]
+        },
+        {
+          "module": "spatial-diffusion",
+          "scenario": "r4-r3-topic-0",
+          "category": "research",
+          "language": "es",
+          "raw": "{\n  \"answer\": \"El l\\u00edmite anal\\u00edtico se verifica mediante la comparaci\\u00f3n de la amplitud del campo magn\\u00e9tico en diferentes mallas, y el refinamiento de la malla se asegura mediante pruebas de convergencia. Este control es esencial para evitar errores num\\u00e9ricos que puedan confundirse con fen\\u00f3menos f\\u00edsicos.\",\n  \"source_ids\": [\"academy-spatial-diffusion\"],\n  \"status\": \"answer\"\n}",
+          "passed": false,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": false,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "El límite analítico se verifica mediante la comparación de la amplitud del campo magnético en diferentes mallas, y el refinamiento de la malla se asegura mediante pruebas de convergencia. Este control es esencial para evitar errores numéricos que puedan confundirse con fenómenos físicos.",
+          "status": "answer",
+          "source_ids": [
+            "academy-spatial-diffusion"
+          ]
+        },
+        {
+          "module": "calibration",
+          "scenario": "r4-test-pulse-82",
+          "category": "numeric",
+          "language": "en",
+          "raw": "{\n  \"answer\": \"P90 is the time at which the signal reaches 50% of the maximum amplitude, calculated as P180/2. In this synthetic example, P90 is 41.0 us, derived from the first 180-degree crossing at 82 us. The condition requires identifying the first 180-degree crossing using the preceding maximum and polarity change, and maintaining constant RF power. A practical check is to ensure the RF power remains constant during the measurement.\",\n  \"source_ids\": [\"academy-pulse\", \"Sinnaeve2012\"],\n  \"status\": \"answer\"\n}",
+          "passed": false,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": false,
+          "numeric_extracted": null,
+          "answer": "P90 is the time at which the signal reaches 50% of the maximum amplitude, calculated as P180/2. In this synthetic example, P90 is 41.0 us, derived from the first 180-degree crossing at 82 us. The condition requires identifying the first 180-degree crossing using the preceding maximum and polarity change, and maintaining constant RF power. A practical check is to ensure the RF power remains constant during the measurement.",
+          "status": "answer",
+          "source_ids": [
+            "academy-pulse",
+            "Sinnaeve2012"
+          ]
+        },
+        {
+          "module": "guard",
+          "scenario": "r4-guard-test-learning",
+          "category": "guard",
+          "language": "es",
+          "raw": "{\"answer\":\"No se proporciona evidencia o datos observados de comprensión doctoral y retenci&oacute;n. Se requiere informaci&oacute;n experimental o simulada relacionada con estos indicadores.\",\"source_ids\":[],\"status\":\"insufficient_evidence\"}",
+          "passed": false,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": false,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "No se proporciona evidencia o datos observados de comprensión doctoral y retenci&oacute;n. Se requiere informaci&oacute;n experimental o simulada relacionada con estos indicadores.",
+          "status": "insufficient_evidence",
+          "source_ids": []
+        },
+        {
+          "module": "uncertainty",
+          "scenario": "r4-test-noise-225",
+          "category": "numeric",
+          "language": "es",
+          "raw": "{\n  \"answer\": \"El ratio de ruido (noise_ratio) es 1/sqrt(225) = 0.0667, que representa la desviación estándar del promedio de las 225 rreplicaciones. Los supuestos incluyen replicaciones independientes del mismo estado de muestra y calibración compartida. El sesgo de calibración permanece, lo que es un supuesto del ejemplo sintético.\",\n  \"source_ids\": [\"academy-uncertainty\"],\n  \"status\": \"answer\"\n}",
+          "passed": false,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": false,
+          "numeric_extracted": null,
+          "answer": "El ratio de ruido (noise_ratio) es 1/sqrt(225) = 0.0667, que representa la desviación estándar del promedio de las 225 rreplicaciones. Los supuestos incluyen replicaciones independientes del mismo estado de muestra y calibración compartida. El sesgo de calibración permanece, lo que es un supuesto del ejemplo sintético.",
+          "status": "answer",
+          "source_ids": [
+            "academy-uncertainty"
+          ]
+        },
+        {
+          "module": "calibration",
+          "scenario": "r4-test-pulse-76",
+          "category": "numeric",
+          "language": "en",
+          "raw": "{\n  \"answer\": \"P90 is the time at which the signal reaches 50% of the maximum amplitude, calculated as P180/2. In this synthetic example, P90 is 38.0 us, derived from the first 180-degree crossing at 76 us. The condition requires identifying the first 180-degree crossing using the preceding maximum and polarity change, and maintaining constant RF power. A practical check is to ensure the RF power remains constant during the measurement.\",\n  \"source_ids\": [\"academy-pulse\", \"Sinnaeve2012\"],\n  \"status\": \"answer\"\n}",
+          "passed": false,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": false,
+          "numeric_extracted": null,
+          "answer": "P90 is the time at which the signal reaches 50% of the maximum amplitude, calculated as P180/2. In this synthetic example, P90 is 38.0 us, derived from the first 180-degree crossing at 76 us. The condition requires identifying the first 180-degree crossing using the preceding maximum and polarity change, and maintaining constant RF power. A practical check is to ensure the RF power remains constant during the measurement.",
+          "status": "answer",
+          "source_ids": [
+            "academy-pulse",
+            "Sinnaeve2012"
+          ]
+        },
+        {
+          "module": "time-resolved",
+          "scenario": "r4-r3-original-exposed-regression",
+          "category": "original-regression",
+          "language": "es",
+          "raw": "{\n  \"answer\": \"La afirmaci\\u00f3n se basa en que el reloj t_lab mide la evoluci\\u00f3n qu\\u00edmica, mientras que el tiempo de adquisici\\u00f3n (\\u0394) mide la separaci\\u00f3n de difusi\\u00f3n. El reloj t_lab describe la reacci\\u00f3n, ya que mide la evoluci\\u00f3n qu\\u00edmica, mientras que el tiempo de adquisici\\u00f3n (\\u0394) mide la difusi\\u00f3n. El sesgo por orden de gradientes se elimina al usar t_lab, ya que mide la evoluci\\u00f3n qu\\u00edmica sin influencia de la difusi\\u00f3n.\",\n  \"source_ids\": [\"urbanczyk-2020\", \"kristinaityte-2022\"],\n  \"status\": \"answer\"\n}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "La afirmación se basa en que el reloj t_lab mide la evolución química, mientras que el tiempo de adquisición (Δ) mide la separación de difusión. El reloj t_lab describe la reacción, ya que mide la evolución química, mientras que el tiempo de adquisición (Δ) mide la difusión. El sesgo por orden de gradientes se elimina al usar t_lab, ya que mide la evolución química sin influencia de la difusión.",
+          "status": "answer",
+          "source_ids": [
+            "urbanczyk-2020",
+            "kristinaityte-2022"
+          ]
+        },
+        {
+          "module": "guard",
+          "scenario": "r4-guard-test-calibration",
+          "category": "guard",
+          "language": "en",
+          "raw": "{\n  \"answer\": \"A guarantee that the gradient was calibrated cannot be provided without experimental validation. The absence of a standard acquisition means no evidence exists to confirm calibration. No source_ids provided.\",\n  \"source_ids\": [],\n  \"status\": \"insufficient_evidence\"\n}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "A guarantee that the gradient was calibrated cannot be provided without experimental validation. The absence of a standard acquisition means no evidence exists to confirm calibration. No source_ids provided.",
+          "status": "insufficient_evidence",
+          "source_ids": []
+        },
+        {
+          "module": "spatial-diffusion",
+          "scenario": "r4-r3-topic-0",
+          "category": "research",
+          "language": "en",
+          "raw": "{\n  \"answer\": \"Before interpreting a computed profile, check the analytical-limit and grid refinement to ensure the model's assumptions are met. The analytical-limit check verifies the validity of the diffusion equation and the convergence of the numerical solution. Grid refinement ensures the spatial resolution is sufficient to capture the underlying physical processes. These checks are essential to distinguish numerical artifacts from actual physical phenomena.\",\n  \"source_ids\": [\"academy-spatial-diffusion\", \"Kuchel2012\"],\n  \"status\": \"answer\"\n}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "Before interpreting a computed profile, check the analytical-limit and grid refinement to ensure the model's assumptions are met. The analytical-limit check verifies the validity of the diffusion equation and the convergence of the numerical solution. Grid refinement ensures the spatial resolution is sufficient to capture the underlying physical processes. These checks are essential to distinguish numerical artifacts from actual physical phenomena.",
+          "status": "answer",
+          "source_ids": [
+            "academy-spatial-diffusion",
+            "Kuchel2012"
+          ]
+        },
+        {
+          "module": "calibration",
+          "scenario": "r4-test-scale-1.95",
+          "category": "numeric",
+          "language": "en",
+          "raw": "{\n  \"answer\": \"The b_scale factor is computed as the gradient_scale squared, which reflects the quadratic relationship between the effective gradient waveform and the b-value. This mechanism ensures that a change in the gradient scale results in a proportional change in the b-value, as the b-value is the integral of the squared gradient. The calculation is based on the assumption that the entire effective gradient waveform is scaled by the same factor, preserving its shape, delta, and Delta while changing the scale. The b_scale is a computed factor and does not calibrate an experimental gradient.\",\n  \"source_ids\": [\"academy-pulse\", \"Sinnaeve2012\"],\n  \"status\": \"answer\"\n}",
+          "passed": false,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": false,
+          "numeric_supported": false,
+          "numeric_extracted": null,
+          "answer": "The b_scale factor is computed as the gradient_scale squared, which reflects the quadratic relationship between the effective gradient waveform and the b-value. This mechanism ensures that a change in the gradient scale results in a proportional change in the b-value, as the b-value is the integral of the squared gradient. The calculation is based on the assumption that the entire effective gradient waveform is scaled by the same factor, preserving its shape, delta, and Delta while changing the scale. The b_scale is a computed factor and does not calibrate an experimental gradient.",
+          "status": "answer",
+          "source_ids": [
+            "academy-pulse",
+            "Sinnaeve2012"
+          ]
+        },
+        {
+          "module": "time-resolved",
+          "scenario": "r4-r3-original-exposed-regression",
+          "category": "original-regression",
+          "language": "en",
+          "raw": "{\n  \"answer\": \"The reaction is described by the t_lab clock, which measures chemical evolution. The \\u0394 parameter represents diffusion separation, and the animation time is pedagogical. The claim is supported by the reviewed evidence, with source_id: ['urbanczyk-2020', 'kristinaityte-2022', 'deck-slide-058', 'deck-slide-081', 'lab-time-resolved']. The status is answer.\",\n  \"source_ids\": [\"urbanczyk-2020\", \"kristinaityte-2022\", \"deck-slide-058\", \"deck-slide-081\", \"lab-time-resolved\"],\n  \"status\": \"answer\"\n}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "The reaction is described by the t_lab clock, which measures chemical evolution. The Δ parameter represents diffusion separation, and the animation time is pedagogical. The claim is supported by the reviewed evidence, with source_id: ['urbanczyk-2020', 'kristinaityte-2022', 'deck-slide-058', 'deck-slide-081', 'lab-time-resolved']. The status is answer.",
+          "status": "answer",
+          "source_ids": [
+            "urbanczyk-2020",
+            "kristinaityte-2022",
+            "deck-slide-058",
+            "deck-slide-081",
+            "lab-time-resolved"
+          ]
+        },
+        {
+          "module": "guard",
+          "scenario": "r4-guard-test-learning",
+          "category": "guard",
+          "language": "en",
+          "raw": "{\"answer\":\"The question is not applicable as there are no participants or observed outcomes. Evidence is insufficient.\",\"source_ids\":[],\"status\":\"insufficient_evidence\"}",
+          "passed": false,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": false,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "The question is not applicable as there are no participants or observed outcomes. Evidence is insufficient.",
+          "status": "insufficient_evidence",
+          "source_ids": []
+        },
+        {
+          "module": "uncertainty",
+          "scenario": "r4-test-bias-1.11",
+          "category": "numeric",
+          "language": "en",
+          "raw": "{\n  \"answer\": \"D_ratio is the ratio of D_nominal to D_reference, not an absolute diffusion coefficient. If the complete waveform scales by s, then D_ratio scales by s². Repeating the experiment may reduce noise but does not remove shared bias due to calibration or temperature effects.\",\n  \"source_ids\": [\"academy-uncertainty\", \"Sinnaeve2012\"],\n  \"status\": \"answer\"\n}",
+          "passed": false,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": false,
+          "numeric_supported": false,
+          "numeric_extracted": null,
+          "answer": "D_ratio is the ratio of D_nominal to D_reference, not an absolute diffusion coefficient. If the complete waveform scales by s, then D_ratio scales by s². Repeating the experiment may reduce noise but does not remove shared bias due to calibration or temperature effects.",
+          "status": "answer",
+          "source_ids": [
+            "academy-uncertainty",
+            "Sinnaeve2012"
+          ]
+        },
+        {
+          "module": "calibration",
+          "scenario": "r4-test-pulse-76",
+          "category": "numeric",
+          "language": "es",
+          "raw": "{\n  \"answer\": \"P90 es la duración del pulso RF dividida entre dos, ya que el primer cruce180 identificado se encuentra en 76 us. La condición es que el primer cruce180 se identifique mediante el máximo anterior y el cambio de polaridad, manteniendo potencia fija. Una comprobación práctica es verificar que el valor de P90 se ajuste al cálculo teórico de 38 us, considerando la relación entre el cruce180 y el pulso RF.\",\n  \"source_ids\": [\"academy-pulse\", \"Sinnaeve2012\"],\n  \"status\": \"answer\"\n}",
+          "passed": false,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": false,
+          "numeric_supported": false,
+          "numeric_extracted": null,
+          "answer": "P90 es la duración del pulso RF dividida entre dos, ya que el primer cruce180 identificado se encuentra en 76 us. La condición es que el primer cruce180 se identifique mediante el máximo anterior y el cambio de polaridad, manteniendo potencia fija. Una comprobación práctica es verificar que el valor de P90 se ajuste al cálculo teórico de 38 us, considerando la relación entre el cruce180 y el pulso RF.",
+          "status": "answer",
+          "source_ids": [
+            "academy-pulse",
+            "Sinnaeve2012"
+          ]
+        },
+        {
+          "module": "spen",
+          "scenario": "r4-r3-original-exposed-regression",
+          "category": "original-regression",
+          "language": "es",
+          "raw": "{\n  \"answer\": \"La reconstrucci\\u00f3n compleja, fase y reordenado preceden al ajuste por frecuencia. La reconstrucci\\u00f3n compleja y la fase son operaciones esenciales para transformar las se\\u00f1ales complejas en perfiles por resonancia, mientras que el reordenado permite organizar las polaridades. Estas etapas son necesarias para garantizar una atenuaci\\u00f3n correcta y evitar errores de difusi\\u00f3n aparente. La resoluci\\u00f3n digital fina no resuelve por s\\u00ed sola dos D, y la fase debe estimarse y revisarse en un experimento.\",\n  \"source_ids\": [\"guduff-2017\"],\n  \"status\": \"answer\"\n}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "La reconstrucción compleja, fase y reordenado preceden al ajuste por frecuencia. La reconstrucción compleja y la fase son operaciones esenciales para transformar las señales complejas en perfiles por resonancia, mientras que el reordenado permite organizar las polaridades. Estas etapas son necesarias para garantizar una atenuación correcta y evitar errores de difusión aparente. La resolución digital fina no resuelve por sí sola dos D, y la fase debe estimarse y revisarse en un experimento.",
+          "status": "answer",
+          "source_ids": [
+            "guduff-2017"
+          ]
+        },
+        {
+          "module": "calibration",
+          "scenario": "r4-test-pulse-82",
+          "category": "numeric",
+          "language": "es",
+          "raw": "{\n  \"answer\": \"P90 es la duración del pulso RF dividida por dos, ya que el primer cruce de 180° se identificó en 82 us. La condición es que el primer cruce de 180° se identifique mediante el máximo anterior y el cambio de polaridad, manteniendo potencia fija. Una comprobación práctica es verificar que el valor de P90 se ajuste al valor calculado con la misma potencia RF y condiciones constantes.\",\n  \"source_ids\": [\"academy-pulse\", \"Sinnaeve2012\"],\n  \"status\": \"answer\"\n}",
+          "passed": false,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": false,
+          "numeric_supported": false,
+          "numeric_extracted": null,
+          "answer": "P90 es la duración del pulso RF dividida por dos, ya que el primer cruce de 180° se identificó en 82 us. La condición es que el primer cruce de 180° se identifique mediante el máximo anterior y el cambio de polaridad, manteniendo potencia fija. Una comprobación práctica es verificar que el valor de P90 se ajuste al valor calculado con la misma potencia RF y condiciones constantes.",
+          "status": "answer",
+          "source_ids": [
+            "academy-pulse",
+            "Sinnaeve2012"
+          ]
+        },
+        {
+          "module": "pulse-calibration",
+          "scenario": "r4-r3-original-exposed-regression",
+          "category": "original-regression",
+          "language": "en",
+          "raw": "{\n  \"answer\": \"The first 180° null at 22 µs corresponds to P90 = 11 µs. This is derived from the relationship P90 = P180 / 2, where P180 is the duration of the first null. The division by two is valid when the null is identified at 180°, and the result is consistent with the provided evidence.\",\n  \"source_ids\": [\"ucsb-p90\"],\n  \"status\": \"answer\"\n}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "The first 180° null at 22 µs corresponds to P90 = 11 µs. This is derived from the relationship P90 = P180 / 2, where P180 is the duration of the first null. The division by two is valid when the null is identified at 180°, and the result is consistent with the provided evidence.",
+          "status": "answer",
+          "source_ids": [
+            "ucsb-p90"
+          ]
+        },
+        {
+          "module": "pulse-calibration",
+          "scenario": "r4-r3-original-exposed-regression",
+          "category": "original-regression",
+          "language": "es",
+          "raw": "{\n  \"answer\": \"La afirmación se basa en el modelo ideal I(P1) = I0·sin[πP1/(2P90)], donde el primer nulo de 180° corresponde a P180 y el segundo a P360. Para calcular P90, se divide el valor de P180 (22 µs) por 2, obteniendo 11 µs. Este cálculo se apoya en evidencia experimental y en el modelo teórico, con condiciones como fase fija, potencia constante y integración con signo. Sin embargo, la confusión entre nulos puede surgir si no se controlan factores como la saturación o la relajación incompleta.\",\n  \"source_ids\": [\"ucsb-p90\"],\n  \"status\": \"answer\"\n}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "La afirmación se basa en el modelo ideal I(P1) = I0·sin[πP1/(2P90)], donde el primer nulo de 180° corresponde a P180 y el segundo a P360. Para calcular P90, se divide el valor de P180 (22 µs) por 2, obteniendo 11 µs. Este cálculo se apoya en evidencia experimental y en el modelo teórico, con condiciones como fase fija, potencia constante y integración con signo. Sin embargo, la confusión entre nulos puede surgir si no se controlan factores como la saturación o la relajación incompleta.",
+          "status": "answer",
+          "source_ids": [
+            "ucsb-p90"
+          ]
+        },
+        {
+          "module": "calibration",
+          "scenario": "r4-test-scale-1.95",
+          "category": "numeric",
+          "language": "es",
+          "raw": "{\n  \"answer\": \"El factor de escala $ b_{\\text{scale}} $ se calcula como $ b_{\\text{scale}} = \\text{gradient\\_scale}^2 $, donde el gradiente efectivo se escala por 1.95. Este mecanismo implica que la intensidad $ b $ escala cuadráticamente con el gradiente, ya que $ b_{\\text{actual}} = s^2 b_{\\text{nominal}} $, con $ s = \\sqrt{\\frac{D_{\\text{nominal}}}{D_{\\text{reference}}}} $. El factor de escala no calibra un gradiente experimental, ya que solo es un resultado de la escala de gradiente.\",\n  \"source_ids\": [\"academy-pulse\", \"Sinnaeve2012\"],\n  \"status\": \"answer\"\n}",
+          "passed": false,
+          "schema_valid": false,
+          "sources_supported": false,
+          "content_fixture_supported": false,
+          "numeric_supported": false
+        },
+        {
+          "module": "sequence-b",
+          "scenario": "r4-r3-original-exposed-regression",
+          "category": "original-regression",
+          "language": "es",
+          "raw": "{\n  \"answer\": \"No; la PGSE rectangular no puede aplicarse a cualquier pulso conformado. La forma del pulso afecta la curvatura de q(t) y el valor de b, y se debe integrar el historial del pulso para obtener resultados precisos. El perfil TBO citado declara \\u03b4 total = 1.20 ms, que corresponde a \\u0394 = 2\\u00b7P30, y se debe verificar en cada programa.\",\n  \"source_ids\": [\"stejskal-tanner-1965\", \"sinnaeve-2012\", \"deck-slide-012\", \"deck-slide-013\", \"deck-slide-063\", \"lab-gradients-b\"],\n  \"status\": \"answer\"\n}",
+          "passed": false,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": false,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "No; la PGSE rectangular no puede aplicarse a cualquier pulso conformado. La forma del pulso afecta la curvatura de q(t) y el valor de b, y se debe integrar el historial del pulso para obtener resultados precisos. El perfil TBO citado declara δ total = 1.20 ms, que corresponde a Δ = 2·P30, y se debe verificar en cada programa.",
+          "status": "answer",
+          "source_ids": [
+            "stejskal-tanner-1965",
+            "sinnaeve-2012",
+            "deck-slide-012",
+            "deck-slide-013",
+            "deck-slide-063",
+            "lab-gradients-b"
+          ]
+        },
+        {
+          "module": "spen",
+          "scenario": "r4-r3-original-exposed-regression",
+          "category": "original-regression",
+          "language": "en",
+          "raw": "{\n  \"answer\": \"The frequency-specific fit in SPEN-DOSY must be preceded by reordering, phase correction, and complex reconstruction. These steps ensure that the complex signals are properly transformed into resonance profiles and that the spatial information is accurately recovered. The simulation computes 24×64 EPSI echo-center times, and the phase is known in the simulation but must be estimated and checked experimentally.\",\n  \"source_ids\": [\"guduff-2017\", \"shrot-frydman-2008\", \"jacquemmoz-2022\", \"lorandel-2023\", \"deck-slide-058\", \"deck-slide-081\", \"lab-spen\"],\n  \"status\": \"answer\"\n}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "The frequency-specific fit in SPEN-DOSY must be preceded by reordering, phase correction, and complex reconstruction. These steps ensure that the complex signals are properly transformed into resonance profiles and that the spatial information is accurately recovered. The simulation computes 24×64 EPSI echo-center times, and the phase is known in the simulation but must be estimated and checked experimentally.",
+          "status": "answer",
+          "source_ids": [
+            "guduff-2017",
+            "shrot-frydman-2008",
+            "jacquemmoz-2022",
+            "lorandel-2023",
+            "deck-slide-058",
+            "deck-slide-081",
+            "lab-spen"
+          ]
+        },
+        {
+          "module": "uncertainty",
+          "scenario": "r4-test-bias-0.93",
+          "category": "numeric",
+          "language": "en",
+          "raw": "{\n  \"answer\": \"D_ratio is the ratio of D_nominal to D_reference, not an absolute diffusion coefficient. If the complete waveform scales by s, then D_ratio scales by s². Repeating the experiment may reduce noise but does not remove shared bias due to calibration or temperature effects.\",\n  \"source_ids\": [\"academy-uncertainty\", \"Sinnaeve2012\"],\n  \"status\": \"answer\"\n}",
+          "passed": false,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": false,
+          "numeric_supported": false,
+          "numeric_extracted": null,
+          "answer": "D_ratio is the ratio of D_nominal to D_reference, not an absolute diffusion coefficient. If the complete waveform scales by s, then D_ratio scales by s². Repeating the experiment may reduce noise but does not remove shared bias due to calibration or temperature effects.",
+          "status": "answer",
+          "source_ids": [
+            "academy-uncertainty",
+            "Sinnaeve2012"
+          ]
+        },
+        {
+          "module": "guard",
+          "scenario": "r4-guard-test-identity",
+          "category": "guard",
+          "language": "en",
+          "raw": "{\"answer\":\"Unable to determine the person who assigned the grade based on the provided information.\",\"source_ids\":[],\"status\":\"insufficient_evidence\"}",
+          "passed": false,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": false,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "Unable to determine the person who assigned the grade based on the provided information.",
+          "status": "insufficient_evidence",
+          "source_ids": []
+        },
+        {
+          "module": "sequence-b",
+          "scenario": "r4-r3-original-exposed-regression",
+          "category": "original-regression",
+          "language": "en",
+          "raw": "{\n  \"answer\": \"No; integrate the history or use its own expression. Shape changes q(t) and b; additional points do not repair a wrongly defined axis.\",\n  \"source_ids\": [\"stejskal-tanner-1965\", \"sinnaeve-2012\", \"deck-slide-012\", \"deck-slide-013\", \"deck-slide-063\", \"lab-gradients-b\"],\n  \"status\": \"answer\"\n}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "No; integrate the history or use its own expression. Shape changes q(t) and b; additional points do not repair a wrongly defined axis.",
+          "status": "answer",
+          "source_ids": [
+            "stejskal-tanner-1965",
+            "sinnaeve-2012",
+            "deck-slide-012",
+            "deck-slide-013",
+            "deck-slide-063",
+            "lab-gradients-b"
+          ]
+        }
+      ]
+    },
+    "fine_tuned": {
+      "passed": 35,
+      "total": 36,
+      "pass_rate": 0.9722222222222222,
+      "elapsed_seconds": 288.78024554252625,
+      "results": [
+        {
+          "module": "uncertainty",
+          "scenario": "r4-test-bias-0.93",
+          "category": "numeric",
+          "language": "es",
+          "raw": "{\"answer\":\"D_ratio=0.8649 factor. Este cociente adimensional es D_nominal/D_reference, no D absoluta; la escala común entra al cuadrado en b. Se mantienen la forma completa y los tiempos y la calibración es compartida. Repetir puede reducir ruido, pero no elimina el sesgo compartido del ejemplo sintético.\",\"source_ids\":[\"academy-uncertainty\",\"academy-bootstrap-scope\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": 0.8649,
+          "answer": "D_ratio=0.8649 factor. Este cociente adimensional es D_nominal/D_reference, no D absoluta; la escala común entra al cuadrado en b. Se mantienen la forma completa y los tiempos y la calibración es compartida. Repetir puede reducir ruido, pero no elimina el sesgo compartido del ejemplo sintético.",
+          "status": "answer",
+          "source_ids": [
+            "academy-uncertainty",
+            "academy-bootstrap-scope"
+          ]
+        },
+        {
+          "module": "defence",
+          "scenario": "r4-r3-topic-0",
+          "category": "research",
+          "language": "es",
+          "raw": "{\"answer\":\"La revisión mejora el razonamiento sólo si se distingue qué se afirmó primero, qué observaciones lo apoyaban y por qué se modificó. Entrego pregunta, predicción, procesado, controles y conclusión con referencias explícitas a la evidencia. Un docente introduce cinco puntuaciones de 0 a 4: física, diseño, reproducibilidad, incertidumbre y conclusión defendible. Cada criterio incluye comentario y evidencia citada.\",\"source_ids\":[\"academy-review-cycle\",\"academy-rubric\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "La revisión mejora el razonamiento sólo si se distingue qué se afirmó primero, qué observaciones lo apoyaban y por qué se modificó. Entrego pregunta, predicción, procesado, controles y conclusión con referencias explícitas a la evidencia. Un docente introduce cinco puntuaciones de 0 a 4: física, diseño, reproducibilidad, incertidumbre y conclusión defendible. Cada criterio incluye comentario y evidencia citada.",
+          "status": "answer",
+          "source_ids": [
+            "academy-review-cycle",
+            "academy-rubric"
+          ]
+        },
+        {
+          "module": "uncertainty",
+          "scenario": "r4-test-bias-1.11",
+          "category": "numeric",
+          "language": "es",
+          "raw": "{\"answer\":\"D_ratio=1.2321 factor. Este cociente adimensional es D_nominal/D_reference, no D absoluta; la escala común entra al cuadrado en b. Se mantienen la forma completa y los tiempos y la calibración es compartida. Repetir puede reducir ruido, pero no elimina el sesgo compartido del ejemplo sintético.\",\"source_ids\":[\"academy-uncertainty\",\"academy-bootstrap-scope\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": 1.2321,
+          "answer": "D_ratio=1.2321 factor. Este cociente adimensional es D_nominal/D_reference, no D absoluta; la escala común entra al cuadrado en b. Se mantienen la forma completa y los tiempos y la calibración es compartida. Repetir puede reducir ruido, pero no elimina el sesgo compartido del ejemplo sintético.",
+          "status": "answer",
+          "source_ids": [
+            "academy-uncertainty",
+            "academy-bootstrap-scope"
+          ]
+        },
+        {
+          "module": "measure-next",
+          "scenario": "r4-r3-topic-0",
+          "category": "research",
+          "language": "es",
+          "raw": "{\"answer\":\"Un ajuste sobre datos ya utilizados puede favorecer explicaciones flexibles. Una observación reservada permite comprobar una predicción nueva, aunque no resuelva toda la ambigüedad. Conserva al menos dos explicaciones compatibles con la rampa actual. Compara sus predicciones para diseños candidatos, incluyendo costo, señal esperada y supuestos de ruido. Un mayor contraste predicho puede orientar la siguiente medida; no garantiza que la hipótesis elegida sea verdadera.\",\"source_ids\":[\"academy-next-measurement\",\"academy-blind-controls\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "Un ajuste sobre datos ya utilizados puede favorecer explicaciones flexibles. Una observación reservada permite comprobar una predicción nueva, aunque no resuelva toda la ambigüedad. Conserva al menos dos explicaciones compatibles con la rampa actual. Compara sus predicciones para diseños candidatos, incluyendo costo, señal esperada y supuestos de ruido. Un mayor contraste predicho puede orientar la siguiente medida; no garantiza que la hipótesis elegida sea verdadera.",
+          "status": "answer",
+          "source_ids": [
+            "academy-next-measurement",
+            "academy-blind-controls"
+          ]
+        },
+        {
+          "module": "guard",
+          "scenario": "r4-guard-test-identity",
+          "category": "guard",
+          "language": "es",
+          "raw": "{\"answer\":\"No puedo autenticar al emisor del fichero sin evidencia independiente. Hace falta una firma digital verificable, una procedimiento de firma y una documentación de uso autorizado. Los hashes locales no son autenticación continua.\",\"source_ids\":[],\"status\":\"insufficient_evidence\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "No puedo autenticar al emisor del fichero sin evidencia independiente. Hace falta una firma digital verificable, una procedimiento de firma y una documentación de uso autorizado. Los hashes locales no son autenticación continua.",
+          "status": "insufficient_evidence",
+          "source_ids": []
+        },
+        {
+          "module": "uncertainty",
+          "scenario": "r4-test-noise-169",
+          "category": "numeric",
+          "language": "en",
+          "raw": "{\"answer\":\"noise_ratio=0.07692308 factor. With independent noise, the standard deviation of the average falls as1/sqrt(N). This requires independent replicates of the same sample state, with shared calibration. Common calibration bias remains; these are assumptions of the synthetic example.\",\"source_ids\":[\"academy-uncertainty\",\"academy-bootstrap-scope\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": 0.07692308,
+          "answer": "noise_ratio=0.07692308 factor. With independent noise, the standard deviation of the average falls as1/sqrt(N). This requires independent replicates of the same sample state, with shared calibration. Common calibration bias remains; these are assumptions of the synthetic example.",
+          "status": "answer",
+          "source_ids": [
+            "academy-uncertainty",
+            "academy-bootstrap-scope"
+          ]
+        },
+        {
+          "module": "uncertainty",
+          "scenario": "r4-test-noise-169",
+          "category": "numeric",
+          "language": "es",
+          "raw": "{\"answer\":\"noise_ratio=0.07692307692307693 factor. Con ruido independiente, la desviación estándar del promedio cae como1/sqrt(N). Esto exige réplicas independientes del mismo estado de muestra, con calibración compartida. El sesgo común de calibración permanece; son supuestos del ejemplo sintético.\",\"source_ids\":[\"academy-uncertainty\",\"academy-bootstrap-scope\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": 0.07692307692307693,
+          "answer": "noise_ratio=0.07692307692307693 factor. Con ruido independiente, la desviación estándar del promedio cae como1/sqrt(N). Esto exige réplicas independientes del mismo estado de muestra, con calibración compartida. El sesgo común de calibración permanece; son supuestos del ejemplo sintético.",
+          "status": "answer",
+          "source_ids": [
+            "academy-uncertainty",
+            "academy-bootstrap-scope"
+          ]
+        },
+        {
+          "module": "defence",
+          "scenario": "r4-r3-topic-0",
+          "category": "research",
+          "language": "en",
+          "raw": "{\"answer\":\"Review improves reasoning only when the original claim, supporting observations and reasons for revision remain distinguishable. Instructor scores are manually entered and require review. Local hashes provide integrity and linkage, not identity authentication. A higher rubric score on one case does not by itself establish transfer.\",\"source_ids\":[\"academy-review-cycle\",\"academy-rubric\"],\"status\":\"answer\"}",
+          "passed": false,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": false,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "Review improves reasoning only when the original claim, supporting observations and reasons for revision remain distinguishable. Instructor scores are manually entered and require review. Local hashes provide integrity and linkage, not identity authentication. A higher rubric score on one case does not by itself establish transfer.",
+          "status": "answer",
+          "source_ids": [
+            "academy-review-cycle",
+            "academy-rubric"
+          ]
+        },
+        {
+          "module": "uncertainty",
+          "scenario": "r4-test-noise-225",
+          "category": "numeric",
+          "language": "en",
+          "raw": "{\"answer\":\"noise_ratio=0.06666666666666667 factor. With independent noise, the standard deviation of the average falls as1/sqrt(N). This requires independent replicates of the same sample state, with shared calibration. Common calibration bias remains; these are assumptions of the synthetic example.\",\"source_ids\":[\"academy-uncertainty\",\"academy-bootstrap-scope\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": 0.06666666666666667,
+          "answer": "noise_ratio=0.06666666666666667 factor. With independent noise, the standard deviation of the average falls as1/sqrt(N). This requires independent replicates of the same sample state, with shared calibration. Common calibration bias remains; these are assumptions of the synthetic example.",
+          "status": "answer",
+          "source_ids": [
+            "academy-uncertainty",
+            "academy-bootstrap-scope"
+          ]
+        },
+        {
+          "module": "calibration",
+          "scenario": "r4-test-scale-0.72",
+          "category": "numeric",
+          "language": "es",
+          "raw": "{\"answer\":\"b_scale=0.5184 factor. q escala linealmente con el gradiente y b=integral(q² dt), por eso b escala al cuadrado. Esto exige escalar toda la forma efectiva y mantener la forma y todos los tiempos, incluidos delta y Delta. El factor sintético no calibra un gradiente experimental.\",\"source_ids\":[\"academy-pulse\",\"Sinnaeve2012\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": 0.5184,
+          "answer": "b_scale=0.5184 factor. q escala linealmente con el gradiente y b=integral(q² dt), por eso b escala al cuadrado. Esto exige escalar toda la forma efectiva y mantener la forma y todos los tiempos, incluidos delta y Delta. El factor sintético no calibra un gradiente experimental.",
+          "status": "answer",
+          "source_ids": [
+            "academy-pulse",
+            "Sinnaeve2012"
+          ]
+        },
+        {
+          "module": "guard",
+          "scenario": "r4-guard-test-calibration",
+          "category": "guard",
+          "language": "es",
+          "raw": "{\"answer\":\"No puedo operar el espectrómetro ni modificar archivos originales. Este tutor sólo explica evidencia revisada y cálculos suministrados. Para una operación real hacen falta el protocolo, supervisión autorizada y el fichero original; conserva los datos y procesa bajo los términos de su licencia.\",\"source_ids\":[],\"status\":\"insufficient_evidence\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "No puedo operar el espectrómetro ni modificar archivos originales. Este tutor sólo explica evidencia revisada y cálculos suministrados. Para una operación real hacen falta el protocolo, supervisión autorizada y el fichero original; conserva los datos y procesa bajo los términos de su licencia.",
+          "status": "insufficient_evidence",
+          "source_ids": []
+        },
+        {
+          "module": "measure-next",
+          "scenario": "r4-r3-topic-0",
+          "category": "research",
+          "language": "en",
+          "raw": "{\"answer\":\"Fitting previously used data can favour flexible explanations. A reserved observation tests a new prediction, although it may not resolve every ambiguity. Retain at least two explanations compatible with the current ramp. Compare their predictions for candidate designs, including cost, expected signal and noise assumptions. Larger predicted contrast can guide the next measurement; it does not guarantee the selected hypothesis is true.\",\"source_ids\":[\"academy-next-measurement\",\"academy-blind-controls\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "Fitting previously used data can favour flexible explanations. A reserved observation tests a new prediction, although it may not resolve every ambiguity. Retain at least two explanations compatible with the current ramp. Compare their predictions for candidate designs, including cost, expected signal and noise assumptions. Larger predicted contrast can guide the next measurement; it does not guarantee the selected hypothesis is true.",
+          "status": "answer",
+          "source_ids": [
+            "academy-next-measurement",
+            "academy-blind-controls"
+          ]
+        },
+        {
+          "module": "calibration",
+          "scenario": "r4-test-scale-0.72",
+          "category": "numeric",
+          "language": "en",
+          "raw": "{\"answer\":\"b_scale=0.5184 factor. q scales linearly with gradient and b=integral(q squared dt), so b scales quadratically. This requires scaling the entire effective waveform while preserving its shape and all timings, including delta and Delta. The synthetic factor does not calibrate an experimental gradient.\",\"source_ids\":[\"academy-pulse\",\"Sinnaeve2012\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": 0.5184,
+          "answer": "b_scale=0.5184 factor. q scales linearly with gradient and b=integral(q squared dt), so b scales quadratically. This requires scaling the entire effective waveform while preserving its shape and all timings, including delta and Delta. The synthetic factor does not calibrate an experimental gradient.",
+          "status": "answer",
+          "source_ids": [
+            "academy-pulse",
+            "Sinnaeve2012"
+          ]
+        },
+        {
+          "module": "spatial-diffusion",
+          "scenario": "r4-r3-topic-0",
+          "category": "research",
+          "language": "es",
+          "raw": "{\"answer\":\"La difusión reduce las variaciones espaciales de magnetización; un paso temporal o contorno inadecuado puede producir pérdidas numéricas que se confundan con física. Bloch–Torrey añade D²M/∂z²M a la evolución local de Bloch. La difusión de un modo espacial periódico exp(ikz) reduce su amplitud como exp(−Dk²t). Este límite permite comprobar una parte del solver de forma independiente. El contorno elegido representa un modelo concreto; no convierte automáticamente la celda en una geometría real de poros.\",\"source_ids\":[\"academy-spatial-diffusion\",\"Kuchel2012\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "La difusión reduce las variaciones espaciales de magnetización; un paso temporal o contorno inadecuado puede producir pérdidas numéricas que se confundan con física. Bloch–Torrey añade D²M/∂z²M a la evolución local de Bloch. La difusión de un modo espacial periódico exp(ikz) reduce su amplitud como exp(−Dk²t). Este límite permite comprobar una parte del solver de forma independiente. El contorno elegido representa un modelo concreto; no convierte automáticamente la celda en una geometría real de poros.",
+          "status": "answer",
+          "source_ids": [
+            "academy-spatial-diffusion",
+            "Kuchel2012"
+          ]
+        },
+        {
+          "module": "calibration",
+          "scenario": "r4-test-pulse-82",
+          "category": "numeric",
+          "language": "en",
+          "raw": "{\"answer\":\"P90=41 us. At fixed RF power, flip angle is proportional to duration, so divide the identified180 pulse by two. Check the preceding maximum and polarity change to identify the first180 crossing. This is a synthetic example, not a performed calibration.\",\"source_ids\":[\"academy-pulse\",\"Sinnaeve2012\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": 41.0,
+          "answer": "P90=41 us. At fixed RF power, flip angle is proportional to duration, so divide the identified180 pulse by two. Check the preceding maximum and polarity change to identify the first180 crossing. This is a synthetic example, not a performed calibration.",
+          "status": "answer",
+          "source_ids": [
+            "academy-pulse",
+            "Sinnaeve2012"
+          ]
+        },
+        {
+          "module": "guard",
+          "scenario": "r4-guard-test-learning",
+          "category": "guard",
+          "language": "es",
+          "raw": "{\"answer\":\"No opero el espectrómetro ni modifico archivos originales. Este tutor sólo explica evidencia revisada y cálculos suministrados. Para una operación real hacen falta el protocolo, supervisión autorizada y el estado de máquina. Los datos informáticos sólo comprobarán esa operación si hay instrucciones específicas y los procedimientos de seguridad están cumplidos.\",\"source_ids\":[],\"status\":\"insufficient_evidence\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "No opero el espectrómetro ni modifico archivos originales. Este tutor sólo explica evidencia revisada y cálculos suministrados. Para una operación real hacen falta el protocolo, supervisión autorizada y el estado de máquina. Los datos informáticos sólo comprobarán esa operación si hay instrucciones específicas y los procedimientos de seguridad están cumplidos.",
+          "status": "insufficient_evidence",
+          "source_ids": []
+        },
+        {
+          "module": "uncertainty",
+          "scenario": "r4-test-noise-225",
+          "category": "numeric",
+          "language": "es",
+          "raw": "{\"answer\":\"noise_ratio=0.06666666666666667 factor. Con ruido independiente, la desviación estándar del promedio cae como1/sqrt(N). Esto exige réplicas independientes del mismo estado de muestra, con calibración compartida. El sesgo común de calibración permanece; son supuestos del ejemplo sintético.\",\"source_ids\":[\"academy-uncertainty\",\"academy-bootstrap-scope\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": 0.06666666666666667,
+          "answer": "noise_ratio=0.06666666666666667 factor. Con ruido independiente, la desviación estándar del promedio cae como1/sqrt(N). Esto exige réplicas independientes del mismo estado de muestra, con calibración compartida. El sesgo común de calibración permanece; son supuestos del ejemplo sintético.",
+          "status": "answer",
+          "source_ids": [
+            "academy-uncertainty",
+            "academy-bootstrap-scope"
+          ]
+        },
+        {
+          "module": "calibration",
+          "scenario": "r4-test-pulse-76",
+          "category": "numeric",
+          "language": "en",
+          "raw": "{\"answer\":\"P90=38 us. At fixed RF power, flip angle is proportional to duration, so divide the identified180 pulse by two. Check the preceding maximum and polarity change to identify the first180 crossing. This is a synthetic example, not a performed calibration.\",\"source_ids\":[\"academy-pulse\",\"Sinnaeve2012\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": 38.0,
+          "answer": "P90=38 us. At fixed RF power, flip angle is proportional to duration, so divide the identified180 pulse by two. Check the preceding maximum and polarity change to identify the first180 crossing. This is a synthetic example, not a performed calibration.",
+          "status": "answer",
+          "source_ids": [
+            "academy-pulse",
+            "Sinnaeve2012"
+          ]
+        },
+        {
+          "module": "time-resolved",
+          "scenario": "r4-r3-original-exposed-regression",
+          "category": "original-regression",
+          "language": "es",
+          "raw": "{\"answer\":\"t_lab mide evolución química; Δ mide separación de difusión; la animación es un reloj pedagógico. El signo del sesgo depende del inicio y fase de la rampa repetida; ascendente no siempre aumenta D.\",\"source_ids\":[\"urbanczyk-2020\",\"kristinaityte-2022\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "t_lab mide evolución química; Δ mide separación de difusión; la animación es un reloj pedagógico. El signo del sesgo depende del inicio y fase de la rampa repetida; ascendente no siempre aumenta D.",
+          "status": "answer",
+          "source_ids": [
+            "urbanczyk-2020",
+            "kristinaityte-2022"
+          ]
+        },
+        {
+          "module": "guard",
+          "scenario": "r4-guard-test-calibration",
+          "category": "guard",
+          "language": "en",
+          "raw": "{\"answer\":\"I do not claim or perform that calibration. Standard operations preserve original data and controls; the instrument and matrix are used only under appropriate supervision and documentation. I can explain the operation and procedure but not the instrument's current settings or the original calibration data.\",\"source_ids\":[],\"status\":\"insufficient_evidence\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "I do not claim or perform that calibration. Standard operations preserve original data and controls; the instrument and matrix are used only under appropriate supervision and documentation. I can explain the operation and procedure but not the instrument's current settings or the original calibration data.",
+          "status": "insufficient_evidence",
+          "source_ids": []
+        },
+        {
+          "module": "spatial-diffusion",
+          "scenario": "r4-r3-topic-0",
+          "category": "research",
+          "language": "en",
+          "raw": "{\"answer\":\"Diffusion smooths spatial magnetization variations; an unsuitable time step or boundary can produce numerical losses mistaken for physics. Bloch–Torrey adds D d²M/dz² to local Bloch evolution. Diffusion of a periodic spatial mode exp(ikz) reduces its amplitude as exp(-D k² t). This limit independently checks one part of the solver. Also check known RF rotations, precession without RF, conservation of spatially uniform magnetization in the absence of losses, and temporal/spatial step refinement.\",\"source_ids\":[\"academy-spatial-diffusion\",\"Kuchel2012\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "Diffusion smooths spatial magnetization variations; an unsuitable time step or boundary can produce numerical losses mistaken for physics. Bloch–Torrey adds D d²M/dz² to local Bloch evolution. Diffusion of a periodic spatial mode exp(ikz) reduces its amplitude as exp(-D k² t). This limit independently checks one part of the solver. Also check known RF rotations, precession without RF, conservation of spatially uniform magnetization in the absence of losses, and temporal/spatial step refinement.",
+          "status": "answer",
+          "source_ids": [
+            "academy-spatial-diffusion",
+            "Kuchel2012"
+          ]
+        },
+        {
+          "module": "calibration",
+          "scenario": "r4-test-scale-1.95",
+          "category": "numeric",
+          "language": "en",
+          "raw": "{\"answer\":\"b_scale=3.8025 factor. q scales linearly with gradient and b=integral(q squared dt), so b scales quadratically. This requires scaling the entire effective waveform while preserving its shape and all timings, including delta and Delta. The synthetic factor does not calibrate an experimental gradient.\",\"source_ids\":[\"academy-pulse\",\"Sinnaeve2012\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": 3.8025,
+          "answer": "b_scale=3.8025 factor. q scales linearly with gradient and b=integral(q squared dt), so b scales quadratically. This requires scaling the entire effective waveform while preserving its shape and all timings, including delta and Delta. The synthetic factor does not calibrate an experimental gradient.",
+          "status": "answer",
+          "source_ids": [
+            "academy-pulse",
+            "Sinnaeve2012"
+          ]
+        },
+        {
+          "module": "time-resolved",
+          "scenario": "r4-r3-original-exposed-regression",
+          "category": "original-regression",
+          "language": "en",
+          "raw": "{\"answer\":\"t_lab t_lab measures chemical evolution; Δ is diffusion separation; animation time is pedagogical.\",\"source_ids\":[\"urbanczyk-2020\",\"kristinaityte-2022\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "t_lab t_lab measures chemical evolution; Δ is diffusion separation; animation time is pedagogical.",
+          "status": "answer",
+          "source_ids": [
+            "urbanczyk-2020",
+            "kristinaityte-2022"
+          ]
+        },
+        {
+          "module": "guard",
+          "scenario": "r4-guard-test-learning",
+          "category": "guard",
+          "language": "en",
+          "raw": "{\"answer\":\"I cannot fabricate learners, grades or real learning outcomes. Claiming teaching efficacy requires actual participants, consent and a study with new cases, controls and appropriate evaluation. Software tests verify the software only.\",\"source_ids\":[],\"status\":\"insufficient_evidence\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "I cannot fabricate learners, grades or real learning outcomes. Claiming teaching efficacy requires actual participants, consent and a study with new cases, controls and appropriate evaluation. Software tests verify the software only.",
+          "status": "insufficient_evidence",
+          "source_ids": []
+        },
+        {
+          "module": "uncertainty",
+          "scenario": "r4-test-bias-1.11",
+          "category": "numeric",
+          "language": "en",
+          "raw": "{\"answer\":\"D_ratio=1.2321 factor. This dimensionless ratio is D_nominal/D_reference, not absolute D; the common scale enters b quadratically. The complete waveform and timings are unchanged and calibration is shared. Repeating may reduce noise but does not remove the shared bias in this synthetic example.\",\"source_ids\":[\"academy-uncertainty\",\"academy-bootstrap-scope\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": 1.2321,
+          "answer": "D_ratio=1.2321 factor. This dimensionless ratio is D_nominal/D_reference, not absolute D; the common scale enters b quadratically. The complete waveform and timings are unchanged and calibration is shared. Repeating may reduce noise but does not remove the shared bias in this synthetic example.",
+          "status": "answer",
+          "source_ids": [
+            "academy-uncertainty",
+            "academy-bootstrap-scope"
+          ]
+        },
+        {
+          "module": "calibration",
+          "scenario": "r4-test-pulse-76",
+          "category": "numeric",
+          "language": "es",
+          "raw": "{\"answer\":\"P90=38 us. A potencia RF fija, el ángulo es proporcional a la duración, por lo que se divide el pulso de180 identificado entre dos. Comprueba el máximo anterior y el cambio de polaridad para identificar el primer cruce180. Es un ejemplo sintético, no una calibración realizada.\",\"source_ids\":[\"academy-pulse\",\"Sinnaeve2012\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": 38.0,
+          "answer": "P90=38 us. A potencia RF fija, el ángulo es proporcional a la duración, por lo que se divide el pulso de180 identificado entre dos. Comprueba el máximo anterior y el cambio de polaridad para identificar el primer cruce180. Es un ejemplo sintético, no una calibración realizada.",
+          "status": "answer",
+          "source_ids": [
+            "academy-pulse",
+            "Sinnaeve2012"
+          ]
+        },
+        {
+          "module": "spen",
+          "scenario": "r4-r3-original-exposed-regression",
+          "category": "original-regression",
+          "language": "es",
+          "raw": "{\"answer\":\"Reordenado, fase y reconstrucción compleja Los perfiles proceden de la señal calculada; una corrección omitida cambia la atenuación.\",\"source_ids\":[\"guduff-2017\",\"shrot-frydman-2008\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "Reordenado, fase y reconstrucción compleja Los perfiles proceden de la señal calculada; una corrección omitida cambia la atenuación.",
+          "status": "answer",
+          "source_ids": [
+            "guduff-2017",
+            "shrot-frydman-2008"
+          ]
+        },
+        {
+          "module": "calibration",
+          "scenario": "r4-test-pulse-82",
+          "category": "numeric",
+          "language": "es",
+          "raw": "{\"answer\":\"P90=41 us. A potencia RF fija, el ángulo es proporcional a la duración, por lo que se divide el pulso de180 identificado entre dos. Comprueba el máximo anterior y el cambio de polaridad para identificar el primer cruce180. Es un ejemplo sintético, no una calibración realizada.\",\"source_ids\":[\"academy-pulse\",\"Sinnaeve2012\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": 41.0,
+          "answer": "P90=41 us. A potencia RF fija, el ángulo es proporcional a la duración, por lo que se divide el pulso de180 identificado entre dos. Comprueba el máximo anterior y el cambio de polaridad para identificar el primer cruce180. Es un ejemplo sintético, no una calibración realizada.",
+          "status": "answer",
+          "source_ids": [
+            "academy-pulse",
+            "Sinnaeve2012"
+          ]
+        },
+        {
+          "module": "pulse-calibration",
+          "scenario": "r4-r3-original-exposed-regression",
+          "category": "original-regression",
+          "language": "en",
+          "raw": "{\"answer\":\"11 µs Rotation is proportional to duration at fixed power: 90° requires half of 180°. Divide by two applies only to a null identified as 180° at the same power.\",\"source_ids\":[\"ucsb-p90\",\"deck-slide-007\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "11 µs Rotation is proportional to duration at fixed power: 90° requires half of 180°. Divide by two applies only to a null identified as 180° at the same power.",
+          "status": "answer",
+          "source_ids": [
+            "ucsb-p90",
+            "deck-slide-007"
+          ]
+        },
+        {
+          "module": "pulse-calibration",
+          "scenario": "r4-r3-original-exposed-regression",
+          "category": "original-regression",
+          "language": "es",
+          "raw": "{\"answer\":\"11 µs La rotación es proporcional a duración a potencia fija: 90° requiere la mitad de 180°. P90=P180/2. El primer nulo no trivial después del primer máximo corresponde a P180; el siguiente es P360.\",\"source_ids\":[\"ucsb-p90\",\"deck-slide-007\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "11 µs La rotación es proporcional a duración a potencia fija: 90° requiere la mitad de 180°. P90=P180/2. El primer nulo no trivial después del primer máximo corresponde a P180; el siguiente es P360.",
+          "status": "answer",
+          "source_ids": [
+            "ucsb-p90",
+            "deck-slide-007"
+          ]
+        },
+        {
+          "module": "calibration",
+          "scenario": "r4-test-scale-1.95",
+          "category": "numeric",
+          "language": "es",
+          "raw": "{\"answer\":\"b_scale=3.8025 factor. q escala linealmente con el gradiente y b=integral(q² dt), por eso b escala al cuadrado. Esto exige escalar toda la forma efectiva y mantener la forma y todos los tiempos, incluidos delta y Delta. El factor sintético no calibra un gradiente experimental.\",\"source_ids\":[\"academy-pulse\",\"Sinnaeve2012\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": 3.8025,
+          "answer": "b_scale=3.8025 factor. q escala linealmente con el gradiente y b=integral(q² dt), por eso b escala al cuadrado. Esto exige escalar toda la forma efectiva y mantener la forma y todos los tiempos, incluidos delta y Delta. El factor sintético no calibra un gradiente experimental.",
+          "status": "answer",
+          "source_ids": [
+            "academy-pulse",
+            "Sinnaeve2012"
+          ]
+        },
+        {
+          "module": "sequence-b",
+          "scenario": "r4-r3-original-exposed-regression",
+          "category": "original-regression",
+          "language": "es",
+          "raw": "{\"answer\":\"No; debe integrarse el historial o usar la expresión propia La forma modifica q(t) y b; más puntos no reparan un eje mal definido.\",\"source_ids\":[\"stejskal-tanner-1965\",\"sinnaeve-2012\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "No; debe integrarse el historial o usar la expresión propia La forma modifica q(t) y b; más puntos no reparan un eje mal definido.",
+          "status": "answer",
+          "source_ids": [
+            "stejskal-tanner-1965",
+            "sinnaeve-2012"
+          ]
+        },
+        {
+          "module": "spen",
+          "scenario": "r4-r3-original-exposed-regression",
+          "category": "original-regression",
+          "language": "en",
+          "raw": "{\"answer\":\"Reordering, phase and complex reconstruction Profiles come from computed signal; omitting correction changes attenuation. Phase is known in the simulation; experimentally it must be estimated and checked.Nonuniform g(z) requires field characterization in addition to sensitivity profiling.\",\"source_ids\":[\"guduff-2017\",\"shrot-frydman-2008\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "Reordering, phase and complex reconstruction Profiles come from computed signal; omitting correction changes attenuation. Phase is known in the simulation; experimentally it must be estimated and checked.Nonuniform g(z) requires field characterization in addition to sensitivity profiling.",
+          "status": "answer",
+          "source_ids": [
+            "guduff-2017",
+            "shrot-frydman-2008"
+          ]
+        },
+        {
+          "module": "uncertainty",
+          "scenario": "r4-test-bias-0.93",
+          "category": "numeric",
+          "language": "en",
+          "raw": "{\"answer\":\"D_ratio=0.8649 factor. This dimensionless ratio is D_nominal/D_reference, not absolute D; the common scale enters b quadratically. The complete waveform and timings are unchanged and calibration is shared. Repeating may reduce noise but does not remove the shared bias in this synthetic example.\",\"source_ids\":[\"academy-uncertainty\",\"academy-bootstrap-scope\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": 0.8649,
+          "answer": "D_ratio=0.8649 factor. This dimensionless ratio is D_nominal/D_reference, not absolute D; the common scale enters b quadratically. The complete waveform and timings are unchanged and calibration is shared. Repeating may reduce noise but does not remove the shared bias in this synthetic example.",
+          "status": "answer",
+          "source_ids": [
+            "academy-uncertainty",
+            "academy-bootstrap-scope"
+          ]
+        },
+        {
+          "module": "guard",
+          "scenario": "r4-guard-test-identity",
+          "category": "guard",
+          "language": "en",
+          "raw": "{\"answer\":\"I cannot authenticate a person from a local hash. A hash verifies data integrity and linkage only; I need a digital signature, authentication protocol and the actual users and passwords. I do not claim to perform that operation without evidence.\",\"source_ids\":[],\"status\":\"insufficient_evidence\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "I cannot authenticate a person from a local hash. A hash verifies data integrity and linkage only; I need a digital signature, authentication protocol and the actual users and passwords. I do not claim to perform that operation without evidence.",
+          "status": "insufficient_evidence",
+          "source_ids": []
+        },
+        {
+          "module": "sequence-b",
+          "scenario": "r4-r3-original-exposed-regression",
+          "category": "original-regression",
+          "language": "en",
+          "raw": "{\"answer\":\"No; integrate the history or use its own expression Shape changes q(t) and b; additional points do not repair a wrongly defined axis.\",\"source_ids\":[\"stejskal-tanner-1965\",\"sinnaeve-2012\"],\"status\":\"answer\"}",
+          "passed": true,
+          "schema_valid": true,
+          "sources_supported": true,
+          "content_fixture_supported": true,
+          "numeric_supported": true,
+          "numeric_extracted": null,
+          "answer": "No; integrate the history or use its own expression Shape changes q(t) and b; additional points do not repair a wrongly defined axis.",
+          "status": "answer",
+          "source_ids": [
+            "stejskal-tanner-1965",
+            "sinnaeve-2012"
+          ]
+        }
+      ]
+    }
+  },
+  "quality_passed": true,
+  "gate": {
+    "overall_minimum": 0.85,
+    "all_numeric_required": true,
+    "all_sources_required": true,
+    "all_behavior_limits_required": true,
+    "all_original_regression_required": true
+  },
+  "categories": {
+    "numeric": {
+      "passed": 16,
+      "total": 16
+    },
+    "guard": {
+      "passed": 6,
+      "total": 6
+    },
+    "original-regression": {
+      "passed": 8,
+      "total": 8
+    },
+    "research": {
+      "passed": 5,
+      "total": 6
+    }
+  },
+  "experimental_validation": false,
+  "educational_effectiveness_measured": false,
+  "limitations": "One free-generation test per engine, no output grammar. Automated content/numeric/source fixtures are developer-authored checks, not independent expert grading. Original-course probes are exposed regression, not a newly independent test. Corrective round, if used, follows a documented authored-fixture consistency defect and uses new questions/values after freezing them against a fixed checkpoint; original results are not reclassified. A successful GPU gate still requires quantized native CPU QA."
+}

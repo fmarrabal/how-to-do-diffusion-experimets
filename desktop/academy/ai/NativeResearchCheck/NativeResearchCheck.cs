@@ -104,7 +104,9 @@ if(mode=="native")
         (Language:"es",Module:"pulse-calibration",Question:"En un ejemplo sintético el mínimo de 180° aparece a 18 µs. ¿Cuánto vale el pulso de 90° y qué debería comprobar?",Number:"9"),
         (Language:"en",Module:"sequence-b",Question:"In an ideal rectangular PGSE example, if I double g and keep delta and Delta unchanged, what happens to b?",Number:"4"),
         (Language:"es",Module:"spen",Question:"¿Qué hay que hacer con las dos polaridades EPSI para reconstruir la frecuencia y la difusión?",Number:""),
-        (Language:"en",Module:"time-resolved",Question:"Why does changing fractions during a sequential ramp bias D even when each species has a constant diffusion coefficient?",Number:"")
+        (Language:"en",Module:"time-resolved",Question:"Why does changing fractions during a sequential ramp bias D even when each species has a constant diffusion coefficient?",Number:""),
+        (Language:"es",Module:"temperature-standard",Question:"Ejemplo docente nuevo: T=307 K y fTTMS=0.93. Sin calcular decimales, explica por qué fTTMS*(293/T) se aplica una sola vez a todo el eje, y por qué esa convención no es una ley universal de viscosidad ni una corrección de flujo.",Number:""),
+        (Language:"en",Module:"temperature-standard",Question:"Fresh teaching example: T=307 K and fTTMS=0.93. Without calculating decimals, explain why fTTMS*(293/T) is applied only once to the complete axis, and why this convention is not a universal viscosity law or flow correction.",Number:"")
     };
     foreach(var item in oldCases)
     {
@@ -114,6 +116,14 @@ if(mode=="native")
         var text=answer.Text.ToLowerInvariant();
         if(item.Module=="spen")passed&=(text.Contains("reorden")||text.Contains("indice")||text.Contains("índice"))&&text.Contains("fase")&&(text.Contains("fourier")||text.Contains("dft"));
         if(item.Module=="time-resolved")passed&=(text.Contains("fraction")||text.Contains("concentration")||text.Contains("population"))&&(text.Contains("attenuation")||text.Contains("signal"));
+        if(item.Module=="temperature-standard")
+        {
+            var generated=Normal(answer.GeneratedText??"");
+            var once=item.Language=="es"?new[]{"una sola vez","una vez","unica vez","aplicacion unica","no duplic"}.Any(generated.Contains):new[]{"once","single application","do not repeat","without duplic","not apply again"}.Any(generated.Contains);
+            var scale=Regex.IsMatch(generated,@"f[_\s]?ttms")&&(generated.Contains("293")||Regex.IsMatch(generated,@"\bft\b"));
+            var boundary=(generated.Contains("viscos")||generated.Contains("flow")||generated.Contains("flujo")||generated.Contains("convecc"))&&(generated.Contains("no ")||generated.Contains("not ")||generated.Contains("does not"));
+            passed&=once&&scale&&boundary;
+        }
         originalPassed&=passed;Add("original_native_regression_"+item.Language+"_"+item.Module,passed,new{question=item.Question,answer,evaluationDiagnostics=original.LastEvaluationDiagnostics});
     }
     using var derivations=JsonDocument.Parse(File.ReadAllText(Path.Combine(Path.GetDirectoryName(coursePath)!,"derivations.json")));
@@ -129,7 +139,10 @@ if(mode=="native")
         originalPassed&=passed;Add("mathematical_course_documentary_preserved_"+language+"_"+id,passed,new{answer,expectedQuoteSha256=Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(expected))).ToLowerInvariant(),literalPreserved=answer.CourseQuote==expected});
     }
 }
-var report=new{version="1.3.0",mode,passed=allPassed,nativeModelGateExecuted=mode=="native",nativeResearchPassed=mode=="native"&&researchPassed,nativeOriginalRegressionPassed=mode=="native"&&originalPassed,elapsedSeconds=timer.Elapsed.TotalSeconds,knowledgeSha256=Hash(knowledgePath),courseSha256=Hash(coursePath),systemSha256=Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(ResearchTutorService.SystemInstructions))).ToLowerInvariant(),modelSha256=mode=="native"?Hash(Path.Combine(modelPath,"model.gguf")):null,scope="Actual local C# runtime. Fallback/hints are documentary. Native mode executes the single quantized candidate with actual source/numeric/hybrid guards and exposed original-course regression. No hardware, experimental or learner validation.",checks};
+var checkedVersion="1.3.0";var checkedManifestPath=Path.Combine(modelPath,"manifest.json");
+if(File.Exists(checkedManifestPath)){using var checkedManifest=JsonDocument.Parse(File.ReadAllText(checkedManifestPath));if(checkedManifest.RootElement.TryGetProperty("CompatibilityRelease",out var compatibilityVersion))checkedVersion=compatibilityVersion.GetString()??checkedVersion;}
+var evaluatorSource=Path.GetFullPath(Path.Combine(AppContext.BaseDirectory,"../../../NativeResearchCheck.cs"));var supplementalPath=Path.Combine(Path.GetDirectoryName(coursePath)!,"derivations.json");
+var report=new{version=checkedVersion,mode,passed=allPassed,nativeModelGateExecuted=mode=="native",nativeResearchPassed=mode=="native"&&researchPassed,nativeOriginalRegressionPassed=mode=="native"&&originalPassed,elapsedSeconds=timer.Elapsed.TotalSeconds,knowledgeSha256=Hash(knowledgePath),courseSha256=Hash(coursePath),supplementalSha256=File.Exists(supplementalPath)?Hash(supplementalPath):null,evaluatorSourceSha256=File.Exists(evaluatorSource)?Hash(evaluatorSource):null,systemSha256=Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(ResearchTutorService.SystemInstructions))).ToLowerInvariant(),modelSha256=mode=="native"?Hash(Path.Combine(modelPath,"model.gguf")):null,newTrainingPerformed=false,scope="Actual local C# runtime. Existing quantized model evaluated against supplied current course and mathematical content, not retraining. Fallback/hints are documentary. Native mode executes source/numeric/hybrid guards, exposed original-course regression and fresh symbolic ES/EN temperature-factor compatibility cases. No hardware, experimental or learner validation.",checks};
 Directory.CreateDirectory(Path.GetDirectoryName(output)!);File.WriteAllText(output,JsonSerializer.Serialize(report,new JsonSerializerOptions{WriteIndented=true}));
 Console.WriteLine(JsonSerializer.Serialize(new{report.passed,report.nativeResearchPassed,report.nativeOriginalRegressionPassed,checks=checks.Count,output}));
 Environment.ExitCode=allPassed?0:1;

@@ -6,18 +6,33 @@ A bilingual teaching repository on preparing, acquiring, processing and interpre
 
 Workshop authors: **Ignacio Fernández** ([ORCID](https://orcid.org/0000-0001-8355-580X)) and **Francisco Manuel Arrabal-Campos** ([ORCID](https://orcid.org/0000-0002-5510-6297)), University of Almería. The workshop is a 20-minute main presentation with additional technical appendices. The repository name preserves the spelling requested by its maintainer: `how-to-do-diffusion-experimets`.
 
-## DiffAtOnce Academy 1.3 — English and Spanish
+## DiffAtOnce Academy 1.3.1 — English and Spanish
 
-A connected, twelve-stage investigation for diffusion NMR: calibrate the 90° pulse and gradient scale, design and acquire a virtual experiment, process its FID, compare inverse solutions, propagate correlated uncertainty and defend a conclusion. Convection, drift, overlap and incomplete metadata become practical diagnostic examples. The shared WPF/browser engines also teach spatial RF encoding, diffusion and readout, competencies and instructor review.
+An audited, twelve-stage diffusion NMR investigation: pulse/gradient calibration,
+experimental design, virtual acquisition, complex-FID processing, inverse
+solutions, shared uncertainty and a defensible conclusion. WPF and the browser
+use the same bilingual teaching engines, including convection, spatial RF
+encoding and public experimental examples.
 
-[Academy source and build instructions](desktop/academy/) · [Academy 1.3 release](https://github.com/fmarrabal/how-to-do-diffusion-experimets/releases/tag/academy-v1.3.0) · [Open Academy online](https://diffatonce.com/en/academy) · [Download Windows with local Beatrix](https://diffatonce.com/downloads/diffatonce-academy-1.3.0-win-x64)
+[Source and build instructions](desktop/academy/) · [Academy 1.3.1 release](https://github.com/fmarrabal/how-to-do-diffusion-experimets/releases/tag/academy-v1.3.1) · [Open Academy](https://diffatonce.com/en/academy) · [Windows with Beatrix](https://diffatonce.com/downloads/diffatonce-academy-1.3.1-win-x64)
 
 | Updated manual | English | Español |
 |---|---|---|
-| Complete manual, 68 pages | [PDF](desktop/academy/docs/ACADEMY_MANUAL_EN.pdf) | [PDF](desktop/academy/docs/ACADEMY_MANUAL_ES.pdf) |
-| Research guide, 22 pages | [PDF](desktop/academy/docs/RESEARCH_MANUAL_EN.pdf) | [PDF](desktop/academy/docs/RESEARCH_MANUAL_ES.pdf) |
+| Complete manual, 72 pages | [PDF](desktop/academy/docs/ACADEMY_MANUAL_EN.pdf) | [PDF](desktop/academy/docs/ACADEMY_MANUAL_ES.pdf) |
+| Research guide, 26 pages | [PDF](desktop/academy/docs/RESEARCH_MANUAL_EN.pdf) | [PDF](desktop/academy/docs/RESEARCH_MANUAL_ES.pdf) |
 
-Source includes numerical tests, bilingual teaching content and attributed public experimental data; model weights, private papers and learner records are excluded. Rebuilding without compatible verified weights uses documentary guidance. The released Windows package includes local Beatrix; the web edition uses reviewed documentary guidance without an LLM. Software checks do not establish physical calibration or measured educational effectiveness. Public series without documented b values cannot be fitted for D.
+The audit corrects signed/descending attenuation handling, mono-only uncertainty
+labels, numerical overflow, input guards, sequence calculations and feedback.
+No new model fine-tune was performed. The web uses documentary guidance; Windows
+local inference requires its verified compatible package. Source excludes weights,
+private papers and learner records. Software checks do not establish physical
+calibration, chemical identity or measured learning outcomes. Missing documented
+b values block D fitting. [Audit notes](provenance/academy-1.3.1/RELEASE_NOTES_ES_EN.md)
+· [Preserved 1.3.0 release](https://github.com/fmarrabal/how-to-do-diffusion-experimets/releases/tag/academy-v1.3.0).
+
+[Auditoría completa / Full audit](desktop/academy/docs/AUDIT_1_3_1_ES_EN.md).
+
+Compact Windows layouts keep the heading readable; scrolling makes the tutor response, input, Ask and Cancel controls reachable.
 
 ## Spectrometer calibration GUI — English and Spanish
 

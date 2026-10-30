@@ -1,0 +1,35 @@
+{
+  "version": "1.3.1",
+  "scope": "Manual review of the actual post-change student-visible behavior and retained raw outputs. Parent release approval is still required.",
+  "observedRuntimeDefectsClosed": true,
+  "semanticReleaseApproval": false,
+  "parentReviewRequired": true,
+  "findings": [
+    {
+      "id": "GRADIENT-UNSUPPLIED-MEASUREMENT",
+      "originalFailurePreserved": true,
+      "closure": "The exact original .62 English question again generates the unsupported measured-gradient sentence. The runtime rejects it and returns only labelled reviewed guidance, with IsModelAnswer=false and GeneratedText=null. Raw output is preserved in evaluation diagnostics."
+    },
+    {
+      "id": "TEMP-CONVECTION-SUBQUESTION",
+      "originalFailurePreserved": true,
+      "closure": "Combined temperature/flow questions route before model loading to the complete reviewed temperature and convection modules, with both sets of citations and an explicit no-convection-correction boundary. No missing LLM explanation is claimed."
+    },
+    {
+      "id": "GRADIENT-QUADRATIC-SUBJECT",
+      "originalFailurePreserved": true,
+      "closure": "The first post-change .83 Spanish answer correctly states .6889 but incorrectly attributes quadratic scaling to the gradient. Its original automatic-pass report and raw generation are preserved. A scoped subject-contradiction guard now rejects the identical repeated generation and returns labelled reviewed guidance."
+    }
+  ],
+  "actualAcceptedAnswersReviewed": [
+    "Spanish .62: b_scale=.3844, linear q and quadratic b, whole waveform and fixed times, synthetic non-calibration boundary.",
+    "English .71: b_scale=.5041 with the same physical conditions and explicit non-calibration boundary."
+  ],
+  "retainedLimitations": [
+    "These conservative lexical guards address the observed typed synthetic b-scale failure classes. They are not a proof that arbitrary prose is correct and may choose documentary guidance for ambiguous language.",
+    "Two native generations were rejected. They are not reported as successful generated answers.",
+    "The original 103 checks were executed before these source changes. The new reports explicitly separate guard fixtures, captured replay, actual documentary routing and actual new generation; unaffected historical tests are not relabelled as rerun.",
+    "No system instructions, model weights, original training reports, course or derivations were modified by these runtime corrections."
+  ],
+  "newTrainingPerformed": false
+}

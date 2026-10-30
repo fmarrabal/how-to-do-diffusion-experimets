@@ -1,0 +1,72 @@
+{
+  "version": "1.3.0",
+  "candidate_round": "r4-evidence-boundaries",
+  "frozen_utc": "2026-10-30T00:19:24.533166+00:00",
+  "seed": 261030,
+  "split_counts": {
+    "train": 382,
+    "dev": 40,
+    "test": 36
+  },
+  "held_out_research_topics": [
+    "defence",
+    "measure-next",
+    "spatial-diffusion"
+  ],
+  "development_only_topics": [
+    "pilot",
+    "processing"
+  ],
+  "original_regression_modules": [
+    "pulse-calibration",
+    "sequence-b",
+    "spen",
+    "time-resolved"
+  ],
+  "fresh_test_numeric_values": {
+    "pulse": [
+      76,
+      82
+    ],
+    "scale": [
+      1.95,
+      0.72
+    ],
+    "bias": [
+      1.11,
+      0.93
+    ],
+    "noise": [
+      169,
+      225
+    ]
+  },
+  "authored_positive_negative_audit": {
+    "positive_targets": 458,
+    "negative_targets": 1058,
+    "passed": true,
+    "scope": "Authored target/negative consistency only; no model outputs or gates reclassified."
+  },
+  "selection": "Checkpoint selected by development completion loss only. All R4 test inputs/values and controls frozen before training; R3 results remain failed/exposed development evidence.",
+  "research_knowledge_sha256": "a04ae8bcfa523c4f49981d562ec67baae7b4ab74cb452d6fc59a4cd4c6356717",
+  "course_sha256": "f9a17df9645b541abc70907e5d04cd38c213293443ce1d37c2c0d94f8aea0cb9",
+  "dataset_sha256": {
+    "train": "443e2ad5f43ee4481283e132d961d838dea02586b10df1e23841f3b8567ca06e",
+    "dev": "2cc11ce3fc9b9e9467182b184f2dc087e2e28bb1525a27e2cb08e85fa213d084",
+    "test": "64ec8a91b27f6cf34c12824f74263f9256fe88f772fd55a7da16cc568c71ae03"
+  },
+  "pipeline_sha256": "d09bbb8b7ff3e913f29fc503dfe800a20076f043b76efd2b4146fb02a7265f9d",
+  "system_sha256": "efc8cde435fd6cf396426ac4f63e07c41df3c55199c53ef7b81fd7475a4d0b64",
+  "prior_failed_evaluation_sha256": "0c8954c3a7507cc499a2491532b4b9ebe631adcb018d2edc53ba2dbb8e2f5f09",
+  "gate": {
+    "overall_minimum": 0.85,
+    "all_numeric_required": true,
+    "all_sources_required": true,
+    "all_behavior_limits_required": true,
+    "all_original_regression_required": true,
+    "explicit_numeric_causal_conditions_required": true
+  },
+  "experimental_validation": false,
+  "educational_effectiveness_measured": false,
+  "limitations": "Actual local training on original summaries and synthetic explanations; automated authored QA is not expert or learner validation. No experimental spectra, article text or hardware operation."
+}

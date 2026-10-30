@@ -18,7 +18,7 @@ La pregunta de esa figura usa 18/2=9 µs; no es el ejercicio del taller 22/2=11 
 
 ## Rebuild / Regenerar
 
-Run from the repository root with Python and the required PDF libraries. Install Poppler on PATH, or set ACADEMY_PDFTOPPM / pass --pdftoppm to manual_verify.py:
+Run from the DiffAtOnce repository root with the bundled Python and ReportLab:
 
 ```powershell
 python desktop/academy/tools/manual_build.py --qa desktop/academy/qa/ui-release-final --manifest desktop/academy/ai/release/manifest.json
