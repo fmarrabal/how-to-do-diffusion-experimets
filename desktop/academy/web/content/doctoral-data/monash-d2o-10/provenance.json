@@ -1,0 +1,86 @@
+{
+  "schema": "academy-public-dataset/1",
+  "sourceDOI": "10.26180/33075584.v1",
+  "sourceURL": "https://doi.org/10.26180/33075584.v1",
+  "license": {
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "attribution": "Igor Silva, Alasdair McKay, Tanja Junkers. Comparison of Oligomer to Polymer Molar Mass Calibrations in Diffusion-Ordered Spectroscopy (DOSY) - Repository. Figshare/Monash. DOI10.26180/33075584.v1.",
+  "archiveSHA256": "be65cb5cd54cffdac4ad3b6bca5d90fce175ba652d7127262513eef4e21f5dbc",
+  "archiveMD5": "1995ca1e0389ff26c9ad35c623887dcc",
+  "selection": "Unmodified subset raw data/DOSY/IS_D2O/10; processed 2D maps excluded; no source PDF reproduced.",
+  "retrievedDate": "2026-10-05",
+  "files": [
+    {
+      "path": "ser.ser",
+      "originalArchivePath": "raw data/DOSY/IS_D2O/10/ser.ser",
+      "bytes": 2097152,
+      "sha256": "c6835b3d3ae84bf827045b88ba1b23937bd3febf81c080291aee8f09a99274f8",
+      "url": "content/doctoral-data/monash-d2o-10/ser.ser"
+    },
+    {
+      "path": "acqus",
+      "originalArchivePath": "raw data/DOSY/IS_D2O/10/acqus",
+      "bytes": 8972,
+      "sha256": "d25ccebaf598a0be42229e4767fa2fcde4d3e9cda9740b2ceda14745f572c6e0",
+      "url": "content/doctoral-data/monash-d2o-10/acqus"
+    },
+    {
+      "path": "acqu2s",
+      "originalArchivePath": "raw data/DOSY/IS_D2O/10/acqu2s",
+      "bytes": 583,
+      "sha256": "5ea8c38e341433429bc195937534260c8aa1cbe80d75aaad1f90f59b16af7ebd",
+      "url": "content/doctoral-data/monash-d2o-10/acqu2s"
+    },
+    {
+      "path": "pulseprogram",
+      "originalArchivePath": "raw data/DOSY/IS_D2O/10/pulseprogram",
+      "bytes": 6493,
+      "sha256": "a0532529364e3e4b98563ad4b7173f773d2a38d372f9f365ff24300439caca98",
+      "url": "content/doctoral-data/monash-d2o-10/pulseprogram"
+    },
+    {
+      "path": "difflist",
+      "originalArchivePath": "raw data/DOSY/IS_D2O/10/difflist",
+      "bytes": 125,
+      "sha256": "54ac466c9c4e053cc2c7396c1b578386ec150217f0f594500a2cc63af16a57e2",
+      "url": "content/doctoral-data/monash-d2o-10/difflist"
+    },
+    {
+      "path": "gradient_calib",
+      "originalArchivePath": "raw data/DOSY/IS_D2O/10/gradient_calib",
+      "bytes": 26,
+      "sha256": "ed4a29f9fbf562781cee6410548340bc2aac2d9040314df9600eacb45fa2d1fe",
+      "url": "content/doctoral-data/monash-d2o-10/gradient_calib"
+    },
+    {
+      "path": "gpnam6",
+      "originalArchivePath": "raw data/DOSY/IS_D2O/10/gpnam6",
+      "bytes": 1892,
+      "sha256": "85b3e903dda475b283ac2575e55b69296c94725f946dd728c6965af98cf8e240",
+      "url": "content/doctoral-data/monash-d2o-10/gpnam6"
+    },
+    {
+      "path": "pdata/1/procs",
+      "originalArchivePath": "raw data/DOSY/IS_D2O/10/pdata/1/procs",
+      "bytes": 2506,
+      "sha256": "452cd67e42b5d793160a521871d0a65dddc8dbb05fb77a388a77a35ff5af2a8d",
+      "url": "content/doctoral-data/monash-d2o-10/pdata/1/procs"
+    },
+    {
+      "path": "pdata/1/dosy",
+      "originalArchivePath": "raw data/DOSY/IS_D2O/10/pdata/1/dosy",
+      "bytes": 571,
+      "sha256": "461edcc743571b39e9615ebc2c9d19ab5352c5001e10eafa1640e228e69215a8",
+      "url": "content/doctoral-data/monash-d2o-10/pdata/1/dosy"
+    },
+    {
+      "path": "pdata/1/title",
+      "originalArchivePath": "raw data/DOSY/IS_D2O/10/pdata/1/title",
+      "bytes": 47,
+      "sha256": "2ab7500b1a24114f1fa3ba9d7ef104b64a4767f9691b7886aae1d852c7a343c7",
+      "url": "content/doctoral-data/monash-d2o-10/pdata/1/title"
+    }
+  ]
+}

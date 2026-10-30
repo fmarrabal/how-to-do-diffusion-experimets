@@ -1,0 +1,250 @@
+{
+  "version": "1.2.0",
+  "application": "DiffAtOnce Academy doctoral laboratory",
+  "releaseStatus": "reviewed-teaching-software",
+  "includedInLLMTraining": false,
+  "hintMode": "reviewed-documentary-only",
+  "activities": [
+    "sync",
+    "sequence",
+    "guided",
+    "campaign",
+    "blind",
+    "inverse",
+    "cases",
+    "advanced",
+    "assessment"
+  ],
+  "guidedSteps": 93,
+  "objectiveTasks": 79,
+  "documentaryTasksRequiringHumanReview": 14,
+  "numericSubchecks": 16,
+  "scope": "Educational software and attributed public experimental data. No instrument operation, absolute calibration, chemical identification or student-efficacy validation claim.",
+  "modelBoundaries": {
+    "freeDiffusion": "Unbounded Brownian motion; finite initial slab and uniform detection.",
+    "sequence": "Ideal coherence-pathway rectangles and RF transfer factors; no hardware pulse compiler.",
+    "convection": "Uniform translation changes phase; velocity distributions can reduce magnitude.",
+    "inverse": "Conditional noise/bootstrap, not full systematic uncertainty; joint templates known.",
+    "advanced": "Ideal spatial UF and SPEN-inspired point-spread surrogate, not quantitative chirp/Bloch simulation.",
+    "realData": "Original public dstegp3s data; saved b and fitted D nominal/conditional; absoluteCalibrationValidated=false."
+  },
+  "publicDataset": {
+    "doi": "10.26180/33075584.v1",
+    "license": "CC BY4.0",
+    "rawFilesRetained": true,
+    "archiveSha256": "be65cb5cd54cffdac4ad3b6bca5d90fce175ba652d7127262513eef4e21f5dbc"
+  },
+  "qa": [
+    {
+      "path": "qa/doctoral-1.2/physics-independent-qa-final.json",
+      "sha256": "e6472fb9c731f9f38b77a3aab831bcf552aa82c0c6f525f3305fcc31aa9b2d93",
+      "passed": true,
+      "checks": 55
+    },
+    {
+      "path": "qa/doctoral-1.2/physics-browser-final-r3/browser-qa.json",
+      "sha256": "b283f07982737f552fbef32177a716be01a26c9f677d333c4840b0b69d57fc8b",
+      "passed": true,
+      "checks": 38
+    },
+    {
+      "path": "web/tests/doctoral-inquiry-report.json",
+      "sha256": "6704e756890619d21c6951b7766570c79191b4ecb836dc7ac11b2b6abee3ced2",
+      "passed": true,
+      "checks": 67
+    },
+    {
+      "path": "web/tests/doctoral-inquiry-browser-qa/doctoral-inquiry-browser-report.json",
+      "sha256": "1b879a00122db5d932ade85ea873c6fadec64b525e02f712a84dc5ef16872c40",
+      "passed": 62,
+      "checks": 62
+    },
+    {
+      "path": "qa/doctoral-1.2/pedagogy-numerical-qa-final-r2.json",
+      "sha256": "91735d952329e54a6871fe96a36dc536dd406f2d48824748520f8bd6077314b1",
+      "passed": true,
+      "checks": 133
+    },
+    {
+      "path": "qa/doctoral-1.2/pedagogy-browser-final-r3/browser-qa.json",
+      "sha256": "76c07069f184aa30c26b6ef4555102b84df69398f3dcd01e268ae3d9a26fcd16",
+      "passed": true,
+      "checks": 22
+    },
+    {
+      "path": "qa/doctoral-1.2/browser-integrated-final/integrated-qa.json",
+      "sha256": "595f1113c7582c692a5b96c44addf57693b608b73716e93afec70edb94ed16a1",
+      "passed": 78,
+      "checks": 78
+    },
+    {
+      "path": "qa/doctoral-1.2/browser-regression-final/browser-qa.json",
+      "sha256": "7aff23dd3966979ca1905394c098c2dce2437d49e0202d3f67f9ca22abe40c3a",
+      "passed": 127,
+      "checks": 127
+    },
+    {
+      "path": "qa/doctoral-1.2/inquiry-independent-review.json",
+      "sha256": "f73edea611dede99bc4182284d8f48993391dffef79e5a2b6e9ab9de08f48c04",
+      "passed": true,
+      "checks": 36
+    }
+  ],
+  "files": [
+    {
+      "path": "content/doctoral-cases.json",
+      "bytes": 4647,
+      "sha256": "2d527a8df59b602f44056eb810b1d158a364a8c2b927efb8f3a93a6a7770c52b"
+    },
+    {
+      "path": "content/doctoral-data/monash-d2o-10/acqu2s",
+      "bytes": 583,
+      "sha256": "5ea8c38e341433429bc195937534260c8aa1cbe80d75aaad1f90f59b16af7ebd"
+    },
+    {
+      "path": "content/doctoral-data/monash-d2o-10/acqus",
+      "bytes": 8972,
+      "sha256": "d25ccebaf598a0be42229e4767fa2fcde4d3e9cda9740b2ceda14745f572c6e0"
+    },
+    {
+      "path": "content/doctoral-data/monash-d2o-10/difflist",
+      "bytes": 125,
+      "sha256": "54ac466c9c4e053cc2c7396c1b578386ec150217f0f594500a2cc63af16a57e2"
+    },
+    {
+      "path": "content/doctoral-data/monash-d2o-10/gpnam6",
+      "bytes": 1892,
+      "sha256": "85b3e903dda475b283ac2575e55b69296c94725f946dd728c6965af98cf8e240"
+    },
+    {
+      "path": "content/doctoral-data/monash-d2o-10/gradient_calib",
+      "bytes": 26,
+      "sha256": "ed4a29f9fbf562781cee6410548340bc2aac2d9040314df9600eacb45fa2d1fe"
+    },
+    {
+      "path": "content/doctoral-data/monash-d2o-10/pdata/1/dosy",
+      "bytes": 571,
+      "sha256": "461edcc743571b39e9615ebc2c9d19ab5352c5001e10eafa1640e228e69215a8"
+    },
+    {
+      "path": "content/doctoral-data/monash-d2o-10/pdata/1/procs",
+      "bytes": 2506,
+      "sha256": "452cd67e42b5d793160a521871d0a65dddc8dbb05fb77a388a77a35ff5af2a8d"
+    },
+    {
+      "path": "content/doctoral-data/monash-d2o-10/pdata/1/title",
+      "bytes": 47,
+      "sha256": "2ab7500b1a24114f1fa3ba9d7ef104b64a4767f9691b7886aae1d852c7a343c7"
+    },
+    {
+      "path": "content/doctoral-data/monash-d2o-10/provenance.json",
+      "bytes": 3580,
+      "sha256": "4909c388880c3b8d6b011e25bb5bb5e90bf1e630661e3ae6d1ba068c47999477"
+    },
+    {
+      "path": "content/doctoral-data/monash-d2o-10/pulseprogram",
+      "bytes": 6493,
+      "sha256": "a0532529364e3e4b98563ad4b7173f773d2a38d372f9f365ff24300439caca98"
+    },
+    {
+      "path": "content/doctoral-data/monash-d2o-10/ser.ser",
+      "bytes": 2097152,
+      "sha256": "c6835b3d3ae84bf827045b88ba1b23937bd3febf81c080291aee8f09a99274f8"
+    },
+    {
+      "path": "docs/DOCTORAL_MANUAL_EN.pdf",
+      "bytes": 846491,
+      "sha256": "e9b221b8f7e745945888df6796182b5b30ccfe102c920844c49ed55291bb67d1"
+    },
+    {
+      "path": "docs/DOCTORAL_MANUAL_ES.pdf",
+      "bytes": 861083,
+      "sha256": "b9ad18ceae5a3a286c436f2981cc4af3c122786c63591a2f281b624154605632"
+    },
+    {
+      "path": "src/DiffAtOnce.Academy.App/DiffAtOnce.Academy.App.csproj",
+      "bytes": 1950,
+      "sha256": "014a611de70eaa94a0f65786f1b265cbd341618613cafe103e7eb06488131247"
+    },
+    {
+      "path": "src/DiffAtOnce.Academy.App/DoctoralWindow.cs",
+      "bytes": 8221,
+      "sha256": "fb70283f74e5d2b710ea7b7d4a9763a15a32aa3472bf264b4419db53687dbf6a"
+    },
+    {
+      "path": "src/DiffAtOnce.Academy.App/MainWindow.xaml",
+      "bytes": 9141,
+      "sha256": "5e4887933b99e8634e3ffb217c838ecdfada9b707bad72772edfbf79163fe8e3"
+    },
+    {
+      "path": "src/DiffAtOnce.Academy.App/MainWindow.xaml.cs",
+      "bytes": 48881,
+      "sha256": "2aa1d507b197af2aa167639e5b93912c2d004bae5d8567864b375cc396e65a21"
+    },
+    {
+      "path": "web/academy.js",
+      "bytes": 47243,
+      "sha256": "50e554b5b1d65c4ee7bac4e215e343c737867383c6ad0c781abfdb8338301cd2"
+    },
+    {
+      "path": "web/doctoral-hub.css",
+      "bytes": 3869,
+      "sha256": "e67232abe13a39f603e34cd3ce4a18070c5462405fa84932b4b91f180ea14701"
+    },
+    {
+      "path": "web/doctoral-hub.js",
+      "bytes": 15904,
+      "sha256": "9c8ddbb507205f3ae74351d6e332435ee927f0bfc1fbdc8d9517ae57e0aa3990"
+    },
+    {
+      "path": "web/doctoral-inquiry-ui.js",
+      "bytes": 43233,
+      "sha256": "2cb9a7b3cdefce6bb6d499e097b6dd81c9a8a0c69feb3e521d5d9dc9781349c2"
+    },
+    {
+      "path": "web/doctoral-inquiry.css",
+      "bytes": 6159,
+      "sha256": "1c6a150fe661723bad07e3ac5b7b2b5b4393e99eefe35d5339720ff2f0d0aeb9"
+    },
+    {
+      "path": "web/doctoral-inquiry.js",
+      "bytes": 24981,
+      "sha256": "7d6491e21d37f78c62b9b1a52f487aed8b044ef1ec394f471c2ae597230f5436"
+    },
+    {
+      "path": "web/doctoral-pedagogy-ui.js",
+      "bytes": 39657,
+      "sha256": "49e10310a6819df1ca50c2414feaf6843958173258a1ffeab373d7986972df4a"
+    },
+    {
+      "path": "web/doctoral-pedagogy.css",
+      "bytes": 4628,
+      "sha256": "63f6d0ffef327eddd0ac002e03cc065fd40ae44da1f80925aba032792d3cf85e"
+    },
+    {
+      "path": "web/doctoral-pedagogy.js",
+      "bytes": 39463,
+      "sha256": "947245e20a9772ec8a0dff52e2e70958fde429c821d0a658a40c98d3ddbadf6e"
+    },
+    {
+      "path": "web/doctoral-physics-ui.js",
+      "bytes": 46914,
+      "sha256": "f89bed3b998942bb290442289b30a6794d0a77a301d02713b1242eb170bbcf10"
+    },
+    {
+      "path": "web/doctoral-physics.css",
+      "bytes": 8644,
+      "sha256": "c712caa8796361eeb1babe73d87353442f080ee022c6a0d8a462477bf1a5a523"
+    },
+    {
+      "path": "web/doctoral-physics.js",
+      "bytes": 16020,
+      "sha256": "5b0c186adf355537aa17c640353fa114eca2ca0e5d685e32fd1498981668a915"
+    },
+    {
+      "path": "web/index.html",
+      "bytes": 3718,
+      "sha256": "4d1dba0dfeeeaa01320bde952c8c0db318e6b7c1a27d705d1166529172c71889"
+    }
+  ]
+}

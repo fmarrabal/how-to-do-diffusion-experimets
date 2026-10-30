@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "sourceMembersVerified": 709,
+  "portableManualExampleExecuted": true,
+  "pythonHelpersParse": true,
+  "fullManualsUnchanged": {
+    "ACADEMY_MANUAL_ES.pdf": "b0804a88f9abae12dffe69420ed7faebc450f5eb0ecdb7f4a207ab16d7aafb61",
+    "ACADEMY_MANUAL_EN.pdf": "59c8d45719f71d43511231128829808a422b4eee0e7efe73793dcf2754b84a6e"
+  },
+  "numericalChecks": 230,
+  "numericalSuites": {
+    "journey": 79,
+    "spatial": 44,
+    "learning": 65,
+    "pilot": 29,
+    "independent": 13
+  },
+  "scope": "Fresh checks of exported numerical source and publication-only authoring changes. Prior WPF/model/release evidence is separate; no student study or hardware validation."
+}

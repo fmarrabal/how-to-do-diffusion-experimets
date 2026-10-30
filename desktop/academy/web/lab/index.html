@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="An interactive bilingual molecular diffusion NMR animation collection: gradients, phase, DOSY, inverse Laplace, ultrafast and SPEN.">
+  <title>DiffAtOnce · Diffusion Motion Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="branding.css">
+  <link rel="stylesheet" href="lab-v2.css">
+  <script src="embed-setup.js"></script>
+  <link rel="icon" type="image/png" href="assets/diffatonce-brand.png">
+</head>
+<body>
+  <div id="app">
+    <a class="skip-link" href="#main-content" id="skip-link">Saltar al experimento</a>
+    <header class="masthead">
+      <a class="wordmark motion-brand" href="#" aria-label="DiffAtOnce: Molecular Diffusion"><img src="assets/diffatonce-brand.png" width="1292" height="649" alt="DiffAtOnce: Molecular Diffusion"><small>DIFFUSION MOTION LAB</small></a>
+      <div class="top-actions"><span id="offline-label" class="tag">Sin conexión · reproducible</span><button id="lang-btn" type="button" aria-label="Switch language">EN ↗</button></div>
+    </header>
+    <section class="intro"><div><p class="eyebrow" id="intro-eyebrow">DEL MOVIMIENTO AL MAPA</p><h1 id="intro-title">La difusión se mueve.<br>La RMN la codifica.</h1></div><p id="intro-copy">Explora lo que sucede entre un gradiente y un mapa DOSY. Cambia los parámetros. Observa dónde se pierde información.</p></section>
+    <section class="featured-scenes" aria-labelledby="featured-title"><div><p class="eyebrow" id="featured-eyebrow">SIMULACIONES CALCULADAS · v2</p><h2 id="featured-title">De la señal al resultado.</h2></div><div class="featured-buttons"><button type="button" data-open-scene="spen"><strong>SPEN-DOSY</strong><span id="featured-spen">Señal compleja → reconstrucción → D</span></button><button type="button" data-open-scene="time-resolved"><strong id="featured-tr-title">Difusión resuelta en el tiempo</strong><span id="featured-tr">La muestra cambia mientras medimos</span></button><button type="button" data-open-scene="ultrafast"><strong>Ultrafast diffusion NMR</strong><span id="featured-uf">Codificación espacial → perfil → D</span></button></div></section>
+    <div class="workspace">
+      <aside class="library"><div class="library-top"><h2 id="library-label">17 experimentos visuales</h2><span class="tag">ES / EN</span></div><details class="library-browser" open><summary id="library-toggle">Explorar todas las escenas</summary><nav id="scene-list" aria-label="Animation library"></nav></details></aside>
+      <main id="main-content">
+        <div class="scene-heading"><div><p class="eyebrow" id="chapter-label"></p><h2 id="scene-title"></h2></div><span class="simulation-label" id="simulation-label">SIMULACIÓN DIDÁCTICA</span></div>
+        <section id="stage" aria-label="Animation and playback controls">
+          <canvas id="motion-canvas" role="img" aria-label="Molecular diffusion NMR animation"></canvas>
+          <div class="transport"><div class="transport-buttons"><button id="play-btn" type="button">▶ Reproducir</button><button id="restart-btn" type="button">↺</button><button id="prev-btn" type="button" aria-label="Previous animation">←</button><button id="next-btn" type="button" aria-label="Next animation">→</button></div><label class="scrub-label" for="time-slider" id="time-label">Tiempo</label><input id="time-slider" type="range" min="0" max="18" step="0.01" value="0"><output id="time-output">0.0 / 18.0 s</output><button id="fullscreen-btn" type="button">⛶</button></div>
+        </section>
+        <section class="model-results" id="model-results" hidden aria-labelledby="results-title"><div class="control-heading"><div><p class="eyebrow" id="results-eyebrow">RESULTADOS DEL MODELO</p><h3 id="results-title">Compara el valor conocido con el recuperado.</h3></div><span class="calculated-label" id="calculated-label">CALCULADO</span></div><div id="result-metrics"></div><ul id="result-notes"></ul></section>
+        <section class="experiment-controls" aria-labelledby="controls-heading"><div class="control-heading"><h3 id="controls-heading">Cambia el experimento</h3><button id="reset-btn" type="button">Restablecer</button></div><div id="scenario-presets" aria-label="Simulation scenarios"></div><div id="parameter-controls"></div></section>
+        <section class="story"><div><p class="eyebrow" id="question-label">LA PREGUNTA</p><h3 id="scene-question"></h3><p id="scene-summary"></p><div class="equation" id="scene-equation"></div><p id="equation-conditions"></p><dl id="equation-terms"></dl></div><div><p class="eyebrow" id="limits-label">QUÉ REPRESENTA EL MODELO</p><ul id="scene-limits"></ul><details><summary id="sources-label">Fuentes científicas</summary><ul id="scene-sources"></ul></details></div></section>
+        <section class="downloads"><div><h3 id="download-label">Llévalo a tu presentación</h3><p id="download-copy">Exporta la escena o su señal sintética.</p></div><div class="download-actions"><a id="video-es" download>MP4 · ES ↓</a><a id="video-en" download>MP4 · EN ↓</a><button id="csv-btn" type="button" hidden>CSV ↓</button><button id="png-btn" type="button">PNG ↓</button><button id="record-btn" type="button">Grabar WebM</button></div><p id="record-status" role="status"></p></section>
+        <details class="historical-example"><summary id="historical-label">Ejemplo aportado: mapa D–T₂ histórico</summary><img src="assets/DT2_map_10_historical.png" alt="Historical D–T2 map supplied by the researcher" loading="lazy"><p id="historical-copy">Figura aportada previamente por el usuario. Es un resultado histórico, distinto de estas simulaciones y de la validación del prototipo actual.</p><a href="assets/DT2_map_10_provenance.json" id="provenance-link">Procedencia de la imagen</a></details>
+      </main>
+    </div>
+    <footer><span>DiffAtOnce · Molecular Diffusion · v2.0</span><p id="footer-copy">Movimiento ilustrativo; señales y mapas simulados. No se modifican datos experimentales ni calibraciones.</p><a href="GUIDE_V2_ES.md" id="guide-link">Guía de las simulaciones</a><a href="REFERENCES.md">References / Referencias</a></footer>
+  </div>
+  <canvas id="export-canvas" aria-label="Animation export canvas"></canvas>
+  <script src="vendor/three-global.js"></script>
+  <script src="catalog.js"></script>
+  <script src="scenes.js"></script>
+  <script src="advanced-scenes.js"></script>
+  <script src="three-scene.js"></script>
+  <script src="diffusion-models.js"></script>
+  <script src="quantitative-scenes.js"></script>
+  <script src="app.js"></script>
+  <script src="academy-bridge.js"></script>
+</body>
+</html>

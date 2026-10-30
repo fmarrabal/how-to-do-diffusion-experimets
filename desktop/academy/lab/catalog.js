@@ -1,0 +1,2313 @@
+// Bilingual teaching metadata; controls reconciled with renderers.
+window.DiffusionCatalog = {
+  "version": "2.0.0",
+  "reviewedDate": "2026-10-04",
+  "title": {
+    "es": "Diffusion Motion Lab",
+    "en": "Diffusion Motion Lab"
+  },
+  "languagePolicy": "All user-facing scientific metadata is bilingual ES/EN.",
+  "evidencePolicy": {
+    "es": "Todas las escenas son esquemas o simulaciones pedagógicas. No son datos medidos ni acreditan validación instrumental. El mapa aportado por el usuario debe identificarse como imagen externa, sin inferir condiciones experimentales.",
+    "en": "All scenes are pedagogical diagrams or simulations. They are not measurements or evidence of instrument validation. The user-supplied map must be labelled as an external image, without inferring experimental conditions."
+  },
+  "physicalConventions": {
+    "gamma_H1_rad_s_T": 267522187.44,
+    "timeInternal": "s",
+    "diffusionInternal": "m²/s",
+    "gradientInternal": "T/m",
+    "bInternal": "s/m²",
+    "qDefinition": "Angular wavevector q=γ∫G_effdt; no extra 2π when γ is angular.",
+    "gradientEffective": "G_eff=coherence-order-sign × physical G under ideal instantaneous RF. Longitudinal storage G_eff=0 preserves accumulated q.",
+    "bConditions": "Free Gaussian diffusion with linear gradients and balanced echo. For SPEN, local q(z,t) and b(z) require the actual sequence; finite RF requires richer treatment.",
+    "rendererRule": "Show physical units for every quantitative control; label any normalized, enlarged or uncalibrated cartoon scale."
+  },
+  "acts": [
+    {
+      "id": 1,
+      "title": {
+        "es": "Antes de medir: codificar bien",
+        "en": "Before measuring: encode correctly"
+      }
+    },
+    {
+      "id": 2,
+      "title": {
+        "es": "Después de medir: recuperar información",
+        "en": "After measuring: recover information"
+      }
+    },
+    {
+      "id": 3,
+      "title": {
+        "es": "Ir más lejos: espacio y entornos",
+        "en": "Go further: space and environments"
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "id": "brownian",
+      "act": 1,
+      "title": {
+        "es": "El movimiento que no vemos",
+        "en": "The motion we cannot see"
+      },
+      "question": {
+        "es": "¿Por qué se dispersan las moléculas aunque no haya flujo?",
+        "en": "Why do molecules spread when there is no flow?"
+      },
+      "summary": {
+        "es": "Los desplazamientos brownianos carecen de dirección preferente. Su varianza crece con el tiempo y D; la RMN mide estadísticas de una población.",
+        "en": "Brownian displacements have no preferred direction. Their variance grows with time and D; NMR measures population statistics."
+      },
+      "limits": {
+        "es": [
+          "Las esferas son marcadores; tamaño y velocidad en pantalla no están a escala molecular.",
+          "La relación lineal supone difusión libre e isotrópica; las barreras y el flujo cambian las estadísticas."
+        ],
+        "en": [
+          "The spheres are markers; screen sizes and speeds are not molecular scale.",
+          "The linear relation assumes free isotropic diffusion; barriers and flow change the statistics."
+        ]
+      },
+      "equation": "⟨Δx²⟩ = 2Dt;  ⟨|Δr|²⟩ = 6Dt",
+      "equationConditions": {
+        "es": "Difusión libre en una o tres dimensiones, respectivamente.",
+        "en": "Free diffusion in one or three dimensions, respectively."
+      },
+      "terms": [
+        {
+          "symbol": "D",
+          "unit": "m²/s",
+          "es": "Coeficiente de autodifusión",
+          "en": "Self-diffusion coefficient"
+        },
+        {
+          "symbol": "t",
+          "unit": "s",
+          "es": "Tiempo transcurrido",
+          "en": "Elapsed time"
+        }
+      ],
+      "parameters": [
+        {
+          "key": "Dslow",
+          "min": 0.1,
+          "max": 1,
+          "default": 0.45,
+          "step": 0.05,
+          "unit": "10⁻⁹ m²/s",
+          "label": {
+            "es": "D lento",
+            "en": "Slow D"
+          }
+        },
+        {
+          "key": "Dfast",
+          "min": 1.1,
+          "max": 4,
+          "default": 1.6,
+          "step": 0.05,
+          "unit": "10⁻⁹ m²/s",
+          "label": {
+            "es": "D rápido",
+            "en": "Fast D"
+          }
+        },
+        {
+          "key": "Delta",
+          "min": 20,
+          "max": 300,
+          "default": 100,
+          "step": 5,
+          "unit": "ms",
+          "label": {
+            "es": "Tiempo observado",
+            "en": "Observation time"
+          }
+        }
+      ],
+      "references": [
+        {
+          "id": "einstein1905",
+          "title": "Einstein (1905), Brownian motion",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1002/andp.19053220806",
+          "doi": "10.1002/andp.19053220806",
+          "access": "publisher landing page"
+        }
+      ],
+      "visualModel": {
+        "es": "Paseos aleatorios y distribución de desplazamientos; comparar dos D.",
+        "en": "Random walks and displacement distribution; compare two D values."
+      },
+      "evidence": "pedagogical-simulation"
+    },
+    {
+      "id": "spin-echo",
+      "act": 1,
+      "title": {
+        "es": "El eco recupera la fase, pero recuerda el movimiento",
+        "en": "The echo restores phase but remembers motion"
+      },
+      "question": {
+        "es": "¿Por qué no reaparece toda la señal después de invertir la fase?",
+        "en": "Why does refocusing fail to restore the whole signal?"
+      },
+      "summary": {
+        "es": "Un eco ideal refocaliza desfase estático. Durante gradientes de difusión, el desplazamiento impide que todas las fases se cancelen y disminuye la suma coherente.",
+        "en": "An ideal echo refocuses static dephasing. During diffusion gradients, displacement prevents complete phase cancellation and reduces the coherent sum."
+      },
+      "limits": {
+        "es": [
+          "Las flechas representan magnetización de conjuntos de espines, no giros clásicos de moléculas.",
+          "Se omiten relajación, pulsos imperfectos y desplazamiento químico; el esquema no es un programa Bruker literal."
+        ],
+        "en": [
+          "Arrows represent ensemble spin magnetization, not classical molecular spinning.",
+          "Relaxation, imperfect pulses and chemical shift are omitted; the diagram is not a literal Bruker program."
+        ]
+      },
+      "equation": "φ = γ∫G_eff(t)z(t)dt;  S/S₀ = ⟨exp(iφ)⟩",
+      "equationConditions": {
+        "es": "RF idealizada; G_eff incluye la inversión de signo por la vía de coherencia.",
+        "en": "Idealized RF; G_eff includes the sign changes of the coherence pathway."
+      },
+      "terms": [
+        {
+          "symbol": "φ",
+          "unit": "rad",
+          "es": "Fase acumulada",
+          "en": "Accumulated phase"
+        },
+        {
+          "symbol": "γ",
+          "unit": "rad s⁻¹ T⁻¹",
+          "es": "Razón giromagnética angular",
+          "en": "Angular gyromagnetic ratio"
+        },
+        {
+          "symbol": "G_eff",
+          "unit": "T/m",
+          "es": "Gradiente efectivo en el marco de coherencia",
+          "en": "Effective gradient in the coherence frame"
+        }
+      ],
+      "parameters": [
+        {
+          "key": "g",
+          "min": 20,
+          "max": 500,
+          "default": 260,
+          "step": 5,
+          "unit": "mT/m",
+          "label": {
+            "es": "Gradiente g",
+            "en": "Gradient g"
+          }
+        },
+        {
+          "key": "delta",
+          "min": 0.3,
+          "max": 5,
+          "default": 1.5,
+          "step": 0.1,
+          "unit": "ms",
+          "label": {
+            "es": "Duración δ",
+            "en": "Duration δ"
+          }
+        },
+        {
+          "key": "Delta",
+          "min": 20,
+          "max": 300,
+          "default": 80,
+          "step": 5,
+          "unit": "ms",
+          "label": {
+            "es": "Separación Δ",
+            "en": "Separation Δ"
+          }
+        },
+        {
+          "key": "D",
+          "min": 0,
+          "max": 3,
+          "default": 1.2,
+          "step": 0.05,
+          "unit": "10⁻⁹ m²/s",
+          "label": {
+            "es": "Difusión D",
+            "en": "Diffusion D"
+          }
+        }
+      ],
+      "references": [
+        {
+          "id": "hahn1950",
+          "title": "Hahn (1950), Spin Echoes",
+          "url": "https://journals.aps.org/pr/abstract/10.1103/PhysRev.80.580",
+          "doi": "10.1103/PhysRev.80.580",
+          "access": "publisher abstract"
+        },
+        {
+          "id": "torrey1956",
+          "title": "Torrey (1956), Bloch Equations with Diffusion Terms",
+          "url": "https://journals.aps.org/pr/abstract/10.1103/PhysRev.104.563",
+          "doi": "10.1103/PhysRev.104.563",
+          "access": "publisher abstract"
+        }
+      ],
+      "visualModel": {
+        "es": "Marcar posiciones iniciales y finales; codificar con color la fase antes/después del eco.",
+        "en": "Mark initial and final positions; colour phase before and after the echo."
+      },
+      "evidence": "pedagogical-simulation"
+    },
+    {
+      "id": "gradients-b",
+      "act": 1,
+      "title": {
+        "es": "De la rampa de gradientes al valor b",
+        "en": "From gradient ramps to b-values"
+      },
+      "question": {
+        "es": "¿Qué codificación produce realmente la secuencia?",
+        "en": "What encoding does the pulse sequence actually produce?"
+      },
+      "summary": {
+        "es": "El valor b resume la historia efectiva de gradientes. Cambiar la forma, las rampas o la vía de coherencia cambia q(t) y b.",
+        "en": "The b-value summarizes the effective gradient history. Changing shapes, ramps or the coherence pathway changes q(t) and b."
+      },
+      "limits": {
+        "es": [
+          "Δ−δ/3 sólo corresponde al PGSE rectangular ideal con Δ entre inicios de lóbulos; no es una fórmula universal.",
+          "Con RF finita, gradientes no lineales o difusión restringida, este modelo simplificado puede ser insuficiente."
+        ],
+        "en": [
+          "Δ−δ/3 applies only to ideal rectangular PGSE with Δ measured between lobe onsets; it is not universal.",
+          "Finite RF, nonlinear gradients or restricted diffusion can require a richer model."
+        ]
+      },
+      "equation": "q(t)=γ∫₀ᵗG_eff(u)du;  b=∫₀ᵀᴱq(t)²dt;  b_PGSE=γ²G²δ²(Δ−δ/3)",
+      "equationConditions": {
+        "es": "Gradiente lineal, eco balanceado q(TE)=0 y difusión libre gaussiana. En almacenamiento STE, G_eff=0 pero q acumulado permanece.",
+        "en": "Linear gradient, balanced echo q(TE)=0 and free Gaussian diffusion. During STE storage G_eff=0 while accumulated q persists."
+      },
+      "terms": [
+        {
+          "symbol": "q",
+          "unit": "rad/m",
+          "es": "Vector de onda de fase; rad es adimensional",
+          "en": "Phase wavevector; rad is dimensionless"
+        },
+        {
+          "symbol": "b",
+          "unit": "s/m²",
+          "es": "Ponderación de difusión",
+          "en": "Diffusion weighting"
+        },
+        {
+          "symbol": "δ, Δ",
+          "unit": "s",
+          "es": "Duración del lóbulo y separación entre inicios",
+          "en": "Lobe duration and onset separation"
+        }
+      ],
+      "parameters": [
+        {
+          "key": "g",
+          "min": 20,
+          "max": 500,
+          "default": 260,
+          "step": 5,
+          "unit": "mT/m",
+          "label": {
+            "es": "Gradiente g",
+            "en": "Gradient g"
+          }
+        },
+        {
+          "key": "delta",
+          "min": 0.3,
+          "max": 5,
+          "default": 1.5,
+          "step": 0.1,
+          "unit": "ms",
+          "label": {
+            "es": "Duración δ",
+            "en": "Duration δ"
+          }
+        },
+        {
+          "key": "Delta",
+          "min": 20,
+          "max": 300,
+          "default": 80,
+          "step": 5,
+          "unit": "ms",
+          "label": {
+            "es": "Separación Δ",
+            "en": "Separation Δ"
+          }
+        }
+      ],
+      "references": [
+        {
+          "id": "stejskal1965",
+          "title": "Stejskal & Tanner (1965), Spin Diffusion Measurements",
+          "url": "https://doi.org/10.1063/1.1695690",
+          "doi": "10.1063/1.1695690",
+          "access": "original full text inspected as publisher PDF mirror; official publisher fetch blocked"
+        },
+        {
+          "id": "torrey1956",
+          "title": "Torrey (1956), Bloch Equations with Diffusion Terms",
+          "url": "https://journals.aps.org/pr/abstract/10.1103/PhysRev.104.563",
+          "doi": "10.1103/PhysRev.104.563",
+          "access": "publisher abstract"
+        },
+        {
+          "id": "shrot2008",
+          "title": "Shrot & Frydman (2008), Single-scan 2D DOSY NMR spectroscopy",
+          "url": "https://www.weizmann.ac.il/chemphys/Frydman_group/sites/chemphys.Frydman_group/files/publications/paper82.pdf",
+          "doi": "10.1016/j.jmr.2008.09.011",
+          "access": "authors' full text"
+        }
+      ],
+      "visualModel": {
+        "es": "Mostrar G_eff, su integral q y el área bajo q² simultáneamente.",
+        "en": "Show G_eff, its integral q and the area under q² together."
+      },
+      "evidence": "pedagogical-simulation"
+    },
+    {
+      "id": "attenuation-mixture",
+      "act": 2,
+      "title": {
+        "es": "Una curva puede ocultar dos componentes",
+        "en": "One decay can hide two components"
+      },
+      "question": {
+        "es": "¿Es suficiente ajustar una sola exponencial?",
+        "en": "Is a single exponential enough?"
+      },
+      "summary": {
+        "es": "Una especie ideal produce una exponencial en b. Dos especies suman dos decaimientos; D parecidos y ruido pueden hacerlos difíciles de separar.",
+        "en": "One ideal species produces an exponential in b. Two species add two decays; similar D values and noise can make them hard to separate."
+      },
+      "limits": {
+        "es": [
+          "La amplitud A no es automáticamente concentración: relajación, excitación y número de núcleos afectan la señal.",
+          "Una curva bien ajustada no confirma el número de especies ni su identidad química."
+        ],
+        "en": [
+          "Amplitude A is not automatically concentration: relaxation, excitation and spin count affect signal.",
+          "A good fit does not establish the number of species or their chemical identity."
+        ]
+      },
+      "equation": "S(b)=A₁exp(−bD₁)+A₂exp(−bD₂)+ε",
+      "equationConditions": {
+        "es": "Componentes no intercambiantes, b correcto, fase coherente y tiempos de relajación constantes a lo largo de la rampa.",
+        "en": "Nonexchanging components, correct b, consistent phase and fixed relaxation timing across the ramp."
+      },
+      "terms": [
+        {
+          "symbol": "Aⱼ",
+          "unit": "u.a. / a.u.",
+          "es": "Amplitud del componente j",
+          "en": "Component-j amplitude"
+        },
+        {
+          "symbol": "Dⱼ",
+          "unit": "m²/s",
+          "es": "Difusión del componente j",
+          "en": "Component-j diffusion"
+        },
+        {
+          "symbol": "ε",
+          "unit": "u.a. / a.u.",
+          "es": "Ruido y error de modelo",
+          "en": "Noise and model error"
+        }
+      ],
+      "parameters": [
+        {
+          "key": "Dslow",
+          "min": 0.1,
+          "max": 1,
+          "default": 0.45,
+          "step": 0.05,
+          "unit": "10⁻⁹ m²/s",
+          "label": {
+            "es": "D lento",
+            "en": "Slow D"
+          }
+        },
+        {
+          "key": "Dfast",
+          "min": 1.1,
+          "max": 4,
+          "default": 1.6,
+          "step": 0.05,
+          "unit": "10⁻⁹ m²/s",
+          "label": {
+            "es": "D rápido",
+            "en": "Fast D"
+          }
+        },
+        {
+          "key": "fraction",
+          "min": 0.05,
+          "max": 0.95,
+          "default": 0.6,
+          "step": 0.05,
+          "unit": "",
+          "label": {
+            "es": "Fracción lenta",
+            "en": "Slow fraction"
+          }
+        },
+        {
+          "key": "bmax",
+          "min": 0.5,
+          "max": 6,
+          "default": 3,
+          "step": 0.1,
+          "unit": "10⁹ s/m²",
+          "label": {
+            "es": "b máximo",
+            "en": "Maximum b"
+          }
+        },
+        {
+          "key": "noise",
+          "min": 0,
+          "max": 5,
+          "default": 1,
+          "step": 0.1,
+          "unit": "%",
+          "label": {
+            "es": "Ruido de S₀",
+            "en": "Noise relative to S₀"
+          }
+        }
+      ],
+      "references": [
+        {
+          "id": "stejskal1965",
+          "title": "Stejskal & Tanner (1965), Spin Diffusion Measurements",
+          "url": "https://doi.org/10.1063/1.1695690",
+          "doi": "10.1063/1.1695690",
+          "access": "original full text inspected as publisher PDF mirror; official publisher fetch blocked"
+        },
+        {
+          "id": "lorandel2025",
+          "title": "Lorandel et al. (2025; online 2024), Speedy Component Resolution Using Spatially Encoded Diffusion NMR Data",
+          "url": "https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/abs/10.1002/mrc.5488",
+          "doi": "10.1002/mrc.5488",
+          "access": "publisher abstract and selected full-text search content"
+        }
+      ],
+      "visualModel": {
+        "es": "Sumar curvas coloreadas; comparar residuales de ajustes mono y biexponenciales.",
+        "en": "Add coloured decays; compare mono- and biexponential fit residuals."
+      },
+      "evidence": "pedagogical-simulation"
+    },
+    {
+      "id": "pulse-90",
+      "act": 1,
+      "title": {
+        "es": "Primero, calibrar el pulso de 90°",
+        "en": "First, calibrate the 90° pulse"
+      },
+      "question": {
+        "es": "¿Cómo obtenemos p1 a partir del primer nulo?",
+        "en": "How do we obtain p1 from the first null?"
+      },
+      "summary": {
+        "es": "A potencia fija, la señal ideal sigue sin(θ). El primer nulo no trivial corresponde a 180°: p90=p180/2. El experimento 1000 sirve como referencia del flujo del usuario.",
+        "en": "At fixed power the ideal signal follows sin(θ). The first nonzero null is 180°: p90=p180/2. Experiment 1000 identifies the user's workflow reference."
+      },
+      "limits": {
+        "es": [
+          "Elegir el primer nulo de 180°, no uno de 360° ni dividir un p1 ya calibrado a 90°.",
+          "Mantener potencia, muestra, temperatura, ganancia y fase; las señales residuales revelan B₁ inhomogéneo, off-resonance o artefactos."
+        ],
+        "en": [
+          "Use the first 180° null, not a 360° null or an already calibrated 90° p1.",
+          "Keep power, sample, temperature, gain and phase fixed; residual signal can reveal B₁ inhomogeneity, off-resonance or artefacts."
+        ]
+      },
+      "equation": "θ=γB₁p;  I(p)=I₀sin(θ);  p90=p180/2",
+      "equationConditions": {
+        "es": "Pulso rectangular sobre resonancia, campo B₁ uniforme y misma potencia RF.",
+        "en": "On-resonance rectangular pulse, uniform B₁ and fixed RF power."
+      },
+      "terms": [
+        {
+          "symbol": "p",
+          "unit": "s",
+          "es": "Duración del pulso RF",
+          "en": "RF pulse duration"
+        },
+        {
+          "symbol": "B₁",
+          "unit": "T",
+          "es": "Campo RF rotante",
+          "en": "Rotating RF field"
+        },
+        {
+          "symbol": "θ",
+          "unit": "rad",
+          "es": "Ángulo de giro",
+          "en": "Flip angle"
+        }
+      ],
+      "parameters": [
+        {
+          "key": "p90",
+          "min": 5,
+          "max": 25,
+          "default": 10,
+          "step": 0.5,
+          "unit": "µs",
+          "label": {
+            "es": "P90 real del ejemplo",
+            "en": "True example P90"
+          }
+        },
+        {
+          "key": "noise",
+          "min": 0,
+          "max": 4,
+          "default": 0.5,
+          "step": 0.1,
+          "unit": "%",
+          "label": {
+            "es": "Ruido de S₀",
+            "en": "Noise relative to S₀"
+          }
+        }
+      ],
+      "references": [
+        {
+          "id": "bloch1946",
+          "title": "Bloch (1946), Nuclear Induction",
+          "url": "https://journals.aps.org/pr/abstract/10.1103/PhysRev.70.460",
+          "doi": "10.1103/PhysRev.70.460",
+          "access": "publisher abstract"
+        }
+      ],
+      "visualModel": {
+        "es": "Nutación de magnetización con curva seno; nulo 180° rojo y máximo 90° azul.",
+        "en": "Magnetization nutation with a sine curve; red 180° null and blue 90° maximum."
+      },
+      "evidence": "pedagogical-simulation"
+    },
+    {
+      "id": "acquisition-window",
+      "act": 1,
+      "title": {
+        "es": "Elegir δ y Δ sin perder la señal",
+        "en": "Choose δ and Δ without losing signal"
+      },
+      "question": {
+        "es": "¿Dónde queda una atenuación informativa?",
+        "en": "Where is the informative attenuation window?"
+      },
+      "summary": {
+        "es": "G, δ y Δ determinan bD. Una codificación débil apenas atenúa; una excesiva deja sólo ruido. Alargar tiempos también pierde señal por relajación.",
+        "en": "G, δ and Δ set bD. Weak encoding barely attenuates; excessive encoding leaves noise. Longer delays also cost signal through relaxation."
+      },
+      "limits": {
+        "es": [
+          "p30 y d20 no son definiciones universales de δ y Δ: leer los comentarios y el camino real del programa.",
+          "d5 en LED y retardos de doble eco estimulado alteran el tiempo total y la atenuación; deben incluirse según la secuencia."
+        ],
+        "en": [
+          "p30 and d20 are not universal definitions of δ and Δ: inspect comments and the actual pulse-program pathway.",
+          "LED d5 and double-stimulated-echo delays affect total timing and attenuation; include them as required by the sequence."
+        ]
+      },
+      "equation": "S≈S₀exp(−bD)R_seq;  R_PGSE≈exp(−TE/T₂)",
+      "equationConditions": {
+        "es": "R_seq depende de la secuencia. Un STE también introduce almacenamiento longitudinal, T₁ y eficiencia del camino de coherencia.",
+        "en": "R_seq is sequence dependent. An STE also introduces longitudinal storage, T₁ and coherence-path efficiency."
+      },
+      "terms": [
+        {
+          "symbol": "R_seq",
+          "unit": "1",
+          "es": "Pérdida de señal por relajación y eficiencia",
+          "en": "Relaxation and efficiency factor"
+        },
+        {
+          "symbol": "TE, T₂",
+          "unit": "s",
+          "es": "Tiempo de eco y relajación transversal",
+          "en": "Echo time and transverse relaxation"
+        }
+      ],
+      "parameters": [
+        {
+          "key": "Dslow",
+          "min": 0.1,
+          "max": 1,
+          "default": 0.45,
+          "step": 0.05,
+          "unit": "10⁻⁹ m²/s",
+          "label": {
+            "es": "D lento",
+            "en": "Slow D"
+          }
+        },
+        {
+          "key": "Dfast",
+          "min": 1.1,
+          "max": 4,
+          "default": 1.6,
+          "step": 0.05,
+          "unit": "10⁻⁹ m²/s",
+          "label": {
+            "es": "D rápido",
+            "en": "Fast D"
+          }
+        },
+        {
+          "key": "delta",
+          "min": 0.3,
+          "max": 5,
+          "default": 1.2,
+          "step": 0.1,
+          "unit": "ms",
+          "label": {
+            "es": "δ de cada lóbulo",
+            "en": "δ per lobe"
+          }
+        },
+        {
+          "key": "Delta",
+          "min": 30,
+          "max": 180,
+          "default": 100,
+          "step": 5,
+          "unit": "ms",
+          "label": {
+            "es": "Δ de la rampa central",
+            "en": "Middle ramp Δ"
+          }
+        },
+        {
+          "key": "Gmax",
+          "min": 100,
+          "max": 700,
+          "default": 500,
+          "step": 10,
+          "unit": "mT/m",
+          "label": {
+            "es": "G máximo del ejemplo",
+            "en": "Example maximum G"
+          }
+        },
+        {
+          "key": "noise",
+          "min": 0.2,
+          "max": 5,
+          "default": 1,
+          "step": 0.1,
+          "unit": "%",
+          "label": {
+            "es": "Suelo de ruido",
+            "en": "Noise floor"
+          }
+        }
+      ],
+      "references": [
+        {
+          "id": "stejskal1965",
+          "title": "Stejskal & Tanner (1965), Spin Diffusion Measurements",
+          "url": "https://doi.org/10.1063/1.1695690",
+          "doi": "10.1063/1.1695690",
+          "access": "original full text inspected as publisher PDF mirror; official publisher fetch blocked"
+        },
+        {
+          "id": "hahn1950",
+          "title": "Hahn (1950), Spin Echoes",
+          "url": "https://journals.aps.org/pr/abstract/10.1103/PhysRev.80.580",
+          "doi": "10.1103/PhysRev.80.580",
+          "access": "publisher abstract"
+        },
+        {
+          "id": "ahola2015",
+          "title": "Ahola et al. (2015), Ultrafast multidimensional Laplace NMR",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4595760/",
+          "doi": "10.1038/ncomms9363",
+          "access": "full text"
+        }
+      ],
+      "visualModel": {
+        "es": "Mapa δ–Δ con atenuación y señal restante; señalar ventanas débiles, útiles y dominadas por ruido.",
+        "en": "δ–Δ map of attenuation and remaining signal; mark weak, informative and noise-dominated regions."
+      },
+      "evidence": "pedagogical-simulation"
+    },
+    {
+      "id": "convection",
+      "act": 2,
+      "title": {
+        "es": "Cuando el tubo también se mueve",
+        "en": "When the sample also flows"
+      },
+      "question": {
+        "es": "¿Es difusión o convección térmica?",
+        "en": "Is it diffusion or thermal convection?"
+      },
+      "summary": {
+        "es": "El flujo añade desplazamiento coherente. Una distribución de velocidades puede perder coherencia y aparentar difusión extra; compensar el primer momento reduce el efecto de velocidad constante.",
+        "en": "Flow adds coherent displacement. A velocity distribution can lose coherence and mimic extra diffusion; cancelling the first moment reduces constant-velocity sensitivity."
+      },
+      "limits": {
+        "es": [
+          "M₁=0 compensa velocidad constante ideal; no elimina aceleración, todos los flujos ni calentamiento.",
+          "Este dibujo de momentos no identifica una secuencia Bruker exacta; temperatura y validación con controles siguen siendo necesarias."
+        ],
+        "en": [
+          "M₁=0 compensates ideal constant velocity; it does not remove acceleration, all flows or heating.",
+          "This moment diagram is not an exact Bruker sequence; temperature stabilization and control experiments remain necessary."
+        ]
+      },
+      "equation": "M₁=∫tG_eff(t)dt;  φ_v=γvM₁;  S/S₀=exp(−bD)⟨exp(iγvM₁)⟩",
+      "equationConditions": {
+        "es": "Eco con momento cero balanceado, velocidad constante durante codificación y difusión libre.",
+        "en": "Balanced zeroth gradient moment, constant velocity during encoding and free diffusion."
+      },
+      "terms": [
+        {
+          "symbol": "M₁",
+          "unit": "T s²/m",
+          "es": "Primer momento de gradiente efectivo",
+          "en": "First effective-gradient moment"
+        },
+        {
+          "symbol": "v",
+          "unit": "m/s",
+          "es": "Velocidad de flujo",
+          "en": "Flow velocity"
+        }
+      ],
+      "parameters": [
+        {
+          "key": "g",
+          "min": 20,
+          "max": 500,
+          "default": 260,
+          "step": 5,
+          "unit": "mT/m",
+          "label": {
+            "es": "Gradiente g",
+            "en": "Gradient g"
+          }
+        },
+        {
+          "key": "delta",
+          "min": 0.3,
+          "max": 5,
+          "default": 1.5,
+          "step": 0.1,
+          "unit": "ms",
+          "label": {
+            "es": "Duración δ",
+            "en": "Duration δ"
+          }
+        },
+        {
+          "key": "Delta",
+          "min": 20,
+          "max": 300,
+          "default": 80,
+          "step": 5,
+          "unit": "ms",
+          "label": {
+            "es": "Separación Δ",
+            "en": "Separation Δ"
+          }
+        },
+        {
+          "key": "D",
+          "min": 0.1,
+          "max": 3,
+          "default": 1,
+          "step": 0.1,
+          "unit": "10⁻⁹ m²/s",
+          "label": {
+            "es": "Difusión D",
+            "en": "Diffusion D"
+          }
+        },
+        {
+          "key": "velocity",
+          "min": -100,
+          "max": 100,
+          "default": 35,
+          "step": 5,
+          "unit": "µm/s",
+          "label": {
+            "es": "Velocidad común",
+            "en": "Common velocity"
+          }
+        },
+        {
+          "key": "spread",
+          "min": 0,
+          "max": 100,
+          "default": 30,
+          "step": 5,
+          "unit": "µm/s",
+          "label": {
+            "es": "Dispersión de velocidades",
+            "en": "Velocity spread"
+          }
+        }
+      ],
+      "references": [
+        {
+          "id": "jerschow1997",
+          "title": "Jerschow & Müller (1997), Suppression of Convection Artifacts: Double Stimulated Echo",
+          "url": "https://research.jku.at/en/publications/suppression-of-convection-artifacts-in-stimulated-echo-diffusion-/",
+          "doi": "10.1006/jmre.1997.1123",
+          "access": "authors' institutional record"
+        }
+      ],
+      "visualModel": {
+        "es": "Dos poblaciones con paseo aleatorio y flujo; comparar G_eff con M₁ distinto de cero o compensado.",
+        "en": "Two populations with random walks and flow; compare uncompensated and compensated first moments."
+      },
+      "evidence": "pedagogical-simulation"
+    },
+    {
+      "id": "overlap-joint",
+      "act": 2,
+      "title": {
+        "es": "Escuchar todo el espectro a la vez",
+        "en": "Listen to the whole spectrum together"
+      },
+      "question": {
+        "es": "¿Qué ganamos al compartir información entre frecuencias?",
+        "en": "What do we gain by sharing information across frequencies?"
+      },
+      "summary": {
+        "es": "Un modelo conjunto vincula resonancias mediante los mismos decaimientos. SCORE y OUTSCORE usan información multivariante para desmezclar espectros solapados.",
+        "en": "A joint model links resonances through shared decays. SCORE and OUTSCORE use multivariate information to unmix overlapping spectra."
+      },
+      "limits": {
+        "es": [
+          "Solapamiento total y decaimientos casi iguales limitan la identificabilidad, incluso usando todo el espectro.",
+          "Rango, fase, línea base, correlación del ruido y número de componentes requieren evaluación; factor no equivale a molécula."
+        ],
+        "en": [
+          "Complete overlap and nearly equal decays limit identifiability even when the full spectrum is used.",
+          "Rank, phase, baseline, noise correlation and component count need assessment; a factor is not automatically a molecule."
+        ]
+      },
+      "equation": "X(b,ν)=Σⱼcⱼ(b)aⱼ(ν)+E;  cⱼ(b)=exp(−bDⱼ)",
+      "equationConditions": {
+        "es": "Modelo bilineal ideal con espectros invariantes durante la rampa; las desviaciones deben inspeccionarse en residuales.",
+        "en": "Ideal bilinear model with spectra unchanged through the ramp; inspect residuals for departures."
+      },
+      "terms": [
+        {
+          "symbol": "ν",
+          "unit": "Hz / ppm",
+          "es": "Coordenada espectral",
+          "en": "Spectral coordinate"
+        },
+        {
+          "symbol": "aⱼ(ν)",
+          "unit": "u.a. / a.u.",
+          "es": "Espectro del componente",
+          "en": "Component spectrum"
+        },
+        {
+          "symbol": "E",
+          "unit": "u.a. / a.u.",
+          "es": "Matriz residual",
+          "en": "Residual matrix"
+        }
+      ],
+      "parameters": [
+        {
+          "key": "Dslow",
+          "min": 0.1,
+          "max": 1,
+          "default": 0.45,
+          "step": 0.05,
+          "unit": "10⁻⁹ m²/s",
+          "label": {
+            "es": "D lento",
+            "en": "Slow D"
+          }
+        },
+        {
+          "key": "Dfast",
+          "min": 1.1,
+          "max": 4,
+          "default": 1.6,
+          "step": 0.05,
+          "unit": "10⁻⁹ m²/s",
+          "label": {
+            "es": "D rápido",
+            "en": "Fast D"
+          }
+        },
+        {
+          "key": "ppm",
+          "min": 0.5,
+          "max": 7.5,
+          "default": 5.15,
+          "step": 0.05,
+          "unit": "ppm",
+          "label": {
+            "es": "Frecuencia seleccionada",
+            "en": "Selected frequency"
+          }
+        },
+        {
+          "key": "bmax",
+          "min": 0.5,
+          "max": 5,
+          "default": 2.5,
+          "step": 0.1,
+          "unit": "10⁹ s/m²",
+          "label": {
+            "es": "b máximo",
+            "en": "Maximum b"
+          }
+        }
+      ],
+      "references": [
+        {
+          "id": "lorandel2025",
+          "title": "Lorandel et al. (2025; online 2024), Speedy Component Resolution Using Spatially Encoded Diffusion NMR Data",
+          "url": "https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/abs/10.1002/mrc.5488",
+          "doi": "10.1002/mrc.5488",
+          "access": "publisher abstract and selected full-text search content"
+        }
+      ],
+      "visualModel": {
+        "es": "Cubos b×ν que se separan en espectros y decaimientos; conectar resonancias compartidas.",
+        "en": "b×ν data blocks separated into spectra and decays; connect shared resonances."
+      },
+      "evidence": "pedagogical-simulation"
+    },
+    {
+      "id": "ilt",
+      "act": 2,
+      "title": {
+        "es": "La ILT: muchas soluciones casi indistinguibles",
+        "en": "ILT: many almost indistinguishable answers"
+      },
+      "question": {
+        "es": "¿Por qué un mapa bonito puede ser inestable?",
+        "en": "Why can a beautiful map be unstable?"
+      },
+      "summary": {
+        "es": "La inversión del núcleo exponencial es mal condicionada. Cambios pequeños del dato pueden cambiar mucho la distribución; regularización y restricciones estabilizan con sesgo.",
+        "en": "Inverting the exponential kernel is ill conditioned. Small data changes can strongly change the distribution; regularization and constraints stabilize it with bias."
+      },
+      "limits": {
+        "es": [
+          "Más puntos en la rejilla D no equivalen a más resolución experimental; amplitudes requieren pesos de cuadratura coherentes.",
+          "La regularización puede unir, ensanchar o inventar estructuras; comparar ruido, residuales, estabilidad y controles ciegos."
+        ],
+        "en": [
+          "More D-grid points do not mean more experimental resolution; amplitudes need consistent quadrature weights.",
+          "Regularization can merge, broaden or create apparent structures; compare noise, residuals, stability and blind controls."
+        ]
+      },
+      "equation": "yᵢ=∫f(D)exp(−bᵢD)dD+εᵢ;  min_f≥0 ‖W(Kf−y)‖²+λR(f)",
+      "equationConditions": {
+        "es": "Distribución no negativa para señales de absorción coherentes. Modelar fase/error/ruido antes de aplicar positividad sin revisión.",
+        "en": "Nonnegative distribution for consistently phased absorption signals. Review phase, error and noise before imposing positivity."
+      },
+      "terms": [
+        {
+          "symbol": "f(D)",
+          "unit": "amplitud por (m²/s)",
+          "es": "Densidad de amplitud en D",
+          "en": "Amplitude density in D"
+        },
+        {
+          "symbol": "λ",
+          "unit": "depende de escala / scale dependent",
+          "es": "Peso de regularización",
+          "en": "Regularization weight"
+        },
+        {
+          "symbol": "W",
+          "unit": "1/ruido / 1/noise",
+          "es": "Pesos o blanqueamiento de ruido",
+          "en": "Noise weights or whitening"
+        }
+      ],
+      "parameters": [
+        {
+          "key": "separation",
+          "min": 0.02,
+          "max": 0.5,
+          "default": 0.1,
+          "step": 0.01,
+          "unit": "10⁻⁹ m²/s",
+          "label": {
+            "es": "Separación entre D",
+            "en": "Separation between D"
+          }
+        },
+        {
+          "key": "noise",
+          "min": 0.1,
+          "max": 3,
+          "default": 1,
+          "step": 0.1,
+          "unit": "%",
+          "label": {
+            "es": "Ruido de S₀",
+            "en": "Noise relative to S₀"
+          }
+        },
+        {
+          "key": "regularization",
+          "min": 0,
+          "max": 1,
+          "default": 0.25,
+          "step": 0.01,
+          "unit": "",
+          "label": {
+            "es": "Suavizado ilustrado",
+            "en": "Illustrative smoothing"
+          }
+        },
+        {
+          "key": "bmax",
+          "min": 1,
+          "max": 6,
+          "default": 3,
+          "step": 0.1,
+          "unit": "10⁹ s/m²",
+          "label": {
+            "es": "b máximo",
+            "en": "Maximum b"
+          }
+        }
+      ],
+      "references": [
+        {
+          "id": "tikhonov2011",
+          "title": "Day (2011), On the inversion of diffusion NMR data: Tikhonov regularization and optimal choice of the regularization parameter",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21683632/",
+          "doi": "10.1016/j.jmr.2011.05.014",
+          "access": "primary article abstract via PubMed and publisher search result"
+        },
+        {
+          "id": "cherni2017",
+          "title": "Cherni, Chouzenoux & Delsuc (2017), PALMA",
+          "url": "https://pubs.rsc.org/en/content/articlelanding/2017/an/c6an01902a",
+          "doi": "10.1039/C6AN01902A",
+          "access": "publisher search result; full page fetch blocked"
+        }
+      ],
+      "visualModel": {
+        "es": "Dos distribuciones distintas con decaimientos similares; slider de ruido y regularización.",
+        "en": "Distinct distributions with similar decays; noise and regularization controls."
+      },
+      "evidence": "pedagogical-simulation"
+    },
+    {
+      "id": "ultrafast",
+      "act": 3,
+      "title": {
+        "es": "Ultrafast: una adquisición, muchos valores b",
+        "en": "Ultrafast: one acquisition, many b values"
+      },
+      "question": {
+        "es": "¿Un perfil espacial puede darnos D sin confundir difusión con sensibilidad?",
+        "en": "Can a spatial profile yield D without confusing diffusion and sensitivity?"
+      },
+      "summary": {
+        "es": "Un gradiente y una duración local ideal producen b(z). Calculamos la señal y una referencia sin ponderación de difusión, normalizamos y ajustamos D. Compara el ajuste directo, el normalizado y el calibrado: el perfil de recepción y un error de gradiente dejan huellas distintas.",
+        "en": "A gradient and an ideal local duration produce b(z). We calculate the signal and a reference without diffusion weighting, normalize and fit D. Compare direct, normalized and calibrated fits: the receive profile and gradient error leave different signatures."
+      },
+      "limits": {
+        "es": [
+          "δ(z) es un modelo ideal elegido para enseñar la codificación espacial. En una secuencia real hay que calcular b(z)=∫q(z,t)²dt a partir de todo su historial de coherencia y gradientes.",
+          "La corrección usa una referencia y un factor de gradiente conocidos en esta simulación. No representa una calibración obtenida en el instrumento.",
+          "La normalización amplifica ruido donde la referencia es pequeña; el ajuste excluye puntos no positivos y por debajo de su umbral declarado.",
+          "No se realiza una ILT ni se genera un mapa DOSY con desplazamiento químico. Se ajusta una atenuación monoexponencial sintética."
+        ],
+        "en": [
+          "δ(z) is an ideal model chosen to teach spatial encoding. A real sequence requires b(z)=∫q(z,t)²dt from its complete coherence and gradient history.",
+          "Correction uses a reference and a gradient factor known in this simulation. It is not a calibration measured on an instrument.",
+          "Normalization amplifies noise where the reference is small; the fit excludes nonpositive points and points below its declared threshold.",
+          "No ILT or chemically resolved DOSY map is produced. A synthetic monoexponential decay is fitted."
+        ]
+      },
+      "equation": "b(z) = [γgδ(z)]²[Δ − δ(z)/3];  S(z)/Sref(z) = exp[−b(z)D]",
+      "equationConditions": {
+        "es": "Modelo sustituto PGSE ideal: pulsos rectangulares locales, eco común, difusión libre. No calcula RF chirp finita ni el kernel de una secuencia ultrafast real.",
+        "en": "Ideal PGSE surrogate: local rectangular pulses, common echo and free diffusion. Finite chirp RF and the kernel of an actual ultrafast sequence are not calculated."
+      },
+      "terms": [
+        {
+          "symbol": "δ(z)",
+          "unit": "s",
+          "es": "Duración local del pulso ideal",
+          "en": "Ideal local pulse duration"
+        },
+        {
+          "symbol": "Δ",
+          "unit": "s",
+          "es": "Separación entre comienzos de pulsos de difusión",
+          "en": "Separation of diffusion-pulse leading edges"
+        },
+        {
+          "symbol": "Sref",
+          "unit": "rel.",
+          "es": "Referencia con el mismo perfil y relajación, sin contraste de difusión",
+          "en": "Reference with the same profile and relaxation, without diffusion contrast"
+        }
+      ],
+      "parameters": [
+        {
+          "key": "g",
+          "min": 150,
+          "max": 650,
+          "default": 420,
+          "step": 10,
+          "unit": "mT/m",
+          "label": {
+            "es": "Gradiente nominal",
+            "en": "Nominal gradient"
+          }
+        },
+        {
+          "key": "delta",
+          "min": 0.5,
+          "max": 3,
+          "default": 1.4,
+          "step": 0.1,
+          "unit": "ms",
+          "label": {
+            "es": "δ local máxima",
+            "en": "Maximum local δ"
+          }
+        },
+        {
+          "key": "Delta",
+          "min": 30,
+          "max": 200,
+          "default": 80,
+          "step": 5,
+          "unit": "ms",
+          "label": {
+            "es": "Separación de difusión Δ",
+            "en": "Diffusion separation Δ"
+          }
+        },
+        {
+          "key": "D",
+          "min": 0.2,
+          "max": 2,
+          "default": 0.8,
+          "step": 0.05,
+          "unit": "10⁻⁹ m²/s",
+          "label": {
+            "es": "D de referencia",
+            "en": "Reference D"
+          }
+        },
+        {
+          "key": "profile",
+          "min": 0,
+          "max": 0.7,
+          "default": 0.5,
+          "step": 0.05,
+          "unit": "rel.",
+          "label": {
+            "es": "Pendiente de sensibilidad",
+            "en": "Sensitivity slope"
+          }
+        },
+        {
+          "key": "T2",
+          "min": 50,
+          "max": 500,
+          "default": 150,
+          "step": 10,
+          "unit": "ms",
+          "label": {
+            "es": "T₂ del ejemplo",
+            "en": "Example T₂"
+          }
+        },
+        {
+          "key": "readout",
+          "min": 10,
+          "max": 150,
+          "default": 60,
+          "step": 5,
+          "unit": "ms",
+          "label": {
+            "es": "Ventana de lectura",
+            "en": "Readout window"
+          }
+        },
+        {
+          "key": "calibration",
+          "min": 0.7,
+          "max": 1.3,
+          "default": 1.1,
+          "step": 0.01,
+          "unit": "rel.",
+          "label": {
+            "es": "G real / G nominal",
+            "en": "Actual G / nominal G"
+          }
+        },
+        {
+          "key": "noise",
+          "min": 0,
+          "max": 3,
+          "default": 0,
+          "step": 0.1,
+          "unit": "% S₀",
+          "label": {
+            "es": "Ruido gaussiano fijo",
+            "en": "Fixed Gaussian noise"
+          }
+        }
+      ],
+      "references": [
+        {
+          "id": "shrot2008",
+          "title": "Yoav Shrot et al. (2008), Single-scan 2D DOSY NMR spectroscopy",
+          "url": "https://www.weizmann.ac.il/chemphys/Frydman_group/sites/chemphys.Frydman_group/files/publications/paper82.pdf",
+          "doi": "10.1016/j.jmr.2008.09.011",
+          "access": "Author-hosted published article"
+        },
+        {
+          "id": "nonuniform2023",
+          "title": "Benjamin Lorandel et al. (2023), Accounting for gradient non-uniformity in spatially-encoded diffusion-ordered NMR spectroscopy",
+          "url": "https://www.sciencedirect.com/science/article/pii/S1090780723001787",
+          "doi": "10.1016/j.jmr.2023.107543",
+          "access": "Publisher abstract and indexed author metadata"
+        },
+        {
+          "id": "ahola2015",
+          "title": "Susanna Ahola et al. (2015), Ultrafast multidimensional Laplace NMR for a rapid and sensitive chemical analysis",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4595760/",
+          "doi": "10.1038/ncomms9363",
+          "access": "Research article archived in PMC; author university metadata"
+        },
+        {
+          "id": "ahola2017",
+          "title": "Susanna Ahola et al. (2017), Ultrafast NMR diffusion measurements exploiting chirp spin echoes",
+          "url": "https://oulurepo.oulu.fi/handle/10024/22316",
+          "doi": "10.1002/mrc.4540",
+          "access": "Author university repository, accepted manuscript"
+        },
+        {
+          "id": "urbanczyk2020",
+          "title": "Mateusz Urbańczyk et al. (2020), Accelerating Restricted Diffusion NMR Studies with Time-Resolved and Ultrafast Methods",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7439255/",
+          "doi": "10.1021/acs.analchem.0c01523",
+          "access": "Published research article archived in PMC"
+        }
+      ],
+      "visualModel": {
+        "es": "Barrido que atraviesa el tubo y revela bandas espaciales con distinto b; comparar rampa convencional.",
+        "en": "A sweep travels through the tube, revealing spatial bands with different b; compare conventional stepping."
+      },
+      "evidence": "pedagogical-simulation",
+      "simulationVersion": "2.0"
+    },
+    {
+      "id": "dt2",
+      "act": 3,
+      "title": {
+        "es": "D–T₂: movilidad y entorno en el mismo mapa",
+        "en": "D–T₂: mobility and environment in one map"
+      },
+      "question": {
+        "es": "¿Qué significa añadir relajación a difusión?",
+        "en": "What does adding relaxation to diffusion reveal?"
+      },
+      "summary": {
+        "es": "La señal z×eco se calcula con un modelo separable de dos componentes. El mapa de la derecha es el objetivo conocido dibujado para explicar los ejes D y T₂; esta escena no calcula una ILT.",
+        "en": "The z×echo signal is calculated using a separable two-component model. The right-hand map is the known target drawn to explain D and T₂ axes; this scene does not calculate an ILT."
+      },
+      "limits": {
+        "es": [
+          "D–T₂ es RMN Laplace de difusión–relajación; sus ejes no constituyen por sí solos un DOSY con desplazamiento químico.",
+          "Gradientes de lectura, J, B₁ y ruido pueden sesgar T₂ hacia T₂ efectivo; perfiles y calibraciones requieren controles."
+        ],
+        "en": [
+          "D–T₂ is diffusion–relaxation Laplace NMR; its axes alone do not make a chemical-shift DOSY map.",
+          "Read gradients, J, B₁ and noise can bias T₂ toward effective T₂; profiles and calibrations require controls."
+        ]
+      },
+      "equation": "S(z,t)=C(z)∬F(D,T₂)exp[−b(z)D]exp(−t/T₂)dD dT₂",
+      "equationConditions": {
+        "es": "Núcleo separable ideal; si la lectura añade difusión, debe incluirse en el modelo y T₂ puede ser T₂,eff.",
+        "en": "Ideal separable kernel; include readout diffusion in the model when present, and T₂ may be T₂,eff."
+      },
+      "terms": [
+        {
+          "symbol": "t",
+          "unit": "s",
+          "es": "Tiempo de evolución transversal acumulado",
+          "en": "Accumulated transverse evolution time"
+        },
+        {
+          "symbol": "F(D,T₂)",
+          "unit": "amplitud por dD dT₂",
+          "es": "Distribución conjunta de amplitud",
+          "en": "Joint amplitude distribution"
+        },
+        {
+          "symbol": "T₂",
+          "unit": "s",
+          "es": "Tiempo de relajación transversal",
+          "en": "Transverse relaxation time"
+        }
+      ],
+      "parameters": [
+        {
+          "key": "bmax",
+          "min": 0.2,
+          "max": 6,
+          "default": 3,
+          "step": 0.1,
+          "unit": "10⁹ s/m²",
+          "label": {
+            "es": "b máximo",
+            "en": "Maximum b"
+          }
+        },
+        {
+          "key": "T2",
+          "min": 0.1,
+          "max": 1.6,
+          "default": 0.55,
+          "step": 0.05,
+          "unit": "s",
+          "label": {
+            "es": "T₂ del componente 2",
+            "en": "Component 2 T₂"
+          }
+        },
+        {
+          "key": "noise",
+          "min": 0,
+          "max": 0.15,
+          "default": 0,
+          "step": 0.01,
+          "unit": "I/I₀",
+          "label": {
+            "es": "Ruido ilustrativo",
+            "en": "Illustrative noise"
+          }
+        }
+      ],
+      "references": [
+        {
+          "id": "ahola2015",
+          "title": "Ahola et al. (2015), Ultrafast multidimensional Laplace NMR",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4595760/",
+          "doi": "10.1038/ncomms9363",
+          "access": "full text"
+        }
+      ],
+      "visualModel": {
+        "es": "Señal simulada y mapa objetivo esquemático; no reconstrucción ILT.",
+        "en": "Simulated signal and schematic target map; no ILT reconstruction."
+      },
+      "evidence": "pedagogical-simulation"
+    },
+    {
+      "id": "spen",
+      "act": 3,
+      "title": {
+        "es": "SPEN-DOSY: reconstruir antes de ajustar",
+        "en": "SPEN-DOSY: reconstruct before fitting"
+      },
+      "question": {
+        "es": "¿Qué le hace un error par/impar a una señal que parece un espectro?",
+        "en": "What does an odd/even error do to a signal that looks like a spectrum?"
+      },
+      "summary": {
+        "es": "Generamos señal compleja sintética en k y tiempo de lectura. Las polaridades alternan. Reordenamos las muestras, corregimos la fase conocida y calculamos las transformadas espaciales y espectrales. El perfil de una frecuencia seleccionada se normaliza y se ajusta: las curvas y los D de salida se calculan, no se dibujan como un mapa objetivo.",
+        "en": "We generate synthetic complex data in k and readout time with alternating polarities. Samples are reordered, the known phase is corrected and spatial and spectral transforms are calculated. A selected-frequency profile is normalized and fitted: output curves and D values are calculated rather than drawn as a target map."
+      },
+      "limits": {
+        "es": [
+          "Es una adquisición EPSI sintética simplificada. El kernel local de difusión usa el sustituto PGSE ideal, no la implementación de un programa de pulsos SPEN.",
+          "La fase y el perfil de referencia se conocen aquí. Un experimento requiere estimarlos y comprobar su estabilidad.",
+          "El intervalo entre centros de eco define el ancho espectral de esta simulación. Si se procesan las polaridades por separado en un experimento, el intervalo efectivo cambia.",
+          "Relajación, frecuencia seleccionada y solapamiento afectan al ajuste. Un buen R² no demuestra pureza ni identificación molecular.",
+          "No se aplica ILT ni se muestra un mapa de difusión reconstruido; se muestra la matriz espectral calculada y la atenuación seleccionada."
+        ],
+        "en": [
+          "This is a simplified synthetic EPSI acquisition. The local diffusion kernel uses the ideal PGSE surrogate rather than an SPEN pulse-program implementation.",
+          "Phase and reference profile are known here. An experiment requires estimating them and checking their stability.",
+          "Echo-center spacing defines this simulation’s spectral width. Processing polarities separately in an experiment changes the effective spacing.",
+          "Relaxation, selected frequency and overlap affect fitting. A good R² does not demonstrate purity or molecular identification.",
+          "No ILT or reconstructed diffusion map is displayed; the calculated spectral matrix and selected decay are shown."
+        ]
+      },
+      "equation": "S̃(z,ν) = Fₜ{Fₖ⁻¹[s(k,tread)]};  S̃/S̃ref ≈ exp[−b(z)D]",
+      "equationConditions": {
+        "es": "Modelo de centros de eco: sin evolución química intralóbulo, RF chirp finita ni desplazamiento z–ν. La aproximación monoexponencial requiere una resonancia aislada; el solapamiento produce D aparente.",
+        "en": "Echo-center model: no within-lobe chemical evolution, finite chirp RF or z–ν displacement. A monoexponential interpretation requires an isolated resonance; overlap yields apparent D."
+      },
+      "terms": [
+        {
+          "symbol": "k",
+          "unit": "índice / index",
+          "es": "Coordenada de Fourier espacial discreta",
+          "en": "Discrete spatial Fourier coordinate"
+        },
+        {
+          "symbol": "tread",
+          "unit": "s",
+          "es": "Tiempo de evolución química entre centros de eco",
+          "en": "Chemical evolution time between echo centers"
+        },
+        {
+          "symbol": "ν",
+          "unit": "Hz",
+          "es": "Frecuencia tras la transformada espectral",
+          "en": "Frequency after the spectral transform"
+        }
+      ],
+      "parameters": [
+        {
+          "key": "g",
+          "min": 150,
+          "max": 650,
+          "default": 420,
+          "step": 10,
+          "unit": "mT/m",
+          "label": {
+            "es": "Gradiente nominal",
+            "en": "Nominal gradient"
+          }
+        },
+        {
+          "key": "delta",
+          "min": 0.5,
+          "max": 3,
+          "default": 1.4,
+          "step": 0.1,
+          "unit": "ms",
+          "label": {
+            "es": "δ local máxima",
+            "en": "Maximum local δ"
+          }
+        },
+        {
+          "key": "Delta",
+          "min": 30,
+          "max": 200,
+          "default": 80,
+          "step": 5,
+          "unit": "ms",
+          "label": {
+            "es": "Separación de difusión Δ",
+            "en": "Diffusion separation Δ"
+          }
+        },
+        {
+          "key": "D1",
+          "min": 0.15,
+          "max": 1,
+          "default": 0.45,
+          "step": 0.05,
+          "unit": "10⁻⁹ m²/s",
+          "label": {
+            "es": "D de A",
+            "en": "D of A"
+          }
+        },
+        {
+          "key": "D2",
+          "min": 1.1,
+          "max": 3,
+          "default": 1.4,
+          "step": 0.1,
+          "unit": "10⁻⁹ m²/s",
+          "label": {
+            "es": "D de B",
+            "en": "D of B"
+          }
+        },
+        {
+          "key": "fraction",
+          "min": 0,
+          "max": 1,
+          "default": 0.62,
+          "step": 0.01,
+          "unit": "rel.",
+          "label": {
+            "es": "Fracción de A",
+            "en": "Fraction of A"
+          }
+        },
+        {
+          "key": "oddPhase",
+          "min": 0,
+          "max": 150,
+          "default": 65,
+          "step": 5,
+          "unit": "°",
+          "label": {
+            "es": "Error de fase impar",
+            "en": "Odd-polarity phase error"
+          }
+        },
+        {
+          "key": "profile",
+          "min": 0,
+          "max": 0.7,
+          "default": 0.35,
+          "step": 0.05,
+          "unit": "rel.",
+          "label": {
+            "es": "Pendiente de sensibilidad",
+            "en": "Sensitivity slope"
+          }
+        },
+        {
+          "key": "frequency",
+          "min": -220,
+          "max": 220,
+          "default": -80,
+          "step": 10,
+          "unit": "Hz",
+          "label": {
+            "es": "Frecuencia seleccionada",
+            "en": "Selected frequency"
+          }
+        },
+        {
+          "key": "noise",
+          "min": 0,
+          "max": 3,
+          "default": 0,
+          "step": 0.1,
+          "unit": "% S₀",
+          "label": {
+            "es": "Ruido gaussiano fijo",
+            "en": "Fixed Gaussian noise"
+          }
+        }
+      ],
+      "references": [
+        {
+          "id": "shrot2008",
+          "title": "Yoav Shrot et al. (2008), Single-scan 2D DOSY NMR spectroscopy",
+          "url": "https://www.weizmann.ac.il/chemphys/Frydman_group/sites/chemphys.Frydman_group/files/publications/paper82.pdf",
+          "doi": "10.1016/j.jmr.2008.09.011",
+          "access": "Author-hosted published article"
+        },
+        {
+          "id": "guduff2017",
+          "title": "Ludmilla Guduff et al. (2017), Spatially encoded 2D and 3D diffusion-ordered NMR spectroscopy",
+          "url": "https://pubs.rsc.org/en/content/articlehtml/2017/cc/c6cc09028a",
+          "doi": "10.1039/C6CC09028A",
+          "access": "Publisher abstract and author-hosted article"
+        },
+        {
+          "id": "jacquemmoz2022",
+          "title": "Corentin Jacquemmoz et al. (2022), Optimisation of spatially-encoded diffusion-ordered NMR spectroscopy for the analysis of mixtures",
+          "url": "https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/mrc.5194",
+          "doi": "10.1002/mrc.5194",
+          "access": "Publisher full text"
+        },
+        {
+          "id": "nonuniform2023",
+          "title": "Benjamin Lorandel et al. (2023), Accounting for gradient non-uniformity in spatially-encoded diffusion-ordered NMR spectroscopy",
+          "url": "https://www.sciencedirect.com/science/article/pii/S1090780723001787",
+          "doi": "10.1016/j.jmr.2023.107543",
+          "access": "Publisher abstract and indexed author metadata"
+        }
+      ],
+      "visualModel": {
+        "es": "Barrido chirp, tren EPSI, reordenación par/impar y separación de ejes z y ν antes de ajustar D.",
+        "en": "Chirp sweep, EPSI train, odd/even reordering and separation of z and ν before D fitting."
+      },
+      "evidence": "pedagogical-simulation",
+      "simulationVersion": "2.0"
+    },
+    {
+      "id": "time-resolved",
+      "act": 4,
+      "title": {
+        "es": "Time-resolved: el experimento también tiene un reloj",
+        "en": "Time-resolved: the experiment has a clock too"
+      },
+      "question": {
+        "es": "¿Medimos difusión o el cambio de composición durante la rampa?",
+        "en": "Are we measuring diffusion or composition changes during the ramp?"
+      },
+      "summary": {
+        "es": "Una reacción A→B cambia las poblaciones mientras sus D permanecen constantes. Cada punto de una serie secuencial promedia un intervalo distinto; la adquisición espacial rápida comparte una ventana temporal. Compara rampas ascendentes, descendentes y permutadas, cambia la duración y sigue el sesgo del D aparente de cada resonancia.",
+        "en": "An A→B reaction changes populations while their D values remain constant. Each point of a sequential series averages a different interval; a rapid spatial acquisition shares one temporal window. Compare ascending, descending and permuted ramps, change the duration and follow apparent-D bias for each resonance."
+      },
+      "equation": "Sⱼ(b,T) = (1/τ)∫[T,T+τ] aⱼ(u)exp(−bDⱼ)du;  aA(T) = exp(−kT)",
+      "equationConditions": {
+        "es": "Reacción de primer orden ideal y señales separadas; composición promediada por ventana. D no cambia y no se modela intercambio durante Δ ni polimerización real.",
+        "en": "Ideal first-order reaction and separated signals; composition is averaged over each window. D is constant; exchange during Δ and real polymerization are not modeled."
+      },
+      "limits": {
+        "es": [
+          "t_lab sigue la evolución de la muestra; Δ es el tiempo de difusión y t_read el de lectura. Los 18 s de la animación son solo progreso visual.",
+          "Una ventana larga promedia cambios. Una cadencia pequeña puede generar ventanas solapadas; no crea automáticamente medidas independientes.",
+          "La rampa permutada desacopla parcialmente b y tiempo, pero no vuelve estacionaria una muestra. Las ventanas secuenciales provienen de un flujo sintético de puntos; las ventanas solapadas comparten muestras y ruido.",
+          "La ventana rápida debe ser compatible con Δ+t_read. Los ajustes sin señal suficiente o con una pendiente no física se identifican como no estimables.",
+          "Se usan resonancias A y B separadas. La difusión de sus moléculas permanece constante; cambia su población. No se atribuye el sesgo a cambio de tamaño molecular."
+        ],
+        "en": [
+          "t_lab follows sample evolution; Δ is diffusion time and t_read is readout time. The animation’s 18 seconds are visual progress only.",
+          "A long window averages changes. Short cadence may yield overlapping windows; it does not automatically create independent measurements.",
+          "A permuted ramp partially decouples b and time but does not make a sample stationary. Sequential windows come from a synthetic point stream; overlapping windows share samples and noise.",
+          "The rapid window must accommodate Δ+t_read. Fits with insufficient signal or nonphysical slopes are identified as not estimable.",
+          "A and B have separate resonances. Their molecular diffusion remains constant while population changes. Bias is not attributed to changing molecular size."
+        ]
+      },
+      "terms": [
+        {
+          "symbol": "T = t_lab",
+          "unit": "s",
+          "es": "Tiempo de evolución de la muestra",
+          "en": "Sample evolution time"
+        },
+        {
+          "symbol": "τ",
+          "unit": "s",
+          "es": "Ventana de promedio de la adquisición",
+          "en": "Acquisition averaging window"
+        },
+        {
+          "symbol": "k",
+          "unit": "s⁻¹",
+          "es": "Constante cinética de primer orden",
+          "en": "First-order rate constant"
+        }
+      ],
+      "evidence": "pedagogical-simulation",
+      "visualModel": {
+        "es": "Poblaciones A/B, puntos adquiridos a distinto t_lab, ajuste de ambas resonancias y seguimiento temporal.",
+        "en": "A/B populations, points acquired at different t_lab, fits for both resonances and temporal tracking."
+      },
+      "parameters": [
+        {
+          "key": "D1",
+          "min": 0.15,
+          "max": 1,
+          "default": 0.45,
+          "step": 0.05,
+          "unit": "10⁻⁹ m²/s",
+          "label": {
+            "es": "D de A",
+            "en": "D of A"
+          }
+        },
+        {
+          "key": "D2",
+          "min": 1.1,
+          "max": 3,
+          "default": 1.4,
+          "step": 0.1,
+          "unit": "10⁻⁹ m²/s",
+          "label": {
+            "es": "D de B",
+            "en": "D of B"
+          }
+        },
+        {
+          "key": "rate",
+          "min": 0,
+          "max": 0.08,
+          "default": 0.025,
+          "step": 0.005,
+          "unit": "s⁻¹",
+          "label": {
+            "es": "Velocidad A → B",
+            "en": "A → B reaction rate"
+          }
+        },
+        {
+          "key": "tLab",
+          "min": 0,
+          "max": 120,
+          "default": 20,
+          "step": 5,
+          "unit": "s",
+          "label": {
+            "es": "Inicio: tiempo de laboratorio",
+            "en": "Start: laboratory time"
+          }
+        },
+        {
+          "key": "pointTime",
+          "min": 0.2,
+          "max": 4,
+          "default": 2,
+          "step": 0.2,
+          "unit": "s",
+          "label": {
+            "es": "Duración de cada punto",
+            "en": "Duration of each point"
+          }
+        },
+        {
+          "key": "snapshotTime",
+          "min": 0.05,
+          "max": 4,
+          "default": 0.5,
+          "step": 0.05,
+          "unit": "s",
+          "label": {
+            "es": "Ventana del snapshot",
+            "en": "Snapshot window"
+          }
+        },
+        {
+          "key": "frameStep",
+          "min": 1,
+          "max": 20,
+          "default": 5,
+          "step": 1,
+          "unit": "s",
+          "label": {
+            "es": "Cadencia solicitada entre frames",
+            "en": "Requested frame cadence"
+          }
+        },
+        {
+          "key": "order",
+          "min": 0,
+          "max": 2,
+          "default": 0,
+          "step": 1,
+          "unit": "0 / 1 / 2",
+          "label": {
+            "es": "Orden: ↑ / ↓ / permutado",
+            "en": "Order: ↑ / ↓ / permuted"
+          }
+        },
+        {
+          "key": "Delta",
+          "min": 30,
+          "max": 200,
+          "default": 80,
+          "step": 5,
+          "unit": "ms",
+          "label": {
+            "es": "Separación de difusión Δ",
+            "en": "Diffusion separation Δ"
+          }
+        },
+        {
+          "key": "readout",
+          "min": 10,
+          "max": 120,
+          "default": 40,
+          "step": 5,
+          "unit": "ms",
+          "label": {
+            "es": "Duración de lectura",
+            "en": "Readout duration"
+          }
+        },
+        {
+          "key": "noise",
+          "min": 0,
+          "max": 3,
+          "default": 0,
+          "step": 0.1,
+          "unit": "% S₀",
+          "label": {
+            "es": "Ruido gaussiano fijo",
+            "en": "Fixed Gaussian noise"
+          }
+        }
+      ],
+      "references": [
+        {
+          "id": "urbanczyk2020",
+          "title": "Mateusz Urbańczyk et al. (2020), Accelerating Restricted Diffusion NMR Studies with Time-Resolved and Ultrafast Methods",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7439255/",
+          "doi": "10.1021/acs.analchem.0c01523",
+          "access": "Published research article archived in PMC"
+        },
+        {
+          "id": "kristinaityte2022",
+          "title": "Kristina Kristinaityte et al. (2022), Deeper Insight into Photopolymerization: The Synergy of Time-Resolved Nonuniform Sampling and Diffusion NMR",
+          "url": "https://pubs.acs.org/doi/10.1021/jacs.2c05944",
+          "doi": "10.1021/jacs.2c05944",
+          "access": "Publisher and author institutional repository"
+        }
+      ],
+      "simulationVersion": "2.0"
+    },
+    {
+      "id": "restricted",
+      "act": 3,
+      "title": {
+        "es": "Las barreras cambian la historia del movimiento",
+        "en": "Barriers change the motion history"
+      },
+      "question": {
+        "es": "¿Qué ocurre cuando la molécula encuentra una pared?",
+        "en": "What happens when a molecule encounters a wall?"
+      },
+      "summary": {
+        "es": "Las fronteras limitan desplazamientos y alteran el propagador. El D aparente puede depender de tiempo y codificación, en lugar de describir una difusión libre única.",
+        "en": "Boundaries constrain displacements and alter the propagator. Apparent D can depend on time and encoding instead of describing one free diffusion coefficient."
+      },
+      "limits": {
+        "es": [
+          "El tamaño de poro no se obtiene automáticamente de una animación, de un único D aparente ni de una sola curva.",
+          "La relación D_app=⟨Δx²⟩/(2Δ) corresponde al régimen de gradiente estrecho y bajo q; fuera de él depende del pulso."
+        ],
+        "en": [
+          "Pore size does not follow automatically from an animation, one apparent D or one decay.",
+          "D_app=⟨Δx²⟩/(2Δ) applies to narrow-gradient, low-q encoding; outside it, pulse details matter."
+        ]
+      },
+      "equation": "D_app(Δ)≈⟨Δx²⟩/(2Δ);  E(q,Δ)=∫P(Δx,Δ)exp(iqΔx)dΔx",
+      "equationConditions": {
+        "es": "Una dimensión, pulsos estrechos y límite de bajo q para D_app; fronteras reflectantes en el ejemplo.",
+        "en": "One dimension, narrow pulses and low-q limit for D_app; reflecting boundaries in the example."
+      },
+      "terms": [
+        {
+          "symbol": "P",
+          "unit": "m⁻¹",
+          "es": "Densidad de desplazamientos",
+          "en": "Displacement density"
+        },
+        {
+          "symbol": "L",
+          "unit": "m",
+          "es": "Escala de confinamiento",
+          "en": "Confinement length"
+        }
+      ],
+      "parameters": [
+        {
+          "key": "D",
+          "min": 0.2,
+          "max": 3,
+          "default": 1.2,
+          "step": 0.1,
+          "unit": "10⁻⁹ m²/s",
+          "label": {
+            "es": "Difusión libre D₀",
+            "en": "Free diffusion D₀"
+          }
+        },
+        {
+          "key": "width",
+          "min": 5,
+          "max": 60,
+          "default": 20,
+          "step": 1,
+          "unit": "µm",
+          "label": {
+            "es": "Anchura del poro a",
+            "en": "Pore width a"
+          }
+        },
+        {
+          "key": "Delta",
+          "min": 20,
+          "max": 300,
+          "default": 150,
+          "step": 5,
+          "unit": "ms",
+          "label": {
+            "es": "Tiempo observado",
+            "en": "Observation time"
+          }
+        }
+      ],
+      "references": [
+        {
+          "id": "mitra1992",
+          "title": "Mitra et al. (1992), Diffusion propagator as a probe of the structure of porous media",
+          "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.68.3555",
+          "doi": "10.1103/PhysRevLett.68.3555",
+          "access": "publisher abstract"
+        },
+        {
+          "id": "torrey1956",
+          "title": "Torrey (1956), Bloch Equations with Diffusion Terms",
+          "url": "https://journals.aps.org/pr/abstract/10.1103/PhysRev.104.563",
+          "doi": "10.1103/PhysRev.104.563",
+          "access": "publisher abstract"
+        }
+      ],
+      "visualModel": {
+        "es": "Trayectorias confinadas y libres; mostrar saturación de MSD y distribución de desplazamientos.",
+        "en": "Confined versus free paths; show MSD saturation and displacement distributions."
+      },
+      "evidence": "pedagogical-simulation"
+    },
+    {
+      "id": "exchange",
+      "act": 3,
+      "title": {
+        "es": "Las moléculas pueden cambiar de entorno",
+        "en": "Molecules can change environment"
+      },
+      "question": {
+        "es": "¿Es una mezcla estática o hay intercambio?",
+        "en": "Is the mixture static or exchanging?"
+      },
+      "summary": {
+        "es": "Las moléculas alternan entre entornos con D distintos. La atenuación depende tanto de difusión como de la escala de intercambio durante la codificación.",
+        "en": "Molecules switch between environments with different D. Attenuation depends on both diffusion and the exchange timescale during encoding."
+      },
+      "limits": {
+        "es": [
+          "No interpretar dos picos de ILT como dos especies químicas sin comprobar intercambio y el modelo.",
+          "El esquema de dos estados supone tasas constantes; no cubre todas las geometrías, restricciones o cinéticas."
+        ],
+        "en": [
+          "Do not interpret two ILT peaks as two chemical species without checking exchange and the model.",
+          "The two-state diagram assumes constant rates; it does not cover every geometry, restriction or kinetic scheme."
+        ]
+      },
+      "equation": "dm/dt={−q(t)²diag(D_A,D_B)+K}m;  K=[−k_AB,k_BA;k_AB,−k_BA]",
+      "equationConditions": {
+        "es": "Modelo ideal de Kärger de dos regiones gausianas; vector m de magnetización por región, sin relajación.",
+        "en": "Ideal two-region Gaussian Kärger model; m is regional magnetization, with relaxation omitted."
+      },
+      "terms": [
+        {
+          "symbol": "k_AB, k_BA",
+          "unit": "s⁻¹",
+          "es": "Tasas de intercambio",
+          "en": "Exchange rates"
+        },
+        {
+          "symbol": "K",
+          "unit": "s⁻¹",
+          "es": "Generador de intercambio con suma de columnas cero",
+          "en": "Exchange generator with zero column sums"
+        }
+      ],
+      "parameters": [
+        {
+          "key": "Dslow",
+          "min": 0.1,
+          "max": 1,
+          "default": 0.45,
+          "step": 0.05,
+          "unit": "10⁻⁹ m²/s",
+          "label": {
+            "es": "D lento",
+            "en": "Slow D"
+          }
+        },
+        {
+          "key": "Dfast",
+          "min": 1.1,
+          "max": 4,
+          "default": 1.6,
+          "step": 0.05,
+          "unit": "10⁻⁹ m²/s",
+          "label": {
+            "es": "D rápido",
+            "en": "Fast D"
+          }
+        },
+        {
+          "key": "rate",
+          "min": 0,
+          "max": 80,
+          "default": 12,
+          "step": 1,
+          "unit": "s⁻¹",
+          "label": {
+            "es": "Tasa A ⇄ B simétrica",
+            "en": "Symmetric A ⇄ B rate"
+          }
+        },
+        {
+          "key": "Delta",
+          "min": 20,
+          "max": 300,
+          "default": 100,
+          "step": 5,
+          "unit": "ms",
+          "label": {
+            "es": "Tiempo observado",
+            "en": "Observation time"
+          }
+        }
+      ],
+      "references": [
+        {
+          "id": "karger1969",
+          "title": "Kärger (1969), Diffusion in a two-region system using pulsed field gradients",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1002/andp.19694790102",
+          "doi": "10.1002/andp.19694790102",
+          "access": "publisher abstract"
+        }
+      ],
+      "visualModel": {
+        "es": "Dos cámaras y cruces moleculares; comparar límites lento y rápido con los mismos D.",
+        "en": "Two chambers and molecular crossings; compare slow and fast exchange at fixed D values."
+      },
+      "evidence": "pedagogical-simulation"
+    },
+    {
+      "id": "anisotropy",
+      "act": 3,
+      "title": {
+        "es": "La difusión también tiene dirección",
+        "en": "Diffusion also has direction"
+      },
+      "question": {
+        "es": "¿Medir sólo z basta para conocer toda la difusión?",
+        "en": "Is measuring z enough to know all diffusion?"
+      },
+      "summary": {
+        "es": "En un medio anisótropo, la difusión es un tensor. Rotar la dirección de codificación cambia la atenuación; un gradiente z aporta una proyección.",
+        "en": "In an anisotropic medium, diffusion is a tensor. Rotating encoding changes attenuation; a z-gradient measures one projection."
+      },
+      "limits": {
+        "es": [
+          "Una sonda con gradiente sólo z no identifica por sí sola un tensor tridimensional sin rotación u otra información.",
+          "La elipsoide resume un modelo gaussiano; no es una fotografía de trayectorias ni una prueba de estructura molecular."
+        ],
+        "en": [
+          "A z-only gradient probe cannot identify a 3D tensor by itself without rotation or other information.",
+          "The ellipsoid summarizes a Gaussian model; it is not a photograph of paths or proof of molecular structure."
+        ]
+      },
+      "equation": "E=exp(−B:D);  B=∫q(t)q(t)ᵀdt;  D_n=nᵀDn",
+      "equationConditions": {
+        "es": "Tensor D simétrico positivo y difusión gaussiana; para codificación lineal, B=bnnᵀ.",
+        "en": "Symmetric positive diffusion tensor and Gaussian diffusion; for linear encoding, B=bnnᵀ."
+      },
+      "terms": [
+        {
+          "symbol": "D",
+          "unit": "m²/s",
+          "es": "Tensor de difusión",
+          "en": "Diffusion tensor"
+        },
+        {
+          "symbol": "B",
+          "unit": "s/m²",
+          "es": "Tensor de ponderación",
+          "en": "Encoding tensor"
+        },
+        {
+          "symbol": "n",
+          "unit": "1",
+          "es": "Dirección unitaria de codificación",
+          "en": "Unit encoding direction"
+        }
+      ],
+      "parameters": [
+        {
+          "key": "Dparallel",
+          "min": 0.5,
+          "max": 3,
+          "default": 1.8,
+          "step": 0.05,
+          "unit": "10⁻⁹ m²/s",
+          "label": {
+            "es": "D paralelo",
+            "en": "Parallel D"
+          }
+        },
+        {
+          "key": "Dperp",
+          "min": 0.1,
+          "max": 1.5,
+          "default": 0.4,
+          "step": 0.05,
+          "unit": "10⁻⁹ m²/s",
+          "label": {
+            "es": "D perpendicular",
+            "en": "Perpendicular D"
+          }
+        },
+        {
+          "key": "angle",
+          "min": 0,
+          "max": 180,
+          "default": 30,
+          "step": 1,
+          "unit": "°",
+          "label": {
+            "es": "Orientación del gradiente",
+            "en": "Gradient orientation"
+          }
+        },
+        {
+          "key": "Delta",
+          "min": 20,
+          "max": 300,
+          "default": 100,
+          "step": 5,
+          "unit": "ms",
+          "label": {
+            "es": "Tiempo observado",
+            "en": "Observation time"
+          }
+        }
+      ],
+      "references": [
+        {
+          "id": "basser1994",
+          "title": "Basser, Mattiello & LeBihan (1994), MR diffusion tensor spectroscopy and imaging",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/8130344/",
+          "doi": "10.1016/S0006-3495(94)80775-1",
+          "access": "primary article abstract via PubMed"
+        }
+      ],
+      "visualModel": {
+        "es": "Elipsoide y vector de gradiente rotante; proyectar nᵀDn en una curva de atenuación.",
+        "en": "Ellipsoid and rotating gradient vector; project nᵀDn into attenuation."
+      },
+      "evidence": "pedagogical-simulation"
+    },
+    {
+      "id": "prototype-1d",
+      "act": 3,
+      "title": {
+        "es": "Nuestro prototipo: una sonda z, un experimento más rico",
+        "en": "Our prototype: one z-gradient probe, a richer experiment"
+      },
+      "question": {
+        "es": "¿Qué estamos desarrollando y qué falta demostrar?",
+        "en": "What are we developing, and what remains to demonstrate?"
+      },
+      "summary": {
+        "es": "El desarrollo local UF D–T₂–δ EPSI combina chirps, eco estimulado, CPMG y lectura bipolar con gradiente z. Es una implementación en evaluación.",
+        "en": "The local UF D–T₂–δ EPSI development combines chirps, stimulated echo, CPMG and bipolar readout with a z-gradient. It is an implementation under evaluation."
+      },
+      "limits": {
+        "es": [
+          "La revisión local 9.4 mantiene estado NO-GO cuantitativo hasta pruebas en consola; consistencia de software no valida D ni T₂ reales.",
+          "La animación no redistribuye programa de pulsos ni datos privados; tampoco demuestra compatibilidad universal con sondas 1D."
+        ],
+        "en": [
+          "Local revision 9.4 remains quantitative NO-GO pending console checks; software consistency does not validate measured D or T₂.",
+          "The animation redistributes neither private pulse code nor data and does not establish universal compatibility with 1D probes."
+        ]
+      },
+      "equation": "S(z,t)≈C(z)∬F(D,T₂)exp[−D b_seq(z,t)]exp(−t/T₂)dD dT₂",
+      "equationConditions": {
+        "es": "Modelo objetivo ilustrativo; b_seq exige la historia literal de gradientes/RF y puede incluir la lectura. No usar b_PGSE como sustituto.",
+        "en": "Illustrative target model; b_seq needs the actual gradient/RF history and may include readout. Do not substitute b_PGSE."
+      },
+      "terms": [
+        {
+          "symbol": "b_seq",
+          "unit": "s/m²",
+          "es": "Codificación calculada para esta secuencia",
+          "en": "Encoding calculated for this sequence"
+        },
+        {
+          "symbol": "T₂,eff",
+          "unit": "s",
+          "es": "Relajación efectiva influida por lectura y pulsos",
+          "en": "Effective relaxation influenced by readout and pulses"
+        }
+      ],
+      "parameters": [
+        {
+          "key": "gain",
+          "min": 0.5,
+          "max": 1.5,
+          "default": 1,
+          "step": 0.05,
+          "unit": "rel.",
+          "label": {
+            "es": "Escala b nominal",
+            "en": "Nominal b scale"
+          }
+        },
+        {
+          "key": "oddPhase",
+          "min": 0,
+          "max": 180,
+          "default": 0,
+          "step": 5,
+          "unit": "°",
+          "label": {
+            "es": "Fase de ecos impares",
+            "en": "Odd-echo phase"
+          }
+        },
+        {
+          "key": "profile",
+          "min": 0,
+          "max": 0.8,
+          "default": 0,
+          "step": 0.05,
+          "unit": "rel.",
+          "label": {
+            "es": "Perfil de recepción",
+            "en": "Receive-profile slope"
+          }
+        }
+      ],
+      "references": [
+        {
+          "id": "ahola2015",
+          "title": "Ahola et al. (2015), Ultrafast multidimensional Laplace NMR",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4595760/",
+          "doi": "10.1038/ncomms9363",
+          "access": "full text"
+        },
+        {
+          "id": "shrot2008",
+          "title": "Shrot & Frydman (2008), Single-scan 2D DOSY NMR spectroscopy",
+          "url": "https://www.weizmann.ac.il/chemphys/Frydman_group/sites/chemphys.Frydman_group/files/publications/paper82.pdf",
+          "doi": "10.1016/j.jmr.2008.09.011",
+          "access": "authors' full text"
+        }
+      ],
+      "visualModel": {
+        "es": "Tubo con un eje z y bloques funcionales de diseño → simulación → piloto → calibración → validación; estado vigente visible.",
+        "en": "Tube with one z axis and functional stages design → simulation → pilot → calibration → validation; show current status."
+      },
+      "evidence": "research-prototype-pending-hardware-validation"
+    }
+  ],
+  "localPrototypeReview": {
+    "hardwareTarget": "Bruker Avance III 500; TopSpin 3.8.0; analog acquisition; z-gradient. Not a validation of TopSpin 3.6.4.",
+    "reviewedFiles": [
+      "README.md",
+      "AUDITORIA_METODO_UF_DT2_CS_2026-09-19.md"
+    ],
+    "localOriginalsRedistributed": false,
+    "status": "NO-GO quantitative; console/hardware validation pending",
+    "revision": "9.4 revision 2, dated 2026-09-20",
+    "notes": {
+      "es": "Sólo se consultó documentación privada en lectura; no se ejecutaron experimentos ni se revisó cada pulso para esta colección.",
+      "en": "Private documentation was read only; no experiments were run and this collection did not re-audit every pulse."
+    }
+  }
+};

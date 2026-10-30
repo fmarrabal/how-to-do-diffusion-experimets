@@ -1,0 +1,14 @@
+<Application x:Class="DiffAtOnce.Academy.App.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Application.Resources>
+    <SolidColorBrush x:Key="Ink" Color="#122D38"/>
+    <SolidColorBrush x:Key="Muted" Color="#526B77"/>
+    <SolidColorBrush x:Key="Accent" Color="#086C69"/>
+    <SolidColorBrush x:Key="Line" Color="#DCE7EB"/>
+    <Style TargetType="TextBlock"><Setter Property="Foreground" Value="{StaticResource Ink}"/><Setter Property="TextWrapping" Value="Wrap"/><Setter Property="FontSize" Value="14"/><Setter Property="LineHeight" Value="21"/></Style>
+    <Style TargetType="Button"><Setter Property="Background" Value="#E9F4F3"/><Setter Property="Foreground" Value="{StaticResource Ink}"/><Setter Property="BorderBrush" Value="#C7DCDC"/><Setter Property="Padding" Value="13,9"/><Setter Property="Margin" Value="0,0,8,5"/><Setter Property="Cursor" Value="Hand"/><Setter Property="FontSize" Value="13"/><Setter Property="MinHeight" Value="36"/></Style>
+    <Style TargetType="TextBox"><Setter Property="FontSize" Value="14"/><Setter Property="Padding" Value="10"/><Setter Property="BorderBrush" Value="#CDDDE3"/><Setter Property="Background" Value="White"/><Setter Property="Foreground" Value="{StaticResource Ink}"/></Style>
+    <Style TargetType="TabItem"><Setter Property="Padding" Value="16,11"/><Setter Property="FontSize" Value="14"/></Style>
+    <Style TargetType="ComboBox"><Setter Property="Padding" Value="8"/><Setter Property="Margin" Value="0,0,0,8"/><Setter Property="FontSize" Value="14"/></Style>
+    <Style TargetType="RadioButton"><Setter Property="Foreground" Value="{StaticResource Ink}"/><Setter Property="Margin" Value="0,6,0,6"/><Setter Property="FontSize" Value="14"/></Style>
+  </Application.Resources>
+</Application>

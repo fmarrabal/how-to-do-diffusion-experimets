@@ -1,0 +1,3593 @@
+{
+  "educationalEfficacyEstablished": false,
+  "expandedSourceCopyCreated": false,
+  "experimentalValidation": false,
+  "files": [
+    {
+      "bytes": 3956,
+      "path": "README_SOURCE_ES_EN.txt",
+      "sha256": "8abc4f6e13871387a3d17c729238188eb527e545d5c429e5eda7b20132a01c71"
+    },
+    {
+      "bytes": 178,
+      "path": "desktop/academy/NuGet.Config",
+      "sha256": "33aa39ee926a9e2651ae39549df08dddc8e43d11896cf14d0465bc869d56b4c2"
+    },
+    {
+      "bytes": 17360,
+      "path": "desktop/academy/README.md",
+      "sha256": "4bccf83924ca30901f559b9060cdac12910f584205511e1f038fe6cf0c6642c1"
+    },
+    {
+      "bytes": 8333,
+      "path": "desktop/academy/SOURCE_BUILD_V12.md",
+      "sha256": "038c4fb1982ae67fbcefb5312c5cc7f075e4efb9a7c552244dad69d700451c65"
+    },
+    {
+      "bytes": 16458,
+      "path": "desktop/academy/SOURCE_BUILD_V13.md",
+      "sha256": "c18b52481f310feba44368a0f8edf87e65b89f213b13da6cdc49bfbe5711c2a5"
+    },
+    {
+      "bytes": 9302,
+      "path": "desktop/academy/START_HERE_ES_EN.txt",
+      "sha256": "fcd33f9df3c6b4319106186fade423c93cb27680b231e8c8d7b46d80e27eb642"
+    },
+    {
+      "bytes": 1158,
+      "path": "desktop/academy/THIRD_PARTY/CommunityToolkit.HighPerformance-8.4.2/License.md",
+      "sha256": "651997ef19dbb9ecb8dd660dbc86444a65af21f18cfe08daa69bf201cd5cfdfc"
+    },
+    {
+      "bytes": 1177,
+      "path": "desktop/academy/THIRD_PARTY/CommunityToolkit.HighPerformance-8.4.2/MIT-LICENSE.txt",
+      "sha256": "d619295fb46508d01b4bff7f342b5232fe90bb168501aacb2a926ddb101e9e98"
+    },
+    {
+      "bytes": 3543,
+      "path": "desktop/academy/THIRD_PARTY/CommunityToolkit.HighPerformance-8.4.2/communitytoolkit.highperformance.nuspec",
+      "sha256": "5f9db2207ce1eae03cf50f645c0870e8d777402e6f2f51f14671cf6efc858bfe"
+    },
+    {
+      "bytes": 1238,
+      "path": "desktop/academy/THIRD_PARTY/LLamaSharp-0.27.0/MIT-LICENSE.txt",
+      "sha256": "51f3b2982bc2bc3eac34f89e88d78e39b2b6f74897452ba35bba8b1e45a5b209"
+    },
+    {
+      "bytes": 3177,
+      "path": "desktop/academy/THIRD_PARTY/LLamaSharp-0.27.0/llamasharp.nuspec",
+      "sha256": "260f05c1a45295b14afcab77f9b0fd7eaf2bd489403b57db1a7e6e5869de5928"
+    },
+    {
+      "bytes": 1176,
+      "path": "desktop/academy/THIRD_PARTY/LLamaSharp.Backend.Cpu-0.27.0/MIT-LICENSE.txt",
+      "sha256": "5c737de8d1262bd436c931fa37f18870b8dd9e9c9a62875b2a21d6296e289c41"
+    },
+    {
+      "bytes": 883,
+      "path": "desktop/academy/THIRD_PARTY/LLamaSharp.Backend.Cpu-0.27.0/llamasharp.backend.cpu.nuspec",
+      "sha256": "93d0533df1fecb11e392615b8e1d882f93ca3bb112e5172b686da9b2f1a6af02"
+    },
+    {
+      "bytes": 1163,
+      "path": "desktop/academy/THIRD_PARTY/Microsoft.Bcl.AsyncInterfaces-10.0.5/MIT-LICENSE.txt",
+      "sha256": "f68ad547e8e28b4893c156f4973b9147f2d20a3d775b96a4ff2de222cc5814a6"
+    },
+    {
+      "bytes": 78041,
+      "path": "desktop/academy/THIRD_PARTY/Microsoft.Bcl.AsyncInterfaces-10.0.5/THIRD-PARTY-NOTICES.TXT",
+      "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+    },
+    {
+      "bytes": 1453,
+      "path": "desktop/academy/THIRD_PARTY/Microsoft.Bcl.AsyncInterfaces-10.0.5/microsoft.bcl.asyncinterfaces.nuspec",
+      "sha256": "6d71dfb73b718c6e4aef965dbb34dc9ea5f10824ade22e429721d2dd903d7159"
+    },
+    {
+      "bytes": 1154,
+      "path": "desktop/academy/THIRD_PARTY/Microsoft.Bcl.Memory-10.0.5/MIT-LICENSE.txt",
+      "sha256": "7cae442ef9cb87842c8d9172a147eba8333fd04548025f0e4582b351d702d3b4"
+    },
+    {
+      "bytes": 78041,
+      "path": "desktop/academy/THIRD_PARTY/Microsoft.Bcl.Memory-10.0.5/THIRD-PARTY-NOTICES.TXT",
+      "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+    },
+    {
+      "bytes": 1868,
+      "path": "desktop/academy/THIRD_PARTY/Microsoft.Bcl.Memory-10.0.5/microsoft.bcl.memory.nuspec",
+      "sha256": "8de93b45a468ccb7df6a3a0418c13b9c73e9955e2f8c3bbcca678996250c04fe"
+    },
+    {
+      "bytes": 1170,
+      "path": "desktop/academy/THIRD_PARTY/Microsoft.Extensions.AI.Abstractions-10.4.1/MIT-LICENSE.txt",
+      "sha256": "b76758e55c2306b6ea321f3e2693399f30d22001bc77c5b92dbbfc0f71e51171"
+    },
+    {
+      "bytes": 1827,
+      "path": "desktop/academy/THIRD_PARTY/Microsoft.Extensions.AI.Abstractions-10.4.1/microsoft.extensions.ai.abstractions.nuspec",
+      "sha256": "42f2b51fa80dff7c459c13d567d5def67eefc1d8c7b4b05fdce75910e8b4365a"
+    },
+    {
+      "bytes": 1187,
+      "path": "desktop/academy/THIRD_PARTY/Microsoft.Extensions.DependencyInjection.Abstractions-10.0.5/MIT-LICENSE.txt",
+      "sha256": "841e7839507820c7fa6b96cb6b239c22cc07c882238111d518449772b2532b50"
+    },
+    {
+      "bytes": 78041,
+      "path": "desktop/academy/THIRD_PARTY/Microsoft.Extensions.DependencyInjection.Abstractions-10.0.5/THIRD-PARTY-NOTICES.TXT",
+      "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+    },
+    {
+      "bytes": 1741,
+      "path": "desktop/academy/THIRD_PARTY/Microsoft.Extensions.DependencyInjection.Abstractions-10.0.5/microsoft.extensions.dependencyinjection.abstractions.nuspec",
+      "sha256": "bb0577e001294ac3dc2b1ae8a92d02fb6a0a9938f484ce435d8f91edf11700f6"
+    },
+    {
+      "bytes": 1175,
+      "path": "desktop/academy/THIRD_PARTY/Microsoft.Extensions.Logging.Abstractions-10.0.5/MIT-LICENSE.txt",
+      "sha256": "be432dd2a038365ff647195e3c66877e9c6385dc6db45ffa50f84e97c88c8a42"
+    },
+    {
+      "bytes": 78041,
+      "path": "desktop/academy/THIRD_PARTY/Microsoft.Extensions.Logging.Abstractions-10.0.5/THIRD-PARTY-NOTICES.TXT",
+      "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+    },
+    {
+      "bytes": 2990,
+      "path": "desktop/academy/THIRD_PARTY/Microsoft.Extensions.Logging.Abstractions-10.0.5/microsoft.extensions.logging.abstractions.nuspec",
+      "sha256": "64c0105c69ba4f17240404c93da5813018c424941c79ed65b11000fc7a9eae2e"
+    },
+    {
+      "bytes": 1487,
+      "path": "desktop/academy/THIRD_PARTY/Microsoft.Web.WebView2-1.0.2792.45/LICENSE.txt",
+      "sha256": "0af8f1b807512aae39c2ac1aa4d0cae65cabecb6fd554b8439a5162a0d6eca55"
+    },
+    {
+      "bytes": 3894,
+      "path": "desktop/academy/THIRD_PARTY/Microsoft.Web.WebView2-1.0.2792.45/NOTICE.txt",
+      "sha256": "106423785c5b7eba0a8e61d1837f2132e9c828e20ad530f565d981c1df60dd90"
+    },
+    {
+      "bytes": 1367,
+      "path": "desktop/academy/THIRD_PARTY/Microsoft.Web.WebView2-1.0.2792.45/microsoft.web.webview2.nuspec",
+      "sha256": "ed3117e361a3a1b19ebb5d06a0696540d86f3af942266c5151808273844a58cf"
+    },
+    {
+      "bytes": 1169,
+      "path": "desktop/academy/THIRD_PARTY/System.Diagnostics.DiagnosticSource-10.0.5/MIT-LICENSE.txt",
+      "sha256": "a00678cbf527fdb8f2286ce2a77df701f950639b4b3fcf2966053bc2601e7952"
+    },
+    {
+      "bytes": 78041,
+      "path": "desktop/academy/THIRD_PARTY/System.Diagnostics.DiagnosticSource-10.0.5/THIRD-PARTY-NOTICES.TXT",
+      "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+    },
+    {
+      "bytes": 1749,
+      "path": "desktop/academy/THIRD_PARTY/System.Diagnostics.DiagnosticSource-10.0.5/system.diagnostics.diagnosticsource.nuspec",
+      "sha256": "c0101bfb47fdf5bb1fd97b5372990087be40488948038d51e008a5ea2b0ea199"
+    },
+    {
+      "bytes": 1153,
+      "path": "desktop/academy/THIRD_PARTY/System.IO.Pipelines-10.0.4/MIT-LICENSE.txt",
+      "sha256": "c241464b038f39aae9f4cd837490baf6081e41181f30be4ae5e9877d2f1d952c"
+    },
+    {
+      "bytes": 78041,
+      "path": "desktop/academy/THIRD_PARTY/System.IO.Pipelines-10.0.4/THIRD-PARTY-NOTICES.TXT",
+      "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+    },
+    {
+      "bytes": 1840,
+      "path": "desktop/academy/THIRD_PARTY/System.IO.Pipelines-10.0.4/system.io.pipelines.nuspec",
+      "sha256": "27bde6cdefd3ac8cdefbc3d8fe613a43b7f99fb4c99eea30ce29df50b501ac8b"
+    },
+    {
+      "bytes": 1181,
+      "path": "desktop/academy/THIRD_PARTY/System.Interactive.Async-7.0.0/MIT-LICENSE.txt",
+      "sha256": "0ff4213cf2b8c5851d13ff093953befc648ce5d39c4781e7262cdf3ddb8712bc"
+    },
+    {
+      "bytes": 1706,
+      "path": "desktop/academy/THIRD_PARTY/System.Interactive.Async-7.0.0/system.interactive.async.nuspec",
+      "sha256": "f8bddbb492ee19a5db45692281b5d2b9d5940e9858ea55d53c0a34c2dbd120dd"
+    },
+    {
+      "bytes": 1174,
+      "path": "desktop/academy/THIRD_PARTY/System.Linq.Async-7.0.0/MIT-LICENSE.txt",
+      "sha256": "6f5889d3b760e2f0306a44252a5b66bc47899736a636b7c08f50ef71081e8c2a"
+    },
+    {
+      "bytes": 1981,
+      "path": "desktop/academy/THIRD_PARTY/System.Linq.Async-7.0.0/system.linq.async.nuspec",
+      "sha256": "b686c8e7a5ea1d8efc78d531556d2a009b5b38530643a039c936f8c3be5082b1"
+    },
+    {
+      "bytes": 1161,
+      "path": "desktop/academy/THIRD_PARTY/System.Linq.AsyncEnumerable-10.0.2/MIT-LICENSE.txt",
+      "sha256": "37399327e6b0ae8de4036c4f1436d0062c13c81419415b7d06358b5de0af9040"
+    },
+    {
+      "bytes": 78041,
+      "path": "desktop/academy/THIRD_PARTY/System.Linq.AsyncEnumerable-10.0.2/THIRD-PARTY-NOTICES.TXT",
+      "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+    },
+    {
+      "bytes": 1843,
+      "path": "desktop/academy/THIRD_PARTY/System.Linq.AsyncEnumerable-10.0.2/system.linq.asyncenumerable.nuspec",
+      "sha256": "2536acc68bce1bce3e9cc08a42ecfbde03e571cb3ce628b81b5c0e55e3559084"
+    },
+    {
+      "bytes": 1157,
+      "path": "desktop/academy/THIRD_PARTY/System.Numerics.Tensors-10.0.5/MIT-LICENSE.txt",
+      "sha256": "ea23f115ea8d9b6bb6325c25c8cde33568718dd08dc0aa7dd171e244a44b2290"
+    },
+    {
+      "bytes": 78041,
+      "path": "desktop/academy/THIRD_PARTY/System.Numerics.Tensors-10.0.5/THIRD-PARTY-NOTICES.TXT",
+      "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+    },
+    {
+      "bytes": 1717,
+      "path": "desktop/academy/THIRD_PARTY/System.Numerics.Tensors-10.0.5/system.numerics.tensors.nuspec",
+      "sha256": "28f01f6e053e911b74204928d0c0b041806d1613e7f7e92e19c1b32f8e00cba4"
+    },
+    {
+      "bytes": 1159,
+      "path": "desktop/academy/THIRD_PARTY/System.Text.Encodings.Web-10.0.4/MIT-LICENSE.txt",
+      "sha256": "3f052d9131c006deb9bf9c1670bc1efc047bdd9fa6c2340ef9ddccf285407484"
+    },
+    {
+      "bytes": 78041,
+      "path": "desktop/academy/THIRD_PARTY/System.Text.Encodings.Web-10.0.4/THIRD-PARTY-NOTICES.TXT",
+      "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+    },
+    {
+      "bytes": 1975,
+      "path": "desktop/academy/THIRD_PARTY/System.Text.Encodings.Web-10.0.4/system.text.encodings.web.nuspec",
+      "sha256": "ffa49d9c24618f8622dcde98eba71fd2f72cee927d290b58dd0e62840f986fce"
+    },
+    {
+      "bytes": 1150,
+      "path": "desktop/academy/THIRD_PARTY/System.Text.Json-10.0.4/MIT-LICENSE.txt",
+      "sha256": "d5e4e902fa7a56604576497ad6dd14911bac5ab72115a0afafe1e2f0ce76af66"
+    },
+    {
+      "bytes": 78041,
+      "path": "desktop/academy/THIRD_PARTY/System.Text.Json-10.0.4/THIRD-PARTY-NOTICES.TXT",
+      "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+    },
+    {
+      "bytes": 3543,
+      "path": "desktop/academy/THIRD_PARTY/System.Text.Json-10.0.4/system.text.json.nuspec",
+      "sha256": "cf3892a4732215e5467283509f42c6a5657dfb6cea20c118d54c442e919cdfeb"
+    },
+    {
+      "bytes": 337,
+      "path": "desktop/academy/ai/NativeCheck/NativeCheck.csproj",
+      "sha256": "b9155d2959f014cfed3229ea7150fbdea2e9d6ed7492f11a0620db8cf039c9a9"
+    },
+    {
+      "bytes": 8706,
+      "path": "desktop/academy/ai/NativeCheck/Program.cs",
+      "sha256": "b9fd3d79d47cf03daa13290a82352209e5e53b81d59737919f1570667cc376ad"
+    },
+    {
+      "bytes": 5022,
+      "path": "desktop/academy/ai/NativeResearchCheck/GuardControls.cs",
+      "sha256": "e59cb264eddaa9b342f99594657896337b865e92650c6958b321340577a2f13f"
+    },
+    {
+      "bytes": 18844,
+      "path": "desktop/academy/ai/NativeResearchCheck/NativeResearchCheck.cs",
+      "sha256": "77b409d7830c2e3e0f28fdd7e6945ce9d6f7b38cd9433db35a24d8483b5c4837"
+    },
+    {
+      "bytes": 525,
+      "path": "desktop/academy/ai/NativeResearchCheck/NativeResearchCheck.csproj",
+      "sha256": "2dd51a902b37cff343d9688e048f8370fbe2ba964298f937dfcb5e9b761ffa4b"
+    },
+    {
+      "bytes": 4425,
+      "path": "desktop/academy/ai/NativeResearchCheck/README_ES_EN.md",
+      "sha256": "9c402907f9c1776700c2082e80f5133332183cd9bb2767937c20323a4b393845"
+    },
+    {
+      "bytes": 1778,
+      "path": "desktop/academy/ai/PromptParity/Program.cs",
+      "sha256": "ef5dbe7a36ab397f074f0075e5817207bc6b29f3dba5c4cc6a08426f1eee4588"
+    },
+    {
+      "bytes": 337,
+      "path": "desktop/academy/ai/PromptParity/PromptParity.csproj",
+      "sha256": "b9155d2959f014cfed3229ea7150fbdea2e9d6ed7492f11a0620db8cf039c9a9"
+    },
+    {
+      "bytes": 10348,
+      "path": "desktop/academy/ai/README_ES_EN.md",
+      "sha256": "cc7c320bd0de2e535a3bdcd41784217d619671821b3ef376f3d8f4dd69336f07"
+    },
+    {
+      "bytes": 12147,
+      "path": "desktop/academy/ai/RESEARCH_TRAINING_V3_ES_EN.md",
+      "sha256": "56e0444d753887e843d1405903ef37799cf37862407b457d1178cfc055d8fc90"
+    },
+    {
+      "bytes": 22511,
+      "path": "desktop/academy/ai/academy_pipeline_v1.py",
+      "sha256": "7fabd96519753fe59a595b15e51948bf5c00e6836788a92199ac566d24331fa0"
+    },
+    {
+      "bytes": 24660,
+      "path": "desktop/academy/ai/academy_pipeline_v2.py",
+      "sha256": "dd6d237aac4efbb679591c4a9293740c64e92aa61efe4ddf43dbe95315918da7"
+    },
+    {
+      "bytes": 74303,
+      "path": "desktop/academy/ai/academy_research_pipeline_v3.py",
+      "sha256": "d09bbb8b7ff3e913f29fc503dfe800a20076f043b76efd2b4146fb02a7265f9d"
+    },
+    {
+      "bytes": 1909,
+      "originalPath": "ai/base-1.7b/base-provenance.json",
+      "originalSha256": "fcbff8ab9f6fb0de38da60a1acd815377cc6cfc32a42bc41afb5dd2ba94dd511",
+      "path": "desktop/academy/ai/base-provenance.json",
+      "sha256": "1795c62324c531bf0bf44a0f9e7c0791e4bd5422ccf8118142b226dba9506a66",
+      "transformation": "metadata-only; omitted local authoring paths; no base-model files"
+    },
+    {
+      "bytes": 1681,
+      "path": "desktop/academy/ai/check_converter_provenance.py",
+      "sha256": "08b75b866b792a420fd4f7c208b9eedb244543c444195c25621eb8ed0fe2c69e"
+    },
+    {
+      "bytes": 3575,
+      "path": "desktop/academy/ai/download_ranged_base.py",
+      "sha256": "bc348aca4ce8b27b37953ba58a6cbdd58f94d44c16e05d8d4e106803169c6b0f"
+    },
+    {
+      "bytes": 4608,
+      "path": "desktop/academy/ai/finalize_release.py",
+      "sha256": "58484a480bdb54b167f58e68a55081849976b16575e57584b03f975ffc08c9de"
+    },
+    {
+      "bytes": 918,
+      "path": "desktop/academy/ai/prepare_prompt_parity.py",
+      "sha256": "1367dee9d1d3e13e8bb867113b286c131468beedfd5e501972ea20fc6372cb6c"
+    },
+    {
+      "bytes": 958,
+      "path": "desktop/academy/ai/release-v1.1/NOTICE_ACADEMY.txt",
+      "sha256": "75f72a0323e36475af55657906a3efd3d41d7dae405cbc5abec7999b8f6cdbe7"
+    },
+    {
+      "bytes": 11343,
+      "path": "desktop/academy/ai/release-v1.1/QWEN_LICENSE.txt",
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    },
+    {
+      "bytes": 7352,
+      "path": "desktop/academy/ai/release-v1.1/manifest.json",
+      "sha256": "0d51226febb02fe7832de8599698f601d09aa42c2779a2d348c0e71e3b24b1aa"
+    },
+    {
+      "bytes": 2850,
+      "path": "desktop/academy/ai/release-v1.3/NOTICE_ACADEMY.txt",
+      "sha256": "af2e68f18018dedb1d7ddadd9f3ad75908dce75d2dc5239115cd1f194053b237"
+    },
+    {
+      "bytes": 11343,
+      "path": "desktop/academy/ai/release-v1.3/QWEN_LICENSE.txt",
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    },
+    {
+      "bytes": 4304,
+      "path": "desktop/academy/ai/release-v1.3/manifest.json",
+      "sha256": "50df9af5d8aa3d8b3af42fa9dfeeab02e7be404324aae9c495813166bf02997b"
+    },
+    {
+      "bytes": 93497,
+      "path": "desktop/academy/ai/release-v1.3/training-data/dev.jsonl",
+      "sha256": "2cc11ce3fc9b9e9467182b184f2dc087e2e28bb1525a27e2cb08e85fa213d084"
+    },
+    {
+      "bytes": 1764,
+      "path": "desktop/academy/ai/release-v1.3/training-data/prepare_reproduction.py",
+      "sha256": "0e921c5177cb7092dec63301616e25bf81855fc93d60476cc1109ffc6f3d481b"
+    },
+    {
+      "bytes": 2472,
+      "path": "desktop/academy/ai/release-v1.3/training-data/split-plan.json",
+      "sha256": "12d40e0ed5b82aa0932c8966e055713fbda101b3646c3e9a93648889d0386dbf"
+    },
+    {
+      "bytes": 94655,
+      "path": "desktop/academy/ai/release-v1.3/training-data/test.jsonl",
+      "sha256": "64ec8a91b27f6cf34c12824f74263f9256fe88f772fd55a7da16cc568c71ae03"
+    },
+    {
+      "bytes": 988759,
+      "path": "desktop/academy/ai/release-v1.3/training-data/train.jsonl",
+      "sha256": "443e2ad5f43ee4481283e132d961d838dea02586b10df1e23841f3b8567ca06e"
+    },
+    {
+      "bytes": 1563,
+      "path": "desktop/academy/ai/test_completion_loss.py",
+      "sha256": "f51a7fd08fb4693932fc432df44a2d2281aa3b716300ad168f5aeaa0c415369c"
+    },
+    {
+      "bytes": 82946,
+      "originalSha256": "342bddff2b5cad1d83ae7f4c1ccc92979b0d37043419669a48ec7a25b42823b2",
+      "path": "desktop/academy/content/algorithm-catalog.json",
+      "sha256": "6a3fe4ef748170bb245ae7ec5d904861688988317476aad4c9195cb3ab218aa9",
+      "transformation": "same public metadata sanitization as the browser; authoring filesystem paths omitted"
+    },
+    {
+      "bytes": 207745,
+      "path": "desktop/academy/content/course.json",
+      "sha256": "f9a17df9645b541abc70907e5d04cd38c213293443ce1d37c2c0d94f8aea0cb9"
+    },
+    {
+      "bytes": 367230,
+      "path": "desktop/academy/content/derivations.json",
+      "sha256": "e07920a25ae8642ffa55a83a75a4db7eb8a6ead09a5c8195ae23ef91d6c9b02e"
+    },
+    {
+      "bytes": 4647,
+      "path": "desktop/academy/content/doctoral-cases.json",
+      "sha256": "2d527a8df59b602f44056eb810b1d158a364a8c2b927efb8f3a93a6a7770c52b"
+    },
+    {
+      "bytes": 583,
+      "path": "desktop/academy/content/doctoral-data/monash-d2o-10/acqu2s",
+      "sha256": "5ea8c38e341433429bc195937534260c8aa1cbe80d75aaad1f90f59b16af7ebd"
+    },
+    {
+      "bytes": 8972,
+      "path": "desktop/academy/content/doctoral-data/monash-d2o-10/acqus",
+      "sha256": "d25ccebaf598a0be42229e4767fa2fcde4d3e9cda9740b2ceda14745f572c6e0"
+    },
+    {
+      "bytes": 125,
+      "path": "desktop/academy/content/doctoral-data/monash-d2o-10/difflist",
+      "sha256": "54ac466c9c4e053cc2c7396c1b578386ec150217f0f594500a2cc63af16a57e2"
+    },
+    {
+      "bytes": 1892,
+      "path": "desktop/academy/content/doctoral-data/monash-d2o-10/gpnam6",
+      "sha256": "85b3e903dda475b283ac2575e55b69296c94725f946dd728c6965af98cf8e240"
+    },
+    {
+      "bytes": 26,
+      "path": "desktop/academy/content/doctoral-data/monash-d2o-10/gradient_calib",
+      "sha256": "ed4a29f9fbf562781cee6410548340bc2aac2d9040314df9600eacb45fa2d1fe"
+    },
+    {
+      "bytes": 571,
+      "path": "desktop/academy/content/doctoral-data/monash-d2o-10/pdata/1/dosy",
+      "sha256": "461edcc743571b39e9615ebc2c9d19ab5352c5001e10eafa1640e228e69215a8"
+    },
+    {
+      "bytes": 2506,
+      "path": "desktop/academy/content/doctoral-data/monash-d2o-10/pdata/1/procs",
+      "sha256": "452cd67e42b5d793160a521871d0a65dddc8dbb05fb77a388a77a35ff5af2a8d"
+    },
+    {
+      "bytes": 47,
+      "path": "desktop/academy/content/doctoral-data/monash-d2o-10/pdata/1/title",
+      "sha256": "2ab7500b1a24114f1fa3ba9d7ef104b64a4767f9691b7886aae1d852c7a343c7"
+    },
+    {
+      "bytes": 3580,
+      "path": "desktop/academy/content/doctoral-data/monash-d2o-10/provenance.json",
+      "sha256": "4909c388880c3b8d6b011e25bb5bb5e90bf1e630661e3ae6d1ba068c47999477"
+    },
+    {
+      "bytes": 6493,
+      "path": "desktop/academy/content/doctoral-data/monash-d2o-10/pulseprogram",
+      "sha256": "a0532529364e3e4b98563ad4b7173f773d2a38d372f9f365ff24300439caca98"
+    },
+    {
+      "bytes": 2097152,
+      "path": "desktop/academy/content/doctoral-data/monash-d2o-10/ser.ser",
+      "sha256": "c6835b3d3ae84bf827045b88ba1b23937bd3febf81c080291aee8f09a99274f8"
+    },
+    {
+      "bytes": 8977,
+      "path": "desktop/academy/content/doctoral-manifest.json",
+      "sha256": "0f87e569f19c032af756c02cdd0aceb33b38fb87cdd9dd78727f9f246d8a588c"
+    },
+    {
+      "bytes": 586,
+      "path": "desktop/academy/content/research-data/monash-pma1-10/acqu2s",
+      "sha256": "f87d29b6e8e0aeb50e0dfc04cadec8ea5aac1b3e6686430461c178309732ffa9"
+    },
+    {
+      "bytes": 8988,
+      "path": "desktop/academy/content/research-data/monash-pma1-10/acqus",
+      "sha256": "b2f9089b78a190fee3ef72e3fe121cf822bd5bd097ed0e8db22adcbaa65b9502"
+    },
+    {
+      "bytes": 125,
+      "path": "desktop/academy/content/research-data/monash-pma1-10/difflist",
+      "sha256": "54ac466c9c4e053cc2c7396c1b578386ec150217f0f594500a2cc63af16a57e2"
+    },
+    {
+      "bytes": 1892,
+      "path": "desktop/academy/content/research-data/monash-pma1-10/gpnam6",
+      "sha256": "85b3e903dda475b283ac2575e55b69296c94725f946dd728c6965af98cf8e240"
+    },
+    {
+      "bytes": 26,
+      "path": "desktop/academy/content/research-data/monash-pma1-10/gradient_calib",
+      "sha256": "ed4a29f9fbf562781cee6410548340bc2aac2d9040314df9600eacb45fa2d1fe"
+    },
+    {
+      "bytes": 2326,
+      "path": "desktop/academy/content/research-data/monash-pma1-10/pdata/1/procs",
+      "sha256": "0a2d6e800f0f44d0d0353f950e3177514f3d644f8266435c3e1c2b911be025c9"
+    },
+    {
+      "bytes": 53,
+      "path": "desktop/academy/content/research-data/monash-pma1-10/pdata/1/title",
+      "sha256": "bd196f15d9e71cf98a269380fdeb25d616851143bda6fbb44231516c6476a258"
+    },
+    {
+      "bytes": 3821,
+      "path": "desktop/academy/content/research-data/monash-pma1-10/provenance.json",
+      "sha256": "861751fe77477509a4bcdd31b8405f0de53dafaa36dfc28990e67016993be68c"
+    },
+    {
+      "bytes": 6493,
+      "path": "desktop/academy/content/research-data/monash-pma1-10/pulseprogram",
+      "sha256": "a0532529364e3e4b98563ad4b7173f773d2a38d372f9f365ff24300439caca98"
+    },
+    {
+      "bytes": 2097152,
+      "path": "desktop/academy/content/research-data/monash-pma1-10/ser.ser",
+      "sha256": "fc1b34731507e649684e0f606289ffbd9779d58aa428af54d5c4c58e36e7dd60"
+    },
+    {
+      "bytes": 586,
+      "path": "desktop/academy/content/research-data/monash-pma1-21/acqu2s",
+      "sha256": "b974234dc0d61a76503d928d7a44d89c0d04737d4a96b0348516df2b2a1075ea"
+    },
+    {
+      "bytes": 8990,
+      "path": "desktop/academy/content/research-data/monash-pma1-21/acqus",
+      "sha256": "5e833ddb8a8259b87dcbcbdeca19241b846d7e7ebd628230c6f688c67a6bb624"
+    },
+    {
+      "bytes": 125,
+      "path": "desktop/academy/content/research-data/monash-pma1-21/difflist",
+      "sha256": "54ac466c9c4e053cc2c7396c1b578386ec150217f0f594500a2cc63af16a57e2"
+    },
+    {
+      "bytes": 1892,
+      "path": "desktop/academy/content/research-data/monash-pma1-21/gpnam6",
+      "sha256": "85b3e903dda475b283ac2575e55b69296c94725f946dd728c6965af98cf8e240"
+    },
+    {
+      "bytes": 26,
+      "path": "desktop/academy/content/research-data/monash-pma1-21/gradient_calib",
+      "sha256": "ed4a29f9fbf562781cee6410548340bc2aac2d9040314df9600eacb45fa2d1fe"
+    },
+    {
+      "bytes": 2326,
+      "path": "desktop/academy/content/research-data/monash-pma1-21/pdata/1/procs",
+      "sha256": "5b3daa9212601c1f7d74ee9e27222169058e0372b9e6697473e6f58fbe6567cc"
+    },
+    {
+      "bytes": 54,
+      "path": "desktop/academy/content/research-data/monash-pma1-21/pdata/1/title",
+      "sha256": "2be1f30ace08a2e2d997d141ef27d22c5c6919bc50afda659d42c30233a06d02"
+    },
+    {
+      "bytes": 3821,
+      "path": "desktop/academy/content/research-data/monash-pma1-21/provenance.json",
+      "sha256": "58e76bf0b269e485e2d93532f869c01935ee54180c0cd76aa40cd4cba3f811ab"
+    },
+    {
+      "bytes": 6493,
+      "path": "desktop/academy/content/research-data/monash-pma1-21/pulseprogram",
+      "sha256": "a0532529364e3e4b98563ad4b7173f773d2a38d372f9f365ff24300439caca98"
+    },
+    {
+      "bytes": 2097152,
+      "path": "desktop/academy/content/research-data/monash-pma1-21/ser.ser",
+      "sha256": "9c4061401328f543ca0672016850ffaf9d0aed1d461e634aea331f403f5e38e1"
+    },
+    {
+      "bytes": 587,
+      "path": "desktop/academy/content/research-data/monash-pma6-11/acqu2s",
+      "sha256": "b64d7b8716ebb50168bd5726b3137aec39c1fda1fc002d4551f9b3dbab78614e"
+    },
+    {
+      "bytes": 8989,
+      "path": "desktop/academy/content/research-data/monash-pma6-11/acqus",
+      "sha256": "744ffbeef2f23c9029cffd4764d9fa71978a1011ed526ecde30dd2662301f429"
+    },
+    {
+      "bytes": 125,
+      "path": "desktop/academy/content/research-data/monash-pma6-11/difflist",
+      "sha256": "54ac466c9c4e053cc2c7396c1b578386ec150217f0f594500a2cc63af16a57e2"
+    },
+    {
+      "bytes": 1892,
+      "path": "desktop/academy/content/research-data/monash-pma6-11/gpnam6",
+      "sha256": "85b3e903dda475b283ac2575e55b69296c94725f946dd728c6965af98cf8e240"
+    },
+    {
+      "bytes": 26,
+      "path": "desktop/academy/content/research-data/monash-pma6-11/gradient_calib",
+      "sha256": "ed4a29f9fbf562781cee6410548340bc2aac2d9040314df9600eacb45fa2d1fe"
+    },
+    {
+      "bytes": 2327,
+      "path": "desktop/academy/content/research-data/monash-pma6-11/pdata/1/procs",
+      "sha256": "ee18fefaae8280dda4e0032a008fe3cc832de72bf4894565ff5dfdada79f5183"
+    },
+    {
+      "bytes": 53,
+      "path": "desktop/academy/content/research-data/monash-pma6-11/pdata/1/title",
+      "sha256": "3fe92d9f051e640db97c7750b708fd903a6b473521a8af0c7f76a99d0e407438"
+    },
+    {
+      "bytes": 3821,
+      "path": "desktop/academy/content/research-data/monash-pma6-11/provenance.json",
+      "sha256": "061fef63c98ca9df9b62aeb1f01f4b4ea4406a5662341bfbfee404c29e554491"
+    },
+    {
+      "bytes": 6493,
+      "path": "desktop/academy/content/research-data/monash-pma6-11/pulseprogram",
+      "sha256": "a0532529364e3e4b98563ad4b7173f773d2a38d372f9f365ff24300439caca98"
+    },
+    {
+      "bytes": 2097152,
+      "path": "desktop/academy/content/research-data/monash-pma6-11/ser.ser",
+      "sha256": "cee8af56d65566bc513451ad6130dbbbcdcbaab30b2ddf8d9b22a3a270d28c15"
+    },
+    {
+      "bytes": 587,
+      "path": "desktop/academy/content/research-data/monash-pma6-21/acqu2s",
+      "sha256": "e2985ed026a8bc2d2a2187f1a9cb67cc8e622d90dae814f2cee4681060508e06"
+    },
+    {
+      "bytes": 8991,
+      "path": "desktop/academy/content/research-data/monash-pma6-21/acqus",
+      "sha256": "724478502c7857b68805327779c292024dee4c49690b6f3a3ac8c197a164edc0"
+    },
+    {
+      "bytes": 125,
+      "path": "desktop/academy/content/research-data/monash-pma6-21/difflist",
+      "sha256": "54ac466c9c4e053cc2c7396c1b578386ec150217f0f594500a2cc63af16a57e2"
+    },
+    {
+      "bytes": 1892,
+      "path": "desktop/academy/content/research-data/monash-pma6-21/gpnam6",
+      "sha256": "85b3e903dda475b283ac2575e55b69296c94725f946dd728c6965af98cf8e240"
+    },
+    {
+      "bytes": 26,
+      "path": "desktop/academy/content/research-data/monash-pma6-21/gradient_calib",
+      "sha256": "ed4a29f9fbf562781cee6410548340bc2aac2d9040314df9600eacb45fa2d1fe"
+    },
+    {
+      "bytes": 2327,
+      "path": "desktop/academy/content/research-data/monash-pma6-21/pdata/1/procs",
+      "sha256": "8f0d179fe9bcfc7d8f8126ff85c7583179f368315545b9145eff5e9e1c080c90"
+    },
+    {
+      "bytes": 54,
+      "path": "desktop/academy/content/research-data/monash-pma6-21/pdata/1/title",
+      "sha256": "7397792baa8b2500c778d5334b224fe49fc8ec4ffe7fb514c4b885bf314dbbac"
+    },
+    {
+      "bytes": 3821,
+      "path": "desktop/academy/content/research-data/monash-pma6-21/provenance.json",
+      "sha256": "fa87bd7f633bb06d5cbd1161a355d9f5e59d44caa9891ba317382b4872a505e7"
+    },
+    {
+      "bytes": 6493,
+      "path": "desktop/academy/content/research-data/monash-pma6-21/pulseprogram",
+      "sha256": "a0532529364e3e4b98563ad4b7173f773d2a38d372f9f365ff24300439caca98"
+    },
+    {
+      "bytes": 2097152,
+      "path": "desktop/academy/content/research-data/monash-pma6-21/ser.ser",
+      "sha256": "478be66142f1b071b2833e9b5f44776ca58d0be76b853b10781c9aed3180d878"
+    },
+    {
+      "bytes": 587,
+      "path": "desktop/academy/content/research-data/monash-pmma1-12/acqu2s",
+      "sha256": "a5ca6690219d1286895d0e701e819f8f5da6e1f71f6ed106a4a7335748128b32"
+    },
+    {
+      "bytes": 8988,
+      "path": "desktop/academy/content/research-data/monash-pmma1-12/acqus",
+      "sha256": "0fd291acba3b39b045b5b8dac6f01a316784ac211d8b105a8b79c3c2e9ab3ae5"
+    },
+    {
+      "bytes": 125,
+      "path": "desktop/academy/content/research-data/monash-pmma1-12/difflist",
+      "sha256": "54ac466c9c4e053cc2c7396c1b578386ec150217f0f594500a2cc63af16a57e2"
+    },
+    {
+      "bytes": 1892,
+      "path": "desktop/academy/content/research-data/monash-pmma1-12/gpnam6",
+      "sha256": "85b3e903dda475b283ac2575e55b69296c94725f946dd728c6965af98cf8e240"
+    },
+    {
+      "bytes": 26,
+      "path": "desktop/academy/content/research-data/monash-pmma1-12/gradient_calib",
+      "sha256": "ed4a29f9fbf562781cee6410548340bc2aac2d9040314df9600eacb45fa2d1fe"
+    },
+    {
+      "bytes": 2327,
+      "path": "desktop/academy/content/research-data/monash-pmma1-12/pdata/1/procs",
+      "sha256": "221e649264c9b061ef651826aa4013e1d8c2bb9da50dbabb1548403fb4f885f0"
+    },
+    {
+      "bytes": 53,
+      "path": "desktop/academy/content/research-data/monash-pmma1-12/pdata/1/title",
+      "sha256": "439980126b917959af101d7d3a9af80e5d8afbeeb3a2f59f2eb0b0f72f588d43"
+    },
+    {
+      "bytes": 3841,
+      "path": "desktop/academy/content/research-data/monash-pmma1-12/provenance.json",
+      "sha256": "47246abac4a047dd81be1c0319efaf8fd64e63db3c311978adac9d69d5e25b52"
+    },
+    {
+      "bytes": 6493,
+      "path": "desktop/academy/content/research-data/monash-pmma1-12/pulseprogram",
+      "sha256": "a0532529364e3e4b98563ad4b7173f773d2a38d372f9f365ff24300439caca98"
+    },
+    {
+      "bytes": 2097152,
+      "path": "desktop/academy/content/research-data/monash-pmma1-12/ser.ser",
+      "sha256": "cba92fdc31b3a377c001889e360e735a675ce453f8bbcd8cb774bde8a4f9bd71"
+    },
+    {
+      "bytes": 587,
+      "path": "desktop/academy/content/research-data/monash-pmma1-21/acqu2s",
+      "sha256": "db94ff611e738fd80658b1bbf0fe8424f3ca19a55d25f0db904f07069debc5d8"
+    },
+    {
+      "bytes": 8991,
+      "path": "desktop/academy/content/research-data/monash-pmma1-21/acqus",
+      "sha256": "891207ac81e213861ba1c32f26c0ac81de0933343357b84381043f693df36374"
+    },
+    {
+      "bytes": 125,
+      "path": "desktop/academy/content/research-data/monash-pmma1-21/difflist",
+      "sha256": "54ac466c9c4e053cc2c7396c1b578386ec150217f0f594500a2cc63af16a57e2"
+    },
+    {
+      "bytes": 1892,
+      "path": "desktop/academy/content/research-data/monash-pmma1-21/gpnam6",
+      "sha256": "85b3e903dda475b283ac2575e55b69296c94725f946dd728c6965af98cf8e240"
+    },
+    {
+      "bytes": 26,
+      "path": "desktop/academy/content/research-data/monash-pmma1-21/gradient_calib",
+      "sha256": "ed4a29f9fbf562781cee6410548340bc2aac2d9040314df9600eacb45fa2d1fe"
+    },
+    {
+      "bytes": 2327,
+      "path": "desktop/academy/content/research-data/monash-pmma1-21/pdata/1/procs",
+      "sha256": "7caed37ed580724199359a1771291b8811de877a0733c91014e2557f2d4c6ef2"
+    },
+    {
+      "bytes": 53,
+      "path": "desktop/academy/content/research-data/monash-pmma1-21/pdata/1/title",
+      "sha256": "ad9de2d9298d8db38bd9c8ff6c02bafc0234499171f907025d7dffe9f7a35f17"
+    },
+    {
+      "bytes": 3841,
+      "path": "desktop/academy/content/research-data/monash-pmma1-21/provenance.json",
+      "sha256": "5165ca76621fd6562c6faa1435245a2338c743c9a0303383ae56a6b7501a0596"
+    },
+    {
+      "bytes": 6493,
+      "path": "desktop/academy/content/research-data/monash-pmma1-21/pulseprogram",
+      "sha256": "a0532529364e3e4b98563ad4b7173f773d2a38d372f9f365ff24300439caca98"
+    },
+    {
+      "bytes": 2097152,
+      "path": "desktop/academy/content/research-data/monash-pmma1-21/ser.ser",
+      "sha256": "c387328766d4ebfb0bdd1b28c09e3529d43b030dc13883dff8b682a7466845c7"
+    },
+    {
+      "bytes": 587,
+      "path": "desktop/academy/content/research-data/monash-pmma6-12/acqu2s",
+      "sha256": "667825ece4825ff0339573120f900cd3c8a643efe0e5680aa4961c08a7657312"
+    },
+    {
+      "bytes": 8989,
+      "path": "desktop/academy/content/research-data/monash-pmma6-12/acqus",
+      "sha256": "fa6a2402cdd411ec041b86b3dd3c43e17e8a69191ca63647e4fd69a3b5d3475b"
+    },
+    {
+      "bytes": 125,
+      "path": "desktop/academy/content/research-data/monash-pmma6-12/difflist",
+      "sha256": "54ac466c9c4e053cc2c7396c1b578386ec150217f0f594500a2cc63af16a57e2"
+    },
+    {
+      "bytes": 1892,
+      "path": "desktop/academy/content/research-data/monash-pmma6-12/gpnam6",
+      "sha256": "85b3e903dda475b283ac2575e55b69296c94725f946dd728c6965af98cf8e240"
+    },
+    {
+      "bytes": 26,
+      "path": "desktop/academy/content/research-data/monash-pmma6-12/gradient_calib",
+      "sha256": "ed4a29f9fbf562781cee6410548340bc2aac2d9040314df9600eacb45fa2d1fe"
+    },
+    {
+      "bytes": 2327,
+      "path": "desktop/academy/content/research-data/monash-pmma6-12/pdata/1/procs",
+      "sha256": "c1d8a4dc6c1790e0b68fe53fc94ea6498605b8bb34550a203f65eea7ad1ef7f4"
+    },
+    {
+      "bytes": 53,
+      "path": "desktop/academy/content/research-data/monash-pmma6-12/pdata/1/title",
+      "sha256": "3fe92d9f051e640db97c7750b708fd903a6b473521a8af0c7f76a99d0e407438"
+    },
+    {
+      "bytes": 3843,
+      "path": "desktop/academy/content/research-data/monash-pmma6-12/provenance.json",
+      "sha256": "6f9f642e804b955beddc9662a6883d28f3f9fd0a569883be7ccda6e7180bef71"
+    },
+    {
+      "bytes": 6493,
+      "path": "desktop/academy/content/research-data/monash-pmma6-12/pulseprogram",
+      "sha256": "a0532529364e3e4b98563ad4b7173f773d2a38d372f9f365ff24300439caca98"
+    },
+    {
+      "bytes": 2097152,
+      "path": "desktop/academy/content/research-data/monash-pmma6-12/ser.ser",
+      "sha256": "dfd6c78b9c1b6da2c968ece22750367b12875878c50b2356f63e3db35b1d752e"
+    },
+    {
+      "bytes": 587,
+      "path": "desktop/academy/content/research-data/monash-pmma6-21/acqu2s",
+      "sha256": "068976e9d280d1301b1081cdca4a7a70ffbc033930cdb455db6f337eb300fe35"
+    },
+    {
+      "bytes": 8991,
+      "path": "desktop/academy/content/research-data/monash-pmma6-21/acqus",
+      "sha256": "a88774807370a67e3baf029a28b0dda36fc40aca8aa13cb5c1475a179e72b122"
+    },
+    {
+      "bytes": 125,
+      "path": "desktop/academy/content/research-data/monash-pmma6-21/difflist",
+      "sha256": "54ac466c9c4e053cc2c7396c1b578386ec150217f0f594500a2cc63af16a57e2"
+    },
+    {
+      "bytes": 1892,
+      "path": "desktop/academy/content/research-data/monash-pmma6-21/gpnam6",
+      "sha256": "85b3e903dda475b283ac2575e55b69296c94725f946dd728c6965af98cf8e240"
+    },
+    {
+      "bytes": 26,
+      "path": "desktop/academy/content/research-data/monash-pmma6-21/gradient_calib",
+      "sha256": "ed4a29f9fbf562781cee6410548340bc2aac2d9040314df9600eacb45fa2d1fe"
+    },
+    {
+      "bytes": 2327,
+      "path": "desktop/academy/content/research-data/monash-pmma6-21/pdata/1/procs",
+      "sha256": "1fedac47e12adf9a8048f5d071792bc9c0e944594fdbb6d0e54db8ca430c33dd"
+    },
+    {
+      "bytes": 54,
+      "path": "desktop/academy/content/research-data/monash-pmma6-21/pdata/1/title",
+      "sha256": "6197390359ed26451de1f26a55574841387eea9738b5a36b310c6d34b3901bdf"
+    },
+    {
+      "bytes": 3841,
+      "path": "desktop/academy/content/research-data/monash-pmma6-21/provenance.json",
+      "sha256": "fc656584fb9cc0e0ced8f8ec6fe671092e65b3f5a371bcfbf4330e8de2559896"
+    },
+    {
+      "bytes": 6493,
+      "path": "desktop/academy/content/research-data/monash-pmma6-21/pulseprogram",
+      "sha256": "a0532529364e3e4b98563ad4b7173f773d2a38d372f9f365ff24300439caca98"
+    },
+    {
+      "bytes": 2097152,
+      "path": "desktop/academy/content/research-data/monash-pmma6-21/ser.ser",
+      "sha256": "5cf04cdb7844f9874fa66e0ca54fdd202962e8c4906087c430020dea11bbc4f2"
+    },
+    {
+      "bytes": 18805,
+      "path": "desktop/academy/content/research-library.json",
+      "sha256": "8bb39a77c89a02d27eba4e6b8b537df04819ded31f0e22544bab47c5cc34b71e"
+    },
+    {
+      "bytes": 39207,
+      "path": "desktop/academy/content/research-tutor-knowledge.json",
+      "sha256": "a04ae8bcfa523c4f49981d562ec67baae7b4ab74cb452d6fc59a4cd4c6356717"
+    },
+    {
+      "bytes": 287549,
+      "path": "desktop/academy/content/slides/slide-001.png",
+      "sha256": "89cc095ceffa835a023da69f7147d0b9f36fe0c0caf2b0dbb648e098b6b78aae"
+    },
+    {
+      "bytes": 113653,
+      "path": "desktop/academy/content/slides/slide-002.jpg",
+      "sha256": "30c611a97b5e49d33b98c6817261c10618fb537ab69100dcba7880629356ae47"
+    },
+    {
+      "bytes": 134890,
+      "path": "desktop/academy/content/slides/slide-003.jpg",
+      "sha256": "ac8f839a7a05e74507e426db9e380d75e1ec64cdeb9b4ad6628c989c9cd907f5"
+    },
+    {
+      "bytes": 174942,
+      "path": "desktop/academy/content/slides/slide-004.jpg",
+      "sha256": "bbcf1b0478bb8691c9b346b6a808130c727f3b2d9a4cde24b10754c677c458e2"
+    },
+    {
+      "bytes": 168509,
+      "path": "desktop/academy/content/slides/slide-005.jpg",
+      "sha256": "953f8014ea604f849bd926204472eb9bb3a085adb1b4584d338253eda7408145"
+    },
+    {
+      "bytes": 144576,
+      "path": "desktop/academy/content/slides/slide-006.jpg",
+      "sha256": "a505310b67dc64a25ed7503ad37dbd5892b5c4f6aec74a0007243a0c87cd895c"
+    },
+    {
+      "bytes": 97971,
+      "path": "desktop/academy/content/slides/slide-007.jpg",
+      "sha256": "bd8e0060c25a87fe6ef3ee217153a75448d97304fb07f36494149ad92242343a"
+    },
+    {
+      "bytes": 136413,
+      "path": "desktop/academy/content/slides/slide-008.jpg",
+      "sha256": "7f0694abdb97212c6c16510d1fb6170085fd9c0e60a4517ffe9f453c0aaf5524"
+    },
+    {
+      "bytes": 140768,
+      "path": "desktop/academy/content/slides/slide-009.jpg",
+      "sha256": "da8e052d1de3403b212555983c80f2eea22322d29faf9182c0e4abfc2174b70d"
+    },
+    {
+      "bytes": 110038,
+      "path": "desktop/academy/content/slides/slide-010.jpg",
+      "sha256": "af44cf23434c9aca572337605f1221e5b4de8c64f1d71d4a79324ec0dd7dc273"
+    },
+    {
+      "bytes": 144855,
+      "path": "desktop/academy/content/slides/slide-011.jpg",
+      "sha256": "d6b8155cd0e70e3c1a33378a429835d31ac667d5aab50169e2bad568b6b5acb9"
+    },
+    {
+      "bytes": 156757,
+      "path": "desktop/academy/content/slides/slide-012.jpg",
+      "sha256": "81de4c0e316e36679b5905d3e9e64058f888faeb90e29e8531c1e536369effcc"
+    },
+    {
+      "bytes": 178106,
+      "path": "desktop/academy/content/slides/slide-013.jpg",
+      "sha256": "e9f673007c1b820dadc3df3aa1fd58817a8bdc072478592d94478df444fcdeaa"
+    },
+    {
+      "bytes": 166918,
+      "path": "desktop/academy/content/slides/slide-014.jpg",
+      "sha256": "082b165ee9340e59ca3386deae05b3c0a002c1f5ffd65b5f7ddc22834a1dd8c1"
+    },
+    {
+      "bytes": 150190,
+      "path": "desktop/academy/content/slides/slide-015.jpg",
+      "sha256": "0aed9d6b9c84ca5b4ed8359b11f353e6b8926382657efedc5ec1fb57c71ce124"
+    },
+    {
+      "bytes": 100737,
+      "path": "desktop/academy/content/slides/slide-016.jpg",
+      "sha256": "156899124025e9d7e845dbb455310e691b7eca0ecf7a7110ac19d04dabc8fce4"
+    },
+    {
+      "bytes": 165875,
+      "path": "desktop/academy/content/slides/slide-017.jpg",
+      "sha256": "fff908fa5f2a9610dd8d6815f8e9e70afae44f6a48fcd132a973bf5114b06f20"
+    },
+    {
+      "bytes": 153762,
+      "path": "desktop/academy/content/slides/slide-018.jpg",
+      "sha256": "5103e09462adbbd173a65b5ffec3e18ffed2392c7f095e9812e02732c4b5076d"
+    },
+    {
+      "bytes": 104513,
+      "path": "desktop/academy/content/slides/slide-019.jpg",
+      "sha256": "bffe0dea2336f3204146e2994e5ef4c18130ea84d13d477ea68fdfc6e354c587"
+    },
+    {
+      "bytes": 157840,
+      "path": "desktop/academy/content/slides/slide-020.jpg",
+      "sha256": "c7630ec2fc6bf8884c05559fe5c46deb437a2cdf5cbe3fdaf8ce5234984cdc34"
+    },
+    {
+      "bytes": 169113,
+      "path": "desktop/academy/content/slides/slide-021.jpg",
+      "sha256": "39deb45f83c8c09049505f972752b8fe7f0784a1dd879dba6ce5f9e874b044bd"
+    },
+    {
+      "bytes": 144892,
+      "path": "desktop/academy/content/slides/slide-022.jpg",
+      "sha256": "90f5761103dcf465664b051c8198dab46ddc4eb321fba1111c21440e4f0be7c8"
+    },
+    {
+      "bytes": 169828,
+      "path": "desktop/academy/content/slides/slide-023.jpg",
+      "sha256": "d69abe1f179de0a08a2a3383d94e5790bfc1283ceb87e12e52b79c1de547d7c5"
+    },
+    {
+      "bytes": 73677,
+      "path": "desktop/academy/content/slides/slide-024.jpg",
+      "sha256": "45248a5d8a72fad49b29184a7d0df8ed023bc653c3b10149e29f5975fff77836"
+    },
+    {
+      "bytes": 156447,
+      "path": "desktop/academy/content/slides/slide-025.jpg",
+      "sha256": "320dc0d3c4cc4c63dfcadbbe63d956cdfa317426952e882e5ebd9baeb1547599"
+    },
+    {
+      "bytes": 113441,
+      "path": "desktop/academy/content/slides/slide-026.jpg",
+      "sha256": "df30c6320d6fe59d8cc961d494bfc334efafd3bc87d4f18dbf597a010b6d590b"
+    },
+    {
+      "bytes": 160270,
+      "path": "desktop/academy/content/slides/slide-027.jpg",
+      "sha256": "5f5e43008c06e5c698c5157c6f942acfc1b02268546e296e231e7720b55a0df0"
+    },
+    {
+      "bytes": 104107,
+      "path": "desktop/academy/content/slides/slide-028.jpg",
+      "sha256": "c017efb7a27ba665fff40ec2ae5d63206989f9170a2b0bb5bc3eaf1ea6677210"
+    },
+    {
+      "bytes": 170657,
+      "path": "desktop/academy/content/slides/slide-029.jpg",
+      "sha256": "703e971dc52a6e976aefc446b79396af64816a13d87153a15e2c0f28072b7d11"
+    },
+    {
+      "bytes": 108757,
+      "path": "desktop/academy/content/slides/slide-030.jpg",
+      "sha256": "87c43c33d06dc70e1dbfeec7fcbab459f85c4567c962ef87a26a86c25ca0814b"
+    },
+    {
+      "bytes": 175066,
+      "path": "desktop/academy/content/slides/slide-031.jpg",
+      "sha256": "b5424723a471bb17ec1d50b186f9e2df5b01e0830f3aa9bc6fba29100f0a6db2"
+    },
+    {
+      "bytes": 180699,
+      "path": "desktop/academy/content/slides/slide-032.jpg",
+      "sha256": "871f727e80f45e1be83e803ba8b0ded1c6caa22037d25a6dac045d90aff90a19"
+    },
+    {
+      "bytes": 105847,
+      "path": "desktop/academy/content/slides/slide-033.jpg",
+      "sha256": "cb23e942fdcea35bff289f910be85516361f3f682108a8c13f070a1123caa9de"
+    },
+    {
+      "bytes": 272701,
+      "path": "desktop/academy/content/slides/slide-034.jpg",
+      "sha256": "67e4e66d3308e170f09b5e7653f72996a9b2872e893922797b6cf1345fd0ccdb"
+    },
+    {
+      "bytes": 181390,
+      "path": "desktop/academy/content/slides/slide-035.jpg",
+      "sha256": "049e06bafd00829c3c112dcc8f1f11f64208763ce20c688ced620362de0c3927"
+    },
+    {
+      "bytes": 188465,
+      "path": "desktop/academy/content/slides/slide-036.jpg",
+      "sha256": "f6b6e1de5944c70de83cfa62888b3f18727cc558630ee885dafb60d13fa73e7d"
+    },
+    {
+      "bytes": 186583,
+      "path": "desktop/academy/content/slides/slide-037.jpg",
+      "sha256": "b67b20cbed8b4c4b3c1ceae24539b8e93b5d2ef6a7ffb4f14a8911ecc3f1af20"
+    },
+    {
+      "bytes": 83761,
+      "path": "desktop/academy/content/slides/slide-038.jpg",
+      "sha256": "261868a2e5a953d740eb60a2e9b64d095f7b6b4b067a965592d34cc25a60cd8e"
+    },
+    {
+      "bytes": 218444,
+      "path": "desktop/academy/content/slides/slide-039.jpg",
+      "sha256": "3672dd789e5cc2eaf99bf7e771add847b29d307d1dcb5bd5a4a65946f5f5c94c"
+    },
+    {
+      "bytes": 166394,
+      "path": "desktop/academy/content/slides/slide-040.jpg",
+      "sha256": "4e647963937dc579a018b90fb23362df3adb1d47f45f4f4ba0f8595e03293cd6"
+    },
+    {
+      "bytes": 166527,
+      "path": "desktop/academy/content/slides/slide-041.jpg",
+      "sha256": "35e73ee8449128161aaf0feec167dccf0388f71cce6b834ff12257b4625d0b9d"
+    },
+    {
+      "bytes": 145409,
+      "path": "desktop/academy/content/slides/slide-042.jpg",
+      "sha256": "9f1934c634fd7042377b3f6d8d3bbcddd46b7a38957c75d00a9a8f4ab569d656"
+    },
+    {
+      "bytes": 233701,
+      "path": "desktop/academy/content/slides/slide-043.jpg",
+      "sha256": "708c7d429564298c843d8637dce613dd9f0054e0dacd7bdd429a68588b2b74e6"
+    },
+    {
+      "bytes": 148837,
+      "path": "desktop/academy/content/slides/slide-044.jpg",
+      "sha256": "8876cdf955ac58a062c74e5af619ae4bb7cd16d636bb8a4c3857270944ac4ab3"
+    },
+    {
+      "bytes": 130124,
+      "path": "desktop/academy/content/slides/slide-045.jpg",
+      "sha256": "6516f45eca982164ee0f801d2672f80ded35375a7e8acbc04142b3c872495fc4"
+    },
+    {
+      "bytes": 134481,
+      "path": "desktop/academy/content/slides/slide-046.jpg",
+      "sha256": "481c6250b27fa77c25594c990f70ae0ee0d981227fce834e65b57f582fdeb6ec"
+    },
+    {
+      "bytes": 137016,
+      "path": "desktop/academy/content/slides/slide-047.jpg",
+      "sha256": "082c4c1b94b0a5d47439465d86b0e6fd7d5f87434d810e94cdb5decff3ab283d"
+    },
+    {
+      "bytes": 261854,
+      "path": "desktop/academy/content/slides/slide-048.jpg",
+      "sha256": "da9935946d4bec11a1828e9f3a13b843f0403ba948bd55dc971f3fb0799006d7"
+    },
+    {
+      "bytes": 112211,
+      "path": "desktop/academy/content/slides/slide-049.jpg",
+      "sha256": "87db7068f24348694290b35c8cdc481300bff498ee5ba5adebf707f87f538268"
+    },
+    {
+      "bytes": 173603,
+      "path": "desktop/academy/content/slides/slide-050.jpg",
+      "sha256": "fd717ce0dc99aaaa1bb4024fe55e8ca242f7eabcc8580abf570eda5a55609f30"
+    },
+    {
+      "bytes": 193962,
+      "path": "desktop/academy/content/slides/slide-051.jpg",
+      "sha256": "b54fe75d7780bd56a880bed218471838be98eaeb0dce936da05eb7b4b2b2293b"
+    },
+    {
+      "bytes": 159806,
+      "path": "desktop/academy/content/slides/slide-052.jpg",
+      "sha256": "a193de4bd6c3ab464c148f6c5160fd2c09f1034703e208be822a0f67b08bd603"
+    },
+    {
+      "bytes": 150162,
+      "path": "desktop/academy/content/slides/slide-053.jpg",
+      "sha256": "3a1463da56cb6fe5d235c5a9f4502e4d68fbc5c8f0409c79eb56018c8b4ed4c0"
+    },
+    {
+      "bytes": 159685,
+      "path": "desktop/academy/content/slides/slide-054.jpg",
+      "sha256": "0228350039975a1a226a6d726a527fdc30bc777e2f1598e58cce0ce10f0809f2"
+    },
+    {
+      "bytes": 260982,
+      "path": "desktop/academy/content/slides/slide-055.jpg",
+      "sha256": "6ad4f463ae558c7df033493f7b1ac44a7d4396f0a062b74c508c9c4af0b22182"
+    },
+    {
+      "bytes": 242347,
+      "path": "desktop/academy/content/slides/slide-056.jpg",
+      "sha256": "1205111094b42d542453dacb32da8539f6b8d98167d04968461f1f3180bd0322"
+    },
+    {
+      "bytes": 206820,
+      "path": "desktop/academy/content/slides/slide-057.jpg",
+      "sha256": "89e38b459633adcb92ed21262c68c0da68a5c566f1a24c69ef405a6d107ebfde"
+    },
+    {
+      "bytes": 101426,
+      "path": "desktop/academy/content/slides/slide-058.jpg",
+      "sha256": "07cb76a4926e76d063deb128853975e231f47aeb812e3f81a19075b255c6d91a"
+    },
+    {
+      "bytes": 155717,
+      "path": "desktop/academy/content/slides/slide-059.jpg",
+      "sha256": "195c5fdbfe4ab898003f333b569f2538cc0595d7cddf05396c3eebc0910bb7ea"
+    },
+    {
+      "bytes": 270049,
+      "path": "desktop/academy/content/slides/slide-060.jpg",
+      "sha256": "da6a6cb0c48854b727bcbc264166de3bf6b24e11c933e82c5f68aa5835df8c34"
+    },
+    {
+      "bytes": 323588,
+      "path": "desktop/academy/content/slides/slide-061.png",
+      "sha256": "c26394bba3e3550e539de732c0da59177b271661d0113eba1735dd1ea412ea94"
+    },
+    {
+      "bytes": 217975,
+      "path": "desktop/academy/content/slides/slide-062.jpg",
+      "sha256": "d893d0c88a27b822e8e3c7ba63ff58c85511c84d5e316a5020d93d6abbe9bdaf"
+    },
+    {
+      "bytes": 212848,
+      "path": "desktop/academy/content/slides/slide-063.jpg",
+      "sha256": "448f8c38b55757e51a9c7cb441ecf9da7b062bc43459fd9d35a97d183642fc2b"
+    },
+    {
+      "bytes": 210545,
+      "path": "desktop/academy/content/slides/slide-064.jpg",
+      "sha256": "0ac1d056a09212f4ac67d1f900dd3be39298a4835290b2735316de7b3e2652e9"
+    },
+    {
+      "bytes": 209849,
+      "path": "desktop/academy/content/slides/slide-065.jpg",
+      "sha256": "9d21e8931b589c6a19a82b7090172312bceaec230bc2ec3a3b731aea04f5c0d0"
+    },
+    {
+      "bytes": 214195,
+      "path": "desktop/academy/content/slides/slide-066.jpg",
+      "sha256": "fccdb379db101c7ee2108d62a4d3ad999246d1e37c1a61390b5f08ca496e370c"
+    },
+    {
+      "bytes": 209312,
+      "path": "desktop/academy/content/slides/slide-067.jpg",
+      "sha256": "c35156b90d42c78c847cc8471ef02fe2f06ebc7c1bb46fa78df47e58551e8899"
+    },
+    {
+      "bytes": 201401,
+      "path": "desktop/academy/content/slides/slide-068.jpg",
+      "sha256": "8b631dd58787903173fc0ea06197bead7002ff350c60ca6b4dc0aeb6e8544252"
+    },
+    {
+      "bytes": 207798,
+      "path": "desktop/academy/content/slides/slide-069.jpg",
+      "sha256": "3b2f076e93b14ca2f489b3a35470a6964f5862244dfbe539345ad05cac359e1d"
+    },
+    {
+      "bytes": 186142,
+      "path": "desktop/academy/content/slides/slide-070.jpg",
+      "sha256": "82cf27155e451571d5d7c9297975d17ab1801a4e2c23f78000332b43fad5a546"
+    },
+    {
+      "bytes": 223795,
+      "path": "desktop/academy/content/slides/slide-071.jpg",
+      "sha256": "4366c3ac0d2eace1f2992771388fe1ee41922971b6086693e03139a8de4410f1"
+    },
+    {
+      "bytes": 204133,
+      "path": "desktop/academy/content/slides/slide-072.jpg",
+      "sha256": "c08a5b1d810c0330159139876be9ba366b51005c8b64778e164562538379d552"
+    },
+    {
+      "bytes": 222410,
+      "path": "desktop/academy/content/slides/slide-073.jpg",
+      "sha256": "ad128ae03b234a905b99c72d1ebae860a4aa4db6535a217020e428ee9a01c87e"
+    },
+    {
+      "bytes": 223103,
+      "path": "desktop/academy/content/slides/slide-074.jpg",
+      "sha256": "43ed9b5f7ed757cf4bce1532680ba62e94d2f069d9582020ffada803a276bb1a"
+    },
+    {
+      "bytes": 238660,
+      "path": "desktop/academy/content/slides/slide-075.jpg",
+      "sha256": "7f0291c113bdfe000a5609906026fc62fe95b5495e1c548ac6ef61419efd4258"
+    },
+    {
+      "bytes": 238001,
+      "path": "desktop/academy/content/slides/slide-076.jpg",
+      "sha256": "d0d9cdc4dec07e61026e6eb80da556d3c228e6849199281432407a11bb644c0e"
+    },
+    {
+      "bytes": 177402,
+      "path": "desktop/academy/content/slides/slide-077.jpg",
+      "sha256": "fd5cda3145508edd3fa4e7bfe64f19ac9af6c3f1f3002b7041305915d942285a"
+    },
+    {
+      "bytes": 237043,
+      "path": "desktop/academy/content/slides/slide-078.jpg",
+      "sha256": "7b06f7e23bc508d9202e8ffe2453b64c753c7bb7f8207dc3312d2e88c6eee23a"
+    },
+    {
+      "bytes": 208806,
+      "path": "desktop/academy/content/slides/slide-079.jpg",
+      "sha256": "a78226abe6af7065bf49fd39b4d7be0257e46049b1892f1247b3a49b48ccea09"
+    },
+    {
+      "bytes": 179422,
+      "path": "desktop/academy/content/slides/slide-080.jpg",
+      "sha256": "cb8ae1d16cd604b89b728977d9daa42239df4f0bd6d50fa6304a3ce97bfbfd70"
+    },
+    {
+      "bytes": 250843,
+      "path": "desktop/academy/content/slides/slide-081.jpg",
+      "sha256": "df49c49525756c2c9885ce8c590edd415918f4962720dc09d3928f2e8d8bb7d2"
+    },
+    {
+      "bytes": 373115,
+      "originalSha256": "702cf8a2e40f9d772d54385fcf8e481347e066b2b84d84dba0dfb3923cba24f1",
+      "path": "desktop/academy/content/source-index.json",
+      "sha256": "cd5c7c720ff1eda26ff9b0d700015a053d9c03c59ab1fd66a724397ff55939e3",
+      "transformation": "same public metadata sanitization as the browser; authoring filesystem paths omitted"
+    },
+    {
+      "bytes": 3346044,
+      "path": "desktop/academy/docs/ACADEMY_MANUAL_EN.pdf",
+      "sha256": "59c8d45719f71d43511231128829808a422b4eee0e7efe73793dcf2754b84a6e"
+    },
+    {
+      "bytes": 3392094,
+      "path": "desktop/academy/docs/ACADEMY_MANUAL_ES.pdf",
+      "sha256": "b0804a88f9abae12dffe69420ed7faebc450f5eb0ecdb7f4a207ab16d7aafb61"
+    },
+    {
+      "bytes": 846491,
+      "path": "desktop/academy/docs/DOCTORAL_MANUAL_EN.pdf",
+      "sha256": "e9b221b8f7e745945888df6796182b5b30ccfe102c920844c49ed55291bb67d1"
+    },
+    {
+      "bytes": 861083,
+      "path": "desktop/academy/docs/DOCTORAL_MANUAL_ES.pdf",
+      "sha256": "b9ad18ceae5a3a286c436f2981cc4af3c122786c63591a2f281b624154605632"
+    },
+    {
+      "bytes": 1325542,
+      "path": "desktop/academy/docs/MANUAL_EN.pdf",
+      "sha256": "f601201fee63219efff8c6320a398bf2255ffaddd5b4f234f5120caa183f6b48"
+    },
+    {
+      "bytes": 1334197,
+      "path": "desktop/academy/docs/MANUAL_ES.pdf",
+      "sha256": "f84fb78c18245488023a4846eb74d6ec3e77566faaec8ba52ed488b1464b2d9b"
+    },
+    {
+      "bytes": 4654,
+      "path": "desktop/academy/docs/MANUAL_PROVENANCE.md",
+      "sha256": "b5e4abe640c63cb19e79a2b0f8100877124c5a5b5ac624dfec5a609c58c4cc59"
+    },
+    {
+      "bytes": 7485,
+      "path": "desktop/academy/docs/PORTABLE_README_ES_EN.md",
+      "sha256": "286ac6a36b8e4ca85c18a727e0bab2971056e8fc73d801e38127816b47dc1ebf"
+    },
+    {
+      "bytes": 11351,
+      "path": "desktop/academy/docs/README.md",
+      "sha256": "e50c7faf04d75785731f3804901e066c4d940779c13e74666c247d1df57f416e"
+    },
+    {
+      "bytes": 20922,
+      "path": "desktop/academy/docs/RESEARCH_GUIDE_EN.md",
+      "sha256": "6efbcc723c4f4359bbed1596db1bbd49e7df877c55e4755f5bf7b1234f925abb"
+    },
+    {
+      "bytes": 22975,
+      "path": "desktop/academy/docs/RESEARCH_GUIDE_ES.md",
+      "sha256": "b7c6c6ff67c9a08f1ace53cb17501a0af983caa0c44ed8d8f2ae3357f4371488"
+    },
+    {
+      "bytes": 1086235,
+      "path": "desktop/academy/docs/RESEARCH_MANUAL_EN.pdf",
+      "sha256": "823d5888feab474590c043617baa3240fd8cb2b1b4693ca9ccec05c5f3722526"
+    },
+    {
+      "bytes": 1107632,
+      "path": "desktop/academy/docs/RESEARCH_MANUAL_ES.pdf",
+      "sha256": "c5754a7885d163d0fc619d49821670b2fd125cd495d3a95ace3c075aea516b73"
+    },
+    {
+      "bytes": 8287,
+      "path": "desktop/academy/docs/TEACHER_GUIDE_ES_EN.md",
+      "sha256": "98ce54b9e81783682c56c5dc61aaf1dddddb8551bc0a576700150793f439aee6"
+    },
+    {
+      "bytes": 15804,
+      "path": "desktop/academy/docs/USER_GUIDE_EN.md",
+      "sha256": "4af8ae5e5108d0d0c30e05ece2062bcea077b8bd60673670e91e2f2b73cf46bf"
+    },
+    {
+      "bytes": 16869,
+      "path": "desktop/academy/docs/USER_GUIDE_ES.md",
+      "sha256": "7b6c7bf7d9921a3f7e3004c8dfb1968963d44c44b6ac7341807250fac0601125"
+    },
+    {
+      "bytes": 1992,
+      "path": "desktop/academy/lab-source-hashes.json",
+      "sha256": "daa42b0a97d287cf27ee6c9a37e946a1395b029fa31219101cd0c33b99888302"
+    },
+    {
+      "bytes": 4240,
+      "path": "desktop/academy/lab/GUIDE_V2_EN.md",
+      "sha256": "04c42ebd8293e6c43858bfc1016fd78513a74d39b968270ebc3783c8005f8fba"
+    },
+    {
+      "bytes": 4907,
+      "path": "desktop/academy/lab/GUIDE_V2_ES.md",
+      "sha256": "52195f969e4d1bd660aa5d0786f6466a3ee0a3904bec1217baa60c5a909f9640"
+    },
+    {
+      "bytes": 16893,
+      "path": "desktop/academy/lab/REFERENCES.md",
+      "sha256": "d8180ead621c68c25ccc02e1ff8b3a516a98b989dee91aba605404ee5b181c9e"
+    },
+    {
+      "bytes": 2230,
+      "path": "desktop/academy/lab/academy-bridge.js",
+      "sha256": "b9f0782b897cd081172c0f9c0ea54cbc862b439e6cd63a04b6bab156995edab9"
+    },
+    {
+      "bytes": 803,
+      "path": "desktop/academy/lab/academy-shell.css",
+      "sha256": "62b12f6abf25e87d59359bee6f09756804e75f00c79f04731b1748f92dbd35ca"
+    },
+    {
+      "bytes": 13204,
+      "path": "desktop/academy/lab/advanced-scenes.js",
+      "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+    },
+    {
+      "bytes": 26780,
+      "path": "desktop/academy/lab/app.js",
+      "sha256": "25573dff165470d701ff5e094fbc206e2e762cfaaac1d4e159e9454d4f4eb6a5"
+    },
+    {
+      "bytes": 264993,
+      "path": "desktop/academy/lab/assets/DT2_map_10_historical.png",
+      "sha256": "fc1aaf6de8e1c9187b2d25e9b8e16227b24bb006ffa4b8b559f7373f3c8da0cd"
+    },
+    {
+      "bytes": 179287,
+      "path": "desktop/academy/lab/assets/diffatonce-brand.png",
+      "sha256": "da6a731c238eb46afccf70d60b5cb11bf210394db9f1d1298f15cfc5e41d9365"
+    },
+    {
+      "bytes": 719,
+      "path": "desktop/academy/lab/branding.css",
+      "sha256": "078b74d7f73eac5c3392120ff57b40d336db1ace8c76ffce1713a092bc13ab15"
+    },
+    {
+      "bytes": 83881,
+      "path": "desktop/academy/lab/catalog.js",
+      "sha256": "82072a9741d2ef7c7dc58cb426f946d75fa5c8675af4b2ebcc4b46f2da44beb5"
+    },
+    {
+      "bytes": 17954,
+      "path": "desktop/academy/lab/diffusion-models.js",
+      "sha256": "592fb9224f54e518c0bc222f87c709f08235fd98a40c962e31e699002f00396e"
+    },
+    {
+      "bytes": 6779,
+      "path": "desktop/academy/lab/index.html",
+      "sha256": "14b147c5b640fd44ed18d6c5ede38a306bdb0a04a8fb0f03e20baed9fd02a52c"
+    },
+    {
+      "bytes": 3639,
+      "path": "desktop/academy/lab/lab-v2.css",
+      "sha256": "eca1be4f94dcaa8280eede8e8c019b29a3d99697b3a4d6a8c08d0d4cdcfd25bb"
+    },
+    {
+      "bytes": 26859,
+      "path": "desktop/academy/lab/quantitative-scenes.js",
+      "sha256": "53674c9f35b0ae847b67b16e9dfa47bd50fe11bc2fa0a123c4746c308b73e1a6"
+    },
+    {
+      "bytes": 54395,
+      "path": "desktop/academy/lab/scenes.js",
+      "sha256": "229f424d0029dead28b305cb3b9bda06bb6dd0e51453737670c4dbddc8b25e89"
+    },
+    {
+      "bytes": 8447,
+      "path": "desktop/academy/lab/styles.css",
+      "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+    },
+    {
+      "bytes": 5411,
+      "path": "desktop/academy/lab/three-scene.js",
+      "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+    },
+    {
+      "bytes": 1081,
+      "path": "desktop/academy/lab/vendor/THREE-LICENSE.txt",
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "bytes": 2084272,
+      "path": "desktop/academy/lab/vendor/three-0.180.0.cjs",
+      "sha256": "77f0ddd5cf5923ebdd42d70ee3479a2abfb27db8fa18cda395ea999ad4096c3a"
+    },
+    {
+      "bytes": 2084344,
+      "path": "desktop/academy/lab/vendor/three-global.js",
+      "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+    },
+    {
+      "bytes": 521746,
+      "path": "desktop/academy/lab/videos/acquisition-window_EN.mp4",
+      "sha256": "5c5f1784b983e02a85636206d48990a762d8b244670253943678d301f3607b0f"
+    },
+    {
+      "bytes": 520967,
+      "path": "desktop/academy/lab/videos/acquisition-window_ES.mp4",
+      "sha256": "05d40ee79c3a7c23e7f5cfb84fd965b8bd446a79187a917b605bcb447e3814fc"
+    },
+    {
+      "bytes": 1903233,
+      "path": "desktop/academy/lab/videos/anisotropy_EN.mp4",
+      "sha256": "d19cf6f3067ca59d7b22ff09ec2d20df87b77c0ee0f43bee8344d7df75dcc1a4"
+    },
+    {
+      "bytes": 1912999,
+      "path": "desktop/academy/lab/videos/anisotropy_ES.mp4",
+      "sha256": "58a2c8feeab204d64483efeb3afec7480f71934a051969f2be37e42b646f68aa"
+    },
+    {
+      "bytes": 516328,
+      "path": "desktop/academy/lab/videos/attenuation-mixture_EN.mp4",
+      "sha256": "2accfb8b1bb3132aa8542b9b6ce793484b437e0102095b7c04ecfe7f0dd47fc5"
+    },
+    {
+      "bytes": 518481,
+      "path": "desktop/academy/lab/videos/attenuation-mixture_ES.mp4",
+      "sha256": "566b74b2373accb21ab7ed80b3d375cff75764e0986f36d332e7f1531a5f9892"
+    },
+    {
+      "bytes": 2931072,
+      "path": "desktop/academy/lab/videos/brownian_EN.mp4",
+      "sha256": "88c9effa90c286af1ee66eb990cbc518710ee6284659a114f3a22c669a163c3a"
+    },
+    {
+      "bytes": 2934095,
+      "path": "desktop/academy/lab/videos/brownian_ES.mp4",
+      "sha256": "c5fd555d7f7f969d3d7fb051f39c2389f61058ba7c863301918d0d8553349eb1"
+    },
+    {
+      "bytes": 1355544,
+      "path": "desktop/academy/lab/videos/convection_EN.mp4",
+      "sha256": "3ca3bea65b7affc255480c5fbdc48d379853af937788b19b0d93c6f02144a663"
+    },
+    {
+      "bytes": 1366748,
+      "path": "desktop/academy/lab/videos/convection_ES.mp4",
+      "sha256": "379a186f1bfd745b9b5534dc02e9f656f74b7b688abdc996c78467ad27787610"
+    },
+    {
+      "bytes": 519838,
+      "path": "desktop/academy/lab/videos/dt2_EN.mp4",
+      "sha256": "4d1537531226343cec1fc723ad01a2f59536ea00b5b9d71bdea275962ffbd17b"
+    },
+    {
+      "bytes": 521482,
+      "path": "desktop/academy/lab/videos/dt2_ES.mp4",
+      "sha256": "ebe57dbaaed24ffe8befe8f82d2eb06dd279ed75a753646f3d5198cccc3ca59f"
+    },
+    {
+      "bytes": 1346509,
+      "path": "desktop/academy/lab/videos/exchange_EN.mp4",
+      "sha256": "905323dfe1b1b4f0f22d3e8609461aecb6733df0e4faa25cad9917bfb7424794"
+    },
+    {
+      "bytes": 1356531,
+      "path": "desktop/academy/lab/videos/exchange_ES.mp4",
+      "sha256": "86fa3558d62adead35f178f4c9bcdffa113bd722d4502cd6973aae03e10234c3"
+    },
+    {
+      "bytes": 8247541,
+      "path": "desktop/academy/lab/videos/gif/brownian_ES.gif",
+      "sha256": "7abdb6b16b59588d3fabf294fbb7394759ba1e14a3eb42077327e8ea8a5486e8"
+    },
+    {
+      "bytes": 1011336,
+      "path": "desktop/academy/lab/videos/gif/gradients-b_ES.gif",
+      "sha256": "fa96dd3f268987bf005996a06c215f8f5f0a858b161e15177edd2a8adc5974fc"
+    },
+    {
+      "bytes": 1538933,
+      "path": "desktop/academy/lab/videos/gif/spen_ES.gif",
+      "sha256": "ecb2fb48ca86fd437943a9dfa89e79da732e10068b8fbef028fdbc5ddca57094"
+    },
+    {
+      "bytes": 1161635,
+      "path": "desktop/academy/lab/videos/gif/ultrafast_ES.gif",
+      "sha256": "a1f3cc245509701b8882d7eff378333b7c3c9c8ff1cb417c4739e89d27fe4b3f"
+    },
+    {
+      "bytes": 394528,
+      "path": "desktop/academy/lab/videos/gradients-b_EN.mp4",
+      "sha256": "d689cf8f219277d59a2522919125f1ab2366b5870525d8e0b3a0c9bdb4511dcc"
+    },
+    {
+      "bytes": 392040,
+      "path": "desktop/academy/lab/videos/gradients-b_ES.mp4",
+      "sha256": "2654895a0699d769d1b5df0aeaa61ac09ebe5f685c74f0606f44e4805cb807ce"
+    },
+    {
+      "bytes": 356221,
+      "path": "desktop/academy/lab/videos/ilt_EN.mp4",
+      "sha256": "18e9420fbde6eef00ebe4614a7fc67315861f54e31d5eb35916e874dcee3ee02"
+    },
+    {
+      "bytes": 353880,
+      "path": "desktop/academy/lab/videos/ilt_ES.mp4",
+      "sha256": "fa3a22d080f0683ea16813310bc0dc5e6460087bfeb30819fb3b19a9398e2809"
+    },
+    {
+      "bytes": 515422,
+      "path": "desktop/academy/lab/videos/overlap-joint_EN.mp4",
+      "sha256": "a236e393d60cc978b903abf3dee1234ce59590f4b7e2b1883e53abd8c71c94cc"
+    },
+    {
+      "bytes": 522150,
+      "path": "desktop/academy/lab/videos/overlap-joint_ES.mp4",
+      "sha256": "5ad42a46ac90cc9011390894af21cf4633f04196c98f4ffbf420f9ea4a869bf4"
+    },
+    {
+      "bytes": 524523,
+      "path": "desktop/academy/lab/videos/prototype-1d_EN.mp4",
+      "sha256": "29944f0efecb8717a9e846e1b11c485463307c76772764962a1b7132af31ab1c"
+    },
+    {
+      "bytes": 528633,
+      "path": "desktop/academy/lab/videos/prototype-1d_ES.mp4",
+      "sha256": "fd31d101c9f602806958813124a529307657b10c933c99f5e66065486f71ad87"
+    },
+    {
+      "bytes": 403885,
+      "path": "desktop/academy/lab/videos/pulse-90_EN.mp4",
+      "sha256": "a553fd48f88fb56128fd2e545c33e3a2259115214459a439e1559d733ea3862f"
+    },
+    {
+      "bytes": 408376,
+      "path": "desktop/academy/lab/videos/pulse-90_ES.mp4",
+      "sha256": "9140df31914e7c8a646afe95f1162c67ebea92c23856041cae07a133d53c17e7"
+    },
+    {
+      "bytes": 1776387,
+      "path": "desktop/academy/lab/videos/restricted_EN.mp4",
+      "sha256": "2782c1daef80438094184a8e76277620e88cd0e111a9ce6e31318acd52d6e042"
+    },
+    {
+      "bytes": 1781412,
+      "path": "desktop/academy/lab/videos/restricted_ES.mp4",
+      "sha256": "a6499589dc74fe672808f8db7fdd7042f51eb2e566644cbb9ef479587d3ed9a3"
+    },
+    {
+      "bytes": 531313,
+      "path": "desktop/academy/lab/videos/spen_EN.mp4",
+      "sha256": "4db17cb255a2610a3f1bdb4a1df41d8e9f82d188f23e71368cdce31dbdd25555"
+    },
+    {
+      "bytes": 539317,
+      "path": "desktop/academy/lab/videos/spen_ES.mp4",
+      "sha256": "1308dc7d7468aa3fbe01fbc5d60c96ccaaedf37b7da7c9bed362fb70da7c9f6d"
+    },
+    {
+      "bytes": 852613,
+      "path": "desktop/academy/lab/videos/spin-echo_EN.mp4",
+      "sha256": "8c501e4159227c017cc41d2eb86139a79d56b6699be2279f573fd625ff02ba2e"
+    },
+    {
+      "bytes": 862339,
+      "path": "desktop/academy/lab/videos/spin-echo_ES.mp4",
+      "sha256": "acbf0422c02faf97b0bd07d14eb5dd57790e5dae7bfe8883d66319f9f6cdcd6e"
+    },
+    {
+      "bytes": 423777,
+      "path": "desktop/academy/lab/videos/ultrafast_EN.mp4",
+      "sha256": "2ff34156d74b70fd7398bb0ff39014706b6f4b17ea8d91f052315f574f8fd8f3"
+    },
+    {
+      "bytes": 421450,
+      "path": "desktop/academy/lab/videos/ultrafast_ES.mp4",
+      "sha256": "81e4fbd0c5e5eac52cc81b168e7188edf747eeb2655fc800c2beb6518fd46123"
+    },
+    {
+      "bytes": 1828,
+      "path": "desktop/academy/src/DiffAtOnce.Academy.App/App.xaml",
+      "sha256": "074a8762e8535bf13a3c1523a09294168c35c6d944a6967c7a5657828ab5fcf6"
+    },
+    {
+      "bytes": 1992,
+      "path": "desktop/academy/src/DiffAtOnce.Academy.App/App.xaml.cs",
+      "sha256": "9c16de43760f746e3d2733408b51c24d0433ee8cce1f2de922f8b0a9581f9605"
+    },
+    {
+      "bytes": 34093,
+      "path": "desktop/academy/src/DiffAtOnce.Academy.App/Assets/DiffAtOnce-Academy.ico",
+      "sha256": "47c7684987bca288533b07597da9e721dab8ddf461c5a1ce2e1f489f01626ec9"
+    },
+    {
+      "bytes": 17657,
+      "path": "desktop/academy/src/DiffAtOnce.Academy.App/CalibrationWorkshopWindow.cs",
+      "sha256": "48ef83b141b88867e452f7de3d3461e232e74cc782fd0220d09ec923dcc9a9fa"
+    },
+    {
+      "bytes": 10004,
+      "path": "desktop/academy/src/DiffAtOnce.Academy.App/DerivationWindow.cs",
+      "sha256": "6adf62b24a20014f3115d47e0c05dd29c4b97b35e68c3b3c7ad8363317ed3c71"
+    },
+    {
+      "bytes": 2062,
+      "path": "desktop/academy/src/DiffAtOnce.Academy.App/DiffAtOnce.Academy.App.csproj",
+      "sha256": "90256c2bb5906d6eeba652ecd036191f8e72ac8c1697f5afab8ebf736df2037f"
+    },
+    {
+      "bytes": 8219,
+      "path": "desktop/academy/src/DiffAtOnce.Academy.App/DoctoralWindow.cs",
+      "sha256": "57c3678a80f7432fa3f0e3996bcbd4eabcbc3eaa1c85646529f5a178408810c0"
+    },
+    {
+      "bytes": 9242,
+      "path": "desktop/academy/src/DiffAtOnce.Academy.App/MainWindow.xaml",
+      "sha256": "1c2e99a90b7e8683bca1001353a3ed9bba21c2939554e9de51bc49744ce0cc5d"
+    },
+    {
+      "bytes": 57483,
+      "path": "desktop/academy/src/DiffAtOnce.Academy.App/MainWindow.xaml.cs",
+      "sha256": "5e21088a706530f062db09b4f9668b3fa0630c9d069079bf6e3db10e001a961d"
+    },
+    {
+      "bytes": 11778,
+      "path": "desktop/academy/src/DiffAtOnce.Academy.App/ReferenceWindows.cs",
+      "sha256": "57302cfe49ccb00cebee85a048e4929eba3d2b1f125e80e3324ce214ff9ea85f"
+    },
+    {
+      "bytes": 14585,
+      "path": "desktop/academy/src/DiffAtOnce.Academy.App/ResearchWindow.cs",
+      "sha256": "13d48b81847408785e74e1945bfee9b55be16cb8deb329dcedce00d9f4461f4e"
+    },
+    {
+      "bytes": 8031,
+      "path": "desktop/academy/src/DiffAtOnce.Academy.Core/Course.cs",
+      "sha256": "f7e38466a6544f51d9f1194ae9027c29dd54270503e40970351af11f71883b45"
+    },
+    {
+      "bytes": 2354,
+      "path": "desktop/academy/src/DiffAtOnce.Academy.Core/DerivationCatalogue.cs",
+      "sha256": "afeb317364c29f75f5c2eb12a467638892c4dcb25b8e639a78d25f775eed9bb4"
+    },
+    {
+      "bytes": 219,
+      "path": "desktop/academy/src/DiffAtOnce.Academy.Core/DiffAtOnce.Academy.Core.csproj",
+      "sha256": "d5a578c5b5e6474be8688c077765394578a41241798203fe0fafabaea03cf6f4"
+    },
+    {
+      "bytes": 27883,
+      "path": "desktop/academy/src/DiffAtOnce.Academy.Core/TeachingSimulations.cs",
+      "sha256": "57b52bacea34d4fbbe524f809befbe36e59b74998b9a707e14299ce256cbe3c8"
+    },
+    {
+      "bytes": 353,
+      "path": "desktop/academy/src/DiffAtOnce.Academy.Tutor/DiffAtOnce.Academy.Tutor.csproj",
+      "sha256": "8dd68929e970ca3ffcb6e89d4bef73b270cc3af1ce3de4de7829bfe77d125854"
+    },
+    {
+      "bytes": 40314,
+      "path": "desktop/academy/src/DiffAtOnce.Academy.Tutor/ResearchTutorService.cs",
+      "sha256": "7c5c1638c7b286bcbd3b30abd762947f97ed7d4510da8df37d6a75950ae221af"
+    },
+    {
+      "bytes": 9323,
+      "path": "desktop/academy/src/DiffAtOnce.Academy.Tutor/SupplementalKnowledge.cs",
+      "sha256": "89686fbb2384c80a55639776b3dd49ed91bdfa7cfdc9aae06473f0ce0c3c727b"
+    },
+    {
+      "bytes": 41709,
+      "path": "desktop/academy/src/DiffAtOnce.Academy.Tutor/TutorService.cs",
+      "sha256": "586d1618edcdc8dd2d3cd357c3781679e256858bc096333f39efbdfdf50d7c79"
+    },
+    {
+      "bytes": 483,
+      "path": "desktop/academy/tests/DiffAtOnce.Academy.Tests/AuditProbes/ProgressAudit.csproj",
+      "sha256": "e152342e300b2bd9e2d535fbda18efbe5e4449383abdecf64d0051bda3d9715d"
+    },
+    {
+      "bytes": 1337,
+      "path": "desktop/academy/tests/DiffAtOnce.Academy.Tests/AuditProbes/README.md",
+      "sha256": "88cea4fd0dabb8097b8db72d799e570065706f7806c831a56c9d18c1ea550156"
+    },
+    {
+      "bytes": 515,
+      "path": "desktop/academy/tests/DiffAtOnce.Academy.Tests/DiffAtOnce.Academy.Tests.csproj",
+      "sha256": "11f41df63ddb63ed73f43dcce5f13554b040fb22927018ff6e558ff42f92c9d6"
+    },
+    {
+      "bytes": 113,
+      "path": "desktop/academy/tests/DiffAtOnce.Academy.Tests/NuGet.Config",
+      "sha256": "2142cfb2dfa2c7feefbe40fabcc68b0dfecadafa99a1db9b70239d977cf2a7ef"
+    },
+    {
+      "bytes": 15784,
+      "path": "desktop/academy/tests/DiffAtOnce.Academy.Tests/Program.cs",
+      "sha256": "37d13b5bd02f1714c3a91146a97ff665ac33a9e7d2635dce6eb05096636c4711"
+    },
+    {
+      "bytes": 3196,
+      "path": "desktop/academy/tests/DiffAtOnce.Academy.Tests/README.md",
+      "sha256": "c33b458e72378d28be541ded17f8dece2d4b634797b42d750d990c17df3e3682"
+    },
+    {
+      "bytes": 395,
+      "path": "desktop/academy/tests/DiffAtOnce.Academy.Tests/ilt-numpy-reference.json",
+      "sha256": "0290f4d890cb58e99ce106e604ff2773914037a40957488a8476ecf678b75174"
+    },
+    {
+      "bytes": 28810,
+      "path": "desktop/academy/tools/New-AcademyCleanupPlanV13.ps1",
+      "sha256": "108f7af9ddc553e52c2d4864f6dab6cde7866fbd00efebe3c3aa1e03e578a353"
+    },
+    {
+      "bytes": 4150,
+      "path": "desktop/academy/tools/aggregate_production_windows_resolution_v12.py",
+      "sha256": "3cf9137dbd6564356d8b312d601c95362d920eb5264933534933aa733af23952"
+    },
+    {
+      "bytes": 3608,
+      "path": "desktop/academy/tools/align_research_ui_contracts.py",
+      "sha256": "2d5071db55c15b1a05417228a691e75db704741bcee33a6a10bba963738bc888"
+    },
+    {
+      "bytes": 65139,
+      "path": "desktop/academy/tools/build_doctoral_manuals.py",
+      "sha256": "c4b62d1b7c4a4ad51450961fdbdb7a635c2b5316a56c09e2f5007a26fd7b3301"
+    },
+    {
+      "bytes": 5811,
+      "path": "desktop/academy/tools/build_package.ps1",
+      "sha256": "a95fbc80a0094ee1390e98c0830ec3894148204a2ae7ab81dc2424c4adbc9bf3"
+    },
+    {
+      "bytes": 60133,
+      "path": "desktop/academy/tools/build_research_manuals_v13.py",
+      "sha256": "0964a9fc37f1724c0bcf2c055f487f59dc017fa356af573740ed8f4cd0770829"
+    },
+    {
+      "bytes": 24276,
+      "path": "desktop/academy/tools/build_research_release_v13.py",
+      "sha256": "721e3fe048d1a26bd371235b27f6a8d4a4ac74cbbd124cd97699b295d6e1d295"
+    },
+    {
+      "bytes": 3219,
+      "path": "desktop/academy/tools/check_doctoral_manuals.py",
+      "sha256": "6303cf149f23f9f0067b3766b5a05861314396fe05589e039e434a025cf986a6"
+    },
+    {
+      "bytes": 3458,
+      "path": "desktop/academy/tools/collect_notices.py",
+      "sha256": "e528552a37b6e08f6226e776601fcd625c10030be0e7f8430dd17af178598f33"
+    },
+    {
+      "bytes": 5732,
+      "path": "desktop/academy/tools/complete_research_interactions_v13.py",
+      "sha256": "fc0b4564c7d6a6182b0e81760060b355fb6b8b0c21c376e1b390d48428ed01aa"
+    },
+    {
+      "bytes": 20568,
+      "path": "desktop/academy/tools/consolidate_academy_manuals_v13.py",
+      "sha256": "5023b3195acc5efa9649d05a40bdc8c6cfca8b3aa531a8a5d44e5ca2d97b3c07"
+    },
+    {
+      "bytes": 122225,
+      "path": "desktop/academy/tools/curriculum_build.py",
+      "sha256": "8c5cc07a1cab1b235379a62c5af9efbd61c27b83fbe9e073531abb69ef01b602"
+    },
+    {
+      "bytes": 7693,
+      "path": "desktop/academy/tools/curriculum_extract.py",
+      "sha256": "cac633d87f7754b90378aeaa9f47575623974d9b87096b240987acb75fe37f74"
+    },
+    {
+      "bytes": 5002,
+      "path": "desktop/academy/tools/curriculum_validate.py",
+      "sha256": "e2741867a951c9ef49be706351141eba739a506c2054147cc58babd7d97fb2a4"
+    },
+    {
+      "bytes": 92050,
+      "path": "desktop/academy/tools/derivations_validate.py",
+      "sha256": "e5f12aadc9b6c17913ae68c48caba35565a4964b3b8d817659cba645f611be2f"
+    },
+    {
+      "bytes": 6755,
+      "path": "desktop/academy/tools/finalize_production_release_v12.py",
+      "sha256": "f979c957a0b12de1260caeb43f6dba0c1b427f6af31df125af5ab88a3de35183"
+    },
+    {
+      "bytes": 8657,
+      "path": "desktop/academy/tools/finish_research_presenters_v13.py",
+      "sha256": "608db012113f182b9fbb66e90677167a7d31caab40d313da04d2e57dbfb31f36"
+    },
+    {
+      "bytes": 3899,
+      "path": "desktop/academy/tools/freeze_doctoral_v12.py",
+      "sha256": "f479506fe0a106206fab2a9af8cb10228b94c01fec6bc3aab7f305dd87bce437"
+    },
+    {
+      "bytes": 4287,
+      "path": "desktop/academy/tools/harden_research_portfolio_v13.py",
+      "sha256": "cc72979a3cc3cc6cb4b6840599b7c209d8958517f909dbb1ce9e756178321b1b"
+    },
+    {
+      "bytes": 3664,
+      "path": "desktop/academy/tools/integrate_doctoral_shell.py",
+      "sha256": "c4c530c11882bc6538a1490302cfaef945b5903a37b20ce671e9d04d2ed32ebb"
+    },
+    {
+      "bytes": 4169,
+      "path": "desktop/academy/tools/integrate_research_pilot_v13.py",
+      "sha256": "6ba3e89e0d036c0eafaf14f014e2e985d4fdbd11842262f9e83f240c0d026c1d"
+    },
+    {
+      "bytes": 4490,
+      "path": "desktop/academy/tools/integrate_research_v13.py",
+      "sha256": "177bdd2e4dcaa9d8aa95f5208752c33a04f5e1c379daf4c097f601a5054db051"
+    },
+    {
+      "bytes": 30366,
+      "path": "desktop/academy/tools/manual_build.py",
+      "sha256": "a27997661844b85e27dfa51db25e792da814f24172ffde2ef7dfb9c5775415d1"
+    },
+    {
+      "bytes": 6392,
+      "path": "desktop/academy/tools/manual_source_reaudit.py",
+      "sha256": "711d8196d8788ad29eafb3477e30943ec32e1f60bf718f58e59dd26ee472b65e"
+    },
+    {
+      "bytes": 3543,
+      "path": "desktop/academy/tools/manual_verify.py",
+      "sha256": "e1168ee63d7c8b2bdd9aa4c8b50fd845db272ce616e70b969cbef333ca98451a"
+    },
+    {
+      "bytes": 4728,
+      "path": "desktop/academy/tools/package_portable.py",
+      "sha256": "1f4e80d4a6536ebecf3260f81df9dbd38dcbccd66b23dc1c37d9132615bf5e83"
+    },
+    {
+      "bytes": 18605,
+      "path": "desktop/academy/tools/package_research_source_v13.py",
+      "sha256": "3bbca7ebf7ada2e8f7938ad07205e00f54065125208cde47464fcbb58a47933a"
+    },
+    {
+      "bytes": 18233,
+      "path": "desktop/academy/tools/package_source.py",
+      "sha256": "873f0e0a1b50450ce669d4498737edef1e3b7b8e79302fecc88b82288702217d"
+    },
+    {
+      "bytes": 15191,
+      "path": "desktop/academy/tools/package_source_v12.py",
+      "sha256": "8c2cc9acf2f364a132afc61b927c2be02a73dd6309394d4c15c6f06ecdae395b"
+    },
+    {
+      "bytes": 3848,
+      "path": "desktop/academy/tools/package_website_v11.py",
+      "sha256": "32661434b9589c57d559f39bed6b2bff5289293aae9e8042f095c1080282dc7c"
+    },
+    {
+      "bytes": 3848,
+      "path": "desktop/academy/tools/package_website_v12.py",
+      "sha256": "08cbe95d2d0ce91c5041bef877b7f6f89bce37a259ad6bd00453cb9df70697fc"
+    },
+    {
+      "bytes": 6058,
+      "path": "desktop/academy/tools/polish_research_ui_v13.py",
+      "sha256": "a1bb034936b052901d413246f831600d76add462d132248679119efd3c63d9e2"
+    },
+    {
+      "bytes": 6706,
+      "path": "desktop/academy/tools/prepare_research_library_v13.py",
+      "sha256": "adaa347b58cfbba6cb2b4d3deaf1e1b45a366722464b3c356da92ec35e9e7e2b"
+    },
+    {
+      "bytes": 5925,
+      "path": "desktop/academy/tools/prepare_website_v12.py",
+      "sha256": "3e11eb66a6df771154c3cf2ac3808c20a24e22ed3f23bbdace6e9432bc486154"
+    },
+    {
+      "bytes": 3523,
+      "path": "desktop/academy/tools/probe_production_multipart_range_v12.py",
+      "sha256": "b87c68c2a0dcbda971c09f11a4edbf9eed6b157f14b0284e2576d1cf8659759c"
+    },
+    {
+      "bytes": 1669,
+      "path": "desktop/academy/tools/snapshot_before_v12.py",
+      "sha256": "bb4e38529542d6fe06f6b8fca8d364dbd04cd399eb315ea1cc147e470f4ecefe"
+    },
+    {
+      "bytes": 15494,
+      "path": "desktop/academy/tools/update_website_academy_v13.py",
+      "sha256": "742c6254721c7dc07faafad6fbe91fca5fbc3aa6bfb9e93cd25b3578d28ee926"
+    },
+    {
+      "bytes": 14219,
+      "path": "desktop/academy/tools/verify_production_v12_r3.py",
+      "sha256": "758d0045ffaa70273a1261a8a344bb247a9d1b54109b52a400fc12714e21428a"
+    },
+    {
+      "bytes": 6800,
+      "path": "desktop/academy/tools/verify_release.py",
+      "sha256": "90728df8aacbee8d6582fb35bc3daa613297de2271b7d36dfc73c56d1f3f7341"
+    },
+    {
+      "bytes": 9616,
+      "path": "desktop/academy/tools/verify_release_v11.py",
+      "sha256": "14cf8d06059d4ba3670a418834a45c0832adf65b479914f1ce55a63d48037d57"
+    },
+    {
+      "bytes": 4596,
+      "path": "desktop/academy/tools/verify_release_v12.py",
+      "sha256": "87ea87a7b1daf26d2816df11ef6393184e4f0c8db9440a3ddf51231eaafc4eaf"
+    },
+    {
+      "bytes": 13914,
+      "path": "desktop/academy/tools/verify_research_live_v13.py",
+      "sha256": "99109be9cf9e1d7326eb76b461fe88cc3bf198951cd28130781a701b976311e5"
+    },
+    {
+      "bytes": 12629,
+      "path": "desktop/academy/tools/verify_research_windows_live_v13.py",
+      "sha256": "697de0074d47e49fa865f07f203f97fafb2a980bb018cab3d9c03f2ac83d3050"
+    },
+    {
+      "bytes": 13239,
+      "path": "desktop/academy/web/academy.css",
+      "sha256": "a4d3c5b855cc92c6107f4628a4ad6a1d4df122a234b7a51df309a34c44a9e63c"
+    },
+    {
+      "bytes": 48743,
+      "path": "desktop/academy/web/academy.js",
+      "sha256": "0128b6a2cf5d09967075093b8f9463058de4548499e18f29bbbc557b6b51e519"
+    },
+    {
+      "bytes": 224291,
+      "path": "desktop/academy/web/brand.png",
+      "sha256": "5d083c460c3fc5fcfef0f195d13672904bb8c301801c85dafa454a88dffd8054"
+    },
+    {
+      "bytes": 2652,
+      "path": "desktop/academy/web/bundle-manifest.json",
+      "sha256": "636bded299d565f9103ae491deff6d1bb7885f5890b72826eb4e223b6e9b30f1"
+    },
+    {
+      "bytes": 8347,
+      "path": "desktop/academy/web/calculators.js",
+      "sha256": "43a1a6304abd53a4a08b48709e2c3e55d7ce19e35720c30f249d222220a8bb9a"
+    },
+    {
+      "bytes": 82946,
+      "path": "desktop/academy/web/content/algorithm-catalog.json",
+      "sha256": "6a3fe4ef748170bb245ae7ec5d904861688988317476aad4c9195cb3ab218aa9"
+    },
+    {
+      "bytes": 207745,
+      "path": "desktop/academy/web/content/course.json",
+      "sha256": "f9a17df9645b541abc70907e5d04cd38c213293443ce1d37c2c0d94f8aea0cb9"
+    },
+    {
+      "bytes": 367230,
+      "path": "desktop/academy/web/content/derivations.json",
+      "sha256": "e07920a25ae8642ffa55a83a75a4db7eb8a6ead09a5c8195ae23ef91d6c9b02e"
+    },
+    {
+      "bytes": 4647,
+      "path": "desktop/academy/web/content/doctoral-cases.json",
+      "sha256": "2d527a8df59b602f44056eb810b1d158a364a8c2b927efb8f3a93a6a7770c52b"
+    },
+    {
+      "bytes": 583,
+      "path": "desktop/academy/web/content/doctoral-data/monash-d2o-10/acqu2s",
+      "sha256": "5ea8c38e341433429bc195937534260c8aa1cbe80d75aaad1f90f59b16af7ebd"
+    },
+    {
+      "bytes": 8972,
+      "path": "desktop/academy/web/content/doctoral-data/monash-d2o-10/acqus",
+      "sha256": "d25ccebaf598a0be42229e4767fa2fcde4d3e9cda9740b2ceda14745f572c6e0"
+    },
+    {
+      "bytes": 125,
+      "path": "desktop/academy/web/content/doctoral-data/monash-d2o-10/difflist",
+      "sha256": "54ac466c9c4e053cc2c7396c1b578386ec150217f0f594500a2cc63af16a57e2"
+    },
+    {
+      "bytes": 1892,
+      "path": "desktop/academy/web/content/doctoral-data/monash-d2o-10/gpnam6",
+      "sha256": "85b3e903dda475b283ac2575e55b69296c94725f946dd728c6965af98cf8e240"
+    },
+    {
+      "bytes": 26,
+      "path": "desktop/academy/web/content/doctoral-data/monash-d2o-10/gradient_calib",
+      "sha256": "ed4a29f9fbf562781cee6410548340bc2aac2d9040314df9600eacb45fa2d1fe"
+    },
+    {
+      "bytes": 571,
+      "path": "desktop/academy/web/content/doctoral-data/monash-d2o-10/pdata/1/dosy",
+      "sha256": "461edcc743571b39e9615ebc2c9d19ab5352c5001e10eafa1640e228e69215a8"
+    },
+    {
+      "bytes": 2506,
+      "path": "desktop/academy/web/content/doctoral-data/monash-d2o-10/pdata/1/procs",
+      "sha256": "452cd67e42b5d793160a521871d0a65dddc8dbb05fb77a388a77a35ff5af2a8d"
+    },
+    {
+      "bytes": 47,
+      "path": "desktop/academy/web/content/doctoral-data/monash-d2o-10/pdata/1/title",
+      "sha256": "2ab7500b1a24114f1fa3ba9d7ef104b64a4767f9691b7886aae1d852c7a343c7"
+    },
+    {
+      "bytes": 3580,
+      "path": "desktop/academy/web/content/doctoral-data/monash-d2o-10/provenance.json",
+      "sha256": "4909c388880c3b8d6b011e25bb5bb5e90bf1e630661e3ae6d1ba068c47999477"
+    },
+    {
+      "bytes": 6493,
+      "path": "desktop/academy/web/content/doctoral-data/monash-d2o-10/pulseprogram",
+      "sha256": "a0532529364e3e4b98563ad4b7173f773d2a38d372f9f365ff24300439caca98"
+    },
+    {
+      "bytes": 2097152,
+      "path": "desktop/academy/web/content/doctoral-data/monash-d2o-10/ser.ser",
+      "sha256": "c6835b3d3ae84bf827045b88ba1b23937bd3febf81c080291aee8f09a99274f8"
+    },
+    {
+      "bytes": 8977,
+      "path": "desktop/academy/web/content/doctoral-manifest.json",
+      "sha256": "0f87e569f19c032af756c02cdd0aceb33b38fb87cdd9dd78727f9f246d8a588c"
+    },
+    {
+      "bytes": 586,
+      "path": "desktop/academy/web/content/research-data/monash-pma1-10/acqu2s",
+      "sha256": "f87d29b6e8e0aeb50e0dfc04cadec8ea5aac1b3e6686430461c178309732ffa9"
+    },
+    {
+      "bytes": 8988,
+      "path": "desktop/academy/web/content/research-data/monash-pma1-10/acqus",
+      "sha256": "b2f9089b78a190fee3ef72e3fe121cf822bd5bd097ed0e8db22adcbaa65b9502"
+    },
+    {
+      "bytes": 125,
+      "path": "desktop/academy/web/content/research-data/monash-pma1-10/difflist",
+      "sha256": "54ac466c9c4e053cc2c7396c1b578386ec150217f0f594500a2cc63af16a57e2"
+    },
+    {
+      "bytes": 1892,
+      "path": "desktop/academy/web/content/research-data/monash-pma1-10/gpnam6",
+      "sha256": "85b3e903dda475b283ac2575e55b69296c94725f946dd728c6965af98cf8e240"
+    },
+    {
+      "bytes": 26,
+      "path": "desktop/academy/web/content/research-data/monash-pma1-10/gradient_calib",
+      "sha256": "ed4a29f9fbf562781cee6410548340bc2aac2d9040314df9600eacb45fa2d1fe"
+    },
+    {
+      "bytes": 2326,
+      "path": "desktop/academy/web/content/research-data/monash-pma1-10/pdata/1/procs",
+      "sha256": "0a2d6e800f0f44d0d0353f950e3177514f3d644f8266435c3e1c2b911be025c9"
+    },
+    {
+      "bytes": 53,
+      "path": "desktop/academy/web/content/research-data/monash-pma1-10/pdata/1/title",
+      "sha256": "bd196f15d9e71cf98a269380fdeb25d616851143bda6fbb44231516c6476a258"
+    },
+    {
+      "bytes": 3821,
+      "path": "desktop/academy/web/content/research-data/monash-pma1-10/provenance.json",
+      "sha256": "861751fe77477509a4bcdd31b8405f0de53dafaa36dfc28990e67016993be68c"
+    },
+    {
+      "bytes": 6493,
+      "path": "desktop/academy/web/content/research-data/monash-pma1-10/pulseprogram",
+      "sha256": "a0532529364e3e4b98563ad4b7173f773d2a38d372f9f365ff24300439caca98"
+    },
+    {
+      "bytes": 2097152,
+      "path": "desktop/academy/web/content/research-data/monash-pma1-10/ser.ser",
+      "sha256": "fc1b34731507e649684e0f606289ffbd9779d58aa428af54d5c4c58e36e7dd60"
+    },
+    {
+      "bytes": 586,
+      "path": "desktop/academy/web/content/research-data/monash-pma1-21/acqu2s",
+      "sha256": "b974234dc0d61a76503d928d7a44d89c0d04737d4a96b0348516df2b2a1075ea"
+    },
+    {
+      "bytes": 8990,
+      "path": "desktop/academy/web/content/research-data/monash-pma1-21/acqus",
+      "sha256": "5e833ddb8a8259b87dcbcbdeca19241b846d7e7ebd628230c6f688c67a6bb624"
+    },
+    {
+      "bytes": 125,
+      "path": "desktop/academy/web/content/research-data/monash-pma1-21/difflist",
+      "sha256": "54ac466c9c4e053cc2c7396c1b578386ec150217f0f594500a2cc63af16a57e2"
+    },
+    {
+      "bytes": 1892,
+      "path": "desktop/academy/web/content/research-data/monash-pma1-21/gpnam6",
+      "sha256": "85b3e903dda475b283ac2575e55b69296c94725f946dd728c6965af98cf8e240"
+    },
+    {
+      "bytes": 26,
+      "path": "desktop/academy/web/content/research-data/monash-pma1-21/gradient_calib",
+      "sha256": "ed4a29f9fbf562781cee6410548340bc2aac2d9040314df9600eacb45fa2d1fe"
+    },
+    {
+      "bytes": 2326,
+      "path": "desktop/academy/web/content/research-data/monash-pma1-21/pdata/1/procs",
+      "sha256": "5b3daa9212601c1f7d74ee9e27222169058e0372b9e6697473e6f58fbe6567cc"
+    },
+    {
+      "bytes": 54,
+      "path": "desktop/academy/web/content/research-data/monash-pma1-21/pdata/1/title",
+      "sha256": "2be1f30ace08a2e2d997d141ef27d22c5c6919bc50afda659d42c30233a06d02"
+    },
+    {
+      "bytes": 3821,
+      "path": "desktop/academy/web/content/research-data/monash-pma1-21/provenance.json",
+      "sha256": "58e76bf0b269e485e2d93532f869c01935ee54180c0cd76aa40cd4cba3f811ab"
+    },
+    {
+      "bytes": 6493,
+      "path": "desktop/academy/web/content/research-data/monash-pma1-21/pulseprogram",
+      "sha256": "a0532529364e3e4b98563ad4b7173f773d2a38d372f9f365ff24300439caca98"
+    },
+    {
+      "bytes": 2097152,
+      "path": "desktop/academy/web/content/research-data/monash-pma1-21/ser.ser",
+      "sha256": "9c4061401328f543ca0672016850ffaf9d0aed1d461e634aea331f403f5e38e1"
+    },
+    {
+      "bytes": 587,
+      "path": "desktop/academy/web/content/research-data/monash-pma6-11/acqu2s",
+      "sha256": "b64d7b8716ebb50168bd5726b3137aec39c1fda1fc002d4551f9b3dbab78614e"
+    },
+    {
+      "bytes": 8989,
+      "path": "desktop/academy/web/content/research-data/monash-pma6-11/acqus",
+      "sha256": "744ffbeef2f23c9029cffd4764d9fa71978a1011ed526ecde30dd2662301f429"
+    },
+    {
+      "bytes": 125,
+      "path": "desktop/academy/web/content/research-data/monash-pma6-11/difflist",
+      "sha256": "54ac466c9c4e053cc2c7396c1b578386ec150217f0f594500a2cc63af16a57e2"
+    },
+    {
+      "bytes": 1892,
+      "path": "desktop/academy/web/content/research-data/monash-pma6-11/gpnam6",
+      "sha256": "85b3e903dda475b283ac2575e55b69296c94725f946dd728c6965af98cf8e240"
+    },
+    {
+      "bytes": 26,
+      "path": "desktop/academy/web/content/research-data/monash-pma6-11/gradient_calib",
+      "sha256": "ed4a29f9fbf562781cee6410548340bc2aac2d9040314df9600eacb45fa2d1fe"
+    },
+    {
+      "bytes": 2327,
+      "path": "desktop/academy/web/content/research-data/monash-pma6-11/pdata/1/procs",
+      "sha256": "ee18fefaae8280dda4e0032a008fe3cc832de72bf4894565ff5dfdada79f5183"
+    },
+    {
+      "bytes": 53,
+      "path": "desktop/academy/web/content/research-data/monash-pma6-11/pdata/1/title",
+      "sha256": "3fe92d9f051e640db97c7750b708fd903a6b473521a8af0c7f76a99d0e407438"
+    },
+    {
+      "bytes": 3821,
+      "path": "desktop/academy/web/content/research-data/monash-pma6-11/provenance.json",
+      "sha256": "061fef63c98ca9df9b62aeb1f01f4b4ea4406a5662341bfbfee404c29e554491"
+    },
+    {
+      "bytes": 6493,
+      "path": "desktop/academy/web/content/research-data/monash-pma6-11/pulseprogram",
+      "sha256": "a0532529364e3e4b98563ad4b7173f773d2a38d372f9f365ff24300439caca98"
+    },
+    {
+      "bytes": 2097152,
+      "path": "desktop/academy/web/content/research-data/monash-pma6-11/ser.ser",
+      "sha256": "cee8af56d65566bc513451ad6130dbbbcdcbaab30b2ddf8d9b22a3a270d28c15"
+    },
+    {
+      "bytes": 587,
+      "path": "desktop/academy/web/content/research-data/monash-pma6-21/acqu2s",
+      "sha256": "e2985ed026a8bc2d2a2187f1a9cb67cc8e622d90dae814f2cee4681060508e06"
+    },
+    {
+      "bytes": 8991,
+      "path": "desktop/academy/web/content/research-data/monash-pma6-21/acqus",
+      "sha256": "724478502c7857b68805327779c292024dee4c49690b6f3a3ac8c197a164edc0"
+    },
+    {
+      "bytes": 125,
+      "path": "desktop/academy/web/content/research-data/monash-pma6-21/difflist",
+      "sha256": "54ac466c9c4e053cc2c7396c1b578386ec150217f0f594500a2cc63af16a57e2"
+    },
+    {
+      "bytes": 1892,
+      "path": "desktop/academy/web/content/research-data/monash-pma6-21/gpnam6",
+      "sha256": "85b3e903dda475b283ac2575e55b69296c94725f946dd728c6965af98cf8e240"
+    },
+    {
+      "bytes": 26,
+      "path": "desktop/academy/web/content/research-data/monash-pma6-21/gradient_calib",
+      "sha256": "ed4a29f9fbf562781cee6410548340bc2aac2d9040314df9600eacb45fa2d1fe"
+    },
+    {
+      "bytes": 2327,
+      "path": "desktop/academy/web/content/research-data/monash-pma6-21/pdata/1/procs",
+      "sha256": "8f0d179fe9bcfc7d8f8126ff85c7583179f368315545b9145eff5e9e1c080c90"
+    },
+    {
+      "bytes": 54,
+      "path": "desktop/academy/web/content/research-data/monash-pma6-21/pdata/1/title",
+      "sha256": "7397792baa8b2500c778d5334b224fe49fc8ec4ffe7fb514c4b885bf314dbbac"
+    },
+    {
+      "bytes": 3821,
+      "path": "desktop/academy/web/content/research-data/monash-pma6-21/provenance.json",
+      "sha256": "fa87bd7f633bb06d5cbd1161a355d9f5e59d44caa9891ba317382b4872a505e7"
+    },
+    {
+      "bytes": 6493,
+      "path": "desktop/academy/web/content/research-data/monash-pma6-21/pulseprogram",
+      "sha256": "a0532529364e3e4b98563ad4b7173f773d2a38d372f9f365ff24300439caca98"
+    },
+    {
+      "bytes": 2097152,
+      "path": "desktop/academy/web/content/research-data/monash-pma6-21/ser.ser",
+      "sha256": "478be66142f1b071b2833e9b5f44776ca58d0be76b853b10781c9aed3180d878"
+    },
+    {
+      "bytes": 587,
+      "path": "desktop/academy/web/content/research-data/monash-pmma1-12/acqu2s",
+      "sha256": "a5ca6690219d1286895d0e701e819f8f5da6e1f71f6ed106a4a7335748128b32"
+    },
+    {
+      "bytes": 8988,
+      "path": "desktop/academy/web/content/research-data/monash-pmma1-12/acqus",
+      "sha256": "0fd291acba3b39b045b5b8dac6f01a316784ac211d8b105a8b79c3c2e9ab3ae5"
+    },
+    {
+      "bytes": 125,
+      "path": "desktop/academy/web/content/research-data/monash-pmma1-12/difflist",
+      "sha256": "54ac466c9c4e053cc2c7396c1b578386ec150217f0f594500a2cc63af16a57e2"
+    },
+    {
+      "bytes": 1892,
+      "path": "desktop/academy/web/content/research-data/monash-pmma1-12/gpnam6",
+      "sha256": "85b3e903dda475b283ac2575e55b69296c94725f946dd728c6965af98cf8e240"
+    },
+    {
+      "bytes": 26,
+      "path": "desktop/academy/web/content/research-data/monash-pmma1-12/gradient_calib",
+      "sha256": "ed4a29f9fbf562781cee6410548340bc2aac2d9040314df9600eacb45fa2d1fe"
+    },
+    {
+      "bytes": 2327,
+      "path": "desktop/academy/web/content/research-data/monash-pmma1-12/pdata/1/procs",
+      "sha256": "221e649264c9b061ef651826aa4013e1d8c2bb9da50dbabb1548403fb4f885f0"
+    },
+    {
+      "bytes": 53,
+      "path": "desktop/academy/web/content/research-data/monash-pmma1-12/pdata/1/title",
+      "sha256": "439980126b917959af101d7d3a9af80e5d8afbeeb3a2f59f2eb0b0f72f588d43"
+    },
+    {
+      "bytes": 3841,
+      "path": "desktop/academy/web/content/research-data/monash-pmma1-12/provenance.json",
+      "sha256": "47246abac4a047dd81be1c0319efaf8fd64e63db3c311978adac9d69d5e25b52"
+    },
+    {
+      "bytes": 6493,
+      "path": "desktop/academy/web/content/research-data/monash-pmma1-12/pulseprogram",
+      "sha256": "a0532529364e3e4b98563ad4b7173f773d2a38d372f9f365ff24300439caca98"
+    },
+    {
+      "bytes": 2097152,
+      "path": "desktop/academy/web/content/research-data/monash-pmma1-12/ser.ser",
+      "sha256": "cba92fdc31b3a377c001889e360e735a675ce453f8bbcd8cb774bde8a4f9bd71"
+    },
+    {
+      "bytes": 587,
+      "path": "desktop/academy/web/content/research-data/monash-pmma1-21/acqu2s",
+      "sha256": "db94ff611e738fd80658b1bbf0fe8424f3ca19a55d25f0db904f07069debc5d8"
+    },
+    {
+      "bytes": 8991,
+      "path": "desktop/academy/web/content/research-data/monash-pmma1-21/acqus",
+      "sha256": "891207ac81e213861ba1c32f26c0ac81de0933343357b84381043f693df36374"
+    },
+    {
+      "bytes": 125,
+      "path": "desktop/academy/web/content/research-data/monash-pmma1-21/difflist",
+      "sha256": "54ac466c9c4e053cc2c7396c1b578386ec150217f0f594500a2cc63af16a57e2"
+    },
+    {
+      "bytes": 1892,
+      "path": "desktop/academy/web/content/research-data/monash-pmma1-21/gpnam6",
+      "sha256": "85b3e903dda475b283ac2575e55b69296c94725f946dd728c6965af98cf8e240"
+    },
+    {
+      "bytes": 26,
+      "path": "desktop/academy/web/content/research-data/monash-pmma1-21/gradient_calib",
+      "sha256": "ed4a29f9fbf562781cee6410548340bc2aac2d9040314df9600eacb45fa2d1fe"
+    },
+    {
+      "bytes": 2327,
+      "path": "desktop/academy/web/content/research-data/monash-pmma1-21/pdata/1/procs",
+      "sha256": "7caed37ed580724199359a1771291b8811de877a0733c91014e2557f2d4c6ef2"
+    },
+    {
+      "bytes": 53,
+      "path": "desktop/academy/web/content/research-data/monash-pmma1-21/pdata/1/title",
+      "sha256": "ad9de2d9298d8db38bd9c8ff6c02bafc0234499171f907025d7dffe9f7a35f17"
+    },
+    {
+      "bytes": 3841,
+      "path": "desktop/academy/web/content/research-data/monash-pmma1-21/provenance.json",
+      "sha256": "5165ca76621fd6562c6faa1435245a2338c743c9a0303383ae56a6b7501a0596"
+    },
+    {
+      "bytes": 6493,
+      "path": "desktop/academy/web/content/research-data/monash-pmma1-21/pulseprogram",
+      "sha256": "a0532529364e3e4b98563ad4b7173f773d2a38d372f9f365ff24300439caca98"
+    },
+    {
+      "bytes": 2097152,
+      "path": "desktop/academy/web/content/research-data/monash-pmma1-21/ser.ser",
+      "sha256": "c387328766d4ebfb0bdd1b28c09e3529d43b030dc13883dff8b682a7466845c7"
+    },
+    {
+      "bytes": 587,
+      "path": "desktop/academy/web/content/research-data/monash-pmma6-12/acqu2s",
+      "sha256": "667825ece4825ff0339573120f900cd3c8a643efe0e5680aa4961c08a7657312"
+    },
+    {
+      "bytes": 8989,
+      "path": "desktop/academy/web/content/research-data/monash-pmma6-12/acqus",
+      "sha256": "fa6a2402cdd411ec041b86b3dd3c43e17e8a69191ca63647e4fd69a3b5d3475b"
+    },
+    {
+      "bytes": 125,
+      "path": "desktop/academy/web/content/research-data/monash-pmma6-12/difflist",
+      "sha256": "54ac466c9c4e053cc2c7396c1b578386ec150217f0f594500a2cc63af16a57e2"
+    },
+    {
+      "bytes": 1892,
+      "path": "desktop/academy/web/content/research-data/monash-pmma6-12/gpnam6",
+      "sha256": "85b3e903dda475b283ac2575e55b69296c94725f946dd728c6965af98cf8e240"
+    },
+    {
+      "bytes": 26,
+      "path": "desktop/academy/web/content/research-data/monash-pmma6-12/gradient_calib",
+      "sha256": "ed4a29f9fbf562781cee6410548340bc2aac2d9040314df9600eacb45fa2d1fe"
+    },
+    {
+      "bytes": 2327,
+      "path": "desktop/academy/web/content/research-data/monash-pmma6-12/pdata/1/procs",
+      "sha256": "c1d8a4dc6c1790e0b68fe53fc94ea6498605b8bb34550a203f65eea7ad1ef7f4"
+    },
+    {
+      "bytes": 53,
+      "path": "desktop/academy/web/content/research-data/monash-pmma6-12/pdata/1/title",
+      "sha256": "3fe92d9f051e640db97c7750b708fd903a6b473521a8af0c7f76a99d0e407438"
+    },
+    {
+      "bytes": 3843,
+      "path": "desktop/academy/web/content/research-data/monash-pmma6-12/provenance.json",
+      "sha256": "6f9f642e804b955beddc9662a6883d28f3f9fd0a569883be7ccda6e7180bef71"
+    },
+    {
+      "bytes": 6493,
+      "path": "desktop/academy/web/content/research-data/monash-pmma6-12/pulseprogram",
+      "sha256": "a0532529364e3e4b98563ad4b7173f773d2a38d372f9f365ff24300439caca98"
+    },
+    {
+      "bytes": 2097152,
+      "path": "desktop/academy/web/content/research-data/monash-pmma6-12/ser.ser",
+      "sha256": "dfd6c78b9c1b6da2c968ece22750367b12875878c50b2356f63e3db35b1d752e"
+    },
+    {
+      "bytes": 587,
+      "path": "desktop/academy/web/content/research-data/monash-pmma6-21/acqu2s",
+      "sha256": "068976e9d280d1301b1081cdca4a7a70ffbc033930cdb455db6f337eb300fe35"
+    },
+    {
+      "bytes": 8991,
+      "path": "desktop/academy/web/content/research-data/monash-pmma6-21/acqus",
+      "sha256": "a88774807370a67e3baf029a28b0dda36fc40aca8aa13cb5c1475a179e72b122"
+    },
+    {
+      "bytes": 125,
+      "path": "desktop/academy/web/content/research-data/monash-pmma6-21/difflist",
+      "sha256": "54ac466c9c4e053cc2c7396c1b578386ec150217f0f594500a2cc63af16a57e2"
+    },
+    {
+      "bytes": 1892,
+      "path": "desktop/academy/web/content/research-data/monash-pmma6-21/gpnam6",
+      "sha256": "85b3e903dda475b283ac2575e55b69296c94725f946dd728c6965af98cf8e240"
+    },
+    {
+      "bytes": 26,
+      "path": "desktop/academy/web/content/research-data/monash-pmma6-21/gradient_calib",
+      "sha256": "ed4a29f9fbf562781cee6410548340bc2aac2d9040314df9600eacb45fa2d1fe"
+    },
+    {
+      "bytes": 2327,
+      "path": "desktop/academy/web/content/research-data/monash-pmma6-21/pdata/1/procs",
+      "sha256": "1fedac47e12adf9a8048f5d071792bc9c0e944594fdbb6d0e54db8ca430c33dd"
+    },
+    {
+      "bytes": 54,
+      "path": "desktop/academy/web/content/research-data/monash-pmma6-21/pdata/1/title",
+      "sha256": "6197390359ed26451de1f26a55574841387eea9738b5a36b310c6d34b3901bdf"
+    },
+    {
+      "bytes": 3841,
+      "path": "desktop/academy/web/content/research-data/monash-pmma6-21/provenance.json",
+      "sha256": "fc656584fb9cc0e0ced8f8ec6fe671092e65b3f5a371bcfbf4330e8de2559896"
+    },
+    {
+      "bytes": 6493,
+      "path": "desktop/academy/web/content/research-data/monash-pmma6-21/pulseprogram",
+      "sha256": "a0532529364e3e4b98563ad4b7173f773d2a38d372f9f365ff24300439caca98"
+    },
+    {
+      "bytes": 2097152,
+      "path": "desktop/academy/web/content/research-data/monash-pmma6-21/ser.ser",
+      "sha256": "5cf04cdb7844f9874fa66e0ca54fdd202962e8c4906087c430020dea11bbc4f2"
+    },
+    {
+      "bytes": 18805,
+      "path": "desktop/academy/web/content/research-library.json",
+      "sha256": "8bb39a77c89a02d27eba4e6b8b537df04819ded31f0e22544bab47c5cc34b71e"
+    },
+    {
+      "bytes": 18689,
+      "path": "desktop/academy/web/content/research-manifest.json",
+      "sha256": "b62daea320d545e135d48b7fb09adc41016385a739fc91b21535630f8fdd5308"
+    },
+    {
+      "bytes": 39207,
+      "path": "desktop/academy/web/content/research-tutor-knowledge.json",
+      "sha256": "a04ae8bcfa523c4f49981d562ec67baae7b4ab74cb452d6fc59a4cd4c6356717"
+    },
+    {
+      "bytes": 287549,
+      "path": "desktop/academy/web/content/slides/slide-001.png",
+      "sha256": "89cc095ceffa835a023da69f7147d0b9f36fe0c0caf2b0dbb648e098b6b78aae"
+    },
+    {
+      "bytes": 113653,
+      "path": "desktop/academy/web/content/slides/slide-002.jpg",
+      "sha256": "30c611a97b5e49d33b98c6817261c10618fb537ab69100dcba7880629356ae47"
+    },
+    {
+      "bytes": 134890,
+      "path": "desktop/academy/web/content/slides/slide-003.jpg",
+      "sha256": "ac8f839a7a05e74507e426db9e380d75e1ec64cdeb9b4ad6628c989c9cd907f5"
+    },
+    {
+      "bytes": 174942,
+      "path": "desktop/academy/web/content/slides/slide-004.jpg",
+      "sha256": "bbcf1b0478bb8691c9b346b6a808130c727f3b2d9a4cde24b10754c677c458e2"
+    },
+    {
+      "bytes": 168509,
+      "path": "desktop/academy/web/content/slides/slide-005.jpg",
+      "sha256": "953f8014ea604f849bd926204472eb9bb3a085adb1b4584d338253eda7408145"
+    },
+    {
+      "bytes": 144576,
+      "path": "desktop/academy/web/content/slides/slide-006.jpg",
+      "sha256": "a505310b67dc64a25ed7503ad37dbd5892b5c4f6aec74a0007243a0c87cd895c"
+    },
+    {
+      "bytes": 97971,
+      "path": "desktop/academy/web/content/slides/slide-007.jpg",
+      "sha256": "bd8e0060c25a87fe6ef3ee217153a75448d97304fb07f36494149ad92242343a"
+    },
+    {
+      "bytes": 136413,
+      "path": "desktop/academy/web/content/slides/slide-008.jpg",
+      "sha256": "7f0694abdb97212c6c16510d1fb6170085fd9c0e60a4517ffe9f453c0aaf5524"
+    },
+    {
+      "bytes": 140768,
+      "path": "desktop/academy/web/content/slides/slide-009.jpg",
+      "sha256": "da8e052d1de3403b212555983c80f2eea22322d29faf9182c0e4abfc2174b70d"
+    },
+    {
+      "bytes": 110038,
+      "path": "desktop/academy/web/content/slides/slide-010.jpg",
+      "sha256": "af44cf23434c9aca572337605f1221e5b4de8c64f1d71d4a79324ec0dd7dc273"
+    },
+    {
+      "bytes": 144855,
+      "path": "desktop/academy/web/content/slides/slide-011.jpg",
+      "sha256": "d6b8155cd0e70e3c1a33378a429835d31ac667d5aab50169e2bad568b6b5acb9"
+    },
+    {
+      "bytes": 156757,
+      "path": "desktop/academy/web/content/slides/slide-012.jpg",
+      "sha256": "81de4c0e316e36679b5905d3e9e64058f888faeb90e29e8531c1e536369effcc"
+    },
+    {
+      "bytes": 178106,
+      "path": "desktop/academy/web/content/slides/slide-013.jpg",
+      "sha256": "e9f673007c1b820dadc3df3aa1fd58817a8bdc072478592d94478df444fcdeaa"
+    },
+    {
+      "bytes": 166918,
+      "path": "desktop/academy/web/content/slides/slide-014.jpg",
+      "sha256": "082b165ee9340e59ca3386deae05b3c0a002c1f5ffd65b5f7ddc22834a1dd8c1"
+    },
+    {
+      "bytes": 150190,
+      "path": "desktop/academy/web/content/slides/slide-015.jpg",
+      "sha256": "0aed9d6b9c84ca5b4ed8359b11f353e6b8926382657efedc5ec1fb57c71ce124"
+    },
+    {
+      "bytes": 100737,
+      "path": "desktop/academy/web/content/slides/slide-016.jpg",
+      "sha256": "156899124025e9d7e845dbb455310e691b7eca0ecf7a7110ac19d04dabc8fce4"
+    },
+    {
+      "bytes": 165875,
+      "path": "desktop/academy/web/content/slides/slide-017.jpg",
+      "sha256": "fff908fa5f2a9610dd8d6815f8e9e70afae44f6a48fcd132a973bf5114b06f20"
+    },
+    {
+      "bytes": 153762,
+      "path": "desktop/academy/web/content/slides/slide-018.jpg",
+      "sha256": "5103e09462adbbd173a65b5ffec3e18ffed2392c7f095e9812e02732c4b5076d"
+    },
+    {
+      "bytes": 104513,
+      "path": "desktop/academy/web/content/slides/slide-019.jpg",
+      "sha256": "bffe0dea2336f3204146e2994e5ef4c18130ea84d13d477ea68fdfc6e354c587"
+    },
+    {
+      "bytes": 157840,
+      "path": "desktop/academy/web/content/slides/slide-020.jpg",
+      "sha256": "c7630ec2fc6bf8884c05559fe5c46deb437a2cdf5cbe3fdaf8ce5234984cdc34"
+    },
+    {
+      "bytes": 169113,
+      "path": "desktop/academy/web/content/slides/slide-021.jpg",
+      "sha256": "39deb45f83c8c09049505f972752b8fe7f0784a1dd879dba6ce5f9e874b044bd"
+    },
+    {
+      "bytes": 144892,
+      "path": "desktop/academy/web/content/slides/slide-022.jpg",
+      "sha256": "90f5761103dcf465664b051c8198dab46ddc4eb321fba1111c21440e4f0be7c8"
+    },
+    {
+      "bytes": 169828,
+      "path": "desktop/academy/web/content/slides/slide-023.jpg",
+      "sha256": "d69abe1f179de0a08a2a3383d94e5790bfc1283ceb87e12e52b79c1de547d7c5"
+    },
+    {
+      "bytes": 73677,
+      "path": "desktop/academy/web/content/slides/slide-024.jpg",
+      "sha256": "45248a5d8a72fad49b29184a7d0df8ed023bc653c3b10149e29f5975fff77836"
+    },
+    {
+      "bytes": 156447,
+      "path": "desktop/academy/web/content/slides/slide-025.jpg",
+      "sha256": "320dc0d3c4cc4c63dfcadbbe63d956cdfa317426952e882e5ebd9baeb1547599"
+    },
+    {
+      "bytes": 113441,
+      "path": "desktop/academy/web/content/slides/slide-026.jpg",
+      "sha256": "df30c6320d6fe59d8cc961d494bfc334efafd3bc87d4f18dbf597a010b6d590b"
+    },
+    {
+      "bytes": 160270,
+      "path": "desktop/academy/web/content/slides/slide-027.jpg",
+      "sha256": "5f5e43008c06e5c698c5157c6f942acfc1b02268546e296e231e7720b55a0df0"
+    },
+    {
+      "bytes": 104107,
+      "path": "desktop/academy/web/content/slides/slide-028.jpg",
+      "sha256": "c017efb7a27ba665fff40ec2ae5d63206989f9170a2b0bb5bc3eaf1ea6677210"
+    },
+    {
+      "bytes": 170657,
+      "path": "desktop/academy/web/content/slides/slide-029.jpg",
+      "sha256": "703e971dc52a6e976aefc446b79396af64816a13d87153a15e2c0f28072b7d11"
+    },
+    {
+      "bytes": 108757,
+      "path": "desktop/academy/web/content/slides/slide-030.jpg",
+      "sha256": "87c43c33d06dc70e1dbfeec7fcbab459f85c4567c962ef87a26a86c25ca0814b"
+    },
+    {
+      "bytes": 175066,
+      "path": "desktop/academy/web/content/slides/slide-031.jpg",
+      "sha256": "b5424723a471bb17ec1d50b186f9e2df5b01e0830f3aa9bc6fba29100f0a6db2"
+    },
+    {
+      "bytes": 180699,
+      "path": "desktop/academy/web/content/slides/slide-032.jpg",
+      "sha256": "871f727e80f45e1be83e803ba8b0ded1c6caa22037d25a6dac045d90aff90a19"
+    },
+    {
+      "bytes": 105847,
+      "path": "desktop/academy/web/content/slides/slide-033.jpg",
+      "sha256": "cb23e942fdcea35bff289f910be85516361f3f682108a8c13f070a1123caa9de"
+    },
+    {
+      "bytes": 272701,
+      "path": "desktop/academy/web/content/slides/slide-034.jpg",
+      "sha256": "67e4e66d3308e170f09b5e7653f72996a9b2872e893922797b6cf1345fd0ccdb"
+    },
+    {
+      "bytes": 181390,
+      "path": "desktop/academy/web/content/slides/slide-035.jpg",
+      "sha256": "049e06bafd00829c3c112dcc8f1f11f64208763ce20c688ced620362de0c3927"
+    },
+    {
+      "bytes": 188465,
+      "path": "desktop/academy/web/content/slides/slide-036.jpg",
+      "sha256": "f6b6e1de5944c70de83cfa62888b3f18727cc558630ee885dafb60d13fa73e7d"
+    },
+    {
+      "bytes": 186583,
+      "path": "desktop/academy/web/content/slides/slide-037.jpg",
+      "sha256": "b67b20cbed8b4c4b3c1ceae24539b8e93b5d2ef6a7ffb4f14a8911ecc3f1af20"
+    },
+    {
+      "bytes": 83761,
+      "path": "desktop/academy/web/content/slides/slide-038.jpg",
+      "sha256": "261868a2e5a953d740eb60a2e9b64d095f7b6b4b067a965592d34cc25a60cd8e"
+    },
+    {
+      "bytes": 218444,
+      "path": "desktop/academy/web/content/slides/slide-039.jpg",
+      "sha256": "3672dd789e5cc2eaf99bf7e771add847b29d307d1dcb5bd5a4a65946f5f5c94c"
+    },
+    {
+      "bytes": 166394,
+      "path": "desktop/academy/web/content/slides/slide-040.jpg",
+      "sha256": "4e647963937dc579a018b90fb23362df3adb1d47f45f4f4ba0f8595e03293cd6"
+    },
+    {
+      "bytes": 166527,
+      "path": "desktop/academy/web/content/slides/slide-041.jpg",
+      "sha256": "35e73ee8449128161aaf0feec167dccf0388f71cce6b834ff12257b4625d0b9d"
+    },
+    {
+      "bytes": 145409,
+      "path": "desktop/academy/web/content/slides/slide-042.jpg",
+      "sha256": "9f1934c634fd7042377b3f6d8d3bbcddd46b7a38957c75d00a9a8f4ab569d656"
+    },
+    {
+      "bytes": 233701,
+      "path": "desktop/academy/web/content/slides/slide-043.jpg",
+      "sha256": "708c7d429564298c843d8637dce613dd9f0054e0dacd7bdd429a68588b2b74e6"
+    },
+    {
+      "bytes": 148837,
+      "path": "desktop/academy/web/content/slides/slide-044.jpg",
+      "sha256": "8876cdf955ac58a062c74e5af619ae4bb7cd16d636bb8a4c3857270944ac4ab3"
+    },
+    {
+      "bytes": 130124,
+      "path": "desktop/academy/web/content/slides/slide-045.jpg",
+      "sha256": "6516f45eca982164ee0f801d2672f80ded35375a7e8acbc04142b3c872495fc4"
+    },
+    {
+      "bytes": 134481,
+      "path": "desktop/academy/web/content/slides/slide-046.jpg",
+      "sha256": "481c6250b27fa77c25594c990f70ae0ee0d981227fce834e65b57f582fdeb6ec"
+    },
+    {
+      "bytes": 137016,
+      "path": "desktop/academy/web/content/slides/slide-047.jpg",
+      "sha256": "082c4c1b94b0a5d47439465d86b0e6fd7d5f87434d810e94cdb5decff3ab283d"
+    },
+    {
+      "bytes": 261854,
+      "path": "desktop/academy/web/content/slides/slide-048.jpg",
+      "sha256": "da9935946d4bec11a1828e9f3a13b843f0403ba948bd55dc971f3fb0799006d7"
+    },
+    {
+      "bytes": 112211,
+      "path": "desktop/academy/web/content/slides/slide-049.jpg",
+      "sha256": "87db7068f24348694290b35c8cdc481300bff498ee5ba5adebf707f87f538268"
+    },
+    {
+      "bytes": 173603,
+      "path": "desktop/academy/web/content/slides/slide-050.jpg",
+      "sha256": "fd717ce0dc99aaaa1bb4024fe55e8ca242f7eabcc8580abf570eda5a55609f30"
+    },
+    {
+      "bytes": 193962,
+      "path": "desktop/academy/web/content/slides/slide-051.jpg",
+      "sha256": "b54fe75d7780bd56a880bed218471838be98eaeb0dce936da05eb7b4b2b2293b"
+    },
+    {
+      "bytes": 159806,
+      "path": "desktop/academy/web/content/slides/slide-052.jpg",
+      "sha256": "a193de4bd6c3ab464c148f6c5160fd2c09f1034703e208be822a0f67b08bd603"
+    },
+    {
+      "bytes": 150162,
+      "path": "desktop/academy/web/content/slides/slide-053.jpg",
+      "sha256": "3a1463da56cb6fe5d235c5a9f4502e4d68fbc5c8f0409c79eb56018c8b4ed4c0"
+    },
+    {
+      "bytes": 159685,
+      "path": "desktop/academy/web/content/slides/slide-054.jpg",
+      "sha256": "0228350039975a1a226a6d726a527fdc30bc777e2f1598e58cce0ce10f0809f2"
+    },
+    {
+      "bytes": 260982,
+      "path": "desktop/academy/web/content/slides/slide-055.jpg",
+      "sha256": "6ad4f463ae558c7df033493f7b1ac44a7d4396f0a062b74c508c9c4af0b22182"
+    },
+    {
+      "bytes": 242347,
+      "path": "desktop/academy/web/content/slides/slide-056.jpg",
+      "sha256": "1205111094b42d542453dacb32da8539f6b8d98167d04968461f1f3180bd0322"
+    },
+    {
+      "bytes": 206820,
+      "path": "desktop/academy/web/content/slides/slide-057.jpg",
+      "sha256": "89e38b459633adcb92ed21262c68c0da68a5c566f1a24c69ef405a6d107ebfde"
+    },
+    {
+      "bytes": 101426,
+      "path": "desktop/academy/web/content/slides/slide-058.jpg",
+      "sha256": "07cb76a4926e76d063deb128853975e231f47aeb812e3f81a19075b255c6d91a"
+    },
+    {
+      "bytes": 155717,
+      "path": "desktop/academy/web/content/slides/slide-059.jpg",
+      "sha256": "195c5fdbfe4ab898003f333b569f2538cc0595d7cddf05396c3eebc0910bb7ea"
+    },
+    {
+      "bytes": 270049,
+      "path": "desktop/academy/web/content/slides/slide-060.jpg",
+      "sha256": "da6a6cb0c48854b727bcbc264166de3bf6b24e11c933e82c5f68aa5835df8c34"
+    },
+    {
+      "bytes": 323588,
+      "path": "desktop/academy/web/content/slides/slide-061.png",
+      "sha256": "c26394bba3e3550e539de732c0da59177b271661d0113eba1735dd1ea412ea94"
+    },
+    {
+      "bytes": 217975,
+      "path": "desktop/academy/web/content/slides/slide-062.jpg",
+      "sha256": "d893d0c88a27b822e8e3c7ba63ff58c85511c84d5e316a5020d93d6abbe9bdaf"
+    },
+    {
+      "bytes": 212848,
+      "path": "desktop/academy/web/content/slides/slide-063.jpg",
+      "sha256": "448f8c38b55757e51a9c7cb441ecf9da7b062bc43459fd9d35a97d183642fc2b"
+    },
+    {
+      "bytes": 210545,
+      "path": "desktop/academy/web/content/slides/slide-064.jpg",
+      "sha256": "0ac1d056a09212f4ac67d1f900dd3be39298a4835290b2735316de7b3e2652e9"
+    },
+    {
+      "bytes": 209849,
+      "path": "desktop/academy/web/content/slides/slide-065.jpg",
+      "sha256": "9d21e8931b589c6a19a82b7090172312bceaec230bc2ec3a3b731aea04f5c0d0"
+    },
+    {
+      "bytes": 214195,
+      "path": "desktop/academy/web/content/slides/slide-066.jpg",
+      "sha256": "fccdb379db101c7ee2108d62a4d3ad999246d1e37c1a61390b5f08ca496e370c"
+    },
+    {
+      "bytes": 209312,
+      "path": "desktop/academy/web/content/slides/slide-067.jpg",
+      "sha256": "c35156b90d42c78c847cc8471ef02fe2f06ebc7c1bb46fa78df47e58551e8899"
+    },
+    {
+      "bytes": 201401,
+      "path": "desktop/academy/web/content/slides/slide-068.jpg",
+      "sha256": "8b631dd58787903173fc0ea06197bead7002ff350c60ca6b4dc0aeb6e8544252"
+    },
+    {
+      "bytes": 207798,
+      "path": "desktop/academy/web/content/slides/slide-069.jpg",
+      "sha256": "3b2f076e93b14ca2f489b3a35470a6964f5862244dfbe539345ad05cac359e1d"
+    },
+    {
+      "bytes": 186142,
+      "path": "desktop/academy/web/content/slides/slide-070.jpg",
+      "sha256": "82cf27155e451571d5d7c9297975d17ab1801a4e2c23f78000332b43fad5a546"
+    },
+    {
+      "bytes": 223795,
+      "path": "desktop/academy/web/content/slides/slide-071.jpg",
+      "sha256": "4366c3ac0d2eace1f2992771388fe1ee41922971b6086693e03139a8de4410f1"
+    },
+    {
+      "bytes": 204133,
+      "path": "desktop/academy/web/content/slides/slide-072.jpg",
+      "sha256": "c08a5b1d810c0330159139876be9ba366b51005c8b64778e164562538379d552"
+    },
+    {
+      "bytes": 222410,
+      "path": "desktop/academy/web/content/slides/slide-073.jpg",
+      "sha256": "ad128ae03b234a905b99c72d1ebae860a4aa4db6535a217020e428ee9a01c87e"
+    },
+    {
+      "bytes": 223103,
+      "path": "desktop/academy/web/content/slides/slide-074.jpg",
+      "sha256": "43ed9b5f7ed757cf4bce1532680ba62e94d2f069d9582020ffada803a276bb1a"
+    },
+    {
+      "bytes": 238660,
+      "path": "desktop/academy/web/content/slides/slide-075.jpg",
+      "sha256": "7f0291c113bdfe000a5609906026fc62fe95b5495e1c548ac6ef61419efd4258"
+    },
+    {
+      "bytes": 238001,
+      "path": "desktop/academy/web/content/slides/slide-076.jpg",
+      "sha256": "d0d9cdc4dec07e61026e6eb80da556d3c228e6849199281432407a11bb644c0e"
+    },
+    {
+      "bytes": 177402,
+      "path": "desktop/academy/web/content/slides/slide-077.jpg",
+      "sha256": "fd5cda3145508edd3fa4e7bfe64f19ac9af6c3f1f3002b7041305915d942285a"
+    },
+    {
+      "bytes": 237043,
+      "path": "desktop/academy/web/content/slides/slide-078.jpg",
+      "sha256": "7b06f7e23bc508d9202e8ffe2453b64c753c7bb7f8207dc3312d2e88c6eee23a"
+    },
+    {
+      "bytes": 208806,
+      "path": "desktop/academy/web/content/slides/slide-079.jpg",
+      "sha256": "a78226abe6af7065bf49fd39b4d7be0257e46049b1892f1247b3a49b48ccea09"
+    },
+    {
+      "bytes": 179422,
+      "path": "desktop/academy/web/content/slides/slide-080.jpg",
+      "sha256": "cb8ae1d16cd604b89b728977d9daa42239df4f0bd6d50fa6304a3ce97bfbfd70"
+    },
+    {
+      "bytes": 250843,
+      "path": "desktop/academy/web/content/slides/slide-081.jpg",
+      "sha256": "df49c49525756c2c9885ce8c590edd415918f4962720dc09d3928f2e8d8bb7d2"
+    },
+    {
+      "bytes": 373115,
+      "path": "desktop/academy/web/content/source-index.json",
+      "sha256": "cd5c7c720ff1eda26ff9b0d700015a053d9c03c59ab1fd66a724397ff55939e3"
+    },
+    {
+      "bytes": 3346044,
+      "path": "desktop/academy/web/docs/ACADEMY_MANUAL_EN.pdf",
+      "sha256": "59c8d45719f71d43511231128829808a422b4eee0e7efe73793dcf2754b84a6e"
+    },
+    {
+      "bytes": 3392094,
+      "path": "desktop/academy/web/docs/ACADEMY_MANUAL_ES.pdf",
+      "sha256": "b0804a88f9abae12dffe69420ed7faebc450f5eb0ecdb7f4a207ab16d7aafb61"
+    },
+    {
+      "bytes": 846491,
+      "path": "desktop/academy/web/docs/DOCTORAL_MANUAL_EN.pdf",
+      "sha256": "e9b221b8f7e745945888df6796182b5b30ccfe102c920844c49ed55291bb67d1"
+    },
+    {
+      "bytes": 861083,
+      "path": "desktop/academy/web/docs/DOCTORAL_MANUAL_ES.pdf",
+      "sha256": "b9ad18ceae5a3a286c436f2981cc4af3c122786c63591a2f281b624154605632"
+    },
+    {
+      "bytes": 1086235,
+      "path": "desktop/academy/web/docs/RESEARCH_MANUAL_EN.pdf",
+      "sha256": "823d5888feab474590c043617baa3240fd8cb2b1b4693ca9ccec05c5f3722526"
+    },
+    {
+      "bytes": 1107632,
+      "path": "desktop/academy/web/docs/RESEARCH_MANUAL_ES.pdf",
+      "sha256": "c5754a7885d163d0fc619d49821670b2fd125cd495d3a95ace3c075aea516b73"
+    },
+    {
+      "bytes": 3869,
+      "path": "desktop/academy/web/doctoral-hub.css",
+      "sha256": "e67232abe13a39f603e34cd3ce4a18070c5462405fa84932b4b91f180ea14701"
+    },
+    {
+      "bytes": 15904,
+      "path": "desktop/academy/web/doctoral-hub.js",
+      "sha256": "9c8ddbb507205f3ae74351d6e332435ee927f0bfc1fbdc8d9517ae57e0aa3990"
+    },
+    {
+      "bytes": 43233,
+      "path": "desktop/academy/web/doctoral-inquiry-ui.js",
+      "sha256": "2cb9a7b3cdefce6bb6d499e097b6dd81c9a8a0c69feb3e521d5d9dc9781349c2"
+    },
+    {
+      "bytes": 6159,
+      "path": "desktop/academy/web/doctoral-inquiry.css",
+      "sha256": "1c6a150fe661723bad07e3ac5b7b2b5b4393e99eefe35d5339720ff2f0d0aeb9"
+    },
+    {
+      "bytes": 24981,
+      "path": "desktop/academy/web/doctoral-inquiry.js",
+      "sha256": "7d6491e21d37f78c62b9b1a52f487aed8b044ef1ec394f471c2ae597230f5436"
+    },
+    {
+      "bytes": 39657,
+      "path": "desktop/academy/web/doctoral-pedagogy-ui.js",
+      "sha256": "49e10310a6819df1ca50c2414feaf6843958173258a1ffeab373d7986972df4a"
+    },
+    {
+      "bytes": 4628,
+      "path": "desktop/academy/web/doctoral-pedagogy.css",
+      "sha256": "63f6d0ffef327eddd0ac002e03cc065fd40ae44da1f80925aba032792d3cf85e"
+    },
+    {
+      "bytes": 39463,
+      "path": "desktop/academy/web/doctoral-pedagogy.js",
+      "sha256": "947245e20a9772ec8a0dff52e2e70958fde429c821d0a658a40c98d3ddbadf6e"
+    },
+    {
+      "bytes": 46914,
+      "path": "desktop/academy/web/doctoral-physics-ui.js",
+      "sha256": "f89bed3b998942bb290442289b30a6794d0a77a301d02713b1242eb170bbcf10"
+    },
+    {
+      "bytes": 8644,
+      "path": "desktop/academy/web/doctoral-physics.css",
+      "sha256": "c712caa8796361eeb1babe73d87353442f080ee022c6a0d8a462477bf1a5a523"
+    },
+    {
+      "bytes": 16020,
+      "path": "desktop/academy/web/doctoral-physics.js",
+      "sha256": "5b0c186adf355537aa17c640353fa114eca2ca0e5d685e32fd1498981668a915"
+    },
+    {
+      "bytes": 4090,
+      "path": "desktop/academy/web/index.html",
+      "sha256": "53a699cd33517487a4c1f6f476ada8e9f1015b0afc17c5681ed8ad1794553dbf"
+    },
+    {
+      "bytes": 4240,
+      "path": "desktop/academy/web/lab/GUIDE_V2_EN.md",
+      "sha256": "04c42ebd8293e6c43858bfc1016fd78513a74d39b968270ebc3783c8005f8fba"
+    },
+    {
+      "bytes": 4907,
+      "path": "desktop/academy/web/lab/GUIDE_V2_ES.md",
+      "sha256": "52195f969e4d1bd660aa5d0786f6466a3ee0a3904bec1217baa60c5a909f9640"
+    },
+    {
+      "bytes": 16893,
+      "path": "desktop/academy/web/lab/REFERENCES.md",
+      "sha256": "d8180ead621c68c25ccc02e1ff8b3a516a98b989dee91aba605404ee5b181c9e"
+    },
+    {
+      "bytes": 2230,
+      "path": "desktop/academy/web/lab/academy-bridge.js",
+      "sha256": "b9f0782b897cd081172c0f9c0ea54cbc862b439e6cd63a04b6bab156995edab9"
+    },
+    {
+      "bytes": 803,
+      "path": "desktop/academy/web/lab/academy-shell.css",
+      "sha256": "62b12f6abf25e87d59359bee6f09756804e75f00c79f04731b1748f92dbd35ca"
+    },
+    {
+      "bytes": 13204,
+      "path": "desktop/academy/web/lab/advanced-scenes.js",
+      "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+    },
+    {
+      "bytes": 26780,
+      "path": "desktop/academy/web/lab/app.js",
+      "sha256": "25573dff165470d701ff5e094fbc206e2e762cfaaac1d4e159e9454d4f4eb6a5"
+    },
+    {
+      "bytes": 264993,
+      "path": "desktop/academy/web/lab/assets/DT2_map_10_historical.png",
+      "sha256": "fc1aaf6de8e1c9187b2d25e9b8e16227b24bb006ffa4b8b559f7373f3c8da0cd"
+    },
+    {
+      "bytes": 5774,
+      "path": "desktop/academy/web/lab/assets/DT2_map_10_provenance.json",
+      "sha256": "e2950b00bc76942e9376a61a144a5d0130e135e5c2c9b54de0e0df629d66081f"
+    },
+    {
+      "bytes": 179287,
+      "path": "desktop/academy/web/lab/assets/diffatonce-brand.png",
+      "sha256": "da6a731c238eb46afccf70d60b5cb11bf210394db9f1d1298f15cfc5e41d9365"
+    },
+    {
+      "bytes": 719,
+      "path": "desktop/academy/web/lab/branding.css",
+      "sha256": "078b74d7f73eac5c3392120ff57b40d336db1ace8c76ffce1713a092bc13ab15"
+    },
+    {
+      "bytes": 83881,
+      "path": "desktop/academy/web/lab/catalog.js",
+      "sha256": "82072a9741d2ef7c7dc58cb426f946d75fa5c8675af4b2ebcc4b46f2da44beb5"
+    },
+    {
+      "bytes": 17954,
+      "path": "desktop/academy/web/lab/diffusion-models.js",
+      "sha256": "592fb9224f54e518c0bc222f87c709f08235fd98a40c962e31e699002f00396e"
+    },
+    {
+      "bytes": 191,
+      "path": "desktop/academy/web/lab/embed-setup.js",
+      "sha256": "680ba44addad40ecb973c89054c6229a2bdef7dd13e707c33fda6423dfa37001"
+    },
+    {
+      "bytes": 6820,
+      "path": "desktop/academy/web/lab/index.html",
+      "sha256": "d20f25c372dc7ccee1ff60362d20bb9045e4cc4007400fef73b27001750beaf8"
+    },
+    {
+      "bytes": 3639,
+      "path": "desktop/academy/web/lab/lab-v2.css",
+      "sha256": "eca1be4f94dcaa8280eede8e8c019b29a3d99697b3a4d6a8c08d0d4cdcfd25bb"
+    },
+    {
+      "bytes": 83786,
+      "path": "desktop/academy/web/lab/physics-catalog.json",
+      "sha256": "824977e2979644e2d6a4e87f139a1419f1b10572c6d363a3eb49976983fe59c2"
+    },
+    {
+      "bytes": 26859,
+      "path": "desktop/academy/web/lab/quantitative-scenes.js",
+      "sha256": "53674c9f35b0ae847b67b16e9dfa47bd50fe11bc2fa0a123c4746c308b73e1a6"
+    },
+    {
+      "bytes": 54395,
+      "path": "desktop/academy/web/lab/scenes.js",
+      "sha256": "229f424d0029dead28b305cb3b9bda06bb6dd0e51453737670c4dbddc8b25e89"
+    },
+    {
+      "bytes": 9086,
+      "path": "desktop/academy/web/lab/science-v2-references.json",
+      "sha256": "4ca4fbf157d9cf847db83d96b470e3ad380ae9e4b393e6056b75c5eb980ee229"
+    },
+    {
+      "bytes": 8447,
+      "path": "desktop/academy/web/lab/styles.css",
+      "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+    },
+    {
+      "bytes": 5411,
+      "path": "desktop/academy/web/lab/three-scene.js",
+      "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+    },
+    {
+      "bytes": 1081,
+      "path": "desktop/academy/web/lab/vendor/THREE-LICENSE.txt",
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "bytes": 291,
+      "path": "desktop/academy/web/lab/vendor/provenance.json",
+      "sha256": "954b9a9a18d145fe4c11d6b160a54d31406d8fe58a887374d1f2edcb664a15a8"
+    },
+    {
+      "bytes": 2084272,
+      "path": "desktop/academy/web/lab/vendor/three-0.180.0.cjs",
+      "sha256": "77f0ddd5cf5923ebdd42d70ee3479a2abfb27db8fa18cda395ea999ad4096c3a"
+    },
+    {
+      "bytes": 2084344,
+      "path": "desktop/academy/web/lab/vendor/three-global.js",
+      "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+    },
+    {
+      "bytes": 521746,
+      "path": "desktop/academy/web/lab/videos/acquisition-window_EN.mp4",
+      "sha256": "5c5f1784b983e02a85636206d48990a762d8b244670253943678d301f3607b0f"
+    },
+    {
+      "bytes": 520967,
+      "path": "desktop/academy/web/lab/videos/acquisition-window_ES.mp4",
+      "sha256": "05d40ee79c3a7c23e7f5cfb84fd965b8bd446a79187a917b605bcb447e3814fc"
+    },
+    {
+      "bytes": 1903233,
+      "path": "desktop/academy/web/lab/videos/anisotropy_EN.mp4",
+      "sha256": "d19cf6f3067ca59d7b22ff09ec2d20df87b77c0ee0f43bee8344d7df75dcc1a4"
+    },
+    {
+      "bytes": 1912999,
+      "path": "desktop/academy/web/lab/videos/anisotropy_ES.mp4",
+      "sha256": "58a2c8feeab204d64483efeb3afec7480f71934a051969f2be37e42b646f68aa"
+    },
+    {
+      "bytes": 516328,
+      "path": "desktop/academy/web/lab/videos/attenuation-mixture_EN.mp4",
+      "sha256": "2accfb8b1bb3132aa8542b9b6ce793484b437e0102095b7c04ecfe7f0dd47fc5"
+    },
+    {
+      "bytes": 518481,
+      "path": "desktop/academy/web/lab/videos/attenuation-mixture_ES.mp4",
+      "sha256": "566b74b2373accb21ab7ed80b3d375cff75764e0986f36d332e7f1531a5f9892"
+    },
+    {
+      "bytes": 2931072,
+      "path": "desktop/academy/web/lab/videos/brownian_EN.mp4",
+      "sha256": "88c9effa90c286af1ee66eb990cbc518710ee6284659a114f3a22c669a163c3a"
+    },
+    {
+      "bytes": 2934095,
+      "path": "desktop/academy/web/lab/videos/brownian_ES.mp4",
+      "sha256": "c5fd555d7f7f969d3d7fb051f39c2389f61058ba7c863301918d0d8553349eb1"
+    },
+    {
+      "bytes": 1355544,
+      "path": "desktop/academy/web/lab/videos/convection_EN.mp4",
+      "sha256": "3ca3bea65b7affc255480c5fbdc48d379853af937788b19b0d93c6f02144a663"
+    },
+    {
+      "bytes": 1366748,
+      "path": "desktop/academy/web/lab/videos/convection_ES.mp4",
+      "sha256": "379a186f1bfd745b9b5534dc02e9f656f74b7b688abdc996c78467ad27787610"
+    },
+    {
+      "bytes": 519838,
+      "path": "desktop/academy/web/lab/videos/dt2_EN.mp4",
+      "sha256": "4d1537531226343cec1fc723ad01a2f59536ea00b5b9d71bdea275962ffbd17b"
+    },
+    {
+      "bytes": 521482,
+      "path": "desktop/academy/web/lab/videos/dt2_ES.mp4",
+      "sha256": "ebe57dbaaed24ffe8befe8f82d2eb06dd279ed75a753646f3d5198cccc3ca59f"
+    },
+    {
+      "bytes": 1346509,
+      "path": "desktop/academy/web/lab/videos/exchange_EN.mp4",
+      "sha256": "905323dfe1b1b4f0f22d3e8609461aecb6733df0e4faa25cad9917bfb7424794"
+    },
+    {
+      "bytes": 1356531,
+      "path": "desktop/academy/web/lab/videos/exchange_ES.mp4",
+      "sha256": "86fa3558d62adead35f178f4c9bcdffa113bd722d4502cd6973aae03e10234c3"
+    },
+    {
+      "bytes": 8247541,
+      "path": "desktop/academy/web/lab/videos/gif/brownian_ES.gif",
+      "sha256": "7abdb6b16b59588d3fabf294fbb7394759ba1e14a3eb42077327e8ea8a5486e8"
+    },
+    {
+      "bytes": 2233,
+      "path": "desktop/academy/web/lab/videos/gif/gif-manifest.json",
+      "sha256": "59540f1bf9111855af47300bf46ec7180b4f15f6c803043c984ffa8797b6ac93"
+    },
+    {
+      "bytes": 1011336,
+      "path": "desktop/academy/web/lab/videos/gif/gradients-b_ES.gif",
+      "sha256": "fa96dd3f268987bf005996a06c215f8f5f0a858b161e15177edd2a8adc5974fc"
+    },
+    {
+      "bytes": 1538933,
+      "path": "desktop/academy/web/lab/videos/gif/spen_ES.gif",
+      "sha256": "ecb2fb48ca86fd437943a9dfa89e79da732e10068b8fbef028fdbc5ddca57094"
+    },
+    {
+      "bytes": 1161635,
+      "path": "desktop/academy/web/lab/videos/gif/ultrafast_ES.gif",
+      "sha256": "a1f3cc245509701b8882d7eff378333b7c3c9c8ff1cb417c4739e89d27fe4b3f"
+    },
+    {
+      "bytes": 394528,
+      "path": "desktop/academy/web/lab/videos/gradients-b_EN.mp4",
+      "sha256": "d689cf8f219277d59a2522919125f1ab2366b5870525d8e0b3a0c9bdb4511dcc"
+    },
+    {
+      "bytes": 392040,
+      "path": "desktop/academy/web/lab/videos/gradients-b_ES.mp4",
+      "sha256": "2654895a0699d769d1b5df0aeaa61ac09ebe5f685c74f0606f44e4805cb807ce"
+    },
+    {
+      "bytes": 356221,
+      "path": "desktop/academy/web/lab/videos/ilt_EN.mp4",
+      "sha256": "18e9420fbde6eef00ebe4614a7fc67315861f54e31d5eb35916e874dcee3ee02"
+    },
+    {
+      "bytes": 353880,
+      "path": "desktop/academy/web/lab/videos/ilt_ES.mp4",
+      "sha256": "fa3a22d080f0683ea16813310bc0dc5e6460087bfeb30819fb3b19a9398e2809"
+    },
+    {
+      "bytes": 515422,
+      "path": "desktop/academy/web/lab/videos/overlap-joint_EN.mp4",
+      "sha256": "a236e393d60cc978b903abf3dee1234ce59590f4b7e2b1883e53abd8c71c94cc"
+    },
+    {
+      "bytes": 522150,
+      "path": "desktop/academy/web/lab/videos/overlap-joint_ES.mp4",
+      "sha256": "5ad42a46ac90cc9011390894af21cf4633f04196c98f4ffbf420f9ea4a869bf4"
+    },
+    {
+      "bytes": 524523,
+      "path": "desktop/academy/web/lab/videos/prototype-1d_EN.mp4",
+      "sha256": "29944f0efecb8717a9e846e1b11c485463307c76772764962a1b7132af31ab1c"
+    },
+    {
+      "bytes": 528633,
+      "path": "desktop/academy/web/lab/videos/prototype-1d_ES.mp4",
+      "sha256": "fd31d101c9f602806958813124a529307657b10c933c99f5e66065486f71ad87"
+    },
+    {
+      "bytes": 403885,
+      "path": "desktop/academy/web/lab/videos/pulse-90_EN.mp4",
+      "sha256": "a553fd48f88fb56128fd2e545c33e3a2259115214459a439e1559d733ea3862f"
+    },
+    {
+      "bytes": 408376,
+      "path": "desktop/academy/web/lab/videos/pulse-90_ES.mp4",
+      "sha256": "9140df31914e7c8a646afe95f1162c67ebea92c23856041cae07a133d53c17e7"
+    },
+    {
+      "bytes": 1776387,
+      "path": "desktop/academy/web/lab/videos/restricted_EN.mp4",
+      "sha256": "2782c1daef80438094184a8e76277620e88cd0e111a9ce6e31318acd52d6e042"
+    },
+    {
+      "bytes": 1781412,
+      "path": "desktop/academy/web/lab/videos/restricted_ES.mp4",
+      "sha256": "a6499589dc74fe672808f8db7fdd7042f51eb2e566644cbb9ef479587d3ed9a3"
+    },
+    {
+      "bytes": 531313,
+      "path": "desktop/academy/web/lab/videos/spen_EN.mp4",
+      "sha256": "4db17cb255a2610a3f1bdb4a1df41d8e9f82d188f23e71368cdce31dbdd25555"
+    },
+    {
+      "bytes": 539317,
+      "path": "desktop/academy/web/lab/videos/spen_ES.mp4",
+      "sha256": "1308dc7d7468aa3fbe01fbc5d60c96ccaaedf37b7da7c9bed362fb70da7c9f6d"
+    },
+    {
+      "bytes": 852613,
+      "path": "desktop/academy/web/lab/videos/spin-echo_EN.mp4",
+      "sha256": "8c501e4159227c017cc41d2eb86139a79d56b6699be2279f573fd625ff02ba2e"
+    },
+    {
+      "bytes": 862339,
+      "path": "desktop/academy/web/lab/videos/spin-echo_ES.mp4",
+      "sha256": "acbf0422c02faf97b0bd07d14eb5dd57790e5dae7bfe8883d66319f9f6cdcd6e"
+    },
+    {
+      "bytes": 423777,
+      "path": "desktop/academy/web/lab/videos/ultrafast_EN.mp4",
+      "sha256": "2ff34156d74b70fd7398bb0ff39014706b6f4b17ea8d91f052315f574f8fd8f3"
+    },
+    {
+      "bytes": 421450,
+      "path": "desktop/academy/web/lab/videos/ultrafast_ES.mp4",
+      "sha256": "81e4fbd0c5e5eac52cc81b168e7188edf747eeb2655fc800c2beb6518fd46123"
+    },
+    {
+      "bytes": 109681,
+      "path": "desktop/academy/web/lab/videos/video-manifest.json",
+      "sha256": "0da5d1760aef7b3d536c50a76551e8064fbb33b6d8f4cc8584afc8f563669e82"
+    },
+    {
+      "bytes": 39428,
+      "path": "desktop/academy/web/learning-path.js",
+      "sha256": "44395864f5cc260668316d2c8a2b3bf13f4adde3e7803a067e5fe25d511c1dcb"
+    },
+    {
+      "bytes": 132,
+      "path": "desktop/academy/web/mathjax-config.js",
+      "sha256": "cbe514d6f5c2eefeea98229424a72c872f816d8f9ef99643a4ef3ff5971438a3"
+    },
+    {
+      "bytes": 11358,
+      "path": "desktop/academy/web/mathjax/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "bytes": 2275113,
+      "path": "desktop/academy/web/mathjax/tex-svg-full.js",
+      "sha256": "a4354ff94fd868aea0cc6eaaa79a57fda0588646fc46ee3700a349ee0a11cbe6"
+    },
+    {
+      "bytes": 3395,
+      "path": "desktop/academy/web/product.css",
+      "sha256": "f20d322c6b4f58174c2b662d9d855ad5ea55fbd5900624e4ff518d0303891f87"
+    },
+    {
+      "bytes": 46889,
+      "path": "desktop/academy/web/research-journey.js",
+      "sha256": "cd64650813cc8d6f212fd644f1ab0198cb6911808d92ce07241254fa79b83752"
+    },
+    {
+      "bytes": 25826,
+      "path": "desktop/academy/web/research-pilot-panel.js",
+      "sha256": "8a56309fcc742a825371dbfc2ffda7d501ad01c468bfd4f20b2efe1cf6fc6c13"
+    },
+    {
+      "bytes": 6393,
+      "path": "desktop/academy/web/research-studio.css",
+      "sha256": "be1357d8ad9dfcc01e767437fc267b1f2972ece23e8a631e7e13513940c16e14"
+    },
+    {
+      "bytes": 78749,
+      "path": "desktop/academy/web/research-studio.js",
+      "sha256": "f90cff2ba34e188c548c07fafd1f5f69bd23cb60c7f52c25126a574185efbbbd"
+    },
+    {
+      "bytes": 118125,
+      "path": "desktop/academy/web/screenshots/academy-web-en-overview.png",
+      "sha256": "75164b348fafda6acf52da8414c6d422c3d8339bb3246e65ff6d437ef276acf0"
+    },
+    {
+      "bytes": 116689,
+      "path": "desktop/academy/web/screenshots/academy-web-es-overview.png",
+      "sha256": "7322247f9ab0f8dbc48d4722c199052bf16415da7b4af28d3470e00049aa9659"
+    },
+    {
+      "bytes": 265085,
+      "path": "desktop/academy/web/screenshots/doctor-en-home.png",
+      "sha256": "07bff3836b4b085200efcc30ecf51ab9145381f2bd683b97719e5b5f2efad2d0"
+    },
+    {
+      "bytes": 269121,
+      "path": "desktop/academy/web/screenshots/doctor-es-home.png",
+      "sha256": "fe47deddebff54456b59a964c6e9ff4e40cf5ec36dc49afdc86e1eff8de6db70"
+    },
+    {
+      "bytes": 107122,
+      "path": "desktop/academy/web/screenshots/research-en-overview.png",
+      "sha256": "68e4f61bc135f483349ea81b27ee28443f569397159e7b2cee1fd1a3563a5dea"
+    },
+    {
+      "bytes": 106515,
+      "path": "desktop/academy/web/screenshots/research-es-overview.png",
+      "sha256": "0d02fe0e8dc3613325aae9f81537b6cb133963bf7773fa0a081fb78696dd2d27"
+    },
+    {
+      "bytes": 20650,
+      "path": "desktop/academy/web/spatial-encoding.js",
+      "sha256": "ff4c192997ab74b201bdc84b1881f31844dd73f8f5570e37e4fd6b4da60a7d57"
+    },
+    {
+      "bytes": 461,
+      "path": "desktop/academy/web/spatial-worker.js",
+      "sha256": "6d2a98b3d1fec6e840d6e54fffcee8b73715886683bcad7cbdbbee895d952add"
+    },
+    {
+      "bytes": 11178,
+      "originalSha256": "79227010d959c947cd09f935d4ceff78449221d963706c274d39c36757406258",
+      "path": "desktop/academy/web/tests/doctoral-inquiry-browser.mjs",
+      "sha256": "2e21a16f272632c2b9d5ea2326b3a3f38e806bb563e733027a18c91140f56c6d",
+      "transformation": "development Playwright import made portable; install/configure your own testing dependency"
+    },
+    {
+      "bytes": 9468,
+      "path": "desktop/academy/web/tests/doctoral-inquiry.test.cjs",
+      "sha256": "bc5a9df82ed18414970d9a28687470e77fb08ad83548ac5f98d3d43467fcbbbc"
+    },
+    {
+      "bytes": 10920,
+      "originalSha256": "ec11299c2cf70d873fad72a111f0f3657016652d0b42de269d9bde8879b53d6f",
+      "path": "desktop/academy/web/tests/doctoral-pedagogy-browser.mjs",
+      "sha256": "74f0362caee09ef77cf795d1978668f48fa8295bd8aca686acd9aa60b0b73c5e",
+      "transformation": "development Playwright import made portable; install/configure your own testing dependency"
+    },
+    {
+      "bytes": 11778,
+      "path": "desktop/academy/web/tests/doctoral-pedagogy.test.cjs",
+      "sha256": "ecfb591d9d26465418b8aa93e30db7680ab13686a0e85ea4fda2ac1ac661d101"
+    },
+    {
+      "bytes": 12091,
+      "originalSha256": "b8e252240bc5608ea7a2c80031fce9bbde5ec214a868db55bf517fe49157b63e",
+      "path": "desktop/academy/web/tests/doctoral-physics-browser.mjs",
+      "sha256": "9d7c0ec127ea0763cd260f6cb98e6cd35c0bc7d60543af95d0537d600e637e89",
+      "transformation": "development Playwright import made portable; install/configure your own testing dependency"
+    },
+    {
+      "bytes": 7439,
+      "path": "desktop/academy/web/tests/doctoral-physics-inquiry-review.cjs",
+      "sha256": "77c206f8add5214886af9929ae30fa01b54d035f501630dca9d27bdda8fed68a"
+    },
+    {
+      "bytes": 11893,
+      "path": "desktop/academy/web/tests/doctoral-physics-qa.cjs",
+      "sha256": "3884c161ca2e2c85791d8ab497078c64a1d869ae1324215d2cd1917a54e4f8e7"
+    },
+    {
+      "bytes": 20589,
+      "path": "desktop/academy/web/tests/learning-path.test.cjs",
+      "sha256": "7a9e5d78c548f66a2015d0ecf6b84458ccd0d720a80ce902cdaad506fe547724"
+    },
+    {
+      "bytes": 11695,
+      "originalSha256": "bb423d576e7da6fefbe93fb8d20b52a6bb01bf1a995fc2771bb44618b56efebe",
+      "path": "desktop/academy/web/tests/research-feedback.browser.mjs",
+      "sha256": "dcff12738b98830ff5528a12534b8264eaa34e402a27cc5478adb3871b1755e5",
+      "transformation": "development Playwright import made portable; install/configure your own testing dependency"
+    },
+    {
+      "bytes": 8980,
+      "path": "desktop/academy/web/tests/research-independent-review.cjs",
+      "sha256": "69bf872ffa91960c3ca52dbf50e0d9f13fce6155de9b22d85141a835d2d9098d"
+    },
+    {
+      "bytes": 20454,
+      "path": "desktop/academy/web/tests/research-journey.test.cjs",
+      "sha256": "b77c3002a8bc909e3fc29f98478190c23c5f919c674ff6e1220cc7e15083e5b2"
+    },
+    {
+      "bytes": 2103,
+      "originalSha256": "76a0bfc099decc0b5534a1310de6f7e2ce714e30f7e3e57f3358a0466192bf9b",
+      "path": "desktop/academy/web/tests/research-legacy-regression.browser.mjs",
+      "sha256": "dba9fd805bd855e4e43df80079424f9cc97dbe674ac15daa8fe37bff452f8164",
+      "transformation": "development Playwright import made portable; install/configure your own testing dependency"
+    },
+    {
+      "bytes": 10055,
+      "originalSha256": "57abd79ff2de4a1dd73ff38b01423f2ccdfbbf378b7770aa5fde7989597d2d9b",
+      "path": "desktop/academy/web/tests/research-native-scope.browser.mjs",
+      "sha256": "e09f3259c0910dde86a8db6b40852da2b4ab2cdd5ef4360ec8def6fe4e957a23",
+      "transformation": "development Playwright import made portable; install/configure your own testing dependency"
+    },
+    {
+      "bytes": 9084,
+      "originalSha256": "2f2905cd310ac5b213d0e5001eee823b8afc1d31a764b786ec3633a2d0532615",
+      "path": "desktop/academy/web/tests/research-pilot-panel.browser.mjs",
+      "sha256": "68ef322d86bc3035f2581e8aa4832e5a617c231a07c11ca78efc008cd0cb93fe",
+      "transformation": "development Playwright import made portable; install/configure your own testing dependency"
+    },
+    {
+      "bytes": 11290,
+      "path": "desktop/academy/web/tests/research-pilot-panel.test.cjs",
+      "sha256": "3fa09a6f90ffa2c0828601711d15b376587a93acd6e146db3135406fc7e6128e"
+    },
+    {
+      "bytes": 5100,
+      "originalSha256": "4407dad6a885d7e8167761a1eece2f8a35506fe3131d097088c8879406f04a9f",
+      "path": "desktop/academy/web/tests/research-portfolio.browser.mjs",
+      "sha256": "289edc463555e3a41ec7b25f63d58adacb97915c0e25673f7107b25fb948e515",
+      "transformation": "development Playwright import made portable; install/configure your own testing dependency"
+    },
+    {
+      "bytes": 9126,
+      "originalSha256": "e98d9284a4e18bd8909f106646933b64c71485bb1fbb5faea35cd991642a98da",
+      "path": "desktop/academy/web/tests/research-studio.browser.mjs",
+      "sha256": "36a375019429cd68f0b119516629e62985f1e46a5fb81da4365da1768653c983",
+      "transformation": "development Playwright import made portable; install/configure your own testing dependency"
+    },
+    {
+      "bytes": 13591,
+      "path": "desktop/academy/web/tests/spatial-encoding.test.cjs",
+      "sha256": "d2070dc9f1bb1a6a4b13f00a08f0f3951323acee8740ae58f69d19e52e1d3e35"
+    },
+    {
+      "bytes": 12615,
+      "path": "desktop/academy/web/waveform-lab.js",
+      "sha256": "61498986a9c571563834d375de5f0e99a7a4d3417dcc0ec0ceca09bce7ef9ce7"
+    }
+  ],
+  "manifestSelfHash": "Excluded from its own member list; the outer ZIP SHA256 covers this manifest.",
+  "modelWeightsIncluded": false,
+  "privatePapersIncluded": false,
+  "publicWebManifestSha256": "8b73a0bea31c3d81bbfccbac404b8e34a75664a76aa95ed81de089e1cb0380c1",
+  "researchContentSha256": "b62daea320d545e135d48b7fb09adc41016385a739fc91b21535630f8fdd5308",
+  "rootReview": {
+    "engines": 11,
+    "manuals": 4,
+    "passed": true,
+    "path": "qa/research-1.3/root-web-review.json",
+    "qaReports": 13,
+    "sha256": "a7643a75c9c11ec79ef442bdaa8ba007492eb7dfd2202929771260740fae9ad6"
+  },
+  "schema": "academy-reviewed-source/1",
+  "studentDataIncluded": false,
+  "version": "1.3.0"
+}

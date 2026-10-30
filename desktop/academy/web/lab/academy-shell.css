@@ -1,0 +1,13 @@
+/* Desktop embedding: the native course supplies navigation and teaching text. */
+.masthead,.intro,.featured-scenes,.library,footer,.scene-heading{display:none!important}
+#app{max-width:none;margin:0;padding:0}
+.workspace{display:block!important;grid-template-columns:1fr!important;margin:0}
+main{min-width:0;padding:10px!important}
+#stage{margin-top:0}
+#motion-canvas{min-height:245px;max-height:450px}
+.transport{flex-wrap:wrap;gap:8px}
+.transport-buttons #prev-btn,.transport-buttons #next-btn{display:none}
+.story{display:block}
+.downloads{flex-wrap:wrap}
+.historical-example img{max-width:100%}
+@media(max-width:700px){#parameter-controls{grid-template-columns:1fr!important}.control-heading{flex-wrap:wrap}.transport input[type=range]{min-width:110px}.downloads .download-actions{flex-wrap:wrap}}

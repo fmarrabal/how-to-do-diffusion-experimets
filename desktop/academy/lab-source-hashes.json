@@ -1,0 +1,66 @@
+[
+  {
+    "File": "index.html",
+    "SHA256": "5c2b310b71941303c13c3811c1176242e4e6780dbe69dec8afed9e6f0aa2c65c"
+  },
+  {
+    "File": "app.js",
+    "SHA256": "25573dff165470d701ff5e094fbc206e2e762cfaaac1d4e159e9454d4f4eb6a5"
+  },
+  {
+    "File": "catalog.js",
+    "SHA256": "82072a9741d2ef7c7dc58cb426f946d75fa5c8675af4b2ebcc4b46f2da44beb5"
+  },
+  {
+    "File": "physics-catalog.json",
+    "SHA256": "824977e2979644e2d6a4e87f139a1419f1b10572c6d363a3eb49976983fe59c2"
+  },
+  {
+    "File": "scenes.js",
+    "SHA256": "229f424d0029dead28b305cb3b9bda06bb6dd0e51453737670c4dbddc8b25e89"
+  },
+  {
+    "File": "advanced-scenes.js",
+    "SHA256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+  },
+  {
+    "File": "three-scene.js",
+    "SHA256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+  },
+  {
+    "File": "diffusion-models.js",
+    "SHA256": "592fb9224f54e518c0bc222f87c709f08235fd98a40c962e31e699002f00396e"
+  },
+  {
+    "File": "quantitative-scenes.js",
+    "SHA256": "53674c9f35b0ae847b67b16e9dfa47bd50fe11bc2fa0a123c4746c308b73e1a6"
+  },
+  {
+    "File": "styles.css",
+    "SHA256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+  },
+  {
+    "File": "branding.css",
+    "SHA256": "078b74d7f73eac5c3392120ff57b40d336db1ace8c76ffce1713a092bc13ab15"
+  },
+  {
+    "File": "lab-v2.css",
+    "SHA256": "eca1be4f94dcaa8280eede8e8c019b29a3d99697b3a4d6a8c08d0d4cdcfd25bb"
+  },
+  {
+    "File": "science-v2-references.json",
+    "SHA256": "4ca4fbf157d9cf847db83d96b470e3ad380ae9e4b393e6056b75c5eb980ee229"
+  },
+  {
+    "File": "GUIDE_V2_ES.md",
+    "SHA256": "52195f969e4d1bd660aa5d0786f6466a3ee0a3904bec1217baa60c5a909f9640"
+  },
+  {
+    "File": "GUIDE_V2_EN.md",
+    "SHA256": "04c42ebd8293e6c43858bfc1016fd78513a74d39b968270ebc3783c8005f8fba"
+  },
+  {
+    "File": "REFERENCES.md",
+    "SHA256": "d8180ead621c68c25ccc02e1ff8b3a516a98b989dee91aba605404ee5b181c9e"
+  }
+]

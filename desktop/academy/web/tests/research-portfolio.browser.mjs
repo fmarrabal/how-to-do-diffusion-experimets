@@ -1,0 +1,44 @@
+import {createRequire} from 'node:module';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+const require=createRequire(import.meta.url),{chromium}=require('playwright');
+const out=path.resolve(import.meta.dirname,'../../qa/research-1.3/portfolio');await fs.mkdir(out,{recursive:true});
+const browser=await chromium.launch({channel:'msedge',headless:true}),context=await browser.newContext(),page=await context.newPage(),checks=[],errors=[];
+page.on('pageerror',e=>errors.push(String(e)));const check=(name,passed,detail)=>checks.push({name,passed:!!passed,detail});
+const ready=()=>page.waitForFunction(()=>window.AcademyWeb?.snapshot().research?.ready,{timeout:30000});
+const state=()=>page.evaluate(()=>window.AcademyWeb.snapshot().research);
+const stage=id=>page.locator('[data-step="'+id+'"]').click();
+const importFile=(id,text,name)=>page.locator('[data-field="'+id+'"]').setInputFiles({name,mimeType:'application/json',buffer:Buffer.from(text)});
+try{
+ await page.goto((process.env.ACADEMY_QA_ORIGIN||'http://127.0.0.1:8044')+'/index.html?view=research&lang=en');await ready();
+ const original=await page.evaluate(()=>window.AcademyWeb.researchEvidence());
+ const initialId=(await state()).caseId;
+ const corrupt=structuredClone(original),learning=JSON.parse(corrupt.learning);learning.state.contentSha256='0'.repeat(64);corrupt.learning=JSON.stringify(learning);
+ await importFile('import-case',JSON.stringify(corrupt),'tampered-qa.json');await page.waitForTimeout(150);
+ check('tampered learning rejects complete import',await page.locator('.rs-status[data-error]').getAttribute('data-error')==='true');
+ check('rejected import retains case',(await state()).caseId===initialId);
+ await importFile('import-case',JSON.stringify(original),'valid-qa.json');await page.waitForTimeout(150);
+ check('valid portfolio accepted',await page.locator('.rs-status[data-error]').getAttribute('data-error')==='false');
+ await stage('library');
+ const csv='b_s_m2,signal\n0,1\n1000000000,0.5\n2000000000,0.25\n3000000000,0.125\n4000000000,0.0625\n';
+ await importFile('import-csv',csv,'synthetic-software-fixture.csv');await page.waitForTimeout(150);
+ check('CSV import creates processed experimental-provenance case',(await state()).hasProcessing&&/experimental/.test((await state()).caseEvidence));
+ check('CSV not labelled simulation',await page.locator('.rs-context .rs-badge').first().innerText().then(t=>t.includes('EXPERIMENTAL')));
+ await stage('inference');await page.locator('[data-action=analyze]').click();await page.waitForTimeout(150);
+ const fitted=await page.evaluate(()=>window.AcademyResearchJourney.validateImport(window.AcademyWeb.researchEvidence().case).analysis);
+ check('CSV fitting recovers authored analytical coefficient',Math.abs(fitted.D_m2_s-Math.log(2)/1e9)<1e-13,fitted.D_m2_s);
+ const saved=await page.evaluate(()=>window.AcademyWeb.researchEvidence());
+ await stage('brief');await importFile('import-case',JSON.stringify(saved),'roundtrip-qa.json');await page.waitForTimeout(150);
+ check('case identity retained through export/import',(await state()).caseId===saved.case.payload?.id||(await state()).hasAnalysis);
+ const key='diffatonce.academy.research.v1.3',poison='QA invalid storage, preserve these exact bytes';
+ await page.evaluate(({key,poison})=>localStorage.setItem(key,poison),{key,poison});await page.reload();await ready();await stage('calibration');
+ const retained=await page.evaluate(({key,poison})=>Object.keys(localStorage).some(k=>k.startsWith(key+'.preserved.')&&localStorage.getItem(k)===poison),{key,poison});
+ check('invalid previous storage preserved before save',retained);
+ const second=await browser.newContext();
+ await second.addInitScript(({key,poison})=>{const originalSet=Storage.prototype.setItem;originalSet.call(localStorage,key,poison);Storage.prototype.setItem=function(k,v){if(k===key||k.startsWith(key+'.preserved.'))throw new DOMException('QA quota','QuotaExceededError');return originalSet.call(this,k,v);};},{key,poison});
+ const denied=await second.newPage();await denied.goto((process.env.ACADEMY_QA_ORIGIN||'http://127.0.0.1:8044')+'/index.html?view=research&lang=en');await denied.waitForFunction(()=>window.AcademyWeb?.snapshot().research?.ready);await denied.locator('[data-step=calibration]').click();
+ check('failed backup blocks overwrite',await denied.evaluate(({key,poison})=>localStorage.getItem(key)===poison,{key,poison}));
+ check('blocked save explained',await denied.locator('.rs-status[data-error]').innerText().then(t=>t.includes('blocked')));await second.close();
+ check('no unhandled JavaScript exceptions',!errors.length,errors);
+}catch(e){checks.push({name:'portfolio integration completion',passed:false,detail:String(e.stack||e)});}
+finally{await browser.close();const report={scope:'Authored software fixtures only, no real student data',passed:checks.filter(c=>c.passed).length,failed:checks.filter(c=>!c.passed).length,checks};await fs.writeFile(path.join(out,'portfolio-report.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report));process.exitCode=report.failed?1:0;}

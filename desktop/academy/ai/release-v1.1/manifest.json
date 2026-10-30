@@ -1,0 +1,114 @@
+{
+  "Id": "beatrix-academy-qwen3-1.7b-lora-v2-q8",
+  "File": "model.gguf",
+  "Sha256": "b01668cced4c2ec9f28dba333769f0ec2b728e6a18ec7d5eeddb16485fc72fd9",
+  "CourseSha256": "f9a17df9645b541abc70907e5d04cd38c213293443ce1d37c2c0d94f8aea0cb9",
+  "FineTuned": true,
+  "QualityPassed": true,
+  "ExperimentalValidation": false,
+  "TrainingReportSha256": "e67242492126f9a2a3c151238ca214d406fbb58de62ee46ea9549e688e351e83",
+  "EvaluationReportSha256": "79962e41fcd7e990d96cdc9c7fa8505710af3e4d68e1546658511d78e748c06f",
+  "BaseModel": "Qwen/Qwen3-1.7B",
+  "BaseRevision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "Quantization": "Q8_0",
+  "LocalOnly": true,
+  "License": "Apache-2.0",
+  "NativeEvaluationPending": false,
+  "NativeEvaluationPassed": true,
+  "NativeEvaluationReportSha256": "e9948466920818948239ff2122a62c3712c720c646d98529e915ec84c29eaffa",
+  "EnvironmentReportSha256": "6d7ebe19c9e17a9d1f2f1e94a7661962dfe9fb4789205aa32519f7f036dad70a",
+  "AnswerMode": "hybrid-reviewed-course-and-local-llm",
+  "IncludesLiteralCourseText": true,
+  "GeneratedOnlyLimitations": [
+    "Open SPEN reconstruction answers can omit Fourier detail.",
+    "Open time-resolved answers can describe the model without explicitly explaining the concentration-to-attenuation confound."
+  ],
+  "TutorSourceSha256": "d1781bc65abbbeeed57b6191572b940a1f7fe934100ad94cc43455526ee08e71",
+  "Bytes": 1834425984,
+  "ClosedUtc": "2026-10-05T11:05:46.618020+00:00",
+  "ReleaseVersion": "1.1.0",
+  "HistoricalManifestSha256": "eb49a43f12de5057b9fbe41ab242fc8a7916bf9a36d15ce2cd733adfb8bd89ff",
+  "HistoricalNativeEvaluationReportSha256": "3dd224a85bc67219fe39d57f2e53e70cc532894c1defc1f18ffbf2378d11dbb3",
+  "SupplementalNativeEvaluationPending": false,
+  "SupplementalNativeEvaluationPassed": true,
+  "SupplementalSemanticEvaluationPending": false,
+  "SupplementalGeneratedOnlyLimitations": [
+    "Two actual five-question CPU LLM runs on the new papers failed; incorrect causal claims and omissions remain preserved in their raw and semantic reports.",
+    "All20 new mathematical chapters disable LLM generation and deliver the complete reviewed documentary guide; GeneratedText is null and IsModelAnswer is false.",
+    "The existing fine-tuned Beatrix remains available only for the unchanged original24 lesson corpus; new papers were not included in that training."
+  ],
+  "SupplementalContentFile": "derivations.json",
+  "SupplementalContentSha256": "e07920a25ae8642ffa55a83a75a4db7eb8a6ead09a5c8195ae23ef91d6c9b02e",
+  "SupplementalContentSourceIds": [
+    "Sinnaeve2012",
+    "Kuchel2012"
+  ],
+  "SupplementalIncludedInTraining": false,
+  "ModelWeightsUnchanged": true,
+  "TrainingStatement": "Existing Qwen3-1.7B Academy LoRA and GGUF are unchanged. New papers are independently reviewed retrieval only, not a new training run.",
+  "TutorFilesSha256": {
+    "SupplementalKnowledge.cs": "89686fbb2384c80a55639776b3dd49ed91bdfa7cfdc9aae06473f0ce0c3c727b",
+    "TutorService.cs": "d1781bc65abbbeeed57b6191572b940a1f7fe934100ad94cc43455526ee08e71"
+  },
+  "LocalStagingWeightMode": "local_read_only_hardlink",
+  "PriorSupplementalFailedAttempt": {
+    "file": "failed_native-v1.1-supplement-evaluation.json",
+    "sha256": "c7c05eb72af18bb81c819d7d5f2a45105896e2ea3a26a93c31d8cc8c0ce1f911",
+    "passed": false
+  },
+  "PendingReaderUpdatedUtc": "2026-10-05T10:53:12.159834+00:00",
+  "SupplementalAnswerMode": "reviewed-documentary-guide",
+  "SupplementalLLMApproved": false,
+  "SupplementalNativeEvaluationScope": "Local C# runtime QA of all20 mathematical chapters in ES/EN plus five unchanged paper questions. Expected IsModelAnswer=false and GeneratedText=null; complete ordered reviewed equations/explanations/assumptions/notation notes with bounded DOI/page references. No new-paper LLM success is claimed; both failed actual CPU LLM reports are preserved separately.",
+  "SupplementalLLMFailedAttempts": [
+    {
+      "file": "failed_native-v1.1-supplement-evaluation.json",
+      "sha256": "c7c05eb72af18bb81c819d7d5f2a45105896e2ea3a26a93c31d8cc8c0ce1f911",
+      "passed": false,
+      "scope": "Actual new-paper CPU LLM generation; not approved for release."
+    },
+    {
+      "file": "failed_native-v1.1-supplement-fullchapter.json",
+      "sha256": "024ef23ba3b0413aa7624a8d6c183092211cc9ed7f48983387f29cf49c26d0ef",
+      "passed": false,
+      "scope": "Actual new-paper CPU LLM generation; not approved for release."
+    }
+  ],
+  "SupplementalNativeEvaluationReportSha256": "de848b2d30a27292949fa1110fb10a1986d0f3636a3f5b4384853f4d99e779c2",
+  "SupplementalNativeEvaluationReportFile": "reviewed-guide-runtime-evaluation.json",
+  "SupplementalSemanticEvaluationReportSha256": "68fb52f8cdc49c8988aa57d01726a7ece68695ec2fb505945391e7d69732bb0c",
+  "SupplementalSemanticEvaluationReportFile": "native-v1.1-supplement-semantic-review.json",
+  "LegacyNativeEvaluationReportFile": "native-v1.1-legacy-regression-documentary-final.json",
+  "LegacyNativeEvaluationReportSha256": "4c08636723bcc5b1a60990b0c735b45ae97be4063162c3a6c27763e9140b9202",
+  "LegacyOutputCompatibilityReportFile": "legacy-output-compatibility-documentary-final.json",
+  "LegacyOutputCompatibilityReportSha256": "3ee2411097eeaf229f7e53a17763a60e6fc69cbd6d90bcf2454aa1abfdeb6085",
+  "SupplementalLLMRejectedSemanticReports": [
+    {
+      "file": "failed_native-v1.1-supplement-evaluation.json",
+      "sha256": "c7c05eb72af18bb81c819d7d5f2a45105896e2ea3a26a93c31d8cc8c0ce1f911",
+      "passed": false,
+      "semantic_review_file": "native-v1.1-supplement-first-attempt-semantic.json",
+      "semantic_review_sha256": "3ea376321669f9396c020080e074e7ab1815ffd9e09b6ad5f736a24b3c987100",
+      "promotable": false,
+      "critical_contradictions": [
+        "Kuchel causal explanation of squared effective gradient is insufficient/incorrect and must not be certified from keyword PASS.",
+        "Unsupported symbol substitutions chi/theta must not be presented as preserved reviewed equation notation."
+      ],
+      "scope": "Actual historical five-question CPU LLM run about new papers, rejected and preserved; not relabeled as documentary or successful generation."
+    },
+    {
+      "file": "failed_native-v1.1-supplement-fullchapter.json",
+      "sha256": "024ef23ba3b0413aa7624a8d6c183092211cc9ed7f48983387f29cf49c26d0ef",
+      "passed": false,
+      "semantic_review_file": "native-v1.1-supplement-fullchapter-semantic-rejected.json",
+      "semantic_review_sha256": "104ba8f26cc4f0e0fd73afb42634b6eea9dcff48adb24812161579b2871547fa",
+      "promotable": false,
+      "critical_contradictions": [
+        "ES ODE confuses spatial and temporal linearity and writes g=P*g rather than a=P*g.",
+        "EN arbitrary confuses q/q²/b and introduces unqualified coil-profile dependence of b."
+      ],
+      "scope": "Actual historical five-question CPU LLM run about new papers, rejected and preserved; not relabeled as documentary or successful generation."
+    }
+  ],
+  "SupplementalEvaluationMode": "All20 new mathematical chapters are reviewed documentary guides with no LLM generation. Original24 lessons retain the independently evaluated fine-tuned Beatrix. Both failed actual new-paper CPU LLM attempts are retained; new papers were not included in LoRA training."
+}

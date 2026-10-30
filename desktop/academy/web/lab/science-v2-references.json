@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-10-04",
+  "sourcePolicy": {
+    "es": "Bibliografía primaria consultada: artículos de investigación, editoriales y repositorios de los autores. Las simulaciones enseñan modelos ideales; no reproducen automáticamente un programa de pulsos real.",
+    "en": "Consulted primary literature: research papers, publishers and author repositories. The simulations teach ideal models; they do not automatically reproduce a real pulse program."
+  },
+  "references": [
+    {
+      "id": "shrot2008",
+      "title": "Single-scan 2D DOSY NMR spectroscopy",
+      "authors": ["Yoav Shrot", "Lucio Frydman"],
+      "year": 2008,
+      "journal": "Journal of Magnetic Resonance 195, 226–231",
+      "doi": "10.1016/j.jmr.2008.09.011",
+      "url": "https://www.weizmann.ac.il/chemphys/Frydman_group/sites/chemphys.Frydman_group/files/publications/paper82.pdf",
+      "access": "Author-hosted published article",
+      "scenes": ["spen", "ultrafast"],
+      "supports": {
+        "es": "Codificación local de fase, b espacial y lectura EPSI para obtener perfiles por resonancia. El desplazamiento químico afecta la posición efectiva; el ajuste utiliza perfiles normalizados.",
+        "en": "Local phase encoding, spatial b and EPSI readout to obtain resonance-specific profiles. Chemical shift affects effective position; fitting uses normalized profiles."
+      }
+    },
+    {
+      "id": "guduff2017",
+      "title": "Spatially encoded 2D and 3D diffusion-ordered NMR spectroscopy",
+      "authors": ["Ludmilla Guduff", "Ilya Kuprov", "Carine van Heijenoort", "Jean-Nicolas Dumez"],
+      "year": 2017,
+      "journal": "Chemical Communications 53, 701–704",
+      "doi": "10.1039/C6CC09028A",
+      "url": "https://pubs.rsc.org/en/content/articlehtml/2017/cc/c6cc09028a",
+      "fullTextUrl": "https://spindynamics.org/publications/060_kuprov_2016.pdf",
+      "access": "Publisher abstract and author-hosted article",
+      "scenes": ["spen"],
+      "supports": {
+        "es": "SPEN acelera DOSY con resolución química y puede extenderse a tres dimensiones. Duración de adquisición, gradientes y errores sistemáticos limitan la resolución y la exactitud.",
+        "en": "SPEN accelerates chemically resolved DOSY and extends to three dimensions. Acquisition duration, gradients and systematic errors limit resolution and accuracy."
+      }
+    },
+    {
+      "id": "jacquemmoz2022",
+      "title": "Optimisation of spatially-encoded diffusion-ordered NMR spectroscopy for the analysis of mixtures",
+      "authors": ["Corentin Jacquemmoz", "Rituraj Mishra", "Ludmilla Guduff", "Carine van Heijenoort", "Jean-Nicolas Dumez"],
+      "year": 2022,
+      "onlineYear": 2021,
+      "journal": "Magnetic Resonance in Chemistry 60, 121–138",
+      "doi": "10.1002/mrc.5194",
+      "url": "https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/mrc.5194",
+      "access": "Publisher full text",
+      "scenes": ["spen"],
+      "supports": {
+        "es": "Derivación del b local y desplazamiento químico; parámetros EPSI, inversión de polaridad, fase y compensación de convección. Al separar polaridades, el intervalo espectral es dos lóbulos; ancho y resolución dependen de tiempos distintos.",
+        "en": "Local b and chemical-shift derivation; EPSI parameters, polarity reversal, phase and convection compensation. With polarities separated, spectral sampling spans two lobes; width and resolution depend on different times."
+      }
+    },
+    {
+      "id": "nonuniform2023",
+      "title": "Accounting for gradient non-uniformity in spatially-encoded diffusion-ordered NMR spectroscopy",
+      "authors": ["Benjamin Lorandel", "Rituraj Mishra", "Oksana Cazimajou", "Achille Marchand", "Aurélie Bernard", "Jean-Nicolas Dumez"],
+      "year": 2023,
+      "journal": "Journal of Magnetic Resonance 355, 107543",
+      "doi": "10.1016/j.jmr.2023.107543",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1090780723001787",
+      "metadataUrl": "https://pubmed.ncbi.nlm.nih.gov/37708612/",
+      "access": "Publisher abstract and indexed author metadata",
+      "scenes": ["spen", "ultrafast"],
+      "supports": {
+        "es": "La no uniformidad del gradiente altera las atenuaciones espaciales y los D aparentes. Una corrección cuantitativa necesita una caracterización del campo, además del perfil de sensibilidad.",
+        "en": "Gradient nonuniformity changes spatial attenuations and apparent D. Quantitative correction needs field characterization in addition to a sensitivity profile."
+      }
+    },
+    {
+      "id": "ahola2015",
+      "title": "Ultrafast multidimensional Laplace NMR for a rapid and sensitive chemical analysis",
+      "authors": ["Susanna Ahola", "Vladimir V. Zhivonitko", "Otto Mankinen", "Guannan Zhang", "Anu M. Kantola", "Hsueh-Ying Chen", "Christian Hilty", "Igor V. Koptyug", "Ville-Veikko Telkki"],
+      "year": 2015,
+      "journal": "Nature Communications 6, 8363",
+      "doi": "10.1038/ncomms9363",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4595760/",
+      "publisherUrl": "https://www.nature.com/articles/ncomms9363",
+      "access": "Research article archived in PMC; author university metadata",
+      "scenes": ["ultrafast", "dt2"],
+      "supports": {
+        "es": "Difusión espacial seguida de imágenes en cada eco CPMG produce datos D–T₂. Normalización del perfil, sensibilidad y homogeneidad requieren atención; D–T₂ y desplazamiento químico son coordenadas distintas.",
+        "en": "Spatial diffusion encoding followed by imaging at each CPMG echo yields D–T₂ data. Profile normalization, sensitivity and homogeneity matter; D–T₂ and chemical shift are different coordinates."
+      }
+    },
+    {
+      "id": "ahola2017",
+      "title": "Ultrafast NMR diffusion measurements exploiting chirp spin echoes",
+      "authors": ["Susanna Ahola", "Otto Mankinen", "Ville-Veikko Telkki"],
+      "year": 2017,
+      "onlineYear": 2016,
+      "journal": "Magnetic Resonance in Chemistry 55, 341–347",
+      "doi": "10.1002/mrc.4540",
+      "url": "https://oulurepo.oulu.fi/handle/10024/22316",
+      "fullTextUrl": "https://oulurepo.oulu.fi/bitstream/10024/22316/1/nbnfi-fe201801152024.pdf",
+      "access": "Author university repository, accepted manuscript",
+      "scenes": ["ultrafast"],
+      "supports": {
+        "es": "El b de UF-PGSE depende del historial chirp. Una aproximación convencional puede sesgar D; variantes bipolares y de eco estimulado modifican las correcciones.",
+        "en": "UF-PGSE b depends on chirp history. A conventional approximation can bias D; bipolar and stimulated-echo variants change the corrections."
+      }
+    },
+    {
+      "id": "urbanczyk2020",
+      "title": "Accelerating Restricted Diffusion NMR Studies with Time-Resolved and Ultrafast Methods",
+      "authors": ["Mateusz Urbańczyk", "Yashu Kharbanda", "Otto Mankinen", "Ville-Veikko Telkki"],
+      "year": 2020,
+      "journal": "Analytical Chemistry 92, 9948–9955",
+      "doi": "10.1021/acs.analchem.0c01523",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7439255/",
+      "publisherUrl": "https://pubs.acs.org/doi/10.1021/acs.analchem.0c01523",
+      "access": "Published research article archived in PMC",
+      "scenes": ["time-resolved", "ultrafast"],
+      "supports": {
+        "es": "Gradientes permutados y ventanas solapadas permiten difusión resuelta en tiempo o en parámetros. Ventanas grandes promedian cambios; pequeñas empeoran el ajuste. UF mide una curva espacial por adquisición, con costes de sensibilidad y perfil.",
+        "en": "Permuted gradients and overlapping frames support time- or parameter-resolved diffusion. Large frames average changes; small frames weaken fitting. UF measures a spatial decay per acquisition, with sensitivity and profile costs."
+      }
+    },
+    {
+      "id": "kristinaityte2022",
+      "title": "Deeper Insight into Photopolymerization: The Synergy of Time-Resolved Nonuniform Sampling and Diffusion NMR",
+      "authors": ["Kristina Kristinaityte", "Adam Mames", "Mariusz Pietrzak", "Franz F. Westermair", "Wagner Silva", "Ruth M. Gschwind", "Tomasz Ratajczyk", "Mateusz Urbańczyk"],
+      "year": 2022,
+      "journal": "Journal of the American Chemical Society 144, 13938–13945",
+      "doi": "10.1021/jacs.2c05944",
+      "url": "https://pubs.acs.org/doi/10.1021/jacs.2c05944",
+      "fullTextUrl": "https://open.icm.edu.pl/bitstreams/53a06d2f-cf2b-4542-982f-de3d64c849a7/download",
+      "access": "Publisher and author institutional repository",
+      "scenes": ["time-resolved"],
+      "supports": {
+        "es": "Ejemplo experimental publicado de seguimiento de fotopolimerización mediante difusión y TR-NUS. Es una aplicación de la bibliografía, no datos ni validación del laboratorio simulado.",
+        "en": "Published experimental application of diffusion and TR-NUS to photopolymerization monitoring. This is a literature application, not data or validation of the simulated laboratory."
+      }
+    }
+  ]
+}

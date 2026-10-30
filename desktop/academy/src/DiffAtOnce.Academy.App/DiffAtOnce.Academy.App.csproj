@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType><TargetFramework>net8.0-windows</TargetFramework><UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><LangVersion>latest</LangVersion>
+    <AssemblyName>DiffAtOnce.Academy</AssemblyName><Version>1.3.0</Version><Product>DiffAtOnce Academy</Product>
+    <AcademyModelDirectory Condition="'$(AcademyModelDirectory)' == ''">../../ai/release-v1.1</AcademyModelDirectory>
+    <ApplicationIcon>Assets/DiffAtOnce-Academy.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="../../docs/*.md;../../docs/*.pdf;../../docs/*.json" Link="Docs/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../THIRD_PARTY/**" Link="THIRD_PARTY/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <ProjectReference Include="../DiffAtOnce.Academy.Core/DiffAtOnce.Academy.Core.csproj" />
+    <ProjectReference Include="../DiffAtOnce.Academy.Tutor/DiffAtOnce.Academy.Tutor.csproj" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2792.45" />
+    <Content Include="../../content/**" Link="Content/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../lab/**" Link="Lab/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="$(AcademyModelDirectory)/**" Link="Models/Beatrix/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="Never" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../web/**" Exclude="../../web/tests/**;../../web/*.py;../../web/*.mjs;../../web/*.md;../../web/__pycache__/**" Link="Web/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

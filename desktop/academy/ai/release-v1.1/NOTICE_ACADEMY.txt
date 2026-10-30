@@ -1,0 +1,20 @@
+Beatrix Academy v2
+
+Base: Qwen/Qwen3-1.7B, revision
+70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+Official model card: https://huggingface.co/Qwen/Qwen3-1.7B
+Base license: Apache License 2.0 (see QWEN_LICENSE.txt).
+
+Modifications: local LoRA adaptation for bilingual NMR diffusion teaching,
+rank 16 on q_proj/v_proj, merged and quantized to GGUF Q8_0. The original
+course summaries and synthetic worked examples are documented in the
+training and evaluation reports. Original production Beatrix/Prime weights
+were not modified. This package contains the modified model, not the
+unmodified upstream base.
+
+Teaching simulations, original source summaries and automated software
+checks do not constitute experimental calibration, chemical identification,
+independent expert review or measured student-learning outcomes.
+
+The student tutor runs locally. It has no network client or instrument API,
+and does not execute TopSpin operations or modify experimental data.

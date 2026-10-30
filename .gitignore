@@ -19,3 +19,20 @@ private-inputs/
 python/calibration_gui/demo_evidence/
 python/calibration_gui/qa/
 python/calibration_gui/calibration_demo_data/
+
+# Academy source is public; model weights and local/user/build data are not.
+desktop/academy/**/bin/
+desktop/academy/**/obj/
+desktop/academy/**/node_modules/
+desktop/academy/qa/
+desktop/academy/research/
+desktop/academy/ai/work*/
+desktop/academy/ai/base*/
+desktop/academy/**/runtime-data/
+desktop/academy/**/student-work/
+desktop/academy/**/notebook-export*/
+desktop/academy/**/*.gguf
+desktop/academy/**/*.safetensors
+desktop/academy/**/*.dll
+desktop/academy/**/*.exe
+desktop/academy/**/*.pdb

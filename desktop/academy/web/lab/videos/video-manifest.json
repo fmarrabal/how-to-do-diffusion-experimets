@@ -1,0 +1,3747 @@
+{
+  "format": 1,
+  "created": "2026-10-04T00:53:10.235Z",
+  "source": "DiffusionMotion.renderFrame; deterministic illustrative simulations, not experimental measurements",
+  "render": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 24,
+    "duration": 18,
+    "frames": 432
+  },
+  "renderer": {
+    "browser": "152.0.7977.83",
+    "node": "v24.19.0"
+  },
+  "encoder": "ffmpeg version 9.0-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+  "sourceAssets": [
+    {
+      "path": "/",
+      "bytes": 4768,
+      "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+    },
+    {
+      "path": "/styles.css",
+      "bytes": 8447,
+      "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+    },
+    {
+      "path": "/three-scene.js",
+      "bytes": 5411,
+      "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+    },
+    {
+      "path": "/advanced-scenes.js",
+      "bytes": 13204,
+      "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+    },
+    {
+      "path": "/app.js",
+      "bytes": 18376,
+      "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+    },
+    {
+      "path": "/catalog.js",
+      "bytes": 62804,
+      "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+    },
+    {
+      "path": "/scenes.js",
+      "bytes": 54475,
+      "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+    },
+    {
+      "path": "/vendor/three-global.js",
+      "bytes": 2084344,
+      "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+    }
+  ],
+  "videos": [
+    {
+      "scene": "brownian",
+      "title": {
+        "es": "El movimiento que no vemos",
+        "en": "The motion we cannot see"
+      },
+      "lang": "es",
+      "file": "brownian_ES.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 2934095,
+      "sha256": "c5fd555d7f7f969d3d7fb051f39c2389f61058ba7c863301918d0d8553349eb1",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "brownian",
+            "language": "es",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "Delta": 100
+            }
+          },
+          "canvasSha256": "03e9b50be39c7dc4ca5a696094682ee1ac004141479252ddfb384500e5aa3479"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "brownian",
+            "language": "es",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "Delta": 100
+            }
+          },
+          "canvasSha256": "1c6345d1b02a6852c721f3459e4725b9ed15c92ae9c9c24d473bef8d43e54a8c"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "brownian",
+            "language": "es",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "Delta": 100
+            }
+          },
+          "canvasSha256": "c2c25d6adb23f4a2367a76197100687a56eea9240d7eb5b9cd53ed0bd79e45e7"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 42.57,
+      "created": "2026-10-04T00:53:52.806Z"
+    },
+    {
+      "scene": "brownian",
+      "title": {
+        "es": "El movimiento que no vemos",
+        "en": "The motion we cannot see"
+      },
+      "lang": "en",
+      "file": "brownian_EN.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 2931072,
+      "sha256": "88c9effa90c286af1ee66eb990cbc518710ee6284659a114f3a22c669a163c3a",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "brownian",
+            "language": "en",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "Delta": 100
+            }
+          },
+          "canvasSha256": "f2704c4fecbc7262f26579a1854bcf7156382f683a1492eb8a29bd67a205e6b8"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "brownian",
+            "language": "en",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "Delta": 100
+            }
+          },
+          "canvasSha256": "570ba3afa6229b39382284d5bdec5e71a2f551d14cf858dbfcfaaab36bd62dff"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "brownian",
+            "language": "en",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "Delta": 100
+            }
+          },
+          "canvasSha256": "c4c478bbd126ca22833ace963e97c445208de26ccab3cc0a3c581fc10456ad6b"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 42.71,
+      "created": "2026-10-04T00:54:35.519Z"
+    },
+    {
+      "scene": "spin-echo",
+      "title": {
+        "es": "El eco recupera la fase, pero recuerda el movimiento",
+        "en": "The echo restores phase but remembers motion"
+      },
+      "lang": "es",
+      "file": "spin-echo_ES.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 862339,
+      "sha256": "acbf0422c02faf97b0bd07d14eb5dd57790e5dae7bfe8883d66319f9f6cdcd6e",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "spin-echo",
+            "language": "es",
+            "parameters": {
+              "g": 260,
+              "delta": 1.5,
+              "Delta": 80,
+              "D": 1.2
+            }
+          },
+          "canvasSha256": "a39a29809d0217e76de1669cf7906c46501ce34a3837b7504791715435f0cf64"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "spin-echo",
+            "language": "es",
+            "parameters": {
+              "g": 260,
+              "delta": 1.5,
+              "Delta": 80,
+              "D": 1.2
+            }
+          },
+          "canvasSha256": "329c31ed8162f4537df1461060c1a0bb854f46f0d3726c45ae5ec3ff0a18736d"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "spin-echo",
+            "language": "es",
+            "parameters": {
+              "g": 260,
+              "delta": 1.5,
+              "Delta": 80,
+              "D": 1.2
+            }
+          },
+          "canvasSha256": "7b22414ebf409f7bff7be5423a600a5bb945cef1a6cc0b8fd281781043e57ee2"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 31.62,
+      "created": "2026-10-04T00:55:07.143Z"
+    },
+    {
+      "scene": "spin-echo",
+      "title": {
+        "es": "El eco recupera la fase, pero recuerda el movimiento",
+        "en": "The echo restores phase but remembers motion"
+      },
+      "lang": "en",
+      "file": "spin-echo_EN.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 852613,
+      "sha256": "8c501e4159227c017cc41d2eb86139a79d56b6699be2279f573fd625ff02ba2e",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "spin-echo",
+            "language": "en",
+            "parameters": {
+              "g": 260,
+              "delta": 1.5,
+              "Delta": 80,
+              "D": 1.2
+            }
+          },
+          "canvasSha256": "1887c7184b2912fe57edab10a979001e22419f09f5e196f08d83905e7af09eae"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "spin-echo",
+            "language": "en",
+            "parameters": {
+              "g": 260,
+              "delta": 1.5,
+              "Delta": 80,
+              "D": 1.2
+            }
+          },
+          "canvasSha256": "16dc2ac44ef3d1efacad57fd9e54dec16f39a52cf23eb8b2c785d21caa383114"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "spin-echo",
+            "language": "en",
+            "parameters": {
+              "g": 260,
+              "delta": 1.5,
+              "Delta": 80,
+              "D": 1.2
+            }
+          },
+          "canvasSha256": "f84e931c07fa1d0cb37a591487d16561747debe0753e42dacfb150b40108a5b1"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 27.78,
+      "created": "2026-10-04T00:55:34.928Z"
+    },
+    {
+      "scene": "gradients-b",
+      "title": {
+        "es": "De la rampa de gradientes al valor b",
+        "en": "From gradient ramps to b-values"
+      },
+      "lang": "es",
+      "file": "gradients-b_ES.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 392040,
+      "sha256": "2654895a0699d769d1b5df0aeaa61ac09ebe5f685c74f0606f44e4805cb807ce",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "gradients-b",
+            "language": "es",
+            "parameters": {
+              "g": 260,
+              "delta": 1.5,
+              "Delta": 80,
+              "D": 1
+            }
+          },
+          "canvasSha256": "2781cc5a966a3ba3950d628bdda755b869d8df39d7ab915dfef156573cefc21e"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "gradients-b",
+            "language": "es",
+            "parameters": {
+              "g": 260,
+              "delta": 1.5,
+              "Delta": 80,
+              "D": 1
+            }
+          },
+          "canvasSha256": "5519c0f01ab31138cff5c7f72f6f6f9f391bb560ffd70fc1be2717c29c055835"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "gradients-b",
+            "language": "es",
+            "parameters": {
+              "g": 260,
+              "delta": 1.5,
+              "Delta": 80,
+              "D": 1
+            }
+          },
+          "canvasSha256": "035b3472c6c2e18602c6ca9b31a8f642140028a0f92efd65d9f5731a7092e8a2"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 23,
+      "created": "2026-10-04T00:55:57.932Z"
+    },
+    {
+      "scene": "gradients-b",
+      "title": {
+        "es": "De la rampa de gradientes al valor b",
+        "en": "From gradient ramps to b-values"
+      },
+      "lang": "en",
+      "file": "gradients-b_EN.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 394528,
+      "sha256": "d689cf8f219277d59a2522919125f1ab2366b5870525d8e0b3a0c9bdb4511dcc",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "gradients-b",
+            "language": "en",
+            "parameters": {
+              "g": 260,
+              "delta": 1.5,
+              "Delta": 80,
+              "D": 1
+            }
+          },
+          "canvasSha256": "206d955aa22d492eebdc4b0282633f32bab38bba430bb78d5585fc637068240c"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "gradients-b",
+            "language": "en",
+            "parameters": {
+              "g": 260,
+              "delta": 1.5,
+              "Delta": 80,
+              "D": 1
+            }
+          },
+          "canvasSha256": "1f98fba4fd768fca1b3d1a29fbcdfdbe7ef9b0ddd5c1e9da59d318982f3d599b"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "gradients-b",
+            "language": "en",
+            "parameters": {
+              "g": 260,
+              "delta": 1.5,
+              "Delta": 80,
+              "D": 1
+            }
+          },
+          "canvasSha256": "2f203a666c6f033f4fddcac2118864397cd6ad0fc9d017d5131aaa49227b393e"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 21.34,
+      "created": "2026-10-04T00:56:19.270Z"
+    },
+    {
+      "scene": "attenuation-mixture",
+      "title": {
+        "es": "Una curva puede ocultar dos componentes",
+        "en": "One decay can hide two components"
+      },
+      "lang": "es",
+      "file": "attenuation-mixture_ES.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 518481,
+      "sha256": "566b74b2373accb21ab7ed80b3d375cff75764e0986f36d332e7f1531a5f9892",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "attenuation-mixture",
+            "language": "es",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "fraction": 0.6,
+              "bmax": 3,
+              "noise": 1
+            }
+          },
+          "canvasSha256": "46227f8082bb1d86130eda9bd6f5e599e63df5cb0a070e3a87e9b59b958bcb12"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "attenuation-mixture",
+            "language": "es",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "fraction": 0.6,
+              "bmax": 3,
+              "noise": 1
+            }
+          },
+          "canvasSha256": "d8c845b39a3e6b108d4215f314dcee601aaf344f7b4a95b8a1b4f10732132d12"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "attenuation-mixture",
+            "language": "es",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "fraction": 0.6,
+              "bmax": 3,
+              "noise": 1
+            }
+          },
+          "canvasSha256": "bb4496e2ed93aa680a2b3a1c76eee0d54ad99f9e96fe8079fff7ade09590a9fc"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 21.66,
+      "created": "2026-10-04T00:56:40.927Z"
+    },
+    {
+      "scene": "attenuation-mixture",
+      "title": {
+        "es": "Una curva puede ocultar dos componentes",
+        "en": "One decay can hide two components"
+      },
+      "lang": "en",
+      "file": "attenuation-mixture_EN.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 516328,
+      "sha256": "2accfb8b1bb3132aa8542b9b6ce793484b437e0102095b7c04ecfe7f0dd47fc5",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "attenuation-mixture",
+            "language": "en",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "fraction": 0.6,
+              "bmax": 3,
+              "noise": 1
+            }
+          },
+          "canvasSha256": "5a2d9455c851c09aef90537bbc683a5456fa7ed2e9f454755c998ee7774ba569"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "attenuation-mixture",
+            "language": "en",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "fraction": 0.6,
+              "bmax": 3,
+              "noise": 1
+            }
+          },
+          "canvasSha256": "91511120b935da3290fe33fb3f480c3e2337c3cddaff46c356f95fe01e8117a3"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "attenuation-mixture",
+            "language": "en",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "fraction": 0.6,
+              "bmax": 3,
+              "noise": 1
+            }
+          },
+          "canvasSha256": "1dcf23d52b846211b4bfb77b69dbad2f9a05d961ef887cc38bf827b8c18842fe"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 24.24,
+      "created": "2026-10-04T00:57:05.173Z"
+    },
+    {
+      "scene": "pulse-90",
+      "title": {
+        "es": "Primero, calibrar el pulso de 90°",
+        "en": "First, calibrate the 90° pulse"
+      },
+      "lang": "es",
+      "file": "pulse-90_ES.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 408376,
+      "sha256": "9140df31914e7c8a646afe95f1162c67ebea92c23856041cae07a133d53c17e7",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "pulse-90",
+            "language": "es",
+            "parameters": {
+              "p90": 10,
+              "noise": 0.5
+            }
+          },
+          "canvasSha256": "714845d73294579cf961e754e07e8f0746c96d59ed5785018883cd3c19186214"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "pulse-90",
+            "language": "es",
+            "parameters": {
+              "p90": 10,
+              "noise": 0.5
+            }
+          },
+          "canvasSha256": "50f2076cfe6ecc0f77d1ee3486f2ca258c8777d4c092d0fdc0909ce26c54af24"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "pulse-90",
+            "language": "es",
+            "parameters": {
+              "p90": 10,
+              "noise": 0.5
+            }
+          },
+          "canvasSha256": "1da98d7bd2e3c647031e20e5708d606ac86e8e3c9c3ea02664cc6c6fa1ec0c45"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 23,
+      "created": "2026-10-04T00:57:28.175Z"
+    },
+    {
+      "scene": "pulse-90",
+      "title": {
+        "es": "Primero, calibrar el pulso de 90°",
+        "en": "First, calibrate the 90° pulse"
+      },
+      "lang": "en",
+      "file": "pulse-90_EN.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 403885,
+      "sha256": "a553fd48f88fb56128fd2e545c33e3a2259115214459a439e1559d733ea3862f",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "pulse-90",
+            "language": "en",
+            "parameters": {
+              "p90": 10,
+              "noise": 0.5
+            }
+          },
+          "canvasSha256": "ac43b8e9add2f007bd9ea34e651502097804359023bec20a57c1e3a12038f43b"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "pulse-90",
+            "language": "en",
+            "parameters": {
+              "p90": 10,
+              "noise": 0.5
+            }
+          },
+          "canvasSha256": "ccf13df4cdd5298d0570cd6cf3fc171d6827b32ec453374740c6ba126707ca47"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "pulse-90",
+            "language": "en",
+            "parameters": {
+              "p90": 10,
+              "noise": 0.5
+            }
+          },
+          "canvasSha256": "4558744585fec65c383aad844fc0dfad902ac874e980980b8b606ec10f633965"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 23.18,
+      "created": "2026-10-04T00:57:51.357Z"
+    },
+    {
+      "scene": "acquisition-window",
+      "title": {
+        "es": "Elegir δ y Δ sin perder la señal",
+        "en": "Choose δ and Δ without losing signal"
+      },
+      "lang": "es",
+      "file": "acquisition-window_ES.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 520967,
+      "sha256": "05d40ee79c3a7c23e7f5cfb84fd965b8bd446a79187a917b605bcb447e3814fc",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "acquisition-window",
+            "language": "es",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "delta": 1.2,
+              "Delta": 100,
+              "Gmax": 500,
+              "noise": 1
+            }
+          },
+          "canvasSha256": "dd75d111ea467a3d4a580f4e4f9ffd9bc11cfa2ad85b0df298807e561ec59df1"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "acquisition-window",
+            "language": "es",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "delta": 1.2,
+              "Delta": 100,
+              "Gmax": 500,
+              "noise": 1
+            }
+          },
+          "canvasSha256": "3a00537d95226cb4cc20b85379e0a2e78e8ff4e9b9b9183501aebce0379656a8"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "acquisition-window",
+            "language": "es",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "delta": 1.2,
+              "Delta": 100,
+              "Gmax": 500,
+              "noise": 1
+            }
+          },
+          "canvasSha256": "8a0c5bb1f293d5b6f5c47968bf48d09ad8ebaa9510aeaacc5600cb9670406902"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 25.22,
+      "created": "2026-10-04T00:58:16.581Z"
+    },
+    {
+      "scene": "acquisition-window",
+      "title": {
+        "es": "Elegir δ y Δ sin perder la señal",
+        "en": "Choose δ and Δ without losing signal"
+      },
+      "lang": "en",
+      "file": "acquisition-window_EN.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 521746,
+      "sha256": "5c5f1784b983e02a85636206d48990a762d8b244670253943678d301f3607b0f",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "acquisition-window",
+            "language": "en",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "delta": 1.2,
+              "Delta": 100,
+              "Gmax": 500,
+              "noise": 1
+            }
+          },
+          "canvasSha256": "e510c7a3380cc6353484eb3f63c4534823a66c15d10b3373dbab4aea295a1135"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "acquisition-window",
+            "language": "en",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "delta": 1.2,
+              "Delta": 100,
+              "Gmax": 500,
+              "noise": 1
+            }
+          },
+          "canvasSha256": "c3f9065945ed6352d2a3a2fb38853f033917b8545635d0b71f8c3ed05cd583b8"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "acquisition-window",
+            "language": "en",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "delta": 1.2,
+              "Delta": 100,
+              "Gmax": 500,
+              "noise": 1
+            }
+          },
+          "canvasSha256": "5da4c2c5fa5b3d7f6d04575c4456b5f41937e4a776993d35fc227723d30f864c"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 24.91,
+      "created": "2026-10-04T00:58:41.496Z"
+    },
+    {
+      "scene": "convection",
+      "title": {
+        "es": "Cuando el tubo también se mueve",
+        "en": "When the sample also flows"
+      },
+      "lang": "es",
+      "file": "convection_ES.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 1366748,
+      "sha256": "379a186f1bfd745b9b5534dc02e9f656f74b7b688abdc996c78467ad27787610",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "convection",
+            "language": "es",
+            "parameters": {
+              "g": 260,
+              "delta": 1.5,
+              "Delta": 80,
+              "D": 1,
+              "velocity": 35,
+              "spread": 30
+            }
+          },
+          "canvasSha256": "03c78ea5bd0af606d6ba11a74e21970ee2abe8fc4d2f430a0bb2f112e1f00e5f"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "convection",
+            "language": "es",
+            "parameters": {
+              "g": 260,
+              "delta": 1.5,
+              "Delta": 80,
+              "D": 1,
+              "velocity": 35,
+              "spread": 30
+            }
+          },
+          "canvasSha256": "0a57682d3343ed951cf3deb3c0818d24abad1ad0fe03dbd5a37c39129f1d1376"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "convection",
+            "language": "es",
+            "parameters": {
+              "g": 260,
+              "delta": 1.5,
+              "Delta": 80,
+              "D": 1,
+              "velocity": 35,
+              "spread": 30
+            }
+          },
+          "canvasSha256": "e0c0e0fbea7308d01ef4a93203b58cc4c82689876011f6053fe1d43170c33f98"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 25.31,
+      "created": "2026-10-04T00:59:06.810Z"
+    },
+    {
+      "scene": "convection",
+      "title": {
+        "es": "Cuando el tubo también se mueve",
+        "en": "When the sample also flows"
+      },
+      "lang": "en",
+      "file": "convection_EN.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 1355544,
+      "sha256": "3ca3bea65b7affc255480c5fbdc48d379853af937788b19b0d93c6f02144a663",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "convection",
+            "language": "en",
+            "parameters": {
+              "g": 260,
+              "delta": 1.5,
+              "Delta": 80,
+              "D": 1,
+              "velocity": 35,
+              "spread": 30
+            }
+          },
+          "canvasSha256": "5cdc2422b3e0f2911fc8e5d1ffb1e8f95a1025859563dabf109299a8367d4a67"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "convection",
+            "language": "en",
+            "parameters": {
+              "g": 260,
+              "delta": 1.5,
+              "Delta": 80,
+              "D": 1,
+              "velocity": 35,
+              "spread": 30
+            }
+          },
+          "canvasSha256": "9fd768f57b01babede04340b8b827db817e0ccf5272b485488edf8081b689178"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "convection",
+            "language": "en",
+            "parameters": {
+              "g": 260,
+              "delta": 1.5,
+              "Delta": 80,
+              "D": 1,
+              "velocity": 35,
+              "spread": 30
+            }
+          },
+          "canvasSha256": "b670bc703fdb2c9cc1bc60f33f473c60b6ff91f94aa428ba50317f1237957d2e"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 24.55,
+      "created": "2026-10-04T00:59:31.367Z"
+    },
+    {
+      "scene": "overlap-joint",
+      "title": {
+        "es": "Escuchar todo el espectro a la vez",
+        "en": "Listen to the whole spectrum together"
+      },
+      "lang": "es",
+      "file": "overlap-joint_ES.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 522150,
+      "sha256": "5ad42a46ac90cc9011390894af21cf4633f04196c98f4ffbf420f9ea4a869bf4",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "overlap-joint",
+            "language": "es",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "ppm": 5.15,
+              "bmax": 2.5
+            }
+          },
+          "canvasSha256": "9efdcc1570585cc3fd1c0ecdc466fb951d7ac7b5a4f9084cbc7a86e36e16c1bc"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "overlap-joint",
+            "language": "es",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "ppm": 5.15,
+              "bmax": 2.5
+            }
+          },
+          "canvasSha256": "340fa4b95f56bef894e0e194df1d400366902372c8efa16b4fbaabbb4b7083c6"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "overlap-joint",
+            "language": "es",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "ppm": 5.15,
+              "bmax": 2.5
+            }
+          },
+          "canvasSha256": "98bc8f453dbb812bceaf53e17852ad96be55e5a733b9137362a6e404f1570c91"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 23.47,
+      "created": "2026-10-04T00:59:54.841Z"
+    },
+    {
+      "scene": "overlap-joint",
+      "title": {
+        "es": "Escuchar todo el espectro a la vez",
+        "en": "Listen to the whole spectrum together"
+      },
+      "lang": "en",
+      "file": "overlap-joint_EN.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 515422,
+      "sha256": "a236e393d60cc978b903abf3dee1234ce59590f4b7e2b1883e53abd8c71c94cc",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "overlap-joint",
+            "language": "en",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "ppm": 5.15,
+              "bmax": 2.5
+            }
+          },
+          "canvasSha256": "2d663769255f1bf67cdad8055df9f4bb07f6d56b2a1f93ba33cc0bd5a40f72ac"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "overlap-joint",
+            "language": "en",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "ppm": 5.15,
+              "bmax": 2.5
+            }
+          },
+          "canvasSha256": "ccba30dccfc435091017ab49ab356c39409f9683611391f71f1151e9674b864d"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "overlap-joint",
+            "language": "en",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "ppm": 5.15,
+              "bmax": 2.5
+            }
+          },
+          "canvasSha256": "8ebf3694a69e56a45bae8205e8047583ff6c73b6a17762b13c8efb51d3124a1b"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 24.48,
+      "created": "2026-10-04T01:00:19.320Z"
+    },
+    {
+      "scene": "ilt",
+      "title": {
+        "es": "La ILT: muchas soluciones casi indistinguibles",
+        "en": "ILT: many almost indistinguishable answers"
+      },
+      "lang": "es",
+      "file": "ilt_ES.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 353880,
+      "sha256": "fa3a22d080f0683ea16813310bc0dc5e6460087bfeb30819fb3b19a9398e2809",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "ilt",
+            "language": "es",
+            "parameters": {
+              "separation": 0.1,
+              "noise": 1,
+              "regularization": 0.25,
+              "bmax": 3
+            }
+          },
+          "canvasSha256": "56aa5008e702f118f7fe14f49f571a52829ca9a6defccd785838c97d4dfd623f"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "ilt",
+            "language": "es",
+            "parameters": {
+              "separation": 0.1,
+              "noise": 1,
+              "regularization": 0.25,
+              "bmax": 3
+            }
+          },
+          "canvasSha256": "0132d8acc7be1237b06e905e27eb2829192b367292a487f95fbffbe7ff2b12b0"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "ilt",
+            "language": "es",
+            "parameters": {
+              "separation": 0.1,
+              "noise": 1,
+              "regularization": 0.25,
+              "bmax": 3
+            }
+          },
+          "canvasSha256": "39e5eb72d7c3493179a4835849046d8532792e1d0424cc38eb13510f4c5a2f27"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 28.6,
+      "created": "2026-10-04T01:00:47.927Z"
+    },
+    {
+      "scene": "ilt",
+      "title": {
+        "es": "La ILT: muchas soluciones casi indistinguibles",
+        "en": "ILT: many almost indistinguishable answers"
+      },
+      "lang": "en",
+      "file": "ilt_EN.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 356221,
+      "sha256": "18e9420fbde6eef00ebe4614a7fc67315861f54e31d5eb35916e874dcee3ee02",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "ilt",
+            "language": "en",
+            "parameters": {
+              "separation": 0.1,
+              "noise": 1,
+              "regularization": 0.25,
+              "bmax": 3
+            }
+          },
+          "canvasSha256": "b95c5f448a92595a0fcbb472a1035460ba2eabe31bdd18beeeb3aa62f6af0a9f"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "ilt",
+            "language": "en",
+            "parameters": {
+              "separation": 0.1,
+              "noise": 1,
+              "regularization": 0.25,
+              "bmax": 3
+            }
+          },
+          "canvasSha256": "935bfcd2f4ad135713a4683d2eacf75f52b00d7d3b81d9782d5fd51210d1794f"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "ilt",
+            "language": "en",
+            "parameters": {
+              "separation": 0.1,
+              "noise": 1,
+              "regularization": 0.25,
+              "bmax": 3
+            }
+          },
+          "canvasSha256": "098fd0f12a22934675f30097728ca962c3b19811143f41d0d2dd827e296bbe06"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 28.65,
+      "created": "2026-10-04T01:01:16.585Z"
+    },
+    {
+      "scene": "ultrafast",
+      "title": {
+        "es": "Cambiar tiempo repetido por espacio",
+        "en": "Replace repeated time with space"
+      },
+      "lang": "es",
+      "file": "ultrafast_ES.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 421450,
+      "sha256": "81e4fbd0c5e5eac52cc81b168e7188edf747eeb2655fc800c2beb6518fd46123",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "ultrafast",
+            "language": "es",
+            "parameters": {
+              "encoding": 0.5,
+              "bmax": 3,
+              "D": 0.8,
+              "profile": 0
+            }
+          },
+          "canvasSha256": "98a5172c1833f9a7e40fb5b435f5a3032367f3840ab1c6669b7f1cb14b79aef2"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "ultrafast",
+            "language": "es",
+            "parameters": {
+              "encoding": 0.5,
+              "bmax": 3,
+              "D": 0.8,
+              "profile": 0
+            }
+          },
+          "canvasSha256": "6143d23d3563d921a77dcc6af4d167eeb2fd82d74d51743adbbd299a908c6037"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "ultrafast",
+            "language": "es",
+            "parameters": {
+              "encoding": 0.5,
+              "bmax": 3,
+              "D": 0.8,
+              "profile": 0
+            }
+          },
+          "canvasSha256": "11fa2609fcbb7690d66e6eac9698e7eb8ff887481bf2c715568d62013aeb1204"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 36.28,
+      "created": "2026-10-04T01:01:52.866Z"
+    },
+    {
+      "scene": "ultrafast",
+      "title": {
+        "es": "Cambiar tiempo repetido por espacio",
+        "en": "Replace repeated time with space"
+      },
+      "lang": "en",
+      "file": "ultrafast_EN.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 423777,
+      "sha256": "2ff34156d74b70fd7398bb0ff39014706b6f4b17ea8d91f052315f574f8fd8f3",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "ultrafast",
+            "language": "en",
+            "parameters": {
+              "encoding": 0.5,
+              "bmax": 3,
+              "D": 0.8,
+              "profile": 0
+            }
+          },
+          "canvasSha256": "1a054baa422c4d4ba15ddfc7edadf11535f8b9fb468f03164bbc4aff1b27d413"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "ultrafast",
+            "language": "en",
+            "parameters": {
+              "encoding": 0.5,
+              "bmax": 3,
+              "D": 0.8,
+              "profile": 0
+            }
+          },
+          "canvasSha256": "1b0f7271ffcaa9664f54bccbe61f3d58651af9428f4a74fe9ddae374dcf8036d"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "ultrafast",
+            "language": "en",
+            "parameters": {
+              "encoding": 0.5,
+              "bmax": 3,
+              "D": 0.8,
+              "profile": 0
+            }
+          },
+          "canvasSha256": "b785825a673916c1a7ecb741a648fd0985c043a420ef6f7348779e534a692392"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 35.81,
+      "created": "2026-10-04T01:02:28.679Z"
+    },
+    {
+      "scene": "dt2",
+      "title": {
+        "es": "D–T₂: movilidad y entorno en el mismo mapa",
+        "en": "D–T₂: mobility and environment in one map"
+      },
+      "lang": "es",
+      "file": "dt2_ES.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 521482,
+      "sha256": "ebe57dbaaed24ffe8befe8f82d2eb06dd279ed75a753646f3d5198cccc3ca59f",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "dt2",
+            "language": "es",
+            "parameters": {
+              "encoding": 0.5,
+              "bmax": 3,
+              "T2": 0.55,
+              "noise": 0
+            }
+          },
+          "canvasSha256": "2103a5149bfac438aae32ca37d15058dadee228ccae98d910b8b1f06d935bd5f"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "dt2",
+            "language": "es",
+            "parameters": {
+              "encoding": 0.5,
+              "bmax": 3,
+              "T2": 0.55,
+              "noise": 0
+            }
+          },
+          "canvasSha256": "351bf16421cd9573c26092823df2c60de6b0d0b427a55ae34423cad31e8474a2"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "dt2",
+            "language": "es",
+            "parameters": {
+              "encoding": 0.5,
+              "bmax": 3,
+              "T2": 0.55,
+              "noise": 0
+            }
+          },
+          "canvasSha256": "48161f5eb5e6d4b57e8ace4746b5868535a83caee9f46822c0d638dba3ad5a23"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 30.7,
+      "created": "2026-10-04T01:02:59.380Z"
+    },
+    {
+      "scene": "dt2",
+      "title": {
+        "es": "D–T₂: movilidad y entorno en el mismo mapa",
+        "en": "D–T₂: mobility and environment in one map"
+      },
+      "lang": "en",
+      "file": "dt2_EN.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 519838,
+      "sha256": "4d1537531226343cec1fc723ad01a2f59536ea00b5b9d71bdea275962ffbd17b",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "dt2",
+            "language": "en",
+            "parameters": {
+              "encoding": 0.5,
+              "bmax": 3,
+              "T2": 0.55,
+              "noise": 0
+            }
+          },
+          "canvasSha256": "902be357e892aad3a00c30ec100c089ffc658e88220d3373b4ac46281ff2ac30"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "dt2",
+            "language": "en",
+            "parameters": {
+              "encoding": 0.5,
+              "bmax": 3,
+              "T2": 0.55,
+              "noise": 0
+            }
+          },
+          "canvasSha256": "821927a36080201763e8f1059dd8e57c2c2491853562d73f4e96a4a9b8378609"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "dt2",
+            "language": "en",
+            "parameters": {
+              "encoding": 0.5,
+              "bmax": 3,
+              "T2": 0.55,
+              "noise": 0
+            }
+          },
+          "canvasSha256": "ef4b34acb9b8fe0e46caacf0d8057ce9ae1f8fc9851c7436f05d88010ae1edac"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 30.33,
+      "created": "2026-10-04T01:03:29.713Z"
+    },
+    {
+      "scene": "spen",
+      "title": {
+        "es": "SPEN-DOSY: espacio, difusión y espectro",
+        "en": "SPEN-DOSY: space, diffusion and spectrum"
+      },
+      "lang": "es",
+      "file": "spen_ES.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 539317,
+      "sha256": "1308dc7d7468aa3fbe01fbc5d60c96ccaaedf37b7da7c9bed362fb70da7c9f6d",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "spen",
+            "language": "es",
+            "parameters": {
+              "encoding": 0.5,
+              "bmax": 3,
+              "shear": 0.7,
+              "profile": 0
+            }
+          },
+          "canvasSha256": "ee32d0046f753042261776f4a5f70a5a787a1d7201ebd3560f080754c999dd92"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "spen",
+            "language": "es",
+            "parameters": {
+              "encoding": 0.5,
+              "bmax": 3,
+              "shear": 0.7,
+              "profile": 0
+            }
+          },
+          "canvasSha256": "be5f441acb0e9d7165f9685cc0f82e930e8a6f3de83f10106a43acc415afa42b"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "spen",
+            "language": "es",
+            "parameters": {
+              "encoding": 0.5,
+              "bmax": 3,
+              "shear": 0.7,
+              "profile": 0
+            }
+          },
+          "canvasSha256": "7e91908af8a55d3b3bf634696bc23ff007cd5d9c3561a04c8a3b5de5f7ff69fc"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 38.23,
+      "created": "2026-10-04T01:04:07.946Z"
+    },
+    {
+      "scene": "spen",
+      "title": {
+        "es": "SPEN-DOSY: espacio, difusión y espectro",
+        "en": "SPEN-DOSY: space, diffusion and spectrum"
+      },
+      "lang": "en",
+      "file": "spen_EN.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 531313,
+      "sha256": "4db17cb255a2610a3f1bdb4a1df41d8e9f82d188f23e71368cdce31dbdd25555",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "spen",
+            "language": "en",
+            "parameters": {
+              "encoding": 0.5,
+              "bmax": 3,
+              "shear": 0.7,
+              "profile": 0
+            }
+          },
+          "canvasSha256": "d5506374896058f9d06b3e66fd496c4f9417d92e221ac0d340e72c5c0589eae9"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "spen",
+            "language": "en",
+            "parameters": {
+              "encoding": 0.5,
+              "bmax": 3,
+              "shear": 0.7,
+              "profile": 0
+            }
+          },
+          "canvasSha256": "0d1d13bb5a2b814bf4e01597659cf26a429d2cbb54ab28d9cd3f76c27f445f1b"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "spen",
+            "language": "en",
+            "parameters": {
+              "encoding": 0.5,
+              "bmax": 3,
+              "shear": 0.7,
+              "profile": 0
+            }
+          },
+          "canvasSha256": "2842d45eb1b467250f92bc08a4a30f5f75da72ece5d709430811ed24d56e8574"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 36.77,
+      "created": "2026-10-04T01:04:44.723Z"
+    },
+    {
+      "scene": "restricted",
+      "title": {
+        "es": "Las barreras cambian la historia del movimiento",
+        "en": "Barriers change the motion history"
+      },
+      "lang": "es",
+      "file": "restricted_ES.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 1781412,
+      "sha256": "a6499589dc74fe672808f8db7fdd7042f51eb2e566644cbb9ef479587d3ed9a3",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "restricted",
+            "language": "es",
+            "parameters": {
+              "D": 1.2,
+              "width": 20,
+              "Delta": 150
+            }
+          },
+          "canvasSha256": "85802bb7ca921445f6ecb7f173e963e730166e1b10d9fe54e03d0a1a1c14694d"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "restricted",
+            "language": "es",
+            "parameters": {
+              "D": 1.2,
+              "width": 20,
+              "Delta": 150
+            }
+          },
+          "canvasSha256": "2ebb01cc3000cf96f3d8f306fe30ac9d92dc22e79a2676def4283e1155e2d608"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "restricted",
+            "language": "es",
+            "parameters": {
+              "D": 1.2,
+              "width": 20,
+              "Delta": 150
+            }
+          },
+          "canvasSha256": "39091434e0f471305d913537e2fb3e8017efae7832f2fa58d0673a070bd82371"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 26.63,
+      "created": "2026-10-04T01:05:11.358Z"
+    },
+    {
+      "scene": "restricted",
+      "title": {
+        "es": "Las barreras cambian la historia del movimiento",
+        "en": "Barriers change the motion history"
+      },
+      "lang": "en",
+      "file": "restricted_EN.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 1776387,
+      "sha256": "2782c1daef80438094184a8e76277620e88cd0e111a9ce6e31318acd52d6e042",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "restricted",
+            "language": "en",
+            "parameters": {
+              "D": 1.2,
+              "width": 20,
+              "Delta": 150
+            }
+          },
+          "canvasSha256": "c6cdd1c7438e4a1fdd02b09c9f4401c2186e967a4306378e860d1fdb047889f6"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "restricted",
+            "language": "en",
+            "parameters": {
+              "D": 1.2,
+              "width": 20,
+              "Delta": 150
+            }
+          },
+          "canvasSha256": "fa6f45a49f1784d9fec5ffb72b7c7a1658e5e2a324e0ed087bbff9d729207aa2"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "restricted",
+            "language": "en",
+            "parameters": {
+              "D": 1.2,
+              "width": 20,
+              "Delta": 150
+            }
+          },
+          "canvasSha256": "8361a7122a55ed5d357028ba9c00fee4f33dd80d1f1774098ce8eb5cdec7c5b5"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 23.2,
+      "created": "2026-10-04T01:05:34.558Z"
+    },
+    {
+      "scene": "exchange",
+      "title": {
+        "es": "Las moléculas pueden cambiar de entorno",
+        "en": "Molecules can change environment"
+      },
+      "lang": "es",
+      "file": "exchange_ES.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 1356531,
+      "sha256": "86fa3558d62adead35f178f4c9bcdffa113bd722d4502cd6973aae03e10234c3",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "exchange",
+            "language": "es",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "rate": 12,
+              "Delta": 100
+            }
+          },
+          "canvasSha256": "04f3edd3ee30081f9a3855d72ad844cac99465e710f76832538a35360d6cc55e"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "exchange",
+            "language": "es",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "rate": 12,
+              "Delta": 100
+            }
+          },
+          "canvasSha256": "253b9c70ed2600d59dcfa6ab152aef257bc81ddb50a08938ca50a27c4230d354"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "exchange",
+            "language": "es",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "rate": 12,
+              "Delta": 100
+            }
+          },
+          "canvasSha256": "4dd9802d2ec0a18e3a15b2e920f2558e90c6722c297b8e20f59ea4d66072e8c5"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 24.92,
+      "created": "2026-10-04T01:05:59.486Z"
+    },
+    {
+      "scene": "exchange",
+      "title": {
+        "es": "Las moléculas pueden cambiar de entorno",
+        "en": "Molecules can change environment"
+      },
+      "lang": "en",
+      "file": "exchange_EN.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 1346509,
+      "sha256": "905323dfe1b1b4f0f22d3e8609461aecb6733df0e4faa25cad9917bfb7424794",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "exchange",
+            "language": "en",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "rate": 12,
+              "Delta": 100
+            }
+          },
+          "canvasSha256": "e27536d2a8eb5945fad583460719cb4e2f337a0d483f24368f73fb271f80d0fc"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "exchange",
+            "language": "en",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "rate": 12,
+              "Delta": 100
+            }
+          },
+          "canvasSha256": "781630a6e3382bd56c1b1c6b32136f549835f131eb949907aa2910851e831b30"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "exchange",
+            "language": "en",
+            "parameters": {
+              "Dslow": 0.45,
+              "Dfast": 1.6,
+              "rate": 12,
+              "Delta": 100
+            }
+          },
+          "canvasSha256": "6d92560c581206641c490b049c1e4e426db52844b96bb31f02dc2a90d499679f"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 23.48,
+      "created": "2026-10-04T01:06:22.970Z"
+    },
+    {
+      "scene": "anisotropy",
+      "title": {
+        "es": "La difusión también tiene dirección",
+        "en": "Diffusion also has direction"
+      },
+      "lang": "es",
+      "file": "anisotropy_ES.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 1912999,
+      "sha256": "58a2c8feeab204d64483efeb3afec7480f71934a051969f2be37e42b646f68aa",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "anisotropy",
+            "language": "es",
+            "parameters": {
+              "Dparallel": 1.8,
+              "Dperp": 0.4,
+              "angle": 30,
+              "Delta": 100
+            }
+          },
+          "canvasSha256": "97be0e0198d68e3105284a2e452ecf0127f5dda28be8780c157035991582a0dd"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "anisotropy",
+            "language": "es",
+            "parameters": {
+              "Dparallel": 1.8,
+              "Dperp": 0.4,
+              "angle": 30,
+              "Delta": 100
+            }
+          },
+          "canvasSha256": "8fc05a045916625b80d9c46f03b0f5a111a3afb557612efe4b1cdb0a23b8ac6d"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "anisotropy",
+            "language": "es",
+            "parameters": {
+              "Dparallel": 1.8,
+              "Dperp": 0.4,
+              "angle": 30,
+              "Delta": 100
+            }
+          },
+          "canvasSha256": "6f68d345dd4cf1f74372c4e495f4f19cb025d290764bda893e05968e126e7590"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 24.54,
+      "created": "2026-10-04T01:06:47.517Z"
+    },
+    {
+      "scene": "anisotropy",
+      "title": {
+        "es": "La difusión también tiene dirección",
+        "en": "Diffusion also has direction"
+      },
+      "lang": "en",
+      "file": "anisotropy_EN.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 1903233,
+      "sha256": "d19cf6f3067ca59d7b22ff09ec2d20df87b77c0ee0f43bee8344d7df75dcc1a4",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "anisotropy",
+            "language": "en",
+            "parameters": {
+              "Dparallel": 1.8,
+              "Dperp": 0.4,
+              "angle": 30,
+              "Delta": 100
+            }
+          },
+          "canvasSha256": "2475dd584209c439717c456efac653b272b1477f68f618a373f50ae1e518af1b"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "anisotropy",
+            "language": "en",
+            "parameters": {
+              "Dparallel": 1.8,
+              "Dperp": 0.4,
+              "angle": 30,
+              "Delta": 100
+            }
+          },
+          "canvasSha256": "8f167b9d357b60390018a9f802dd5531f54d37cdc0b07622e2e8d2be2c020ac7"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "anisotropy",
+            "language": "en",
+            "parameters": {
+              "Dparallel": 1.8,
+              "Dperp": 0.4,
+              "angle": 30,
+              "Delta": 100
+            }
+          },
+          "canvasSha256": "6506552b498ce33747236b0a80583e871fe1bfbdc609d6237212e9cbb191d32b"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 23.69,
+      "created": "2026-10-04T01:07:11.212Z"
+    },
+    {
+      "scene": "prototype-1d",
+      "title": {
+        "es": "Nuestro prototipo: una sonda z, un experimento más rico",
+        "en": "Our prototype: one z-gradient probe, a richer experiment"
+      },
+      "lang": "es",
+      "file": "prototype-1d_ES.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 528633,
+      "sha256": "fd31d101c9f602806958813124a529307657b10c933c99f5e66065486f71ad87",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "prototype-1d",
+            "language": "es",
+            "parameters": {
+              "encoding": 0.5,
+              "gain": 1,
+              "oddPhase": 0,
+              "profile": 0
+            }
+          },
+          "canvasSha256": "bd551cb70746b26479cbcf03b4f12e60adc299a63d2b4a245366a7844aebd1e9"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "prototype-1d",
+            "language": "es",
+            "parameters": {
+              "encoding": 0.5,
+              "gain": 1,
+              "oddPhase": 0,
+              "profile": 0
+            }
+          },
+          "canvasSha256": "8f3030d5b8b285b59e6284959e465b60a3624c61005d00fe14547b4bfefedaff"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "prototype-1d",
+            "language": "es",
+            "parameters": {
+              "encoding": 0.5,
+              "gain": 1,
+              "oddPhase": 0,
+              "profile": 0
+            }
+          },
+          "canvasSha256": "eb94adf0a7e0b53bbfb70d3c7bf4f18206d7cbb3839549ca2fa7ce32e4f76322"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 32.97,
+      "created": "2026-10-04T01:07:44.189Z"
+    },
+    {
+      "scene": "prototype-1d",
+      "title": {
+        "es": "Nuestro prototipo: una sonda z, un experimento más rico",
+        "en": "Our prototype: one z-gradient probe, a richer experiment"
+      },
+      "lang": "en",
+      "file": "prototype-1d_EN.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration": 18,
+      "frames": 432,
+      "bytes": 524523,
+      "sha256": "29944f0efecb8717a9e846e1b11c485463307c76772764962a1b7132af31ab1c",
+      "params": {},
+      "samples": [
+        {
+          "frame": 0,
+          "time": 0,
+          "metrics": {
+            "phase": 0,
+            "scene": "prototype-1d",
+            "language": "en",
+            "parameters": {
+              "encoding": 0.5,
+              "gain": 1,
+              "oddPhase": 0,
+              "profile": 0
+            }
+          },
+          "canvasSha256": "e6835abc1c9cff917788e5ef213b7c12d0f56b196ea9dd9ba1cad300dd74926f"
+        },
+        {
+          "frame": 216,
+          "time": 9,
+          "metrics": {
+            "phase": 0.5,
+            "scene": "prototype-1d",
+            "language": "en",
+            "parameters": {
+              "encoding": 0.5,
+              "gain": 1,
+              "oddPhase": 0,
+              "profile": 0
+            }
+          },
+          "canvasSha256": "ec770671d743df83aae13372fb8593ff8ee6adb3fa0e73b3d0a51f9955babf52"
+        },
+        {
+          "frame": 431,
+          "time": 17.958333333333332,
+          "metrics": {
+            "phase": 0.9976851851851851,
+            "scene": "prototype-1d",
+            "language": "en",
+            "parameters": {
+              "encoding": 0.5,
+              "gain": 1,
+              "oddPhase": 0,
+              "profile": 0
+            }
+          },
+          "canvasSha256": "4a481f4081203b3a0240754a3733899a82e3f5e73283ce21ce6f14f6f769ac26"
+        }
+      ],
+      "sourceAssets": [
+        {
+          "path": "/",
+          "bytes": 4768,
+          "sha256": "29cabc5e0b34c8b6b9c8b4695e82bcf4a106f902e4abc9de7c6c144338733eeb"
+        },
+        {
+          "path": "/styles.css",
+          "bytes": 8447,
+          "sha256": "0ce3f04952656a113d75121e646a9c19143339ee44ae4dc5bae17034f86978d4"
+        },
+        {
+          "path": "/three-scene.js",
+          "bytes": 5411,
+          "sha256": "a7a1d47c9af13bc472b0e4ff68b5823c59da17031dc34d7db78b616da89b81ea"
+        },
+        {
+          "path": "/advanced-scenes.js",
+          "bytes": 13204,
+          "sha256": "5fb2d47dbc29c0bf878852e2002cb376cdf9e0e8a8b9d8bcc956439f36285c0f"
+        },
+        {
+          "path": "/app.js",
+          "bytes": 18376,
+          "sha256": "c6175d08d39c5d4d31b24bde7894f44b5261764b3a6be91e31e1f0f8e9022b28"
+        },
+        {
+          "path": "/catalog.js",
+          "bytes": 62804,
+          "sha256": "53750c4d5a3ac9ca3b790f88df6151548a3526ded93658f1dc53fa3287167962"
+        },
+        {
+          "path": "/scenes.js",
+          "bytes": 54475,
+          "sha256": "07662d03fab1fd01497819c65d90637c4bae1023e7daccbb185bb8b56d2d8f9c"
+        },
+        {
+          "path": "/vendor/three-global.js",
+          "bytes": 2084344,
+          "sha256": "3340914bde6ce1343768ca0793edeafd6fc8902a65d6ab0940b3d04d2ce6f488"
+        }
+      ],
+      "renderer": {
+        "browser": "152.0.7977.83",
+        "node": "v24.19.0"
+      },
+      "renderSeconds": 32.8,
+      "created": "2026-10-04T01:08:16.987Z"
+    }
+  ]
+}

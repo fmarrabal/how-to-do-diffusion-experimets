@@ -12,3 +12,8 @@
 *.png binary
 *.jpg binary
 *.mp4 binary
+
+# Frozen Academy sources, licensed originals and signed metadata keep exact bytes.
+desktop/academy/** -text
+provenance/academy-1.3.0/** -text
+README_SOURCE_ES_EN.txt -text

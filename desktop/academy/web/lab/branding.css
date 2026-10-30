@@ -1,0 +1,8 @@
+/* Branding-only revision. Scientific renderers and styles.css are unchanged. */
+.masthead{gap:16px;flex-wrap:wrap}
+.masthead .motion-brand{display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;line-height:1;color:var(--ink)}
+.masthead .motion-brand:hover{text-decoration:none}
+.masthead .motion-brand img{display:block;width:220px;max-width:100%;height:auto;object-fit:contain}
+.masthead .motion-brand small{display:block;margin:0;font-size:9px;font-weight:600;letter-spacing:1.7px;line-height:1.4;color:var(--muted)}
+.masthead .top-actions{flex-wrap:wrap}
+@media(max-width:760px){.masthead .motion-brand img{width:170px}.masthead .motion-brand small{font-size:8px;letter-spacing:1.2px}}

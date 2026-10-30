@@ -1,0 +1,154 @@
+DIFFATONCE ACADEMY 1.3.0
+English + Español · Windows x64 / Web
+
+ESPAÑOL — EMPIEZA AQUÍ
+
+1. Windows: extraiga toda la carpeta del ZIP y abra DiffAtOnce.Academy.exe.
+   Conserve Content, Web, Lab, Docs, Models y las bibliotecas junto al ejecutable.
+   El paquete portable incluye .NET; el recorrido interactivo requiere el
+   runtime Microsoft Edge WebView2. No ejecute el programa dentro del ZIP.
+   Web: abra la sección Investigación. No necesita instalación ni clave API.
+
+2. Abra Investigación continua en WPF (Research studio en inglés).
+   Empiece por una predicción y recorra las doce etapas:
+   Pregunta → Calibración → Diseño → Adquisición → Procesado → Interpretación
+   → Incertidumbre → Siguiente medida → RF + espacio → Competencias
+   → Defensa y revisión → Datos públicos.
+   El caso conserva la misma muestra, sus decisiones y su procedencia.
+   Un cambio anterior invalida los resultados que dependen de él.
+
+3. Antes de interpretar D, revise pulso de 90°, gradiente, temperatura,
+   secuencia y ventana de atenuación. Explore calibración, convección,
+   deriva y solapamiento por separado y combinados. Edite y vuelva a calcular.
+   Los escenarios simulados se identifican como simulaciones.
+
+4. En Incertidumbre, el gradiente y la temperatura incluyen errores comunes:
+   repetir puntos no elimina esos sesgos. Se separan ruido, procesado y modelo.
+   El intervalo es condicional a los supuestos; no acredita cobertura real.
+   Compare explicaciones alternativas y diseñe una medida que las discrimine.
+
+5. Datos públicos añade ocho series Monash/Figshare CC BY 4.0, con 72 archivos
+   originales, atribución y hashes. Compruebe los metadatos antes de integrar.
+   Sin b documentada se bloquea el ajuste de D. No se inventa b usando el índice
+   de fila. Con b aportada, D sigue siendo condicional a su procedencia,
+   secuencia y calibración. Los grupos del repositorio no demuestran por sí
+   solos controles pareados de temperatura/convección ni réplicas idénticas.
+
+6. Exporte su investigación antes de cerrar o cambiar de navegador/equipo.
+   El JSON conserva decisiones y evidencias compactas; guarde los originales
+   FID por separado y vuelva a importarlos cuando sea necesario.
+   En Defensa y revisión, exporte una entrega y vincule la devolución docente.
+   Los argumentos requieren rúbrica humana; no reciben nota semántica del LLM.
+   El progreso se guarda localmente. No se envía al servidor.
+
+7. Competencias incluye un piloto voluntario: empieza con cero participantes,
+   exige consentimiento explícito y permite un seudónimo sin pedir nombre real.
+   Pretest, postest distinto y retención diferida usan formas con semillas
+   diferentes. La retención se habilita tras siete días reales. No se incluyen
+   participantes/resultados reales ni se afirma eficacia docente.
+
+8. Beatrix en la web consulta fuentes revisadas sin ejecutar un LLM. WPF sólo
+   ofrece el modelo local cuando pesos, manifiesto, hashes y revisión científica
+   coinciden y se ha aprobado su evaluación nativa CPU para ese contenido.
+   Un candidato R4 o este código no acreditan esa aprobación. Si falta una
+   condición se utiliza la guía documental, claramente identificada.
+   Puede cancelar la consulta. Las respuestas se vinculan al caso y cálculo;
+   una respuesta tardía de otro contexto se descarta sin modificar resultados.
+
+9. Manual abre el manual completo actualizado:
+   Docs/ACADEMY_MANUAL_ES.pdf (68 páginas)
+   Docs/ACADEMY_MANUAL_EN.pdf (68 páginas)
+   Guía específica: Docs/RESEARCH_MANUAL_ES.pdf / EN.pdf (22 páginas cada una).
+   En el árbol fuente esas mismas rutas empiezan por docs/, en minúsculas.
+   El manual completo etiqueta los capítulos históricos de las ediciones previas.
+
+ENGLISH — START HERE
+
+1. Windows: extract the whole ZIP folder and open DiffAtOnce.Academy.exe.
+   Keep Content, Web, Lab, Docs, Models and runtime libraries beside the EXE.
+   The portable package includes .NET; the interactive pathway requires
+   Microsoft Edge WebView2 Runtime. Do not run the program inside the ZIP.
+   Browser: open Research. No installation or API key is required.
+
+2. Open Research studio in WPF (Investigación continua in Spanish).
+   Begin with a prediction and follow all twelve stages:
+   Brief → Calibration → Design → Acquire → Process → Inference → Uncertainty
+   → Next measurement → RF + space → Competencies → Defence and review
+   → Public data.
+   One case retains the same sample, decisions and provenance throughout.
+   An upstream change invalidates dependent results.
+
+3. Before interpreting D, check the 90° pulse, gradient, temperature, pulse
+   sequence and attenuation window. Explore calibration, convection, drift
+   and overlap individually and together. Recalculate after editing values.
+   Simulated scenarios are explicitly identified as simulations.
+
+4. Uncertainty includes shared gradient and temperature errors: repeated points
+   do not remove those biases. Noise, processing and model assumptions remain
+   separate. Intervals are conditional and do not establish real coverage.
+   Compare alternative explanations and design a discriminating measurement.
+
+5. Public data adds eight Monash/Figshare CC BY 4.0 series, with 72 original
+   files, attribution and hashes. Inspect metadata before integrating signals.
+   Undocumented b blocks D fitting. b is never invented from row number.
+   With user-supplied b, D remains conditional on provenance, sequence and
+   calibration. Repository grouping alone does not establish paired thermal
+   or convection controls, or identical replicates.
+
+6. Export your investigation before closing or switching browser/computer.
+   JSON retains decisions and compact evidence; keep original FIDs separately
+   and re-import them when needed. In Defence and review, export a submission
+   and link instructor feedback. Written arguments use a human rubric and
+   receive no semantic LLM grade. Progress stays local and is not sent to a server.
+
+7. Competencies includes a voluntary pilot. It starts with zero participants,
+   requires explicit consent and accepts an optional pseudonym without a real
+   name. Pretest, a different post-test and delayed retention use separately
+   seeded forms. Retention unlocks after seven real days. No real participants
+   or outcomes are included, and no educational efficacy is claimed.
+
+8. Browser Beatrix retrieves reviewed sources without running an LLM. WPF
+   offers a local model only when compatible weights, manifest, hashes and
+   scientific review match and native CPU evaluation is approved for that
+   content. An R4 candidate or this code does not establish that approval.
+   Otherwise, clearly labelled documentary guidance is used. Queries can be
+   cancelled. Replies are bound to case and calculation; a late reply from
+   another context is discarded without changing numerical results.
+
+9. Manual opens the updated complete manual:
+   Docs/ACADEMY_MANUAL_EN.pdf (68 pages)
+   Docs/ACADEMY_MANUAL_ES.pdf (68 pages)
+   Focused guide: Docs/RESEARCH_MANUAL_EN.pdf / ES.pdf (22 pages each).
+   In this source tree the same paths begin with lowercase docs/.
+   The complete manual labels historical chapters from earlier editions.
+
+DATOS Y LÍMITES / DATA AND BOUNDARIES
+
+Windows: %LOCALAPPDATA%/DiffAtOnce/Academy/.
+Web: browser-local progress and portfolio / progreso y expediente en el navegador.
+Export/import keeps a local copy / Exportar/importar conserva una copia local.
+
+Academy no controla el espectrómetro ni modifica originales experimentales.
+Academy does not control a spectrometer or modify experimental originals.
+Software QA, simulation, physical calibration and learning efficacy are distinct.
+TBO, KK2 and production DiffAtOnce calculations remain outside this training app.
+
+REFERENCIAS DE ARCHIVO / HISTORICAL REFERENCES
+
+Base: 24 lessons, numeric workshop and 17 laboratory scenes / lecciones, taller
+numérico y escenas. Docs/MANUAL_ES.pdf and EN.pdf are historical base manuals.
+1.1: mathematical reader based on Sinnaeve and Kuchel (2012), with reviewed
+source guidance / lector matemático con fuentes revisadas.
+1.2: nine-activity Doctoral laboratory / Laboratorio doctoral, including the
+separate historical D2O public case. Docs/DOCTORAL_MANUAL_ES.pdf and EN.pdf.
+These earlier manuals retain their original limits; their tutor/build statements
+refer to those editions / Sus afirmaciones sobre tutor y compilación son históricas.
+
+Current source and build / Fuentes y reconstrucción actuales: SOURCE_BUILD_V13.md.
+Course provenance / Procedencia del curso: Content/CURRICULUM_PROVENANCE.md
+(or content/CURRICULUM_PROVENANCE.md in source / en el árbol fuente).
+Model identity and checks, when included / Identidad del modelo, cuando se incluye:
+Models/Beatrix/. A model file does not replace its approved manifest and reports.
+Portable file hashes / Hashes del portable: PACKAGE_SHA256.json, when packaged.
+Source archive integrity / Integridad del ZIP fuente: SOURCE_SHA256.json and
+its adjacent .sha256.json receipt / recibo .sha256.json adyacente.

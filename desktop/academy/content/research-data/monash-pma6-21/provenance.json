@@ -1,0 +1,98 @@
+{
+  "schema": "academy-public-dataset/1",
+  "sourceDOI": "10.26180/33075584.v1",
+  "sourceURL": "https://doi.org/10.26180/33075584.v1",
+  "license": {
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "attribution": "Igor Silva, Alasdair McKay and Tanja Junkers. Comparison of Oligomer to Polymer Molar Mass Calibrations in Diffusion-Ordered Spectroscopy (DOSY) - Repository. Monash/Figshare. DOI 10.26180/33075584.v1",
+  "archiveSHA256": "be65cb5cd54cffdac4ad3b6bca5d90fce175ba652d7127262513eef4e21f5dbc",
+  "selection": "Unmodified public subset raw data/DOSY/IS_PMA6/21",
+  "absoluteCalibrationValidated": false,
+  "sampleGroup": "IS_PMA6",
+  "experiment": "21",
+  "metadata": {
+    "PULPROG": "<dstegp3s>",
+    "TE": "298",
+    "NS": "8",
+    "RG": "203",
+    "SW_h": "5096.83995922528",
+    "SFO1": "600.272254069",
+    "GRPDLY": "76",
+    "TD": "32768",
+    "d1Seconds": 3.0,
+    "d5Seconds": 0.0,
+    "d20Seconds": 0.4,
+    "p1Us": 14.29,
+    "p30Us": 2200.0,
+    "parameterMeaning": "Literal acquired TopSpin parameters; no universal identification with effective delta/Delta is inferred.",
+    "savedDOSYParametersAvailable": false,
+    "verifiedBRequiredBeforeDiffusionFit": true
+  },
+  "files": [
+    {
+      "path": "ser.ser",
+      "originalArchivePath": "raw data/DOSY/IS_PMA6/21/ser.ser",
+      "bytes": 2097152,
+      "sha256": "478be66142f1b071b2833e9b5f44776ca58d0be76b853b10781c9aed3180d878",
+      "url": "content/research-data/monash-pma6-21/ser.ser"
+    },
+    {
+      "path": "acqus",
+      "originalArchivePath": "raw data/DOSY/IS_PMA6/21/acqus",
+      "bytes": 8991,
+      "sha256": "724478502c7857b68805327779c292024dee4c49690b6f3a3ac8c197a164edc0",
+      "url": "content/research-data/monash-pma6-21/acqus"
+    },
+    {
+      "path": "acqu2s",
+      "originalArchivePath": "raw data/DOSY/IS_PMA6/21/acqu2s",
+      "bytes": 587,
+      "sha256": "e2985ed026a8bc2d2a2187f1a9cb67cc8e622d90dae814f2cee4681060508e06",
+      "url": "content/research-data/monash-pma6-21/acqu2s"
+    },
+    {
+      "path": "pulseprogram",
+      "originalArchivePath": "raw data/DOSY/IS_PMA6/21/pulseprogram",
+      "bytes": 6493,
+      "sha256": "a0532529364e3e4b98563ad4b7173f773d2a38d372f9f365ff24300439caca98",
+      "url": "content/research-data/monash-pma6-21/pulseprogram"
+    },
+    {
+      "path": "difflist",
+      "originalArchivePath": "raw data/DOSY/IS_PMA6/21/difflist",
+      "bytes": 125,
+      "sha256": "54ac466c9c4e053cc2c7396c1b578386ec150217f0f594500a2cc63af16a57e2",
+      "url": "content/research-data/monash-pma6-21/difflist"
+    },
+    {
+      "path": "gradient_calib",
+      "originalArchivePath": "raw data/DOSY/IS_PMA6/21/gradient_calib",
+      "bytes": 26,
+      "sha256": "ed4a29f9fbf562781cee6410548340bc2aac2d9040314df9600eacb45fa2d1fe",
+      "url": "content/research-data/monash-pma6-21/gradient_calib"
+    },
+    {
+      "path": "gpnam6",
+      "originalArchivePath": "raw data/DOSY/IS_PMA6/21/gpnam6",
+      "bytes": 1892,
+      "sha256": "85b3e903dda475b283ac2575e55b69296c94725f946dd728c6965af98cf8e240",
+      "url": "content/research-data/monash-pma6-21/gpnam6"
+    },
+    {
+      "path": "pdata/1/procs",
+      "originalArchivePath": "raw data/DOSY/IS_PMA6/21/pdata/1/procs",
+      "bytes": 2327,
+      "sha256": "8f0d179fe9bcfc7d8f8126ff85c7583179f368315545b9145eff5e9e1c080c90",
+      "url": "content/research-data/monash-pma6-21/pdata/1/procs"
+    },
+    {
+      "path": "pdata/1/title",
+      "originalArchivePath": "raw data/DOSY/IS_PMA6/21/pdata/1/title",
+      "bytes": 54,
+      "sha256": "7397792baa8b2500c778d5334b224fe49fc8ec4ffe7fb514c4b885bf314dbbac",
+      "url": "content/research-data/monash-pma6-21/pdata/1/title"
+    }
+  ]
+}

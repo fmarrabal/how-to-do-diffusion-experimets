@@ -1,0 +1,16 @@
+{
+  "source": "Independent NumPy SVD, not the production Gram/Jacobi algorithm",
+  "numpy_version": "2.5.1",
+  "point_count": 32,
+  "diffusion_bins": 40,
+  "max_b_1e9": 3,
+  "singular_values": [
+    3.617323602701453,
+    0.8828827432397405,
+    0.19417475679320573,
+    0.03244559996107722,
+    0.004317649582745054,
+    0.00046999546479860766,
+    4.2665898540340385e-05
+  ]
+}

@@ -1,0 +1,20 @@
+##TITLE= Parameter file, TopSpin 4.5.0
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 8	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH & Co. KG
+##OWNER= ifer0013
+$$ 2026-03-31 10:47:25.372 +1100  MONASH\ifer0013@MU00227777
+$$ G:/My Drive/Research/PhD/DOSY project/Oligomers/BACS600/IS_D2O/10/pdata/1/dosy
+$$ process C:\Bruker\TopSpin4.5.0\prog\au\bin\setdiffparm.exe
+##$DISPmax= -8
+##$DISPmin= -10
+##$Gamma= 4257.7
+##$Gdist= 98.4666666785876
+##$Glen= 1
+##$Ndata= 16
+##$Nexp= 1
+##$Nvar= 2
+##$Scale= 1
+##$Xlist= <difflist>
+##END=

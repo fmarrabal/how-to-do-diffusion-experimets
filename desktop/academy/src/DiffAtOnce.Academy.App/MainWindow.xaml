@@ -1,0 +1,64 @@
+<Window x:Class="DiffAtOnce.Academy.App.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:wv="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf" Title="DiffAtOnce Academy" Width="1570" Height="990" MinWidth="1080" MinHeight="720" WindowStartupLocation="CenterScreen" Background="#F3F7F8" FontFamily="Segoe UI">
+  <Grid>
+    <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="32"/></Grid.RowDefinitions>
+    <Border Background="White" BorderBrush="{StaticResource Line}" BorderThickness="0,0,0,1" Padding="24,10">
+      <DockPanel>
+        <WrapPanel DockPanel.Dock="Right" VerticalAlignment="Center">
+          <Button x:Name="LanguageButton" Content="EN" Click="Language_Click" AutomationProperties.Name="Change language"/>
+          <Button x:Name="ResearchButton" Content="Investigación continua" Click="Research_Click"/>
+          <Button x:Name="WorkshopButton" Content="Taller de calibración" Click="Workshop_Click"/>
+          <Button x:Name="DerivationsButton" Content="Derivar ecuaciones" Click="Derivations_Click"/>
+          <Button x:Name="DoctoralButton" Content="Laboratorio doctoral" Click="Doctoral_Click"/>
+          <Button x:Name="SlidesButton" Content="Diapositivas" Click="Slides_Click"/>
+          <Button x:Name="MethodsButton" Content="Algoritmos" Click="Methods_Click"/>
+          <Button x:Name="ExportButton" Content="Exportar progreso" Click="Export_Click"/>
+          <Button x:Name="HelpButton" Content="Manual" Click="Help_Click"/>
+        </WrapPanel>
+        <StackPanel Margin="0,6,18,8"><TextBlock Text="DiffAtOnce Academy" FontSize="27" FontWeight="SemiBold" LineHeight="38"/><TextBlock x:Name="Subtitle" Text="Aprender a medir. Entender antes de interpretar." Foreground="{StaticResource Muted}"/></StackPanel>
+      </DockPanel>
+    </Border>
+    <Grid Grid.Row="1">
+      <Grid.ColumnDefinitions><ColumnDefinition Width="248"/><ColumnDefinition Width="*"/><ColumnDefinition Width="326"/></Grid.ColumnDefinitions>
+      <Border Background="#102D39" Padding="17,22,13,16">
+        <DockPanel>
+          <StackPanel DockPanel.Dock="Top">
+            <TextBlock x:Name="CourseHeading" Text="RECORRIDO DE APRENDIZAJE" Foreground="#9CCECF" FontSize="11" FontWeight="SemiBold" Margin="0,0,0,12"/>
+            <TextBox x:Name="SearchBox" TextChanged="Search_Changed" Margin="0,0,0,13" AutomationProperties.Name="Search course"/>
+            <TextBlock x:Name="ProgressText" Foreground="White" FontWeight="SemiBold" Margin="0,0,0,8"/>
+            <ProgressBar x:Name="CourseProgress" Height="5" Margin="0,0,0,16" Foreground="#65D9C7" Background="#35505B"/>
+          </StackPanel>
+          <ListBox x:Name="ModuleList" SelectionChanged="Module_Changed" Background="Transparent" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListBox.ItemContainerStyle><Style TargetType="ListBoxItem"><Setter Property="Padding" Value="0"/><Setter Property="Margin" Value="0,0,0,5"/><Setter Property="HorizontalContentAlignment" Value="Stretch"/><Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ListBoxItem"><Border x:Name="NavBorder" Background="Transparent" CornerRadius="7" Padding="9,10"><ContentPresenter/></Border><ControlTemplate.Triggers><Trigger Property="IsSelected" Value="True"><Setter TargetName="NavBorder" Property="Background" Value="#1A5660"/></Trigger><Trigger Property="IsMouseOver" Value="True"><Setter TargetName="NavBorder" Property="Background" Value="#254A55"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Setter.Value></Setter></Style></ListBox.ItemContainerStyle>
+            <ListBox.ItemTemplate><DataTemplate><Grid><Grid.ColumnDefinitions><ColumnDefinition Width="28"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions><TextBlock Text="{Binding Number}" Foreground="#78CEC6" FontSize="12"/><StackPanel Grid.Column="1"><TextBlock Text="{Binding Title}" Foreground="White" FontSize="13" FontWeight="SemiBold" LineHeight="18"/><TextBlock Text="{Binding State}" Foreground="#A0BCC5" FontSize="10" LineHeight="15"/></StackPanel></Grid></DataTemplate></ListBox.ItemTemplate>
+          </ListBox>
+        </DockPanel>
+      </Border>
+      <Grid Grid.Column="1" Margin="22,20,20,14">
+        <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+        <StackPanel Margin="0,0,0,14"><TextBlock x:Name="ChapterText" Foreground="{StaticResource Accent}" FontSize="11" FontWeight="SemiBold"/><TextBlock x:Name="ModuleTitle" FontSize="26" FontWeight="SemiBold" LineHeight="33" Margin="0,6,0,5"/><TextBlock x:Name="ModuleOverview" Foreground="{StaticResource Muted}" FontSize="13"/></StackPanel>
+        <TabControl x:Name="LearningTabs" Grid.Row="1" Background="White" BorderBrush="{StaticResource Line}">
+          <TabItem x:Name="LessonTab" Header="Comprender"><ScrollViewer VerticalScrollBarVisibility="Auto"><StackPanel x:Name="LessonPanel" Margin="23"/></ScrollViewer></TabItem>
+          <TabItem x:Name="SimulationTab" Header="Experimentar"><DockPanel><Button x:Name="ExpandLabButton" DockPanel.Dock="Top" Content="Ampliar laboratorio ↗" HorizontalAlignment="Right" Margin="8" Click="ExpandLab_Click"/><Grid x:Name="LabHost"><wv:WebView2 x:Name="LabView"/><TextBlock x:Name="LabLoading" Text="Preparando el laboratorio…" Background="White" Padding="25" VerticalAlignment="Top"/></Grid></DockPanel></TabItem>
+          <TabItem x:Name="PracticeTab" Header="Comprobar"><ScrollViewer VerticalScrollBarVisibility="Auto"><StackPanel x:Name="PracticePanel" Margin="23"/></ScrollViewer></TabItem>
+          <TabItem x:Name="NotebookTab" Header="Mi cuaderno"><Grid Margin="22"><Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions><TextBlock x:Name="NotebookHint" Text="Anota tu hipótesis, qué cambiaste y qué aprendiste. Se guarda en este ordenador." Margin="0,0,0,15"/><TextBox x:Name="NotesBox" Grid.Row="1" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" LostFocus="Notes_LostFocus" AutomationProperties.Name="Student notebook"/></Grid></TabItem>
+        </TabControl>
+      </Grid>
+      <Border Grid.Column="2" Background="#EAF2F4" BorderBrush="{StaticResource Line}" BorderThickness="1,0,0,0" Padding="18,22,18,18">
+        <Grid><Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+          <StackPanel Margin="0,0,0,14"><TextBlock Text="Beatrix" FontSize="26" FontWeight="SemiBold"/><TextBlock x:Name="TutorSubtitle" Text="Tu tutor de RMN de difusión" Foreground="{StaticResource Muted}"/><TextBlock x:Name="TutorMode" Text="Fuentes locales" Foreground="{StaticResource Accent}" FontSize="11" Margin="0,8,0,0"/><WrapPanel Margin="0,10,0,0"><Button x:Name="WhyButton" Content="¿Por qué sucede?" Click="Why_Click"/><Button x:Name="NextButton" Content="¿Qué compruebo?" Click="Next_Click"/></WrapPanel></StackPanel>
+          <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto"><StackPanel>
+            <TextBlock x:Name="TutorGeneratedHeading" FontSize="12" FontWeight="SemiBold" Foreground="{StaticResource Accent}" Margin="0,0,0,8" Visibility="Collapsed"/>
+            <TextBlock x:Name="TutorAnswer" Text="Selecciona una lección y pregunta. Puedo usar las explicaciones del curso y los parámetros de tu simulación." FontSize="14" LineHeight="22"/>
+            <Border x:Name="TutorCourseQuoteCard" Background="White" Padding="12" CornerRadius="7" Margin="0,16,0,0" Visibility="Collapsed"><StackPanel>
+              <TextBlock x:Name="TutorQuoteHeading" FontSize="12" FontWeight="SemiBold" Foreground="{StaticResource Accent}" Margin="0,0,0,8"/>
+              <TextBlock x:Name="TutorCourseQuoteText" FontSize="12" LineHeight="19"/>
+            </StackPanel></Border>
+            <StackPanel x:Name="TutorSources" Margin="0,15,0,0"/>
+          </StackPanel></ScrollViewer>
+          <StackPanel Grid.Row="2" Margin="0,15,0,0"><TextBlock x:Name="TutorContext" Foreground="{StaticResource Muted}" FontSize="11" Margin="0,0,0,7"/><TextBox x:Name="QuestionBox" AcceptsReturn="True" TextWrapping="Wrap" Height="92" VerticalScrollBarVisibility="Auto" AutomationProperties.Name="Question for Beatrix"/><WrapPanel Margin="0,10,0,0"><Button x:Name="AskButton" Content="Preguntar" Click="Ask_Click" Background="#086C69" Foreground="White"/><Button x:Name="CancelButton" Content="Cancelar" Click="Cancel_Click" IsEnabled="False"/></WrapPanel><TextBlock x:Name="TutorStatus" Foreground="{StaticResource Muted}" FontSize="11"/></StackPanel>
+        </Grid>
+      </Border>
+    </Grid>
+    <Border Grid.Row="2" Background="White" BorderBrush="{StaticResource Line}" BorderThickness="0,1,0,0" Padding="18,5"><DockPanel><TextBlock DockPanel.Dock="Right" Text="ACADEMY 1.3 · ES / EN" FontSize="10" Foreground="{StaticResource Muted}"/><TextBlock x:Name="StatusText" Text="Simulaciones de formación · los datos experimentales originales se conservan" FontSize="11" Foreground="{StaticResource Muted}"/></DockPanel></Border>
+  </Grid>
+</Window>

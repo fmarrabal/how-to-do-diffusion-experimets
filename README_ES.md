@@ -6,6 +6,19 @@ Repositorio docente bilingüe sobre preparación, adquisición, procesado e inte
 
 Autores del workshop: **Ignacio Fernández** ([ORCID](https://orcid.org/0000-0001-8355-580X)) y **Francisco Manuel Arrabal-Campos** ([ORCID](https://orcid.org/0000-0002-5510-6297)), Universidad de Almería. La exposición principal dura 20 minutos y dispone de apéndices técnicos adicionales. El nombre del repositorio conserva la grafía solicitada por su mantenedor: `how-to-do-diffusion-experimets`.
 
+## DiffAtOnce Academy 1.3 — Español e inglés
+
+Una investigación conectada de doce etapas para aprender RMN de difusión: calibrar el pulso de 90° y la escala de gradiente, diseñar y adquirir un experimento virtual, procesar su FID, comparar soluciones inversas, propagar incertidumbre correlacionada y defender una conclusión. La convección, la deriva, el solapamiento y los metadatos incompletos se convierten en ejemplos prácticos de diagnóstico. Los motores compartidos WPF/navegador también enseñan codificación espacial RF, difusión y lectura, competencias y revisión docente.
+
+[Código y compilación de Academy](desktop/academy/) · [Entrega Academy 1.3](https://github.com/fmarrabal/how-to-do-diffusion-experimets/releases/tag/academy-v1.3.0) · [Abrir Academy online](https://diffatonce.com/academy) · [Descargar Windows con Beatrix local](https://diffatonce.com/downloads/diffatonce-academy-1.3.0-win-x64)
+
+| Manual actualizado | Español | English |
+|---|---|---|
+| Manual completo, 68 páginas | [PDF](desktop/academy/docs/ACADEMY_MANUAL_ES.pdf) | [PDF](desktop/academy/docs/ACADEMY_MANUAL_EN.pdf) |
+| Guía de investigación, 22 páginas | [PDF](desktop/academy/docs/RESEARCH_MANUAL_ES.pdf) | [PDF](desktop/academy/docs/RESEARCH_MANUAL_EN.pdf) |
+
+Las fuentes incluyen pruebas numéricas, contenido docente bilingüe y datos experimentales públicos atribuidos; excluyen pesos de modelos, artículos privados y datos de estudiantes. Una compilación sin pesos compatibles verificados usa la guía documental. El paquete Windows publicado incluye Beatrix local; la web ofrece guía documental revisada sin LLM. Las pruebas informáticas no acreditan calibración física ni eficacia educativa medida. Las series públicas sin valores b documentados no permiten ajustar D.
+
 ## GUI de calibración del espectrómetro — español e inglés
 
 <img src="assets/calibration-mascot.png" width="200" alt="Mascota de calibración DiffAtOnce: un compañero de laboratorio para el flujo de calibración P1 y DOSY">
